@@ -35,7 +35,16 @@ Archetypes need to evolve — but evolution must be governed differently from in
 
 ---
 
-## The Resolution
+## Forces
+
+- **Archetype permanence vs. operational reality.** Systems change in scope and capability over months and years; treating archetypes as immutable produces governance models increasingly divorced from actual behavior.
+- **Drift invisibility vs. explicit evolution.** Small incremental decisions that expand scope are invisible until a failure reveals them; formal review processes are heavyweight but catch drift that informal change control misses.
+- **Speed vs. governance.** Formal reclassification takes time. Systems are under deadline pressure. The process cannot be so heavy that teams route around it, yet cannot be so light that drift happens invisibly.
+- **Accountability vs. flexibility.** When an archetype changes, someone made that decision. There must be a record of who and why. Yet expecting formal notification of every scope expansion may create incentives to classify loosely from the start.
+
+---
+
+## The Solution
 
 ### The Distinction Between Evolution and Drift
 
@@ -163,6 +172,17 @@ Every archetype classification, review, and reclassification should be recorded 
 This record is the constitutional history of the system. It is the document a future engineer reaches for when they need to understand why the system is the way it is. It is the document an auditor reaches for when accountability matters.
 
 Write it with that reader in mind.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Drift becomes detectable.** With a defined separation between drift and evolution, audit can identify when a system has drifted and require remediation. The archetype is no longer fiction.
+- **Transitions are loadbearing.** Planned evolution is now a named transition with explicit criteria. The transition itself is a checkable event.
+- **Constitutional history becomes auditable.** With version history recorded in the spec, any reviewer can see what the system was classified as, when it changed, and why.
+- **Reclassification authority is aligned.** The authority to reclassify a system is the same as the authority to originally classify it, preserving the constitutional principle.
 
 ---
 

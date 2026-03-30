@@ -30,7 +30,16 @@ A second failure: validation categories are incomplete. A spec that validates fu
 
 ---
 
-## The Resolution
+## Forces
+
+- **Validation completeness vs. validation overhead.** A comprehensive validation template catches more errors. But applying every criterion to every task creates overhead that discourages validation.
+- **Output-type specificity vs. template reusability.** Code output needs different validation criteria than document output or API output. But maintaining separate templates for each type increases maintenance burden.
+- **Binary criteria vs. judgment calls.** The strongest validation criteria are binary (pass/fail). But some quality dimensions resist binary assessment. Templates must accommodate both.
+- **Template rigor vs. practical adoption.** Strict templates ensure quality but create friction. Teams under pressure may skip validation rather than engage with complex templates.
+
+---
+
+## The Solution
 
 ### Validation Template Structure
 
@@ -127,6 +136,17 @@ In the canonical spec template, Section 6 (Success Criteria & Acceptance Tests) 
 5. Signs the criteria as reviewable: "A reviewer who validates this output should be able to answer all questions above with a definitive yes or no."
 
 The test for good success criteria is the last sentence: if any criteria cannot be answered definitively yes or no by a human reviewer who has only the spec and the output, those criteria are aspirational statements, not validation criteria. Rewrite them until they can be evaluated.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Validation becomes consistent and repeatable.** Templates ensure that the same quality dimensions are checked every time, regardless of who performs the validation.
+- **Output-type-specific criteria focus the review.** Code output validation checks test coverage and naming. Document output validation checks structure and completeness. Each template is tailored to its output type.
+- **Validation results are comparable across time.** When the same template is used repeatedly, validation results become trend data that reveals improvement or degradation.
+- **Templates prevent the most common gaps.** By encoding common validation failures as template criteria, the most frequent errors are caught systematically.
 
 ---
 

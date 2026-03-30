@@ -32,7 +32,16 @@ The second problem is that "human oversight" is often understood as output revie
 
 ---
 
-## The Resolution
+## Forces
+
+- **Oversight completeness vs. operational throughput.** Reviewing every output guarantees nothing is missed but eliminates the productivity advantage of agents. Reviewing nothing risks undetected harm.
+- **Pre-execution review vs. post-execution review.** Pre-execution oversight (spec review) is highest leverage but requires investment before seeing results. Post-execution oversight is reactive but catches implementation failures.
+- **Spec maturity vs. oversight intensity.** New specs need intensive oversight. Mature specs with established track records can operate under lighter oversight. The transition requires explicit criteria.
+- **Cost of watching vs. cost of not watching.** Oversight has a real human time cost. Not-watching has a probabilistic harm cost. The optimal level is where these costs cross.
+
+---
+
+## The Solution
 
 ### The Four Oversight Models
 
@@ -157,6 +166,17 @@ At high velocity, oversight shifts from individual output review to statistical 
 - **Escalation-only human involvement.** At the highest velocity and maturity levels, human oversight is exercised only when the agent escalates, when automated checks fail, or when anomaly detection triggers. The governance model shifts from "review outputs" to "review the system that produces outputs" — which is spec review, constraint auditing, and periodic behavior audits.
 
 The key principle: high-velocity systems require that governance be encoded in the spec and the constraints, not in per-output human review. The spec becomes the primary oversight artifact, and spec quality becomes the binding constraint on safe scaling.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Spec approval becomes the primary oversight moment.** When specs are well-written, the consequential decisions have already been made at spec time. Output review validates execution, not intent.
+- **Four oversight models provide a vocabulary for deployment decisions.** Teams can select and justify their oversight level against explicit criteria rather than defaulting to maximum or minimum.
+- **High-velocity systems remain governable.** Sampling, automated invariant checking, and anomaly detection extend oversight to scales where per-output review is infeasible.
+- **Oversight proportionality becomes a design discipline.** Organizations deploy oversight where the cost of not watching exceeds the cost of watching.
 
 ---
 

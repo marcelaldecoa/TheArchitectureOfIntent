@@ -30,7 +30,16 @@ Spec-Driven Development (SDD) is the discipline that closes that gap — not by 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Human comprehension vs. agent execution.** Humans tolerate ambiguity and resolve it implicitly; agents execute literal text, making human imprecision immediately visible as incorrect outputs.
+- **Implicit judgment vs. explicit specification.** Human developers applied professional judgment silently; agents have no embedded judgment. Either the judgment goes into the spec, or the agent fills the gap with probability.
+- **Feedback speed vs. feedback quality.** With human developers, feedback was immediate and conversational. Agent-mediated work is slower but buys precision: outputs can be validated against explicit criteria.
+- **Completeness vs. pragmatism.** A complete spec seems heavy. Yet incomplete specs produce more rework. The actual time cost of precision is often less than the perceived cost.
+
+---
+
+## The Solution
 
 ### What SDD Is
 
@@ -92,6 +101,17 @@ The column on the right is not slower. It requires more discipline at the front.
 The word "development" in Spec-Driven Development is deliberate. SDD is not spec-driven *documentation* or spec-driven *process*. It is a development discipline — it governs how software is built, not just how it is described.
 
 This means SDD applies everywhere a developer would have previously applied their own judgment without writing it down: choosing an architecture, handling an edge case, deciding how an error should be surfaced. In SDD, those judgments belong in the spec. Not because the agent can't make them — but because when it does, they are invisible. When they are in the spec, they can be reviewed, challenged, and revised.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Rework rate drops dramatically.** When output is validated against explicit criteria, agents produce correct results more often.
+- **Judgment is concentrated but visible.** Rather than judgment being distributed across conversations, it is concentrated in the spec and reviewable before execution.
+- **Agents become reliable.** An agent executing against a clear spec produces consistent, auditable results.
+- **Organizational memory is durable.** The spec captures decision rationale and constraints that transfer when people leave.
 
 ---
 

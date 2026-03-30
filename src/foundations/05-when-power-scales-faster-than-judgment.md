@@ -32,7 +32,17 @@ This is not a hypothetical about the future. It is observable today in engineeri
 
 ---
 
-## The Resolution
+## Forces
+
+- **Capability growth vs. judgment growth.** Agent abilities scale rapidly through improved models; human wisdom about when and how to use them develops slowly through experience.
+- **Speed pressure vs. feedback loops.** The faster agents act, the more tempting it is to bypass the review processes that would catch errors at small scale.
+- **Small-scale decisions vs. large-scale accumulation.** Individual delegated decisions seem low-risk; their cumulative effect at scale becomes unmanageable and hard to diagnose.
+- **Automation comfort vs. oversight rigor.** The ease of using agents can create a false sense that oversight is optional, exactly when structural safeguards are most critical.
+- **Local optimality vs. systemic coherence.** Agents make locally optimal decisions that degrade the coherence of the whole system without recognizing the impact.
+
+---
+
+## The Solution
 
 The answer is not to slow down capability. It is to design judgment into the system.
 
@@ -60,6 +70,17 @@ A well-calibrated team:
 - Reviews intent regularly, not just code
 
 The [Archetype Decision Tree](../architecture/04-decision-tree.md) is a practical tool for this calibration.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Judgment is encoded structurally before power is delegated.** Pre-committed archetypes and constraints prevent misjudgments from compounding at scale.
+- **Specifications become the load-bearing element.** When execution is fast, the quality of what is specified — not how it is executed — becomes the critical variable.
+- **Governance structures become explicit and enforceable.** Cultural norms and code review cannot keep pace with continuous agent execution; architecture becomes law.
+- **Calibration becomes a discipline.** Teams delegate aggressively in low-stakes, reversible domains and slow down at irreversible or high-consequence junctions.
 
 ---
 

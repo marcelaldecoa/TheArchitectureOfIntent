@@ -38,7 +38,16 @@ The whole edifice made sense. It was built for a world where **code creation was
 
 ---
 
-## The Resolution
+## Forces
+
+- **Code generation is now cheap, but specification quality has not improved proportionally.** The tooling that made translation expensive also enforced a feedback loop: ambiguity was caught during implementation. Removing that bottleneck removes the feedback loop.
+- **Senior developers compensated for poor specifications through judgment.** This compensation was invisible in the old model — no one measured it. Agents expose the gap because they execute literally.
+- **Organizations are optimized for code review, not intent review.** Hiring, promotion, tooling, and rituals all center on implementation quality. The skills that now matter most — framing, constraint definition, scope governance — have no established institutional support.
+- **The shift feels like demotion.** Engineers trained to value their translation skill may experience the move to specification as a loss of status, even when it is a promotion in responsibility.
+
+---
+
+## The Solution
 
 That scarcity is over.
 
@@ -57,6 +66,17 @@ These questions existed before agents. They were addressed, but loosely. A suffi
 With agents, that compensation mechanism fails. An agent executing on an ambiguous specification does not exercise judgment the way a senior developer does. It fills the gaps with probability — and it does so quickly, at scale, across systems that interact in ways a single conversation cannot fully anticipate.
 
 **The gap that used to be bridged by the human compiler is now bridged by specification.**
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **The specification becomes the primary engineering artifact.** Teams invest review effort in specs rather than code. Code review shifts from "is this correct?" to "did the agent follow the spec?"
+- **Ambiguity becomes visible and measurable.** When agents execute literal specs, every gap in specification clarity produces a visible failure. This creates a feedback loop that the old model lacked.
+- **Technical skill is redirected, not eliminated.** Senior engineers apply their judgment at the level of constraints, invariants, and failure modes — higher leverage than individual implementation decisions.
+- **New institutional structures are needed.** Spec review workflows, intent review rituals, and constraint libraries become organizational investments.
 
 ---
 

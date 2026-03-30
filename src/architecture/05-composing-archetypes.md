@@ -33,7 +33,16 @@ There is a structural solution — and it requires treating composition as a fir
 
 ---
 
-## The Resolution
+## Forces
+
+- **Atomicity vs. reality.** The five archetypes describe atomic types, but real systems combine multiple functions. Forcing one archetype onto a multi-archetype system either miscategorizes it or fragments the spec.
+- **Clarity vs. expressiveness.** Allowing composition means accepting systems that resist a single label. Yet disallowing composition creates pressure to misclassify or physically decompose architecturally coherent systems.
+- **Simple governance vs. complex reality.** A pure archetype inherits a clear governance profile. A composed system requires per-component governance that must integrate coherently.
+- **Reusability vs. specificity.** If composition is ad-hoc, every composed system requires custom governance reasoning. Named composition patterns allow pre-thought-through governance.
+
+---
+
+## The Solution
 
 ### The Composition Principle
 
@@ -164,6 +173,17 @@ If you find yourself classifying a system as "Advisor for the retrieval step, Ex
 The question to ask: *Would a single on-call engineer be able to understand and halt any part of this system within five minutes?* If not, the system is not too complex to classify — it is too complex to run. Break it into separately deployable systems with separately governable boundaries.
 
 Composition is meant to clarify layering within a coherent unit. It is not a way to make complexity legible in documentation while leaving it ungovernable in production.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Governing archetype determines risk.** By identifying the highest-risk autonomous action and using that to set the governing archetype, the composition privileges safety.
+- **Embedded components are constrained separately.** Guardian components embedded in an Executor cannot be bypassed by Executor-level decisions. The Guardian operates in its own governance tier.
+- **Confirm-then-act becomes a governance pattern.** An Advisor phase feeding into an Executor phase is recognized as an Executor implementing its required oversight gate.
+- **Coherence without fragmentation.** A composed system has one authoritative spec, not multiple specs in contradiction.
 
 ---
 

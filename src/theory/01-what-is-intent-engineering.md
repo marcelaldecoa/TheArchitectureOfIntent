@@ -34,7 +34,15 @@ The problem is that without a name, this skill cannot be taught, measured, or sy
 
 ---
 
-## The Resolution
+## Forces
+
+- **Tacit skill vs. systematic discipline.** Intent specification is practiced widely but has no shared vocabulary, measurement methods, or teaching structures, creating uneven capability levels across teams.
+- **Human judgment compensation vs. agent execution fidelity.** Traditional development relied on developer judgment to bridge ambiguity; agents execute specs with fidelity, exposing every oversight directly to consequences.
+- **Code production abundance vs. intent clarity scarcity.** The bottleneck has shifted from generating code to specifying intent; code is now cheap but clear, precise goal definition remains difficult and rare.
+
+---
+
+## The Solution
 
 ### A Definition
 
@@ -110,6 +118,16 @@ All of this applies to intent engineering.
 The criticism that might be raised — "isn't this just communication? Isn't this what good product managers and architects have always done?" — misses the structural shift. In the past, a vague requirement was eventually made concrete by a skilled developer who compensated for ambiguity through judgment. That compensatory mechanism no longer exists in the same form. The agent executes what it is given. The intent engineer is now the last human in the translation chain, and the quality of their work propagates directly into system behavior.
 
 This is engineering. The material is language, the tools are specs and archetypes, and the consequences are real.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **A named discipline enables teaching and improvement.** Intent engineering becomes teachable as a practice with defined vocabulary, patterns, and standards; it becomes measurable and systematically improvable.
+- **Three foundational questions guide all delegation.** Every system is designed around answering what it should achieve, what constraints it must respect, and how correct behavior will be validated.
+- **Intent engineering becomes the load-bearing discipline.** As agents become more capable, the quality of intent specification propagates directly into system behavior, making specification precision the primary technical differentiator.
 
 ---
 

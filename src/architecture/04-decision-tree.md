@@ -28,7 +28,16 @@ A decision tree that is fast to use and hard to game is the antidote to archetyp
 
 ---
 
-## The Resolution
+## Forces
+
+- **Speed vs. precision.** A decision tree must be fast enough to use in active development. Yet speed must not sacrifice correctness \u2014 misclassification early leads to wrong governance from the start.
+- **Generality vs. ambiguity.** Some questions are clear-cut. Others are genuinely ambiguous. The tree must resolve ambiguity without requiring extended conversation.
+- **Objective inquiry vs. contextual judgment.** The earliest questions should be observable facts about the system. Yet eventually judgment is required. The tree must bridge from observation to judgment.
+- **Reusability vs. customization.** The tree should be the same for every organization. Yet some organizations have specific concerns. The tree must be both standard and customizable.
+
+---
+
+## The Solution
 
 ### The Primary Decision Tree
 
@@ -161,6 +170,17 @@ Canonical form in a spec:
 ```
 
 One paragraph. Written before behavioral specification begins. Reviewed by the same person who would authorize the archetype definition itself.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Classification becomes observable.** A decision tree grounded in observable questions makes the archetype classification verifiable by examining the system, rather than debating its intent.
+- **Risk overrides are explicit.** The tree acknowledges that risk can require a governance tier higher than the archetype minimum. The override is named and documented.
+- **Misclassification risk is reduced.** By starting with the most discriminating question and proceeding downward, the tree minimizes misclassification.
+- **Newcomers can classify consistently.** With an explicit decision tree, a new team member can classify a system using the same reasoning as an experienced architect.
 
 ---
 

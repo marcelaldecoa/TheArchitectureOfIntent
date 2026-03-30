@@ -34,7 +34,16 @@ Orchestration is different in three ways:
 
 ---
 
-## The Resolution
+## Forces
+
+- **Acceleration illusion vs. fundamental role shift.** Teams assume agent tools speed up the same work (translation), when the situation requires a different kind of work entirely (orchestration).
+- **Hidden discretion vs. explicit constraint.** Informal prompts to agents work quickly at the cost of inconsistent results; orchestration requires upfront investment in specification precision.
+- **Feedback loops as auxiliary vs. feedback loops as core.** Traditional development treats oversight as optional; orchestration makes it a first-class responsibility required for coherence.
+- **Implementation skill vs. judgment skill.** Deep coding ability becomes less differentiating than the ability to frame problems, design constraints, and validate outcomes against intent.
+
+---
+
+## The Solution
 
 The new model looks like this:
 
@@ -103,6 +112,17 @@ Teams operating this way will find that:
 - Senior engineers are spending time on mechanical corrections rather than judgment
 
 The fix is always more upstream: fix the spec, not the output.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Specifications become the primary work product.** Engineers operate at the level of intent, constraints, and context provision rather than mechanical implementation.
+- **Feedback loops enable continuous intent refinement.** The system validates outcomes against goals, and specs evolve as systems interact with reality.
+- **Accountability clarifies.** The human author of a specification owns the intent the system expresses, making spec quality a visible, measurable responsibility.
+- **Oversight structures become proportional and systematic.** Rather than ad-hoc code review, oversight is designed into the specification and execution model upfront.
 
 ---
 

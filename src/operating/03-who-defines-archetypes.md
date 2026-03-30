@@ -28,7 +28,16 @@ Between these extremes, there is a model that achieves appropriate rigor without
 
 ---
 
-## The Resolution
+## Forces
+
+- **Central control vs. diffuse proliferation.** If everyone can define archetypes, the catalog becomes incoherent. If only central authority can define them, the process becomes a bottleneck.
+- **Domain knowledge vs. architectural authority.** The person who best understands the domain may lack architectural expertise. The architect may lack domain knowledge.
+- **Speed of deployment vs. governance rigor.** Every authorization step adds latency. Yet deploying systems under the wrong archetype creates risk that is invisible until failure.
+- **Vendor claims vs. organizational assessment.** AI product vendors may assert that their system operates at a particular capability level. These claims cannot substitute for organizational assessment.
+
+---
+
+## The Solution
 
 ### The Three Principles
 
@@ -92,6 +101,17 @@ Once published, an archetype definition is not frozen. Domains evolve, risks cha
 **Breaking changes** (changing a dimension value, tightening a constraint set, changing the oversight model) require a full re-approval through the original authority chain. All specs that reference the changed archetype must be reviewed for continued compliance.
 
 **Deprecation** (removing an archetype profile from active use) requires communication to all teams with active specs that reference it, a migration path to an approved alternative, and an archive period before removal.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Authority is proportional to risk.** Low-risk systems can be classified by team leads. High-risk systems require VP-level approval with security and legal review.
+- **Exclusions are explicit.** Vendors, individual engineers acting alone, and agents themselves cannot unilaterally define archetypes.
+- **The catalog remains coherent.** With clear authority, archetype definitions maintain consistent quality and governance standards.
+- **Accountability is traceable.** Every archetype definition has a named authority who approved it.
 
 ---
 

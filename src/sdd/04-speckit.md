@@ -28,7 +28,16 @@ SpecKit solves this specific problem. It puts the spec in the repository, in the
 
 ---
 
-## The Resolution
+## Forces
+
+- **Discipline vs. integration.** SDD as discipline is understood, but practicing it requires making specs central to the workflow. Without tooling, specs are separate documents, easy to ignore.
+- **Automation vs. clarity.** SpecKit automates some drafting. But automation can hide what is being decided. The spec must remain human-readable even when produced by automation.
+- **Constitution vs. flexibility.** The constitution enforces project-wide constraints. This is powerful but can become inflexible. Systems with special requirements need override mechanisms.
+- **Adoption vs. overhead.** Adding SpecKit increases the number of concepts developers need to know. Yet total time cost (spec + code + rework) should decrease.
+
+---
+
+## The Solution
 
 ### What SpecKit Is
 
@@ -133,6 +142,17 @@ With SpecKit:
 - Done
 
 The total time is similar; the rework rate is dramatically lower; the spec is now a reusable organizational asset; and the knowledge of what was decided lives in the repository, not in someone's memory.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Spec-first becomes the default path.** By making the spec command the entry point, SpecKit makes writing a spec the easiest choice.
+- **Constitution propagates automatically.** Project-wide constraints are loaded and inherited by every spec produced. Teams do not have to remember to include them.
+- **Specs live next to code.** By keeping specs in the repository, version control applies to specs the same way as code.
+- **Teams can customize SDD to their practice.** SpecKit is intentionally minimal. Teams extend it with their own governance needs.
 
 ---
 

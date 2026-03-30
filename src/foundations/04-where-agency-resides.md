@@ -26,7 +26,16 @@ When a system acts in the world — sends a message, modifies data, calls an ext
 
 ---
 
-## The Resolution
+## Forces
+
+- **Operational autonomy vs. genuine agency.** Executing a defined process is not the same as making decisions with discretion in unforeseen contexts; the distinction matters for oversight design.
+- **Authorization scope vs. runtime discretion.** How much freedom the specification allows the executor is directly proportional to the executor's effective agency in the system.
+- **Distributed agency vs. singular accountability.** Multiple actors participate in decisions, yet someone must be accountable for what the system does.
+- **Reversibility vs. authority.** Broad discretion is tolerable for reversible actions; narrow discretion is required for irreversible actions.
+
+---
+
+## The Solution
 
 Agency in a system is distributed across multiple actors, each carrying a portion of the decision-making authority:
 
@@ -49,6 +58,17 @@ The most important design question about agency is not "how much?" but "at what 
 An agent with broad discretion over reversible actions (writing draft documents, suggesting code edits, generating test cases) is low-risk. An agent with narrow discretion over irreversible actions (sending emails to customers, modifying production data, approving financial transactions) is high-risk.
 
 The **reversibility dimension** of a system is as important as the agency dimension. Systems that combine high agency with low reversibility require the strongest oversight structures.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Specification becomes an authorization frame.** What an agent is allowed to do is deliberately constrained at design time, not discovered through iteration.
+- **Agency analysis becomes a design practice.** Teams reason explicitly about where agency should reside for each type of decision and consequence.
+- **Oversight structures match agency levels.** High agency requires stronger oversight; low agency can be paired with lighter checkpoints.
+- **Escalation becomes systematic.** When an agent encounters situations outside designed scope, the system escalates rather than executing with discretion beyond intent.
 
 ---
 

@@ -42,7 +42,16 @@ The distinction matters because the benefits of SDD come specifically from the s
 
 ---
 
-## The Resolution
+## Forces
+
+- **Documentation vs. mechanism.** A spec can describe what a system should do or control what it does. The distinction is clear in principle but easy to slip on in practice.
+- **Constraint vs. preference.** Specs must constrain behavior that matters while teams tend to enforce preference. The spec's authority gets divided between non-negotiable and negotiable, weakening both.
+- **Precision vs. readability.** A control surface requires precise, testable language. Making specs precise enough to control agent behavior makes them harder for casual readers.
+- **Enforcement vs. trust.** Making a spec a control surface requires that violations be actioned. Without enforcement, the spec documents what should have happened, not what does happen.
+
+---
+
+## The Solution
 
 ### What a Control Surface Is
 
@@ -117,6 +126,17 @@ A spec establishes a temporal contract: it describes what must be true *at the m
 The spec says: "Before this agent runs, these things must be true. After it runs, these things must be verified."
 
 This temporal structure is what makes specs reusable. The same spec can be run again tomorrow, next month, by a different agent, and produce an equivalent outcome because the spec's clauses still describe what must be true. If the clauses are no longer valid — the system changed, the intent changed, the constraints changed — the spec must be updated before the next execution. Not after.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Compliance becomes checkable.** A spec that is a control surface produces outputs that conform or don't. Conformance can be checked against spec clauses.
+- **Intent persists through iteration.** When the spec is the source of truth, the intent remains stable even as implementation details change.
+- **Drift becomes costly.** When violations must be addressed, there is no incentive to ignore the spec.
+- **Feedback loops function.** Violations feed back into the spec, improving it. The spec becomes richer with use, not stale.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# Pattern 5.5 — Agent Skills: Packaging Domain Knowledge
+# Pattern 5.5 — Agent Skills: Packaging Domain Knowledge
 
 **Part V: Agents & Execution** · *5 of 7*
 
@@ -34,7 +34,16 @@ None of these options separates the concerns appropriately. What is needed is a 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Per-spec knowledge vs. reusable domain knowledge.** Specs encode per-task requirements. Skills encode domain knowledge that applies across many tasks. Without skills, every spec must re-specify shared knowledge.
+- **Agent training distribution vs. organizational context.** Agents carry general knowledge from training. Organizations have specific conventions, standards, and practices that differ from general knowledge.
+- **Knowledge portability vs. platform lock-in.** Skills should work across multiple agent platforms. Yet platform-specific features may tempt platform-specific skill formats.
+- **Organizational consistency vs. individual preference.** Organizational skills enforce consistency. Personal skills encode individual workflows. The two scopes must coexist without conflict.
+
+---
+
+## The Solution
 
 ### What Agent Skills Are
 
@@ -159,6 +168,17 @@ The canonical spec template's Section 11 (Agent Execution Instructions) includes
 ```
 
 This declaration serves two purposes. First, it gives the agent's runtime infrastructure the information to load the correct skills. Second, it makes the knowledge context for the task visible in the spec itself — a reviewer reading the spec can understand what organizational context the agent is expected to apply.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Domain knowledge becomes portable and persistent.** Skills encode organizational knowledge that persists across team changes and applies across platforms.
+- **Agent output quality improves without per-spec overhead.** Shared knowledge loaded from skills reduces the specification burden on individual tasks.
+- **Cross-platform consistency becomes achievable.** The same skill applies regardless of which agent platform executes it.
+- **Three scopes enable layered knowledge governance.** Project, personal, and organizational skills give appropriate authority levels to different knowledge types.
 
 ---
 

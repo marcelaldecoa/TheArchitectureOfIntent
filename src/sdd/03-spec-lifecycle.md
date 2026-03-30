@@ -26,7 +26,16 @@ A lifecycle gives the discipline repeatability. It makes the required activities
 
 ---
 
-## The Resolution
+## Forces
+
+- **Discipline vs. freedom.** A named lifecycle constrains how teams work. Not having one avoids that constraint but makes practices inconsistent.
+- **Efficiency vs. completeness.** Phase 1 (intent capture) can seem excessive. Yet skipping it produces specs that answer 'how' before establishing 'what.'
+- **Heavyweight vs. visible.** Making the lifecycle explicit creates pressure. But visibility also enables noticing when it is being skipped.
+- **Reusability vs. context-binding.** Each phase produces reusable artifacts. Yet each task is unique. The lifecycle must help without being so prescriptive it prevents legitimate variation.
+
+---
+
+## The Solution
 
 ### The Five Phases
 
@@ -175,6 +184,17 @@ The lifecycle is not a Waterfall process. Each phase is short — for a well-und
 The lifecycle is not a gate-heavy process. Its approvals are lightweight: *"Does this spec answer the completeness test?"* The weight is in the thinking, not the ceremony.
 
 The lifecycle is not final on completion. Phase 5 feeds back into Phase 2. Specs accumulate evolution entries. Over time, a reused spec becomes a rich document of what was learned — a form of organizational memory that is directly executable by the next agent that needs it.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Handoff becomes possible.** With a named lifecycle, a task can be handed off at any phase. The phases make handoff explicit.
+- **Failure categories are visible.** When an outcome is rejected, the reason is clear: spec gap or implementation failure.
+- **Learning is systematic.** Each phase produces a formally validated artifact that becomes organizational history.
+- **Gatekeeping becomes strategic.** Gates are at phase transitions: spec approved before execution, outcomes validated against spec. Few gates, but loadbearing.
 
 ---
 

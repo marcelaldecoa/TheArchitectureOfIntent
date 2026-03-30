@@ -33,7 +33,15 @@ Similarly, "responsibility" in AI systems discussions is often vague: sometimes 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Automation desire vs. control necessity.** Teams want high autonomy to reduce labor costs; but high autonomy combined with high agency creates ungovernable risk without clear accountability structures.
+- **System capability vs. human understanding.** Agents can exercise discretion in domains the original authors did not fully anticipate; responsibility cannot be shared vaguely — it must be explicitly assigned or failures have no diagnosis path.
+- **Operational efficiency vs. oversight demand.** The faster the agent executes, the faster it can compound mistakes; high autonomy without proportional oversight creates latent catastrophic risk.
+
+---
+
+## The Solution
 
 ### Autonomy: The Operational Dimension
 
@@ -103,6 +111,16 @@ Given these definitions, the primary design question for any agent delegation is
 | High autonomy over repetitive, reversible tasks | Can run with light oversight; monitoring for drift is sufficient |
 | Unclear responsibility distribution | Must be resolved before any system is deployed — not assumed to sort itself out |
 | High agency + unclear responsibility | Do not deploy. Design the responsibility structure first. |
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Three distinct accountability layers become designable.** Authorial, operational, and validation responsibilities can be distributed deliberately across teams with clear boundaries for each group's accountability.
+- **Calibration becomes systematic rather than assumed.** Agency, autonomy, and responsibility can be tuned deliberately as design parameters rather than remaining emergent properties that confuse stakeholder conversations.
+- **Unsafe configurations become explicitly recognizable.** High agency with unclear responsibility is now a named anti-pattern that deployment reviews can reject before systems cause harm.
 
 ---
 

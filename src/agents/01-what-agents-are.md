@@ -33,7 +33,16 @@ The conflation matters because it collapses the architecture. If everything is a
 
 ---
 
-## The Resolution
+## Forces
+
+- **Marketing language vs. engineering precision.** The term 'agent' has been applied to everything from chatbots to autonomous systems, collapsing distinctions that governance depends on.
+- **Capability vs. authorization.** An agent may be technically capable of many actions; its authorization scope determines what it is permitted to do. Conflating these produces ungovernable systems.
+- **Autonomy appeal vs. oversight necessity.** Teams want agents to work independently to reduce labor. But independence without structured oversight creates unmonitored risk.
+- **Continuous execution vs. human feedback cadence.** Agents can act continuously; humans review periodically. The gap between execution speed and review speed determines how much damage can accumulate undetected.
+
+---
+
+## The Solution
 
 ### The Defining Properties of an Agent
 
@@ -82,6 +91,17 @@ The moment a system acquires all three properties, a set of architectural obliga
 - **Failure attribution changes.** When a script fails, you debug the script. When an agent fails, the first question is whether the failure is a spec failure, a capability failure, or a scope failure. The debugging process is different. The fix is different.
 
 These obligations are not burdens. They are the price of the capability. Systems that persist, act, and adapt can accomplish extraordinary things. The architecture exists to ensure they accomplish the *right* things.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Classification becomes actionable.** With a precise definition (goal persistence, action-taking, iterative planning), teams can distinguish genuine agents from simpler automation and apply appropriate governance.
+- **Authorization boundaries become visible.** What the agent may do is now a design question answered in the spec, not an emergent property of what the agent happened to attempt.
+- **Governance proportionality becomes possible.** Different levels of agent capability receive different oversight structures rather than a one-size-fits-all approach.
+- **Intent remains human-originated.** Every agent executes intent that originated with a human spec author, making accountability traceable.
 
 ---
 

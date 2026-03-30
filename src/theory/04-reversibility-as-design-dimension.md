@@ -34,7 +34,15 @@ The pattern of under-constraining familiar irreversible systems is particularly 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Probability focus vs. consequence reality.** Engineering risk management traditionally emphasizes reducing probability of failure; intent engineering must also govern the consequence when failures still occur, which reversibility shapes.
+- **Automation appeal vs. irreversibility danger.** Systems that feel safe and simple often take irreversible actions; high automation on irreversible operations is dangerous regardless of error probability.
+- **Operational efficiency vs. oversight overhead.** Testing and review add cost and latency; but for irreversible operations, the cost of undetected failure is so high that sufficient oversight is non-negotiable.
+
+---
+
+## The Solution
 
 ### Defining Reversibility
 
@@ -117,6 +125,16 @@ These patterns do not eliminate the need for good intent specification — they 
 There is a temporal dimension to reversibility that matters for [Living Specs](../sdd/06-living-specs.md): the longer a system runs on a spec that has not been reviewed, the more likely it is that the original intent has drifted from the current reality. Irreversible systems that have been running unreviewed are potentially executing on outdated intent.
 
 The practical rule: the oversight cadence for a system should be proportional to its irreversibility. A system making irreversible changes to production data should be reviewed more frequently than a system generating draft content.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Risk matrices become actionable design tools.** Different combinations of agency and reversibility demand different oversight structures; low-risk combinations can be streamlined while high-risk ones receive mandatory controls.
+- **Reversibility becomes a designable property.** Soft deletes, draft queues, and approval gates convert what appears irreversible into manageable, reviewable work — expanding the scope of what can be safely automated.
+- **Oversight intensity calibrates to actual consequence.** High agency is acceptable when mistakes are cheap to fix; low reversibility demands structured oversight regardless of how "simple" the task feels.
 
 ---
 

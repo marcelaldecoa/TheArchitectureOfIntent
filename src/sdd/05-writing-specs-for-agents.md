@@ -30,7 +30,16 @@ The discipline of writing for agents closes the gap between what you intended an
 
 ---
 
-## The Resolution
+## Forces
+
+- **Natural language vs. formal specification.** Natural language is expressive but ambiguous. Agents need precision but teams want readability. The spec must bridge both.
+- **Expert knowledge vs. explicit knowledge.** Domain experts have mental models of what should be done. Encoding that knowledge explicitly is work. Yet it is the only way the knowledge transfers to an agent.
+- **Completeness vs. brevity.** Adding detail makes specs more correct but longer. The spec must be minimal yet complete enough for execution without questions.
+- **Inspiration vs. direction.** Some teams use specs to inspire creativity. Agents cannot work from inspiration; they need direction.
+
+---
+
+## The Solution
 
 ### Principle 1: Specify WHAT and the constraints, never HOW
 
@@ -165,6 +174,17 @@ A spec ready for agent execution shows these properties:
 - [ ] Contains no implementation choices not derived from stated constraints
 
 A spec that passes this checklist is machine-executable. A spec that fails it will require conversation during execution — which collapses SDD back into prompt engineering.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Imprecision becomes visible.** Writing for agents reveals where human communication relies on impression and judgment. Making this explicit allows deliberate decisions about what to specify vs. delegate.
+- **Requirement clarity improves.** Specs written for agents often end up clearer for other humans too.
+- **Validation becomes independent.** A spec written precisely enough for an agent can be validated by someone who was not involved in writing it.
+- **Reuse becomes possible.** A clear, complete spec can be run again months later, by a different agent, and produce an equivalent outcome.
 
 ---
 

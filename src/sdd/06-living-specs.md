@@ -30,7 +30,16 @@ Both failures share a diagnosis: the feedback loop from execution to spec is not
 
 ---
 
-## The Resolution
+## Forces
+
+- **Learning vs. stability.** Specs must change as understanding deepens, but continuous change makes the spec unstable. The feedback loop must allow learning without allowing constant thrashing.
+- **Spec gaps vs. implementation failures.** When output is wrong, there are two possible explanations. The response is dramatically different. Yet being certain which applies requires judgment.
+- **Organizational memory vs. noise.** The spec evolution log should record what was learned. But if every preference change gets logged, the log becomes noise.
+- **Experimentation vs. governance.** Some changes are worth trying as experiments. Other changes are constitutional. The feedback loop must allow experimentation while protecting constitutional constraints.
+
+---
+
+## The Solution
 
 ### What Makes a Spec "Living"
 
@@ -135,6 +144,17 @@ A spec that has been run five times, validated five times, and evolved through t
 This is the spec as organizational learning. It is the documentation that actually gets read, because it contains the map of what went wrong and why. It is the onboarding artifact for a new engineer or agent. It is the audit trail for a compliance review.
 
 The teams that create this kind of asset are not more disciplined than others. They are teams that closed the feedback loop: they made spec updates the response to spec failures, consistently, over time.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Failure drives improvement.** When a failure triggers a spec update instead of an output patch, the next execution learns from the failure. The spec gets richer.
+- **Organizational learning is durable.** The spec evolution log records what was learned, when, and why. This becomes institutional memory.
+- **Spec authority is preserved.** A spec that is consistently updated on failure remains the source of truth.
+- **The feedback loop closes.** Validation flows back into the spec, making the system self-improving.
 
 ---
 

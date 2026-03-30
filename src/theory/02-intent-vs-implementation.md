@@ -33,7 +33,15 @@ The inability to systematically distinguish intent from implementation is the hi
 
 ---
 
-## The Resolution
+## Forces
+
+- **Coupled history vs. decoupled reality.** Traditional development integrated intent and implementation in one person's judgment; agent systems split these across humans and machines, demanding the ability to diagnose failure origins.
+- **Transient code vs. persistent spec.** Code execution is temporary and repeatable; specs are the persistent artifacts governing repeated executions, yet traditional debugging focuses on implementation rather than specification.
+- **Speed of fixing code vs. difficulty of fixing intent.** It is faster and more satisfying to patch implementation; acknowledging and fixing spec gaps requires confronting incomplete thinking.
+
+---
+
+## The Solution
 
 ### The Definition
 
@@ -129,6 +137,16 @@ When an implementation team and a product team disagree about whether a system i
 "The agent is doing it wrong" (implementation claim) and "no it isn't, that's not what we asked for" (intent claim) are not the same disagreement. Confusing them produces conversations where everyone is right from their own frame and nothing gets resolved.
 
 Having explicit vocabulary for this distinction — and a shared diagnostic process — turns ambiguous conflict into solvable problems.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Intent failures become explicitly recognizable.** A diagnostic test reveals whether a failure originated in the specification or execution, enabling targeted fixes that address root cause rather than symptoms.
+- **Specs stabilize while implementations iterate.** The spec becomes the control artifact governing multiple implementation attempts; implementing agents can be corrected, replaced, or improved without touching the persistent intent layer.
+- **Teams gain shared diagnostic language.** Disputes about system correctness shift from blame attribution ("the agent is wrong") to shared problem-solving ("the spec needs to be clarified").
 
 ---
 

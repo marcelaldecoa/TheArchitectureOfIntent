@@ -30,7 +30,16 @@ Both failures share the same root cause: the agent is inferring your standards f
 
 ---
 
-## The Resolution
+## Forces
+
+- **Agent training distribution vs. organizational standards.** Agents write code based on training averages. Without explicit standards, agent output varies in style and quality.
+- **Standard overhead vs. consistency benefit.** Maintaining code standards documents requires ongoing effort. But the cost of inconsistent agent-generated code compounds in maintenance and review.
+- **Human-oriented vs. agent-oriented standards.** Traditional standards assume human readers who can interpret guidelines. Agent-oriented standards must be precise enough to function as skill source material.
+- **Adoption friction vs. quality improvement.** Integrating standards into the development workflow requires tool changes. But once integrated, every agent execution benefits.
+
+---
+
+## The Solution
 
 ### Code Standards as Agent Skills
 
@@ -83,6 +92,17 @@ Code standards drift when maintained inconsistently. Some specific risks:
 **Adding without pruning.** Standards grow through incident response — "add a rule to prevent this" — but rarely shrink. After a few years, some rules are obsolete (they applied to a library you no longer use) and others are contradicted by newer rules. Quarterly review should remove obsolete rules, not just add new ones.
 
 **Standard/codebase divergence.** The standard says one thing; most of the existing code does another. The agent reads both and averages them. Decide: update the codebase to match the standard, or update the standard to match the codebase. Never leave the divergence unresolved — it is a permanent source of inconsistent agent output.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Agent output is consistent and reviewable.** When agents load code standards as skills, their output converges on the organization's expectations.
+- **Standards become agent skill source material.** Code standards documents feed directly into agent skills, closing the loop between human guidance and agent execution.
+- **Review burden decreases over time.** As agents consistently follow standards, code review can focus on logic and intent rather than style and convention.
+- **New pattern adoption flows through standards.** When the organization adopts a new pattern, updating the standard propagates the change to all future agent output.
 
 ---
 

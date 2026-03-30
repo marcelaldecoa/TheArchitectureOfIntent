@@ -30,7 +30,16 @@ Two systems are both Executors: a CI/CD pipeline that runs tests and a financial
 
 ---
 
-## The Resolution
+## Forces
+
+- **Category vs. detail.** The archetype names the kind of system, but two systems of the same type can differ drastically in their oversight requirements. Yet specifying every system from first principles recreates the classification problem at every decision point.
+- **Standardization vs. customization.** Systems need enough behavioral similarity that the archetype label carries meaning. Yet every real system differs in risk, scope, and consequence.
+- **Expressiveness vs. learnability.** Four dimensions can express the nuance needed to distinguish one Executor from another. Adding more multiplies complexity; removing dimensions loses important distinctions.
+- **Metric-driven vs. judgment-based.** Dimensions should be assessable by analyzing the system itself. Yet some dimensions require subjective assessment. The framework must accommodate both.
+
+---
+
+## The Solution
 
 ### The Four Dimensions
 
@@ -158,6 +167,17 @@ The four dimensions are not just descriptive — they are diagnostic. When revie
 **Reversibility check:** For each action the system can take, has the reversibility been assessed? For irreversible actions: is there a human approval gate explicitly in the spec?
 
 A spec that fails any of these checks is not ready for agent execution.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Governance profiles become diagnostic.** The four dimensions make it visible when a system is under-governed or over-governed. Mismatch becomes discussable because the dimensions are explicit.
+- **Constraints flow from structure.** Once a system's dimensions are established, the required constraints follow. The spec's constraint density can be calibrated to the dimensions.
+- **Risk is owned explicitly.** By assessing all four dimensions, the organization can no longer ignore risk quietly.
+- **Evolution becomes checkable.** When a system's dimensions change, the change is visible and auditable.
 
 ---
 

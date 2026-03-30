@@ -24,7 +24,15 @@ These failures look, from the outside, like "the agent did the wrong thing." The
 
 ---
 
-## The Resolution
+## Forces
+
+- **Tool naming precision vs. agent comprehension.** Precise tool names prevent misuse. But naming requires predicting how agents will interpret semantic cues from the tool name.
+- **Description completeness vs. description conciseness.** Agents need complete descriptions to use tools correctly. But lengthy descriptions consume context window and slow selection.
+- **Idempotency investment vs. reliability guarantee.** Making tools idempotent requires design effort. But non-idempotent tools are dangerous when agents retry failed operations.
+
+---
+
+## The Solution
 
 ### The Four Elements of a Good Tool Interface
 
@@ -122,6 +130,16 @@ This example demonstrates: verb-noun naming, a behavioral contract description, 
 Tool definitions should be version-controlled, peer-reviewed, and treated with the same discipline as API contracts — because that is exactly what they are. A tool definition is the contract between the tool author and the agent ecosystem. Breaking changes should be versioned; descriptions should be reviewed for accuracy; schemas should be validated against actual service behavior.
 
 In organizations with mature agent practices, tool schemas sit in a central registry, reviewed alongside other API changes, and referenced from specs by version. The spec's Section 12 does not say "use the payments tool" — it says "use `create_payment_intent` v2.1 with read-back authorization only."
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Tool descriptions become behavioral contracts.** Four-element structure (name, description, input schema, output schema) creates a machine-readable contract.
+- **Idempotent tools enable safe retry.** Agents can retry failed tool calls without risk of duplicate effects.
+- **Anti-patterns are named and preventable.** Overly broad tools, hidden side effects, and ambiguous descriptions become recognizable failures.
 
 ---
 

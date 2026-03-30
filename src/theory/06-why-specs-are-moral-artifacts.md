@@ -32,7 +32,15 @@ This is the mistake this pattern addresses.
 
 ---
 
-## The Resolution
+## Forces
+
+- **Technical authority vs. ethical responsibility gap.** Engineers are empowered to write specs but may lack domain knowledge in law, ethics, and policy; yet agent execution at scale means spec authors' decisions propagate consequences that were previously buffered by human judgment.
+- **Specification underspecification vs. agent fidelity.** Implicit constraints that seem "obvious" to the author are not obvious to agents; the gap between what was assumed and what was specified gets filled with probability across millions of executions.
+- **Scale invisibility vs. moral consequence multiplication.** A problem a human developer might have noticed in 10 cases gets executed — correctly but wrongly — 10 million times before discovery; the agent's fidelity and scale make moral gaps in specifications catastrophic.
+
+---
+
+## The Solution
 
 ### What Makes a Spec Moral (or Amoral)
 
@@ -114,6 +122,16 @@ Not everyone should be empowered to write specifications for all classes of syst
 This is not because some engineers are less skilled. It is because some specifications encode commitments that require domain knowledge — legal, ethical, business — that a technical practitioner may not possess. Responsibility requires context. Authority should follow responsibility.
 
 The [Archetype system](../architecture/01-archetypes-as-constitutional-law.md) addresses this by pre-committing, at the level of archetype definition (controlled by principals), the most consequential decisions about how a class of system will treat the people it affects. Individual spec authors then operate within that pre-committed frame — with latitude for implementation, but within ethical boundaries already established.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Specifications become explicit moral commitments.** Every spec now encodes, through constraints, scope, success criteria, and omissions, a set of commitments about how people affected by the system will be treated — making ethical accountability design-reviewable.
+- **Moral responsibility scales with system power.** As agent capability increases, the responsibility of the spec author for the ethical dimensions of their specification increases proportionally.
+- **Archetype pre-commitment distributes moral authority appropriately.** Principals with domain authority pre-commit the most consequential ethical boundaries at the archetype level; individual spec authors then operate with appropriate latitude within those guardrails.
 
 ---
 

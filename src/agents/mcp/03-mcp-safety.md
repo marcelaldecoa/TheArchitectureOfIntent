@@ -30,7 +30,15 @@ Three categories of safety failure are most common in MCP deployments:
 
 ---
 
-## The Resolution
+## Forces
+
+- **Tool availability vs. authorization control.** Agents need tools to be effective. But tool access must be controlled to prevent unauthorized actions.
+- **Session-time authorization vs. call-time authorization.** Authorizing at session start is simpler. But stale grants accumulate risk.
+- **Audit overhead vs. audit value.** Logging every tool call creates storage and processing overhead. But audit logs are the only way to reconstruct what happened during an incident.
+
+---
+
+## The Solution
 
 ### Authorization at the Tool Server
 
@@ -103,6 +111,16 @@ The confirmation pattern:
 4. If confirmed, agent calls the tool; if rejected, agent escalates or stops
 
 This pattern should be declared in the spec (Section 8: Oversight and Escalation) and encoded in the tool's authorization model (the tool server checks for a confirmation token before executing).
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Authorization connects to governance.** The spec_id field in audit logs links every tool call back to the spec that authorized it.
+- **Prompt injection becomes detectable.** Behavioral monitoring and context separation reduce the attack surface.
+- **Confirmation patterns protect irreversible operations.** Human-in-the-loop confirmation for high-consequence tool calls creates a safety net.
 
 ---
 

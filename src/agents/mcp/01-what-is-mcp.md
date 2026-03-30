@@ -26,7 +26,15 @@ This is the N×M integration problem: N agents times M tools, each requiring a c
 
 ---
 
-## The Resolution
+## Forces
+
+- **Integration variety vs. standardization benefit.** Each tool provider has its own API surface. Without standardization, every agent-tool pair requires custom integration.
+- **Protocol simplicity vs. capability richness.** A simple protocol is easy to adopt. A rich protocol captures more capability. MCP balances three primitives (tools, resources, prompts).
+- **Dynamic discovery vs. static authorization.** MCP enables runtime tool discovery, which is powerful. But dynamic discovery can conflict with spec-declared capability boundaries.
+
+---
+
+## The Solution
 
 ### What MCP Is
 
@@ -105,6 +113,16 @@ MCP does not make agents smarter. It does not eliminate the need for good specif
 - Allows tool capabilities to be shared across agent frameworks
 
 This is infrastructure work — the kind that pays compounding returns over time as the tool ecosystem grows and cross-framework reuse becomes the default rather than the exception.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Tool integration becomes pluggable.** Agents connect to tools through a standard protocol rather than custom integrations.
+- **Tool capability is discoverable.** MCP servers describe their capabilities in a machine-readable format.
+- **Spec governance applies to MCP tools.** Tool manifests in specs declare which MCP servers are authorized, maintaining the authorization model.
 
 ---
 

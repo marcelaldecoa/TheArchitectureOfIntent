@@ -36,7 +36,16 @@ The secondary problem is review automation confusion. Many teams assume that bec
 
 ---
 
-## The Resolution
+## Forces
+
+- **Intent review vs. output review.** A gap caught at intent review stage costs one spec revision. The same gap caught at output review costs revision plus re-execution. The same gap caught in production costs all of the above plus incident response.
+- **Review investment vs. review payoff.** Intent review requires upfront investment from reviewers who could be writing their own specs. The payoff is reduced downstream rework for the whole team.
+- **Individual review vs. team ritual.** An individual reviewing their own spec catches some errors. A team reviewing each other's specs catches patterns that no individual sees.
+- **Code review inertia vs. intent review adoption.** Organizations deeply invested in code review may resist adding intent review. Yet intent review is higher leverage per hour invested.
+
+---
+
+## The Solution
 
 ### Two Review Disciplines, Not One
 
@@ -115,6 +124,17 @@ The same gap caught at code review stage costs all of the above plus code invest
 The same gap caught in production costs all of the above plus incident response.
 
 The value of intent review is not that it replaces other reviews. It is that it catches the class of failure that no other review can catch — intent failures — at the cheapest possible point.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **The highest-leverage review happens before execution.** Intent review catches gaps at the cheapest point in the lifecycle.
+- **Output review becomes objective.** When the spec exists, output review asks 'did the agent follow the spec?' rather than 'do I like this output?'
+- **A spec review workshop creates team learning.** Monthly review of real specs builds shared understanding of what good specification looks like.
+- **Code review becomes spec-informed.** Code review shifts from 'is this correct?' to 'does this match the spec?'
 
 ---
 

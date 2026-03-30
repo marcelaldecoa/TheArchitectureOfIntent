@@ -30,7 +30,16 @@ The discipline of failure analysis in agent systems is about correctly identifyi
 
 ---
 
-## The Resolution
+## Forces
+
+- **Attribution instinct vs. architectural diagnosis.** When agents fail, the instinct is to blame the model. But architectural failures (spec gaps, tool gaps, oversight gaps) are more common and more fixable.
+- **Quick correction vs. root cause analysis.** Patching the output is faster than diagnosing the failure category. But patching without diagnosis means the same failure will recur.
+- **Model limitations vs. specification gaps.** Some failures are genuinely model-level. Others look model-level but are actually spec gaps. Differentiating requires systematic diagnosis.
+- **Individual failure vs. compounding failure.** A single agent failure may be trivial. But failures that compound across steps or agents produce dramatically wrong outcomes.
+
+---
+
+## The Solution
 
 ### The Six Failure Categories
 
@@ -179,6 +188,17 @@ This is the compounding return on SDD: every diagnosed failure improves a spec o
 Compare this to a conversational agent workflow: failures in that context are addressed in the conversation ("try again, but this time..."), and the correction lives only in the conversation history. It does not propagate to future work. The organization forgives the failure without learning from it.
 
 The Spec Gap Log, the skill review cycle, and the checkpoint adjustment process are the mechanisms by which agent systems turn failure into institutional knowledge. They transform a cost — the failure — into an investment.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Failure analysis becomes a structured discipline.** Six categories with a diagnostic protocol replace ad-hoc blame attribution with systematic root cause identification.
+- **Fixable failures are distinguished from model limitations.** Categories 1-5 are fixable through better specs, tools, scope definitions, or oversight. Category 6 requires model-level responses.
+- **Spec gap logs accumulate organizational learning.** Each diagnosed failure enriches the organization's understanding of what specs need to specify.
+- **Compounding failures become preventable.** By identifying the earliest error in a chain, checkpoint reviews can be placed at the most critical juncture.
 
 ---
 

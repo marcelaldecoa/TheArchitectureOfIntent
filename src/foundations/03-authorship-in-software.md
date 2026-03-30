@@ -26,7 +26,16 @@ When the system causes harm, who authored that harm?
 
 ---
 
-## The Resolution
+## Forces
+
+- **Keystroke ownership vs. outcome accountability.** Code can be traced to a generator; consequences cannot be traced the same way when authored through specification rather than direct implementation.
+- **Distance expansion vs. responsibility concentration.** The more powerful the delegation, the greater the moral exposure of the author, yet the further they are from actual code.
+- **Intent clarity vs. emergent behavior.** Specifications guide execution, but what a system actually does may diverge from what was intended due to unforeseen interactions and edge cases.
+- **Delegation benefits vs. authorship burden.** Agents enable faster execution and broader reach, but only at the cost of the author taking full responsibility for the system's consequences.
+
+---
+
+## The Solution
 
 Authorship in software has always been about something deeper than keystroke ownership. To author a system is to **originate the intent that the system expresses and to be accountable for its consequences**.
 
@@ -59,6 +68,17 @@ This is why [Human Oversight Models](../agents/06-human-oversight-models.md) is 
 ### 4. Authorship Does Not Require Proximity
 
 A specification written six months ago by an engineer who has since left the team is still an expression of authorship. The author is accountable for what the spec said. This has implications for [Living Specs and Feedback Loops](../sdd/06-living-specs.md) — specs cannot be abandoned any more than software can be abandoned.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Specifications become moral documents.** Constraints in a spec express commitments to users and stakeholders; authorship means standing behind those commitments.
+- **Oversight becomes irreducible.** Authorship is only meaningful when paired with active validation; an author without visibility into execution has abandoned responsibility.
+- **Authorship persists across time.** Specs live longer than individual engineers on teams, making spec maintenance and evolution part of ongoing authorship.
+- **Governance structures protect authorship.** Who is allowed to author specifications, approve constraints, and validate outcomes becomes a governance question, not a technical one.
 
 ---
 

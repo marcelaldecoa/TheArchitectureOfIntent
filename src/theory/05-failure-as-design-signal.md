@@ -30,7 +30,15 @@ Worse: in systems where agents execute continuously, an undiagnosed intent error
 
 ---
 
-## The Resolution
+## Forces
+
+- **Quick fixing vs. diagnostic depth.** The immediate response to failure is correction — patch the code and move on; but intent failures require upstream spec analysis, which is slower and demands admitting incomplete thinking.
+- **Probabilistic assumption vs. deterministic execution.** In traditional development, many failures were implementation errors; in agent-mediated systems, many failures are intent gaps that the agent faithfully executes.
+- **Machine speed vs. human diagnosis cadence.** Agents execute continuously; if failures are not diagnosed at the right level, they compound at machine scale before anyone detects a pattern.
+
+---
+
+## The Solution
 
 ### The Four Categories of Agent System Failure
 
@@ -148,6 +156,16 @@ The most common spec failure modes:
 - **The Frozen Context** — A constraint in the spec was true at time of writing but is no longer true; the system continues to enforce a rule that no longer applies
 
 Each of these is a recurring design problem with a predictable resolution — which is exactly what a pattern is.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Failures become diagnostic data, not just corrective events.** A categorization protocol reveals whether each failure originated in intent, context, constraints, or execution; this diagnosis determines where to fix.
+- **Institutional knowledge accumulates in spec gap logs.** Each failure reveals something the specification assumed but did not express; a failure archaeology practice captures these gaps, making tacit knowledge explicit.
+- **Specs improve systematically through failure-driven evolution.** Rather than accumulating legacy debt, each failure contributes a constraint addition or clarification — the living spec becomes stronger over time.
 
 ---
 

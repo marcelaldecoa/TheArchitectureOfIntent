@@ -28,7 +28,16 @@ Without architecture that functions as **law** — as the kind of pre-committed 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Cultural transmission vs. distributed execution.** Informal convention cannot survive when decisions are made continuously by systems with no institutional memory.
+- **Tight feedback loops vs. broad decision distribution.** In slow systems, architectural drift is caught quickly by humans; in fast systems, drift is invisible until costs become astronomical.
+- **Human memory vs. institutional persistence.** Architectural decisions made by experienced practitioners evaporate when those practitioners leave; decisions made only in code or culture do not survive agent-mediated development.
+- **Informal guidance vs. automated enforcement.** Design patterns require interpretation and judgment; archetypes and constraints work whether or not anyone remembers to apply them.
+
+---
+
+## The Solution
 
 Architecture must become law in a specific sense: it must be **encoded, consistent, and automatically enforceable** rather than advisory and culture-dependent.
 
@@ -69,6 +78,17 @@ The result, when done well, is a system where:
 - Edge cases surface to human oversight rather than being resolved probabilistically
 - The architectural decisions of senior practitioners persist across agent generations
 - New systems start from a known position rather than from scratch
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Architecture becomes enforceable through archetypes and constraints.** Constitutional frames encode what was previously expressed through culture, making decisions durable and automatically applicable.
+- **Specifications function as institutional memory.** Architectural decisions written in specs survive team changes and agent generations; they are not dependent on who is in the room.
+- **Agents can act with speed and coherence.** Within well-designed archetypes, agents make locally optimal decisions that preserve system-wide coherence.
+- **Decision quality becomes the load-bearing variable.** When code is cheap, the decisions encoded in specs and archetypes determine whether the system remains coherent as it scales.
 
 ---
 

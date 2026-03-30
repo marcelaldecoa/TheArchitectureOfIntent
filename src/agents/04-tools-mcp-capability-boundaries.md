@@ -26,7 +26,16 @@ The problem is not the tools. It is the assumption that capability and authoriza
 
 ---
 
-## The Resolution
+## Forces
+
+- **Capability abundance vs. authorization discipline.** Agents can technically access many tools. The principle of least capability requires restricting access to only what the task needs.
+- **Integration variety vs. protocol standardization.** Each tool has its own API interface. Without a standard protocol, N agents connecting to M tools creates N times M integration complexity.
+- **Tool power vs. effect class risk.** Read-only tools are safe. Tools that create, modify, or delete state carry escalating risk. The authorization model must distinguish effect classes.
+- **Specification completeness vs. tool discovery.** The spec must declare what tools are available. Dynamic tool discovery undermines the authorization model.
+
+---
+
+## The Solution
 
 ### What a Tool Is
 
@@ -103,6 +112,17 @@ Section 12 of the canonical spec template is the authoritative declaration of wh
 - Any human-confirmation requirements before tools with irreversible effects are called
 
 The NOT-authorized list in Section 12 deserves special attention. An agent with a write tool and no explicit prohibition will write. An agent with a send tool and no explicit prohibition will send. The absence of prohibition is not restriction — the spec must actively declare what the agent may not do, not just what it may do.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Capability boundaries are declared, not discovered.** The spec's tool manifest makes visible exactly what the agent can do, enabling pre-deployment review.
+- **MCP standardizes tool integration.** A single protocol eliminates N times M integration complexity.
+- **Effect classes drive authorization levels.** Read operations are authorized broadly; delete operations require explicit pre-authorization.
+- **Tool descriptions become behavioral contracts.** Well-described tools enable agents to use them correctly without runtime experimentation.
 
 ---
 

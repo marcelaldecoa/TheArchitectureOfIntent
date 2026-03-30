@@ -34,7 +34,16 @@ In agent-mediated development, drift happens faster and more quietly. An agent g
 
 ---
 
-## The Resolution
+## Forces
+
+- **Preserving intent vs. enabling scale.** Individual judgment is reliable at small scale but does not distribute. Scaling requires encoding judgment as durable rules that operate independently of whether the original architects are in the room.
+- **Stability vs. responsiveness.** Systems need to respond to new requirements, but every small locally-reasonable decision can compound into architectural drift. Pre-commitment constrains flexibility to protect coherence.
+- **Tacit knowledge vs. transferable authority.** Expert practitioners carry mental models of why systems work; junior engineers and agents lack this context. Making judgment explicit through constitutionalized rules makes authority transferable.
+- **Technical convenience vs. categorical integrity.** At any point, a locally optimal technical choice might cross an architectural boundary. Without constitutional constraint, these choices accumulate until the system has drifted into a different category than it was designed to be.
+
+---
+
+## The Solution
 
 ### What a Constitution Does
 
@@ -114,6 +123,17 @@ Archetypes and specs are different artifacts with different owners and different
 A spec that attempts to authorize behavior that violates the governing archetype is constitutionally invalid. This is not a technical constraint — it is an organizational one. The archetype represents decisions made by those with the authority to make them. The spec operates within that frame.
 
 In practice, this relationship means that the archetype selection is the first decision in any spec development process — before any behavioral specification is written. Getting the category right is more important than getting any specific behavior right, because all specific behaviors must remain consistent with the category.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Durable intent at agent speed.** The original frame of a system persists through agent-mediated execution. Individual decisions that would otherwise drift the system are bound by pre-committed category constraints.
+- **Authority distributes without ambiguity.** Different people can make different system decisions without requiring consensus or architectural review, because the constitutional boundaries establish what kinds of decisions each person is authorized to make.
+- **Evolution becomes visible.** When a system must evolve beyond its original archetype, the change is deliberate — it goes through the same governance process that created the original classification, rather than accumulating silently.
+- **Judgment becomes code.** The accumulated judgment of experienced architects that was previously tacit and lost to team turnover is now encoded in archetype specifications — persistent, teachable, and enforceable.
 
 ---
 

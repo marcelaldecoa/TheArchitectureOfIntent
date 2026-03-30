@@ -28,7 +28,16 @@ This is not a reduction in skill. It is a different cognitive mode, and it does 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Identity attachment vs. role evolution.** Engineers who have built careers on coding excellence may experience the shift to specification as a loss of status, even when it is a promotion in responsibility.
+- **Immediate productivity vs. long-term capability.** Writing specs feels slower than writing code in the short term. The payoff (reduced rework, higher agent reliability) is back-loaded.
+- **Individual skill vs. organizational support.** A skilled spec writer operating in an organization that rewards code production will be demotivated.
+- **Teaching difficulty vs. practice requirement.** Spec writing improves through feedback on real specs. Reading about it is insufficient.
+
+---
+
+## The Solution
 
 ### The Identity Shift
 
@@ -89,6 +98,17 @@ One real barrier to this transition is organizational legitimacy. If the enginee
 This is a leadership problem, not just an individual problem. Senior engineers make this transition more readily when the organization has explicitly recognized intent architecture as a valued role — when "wrote the spec that made three months of agent work possible" is acknowledged as a contribution, when spec quality is measured and matters for careers, and when the team's metrics reflect the value of getting it right the first time rather than the speed of getting to the first attempt.
 
 Part of Part VII's job is giving engineering leaders the language to make that recognition explicit. The transition from senior engineer to intent architect is a development path, not a demotion — and organizations that communicate this clearly retain the senior engineers most capable of making it.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **A named transition path exists.** Engineers can see the progression from spec writing to spec review to failure diagnosis to system-level architecture.
+- **Day-to-day activities are defined.** The intent architect role has concrete daily activities rather than abstract responsibilities.
+- **Organizational legitimacy is achievable.** When spec writing is explicitly valued and promoted, the transition becomes attractive rather than threatening.
+- **Mentorship becomes structured.** Senior intent architects review junior engineers' specs, creating the same feedback loop that code review provided.
 
 ---
 

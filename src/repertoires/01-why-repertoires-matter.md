@@ -35,7 +35,16 @@ The absent repertoire is not just a speed problem. It is a consistency problem. 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Individual learning vs. organizational leverage.** Each team that spec-writes from scratch repeats discoveries that other teams have already made. Yet sharing requires abstraction that takes effort.
+- **Best practices vs. authorized patterns.** Best practices are advisory and frequently ignored. Authorized repertoire components are organizational decisions that agents and practitioners follow.
+- **Speed of adoption vs. quality of components.** Teams want to start quickly. High-quality repertoire components require careful design and testing. The tension between speed and quality applies to repertoires as it does to code.
+- **Stability vs. evolution.** Repertoire components must be stable enough to be relied upon. Yet they must evolve as organizational understanding deepens.
+
+---
+
+## The Solution
 
 ### What a Repertoire Is
 
@@ -88,6 +97,17 @@ A practitioner who blindly applies a spec template without reading it is not app
 A repertoire does not replace skills development. A junior practitioner working from excellent templates produces better work than they would from scratch — but they still need to understand the architecture to know which template is appropriate, what constraints mean, and how to evaluate the output.
 
 The repertoire is the accumulated organizational intelligence about how this class of work is done well. Applying that intelligence well still requires a practitioner who understands the work.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **New teams start from a proven baseline.** Archetypes, templates, constraint libraries, and code standards are pre-authorized starting points rather than blank-page exercises.
+- **Consistency improves across teams.** When multiple teams use the same repertoire, their specs, constraints, and code standards converge without requiring central enforcement.
+- **The repertoire flywheel compounds.** Practitioners write, repertoire artifacts accumulate, skills encode them for agents, agents execute consistently, quality feedback improves the repertoire.
+- **Knowledge survives team changes.** When practitioners leave, their codified knowledge remains in the repertoire.
 
 ---
 

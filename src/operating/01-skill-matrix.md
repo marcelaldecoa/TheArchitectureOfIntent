@@ -30,7 +30,16 @@ At the same time, organizations that stop developing technical depth because "th
 
 ---
 
-## The Resolution
+## Forces
+
+- **Traditional skill valuation vs. new value creation.** Organizations reward implementation speed and technical depth. The skills that now matter most (intent articulation, spec review, failure diagnosis) have no established career path.
+- **Proxy measurement vs. actual value.** A junior engineer with a well-configured agent can produce more code per day than a senior engineer without one. If organizations interpret this as junior engineers being more productive, they are measuring proxy rather than value.
+- **Skill development vs. skill deployment.** Learning to write good specifications requires practice and feedback. But teams under delivery pressure default to the faster path of giving agents informal instructions.
+- **Individual competence vs. organizational capability.** One skilled spec writer can be highly productive. But organizational capability requires multiple people with these skills at different levels.
+
+---
+
+## The Solution
 
 ### The Skill Matrix
 
@@ -90,6 +99,17 @@ The most important observation: **the junior-to-mid transition is no longer prim
 **For development:** The most leveraged investment in a team's agent capability is improving spec quality. Spec review workshops (reviewing real specs together, dissecting gaps) develop the validation skill faster than any individual practice. The Spec Gap Log functions as a team skill development tool when managed visibly.
 
 **For evaluation:** Performance reviews that measure PR volume and code production are measuring the wrong things. Reviews should assess spec quality over time (gap rate decreasing?), validation accuracy (proportion of valid outputs accepted first-pass?), and architectural contribution (is this person raising the quality of the team's constraint libraries and archetype definitions?).
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Engineering value is redirected, not eliminated.** Technical skill applies at the specification level rather than the implementation level.
+- **Hiring and promotion criteria can evolve.** With a named skill matrix, organizations can align incentives with the actual value-creation activities.
+- **Career paths include intent architecture.** The path from senior engineer to intent architect is now a named transition with defined competencies.
+- **Measurement shifts to specification quality.** Spec gap rate, first-pass validation rate, and cost-per-correct-output replace lines-of-code as performance indicators.
 
 ---
 

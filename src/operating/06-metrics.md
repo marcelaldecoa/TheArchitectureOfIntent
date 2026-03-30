@@ -32,7 +32,16 @@ The measurement framework that follows distinguishes between performance metrics
 
 ---
 
-## The Resolution
+## Forces
+
+- **Proxy metrics vs. signal metrics.** Lines of code, stories completed, and agent utilization rate are proxies. Spec gap rate, first-pass validation rate, and cost-per-correct-output are signals.
+- **Health metrics vs. performance metrics.** A growing spec gap log is healthy (the team is learning). A growing spec gap rate is unhealthy (specs are getting worse). Conflating these produces wrong conclusions.
+- **Short-term measurement vs. long-term improvement.** Weekly performance metrics create pressure to game them. Quarterly rolling averages reveal genuine improvement.
+- **Individual accountability vs. system improvement.** Metrics that blame individuals discourage reporting. Metrics that improve the system encourage learning.
+
+---
+
+## The Solution
 
 ### The Anti-Metrics: What Not to Measure
 
@@ -177,6 +186,17 @@ Metrics should drive resource allocation decisions, not just reporting. The corr
 The feedback loop: **metrics → gap log analysis → constraint library → spec quality → metrics**
 
 A team that uses metrics only for retrospective reporting but does not close the loop to repertoire investment is measuring without learning. The point of measurement in this system is to identify where the investment in spec infrastructure will produce the greatest improvement in execution quality.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Four signal metrics replace proxy counting.** Spec gap rate, first-pass validation rate, spec-attributed rework rate, and cost-per-correct-output provide actionable signals.
+- **Health and performance are distinguished.** Teams understand that a growing gap log is learning, not failure.
+- **Metrics connect to repertoire investment.** High gap rates in a domain signal that constraint libraries need investment, not that engineers are failing.
+- **The system is self-improving.** Metrics feedback into spec quality, which improves agent output, which improves metrics.
 
 ---
 

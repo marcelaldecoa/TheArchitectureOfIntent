@@ -24,7 +24,16 @@ The catalog solves this by making the most common archetype profiles decision-re
 
 ---
 
-## The Resolution
+## Forces
+
+- **Completeness vs. usability.** A catalog that covers every archetype variant is comprehensive but overwhelming. A catalog that covers only the five base archetypes is accessible but insufficient for real deployment.
+- **Standardization vs. specialization.** Standard profiles enable consistency. But every organization has domain-specific requirements that standard profiles cannot capture.
+- **Catalog proliferation vs. catalog discipline.** Making it easy to add variants encourages growth. Unconstrained growth produces an incoherent catalog.
+- **Reference-quality vs. starting-point quality.** Each profile must be good enough to use directly, not just good enough to inspire a custom version.
+
+---
+
+## The Solution
 
 ### How to Use This Catalog
 
@@ -193,6 +202,17 @@ To add a catalog entry, the pattern is:
 3. Extract the profile: dimension values, constraints, oversight configuration
 4. Peer-review the profile
 5. Add it to the catalog with provenance (team, date, context)
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Archetype selection becomes lookup, not invention.** Teams select from pre-built profiles rather than reasoning from first principles each time.
+- **Governance is pre-authorized.** Each profile carries its governance requirements. Selecting a profile selects its governance automatically.
+- **Extension follows a governed process.** Domain-specific variants extend the catalog through an explicit process rather than ad-hoc modification.
+- **Consistency compounds across the organization.** Multiple deployments of the same profile produce predictably similar governance structures.
 
 ---
 

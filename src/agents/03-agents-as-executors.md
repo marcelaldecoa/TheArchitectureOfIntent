@@ -34,7 +34,16 @@ The conversational model creates several structural problems:
 
 ---
 
-## The Resolution
+## Forces
+
+- **New hire analogy vs. executor model.** The 'brilliant new hire' framing implies agents will develop judgment and initiative. The executor model is more accurate: agents execute with excellence within defined scope, not with independent objectives.
+- **Judgment expectation vs. literal execution.** Teams expect agents to infer what is needed from context. Agents execute the literal spec. The gap produces failures that look like agent incompetence but are specification gaps.
+- **Delegation speed vs. specification investment.** Quick delegation (a brief prompt) feels efficient. But the downstream rework from under-specification often exceeds the time saved.
+- **Conversational correction vs. spec correction.** It is tempting to fix agent output through conversation. But conversation produces a one-time fix; spec correction produces a durable fix.
+
+---
+
+## The Solution
 
 ### The Executor Model
 
@@ -111,6 +120,17 @@ The executor model has direct consequences for spec quality:
 **Include what the agent should *not* do.** Executors are bounded by their instructions. Without explicit prohibitions, an agent operating in the "reasonable interpretation" space will expand. The NOT-authorized section of a spec is not a formality — it is the fence.
 
 **Test the spec before you run it.** Ask: if a competent person who had never spoken with me executed exactly this spec, would they produce the output I want? If the answer is no, the spec is not ready.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Feedback loops address root causes.** When output is wrong, the diagnostic question is 'which kind of failure?' directing the fix to the correct layer.
+- **Spec debt becomes visible.** Patching output without updating the spec creates spec debt that accumulates. Naming this makes it preventable.
+- **Agent selection separates from governance design.** The agent is interchangeable; the spec is persistent. Better agents execute the same spec more reliably.
+- **Model-level limitations are acknowledged.** When the spec is correct and the agent still fails, the failure is recognized as model-level, preventing misattribution.
 
 ---
 

@@ -26,7 +26,16 @@ The five archetypes solve this by naming the recurring, stable forms — the cat
 
 ---
 
-## The Resolution
+## Forces
+
+- **Specificity vs. completeness.** A single archetype framework cannot account for every variation without becoming too granular to be useful. Yet too few categories leave genuine differences in risk and governance unmarked.
+- **Stability vs. emergence.** The framework should be stable enough to guide decisions across organizations and time; yet if real systems emerge that don't fit the five archetypes, the framework should be extended rather than forced.
+- **Authority clarity vs. discretion.** Some systems need significant autonomy while others should be highly constrained. Each archetype must give enough discretion to be useful while remaining governable.
+- **Reusability vs. context-sensitivity.** The archetypes should be recognizable across multiple systems. Yet each system is unique. The framework must allow both consistency and specialization.
+
+---
+
+## The Solution
 
 ### How the Five Archetypes Were Derived
 
@@ -139,6 +148,17 @@ The five archetypes are not an arbitrary taxonomy. They represent the stable poi
 The five are also stable under the principle of minimum necessary power: they represent the smallest number of categories that distinguish systems with genuinely different risk profiles, oversight requirements, and design constraints.
 
 The formal argument for exhaustiveness: the two axes — primary act and discretion scope — partition the design space because every agent system must have a primary act (what it does) and a discretion scope (how much latitude it has in doing it). The five archetypes occupy distinct regions in this space: Advisor (inform / narrow), Guardian (enforce / narrow), Executor (execute / bounded), Synthesizer (compose / moderate), and Orchestrator (coordinate / broad). Additional archetypes would either overlap with one of these five (failing the "genuinely different governance" test) or represent compositions of them (treated in [Composing Archetypes](05-composing-archetypes.md)). This is not a claim of mathematical proof — it is a design claim validated against observed systems. If a genuinely new archetype emerges that requires a governance model none of the five can provide, the taxonomy should be extended; that extension would be a significant event in the framework's evolution.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Shared vocabulary reduces miscalibration.** With named archetypes, discussions about what kind of system is being built become precise. Miscalibration — advisors that drift into executor territory — becomes visible because the category is explicit.
+- **Governance inherits from category choice.** Once an archetype is selected, the minimum oversight model, risk profile, and authority boundaries follow. Teams do not reinvent governance from scratch for each system.
+- **Risk profiles are transparent.** Each archetype carries a canonical risk posture. Teams can reason about whether a particular system matches the risk the organization is accepting, before implementation begins.
+- **Composition becomes deliberate.** When multiple archetypes must be combined in one system, the combination is recognized and named as a design decision, rather than emerging accidentally from feature creep.
 
 ---
 

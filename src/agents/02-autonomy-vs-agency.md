@@ -38,7 +38,16 @@ Again, four different requirements — each with distinct implications for capab
 
 ---
 
-## The Resolution
+## Forces
+
+- **Operational independence vs. decision-making discretion.** A system can run without human intervention yet exercise no judgment; or it can make consequential decisions while requiring human initiation. The two dimensions are independent.
+- **Escalation as failure vs. escalation as design.** Teams that treat agent escalation as failure create pressure to over-automate. Treating escalation as designed behavior creates safe boundaries.
+- **Spectrum granularity vs. decision simplicity.** A six-level autonomy spectrum captures real-world variation but requires teams to assign precise levels to their systems.
+- **Uniformity vs. per-task calibration.** A single autonomy level for the whole system is simpler to govern. Per-task calibration is more precise but creates complexity.
+
+---
+
+## The Solution
 
 ### Operational Autonomy: A Technical Property
 
@@ -92,6 +101,17 @@ When you separate operational autonomy from genuine agency, three things become 
 **Escalation is not a failure.** An agent that pauses and asks for human input is not broken — it is working correctly. The escalation trigger is part of the design. If an agent never escalates, either it has perfect specification and perfect execution, or it is silently handling things it should not be handling alone.
 
 **The principal-agent relationship is strict.** In economics, a principal-agent problem arises when an agent has different information or interests than the principal who delegated to them. In AI agent systems, the agent has no interests — but it can have misaligned specifications. The "agency problem" in AI is always a specification problem. The fix is always a specification fix.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Autonomy becomes configurable.** Systems can be deployed at different autonomy levels for different circumstances without redesigning the agent.
+- **Escalation becomes a first-class design element.** When and how an agent escalates is specified in advance rather than emerging from failures.
+- **Agency and autonomy are tuned independently.** High autonomy with low agency is safe; high agency with high autonomy requires maximum oversight. The combinations become explicit.
+- **Teams gain a vocabulary for deployment decisions.** Discussions about 'how autonomous should this be' become precise and actionable.
 
 ---
 

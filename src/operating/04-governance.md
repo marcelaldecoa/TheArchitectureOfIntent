@@ -30,7 +30,16 @@ Effective governance is selective and structural: it controls the decisions that
 
 ---
 
-## The Resolution
+## Forces
+
+- **Governance overhead vs. governance necessity.** Every governance activity consumes human attention. Yet ungoverned agent systems drift, compound errors, and lose architectural coherence.
+- **Heavyweight process vs. lightweight chaos.** Full bureaucracy creates compliance theater. No process creates invisible risk. The framework must be proportional.
+- **Automated efficiency vs. human judgment.** Some governance activities can be automated (structural validation, monitoring). Others require human judgment (spec quality, archetype selection).
+- **Consistency vs. context-sensitivity.** Standard governance cadences apply across teams. Yet different teams have different risk profiles and deployment scales.
+
+---
+
+## The Solution
 
 ### The Four Governance Layers
 
@@ -118,6 +127,17 @@ The total monthly governance overhead for a five-person team operating at modera
 **Governance by department.** A central AI governance team reviews and approves all agent work across the organization. They have no domain knowledge. They apply uniform treatments to non-uniform risks. They become a bottleneck that teams route around. The remedy is delegated governance with clear authority matrices — the central team governs the framework; domain teams govern the execution within the framework.
 
 **The post-incident overreaction.** After a significant failure, governance becomes comprehensive and heavy. Every execution requires multiple approvals. The cost of operating agents rises until teams stop using them, or use them informally, or transfer liability to a vendor ("the vendor's product, not our agent"). The antidote is proportional response calibrated to the failure's category, not to its emotional intensity.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Governance has a named, bounded overhead.** Teams know the approximate time cost of governance and can plan for it.
+- **Four governance layers create proportional control.** Constitutional, spec approval, execution monitoring, and post-execution validation provide defense in depth without redundancy.
+- **What to automate is explicit.** Structural validation and monitoring are automated. Substantive review remains human. The boundary is named.
+- **Anti-patterns are recognized and preventable.** Approval theater, governance gaps, and governance-by-department are named failures with described remedies.
 
 ---
 
