@@ -136,7 +136,7 @@ Document every failure mode the agent will encounter. An undocumented failure is
 
 ### MCP Cross-Platform Compatibility
 
-MCP is an open standard; adoption varies by platform. Current support status:
+MCP is an open standard; adoption varies by platform. Current support status *(last verified: Q1 2026 — check platform documentation for latest capabilities)*:
 
 | Platform | MCP Tools | MCP Resources | MCP Prompts | Notes |
 |----------|:---------:|:-------------:|:-----------:|-------|

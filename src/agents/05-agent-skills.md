@@ -86,17 +86,17 @@ This skill contains no tools and no task-specific instructions. It contains the 
 
 Agent Skills are an open standard, originated by Anthropic and formalized at [agentskills.io](https://agentskills.io). The standard is deliberately minimal — a `SKILL.md` file with YAML frontmatter is all that is required. This simplicity is intentional: the standard spreads because any team can adopt it without tooling investment.
 
-The standard is now supported by a broad ecosystem:
+As of early 2026, the standard is supported by a growing ecosystem. Specific platform support evolves rapidly; verify current capabilities against each platform's documentation:
 
-| Platform | Skills Location |
-|---------|----------------|
-| GitHub Copilot | `.github/skills/` |
-| Claude / Claude Code | `.claude/skills/` |
-| VS Code Copilot | `.vscode/skills/` |
-| Gemini CLI | `.gemini/skills/` |
-| Spring AI | `.agents/skills/` |
-| Snowflake Cortex | `.cortex/skills/` |
-| Generic (project-level) | `.agents/skills/` |
+| Platform | Skills Location | Status |
+|---------|----------------|--------|
+| GitHub Copilot | `.github/skills/` | Supported |
+| Claude / Claude Code | `.claude/skills/` | Supported |
+| VS Code Copilot | `.vscode/skills/` | Supported |
+| Gemini CLI | `.gemini/skills/` | Supported |
+| Spring AI | `.agents/skills/` | Community adoption |
+| Snowflake Cortex | `.cortex/skills/` | Community adoption |
+| Generic (project-level) | `.agents/skills/` | Convention |
 
 Cross-platform portability is a first-order property of the standard. A skill written once can be used by any agent framework that supports the standard. Organizations that operate multiple agent tools — which is almost everyone operating at any scale — get the same knowledge applied consistently, without reimplementing for each platform.
 

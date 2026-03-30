@@ -32,7 +32,7 @@ SpecKit solves this specific problem. It puts the spec in the repository, in the
 
 ### What SpecKit Is
 
-SpecKit is a GitHub-hosted toolkit (`github/spec-kit`) built around a set of agent instructions that guide AI assistants through the SDD lifecycle. It operates through structured commands — slash commands in the agent prompt — that correspond to phases in the spec lifecycle.
+SpecKit is an open toolkit built around a set of agent instructions that guide AI assistants through the SDD lifecycle. It operates through structured commands — slash commands in the agent prompt — that correspond to phases in the spec lifecycle.
 
 The primary commands:
 
@@ -154,7 +154,7 @@ The total time is similar; the rework rate is dramatically lower; the spec is no
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 - [Spec Template Library](../repertoires/03-spec-template-library.md)
 
-**External reference:** [github/spec-kit](https://github.com/github/spec-kit)
+**External reference:** [github/spec-kit](https://github.com/github/spec-kit) *(verify current availability — tooling evolves rapidly)*
 
 ---
 

@@ -97,7 +97,7 @@ A common framing for AI agents is the "brilliant new hire" — a highly capable 
 
 A brilliant new hire has initiative. They will, correctly, ask clarifying questions, push back on under-specified tasks, and recognize when the assignment doesn't make sense. An agent will not do these things reliably. It will proceed on the most plausible interpretation of what it was given. It will fill gaps with what seems reasonable, not with what was intended.
 
-A brilliant new hire develops judgment over time and internalizes organizational values. An agent's "judgment" is frozen in training. Its sense of what is reasonable was calibrated on a distribution of text that may or may not reflect your organizational context.
+A brilliant new hire develops judgment over time and internalizes organizational values. An agent's baseline "judgment" is shaped by training and, while it can be refined through fine-tuning, retrieval, and session-level feedback, it does not develop organically the way human judgment does. Its sense of what is reasonable was calibrated on a distribution of text that may or may not reflect your organizational context — and even when augmented with retrieval or skills, it lacks the accumulating institutional judgment that a human develops through years of exposure.
 
 The executor model is more accurate and more useful. An executor is not hired for judgment about what to do — they are engaged to do a specific thing with excellence. The excellence is in the execution, not the objective-setting. This is not diminishment — it is specialization, and specialization is what makes high-quality delegation possible.
 

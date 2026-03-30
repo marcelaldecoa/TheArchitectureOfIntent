@@ -82,7 +82,7 @@ The most common way an Advisor fails is by becoming a Soft Executor — a system
 
 None of these is unambiguously wrong in isolation. Together, they describe a system that has practical agency — its outputs have reliable real-world consequences — even if it was designed as an Advisor.
 
-The diagnostic for this violation: Calculate the compliance rate. If the Advisor's recommendations are accepted more than ~85–90% of the time without substantive modification, ask whether the human review step is a genuine gate or a rubber stamp. A genuine gate is sometimes rejected. A rubber stamp is an Executor without the governance.
+The diagnostic for this violation: Calculate the compliance rate. If the Advisor's recommendations are accepted more than ~85–90% of the time without substantive modification, ask whether the human review step is a genuine gate or a rubber stamp. This threshold is not arbitrary — it reflects the observation that in functioning advisory relationships (medical second opinions, code review, editorial review), a meaningful fraction of recommendations are modified or rejected by the reviewing human. A compliance rate approaching 100% suggests the human is not exercising independent judgment, which means the system has acquired practical agency without the governance to match. A genuine gate is sometimes rejected. A rubber stamp is an Executor without the governance.
 
 ---
 
