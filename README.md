@@ -86,11 +86,37 @@ The dev server watches `src/` for changes and rebuilds automatically. The browse
 
 ---
 
+## Deploying to GitHub Pages
+
+The book is automatically deployed to GitHub Pages on every push to `main` via the workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+
+### One-time setup
+
+1. **Go to** your repo → **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Push to `main` — the workflow will build and deploy automatically
+
+The site will be available at:
+```
+https://marcelaldecoa.github.io/TheArchitectureOfIntent/
+```
+
+### How it works
+
+- On every push to `main`, GitHub Actions installs mdBook, builds the book, and deploys the `book/` output to GitHub Pages.
+- The workflow can also be triggered manually from the **Actions** tab using "Run workflow."
+- No `gh-pages` branch is needed — the workflow uses the modern `actions/deploy-pages` approach.
+
+---
+
 ## Repository Structure
 
 ```
 TheArchitectureOfIntent/
 ├── book.toml           # mdBook configuration (author, theme, search, MathJax)
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # GitHub Actions — build & deploy to Pages on push to main
 ├── src/
 │   ├── SUMMARY.md      # Table of contents — defines all pages and their order
 │   ├── introduction.md
