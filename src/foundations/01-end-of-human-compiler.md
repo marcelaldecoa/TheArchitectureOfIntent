@@ -42,9 +42,9 @@ The whole edifice made sense. It was built for a world where **code creation was
 
 That scarcity is over.
 
-Large Language Models changed the economics of code generation fundamentally. This is not hyperbole and it is not conjecture — it is observable in every engineering team that has integrated agents meaningfully. Code that took days to produce can be generated in minutes. Boilerplate that consumed a significant fraction of engineering time has been automated away. Variants are cheap. Rewrites are inexpensive.
+Large Language Models changed the economics of code generation fundamentally. This is not hyperbole and it is not conjecture — it is observable across engineering teams that have integrated agents meaningfully. Tasks that once required hours or days of implementation work — boilerplate, scaffolding, standard CRUD patterns, test generation — can often be produced in minutes. The degree of acceleration varies by task type, domain complexity, and agent maturity, but the direction is consistent: the cost of producing syntactically correct, structurally sound code has dropped dramatically.
 
-This is not about job replacement. It is about **rate-limiting steps**. When you remove a bottleneck, the constraint moves. And when code creation is no longer the bottleneck, the constraint moves upstream — to the things that were always done imperfectly because code was the expensive thing:
+This is not about job replacement. It is about **rate-limiting steps**. When you remove a bottleneck, the constraint moves. And when code creation is no longer the bottleneck, the constraint moves upstream — to the things that were often done imperfectly because code was the expensive thing:
 
 - **Framing**: What problem are we actually solving?
 - **Constraints**: What must never happen?

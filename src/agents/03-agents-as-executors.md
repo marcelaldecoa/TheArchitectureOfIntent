@@ -90,6 +90,7 @@ The critical discipline is the feedback path. When validation fails, the first q
 - If the spec was ambiguous or incorrect, the loop goes back to the spec. Fix the spec. Re-execute against the corrected spec. Do not patch the output without patching the spec — that creates spec debt.
 - If the spec was correct and the execution deviated, re-execute against the same spec. If the deviation recurs, investigate the capability — the agent may lack a tool, or a tool may be behaving unexpectedly.
 - If the spec was correct, the execution was faithful, but the outcome was still not desired — the human's intent was not captured in the spec. This is the most instructive failure: it reveals an assumption that was never externalized.
+- If the spec was correct and complete, and the agent still produces incorrect output consistently — the failure may be model-level: hallucination, confidence miscalibration, training distribution mismatch, or an instruction-following limitation. These failures are real and cannot be fixed through better specs alone. The appropriate responses are: constraining the agent to a narrower scope, adding automated output validation, switching to a more capable model, or retaining the task for human execution until model capabilities mature.
 
 ### The "Brilliant New Hire" Analogy — and Why It Falls Short
 

@@ -79,11 +79,31 @@ This is not a tutorial on any specific AI tool.
 
 It is not a framework with mandatory steps. It is not a management methodology with certification levels. It is not a claim that human engineering skill is obsolete — the opposite is true. It is not about coding faster.
 
+It is not a replacement for Agile, DevOps, or any existing engineering practice. Intent engineering lives *inside* those practices. Agile provides the iteration cadence; DevOps provides the delivery pipeline; Systems Thinking provides the holistic perspective. What this book adds is a discipline for the specific problem those frameworks were not designed for: how to specify intent precisely enough that autonomous agents can execute it safely at scale. Teams practicing SDD still run sprints, still deploy through CI/CD, and still reason about systems holistically. The difference is that the spec — not the conversation, not the ticket, not the pull request — becomes the primary artifact of engineering judgment.
+
 The people who benefit most from this book will not say: *"This helped me ship faster."*
 
 They will say: *"This helped me think more clearly about what I am responsible for."*
 
 That is how disciplines are born.
+
+---
+
+## Scope, Limitations, and Open Questions
+
+This book is an early attempt to formalize a discipline that is still forming. It would be dishonest to present it as complete. Several important limitations and open questions deserve acknowledgment:
+
+**What this framework does not address:**
+- **Industry-specific regulatory constraints.** Healthcare, finance, defense, and other regulated domains have compliance frameworks that impose additional requirements beyond what this book covers. The archetype and spec models are compatible with regulatory overlay, but the book does not attempt to map specific regulations to specific patterns.
+- **Multi-organizational agent systems.** The governance model assumes a single organization with authority over its agents. When agents from different organizations interact — an increasingly common scenario — the accountability model becomes significantly more complex.
+- **Economic analysis.** The book does not provide cost-benefit analysis for adopting intent engineering practices. The overhead of spec writing, governance, and formal archetype review is real. Whether the investment pays off depends on factors (team size, domain risk, agent maturity) that vary too widely to generalize.
+
+**Open questions the framework does not resolve:**
+- **How precise is "precise enough"?** The book argues for specification clarity but does not provide a universal standard for when a spec is sufficiently detailed. This boundary is contextual and will likely remain so.
+- **What happens when model capabilities change faster than governance?** The framework assumes relative stability across review cycles. Rapid model upgrades may invalidate archetype selections and constraint calibrations at a pace that governance processes cannot match.
+- **Can intent engineering scale to truly autonomous systems?** The framework assumes humans remain in the governance loop. As agent systems approach higher autonomy levels, the viability of human-in-the-loop governance may reach practical limits that the current model does not address.
+
+**An invitation to test.** This book presents a framework, not a proof. The strongest validation will come from teams applying these patterns in their own contexts and reporting what works, what fails, and what needs refinement. If your team adopts any of these patterns, the most valuable contribution is documenting what happened — especially the failures. Disciplines are built not from theory alone but from the accumulation of practice.
 
 ---
 
