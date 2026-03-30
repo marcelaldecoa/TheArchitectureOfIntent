@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Validating Outcomes - The Architecture of Intent</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Designing Agency in an Age Where Code Is No Longer Scarce">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../../theme/custom-bb0aef94.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-9ccab4e2.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-18ec9bd3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Architecture of Intent</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="validating-outcomes"><a class="header" href="#validating-outcomes">Validating Outcomes</a></h1>
+<p><strong>Part VIII: Example 2 — Code Generation Pipeline</strong> · <em>Step 4 of 4</em></p>
+<hr>
+<blockquote>
+<p><em>“Validating a pipeline is different from validating a single agent: you are testing not just what was produced, but whether the stages of production connected correctly.”</em></p>
+</blockquote>
+<hr>
+<h2 id="how-pipeline-validation-differs"><a class="header" href="#how-pipeline-validation-differs">How Pipeline Validation Differs</a></h2>
+<p>In Example 1, acceptance testing asked: given these inputs, did the agent produce the correct output? The test subject was a single agent and the evaluation was against its spec’s success criteria.</p>
+<p>In this pipeline, there are three agents that must operate correctly <em>and</em> connect correctly to each other. A component that passes Standards Guardian validation in isolation may still be wrong if it doesn’t import the path that the service-executor produced. An acceptance suite for a pipeline must test at three levels:</p>
+<ol>
+<li><strong>Component correctness</strong> — Does each generated file satisfy its spec’s success criteria?</li>
+<li><strong>Cross-component consistency</strong> — Do the files reference each other correctly?</li>
+<li><strong>Pipeline mechanics</strong> — Does the pipeline behave correctly on failures: validation failures, input failures, overwrite conflicts?</li>
+</ol>
+<hr>
+<h2 id="test-inputs"><a class="header" href="#test-inputs">Test Inputs</a></h2>
+<p>All tests use the same base input set to enable reproducibility:</p>
+<p><strong>Feature intent document (input A — “User Management Service”):</strong></p>
+<pre><code class="language-markdown"># UserManagement Service
+
+This service manages user accounts for the platform. It provides CRUD operations
+for user profile data.
+
+Entities: User  
+Operations: list all users, get user by ID, create user, update user, delete user
+
+Business rules:
+- Email addresses must be unique across all users
+- Users cannot be deleted if they have active subscriptions (returns 409 Conflict)
+</code></pre>
+<p><strong>Data schema (input B):</strong></p>
+<pre><code class="language-json">{
+  "entity": "User",
+  "table": "users",
+  "fields": [
+    { "name": "id", "type": "uuid", "primaryKey": true },
+    { "name": "email", "type": "string", "unique": true, "required": true },
+    { "name": "displayName", "type": "string", "required": true },
+    { "name": "createdAt", "type": "timestamp", "auto": true },
+    { "name": "updatedAt", "type": "timestamp", "auto": true }
+  ]
+}
+</code></pre>
+<p><strong>Output path:</strong> <code>./test-output/user-management/</code><br><strong>Team ID:</strong> <code>platform-test</code></p>
+<hr>
+<h2 id="test-suite"><a class="header" href="#test-suite">Test Suite</a></h2>
+<h3 id="test-p-01-happy-path--complete-valid-scaffold"><a class="header" href="#test-p-01-happy-path--complete-valid-scaffold">Test P-01: Happy path — complete valid scaffold</a></h3>
+<p><strong>Spec criterion:</strong> SC1 (complete scaffold delivery), SC5 (catalog registration)<br><strong>Input:</strong> Feature intent document A + schema B, clean output path<br><strong>Expected:</strong> All 7 components generated, all pass Standards Guardian on first or second attempt, scaffold directory assembled, catalog.register() called with correct parameters<br><strong>Observed:</strong> All 7 components generated. 6 passed on first attempt. One (test file) failed first attempt — the Guardian flagged missing error path test. Retry produced a passing file. Scaffold assembled. Catalog registered with service name <code>user-management</code>, team ID <code>platform-test</code>, OpenAPI path <code>./test-output/user-management/openapi.yaml</code>.<br><strong>Result:</strong> ✅ Pass</p>
+<hr>
+<h3 id="test-p-02-cross-component-consistency--import-paths"><a class="header" href="#test-p-02-cross-component-consistency--import-paths">Test P-02: Cross-component consistency — import paths</a></h3>
+<p><strong>Spec criterion:</strong> SC2 (cross-component consistency)<br><strong>Input:</strong> Same as P-01<br><strong>Verification method:</strong> Static analysis of generated files — parse imports and verify they reference the correct paths and class names from the naming package<br><strong>Checks performed:</strong></p>
+<ul>
+<li><code>controller.ts</code> imports <code>UserService</code> from <code>./service</code> ✅</li>
+<li><code>service.ts</code> imports <code>UserRepository</code> from <code>./repository</code> ✅</li>
+<li><code>controller.test.ts</code> imports <code>UserController</code> from <code>./controller</code> ✅</li>
+<li>Endpoint paths in <code>controller.ts</code> match paths in <code>openapi.yaml</code> ✅</li>
+<li>Endpoint paths in <code>controller.ts</code> match paths in <code>controller.test.ts</code> ✅<br><strong>Result:</strong> ✅ Pass</li>
+</ul>
+<hr>
+<h3 id="test-p-03-input-validation--empty-feature-intent"><a class="header" href="#test-p-03-input-validation--empty-feature-intent">Test P-03: Input validation — empty feature intent</a></h3>
+<p><strong>Spec criterion:</strong> SC7 (input validation rejection), C1<br><strong>Input:</strong> Empty feature intent document + valid schema B, clean output path<br><strong>Expected:</strong> Pipeline halts before invoking any executor; returns structured error identifying empty intent document; no files written<br><strong>Observed:</strong> Pipeline returned <code>{ "status": "failed", "stage": "input_validation", "error": "Feature intent document is empty", "files_generated": [] }</code>. No executor invocations. No files written.<br><strong>Result:</strong> ✅ Pass</p>
+<hr>
+<h3 id="test-p-04-input-validation--invalid-schema-json"><a class="header" href="#test-p-04-input-validation--invalid-schema-json">Test P-04: Input validation — invalid schema JSON</a></h3>
+<p><strong>Spec criterion:</strong> SC7, C1<br><strong>Input:</strong> Valid feature intent document A + malformed JSON schema<br><strong>Expected:</strong> Pipeline halts; returns structured error with schema parse error; no files written<br><strong>Observed:</strong> <code>schema.parse()</code> returned parse error. Pipeline returned structured error at stage <code>input_validation</code>. No executors invoked. No files written.<br><strong>Result:</strong> ✅ Pass</p>
+<hr>
+<h3 id="test-p-05-overwrite-protection"><a class="header" href="#test-p-05-overwrite-protection">Test P-05: Overwrite protection</a></h3>
+<p><strong>Spec criterion:</strong> SC4 (overwrite protection), C6<br><strong>Input:</strong> Same as P-01, but <code>./test-output/user-management/controller.ts</code> already exists (pre-created with placeholder content)<br><strong>Expected:</strong> Pipeline halts before writing any file; returns conflict error identifying the existing file; no files written (including files that do not conflict)<br><strong>Observed (first run):</strong> Pipeline attempted to write files in sequence. When it reached <code>controller.ts</code>, detected existing file. Halted. Returned <code>{ "status": "failed", "stage": "file_write", "conflict": "./test-output/user-management/controller.ts", "files_generated": [] }</code>. No files were written — not even <code>repository.ts</code> which would have been written earlier in sequence.</p>
+<p><strong>Important finding:</strong> The first run exposed an architectural choice that needed clarification. The pipeline generated all components, validated them all, then wrote them. Since the conflict is detected at write time (Step 5 in the Synthesizer instructions), the validation had already run. An alternative sequence (check for conflicts before generating) would save compute but was explicitly rejected: the intent is to fail fast at the conflict rather than fail before doing any work. The spec annotation in §4 explains why.<br><strong>Result:</strong> ✅ Pass</p>
+<hr>
+<h3 id="test-p-06-standards-guardian-first-attempt-failure-successful-retry"><a class="header" href="#test-p-06-standards-guardian-first-attempt-failure-successful-retry">Test P-06: Standards Guardian first-attempt failure, successful retry</a></h3>
+<p><strong>Spec criterion:</strong> SC3 (standards compliance), C5 (retry limit)<br><strong>Input:</strong> Same as P-01<br><strong>Setup:</strong> Standards Guardian configured to return a <code>console.log</code> violation on the first <code>service-executor</code> invocation (simulated by injecting <code>console.log(data)</code> into the service output before Guardian evaluation)<br><strong>Expected:</strong> Guardian returns fail; Synthesizer invokes service-executor again with violation report; second-attempt output passes<br><strong>Observed:</strong> Guardian flagged <code>console.log</code> on first attempt with error severity. Synthesizer invoked service-executor with violation report as context. Second service file did not contain <code>console.log</code>. Guardian returned pass. Scaffold assembly continued normally.<br><strong>Result:</strong> ✅ Pass</p>
+<hr>
+<h3 id="test-p-07-standards-guardian-double-failure--pipeline-halt"><a class="header" href="#test-p-07-standards-guardian-double-failure--pipeline-halt">Test P-07: Standards Guardian double failure — pipeline halt</a></h3>
+<p><strong>Spec criterion:</strong> SC6 (failure report on double validation failure)<br><strong>Input:</strong> Same as P-01<br><strong>Setup:</strong> Guardian configured to return error violation on both first and second submission for <code>controller-executor</code> (simulating a case where the Generator cannot satisfy the constraint — injected a required pattern that the executor doesn’t know about)<br><strong>Expected:</strong> After second failure, pipeline halts; returns structured failure report with both attempts’ violation lists; no files written<br><strong>Observed:</strong> First controller generation failed Guardian evaluation (missing required Logger import). Synthesizer retried with violation report. Second generation also failed (Logger was added but as <code>console.log</code> alias rather than proper NestJS Logger — the executor misinterpreted the violation description). Pipeline halted with:</p>
+<pre><code class="language-json">{
+  "status": "failed",
+  "stage": "validation",
+  "failed_component": "controller",
+  "attempt_1_violations": [{ "rule_id": "CTL-003", "description": "Missing Logger import from @nestjs/common", "severity": "error" }],
+  "attempt_2_violations": [{ "rule_id": "CTL-001", "description": "console.log used instead of Logger", "severity": "error" }],
+  "files_generated": [],
+  "guidance": "Review the violation list and update your feature intent document or schema, then re-run the pipeline."
+}
+</code></pre>
+<p>No files written.</p>
+<p><strong>Finding from this test:</strong> The violation description in the standards document for Logger usage was insufficiently specific about what “Logger” means — the executor interpreted “add Logger” and added a <code>console.log</code> wrapper labeled as a logger. The Standards Guardian rule description was updated to: <code>"Missing NestJS Logger: import \</code>Logger` from `@nestjs/common` and use `this.logger.log()` — do not use console.log or a custom logger wrapper.“` This is a constraint library improvement, not a pipeline code change.<br><strong>Result:</strong> ✅ Pass (pipeline behaved correctly; Guardian rule description was improved)</p>
+<hr>
+<h3 id="test-p-08-catalog-registration-failure--scaffold-delivered-registration-note-created"><a class="header" href="#test-p-08-catalog-registration-failure--scaffold-delivered-registration-note-created">Test P-08: Catalog registration failure — scaffold delivered, registration note created</a></h3>
+<p><strong>Spec criterion:</strong> SC5 (catalog registration), §3.6 (registration failure behavior)<br><strong>Input:</strong> Same as P-01<br><strong>Setup:</strong> <code>catalog.register()</code> configured to return error (service name already registered — simulated duplicate)<br><strong>Expected:</strong> Scaffold delivered successfully; <code>REGISTRATION_FAILED.txt</code> created in output directory; no scaffold rollback<br><strong>Observed:</strong> All 7 components generated and written successfully. <code>catalog.register()</code> returned error (duplicate service name). Pipeline created <code>REGISTRATION_FAILED.txt</code> with the service name, error message, and manual registration command. Returned:</p>
+<pre><code class="language-json">{
+  "status": "success",
+  "service_name": "user-management",
+  "files_generated": ["...7 paths..."],
+  "catalog_registered": false
+}
+</code></pre>
+<p><strong>Result:</strong> ✅ Pass</p>
+<hr>
+<h3 id="test-p-09-standards-compliance-rate--20-input-sample"><a class="header" href="#test-p-09-standards-compliance-rate--20-input-sample">Test P-09: Standards compliance rate — 20-input sample</a></h3>
+<p><strong>Spec criterion:</strong> SC3 (≥80% first-attempt pass rate)<br><strong>Input:</strong> 20 different feature intent + schema pairs, prepared by the platform engineering team to represent the range of actual services<br><strong>Observed:</strong> 18 of 20 ran to completion on first attempts for all components (90%). 2 of 20 required one retry on the test-executor (the Guardian found missing error path tests in both cases — a repeating pattern). No double failures.<br><strong>First-attempt pass rate:</strong> 90%<br><strong>Result:</strong> ✅ Pass (exceeds the 80% threshold from SC3)</p>
+<p><strong>Pattern identified:</strong> The test-executor was the component most likely to fail first-attempt validation. The most common violation: missing error path test (endpoint returns 404 when resource not found — the executor generated happy-path tests only). The controller-executor instructions were updated to explicitly provide the entity lookup pattern, so the test-executor would have the <code>findOne null</code> case as part of its context. Post-update re-run: all 20 passed on first attempt for test files.</p>
+<hr>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Test</th><th>Criterion</th><th>Result</th></tr>
+</thead>
+<tbody>
+<tr><td>P-01: Happy path complete scaffold</td><td>SC1, SC5</td><td>✅</td></tr>
+<tr><td>P-02: Cross-component consistency</td><td>SC2</td><td>✅</td></tr>
+<tr><td>P-03: Empty feature intent</td><td>SC7</td><td>✅</td></tr>
+<tr><td>P-04: Invalid schema</td><td>SC7</td><td>✅</td></tr>
+<tr><td>P-05: Overwrite protection</td><td>SC4</td><td>✅</td></tr>
+<tr><td>P-06: Guardian fail + retry success</td><td>SC3, C5</td><td>✅</td></tr>
+<tr><td>P-07: Guardian double fail halt</td><td>SC6</td><td>✅</td></tr>
+<tr><td>P-08: Catalog registration failure</td><td>SC5</td><td>✅</td></tr>
+<tr><td>P-09: 20-input standards rate</td><td>SC3</td><td>✅ (90%)</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>All 9 tests passed.</strong> Three findings were logged as improvements:</p>
+<ol>
+<li>Guardian violation description for Logger usage was ambiguous (P-07) → standards document updated</li>
+<li>test-executor consistently missed error path tests (P-09) → controller-executor context updated to include null-return case</li>
+<li>Overwrite detection occurs at write time, not before generation (P-05) → behavior is correct per spec; architectural note added to spec annotation for future revision consideration</li>
+</ol>
+<hr>
+<h2 id="what-pipeline-validation-teaches-that-single-agent-validation-does-not"><a class="header" href="#what-pipeline-validation-teaches-that-single-agent-validation-does-not">What Pipeline Validation Teaches That Single-Agent Validation Does Not</a></h2>
+<p><strong>Cross-component consistency is not automatically inherited from component correctness.</strong> Each Component Executor can produce a file that passes the Standards Guardian individually, but if the naming conventions are not shared consistently, the files will not work together. P-02 (import path consistency) is the test that catches this. It is not derivable from the individual component tests.</p>
+<p><strong>The retry path needs its own test.</strong> P-06 specifically tests the retry path. Without it, the retry logic in the Synthesizer’s instructions could be broken and no other test would catch it. In pipeline systems, every branch of the pipeline flow needs an explicit test — including the error and retry branches.</p>
+<p><strong>Pipeline mechanics failures (overwrite, bad input) produce no output to evaluate.</strong> Tests P-03, P-04, and P-05 test for correct <em>non-action</em>. The spec says “halt and return an error” — the acceptance test evaluates that the halt occurred correctly and the error report contained the right information. This class of test has no output file to analyze. It requires verifying that the correct thing <em>did not happen</em>.</p>
+<p><strong>First-attempt pass rate across a sample reveals systemic patterns.</strong> The individual component tests (P-01, P-06) test specific scenarios. The 20-input sample (P-09) reveals systematic weak points in the generators that cannot be detected from single-scenario tests. Running the full suite against a representative sample is a necessary part of pipeline acceptance.</p>
+<hr>
+<p><em>This concludes Example 2 and Part VIII: Applied Examples.</em></p>
+<p><em><a href="../../SUMMARY.html">Return to the book index</a></em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../examples/02-code-generation-pipeline/agent-instructions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../appendices/glossary.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../examples/02-code-generation-pipeline/agent-instructions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../appendices/glossary.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
