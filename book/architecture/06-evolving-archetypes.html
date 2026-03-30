@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Evolving Archetypes Without Dogma - The Architecture of Intent</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Designing Agency in an Age Where Code Is No Longer Scarce">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/custom-bb0aef94.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-9ccab4e2.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-18ec9bd3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Architecture of Intent</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="pattern-36--evolving-archetypes-without-dogma"><a class="header" href="#pattern-36--evolving-archetypes-without-dogma">Pattern 3.6 — Evolving Archetypes Without Dogma</a></h1>
+<p><strong>Part III: Intent Architecture</strong> · <em>6 of 6</em></p>
+<hr>
+<blockquote>
+<p><em>“A building is not a building. It is a process — a process which, over time, unfolds. And the quality of the process determines the quality of the result.”</em><br>— Christopher Alexander, <em>The Nature of Order</em></p>
+</blockquote>
+<hr>
+<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<p>You have classified a system, specced it, and shipped it. Three months later, a stakeholder wants to expand what it does. Or six months later, the system has quietly accumulated capabilities it was never formally authorized to have. Or a year later, you inherit a system and have no record of why it was classified the way it was.</p>
+<p>Archetypes are not permanent — but changing them must be a deliberate act, not an accumulation of small decisions.</p>
+<p>This pattern assumes all of <a href="01-archetypes-as-constitutional-law.html">Intent Architecture</a>, and is the closing pattern for Part III.</p>
+<hr>
+<h2 id="the-problem"><a class="header" href="#the-problem">The Problem</a></h2>
+<p>The hardest archetype problem is not classification — it is drift.</p>
+<p>A system begins as an Executor within a tight pre-authorized scope. Over time, individual decisions expand the scope slightly: <em>this API call is basically the same as the authorized ones</em>, <em>this additional write is necessary for the feature to work</em>, <em>the exception gate is too slow for this case, let’s skip it just this once</em>. No single decision is dramatic. Each is locally defensible.</p>
+<p>Six months later, the system is taking consequential actions across a much broader domain with less oversight than was originally designed. It is still technically classified as an Executor, but it is now functioning as an uncontrolled Orchestrator. The archetype became a fiction.</p>
+<p>This is archetype drift — and it is more dangerous than a wrong initial classification, because at least a wrong initial classification can be discovered and corrected. Drift is invisible until a consequential failure reveals it.</p>
+<p>The inverse problem also occurs: a system is over-constrained for its actual risk. An Advisor that was given Guardian-class oversight because someone was nervous during initial design never gets simplified. Friction accumulates, engineers route around it, and eventually the oversight process exists on paper while real oversight happens not at all.</p>
+<p>Archetypes need to evolve — but evolution must be governed differently from initial classification.</p>
+<hr>
+<h2 id="the-resolution"><a class="header" href="#the-resolution">The Resolution</a></h2>
+<h3 id="the-distinction-between-evolution-and-drift"><a class="header" href="#the-distinction-between-evolution-and-drift">The Distinction Between Evolution and Drift</a></h3>
+<p><strong>Drift</strong> is when a system’s actual behavior diverges from its archetype classification because of accumulated, unreviewed decisions.</p>
+<p><strong>Evolution</strong> is when a system’s archetype classification is formally updated to match a deliberate, reviewed change in scope or capability.</p>
+<p>The mechanisms that distinguish them:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th>Drift</th><th>Evolution</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>How it happens</strong></td><td>Small incremental decisions, no review</td><td>Explicit proposal, formal review</td></tr>
+<tr><td><strong>Who knows it happened</strong></td><td>Often no one</td><td>The team + reviewers</td></tr>
+<tr><td><strong>Is the spec updated?</strong></td><td>No</td><td>Yes, before deployment</td></tr>
+<tr><td><strong>Are invariants reviewed?</strong></td><td>No</td><td>Yes</td></tr>
+<tr><td><strong>Is the change reversible?</strong></td><td>Often not</td><td>By design</td></tr>
+<tr><td><strong>Risk posture re-evaluated?</strong></td><td>No</td><td>Yes</td></tr>
+</tbody>
+</table>
+</div>
+<p>The spec is the primary instrument for distinguishing drift from evolution. If the spec was not updated before the behavior changed, the change was drift.</p>
+<hr>
+<h3 id="triggers-for-archetype-review"><a class="header" href="#triggers-for-archetype-review">Triggers for Archetype Review</a></h3>
+<p>A formal archetype review should be triggered when any of the following occur:</p>
+<p><strong>Capability expansion triggers:</strong></p>
+<ul>
+<li>The system can now write to a new target system it couldn’t before</li>
+<li>The system can now make decisions it previously surfaced to humans</li>
+<li>The system’s action scope has expanded beyond what the pre-authorized scope declaration describes</li>
+<li>The system now routes work to or from other agents it didn’t interact with at time of classification</li>
+</ul>
+<p><strong>Risk change triggers:</strong></p>
+<ul>
+<li>The system now processes data it didn’t before (especially personal, financial, or safety-critical data)</li>
+<li>The potential impact scope has grown (more users, more downstream systems affected)</li>
+<li>A failure mode has been identified that wasn’t considered in the original Risk Posture</li>
+</ul>
+<p><strong>Oversight degradation triggers:</strong></p>
+<ul>
+<li>The agreed oversight process is being routinely bypassed or skipped</li>
+<li>The exception gate is generating so many exceptions that it has become nominal</li>
+<li>Human reviewers in the oversight chain are no longer making substantive reviews</li>
+</ul>
+<p><strong>Third-party trigger:</strong></p>
+<ul>
+<li>Any security audit or incident post-mortem that references the system</li>
+<li>A significant change to any external system the agent integrates with</li>
+<li>Regulatory or policy change that affects the data or actions the system handles</li>
+</ul>
+<hr>
+<h3 id="the-archetype-review-process"><a class="header" href="#the-archetype-review-process">The Archetype Review Process</a></h3>
+<p>An archetype review is not a re-evaluation starting from scratch. It is a comparison of the current behavior against the current spec, against the original archetype declaration.</p>
+<p><strong>Step 1 — Behavior audit.</strong> Without looking at the spec, describe what the system actually does today. What data does it read? What actions does it take? What decisions does it make autonomously? What does it escalate? This description should come from logs, code, and team knowledge — not the spec.</p>
+<p><strong>Step 2 — Spec gap identification.</strong> Compare the behavior audit against the current spec. Document every discrepancy. There will always be some. The question is whether they are structural (affecting archetype, dimensions, or invariants) or peripheral (affecting implementation detail).</p>
+<p><strong>Step 3 — Re-run the decision tree.</strong> Apply <a href="04-decision-tree.html">Pattern 3.4</a> to the system as described by the behavior audit. Does the result match the current archetype classification?</p>
+<p>If yes: Update the spec to close the peripheral gaps. The archetype stands.</p>
+<p>If no: proceed to Step 4.</p>
+<p><strong>Step 4 — Reclassification proposal.</strong> Document: what the current archetype is, what the correct archetype appears to be, what changed, and who authorized or permitted those changes. This is an accountability document, not a blame document. Its purpose is to ensure that reclassification is owned.</p>
+<p><strong>Step 5 — Dimension and invariant review.</strong> If the archetype changes, all four dimensions must be re-evaluated from scratch. The prior dimensions are not inputs to the new evaluation — they are a comparison check after the new evaluation is complete. Invariants from the old archetype must be audited: do they still apply? Are they sufficient? Are any of them now wrong?</p>
+<p><strong>Step 6 — Spec update and redeployment.</strong> Update the spec before deploying any new behavior. The spec must describe the system as it will be, not as it was.</p>
+<hr>
+<h3 id="planned-evolution"><a class="header" href="#planned-evolution">Planned Evolution</a></h3>
+<p>Some archetype evolution is anticipated from the beginning. A system built to validate content may be planned to take enforcement action in future phases. An Advisor may be planned to become an Executor once trust is established.</p>
+<p>Planned evolution should be documented in the initial spec, not as a commitment but as a declared transition path:</p>
+<pre><code class="language-markdown">## Planned Evolution
+
+**Current classification:** Advisor (Agency Level 2)  
+**Target classification (Phase 2):** Executor (Agency Level 3)  
+**Transition criteria:**  
+  - 90-day operational record with &lt;0.1% false positive rate  
+  - Formal sponsor review and approval  
+  - Spec updated before any autonomous action is enabled  
+**What will NOT change at transition:** The Guardian layer invariants apply in 
+Phase 2 as they do in Phase 1.
+</code></pre>
+<p>This declaration serves two purposes. First, it makes the future intent visible so that teams operating the Phase 1 system know what the goal is. Second, it creates a formal threshold — the transition criteria — that must be met before the archetype changes. The transition becomes an event, not a drift.</p>
+<hr>
+<h3 id="the-hardest-case-downgrading-an-archetype"><a class="header" href="#the-hardest-case-downgrading-an-archetype">The Hardest Case: Downgrading an Archetype</a></h3>
+<p>Systems almost always expand in scope. Downgrading — reducing from Executor to Advisor, or from Orchestrator to Executor — is rare and requires the same formal review as upgrading.</p>
+<p>A common reason for downgrading: a system was over-built for its actual risk, and the overhead of its governance model is disproportionate. The correct response is a formal reclassification, not a quiet relaxation of the oversight model while keeping the archetype label.</p>
+<p>The reclassification removes the liability of governing a system by the wrong model — including the liability of having a governance model that nobody follows.</p>
+<hr>
+<h3 id="the-constitutional-record"><a class="header" href="#the-constitutional-record">The Constitutional Record</a></h3>
+<p>Every archetype classification, review, and reclassification should be recorded in the spec’s version history. Not just “updated classification” — the actual record:</p>
+<ul>
+<li>Date</li>
+<li>Previous classification</li>
+<li>New classification</li>
+<li>Reason for change</li>
+<li>Reviewer(s)</li>
+<li>Transition criteria (if applicable)</li>
+</ul>
+<p>This record is the constitutional history of the system. It is the document a future engineer reaches for when they need to understand why the system is the way it is. It is the document an auditor reaches for when accountability matters.</p>
+<p>Write it with that reader in mind.</p>
+<hr>
+<h2 id="therefore"><a class="header" href="#therefore">Therefore</a></h2>
+<blockquote>
+<p><strong>Archetype drift occurs when small decisions accumulate without review, producing a system whose actual behavior no longer matches its governance model. Evolution is when the classification is formally updated to reflect a deliberate change — with a behavior audit, the decision tree re-applied, dimensions re-evaluated, and the spec updated before deployment. Planned transitions should be declared upfront with explicit criteria. Every reclassification should be recorded in the spec’s constitutional history.</strong></p>
+</blockquote>
+<hr>
+<h2 id="connections"><a class="header" href="#connections">Connections</a></h2>
+<p><strong>This pattern assumes:</strong></p>
+<ul>
+<li><a href="01-archetypes-as-constitutional-law.html">Archetypes as Constitutional Law</a></li>
+<li><a href="03-archetype-dimensions.html">Archetype Dimensions</a></li>
+<li><a href="04-decision-tree.html">Decision Tree for Archetype Selection</a></li>
+<li><a href="05-composing-archetypes.html">Composing Archetypes in Real Systems</a></li>
+</ul>
+<p><strong>This pattern enables:</strong></p>
+<ul>
+<li><a href="../sdd/07-canonical-spec-template.html">The Canonical Spec Template</a> — the spec version history section</li>
+<li><a href="../sdd/06-living-specs.html">Living Specs</a> — how specs evolve over time</li>
+<li>Part VII (Operating Intent Systems) — governance cadences in production</li>
+</ul>
+<hr>
+<p><em>Part III is complete. Continue to <a href="../sdd/01-what-sdd-means.html">Part IV: Spec-Driven Development</a>, or to the archetype deep dives: <a href="archetypes/advisor.html">Advisor</a> · <a href="archetypes/executor.html">Executor</a> · <a href="archetypes/guardian.html">Guardian</a> · <a href="archetypes/synthesizer.html">Synthesizer</a> · <a href="archetypes/orchestrator.html">Orchestrator</a></em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../architecture/05-composing-archetypes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../sdd/01-what-sdd-means.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../architecture/05-composing-archetypes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../sdd/01-what-sdd-means.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

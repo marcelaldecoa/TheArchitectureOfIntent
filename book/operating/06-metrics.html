@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Metrics That Actually Matter - The Architecture of Intent</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Designing Agency in an Age Where Code Is No Longer Scarce">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/custom-bb0aef94.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-9ccab4e2.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-18ec9bd3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Architecture of Intent</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="pattern-76--metrics-that-actually-matter"><a class="header" href="#pattern-76--metrics-that-actually-matter">Pattern 7.6 — Metrics That Actually Matter</a></h1>
+<p><strong>Part VII: Operating the System</strong> · <em>6 of 6</em></p>
+<hr>
+<blockquote>
+<p><em>“Measuring the wrong things with precision is worse than not measuring — it creates confidence in the wrong direction.”</em></p>
+</blockquote>
+<hr>
+<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<p>When agent-augmented development enters an organization, the instinct is to measure what is visible. Lines of code generated. Agent runs per day. Pull requests merged. Time-to-first-output. These are easy to count because they are produced as a side effect of normal operations.</p>
+<p>Engineering leadership has historically measured teams using similar proxies — velocity, throughput, story points completed. These proxies were always imperfect. In agent-augmented practice, they become actively misleading.</p>
+<p>An agent can produce 1,000 lines of code in four minutes against a bad spec. Every proxy metric — throughput, velocity, agent utilization — looks excellent. The system has done exactly what it was optimized to do, and the output is wrong in ways that will surface later.</p>
+<p>This chapter defines the metrics that actually signal system health in an agent-augmented practice: what to measure, how to measure it, and what to do when the numbers are bad.</p>
+<hr>
+<h2 id="the-problem"><a class="header" href="#the-problem">The Problem</a></h2>
+<p>The measurement problem has two layers.</p>
+<p><strong>The proxy problem.</strong> Traditional metrics measure production activity, not production quality. Increasing agent throughput while spec quality decreases is a coherent, common failure mode. The metrics look good; the system is degrading.</p>
+<p><strong>The signal inversion problem.</strong> Some metrics that look negative in a traditional reading are actually signals of system health in an agent-augmented practice. A growing Spec Gap Log entry count looks like “we’re finding more problems.” It is actually “our review process is working and our team is learning.” Treating a growing gap log as a negative metric will cause teams to stop logging — which is much worse.</p>
+<p>The measurement framework that follows distinguishes between performance metrics (lower is better after improvement) and health metrics (higher is better because they indicate an active improvement culture).</p>
+<hr>
+<h2 id="the-resolution"><a class="header" href="#the-resolution">The Resolution</a></h2>
+<h3 id="the-anti-metrics-what-not-to-measure"><a class="header" href="#the-anti-metrics-what-not-to-measure">The Anti-Metrics: What Not to Measure</a></h3>
+<p>Before defining good metrics, eliminate the proxies that mislead:</p>
+<p><strong>Lines of code generated.</strong> Measures agent throughput. Inversely correlates with spec quality in many cases — a tight spec produces less redundant code. More code is not better code.</p>
+<p><strong>Agent runs per day.</strong> Measures activity, not value. High agent run count combined with high rework rate is worse than low agent run count with acceptable first-pass validation. Activity is not progress.</p>
+<p><strong>Pull requests merged per sprint.</strong> A PR from an agent executing a garbage spec looks the same in the velocity dashboard as a PR from an agent executing a precise spec. This metric is indistinguishable between high quality and low quality output.</p>
+<p><strong>Time-to-first-output.</strong> First output is irrelevant without validation rate. Fast incorrect output is not value.</p>
+<p><strong>“Agent helpfulness” satisfaction scores.</strong> Subjective assessments of agent quality shift based on the person, the day, and the task. They are not stable signals. They are not actionable in a specific direction. They do not distinguish between spec failures and execution failures.</p>
+<h3 id="the-four-signal-metrics"><a class="header" href="#the-four-signal-metrics">The Four Signal Metrics</a></h3>
+<p><strong>1. Spec Gap Rate</strong></p>
+<p>$$\text{spec gap rate} = \frac{\text{gaps identified at validation}}{\text{total spec-execute cycles}}$$</p>
+<p><em>What it measures:</em> The fraction of agent execution cycles that produce at least one gap identified at validation — a constraint violated, a success criterion not met, an output outside declared scope.</p>
+<p><em>Target direction:</em> Decreasing over time within a domain. A high initial spec gap rate in a new domain is expected. A persistently high rate signals that the constraint library is insufficient or that spec review is not catching gaps before execution.</p>
+<p><em>Measurement instrument:</em> The Spec Gap Log. Every gap logged at validation increments the numerator.</p>
+<p><em>Caution:</em> Do not use spec gap rate to evaluate individual spec authors. Use it to evaluate the maturity of the team’s constraint library and archetype catalog for a given domain. The signal is collective, not individual.</p>
+<hr>
+<p><strong>2. First-Pass Validation Rate</strong></p>
+<p>$$\text{first-pass validation rate} = \frac{\text{outputs accepted on first review}}{\text{total outputs reviewed}}$$</p>
+<p><em>What it measures:</em> The fraction of agent outputs that satisfy their spec’s success criteria without requiring re-execution or spec revision.</p>
+<p><em>Target direction:</em> Increasing over time. A first-pass validation rate above 80% in a mature domain indicates that the spec-execute-validate loop is functioning — specs are complete enough that execution reliably satisfies them.</p>
+<p><em>The distinction that matters:</em> A failed first-pass may be due to a spec gap (the spec was wrong or incomplete) or an execution gap (the agent deviated from a correct spec). Record which category each failure belongs to. These require different remediation:</p>
+<ul>
+<li>Spec gap → update the spec and constraint library, re-execute</li>
+<li>Execution gap → re-execute against the same spec; if the pattern repeats, investigate agent capability</li>
+</ul>
+<p><em>Measurement instrument:</em> Output review log. Mark each output: accepted on first review / revision required / re-execution required. Note category.</p>
+<hr>
+<p><strong>3. Spec-Attributed Rework Rate</strong></p>
+<p>$$\text{spec-attributed rework rate} = \frac{\text{rework traced to spec failures}}{\text{total rework}}$$</p>
+<p><em>What it measures:</em> Of all rework performed on agent outputs, what fraction traces to a spec gap rather than an execution error.</p>
+<p><em>Target direction:</em> Decreasing over time. As the constraint library matures and reviewers become better at catching gaps before execution, fewer rework cycles should originate from spec failures.</p>
+<p><em>Why this is the signal, not total rework:</em> Total rework in an agent-augmented system includes execution variance (the agent interpreted a valid spec differently than intended), which is a capability boundary issue. Spec-attributed rework is the portion the team can directly address through better spec writing and review. It is the controllable fraction.</p>
+<p><em>Measurement instrument:</em> Rework log. For each rework cycle, record the root cause: spec gap / scope ambiguity / constraint missing / execution variance / environment issue. Sum the spec-origin categories.</p>
+<hr>
+<p><strong>4. Agent Cost Per Correct Output</strong></p>
+<p>$$\text{cost per correct output} = \frac{\text{total cost (compute + human review time)}}{\text{outputs passing validation}}$$</p>
+<p><em>What it measures:</em> The all-in cost — compute charges, human review time — per output that passes validation and is accepted.</p>
+<p><em>Target direction:</em> Decreasing over time as spec quality improves and re-execution cycles decrease.</p>
+<p><em>The insight this metric creates:</em> A team that runs an agent 12 times per feature (due to poor specs) has a much higher cost per correct output than a team that runs twice per feature. This metric makes the cost of poor spec quality visible in economic terms that are legible to leadership outside the engineering organization.</p>
+<p><em>Measurement instrument:</em> Track compute costs per execution (from provider dashboards) + reviewer time (from time logs or estimates). Divide by outputs accepted. Measure monthly or quarterly after the practice has been running for at least two months.</p>
+<hr>
+<h3 id="health-metrics-vs-performance-metrics"><a class="header" href="#health-metrics-vs-performance-metrics">Health Metrics vs. Performance Metrics</a></h3>
+<p>The distinction is important and frequently confused:</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Metric</th><th>Type</th><th>Interpretation</th></tr>
+</thead>
+<tbody>
+<tr><td>Spec gap rate</td><td>Performance</td><td>High = problem; should decrease</td></tr>
+<tr><td>First-pass validation rate</td><td>Performance</td><td>Low = problem; should increase</td></tr>
+<tr><td>Spec-attributed rework rate</td><td>Performance</td><td>High = problem; should decrease</td></tr>
+<tr><td>Cost per correct output</td><td>Performance</td><td>High = problem; should decrease</td></tr>
+<tr><td>Spec Gap Log entry volume</td><td>Health</td><td>Growing = good; review culture active</td></tr>
+<tr><td>Intent review participation rate</td><td>Health</td><td>High = good; team engaged in quality</td></tr>
+<tr><td>Constraint library update frequency</td><td>Health</td><td>Regular updates = good; team learning</td></tr>
+<tr><td>Post-gap spec revisions completed</td><td>Health</td><td>High = good; gaps are being closed</td></tr>
+</tbody>
+</table>
+</div>
+<p>A team that is aggressively improving will often look worse on performance metrics in the short term while health metrics are high. They are finding more gaps (health is good), which temporarily increases rework (performance looks bad) while they close the gaps that improve spec quality over the following cycles.</p>
+<p>Evaluate performance metrics over rolling quarters, not weeks. Evaluate health metrics monthly.</p>
+<hr>
+<h3 id="the-spec-gap-log-as-primary-instrument"><a class="header" href="#the-spec-gap-log-as-primary-instrument">The Spec Gap Log as Primary Instrument</a></h3>
+<p>All four signal metrics depend on a functioning Spec Gap Log. Without the log, there is no numerator for spec gap rate, no category data for rework attribution, and no systematic record of what constraint library improvements are needed.</p>
+<p>A minimal Spec Gap Log entry records:</p>
+<ul>
+<li>Date and spec identifier</li>
+<li>Which spec section contained the gap (or was absent)</li>
+<li>Which success criterion the output failed against (or was missing)</li>
+<li>Gap category: scope gap / constraint gap / success criterion gap / oversight gap / archetype mismatch</li>
+<li>Resolution: spec updated / constraint library updated / archetype catalog updated / no action (single instance, not systemic)</li>
+<li>Was this gap flagged by intent review? (yes/no — if yes, the process worked; if no, why not?)</li>
+</ul>
+<p>The final question — was this caught by intent review? — is the most important field in the log. Over time, it reveals whether the intent review practice is actually catching gaps, or whether gaps are still primarily being found at output review or in production.</p>
+<hr>
+<h3 id="leading-vs-lagging-indicators"><a class="header" href="#leading-vs-lagging-indicators">Leading vs. Lagging Indicators</a></h3>
+<p>The metrics above are primarily lagging — they reflect what already happened. For teams that want to manage proactively:</p>
+<p><strong>Leading indicators (predict future performance):</strong></p>
+<ul>
+<li>Intent review quality scores (reviewer-assessed: did the author answer all five questions explicitly?)</li>
+<li>Spec section completeness (does this spec have all seven required sections with non-trivial content?)</li>
+<li>Constraint library coverage in domain (% of domain’s known risk categories with documented constraints)</li>
+<li>Reviewer first-view gap catch rate (what fraction of gaps does the intent reviewer catch before the author submits?)</li>
+</ul>
+<p><strong>Lagging indicators (confirm past performance):</strong></p>
+<ul>
+<li>Spec gap rate (post-execution)</li>
+<li>First-pass validation rate (post-execution)</li>
+<li>Spec-attributed rework rate (often discovered post-merge)</li>
+<li>Agent cost per correct output (calculable after execution)</li>
+</ul>
+<p>Leading indicators are harder to collect and require discipline to assess consistently. For teams just starting, focus on the four lagging signal metrics and the Spec Gap Log. Add leading indicators once the lagging metrics are stable and understood.</p>
+<hr>
+<h3 id="connecting-metrics-to-repertoire-investment"><a class="header" href="#connecting-metrics-to-repertoire-investment">Connecting Metrics to Repertoire Investment</a></h3>
+<p>Metrics should drive resource allocation decisions, not just reporting. The correct response to sustained high spec-gap rate in a specific domain:</p>
+<ol>
+<li>Identify the domain’s most common gap categories (from the log)</li>
+<li>Check the constraint library for that domain — are those constraints missing?</li>
+<li>If yes: prioritize constraint library update as a team investment, not individual spec author improvement</li>
+<li>After the constraint library update: measure whether gap rate in that domain decreases</li>
+</ol>
+<p>The feedback loop: <strong>metrics → gap log analysis → constraint library → spec quality → metrics</strong></p>
+<p>A team that uses metrics only for retrospective reporting but does not close the loop to repertoire investment is measuring without learning. The point of measurement in this system is to identify where the investment in spec infrastructure will produce the greatest improvement in execution quality.</p>
+<hr>
+<h2 id="therefore"><a class="header" href="#therefore">Therefore</a></h2>
+<blockquote>
+<p><strong>Measure what the system is producing (correct validated outputs, first-pass rates, spec-attributed rework) rather than what the system is doing (agent runs, lines generated, PRs merged). The Spec Gap Log is the primary measurement instrument — without it, all other metrics lose their numerator. Distinguish health metrics (a growing gap log signals a functioning review culture) from performance metrics (rework rate should decrease). Connect metrics to repertoire investment decisions: sustained high gap rates in a domain signal that the constraint library needs work, not that engineers need to write better specs in isolation.</strong></p>
+</blockquote>
+<hr>
+<h2 id="connections"><a class="header" href="#connections">Connections</a></h2>
+<p><strong>This pattern assumes:</strong></p>
+<ul>
+<li><a href="../sdd/06-living-specs.html">The Spec Gap Log</a></li>
+<li><a href="05-reviewing-intent.html">Reviewing Intent, Not Code</a></li>
+<li><a href="../repertoires/05-validation-templates.html">Validation &amp; Acceptance Templates</a></li>
+<li><a href="04-governance.html">Governance Without Bureaucracy</a></li>
+</ul>
+<p><strong>This pattern enables:</strong></p>
+<ul>
+<li>Informed investment in the repertoire (constraint libraries, archetype catalog)</li>
+<li>Legible quality reporting to organizational leadership</li>
+</ul>
+<hr>
+<p><em>This concludes Part VII: Operating the System.</em></p>
+<p><em>Continue to <a href="../examples/00-how-to-use.html">Part VIII: Applied Examples</a></em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../operating/05-reviewing-intent.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../examples/00-how-to-use.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../operating/05-reviewing-intent.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../examples/00-how-to-use.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

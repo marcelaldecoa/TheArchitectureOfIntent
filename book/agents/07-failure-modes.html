@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Failure Modes in Agent Systems - The Architecture of Intent</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Designing Agency in an Age Where Code Is No Longer Scarce">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/custom-bb0aef94.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-9ccab4e2.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-18ec9bd3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Architecture of Intent</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="pattern-57--failure-modes-in-agent-systems"><a class="header" href="#pattern-57--failure-modes-in-agent-systems">Pattern 5.7 — Failure Modes in Agent Systems</a></h1>
+<p><strong>Part V: Agents &amp; Execution</strong> · <em>7 of 7</em></p>
+<hr>
+<blockquote>
+<p><em>“Failure in a well-designed system is never noise. It is a signal, sharp and specific, pointing precisely at the assumption that was wrong.”</em></p>
+</blockquote>
+<hr>
+<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<p>We close Part V with failure — not as an afterthought, but as a design discipline in its own right. We have built the full architecture: intent expressed in specs, domain knowledge encoded in skills, capabilities bounded by tools and MCP, execution structured by oversight models. The question now is: how does this architecture fail, what does failure look like when it happens, and what does it teach us?</p>
+<p>This chapter draws on Pattern 2.5 (Failure as a Design Signal) from Part II and applies it concretely to agent systems. It assumes everything that came before in Part V.</p>
+<hr>
+<h2 id="the-problem"><a class="header" href="#the-problem">The Problem</a></h2>
+<p>When an agent produces a wrong output, the instinctive response is attribution: “the AI hallucinated,” “the agent misunderstood the instructions,” “the model got confused.” This attribution is almost always wrong in the way that matters — not factually wrong (the model may well have generated text that wasn’t accurate) but architecturally wrong. It locates the failure in the agent, and it is not actionable.</p>
+<p>If the failure is the agent’s, the only fix is a better agent. Wait for the next model version. The team is stuck.</p>
+<p>If the failure is in the architecture, the fix is available now. The spec was incomplete. The skill was stale. The oversight model didn’t catch the error in time. The tool description was ambiguous. These are all fixable without waiting for anyone.</p>
+<p>The discipline of failure analysis in agent systems is about correctly identifying which architectural layer failed — because the remedy, and the permanent fix, depends on the category.</p>
+<hr>
+<h2 id="the-resolution"><a class="header" href="#the-resolution">The Resolution</a></h2>
+<h3 id="the-five-failure-categories"><a class="header" href="#the-five-failure-categories">The Five Failure Categories</a></h3>
+<p><strong>Category 1: Spec Failures</strong></p>
+<p>The specification was incomplete, ambiguous, contradictory, or incorrect. The agent executed faithfully against the spec it was given, but the spec did not describe the correct output.</p>
+<p>Characteristics:</p>
+<ul>
+<li>The agent did something reasonable given what it was told</li>
+<li>A reviewer who only saw the spec would not have predicted the problem</li>
+<li>The same spec, run again, will produce the same problem</li>
+</ul>
+<p>Common manifestations:</p>
+<ul>
+<li>Agent makes a decision the author would have prohibited if they had thought of it</li>
+<li>Agent handles an edge case in a reasonable but incorrect way</li>
+<li>Agent produces the right structure with the wrong content because content requirements were unstated</li>
+<li>Agent stops at the wrong point because completion criteria were vague</li>
+</ul>
+<p><em>The fix</em>: Update the spec. Run again. Do not patch the output without fixing the specification that produced it — the same gap will produce the same error on the next execution.</p>
+<p><strong>Category 2: Capability Failures</strong></p>
+<p>The agent lacked a tool it needed to complete the task correctly, or had a tool that was insufficient for the domain (wrong interface, missing data, incorrect behavior). The agent routed around the limitation in a way that was incorrect or incomplete.</p>
+<p>Characteristics:</p>
+<ul>
+<li>The original task was achievable; the agent found a workaround that technically completes the spec but in the wrong way</li>
+<li>The output is subtly wrong in a way that is difficult to trace to a specific spec violation</li>
+<li>Often manifests as: long chain of simple tool calls substituting for one appropriate complex tool</li>
+</ul>
+<p>Common manifestations:</p>
+<ul>
+<li>Agent manually constructs a complex SQL query instead of calling a report API, getting edge cases wrong</li>
+<li>Agent uses a file system tool to simulate a database operation it didn’t have a proper tool for</li>
+<li>Agent approximates a computation by composing simpler operations, losing precision</li>
+</ul>
+<p><em>The fix</em>: Add the missing capability. This is an infrastructure fix, not a spec fix. After the capability exists, verify the spec would have used it correctly.</p>
+<p><strong>Category 3: Scope Creep Failures</strong></p>
+<p>The agent completed the requested task and then continued, doing adjacent work that was not asked for. Or the agent interpreted “complete the billing report” to include “fix the data anomalies I found in the underlying records,” because fixing them seemed helpful and was not explicitly prohibited.</p>
+<p>Characteristics:</p>
+<ul>
+<li>The core task is complete and correctly done</li>
+<li>Additional work was done that nobody asked for</li>
+<li>The additional work may itself be correct, but authorization was absent</li>
+</ul>
+<p>Why it matters: scope creep failures are the most likely to cause governance incidents because the agent was doing something that it had no authorization for, even if the action itself was technically correct. The authorization gap — not the quality of the work — is the problem.</p>
+<p><em>The fix</em>: Update the spec’s NOT-authorized section to explicitly prohibit the adjacent category of work. This is a scope boundary fix. Review the spec for other potential adjacent work the spec didn’t anticipate.</p>
+<p><strong>Category 4: Oversight Failures</strong></p>
+<p>The agent produced a wrong output, the oversight model failed to catch it before it had consequences, and the error became known through downstream effects rather than validation.</p>
+<p>Characteristics:</p>
+<ul>
+<li>The error is real (not a matter of preference), but it had time to propagate</li>
+<li>A human reviewer who saw the output at the right moment would likely have caught it</li>
+<li>The oversight model either didn’t have a human reviewing at the right stage, or the review didn’t catch the specific class of error</li>
+</ul>
+<p>Common manifestations:</p>
+<ul>
+<li>Agent sent an external communication before human review (oversight model didn’t require pre-send review)</li>
+<li>Agent deployed a change that passed automated validation but violated a convention no test checks</li>
+<li>Agent’s minor error accumulated across 200 records before someone noticed</li>
+</ul>
+<p><em>The fix</em>: Redesign the oversight model. This is an escalation trigger / checkpoint fix. The fix is not “be more careful” — it is a structural change to where human attention is applied in the execution flow.</p>
+<p><strong>Category 5: Compounding Failures</strong></p>
+<p>An early error created conditions for a later error; the combination produced a result that neither error would have produced alone. Common in multi-step agent tasks and multi-agent pipelines.</p>
+<p>Characteristics:</p>
+<ul>
+<li>The final output looks extremely wrong</li>
+<li>Tracing backwards reveals a chain: each step was locally plausible given what came before</li>
+<li>Any single step’s error, if caught early, would have prevented the downstream cascade</li>
+</ul>
+<p>Common manifestations:</p>
+<ul>
+<li>Agent produced a slightly wrong plan in step 1; subsequent steps executed correctly against the wrong plan; by step 8, the output is dramatically incorrect</li>
+<li>Agent A produced output that Agent B interpreted in an unexpected way; Agent B produced output that triggered an unintended action in Agent C</li>
+<li>Agent’s approximate calculation in step 3 was within tolerance; when multiplied by 10,000 records in step 7, the tolerance accumulated past acceptable range</li>
+</ul>
+<p><em>The fix</em>: Compounding failures require two fixes. First, the specific spec or capability gap that produced the original error. Second, a checkpoint review at the most critical compounding point — typically the handoff between phases or agents.</p>
+<h3 id="the-diagnostic-protocol"><a class="header" href="#the-diagnostic-protocol">The Diagnostic Protocol</a></h3>
+<p>When an agent failure is identified, the diagnostic process follows a specific order:</p>
+<p><strong>Step 1: Identify the failure category.</strong><br>Run through the five categories in order. Which one best describes the mechanism of failure?</p>
+<p><strong>Step 2: Trace to the specific artifact.</strong></p>
+<ul>
+<li>Spec failure → which section, which missing or ambiguous clause?</li>
+<li>Capability failure → which tool call, what was attempted, what was the limitation?</li>
+<li>Scope creep → what adjacent action was taken, and where was the authorization boundary?</li>
+<li>Oversight failure → at what point in execution did the error exist and go unreviewed?</li>
+<li>Compounding → where in the chain did the first error occur?</li>
+</ul>
+<p><strong>Step 3: Fix the artifact, not the output.</strong><br>Update the spec, provision the capability, add the scope prohibition, redesign the checkpoint. Document the change and why it was made.</p>
+<p><strong>Step 4: Log the gap.</strong><br>Every identified spec gap should be recorded in a Spec Gap Log: what was missing, when it was discovered, what spec change was made. Over time, the gap log reveals patterns — recurring gap types indicate spec-writing habits that need correction; recurring domains indicate skill gaps.</p>
+<p><strong>Step 5: Re-execute with the fixed artifact.</strong><br>Verify that the fix actually prevents the failure category, not just avoids the specific symptom.</p>
+<h3 id="anti-patterns-in-failure-response"><a class="header" href="#anti-patterns-in-failure-response">Anti-Patterns in Failure Response</a></h3>
+<p><strong>Spec debt.</strong> Fixing the output without fixing the spec that produced the bad output. The output is now correct; the spec will produce the same problem on the next execution. Spec debt accumulates until it is addressed — at which point the fixes are much more expensive, because the gaps have multiplied and the context has been forgotten.</p>
+<p><strong>Oversight theater.</strong> Adding more oversight after a failure without fixing the underlying cause. “We’ll have a human review every output from now on” is not a fix — it is a compensating control that adds cost without eliminating risk. It also creates a false sense of security: the oversight catches some failures but not the class of failure that produced this specific incident.</p>
+<p><strong>AI attribution evasion.</strong> Blaming the model for failures that are architectural. “The AI got it wrong” is true in a narrow sense and useless in a design sense. The model produced the most probable output for the inputs it received. If the most probable output was wrong, the inputs were wrong. Fix the inputs — the spec, the skill, the capability boundary.</p>
+<p><strong>Tooling over specification.</strong> Investing in better observability, better logging, better dashboards — while the underlying specs remain under-specified. Observation infrastructure makes failures visible; it does not prevent them. The investment order should be: fix the spec first, then build the visibility layer to verify the fix held.</p>
+<h3 id="failure-as-organizational-learning"><a class="header" href="#failure-as-organizational-learning">Failure as Organizational Learning</a></h3>
+<p>The most valuable property of a well-structured failure is that it is specific. A failed output, properly diagnosed, points precisely at the assumption that was wrong — and that assumption, now corrected, will be correct for every future execution against the same class of task.</p>
+<p>This is the compounding return on SDD: every diagnosed failure improves a spec or a skill, and that improvement is durable. It lives in a versioned artifact that is applied to every future task in that domain. The organization gets smarter about each class of work as that work accumulates failures and those failures are properly attributed and corrected.</p>
+<p>Compare this to a conversational agent workflow: failures in that context are addressed in the conversation (“try again, but this time…”), and the correction lives only in the conversation history. It does not propagate to future work. The organization forgives the failure without learning from it.</p>
+<p>The Spec Gap Log, the skill review cycle, and the checkpoint adjustment process are the mechanisms by which agent systems turn failure into institutional knowledge. They transform a cost — the failure — into an investment.</p>
+<hr>
+<h2 id="therefore"><a class="header" href="#therefore">Therefore</a></h2>
+<blockquote>
+<p><strong>Agent failures fall into five categories — spec, capability, scope creep, oversight, and compounding — each with a distinct mechanism, a specific architectural fix, and a different lesson for the systems that follow. The diagnostic discipline is correct attribution: failures attributed to “the AI” are unactionable; failures attributed to their architectural category are fixable, and the fixes are durable. A well-run agent practice treats every failure as a precise signal pointing at the assumption that was wrong, and corrects that assumption in a versioned artifact that improves every future execution in that domain.</strong></p>
+</blockquote>
+<hr>
+<h2 id="connections"><a class="header" href="#connections">Connections</a></h2>
+<p><strong>This pattern assumes:</strong></p>
+<ul>
+<li><a href="01-what-agents-are.html">What Agents Are (and Are Not)</a></li>
+<li><a href="03-agents-as-executors.html">Agents as Executors of Intent</a></li>
+<li><a href="06-human-oversight-models.html">Human Oversight Models</a></li>
+<li><a href="../theory/05-failure-as-design-signal.html">Failure as a Design Signal</a></li>
+<li><a href="../sdd/03-spec-lifecycle.html">The Spec Lifecycle</a></li>
+</ul>
+<p><strong>This pattern enables:</strong></p>
+<ul>
+<li>The Spec Gap Log as an organizational discipline <em>(Part VI)</em></li>
+<li>Governance and Accountability Design <em>(Part VII)</em></li>
+</ul>
+<hr>
+<p><em>This concludes Part V: Agents &amp; Execution.</em></p>
+<p><em>Continue to <a href="../repertoires/01-why-repertoires-matter.html">Part VI: Standards &amp; Repertoires</a></em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../agents/06-human-oversight-models.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../repertoires/01-why-repertoires-matter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../agents/06-human-oversight-models.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../repertoires/01-why-repertoires-matter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

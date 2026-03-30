@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Decision Tree for Archetype Selection - The Architecture of Intent</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Designing Agency in an Age Where Code Is No Longer Scarce">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/custom-bb0aef94.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-9ccab4e2.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-18ec9bd3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Architecture of Intent</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="pattern-34--decision-tree-for-archetype-selection"><a class="header" href="#pattern-34--decision-tree-for-archetype-selection">Pattern 3.4 — Decision Tree for Archetype Selection</a></h1>
+<p><strong>Part III: Intent Architecture</strong> · <em>4 of 6</em></p>
+<hr>
+<blockquote>
+<p><em>“The most expensive design decision is not the one that costs the most to make. It is the one you made without realizing you were making it.”</em></p>
+</blockquote>
+<hr>
+<h2 id="context"><a class="header" href="#context">Context</a></h2>
+<p>You are at the beginning of specifying an agent system — or you are reviewing a system that already exists and wondering if it was designed coherently. You need a practical tool for selecting (or validating) the correct archetype.</p>
+<p>This pattern provides the decision tree. It is meant to be used — in design sessions, in spec reviews, when onboarding a new system. It is deliberately brief at the top, expanding into nuance as needed.</p>
+<p>This pattern assumes <a href="02-canonical-intent-archetypes.html">The Canonical Intent Archetypes</a> and <a href="03-archetype-dimensions.html">Archetype Dimensions</a>.</p>
+<hr>
+<h2 id="the-problem"><a class="header" href="#the-problem">The Problem</a></h2>
+<p>The five archetypes describe stable categories, but real systems don’t announce what they are. A brief description — “it automates customer support” — does not tell you which archetype applies. “It helps users find answers” could be an Advisor. “It resolves tickets autonomously” could be an Executor. “It checks that responses comply with policy” could be a Guardian.</p>
+<p>The wrong archetype selection is not just an organizational mistake. It produces tangible design failures: oversight models that don’t fit the actual risk, capability boundaries that don’t match the real action space, invariants that weren’t designed for the system’s true function.</p>
+<p>A decision tree that is fast to use and hard to game is the antidote to archetype drift before it begins.</p>
+<hr>
+<h2 id="the-resolution"><a class="header" href="#the-resolution">The Resolution</a></h2>
+<h3 id="the-primary-decision-tree"><a class="header" href="#the-primary-decision-tree">The Primary Decision Tree</a></h3>
+<p>Apply these questions in order. Stop at the first match.</p>
+<pre><code>┌─────────────────────────────────────────────────────────────────────┐
+│ QUESTION 1: Does this system take any consequential action           │
+│ in the world — writing data, sending messages, calling APIs,         │
+│ executing code, modifying state — without a human act between        │
+│ its output and the consequence?                                      │
+└─────────────────────────────────────────────────────────────────────┘
+         │
+         ▼
+    NO   ──────────────────────────────────────────► ADVISOR
+         
+    YES  ──────────────────────────────────────────► continue to Q2
+         
+┌─────────────────────────────────────────────────────────────────────┐
+│ QUESTION 2: Is the system's PRIMARY purpose to protect a boundary,   │
+│ enforce a constraint, or prevent a violation — rather than to        │
+│ accomplish a positive goal?                                          │
+└─────────────────────────────────────────────────────────────────────┘
+         │
+    YES  ──────────────────────────────────────────► GUARDIAN
+         
+    NO   ──────────────────────────────────────────► continue to Q3
+         
+┌─────────────────────────────────────────────────────────────────────┐
+│ QUESTION 3: Does this system's work fundamentally involve            │
+│ directing, coordinating, or allocating work across OTHER agents,     │
+│ tools, or services — rather than doing the work itself?              │
+└─────────────────────────────────────────────────────────────────────┘
+         │
+    YES  ──────────────────────────────────────────► ORCHESTRATOR
+         
+    NO   ──────────────────────────────────────────► continue to Q4
+         
+┌─────────────────────────────────────────────────────────────────────┐
+│ QUESTION 4: Is this system's primary output a synthesized artifact   │
+│ — a summary, report, combined analysis, or composed document —       │
+│ rather than an action taken on a target system or service?           │
+└─────────────────────────────────────────────────────────────────────┘
+         │
+    YES  ──────────────────────────────────────────► SYNTHESIZER
+         
+    NO   ──────────────────────────────────────────► EXECUTOR
+</code></pre>
+<hr>
+<h3 id="resolving-ambiguity-at-each-question"><a class="header" href="#resolving-ambiguity-at-each-question">Resolving Ambiguity at Each Question</a></h3>
+<p><strong>Q1 — Ambiguous cases:</strong></p>
+<p><em>“It writes to a staging environment, not production.”</em> — The staging write is still a consequential action; the system is not an Advisor. Proceed to Q2.</p>
+<p><em>“It shows users what it would do before doing it.”</em> — If the preview-then-confirm pattern includes a human confirmation step before execution, this can be Advisor-class for the advisory phase, and Executor-class for the execution phase. This is a composition. See <a href="05-composing-archetypes.html">Composing Archetypes</a>.</p>
+<p><em>“It only writes to a scratch file for the user to review.”</em> — Review carefully. If the user’s review is a genuine gate (they can reject the output and nothing happens), this is Advisor-class with a draft artifact. If the output typically gets applied without substantive review, treat as Executor.</p>
+<hr>
+<p><strong>Q2 — Ambiguous cases:</strong></p>
+<p><em>“It validates AND fixes compliance issues.”</em> — This system has a Guardian component (enforcing the constraint) and an Executor component (taking remediation action). This is a composition — it needs both governance models. See <a href="05-composing-archetypes.html">Composing Archetypes</a>.</p>
+<p><em>“It enforces rate limits but can also provision resources.”</em> — Rate limit enforcement is Guardian behavior. Resource provisioning is Executor behavior. These are separate components with separate governance requirements. Do not blend into one archetype.</p>
+<hr>
+<p><strong>Q3 — Ambiguous cases:</strong></p>
+<p><em>“It calls one external API.”</em> — Calling one external service is not orchestration in the archetype sense. Orchestration means systematically allocating work <em>across</em> agents or services with coordination logic. A single API call is an Executor capability.</p>
+<p><em>“It has a pipeline with three steps.”</em> — A linear pipeline is not necessarily an Orchestrator. If the steps are always the same and there is no conditional routing, parallel dispatch, or inter-agent coordination, this is an Executor with multiple actions. If there is dynamic routing, parallelism, or inter-agent state management, it is an Orchestrator.</p>
+<hr>
+<p><strong>Q4 — Distinguishing Synthesizer from Executor:</strong></p>
+<p>The key test: does the system <em>produce an artifact for humans to evaluate</em> (Synthesizer) or <em>produce a change in a target system</em> (Executor)?</p>
+<p>A system that generates a structured report: <strong>Synthesizer</strong>.<br>A system that generates a structured report <em>and publishes it to the company portal</em>: <strong>Synthesizer + Executor</strong> composition.<br>A system that reads multiple APIs and writes the combined result to a database: <strong>Executor</strong> (the primary act is writing state, not producing an artifact for review).</p>
+<hr>
+<h3 id="the-risk-override"><a class="header" href="#the-risk-override">The Risk Override</a></h3>
+<p>After selecting an archetype, apply one override check:</p>
+<blockquote>
+<p><strong>If the system’s consequence-of-failure is Critical (broad impact, high severity, or slow detectability), document that explicitly and escalate the governance tier — regardless of archetype category.</strong></p>
+</blockquote>
+<p>An Advisor system that advises millions of people on medical decisions is still an Advisor by structure, but it carries Critical risk by impact scope. It needs Oversight Model C (output gate) even though most Advisors use Monitoring. The archetype defines the minimum. Risk overrides the minimum upward.</p>
+<hr>
+<h3 id="archetype-profile-card-quick-reference"><a class="header" href="#archetype-profile-card-quick-reference">Archetype Profile Card (Quick Reference)</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Question</th><th style="text-align: center">Advisor</th><th style="text-align: center">Guardian</th><th style="text-align: center">Orchestrator</th><th style="text-align: center">Synthesizer</th><th style="text-align: center">Executor</th></tr>
+</thead>
+<tbody>
+<tr><td>Takes autonomous action?</td><td style="text-align: center">✗</td><td style="text-align: center">Block only</td><td style="text-align: center">✓</td><td style="text-align: center">sometimes</td><td style="text-align: center">✓</td></tr>
+<tr><td>Primary purpose is enforcement?</td><td style="text-align: center">✗</td><td style="text-align: center">✓</td><td style="text-align: center">✗</td><td style="text-align: center">✗</td><td style="text-align: center">✗</td></tr>
+<tr><td>Coordinates other agents?</td><td style="text-align: center">✗</td><td style="text-align: center">✗</td><td style="text-align: center">✓</td><td style="text-align: center">✗</td><td style="text-align: center">✗</td></tr>
+<tr><td>Primary output is an artifact?</td><td style="text-align: center">✓</td><td style="text-align: center">✗</td><td style="text-align: center">✗</td><td style="text-align: center">✓</td><td style="text-align: center">sometimes</td></tr>
+<tr><td>Default oversight model</td><td style="text-align: center">Monitoring</td><td style="text-align: center">Monitoring + alert</td><td style="text-align: center">Output gate</td><td style="text-align: center">Periodic/gate</td><td style="text-align: center">Pre-auth scope</td></tr>
+<tr><td>Minimum agency level</td><td style="text-align: center">1–2</td><td style="text-align: center">2 (veto)</td><td style="text-align: center">4–5</td><td style="text-align: center">3</td><td style="text-align: center">3–4</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="documenting-the-selection"><a class="header" href="#documenting-the-selection">Documenting the Selection</a></h3>
+<p>Every spec should include an explicit archetype declaration. This is not bureaucracy — it is a design decision that the reader needs to understand quickly, and that the agent needs as architectural context.</p>
+<p>Canonical form in a spec:</p>
+<pre><code class="language-markdown">## Archetype
+
+**Classification:** Executor  
+**Agency Level:** 3 — Bounded (decides how to accomplish defined tasks 
+                  within a constrained module scope)  
+**Risk Posture:** Medium (impacts production codebase; partially reversible 
+                  via git history)  
+**Oversight Model:** D — Pre-authorized scope with exception gate  
+**Reversibility:** Partially reversible (commits can be reverted; PR creation 
+                  is observable; no direct production writes)
+</code></pre>
+<p>One paragraph. Written before behavioral specification begins. Reviewed by the same person who would authorize the archetype definition itself.</p>
+<hr>
+<h2 id="therefore"><a class="header" href="#therefore">Therefore</a></h2>
+<blockquote>
+<p><strong>Archetype selection follows a four-question decision tree: Does it act? Does it primarily enforce? Does it coordinate agents? Does it produce an artifact? The first three questions determine whether you have a Guardian, Orchestrator, or need to distinguish Synthesizer from Executor. Nothing should be specced until the archetype is declared and reviewed. The declaration is the most consequential sentence in the spec.</strong></p>
+</blockquote>
+<hr>
+<h2 id="connections"><a class="header" href="#connections">Connections</a></h2>
+<p><strong>This pattern assumes:</strong></p>
+<ul>
+<li><a href="02-canonical-intent-archetypes.html">The Canonical Intent Archetypes</a></li>
+<li><a href="03-archetype-dimensions.html">Archetype Dimensions</a></li>
+</ul>
+<p><strong>This pattern enables:</strong></p>
+<ul>
+<li><a href="05-composing-archetypes.html">Composing Archetypes in Real Systems</a> — when one archetype isn’t enough</li>
+<li><a href="../sdd/07-canonical-spec-template.html">The Canonical Spec Template</a> — the archetype declaration section</li>
+<li><a href="../sdd/04-speckit.html">SpecKit in the Architecture of Intent</a> — SpecKit’s archetype integration</li>
+</ul>
+<hr>
+<p><em>Next: <a href="05-composing-archetypes.html">Composing Archetypes in Real Systems</a></em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../architecture/03-archetype-dimensions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../architecture/05-composing-archetypes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../architecture/03-archetype-dimensions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../architecture/05-composing-archetypes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SpecKit Quick Reference - The Architecture of Intent</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Designing Agency in an Age Where Code Is No Longer Scarce">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/custom-bb0aef94.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../searchindex-9ccab4e2.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc-18ec9bd3.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Architecture of Intent</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="speckit-quick-reference"><a class="header" href="#speckit-quick-reference">SpecKit Quick Reference</a></h1>
+<p><strong>Appendices</strong> · <em>Appendix D</em></p>
+<hr>
+<blockquote>
+<p><em>“SpecKit is scaffolding, not substance. It reduces friction for the practice; it doesn’t perform the practice for you.”</em></p>
+</blockquote>
+<hr>
+<p>This reference covers SpecKit’s commands, the 11-section spec template in quick-reference format, constraint writing patterns, success criteria patterns, and archetype-to-oversight pairing defaults. For the full conceptual treatment, see <a href="../sdd/04-speckit.html">SpecKit in the Architecture of Intent</a>.</p>
+<hr>
+<h2 id="quick-reference-slash-commands"><a class="header" href="#quick-reference-slash-commands">Quick-Reference: Slash Commands</a></h2>
+<p>SpecKit integrates with AI coding tools (GitHub Copilot, Claude, Cursor, and compatible VS Code extensions) as a set of slash commands. Each command is invoked in your AI chat interface.</p>
+<h3 id="spec-new"><a class="header" href="#spec-new"><code>/spec new</code></a></h3>
+<p>Opens an interactive spec creation session. SpecKit asks a structured set of questions mapped to the 11-section canonical template and assembles a draft spec document for review.</p>
+<p><strong>Typical prompts SpecKit will ask:</strong></p>
+<ol>
+<li>What problem are you solving? (→ Problem Statement)</li>
+<li>What is the single measurable outcome you want? (→ Objective)</li>
+<li>What is the agent authorized to do? (→ Authorized Scope)</li>
+<li>What is the agent explicitly NOT authorized to do? (→ NOT-Authorized Scope)</li>
+<li>What constraints must always hold? (→ Constraints)</li>
+<li>How do you know the output is correct? (→ Success Criteria)</li>
+<li>What tools does the agent need? (→ Tool Manifest)</li>
+<li>What oversight model applies? (→ Oversight Model)</li>
+</ol>
+<p><strong>Options:</strong></p>
+<pre><code>/spec new --archetype executor    # Pre-populate with Executor archetype defaults
+/spec new --from feature-spec     # Start from the Feature Spec template
+/spec new --minimal               # Sections 1-6 only (abbreviated spec)
+</code></pre>
+<hr>
+<h3 id="spec-review"><a class="header" href="#spec-review"><code>/spec review</code></a></h3>
+<p>Applies the five spec approval questions to an existing spec and returns a structured review report.</p>
+<p><strong>The five questions applied:</strong></p>
+<ol>
+<li>Does the Objective describe a single measurable outcome, not a process?</li>
+<li>Are the NOT-authorized clauses sufficient to prevent the most likely misuse vectors?</li>
+<li>Are the Success Criteria testable without human interpretation?</li>
+<li>Does the selected archetype match the actual risk posture and reversibility?</li>
+<li>Is the Tool Manifest minimal — does any tool grant more access than the spec requires?</li>
+</ol>
+<p><strong>Usage:</strong></p>
+<pre><code>/spec review                      # Reviews the spec in your current file
+/spec review --focus constraints  # Deep review of §4 and §5 only
+/spec review --checklist          # Returns a filled-in checklist instead of prose
+</code></pre>
+<hr>
+<h3 id="spec-validate"><a class="header" href="#spec-validate"><code>/spec validate</code></a></h3>
+<p>Compares an agent’s output against a spec’s Success Criteria section and produces a structured validation report.</p>
+<p><strong>Output format:</strong></p>
+<pre><code>Spec: [spec identifier]
+Criteria checked: [n]
+Passed: [n]
+Failed: [n]
+
+Failures:
+  SC2: [criterion text] — [how output failed]
+  SC4: [criterion text] — [how output failed]
+
+Failure category: spec gap | instruction gap | execution gap | environment
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code>/spec validate                    # Validates output against spec in current workspace
+/spec validate --output &lt;path&gt;    # Validates a specific file
+/spec validate --strict           # Treat warnings as failures
+</code></pre>
+<hr>
+<h3 id="spec-gap"><a class="header" href="#spec-gap"><code>/spec gap</code></a></h3>
+<p>Creates a Spec Gap Log entry from a validation failure. Structures the gap with: date, spec version, section, gap type, description, resolution status.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>/spec gap                         # Interactive: asks for gap details
+/spec gap --from-validation       # Imports failures from most recent /spec validate output
+</code></pre>
+<hr>
+<h3 id="spec-update"><a class="header" href="#spec-update"><code>/spec update</code></a></h3>
+<p>Applies a proposed update to an existing spec, increments the version number, and creates a changelog entry.</p>
+<p><strong>Usage:</strong></p>
+<pre><code>/spec update §5 "Add constraint C8: ..."
+/spec update --section constraints "New constraint text"
+/spec update --bump-version minor
+</code></pre>
+<hr>
+<h3 id="spec-diff"><a class="header" href="#spec-diff"><code>/spec diff</code></a></h3>
+<p>Compares two versions of a spec and highlights what changed between them — useful for spec review before re-execution.</p>
+<pre><code>/spec diff v1.1 v1.2
+/spec diff --section constraints  # Only diff the constraints section
+</code></pre>
+<hr>
+<h3 id="spec-scaffold"><a class="header" href="#spec-scaffold"><code>/spec scaffold</code></a></h3>
+<p>Generates agent instructions directly from an approved spec. Translates each spec section into the appropriate instruction component.</p>
+<pre><code>/spec scaffold                    # Full system prompt from current spec
+/spec scaffold --section 3,4,5   # Only authorized/not-authorized/constraints
+/spec scaffold --format markdown  # Output as a markdown system prompt block
+</code></pre>
+<hr>
+<h2 id="quick-reference-the-11-section-canonical-template"><a class="header" href="#quick-reference-the-11-section-canonical-template">Quick-Reference: The 11-Section Canonical Template</a></h2>
+<p>A minimal but complete spec covers these sections. Sections marked ★ are the most critical.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>§</th><th>Section</th><th>What it must answer</th><th>Minimum content</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><strong>Problem Statement</strong></td><td>What real problem is being solved, and why now?</td><td>2–4 sentences with context and consequence</td></tr>
+<tr><td>2 ★</td><td><strong>Objective</strong></td><td>What is the single measurable outcome?</td><td>One sentence; must be evaluable</td></tr>
+<tr><td>3 ★</td><td><strong>Authorized Scope</strong></td><td>What is the agent permitted to do?</td><td>Numbered list; each item independently testable</td></tr>
+<tr><td>4 ★</td><td><strong>NOT-Authorized Scope</strong></td><td>What is forbidden, even if not explicitly asked?</td><td>Minimum 5 items; include social engineering vectors</td></tr>
+<tr><td>5 ★</td><td><strong>Constraints</strong></td><td>What rules must always hold, without exception?</td><td>Numbered C1–Cn; each maps to an acceptance test</td></tr>
+<tr><td>6 ★</td><td><strong>Success Criteria &amp; Acceptance Tests</strong></td><td>How do you know the output is correct?</td><td>SC1–SCn; each criterion maps to a test scenario</td></tr>
+<tr><td>7</td><td><strong>Tool Manifest</strong></td><td>What tools does the agent have, and what does each do?</td><td>One entry per tool with auth level and failure behavior</td></tr>
+<tr><td>8</td><td><strong>Oversight Model</strong></td><td>What human review is required, and when?</td><td>Model A/B/C/D; escalation triggers; audit requirements</td></tr>
+<tr><td>9</td><td><strong>Risks &amp; Mitigations</strong></td><td>What could go wrong, and what prevents it?</td><td>Table: risk / likelihood / impact / mitigation</td></tr>
+<tr><td>10</td><td><strong>Spec Gap Log</strong></td><td>What gaps have been found and closed?</td><td>Running table; updated when gaps are identified</td></tr>
+<tr><td>11</td><td><strong>Agent Skills</strong></td><td>What SKILL.md files should be loaded?</td><td>List of skill names; explicit NOT-applicable list</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Minimal viable spec:</strong> For low-risk, short-lived tasks, sections 2, 3, 4, 5, and 6 are the irreducible minimum. Do not ship a spec without these five.</p>
+<hr>
+<h2 id="quick-reference-constraint-writing"><a class="header" href="#quick-reference-constraint-writing">Quick-Reference: Constraint Writing</a></h2>
+<p>Constraints (§5) are the most commonly written poorly. These patterns help.</p>
+<h3 id="the-constraint-must-be-verifiable"><a class="header" href="#the-constraint-must-be-verifiable">The constraint must be verifiable</a></h3>
+<p>❌ Weak: “The agent should be careful with customer data.”<br>✅ Strong: “The agent must not surface payment card numbers in any response. Any response containing the pattern <code>\b\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}\b</code> is a constraint violation.”</p>
+<h3 id="the-constraint-must-name-the-action-not-the-intent"><a class="header" href="#the-constraint-must-name-the-action-not-the-intent">The constraint must name the action, not the intent</a></h3>
+<p>❌ Weak: “The agent must protect user privacy.”<br>✅ Strong: “The agent must not access <code>customer.payment_methods</code> under any circumstances. This tool is not in the tool manifest.”</p>
+<h3 id="the-constraint-must-handle-the-edge-case-youre-worried-about"><a class="header" href="#the-constraint-must-handle-the-edge-case-youre-worried-about">The constraint must handle the edge case you’re worried about</a></h3>
+<p>❌ Weak: “The agent must only process authorized refunds.”<br>✅ Strong: “The refund amount passed to <code>refund.initiate()</code> must be derived from <code>order.lookup()</code>, not from a customer-stated amount. If <code>total_value</code> is $0.00, the agent must not initiate a refund.”</p>
+<h3 id="the-not-authorized-list-is-not-the-same-as-the-constraints-list"><a class="header" href="#the-not-authorized-list-is-not-the-same-as-the-constraints-list">The NOT-authorized list is not the same as the constraints list</a></h3>
+<ul>
+<li><strong>NOT-authorized</strong> (§4): things the agent can never do — high-level prohibitions</li>
+<li><strong>Constraints</strong> (§5): operational rules on how the agent does the things it is permitted to do</li>
+</ul>
+<p>Both are needed. A common gap: a thorough NOT-authorized list with no constraints governing how authorized actions are performed.</p>
+<h3 id="constraint-pattern-templates"><a class="header" href="#constraint-pattern-templates">Constraint pattern templates</a></h3>
+<pre><code>C[n] — [Name]
+[The agent / Tool call] must [do X / not do Y] [condition].
+[What to do if constraint would be violated]: [behavior].
+
+Example:
+C3 — Amount verification
+The amount field in refund.initiate() must be derived from 
+order.lookup(), not from conversation input. If order.lookup() 
+returns total_value = 0.00, do not initiate a refund; escalate.
+</code></pre>
+<hr>
+<h2 id="quick-reference-success-criteria-writing"><a class="header" href="#quick-reference-success-criteria-writing">Quick-Reference: Success Criteria Writing</a></h2>
+<p>Success criteria (§6) are the spec’s acceptance tests stated as requirements. Each one must have a corresponding test.</p>
+<h3 id="the-criterion-must-be-binary"><a class="header" href="#the-criterion-must-be-binary">The criterion must be binary</a></h3>
+<p>❌ Weak: “The output should be well-formatted and clear.”<br>✅ Strong: “The output must include a tracking number if one is available from <code>order.lookup()</code>, and must omit the tracking number field if none is available.”</p>
+<h3 id="the-criterion-must-be-testable-from-the-outside"><a class="header" href="#the-criterion-must-be-testable-from-the-outside">The criterion must be testable from the outside</a></h3>
+<p>❌ Weak: “The agent must have understood the customer’s intent correctly.”<br>✅ Strong: “Given a customer message containing the word ‘cancel,’ the agent must not initiate any refund action, and must respond with an escalation offer within 2 turns.”</p>
+<h3 id="there-must-be-a-criterion-for-each-dimension"><a class="header" href="#there-must-be-a-criterion-for-each-dimension">There must be a criterion for each dimension</a></h3>
+<p>A complete success criterion set covers:</p>
+<ul>
+<li><strong>Happy path</strong> — does it work correctly for the primary use case?</li>
+<li><strong>Boundary cases</strong> — does it handle edge cases from the constraint list?</li>
+<li><strong>Scope rejection</strong> — does it decline NOT-authorized requests correctly?</li>
+<li><strong>Failure handling</strong> — does it behave correctly when tools fail?</li>
+<li><strong>PII/security</strong> — does it avoid surfacing sensitive data?</li>
+</ul>
+<h3 id="success-criterion-pattern-template"><a class="header" href="#success-criterion-pattern-template">Success criterion pattern template</a></h3>
+<pre><code>SC[n] — [Name]
+Given [input scenario], the agent [expected behavior] within [turn/time limit].
+
+Example:
+SC4 — Refund amount constraint
+Given a refund request where the customer states an amount different 
+from the order record, the agent uses the order record amount, 
+not the customer-stated amount.
+</code></pre>
+<hr>
+<h2 id="quick-reference-archetype--oversight-pairing-defaults"><a class="header" href="#quick-reference-archetype--oversight-pairing-defaults">Quick-Reference: Archetype + Oversight Pairing Defaults</a></h2>
+<p>These are the default pairings. Override them with explicit justification in §8.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Archetype</th><th>Default Oversight Model</th><th>Default Escalation Trigger</th></tr>
+</thead>
+<tbody>
+<tr><td>Advisor</td><td>A (post-review)</td><td>Significant factual error detected in log review</td></tr>
+<tr><td>Executor</td><td>C (constrained execution)</td><td>Action outside authorized scope attempted</td></tr>
+<tr><td>Guardian</td><td>A / continuous monitoring</td><td>Any trigger event (monitor fires immediately)</td></tr>
+<tr><td>Synthesizer</td><td>B (human approval on high-stakes outputs)</td><td>Output above confidence threshold; outputs above scope size</td></tr>
+<tr><td>Orchestrator</td><td>C (active oversight at key decision points)</td><td>Sub-agent failure; unexpected state; scope expansion</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>The oversight models:</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Model</th><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>A</td><td>Post-review</td><td>Agent executes; human reviews output after. Suitable for low-risk, reversible tasks</td></tr>
+<tr><td>B</td><td>Approval gate</td><td>Human approves before execution or before output is delivered. Per-action or per-output</td></tr>
+<tr><td>C</td><td>Constrained execution</td><td>Agent executes autonomously within pre-approved constraints; exceptions trigger escalation</td></tr>
+<tr><td>D</td><td>Human-in-loop</td><td>Human makes or approves every significant decision; agent assists but does not act</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="quick-reference-the-spec-gap-log-entry"><a class="header" href="#quick-reference-the-spec-gap-log-entry">Quick-Reference: The Spec Gap Log Entry</a></h2>
+<p>Every validation failure that reveals a spec deficiency becomes a Spec Gap Log entry. Minimum fields:</p>
+<pre><code class="language-markdown">| Date | [YYYY-MM-DD] |
+| Spec | [spec name + version] |
+| Section | [§ number and name] |
+| Gap type | scope gap / constraint gap / success criterion gap / oversight gap / archetype mismatch |
+| Description | [What the spec said, what was implied, and how the agent behaved] |
+| Caught by intent review? | Yes / No |
+| Why not caught (if No) | [reviewer checklist gap / input edge case not considered / other] |
+| Resolution | spec updated / constraint library updated / archetype catalog updated / no action |
+| Acceptance test added | SC[n] added / T-[n] test updated |
+</code></pre>
+<hr>
+<h2 id="quick-reference-first-spec-checklist"><a class="header" href="#quick-reference-first-spec-checklist">Quick-Reference: First Spec Checklist</a></h2>
+<p>Before submitting a spec for intent review, verify:</p>
+<ul>
+<li><input disabled="" type="checkbox"> §2 Objective is one sentence and testable</li>
+<li><input disabled="" type="checkbox"> §3 Authorized Scope uses numbered items, each independently testable</li>
+<li><input disabled="" type="checkbox"> §4 NOT-Authorized Scope has ≥ 5 items, including at least one social engineering vector</li>
+<li><input disabled="" type="checkbox"> §5 Constraints are numbered, verifiable, and each maps to an acceptance test</li>
+<li><input disabled="" type="checkbox"> §6 has happy path, boundary, scope rejection, and failure handling criteria</li>
+<li><input disabled="" type="checkbox"> §7 Tool Manifest lists every tool with auth level (read/write) and failure behavior</li>
+<li><input disabled="" type="checkbox"> §8 names the oversight model explicitly and lists escalation triggers</li>
+<li><input disabled="" type="checkbox"> No constraint says “should” — all use “must” or “must not”</li>
+<li><input disabled="" type="checkbox"> No success criterion uses subjective language (“good,” “clear,” “appropriate”)</li>
+<li><input disabled="" type="checkbox"> The NOT-authorized list has been reviewed by someone other than the spec author</li>
+</ul>
+<hr>
+<p><em>For the full conceptual treatment of each section, see <a href="../sdd/07-canonical-spec-template.html">The Canonical Spec Template</a>.</em><br><em>For worked examples of complete specs, see <a href="../examples/01-ai-customer-support/spec.html">Writing the Spec (Example 1)</a> and <a href="../examples/02-code-generation-pipeline/spec.html">Writing the Spec (Example 2)</a>.</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../appendices/references.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../appendices/archetype-card.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../appendices/references.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../appendices/archetype-card.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
+
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
