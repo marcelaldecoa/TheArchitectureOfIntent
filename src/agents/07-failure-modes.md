@@ -4,7 +4,7 @@
 
 ---
 
-> *"Failure in a well-designed system is never noise. It is a signal, sharp and specific, pointing precisely at the assumption that was wrong."*
+> *"Failure in a well-designed system is rarely noise. It is a signal, sharp and specific, pointing at the assumption that was wrong."*
 
 ---
 
@@ -18,11 +18,13 @@ This chapter draws on Pattern 2.5 (Failure as a Design Signal) from Part II and 
 
 ## The Problem
 
-When an agent produces a wrong output, the instinctive response is attribution: "the AI hallucinated," "the agent misunderstood the instructions," "the model got confused." This attribution is almost always wrong in the way that matters — not factually wrong (the model may well have generated text that wasn't accurate) but architecturally wrong. It locates the failure in the agent, and it is not actionable.
+When an agent produces a wrong output, the instinctive response is attribution: "the AI hallucinated," "the agent misunderstood the instructions," "the model got confused." This attribution is often wrong in the way that matters — not factually wrong (the model may well have generated text that wasn't accurate) but architecturally wrong. It locates the failure in the agent, and it is not actionable.
 
 If the failure is the agent's, the only fix is a better agent. Wait for the next model version. The team is stuck.
 
 If the failure is in the architecture, the fix is available now. The spec was incomplete. The skill was stale. The oversight model didn't catch the error in time. The tool description was ambiguous. These are all fixable without waiting for anyone.
+
+This is not a claim that model-level failures never occur. They do — hallucination, training distribution mismatch, confidence miscalibration, and instruction-following inconsistency are genuine technical failure modes that no spec can fully prevent. But in practice, teams that systematically categorize their agent failures find that the majority of consequential failures trace back to architectural gaps rather than model limitations. The discipline of failure analysis prioritizes the fixable categories first, because they are the most actionable.
 
 The discipline of failure analysis in agent systems is about correctly identifying which architectural layer failed — because the remedy, and the permanent fix, depends on the category.
 
@@ -30,7 +32,7 @@ The discipline of failure analysis in agent systems is about correctly identifyi
 
 ## The Resolution
 
-### The Five Failure Categories
+### The Six Failure Categories
 
 **Category 1: Spec Failures**
 
@@ -110,12 +112,36 @@ Common manifestations:
 
 *The fix*: Compounding failures require two fixes. First, the specific spec or capability gap that produced the original error. Second, a checkpoint review at the most critical compounding point — typically the handoff between phases or agents.
 
+**Category 6: Model-Level Failures**
+
+The agent's underlying model produced incorrect output despite a correct and complete spec, appropriate tools, and proper scope. The failure originates in the model itself — its training data, its reasoning patterns, or its instruction-following limitations.
+
+Characteristics:
+- The spec is correct and complete — a knowledgeable human reviewing the spec would have predicted the correct output
+- The same spec produces incorrect output consistently or intermittently across re-executions
+- The error is not traceable to a missing tool, a scope violation, or an oversight gap
+- The output may be structurally correct but factually wrong, or may violate constraints that were clearly stated
+
+Common manifestations:
+- Agent hallucinates data values (names, dates, numbers) despite clear spec constraints against fabrication
+- Agent systematically misinterprets domain-specific terminology even with skill files providing correct definitions
+- Agent produces outputs that pass structural validation but contain subtle logical errors reflecting training biases
+- Agent's confidence is uncorrelated with accuracy — high-confidence outputs are wrong at similar rates to low-confidence outputs
+- Agent behavior is inconsistent: identical inputs produce different outputs across runs in ways that affect correctness
+
+*The fix*: Model-level failures cannot be fixed through better specs alone. The appropriate responses depend on frequency and severity:
+- **Low frequency, low severity**: Accept as residual risk; rely on validation to catch. Document in the spec gap log as a known model limitation.
+- **Low frequency, high severity**: Add automated output validation that checks the specific failure pattern. Add human review checkpoint for the affected output type.
+- **High frequency**: The task exceeds the model's reliable capability boundary. Options: narrow the scope to a subset the model handles reliably, switch to a more capable model, or retain the task for human execution.
+
+Model-level failures are the category where the architectural framework reaches its limit. A perfect spec executed by an unreliable model still produces unreliable output. The framework's contribution here is diagnostic: by ruling out Categories 1–5, teams avoid the mistake of blaming architects for model limitations, or blaming models for architectural gaps.
+
 ### The Diagnostic Protocol
 
 When an agent failure is identified, the diagnostic process follows a specific order:
 
 **Step 1: Identify the failure category.**  
-Run through the five categories in order. Which one best describes the mechanism of failure?
+Run through the six categories in order. Which one best describes the mechanism of failure?
 
 **Step 2: Trace to the specific artifact.**  
 - Spec failure → which section, which missing or ambiguous clause?
@@ -123,9 +149,10 @@ Run through the five categories in order. Which one best describes the mechanism
 - Scope creep → what adjacent action was taken, and where was the authorization boundary?
 - Oversight failure → at what point in execution did the error exist and go unreviewed?
 - Compounding → where in the chain did the first error occur?
+- Model-level → what specific model behavior caused the error? Is it reproducible? Is it a known limitation?
 
 **Step 3: Fix the artifact, not the output.**  
-Update the spec, provision the capability, add the scope prohibition, redesign the checkpoint. Document the change and why it was made.
+Update the spec, provision the capability, add the scope prohibition, redesign the checkpoint. For model-level failures, add validation, narrow scope, or escalate the model selection decision. Document the change and why it was made.
 
 **Step 4: Log the gap.**  
 Every identified spec gap should be recorded in a Spec Gap Log: what was missing, when it was discovered, what spec change was made. Over time, the gap log reveals patterns — recurring gap types indicate spec-writing habits that need correction; recurring domains indicate skill gaps.

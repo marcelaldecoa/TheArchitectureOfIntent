@@ -22,11 +22,11 @@ Human judgment — the ability to recognize a novel situation, weight competing 
 
 Agent capability — the ability to act at speed, across systems, on vague instructions, producing outputs that look authoritative whether they are correct or not — is increasing rapidly. The gap between what agents can do and what humans can wisely oversee is growing.
 
-In any domain where power scales faster than judgment, disasters happen. The structural form is always the same:
+In any domain where power scales faster than judgment, disasters happen. The structural form is recognizably similar across domains:
 - A new capability creates the impression of control
 - Decisions that previously required careful deliberation are delegated because the tool makes them fast
 - Feedback loops that would have caught errors at small scale are bypassed
-- The error compounds, quietly, until the scale of consequence makes correction painful or impossible
+- The error compounds, quietly, until the scale of consequence makes correction expensive or, in some cases, impractical
 
 This is not a hypothetical about the future. It is observable today in engineering teams that have added agents without adjusting their oversight structures. Output increases. Quality becomes inconsistent in ways that are hard to diagnose. Architectural coherence erodes. Technical debt accumulates in the exact places where no human exercised judgment.
 

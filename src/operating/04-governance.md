@@ -99,7 +99,7 @@ Governance operates on multiple timescales simultaneously:
 | Monthly | Skill file review | Skill owner | 30 min per skill |
 | Quarterly | Constitutional layer review | Principal/VP level | Half day |
 
-The total monthly governance overhead for a five-person team operating at moderate agent deployment volume: approximately 8–12 hours across the team. This is not zero — governance has a real cost. But it is comparable to the overhead of a traditional code review and sprint retrospective cycle, and it produces a much more durable signal.
+The total monthly governance overhead for a five-person team operating at moderate agent deployment volume: approximately 8–12 hours across the team. This estimate is derived from the time budgets in the table above, aggregated over a typical month of spec reviews, anomaly reports, and library audits. Individual teams will vary based on deployment complexity, agent maturity, and organizational overhead. But as a baseline, this is comparable to the overhead of a traditional code review and sprint retrospective cycle, and it produces a much more durable signal.
 
 ### What to Automate and What Not To
 

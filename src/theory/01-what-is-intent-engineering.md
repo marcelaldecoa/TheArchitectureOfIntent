@@ -60,6 +60,9 @@ AI governance addresses the organizational, regulatory, and ethical oversight of
 **It is not software architecture.**
 Traditional software architecture addresses structure: components, interfaces, data models, deployment topology. These concerns remain relevant. But a system's architecture tells you *how it is built*; intent engineering tells you *why it exists*, *what it is permitted to do*, and *under whose authority*. In agent systems, these are the higher-order concerns.
 
+**It is not Agile, DevOps, or Systems Thinking.**
+Intent engineering is complementary to these practices, not competitive with them. Agile provides iteration cadence and stakeholder feedback loops. DevOps provides delivery automation, monitoring, and feedback from production. Systems Thinking provides the discipline of reasoning about wholes rather than parts. Intent engineering adds a specific discipline that none of these frameworks were designed for: how to specify and govern the delegation of work to autonomous agents. A team practicing intent engineering still runs sprints (Agile), still deploys through CI/CD pipelines (DevOps), and still reasons about emergent system behavior (Systems Thinking). The contribution of intent engineering is at the specification layer — the artifact where human judgment is encoded before agent execution begins.
+
 ---
 
 ### The Three Fundamental Questions
