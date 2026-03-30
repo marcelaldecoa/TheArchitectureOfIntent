@@ -106,7 +106,8 @@ TheArchitectureOfIntent/
 │   ├── examples/       # Part VIII (2 end-to-end examples)
 │   └── appendices/     # Glossary, Pattern Index, References, Quick-Reference cards
 ├── theme/
-│   └── custom.css      # Custom styling overrides
+│   ├── custom.css      # Custom styling overrides
+│   └── zoom.js         # Floating font-size zoom widget (A+/A−)
 └── book/               # Build output (git-ignored)
 ```
 
@@ -114,26 +115,28 @@ TheArchitectureOfIntent/
 
 ## Status
 
-**Complete.** All 81 content files are written across all 8 Parts and 6 Appendices.
+**Complete.** All 82 content files are written across all 8 Parts and 6 Appendices.
 
 | Section | Files | Status |
 |---------|-------|--------|
-| Front matter (intro, preface, how-to-read) | 3 | ✅ |
+| Cover + front matter (cover, intro, preface, how-to-read) | 4 | ✅ |
 | Part I: Foundations | 6 | ✅ |
 | Part II: Theory | 6 | ✅ |
 | Part III: Intent Architecture | 11 | ✅ |
 | Part IV: Spec-Driven Development | 7 | ✅ |
 | Part V: Agents & Execution | 10 | ✅ |
-| Part VI: Standards & Repertoires | 15 | ✅ |
+| Part VI: Standards & Repertoires | 14 | ✅ |
 | Part VII: Operating the System | 6 | ✅ |
-| Part VIII: Applied Examples | 11 | ✅ |
+| Part VIII: Applied Examples | 12 | ✅ |
 | Appendices A–F | 6 | ✅ |
 
 ---
 
 ## Inspiration
 
-- *A Pattern Language* — Christopher Alexander (1977)
-- *Spec-Driven Development* — modern AI-native development methodology
-- *SpecKit* — open-source toolkit for spec-first agent development
+- [A Pattern Language](https://www.amazon.com/Pattern-Language-Buildings-Construction-Environmental-ebook/dp/B07J1T8P1W/ref=tmm_kin_swatch_0) — Christopher Alexander (1977)
+- [Spec-Driven Development](https://github.com/github/spec-kit) — modern AI-native development methodology
+- [SpecKit](https://github.com/github/spec-kit) — open-source toolkit for spec-first agent development
+- [GitHub Copilot Agent Skills](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills) — skill-based agent architecture
+- [Anthropic Skills](https://github.com/anthropics/skills) — reusable skill definitions for AI agents
 
