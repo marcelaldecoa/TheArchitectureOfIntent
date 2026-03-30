@@ -1,88 +1,235 @@
-﻿/* The Architecture of Intent — Custom Theme */
+﻿/* ================================================================
+   The Architecture of Intent — Custom Theme
+   Adaptive across all mdBook themes: Light · Rust · Coal · Navy · Ayu
+   ================================================================ */
 
-:root {
-    --pattern-accent: #2c5f8a;
-    --therefore-bg: #f0f6ff;
-    --therefore-border: #2c5f8a;
-    --connection-bg: #f9f9f9;
-    --code-note-color: #666;
+/* ---- Per-theme accent palette ---- */
+
+.light {
+  --accent:         #1d4ed8;
+  --accent-border:  rgba(29, 78, 216, 0.30);
+  --bq-bg:          #eff6ff;
+  --bq-border:      #1d4ed8;
+  --th-bg:          #1e3a5f;
+  --td-stripe:      #f8fafc;
+  --rule:           rgba(0, 0, 0, 0.10);
 }
 
-/* "Therefore" callout — mirrors Christopher Alexander's bold resolution statement */
+.rust {
+  --accent:         #b45309;
+  --accent-border:  rgba(180, 83, 9, 0.30);
+  --bq-bg:          #fff7ed;
+  --bq-border:      #b45309;
+  --th-bg:          #7c2d12;
+  --td-stripe:      rgba(180, 83, 9, 0.05);
+  --rule:           rgba(92, 64, 55, 0.13);
+}
+
+.coal {
+  --accent:         #60a5fa;
+  --accent-border:  rgba(96, 165, 250, 0.28);
+  --bq-bg:          rgba(96, 165, 250, 0.07);
+  --bq-border:      #60a5fa;
+  --th-bg:          #1e3554;
+  --td-stripe:      rgba(255, 255, 255, 0.03);
+  --rule:           rgba(255, 255, 255, 0.08);
+}
+
+.navy {
+  --accent:         #38bdf8;
+  --accent-border:  rgba(56, 189, 248, 0.28);
+  --bq-bg:          rgba(56, 189, 248, 0.07);
+  --bq-border:      #38bdf8;
+  --th-bg:          #0c3060;
+  --td-stripe:      rgba(255, 255, 255, 0.03);
+  --rule:           rgba(255, 255, 255, 0.08);
+}
+
+.ayu {
+  --accent:         #f59e0b;
+  --accent-border:  rgba(245, 158, 11, 0.35);
+  --bq-bg:          rgba(245, 158, 11, 0.08);
+  --bq-border:      #f59e0b;
+  --th-bg:          #1a1200;
+  --td-stripe:      rgba(255, 255, 255, 0.03);
+  --rule:           rgba(255, 255, 255, 0.07);
+}
+
+/* ---- Cover page ---- */
+
+.content img[alt="The Architecture of Intent"] {
+  display: block;
+  width: 100%;
+  margin: -2rem -2.5rem 0;
+  max-width: calc(100% + 5rem);
+  border-radius: 0;
+  box-shadow: 0 6px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* ---- Base font size override ---- */
+
+html, body {
+  font-size: 19px !important;
+}
+
+/* mdBook overrides font-size on the inner page wrapper — force it here too */
+.content,
+.page,
+#content,
+.chapter {
+  font-size: 19px !important;
+}
+
+.content p,
+.content li,
+.content dt,
+.content dd {
+  font-size: 1rem !important;
+  line-height: 1.85;
+}
+
+.content main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem 6rem;
+  line-height: 1.85;
+}
+
+/* ---- Headings ---- */
+
+h1 {
+  font-size: 2.1rem !important;
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.4em;
+  margin-top: 0.4em;
+  margin-bottom: 0.2em;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  margin-top: 3em;
+  margin-bottom: 0.7em;
+  font-size: 0.7rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--accent-border);
+}
+
+h3 {
+  font-size: 1.18rem !important;
+  font-weight: 600;
+  margin-top: 2.2em;
+  margin-bottom: 0.45em;
+}
+
+h4 {
+  font-size: 1rem !important;
+  font-weight: 600;
+  margin-top: 1.6em;
+  margin-bottom: 0.35em;
+}
+
+/* ---- "Therefore" blockquote ---- */
+
 blockquote {
-    border-left: 4px solid var(--therefore-border);
-    background: var(--therefore-bg);
-    padding: 0.8em 1.2em;
-    border-radius: 0 4px 4px 0;
-    font-style: normal;
+  background: var(--bq-bg);
+  border-left: 4px solid var(--bq-border);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2em 1.8em;
+  margin: 1.8em 0;
+  font-style: normal;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  font-size: 1.05rem;
+}
+
+blockquote p {
+  margin: 0;
+  line-height: 1.8;
 }
 
 blockquote strong {
-    color: var(--pattern-accent);
+  color: var(--accent);
 }
 
-/* Pattern number header style */
-h1 {
-    border-bottom: 2px solid var(--pattern-accent);
-    padding-bottom: 0.4em;
-}
+/* ---- Tables ---- */
 
-/* Make the "Therefore" section visually distinct */
-h2:has(+ blockquote),
-h2 + blockquote {
-    margin-top: 0.5em;
-}
-
-/* Connections box */
-.connections-box {
-    background: var(--connection-bg);
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 1em 1.2em;
-    margin-top: 1.5em;
-}
-
-/* Part label in subtitle */
-.mdBook-chapter em {
-    color: var(--pattern-accent);
-    font-style: normal;
-    font-size: 0.9em;
-}
-
-/* Tables */
 table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 1em 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.8em 0;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
 }
 
-th {
-    background: var(--pattern-accent);
-    color: white;
-    padding: 0.5em 0.8em;
-    text-align: left;
+thead th {
+  background: var(--th-bg);
+  color: #fff;
+  padding: 0.75em 1.2em;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 td {
-    padding: 0.4em 0.8em;
-    border: 1px solid #ddd;
+  padding: 0.65em 1.2em;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: none;
 }
 
 tr:nth-child(even) td {
-    background: #f8f8f8;
+  background: var(--td-stripe);
 }
 
-/* Code examples with pattern annotations */
-pre code .pattern-annotation {
-    color: var(--code-note-color);
-    font-style: italic;
+/* ---- Horizontal rules ---- */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 3em 0;
 }
 
-/* Navigation footer */
-.chapter-nav {
-    border-top: 1px solid #eee;
-    margin-top: 3em;
-    padding-top: 1em;
-    color: #888;
-    font-size: 0.9em;
+/* ---- Inline code ---- */
+
+code {
+  font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.88em;
+  padding: 0.18em 0.45em;
+  border-radius: 4px;
+}
+
+/* ---- Code blocks ---- */
+
+pre {
+  border-radius: 10px !important;
+  padding: 1.3em 1.6em !important;
+  font-size: 0.88em !important;
+  line-height: 1.7 !important;
+}
+
+pre > code {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* ---- Sidebar: active chapter indicator ---- */
+
+.sidebar .chapter li.chapter-item.active > a,
+.sidebar .chapter li.chapter-item > a.active {
+  border-left: 3px solid var(--accent);
+  padding-left: calc(var(--chapter-line-height, 1em) - 3px);
+  font-weight: 600;
 }
