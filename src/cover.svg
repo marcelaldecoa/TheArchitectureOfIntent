@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+  <defs>
+
+    <!-- Background gradient -->
+    <radialGradient id="covBg" cx="50%" cy="38%" r="82%">
+      <stop offset="0%"   stop-color="#0c1e38"/>
+      <stop offset="58%"  stop-color="#060e1e"/>
+      <stop offset="100%" stop-color="#020609"/>
+    </radialGradient>
+
+    <!-- Central node gradient -->
+    <radialGradient id="covCore" cx="38%" cy="35%" r="65%">
+      <stop offset="0%"   stop-color="#e0f2fe"/>
+      <stop offset="45%"  stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </radialGradient>
+
+    <!-- Intent glow radial -->
+    <radialGradient id="covGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#7dd3fc" stop-opacity="0.55"/>
+      <stop offset="38%"  stop-color="#3b82f6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Title area fade-to-black -->
+    <linearGradient id="covTitleFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#030912" stop-opacity="0"/>
+      <stop offset="35%"  stop-color="#030912" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#030912" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Hex tessellation — Alexander's interlocking patterns -->
+    <pattern id="covHex" width="42" height="36.37" patternUnits="userSpaceOnUse">
+      <polygon points="21,1.5 40,11.5 40,30.5 21,40.5 2,30.5 2,11.5"
+               fill="none" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.12"/>
+    </pattern>
+
+    <!-- Blur filters for glow stacking -->
+    <filter id="b6"  x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="b14" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="b22" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="22"/></filter>
+
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════
+       BACKGROUND
+  ═══════════════════════════════════════════════ -->
+  <rect width="900" height="580" fill="url(#covBg)"/>
+  <rect width="900" height="580" fill="url(#covHex)" opacity="0.9"/>
+
+  <!-- Diffuse ambient glow pools -->
+  <ellipse cx="450" cy="210" rx="320" ry="215" fill="#1a56db" opacity="0.065" filter="url(#b22)"/>
+  <ellipse cx="165" cy="395" rx="175" ry="135" fill="#7c3aed" opacity="0.05"  filter="url(#b22)"/>
+  <ellipse cx="760" cy="125" rx="155" ry="115" fill="#0ea5e9" opacity="0.05"  filter="url(#b22)"/>
+
+  <!-- ═══════════════════════════════════════════════
+       NETWORK TOPOLOGY
+       Network center: (450, 228)
+       Inner ring r=115  — 6 nodes at 60° intervals
+       Outer ring r=185  — 12 nodes at 30° intervals
+  ═══════════════════════════════════════════════ -->
+
+  <!-- Outer-to-outer edges (selective, faint indigo) -->
+  <g stroke="#6366f1" stroke-width="0.7" fill="none" opacity="0.17">
+    <line x1="635" y1="228" x2="610" y2="320"/>   <!-- 0→30 -->
+    <line x1="610" y1="320" x2="543" y2="388"/>   <!-- 30→60 -->
+    <line x1="265" y1="228" x2="290" y2="320"/>   <!-- 180→150 -->
+    <line x1="290" y1="320" x2="358" y2="388"/>   <!-- 150→120 -->
+    <line x1="635" y1="228" x2="610" y2="136"/>   <!-- 0→330 -->
+    <line x1="265" y1="228" x2="290" y2="136"/>   <!-- 180→210 -->
+    <line x1="450" y1="43"  x2="358" y2="68"/>    <!-- 270→240 -->
+    <line x1="450" y1="43"  x2="543" y2="68"/>    <!-- 270→300 -->
+    <line x1="358" y1="68"  x2="290" y2="136"/>   <!-- 240→210 -->
+    <line x1="543" y1="68"  x2="610" y2="136"/>   <!-- 300→330 -->
+    <!-- Long cross-connections for visual richness -->
+    <line x1="635" y1="228" x2="543" y2="388"/>
+    <line x1="265" y1="228" x2="358" y2="388"/>
+    <line x1="450" y1="43"  x2="610" y2="136"/>
+    <line x1="450" y1="43"  x2="290" y2="136"/>
+  </g>
+
+  <!-- Inner-to-outer edges (curved sky-blue paths) -->
+  <g stroke="#38bdf8" stroke-width="0.75" fill="none" opacity="0.22">
+    <!-- Inner 0° (565,228) → Outer 0° (635,228) and 30° (610,320) -->
+    <path d="M 565 228 C 592 228 616 228 635 228"/>
+    <path d="M 565 228 C 586 256 601 290 610 320"/>
+    <!-- Inner 60° (508,328) → Outer 60° (543,388) and 90° (450,413) -->
+    <path d="M 508 328 C 522 352 532 372 543 388"/>
+    <path d="M 508 328 C 490 364 474 390 450 413"/>
+    <!-- Inner 120° (393,328) → Outer 90° (450,413) and 120° (358,388) -->
+    <path d="M 393 328 C 412 364 428 390 450 413"/>
+    <path d="M 393 328 C 379 352 368 372 358 388"/>
+    <!-- Inner 180° (335,228) → Outer 150° (290,320) and 180° (265,228) -->
+    <path d="M 335 228 C 316 256 300 290 290 320"/>
+    <path d="M 335 228 C 310 228 286 228 265 228"/>
+    <!-- Inner 240° (393,128) → Outer 210° (290,136) and 240° (358,68) -->
+    <path d="M 393 128 C 358 128 322 130 290 136"/>
+    <path d="M 393 128 C 379 104 368 84 358 68"/>
+    <!-- Inner 300° (508,128) → Outer 300° (543,68) and 330° (610,136) -->
+    <path d="M 508 128 C 522 104 532 84 543 68"/>
+    <path d="M 508 128 C 550 128 582 130 610 136"/>
+  </g>
+
+  <!-- Center-to-inner radial spokes -->
+  <g stroke="#38bdf8" stroke-width="1.1" fill="none" opacity="0.42">
+    <line x1="450" y1="228" x2="565" y2="228"/>
+    <line x1="450" y1="228" x2="508" y2="328"/>
+    <line x1="450" y1="228" x2="393" y2="328"/>
+    <line x1="450" y1="228" x2="335" y2="228"/>
+    <line x1="450" y1="228" x2="393" y2="128"/>
+    <line x1="450" y1="228" x2="508" y2="128"/>
+  </g>
+
+  <!-- Inner hexagon ring edges -->
+  <g stroke="#38bdf8" stroke-width="0.9" fill="none" opacity="0.30">
+    <line x1="565" y1="228" x2="508" y2="328"/>
+    <line x1="508" y1="328" x2="393" y2="328"/>
+    <line x1="393" y1="328" x2="335" y2="228"/>
+    <line x1="335" y1="228" x2="393" y2="128"/>
+    <line x1="393" y1="128" x2="508" y2="128"/>
+    <line x1="508" y1="128" x2="565" y2="228"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       OUTER RING NODES (12)
+  ═══════════════════════════════════════════════ -->
+
+  <!-- Glow halos -->
+  <g filter="url(#b6)" opacity="0.62">
+    <circle cx="635" cy="228" r="9"  fill="#818cf8"/>
+    <circle cx="610" cy="320" r="8"  fill="#6ee7b7"/>
+    <circle cx="543" cy="388" r="8"  fill="#fbbf24"/>
+    <circle cx="450" cy="413" r="9"  fill="#818cf8"/>
+    <circle cx="358" cy="388" r="8"  fill="#fbbf24"/>
+    <circle cx="290" cy="320" r="8"  fill="#6ee7b7"/>
+    <circle cx="265" cy="228" r="9"  fill="#818cf8"/>
+    <circle cx="290" cy="136" r="7"  fill="#60a5fa"/>
+    <circle cx="358" cy="68"  r="7"  fill="#f9a8d4"/>
+    <circle cx="450" cy="43"  r="9"  fill="#a5b4fc"/>
+    <circle cx="543" cy="68"  r="7"  fill="#f9a8d4"/>
+    <circle cx="610" cy="136" r="7"  fill="#60a5fa"/>
+  </g>
+
+  <!-- Crisp dots -->
+  <g stroke-width="1.2">
+    <circle cx="635" cy="228" r="4.5" fill="#c4b5fd" stroke="#818cf8"/>
+    <circle cx="610" cy="320" r="3.5" fill="#a7f3d0" stroke="#6ee7b7"/>
+    <circle cx="543" cy="388" r="3.5" fill="#fcd34d" stroke="#fbbf24"/>
+    <circle cx="450" cy="413" r="4.5" fill="#c4b5fd" stroke="#818cf8"/>
+    <circle cx="358" cy="388" r="3.5" fill="#fcd34d" stroke="#fbbf24"/>
+    <circle cx="290" cy="320" r="3.5" fill="#a7f3d0" stroke="#6ee7b7"/>
+    <circle cx="265" cy="228" r="4.5" fill="#c4b5fd" stroke="#818cf8"/>
+    <circle cx="290" cy="136" r="3.5" fill="#93c5fd" stroke="#60a5fa"/>
+    <circle cx="358" cy="68"  r="3.5" fill="#fbcfe8" stroke="#f9a8d4"/>
+    <circle cx="450" cy="43"  r="4.5" fill="#c4b5fd" stroke="#a5b4fc"/>
+    <circle cx="543" cy="68"  r="3.5" fill="#fbcfe8" stroke="#f9a8d4"/>
+    <circle cx="610" cy="136" r="3.5" fill="#93c5fd" stroke="#60a5fa"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       INNER RING NODES (6 archetypes)
+  ═══════════════════════════════════════════════ -->
+
+  <!-- Glow halos -->
+  <g filter="url(#b6)" opacity="0.65">
+    <circle cx="565" cy="228" r="13" fill="#38bdf8"/>
+    <circle cx="508" cy="328" r="13" fill="#38bdf8"/>
+    <circle cx="393" cy="328" r="13" fill="#38bdf8"/>
+    <circle cx="335" cy="228" r="13" fill="#38bdf8"/>
+    <circle cx="393" cy="128" r="13" fill="#38bdf8"/>
+    <circle cx="508" cy="128" r="13" fill="#38bdf8"/>
+  </g>
+
+  <!-- Outer halo rings -->
+  <g fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.38">
+    <circle cx="565" cy="228" r="9"/>
+    <circle cx="508" cy="328" r="9"/>
+    <circle cx="393" cy="328" r="9"/>
+    <circle cx="335" cy="228" r="9"/>
+    <circle cx="393" cy="128" r="9"/>
+    <circle cx="508" cy="128" r="9"/>
+  </g>
+
+  <!-- Crisp inner dots -->
+  <g fill="#7dd3fc" stroke="#0ea5e9" stroke-width="1.6">
+    <circle cx="565" cy="228" r="5.5"/>
+    <circle cx="508" cy="328" r="5.5"/>
+    <circle cx="393" cy="328" r="5.5"/>
+    <circle cx="335" cy="228" r="5.5"/>
+    <circle cx="393" cy="128" r="5.5"/>
+    <circle cx="508" cy="128" r="5.5"/>
+  </g>
+
+  <!-- Archetype micro-labels -->
+  <g font-family="'Courier New',monospace" font-size="7.5" letter-spacing="1.5" fill="#7dd3fc" opacity="0.52">
+    <text x="578" y="226" text-anchor="start">EXECUTOR</text>
+    <text x="508" y="343" text-anchor="middle">GUARDIAN</text>
+    <text x="393" y="343" text-anchor="middle">ADVISOR</text>
+    <text x="322" y="226" text-anchor="end">ORCHESTRATOR</text>
+    <text x="393" y="116" text-anchor="middle">SYNTHESIZER</text>
+    <text x="508" y="116" text-anchor="middle">THEORY</text>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       CENTRAL INTENT NODE
+  ═══════════════════════════════════════════════ -->
+
+  <!-- Wide outer glow -->
+  <circle cx="450" cy="228" r="92" fill="url(#covGlow)" filter="url(#b14)" opacity="0.72"/>
+  <!-- Dark inner core (depth) -->
+  <circle cx="450" cy="228" r="33" fill="#073b6f" filter="url(#b6)" opacity="0.95"/>
+  <!-- Main node body -->
+  <circle cx="450" cy="228" r="22" fill="url(#covCore)"/>
+  <!-- Halo rings -->
+  <circle cx="450" cy="228" r="29" fill="none" stroke="#7dd3fc" stroke-width="0.9" stroke-opacity="0.48"/>
+  <circle cx="450" cy="228" r="37" fill="none" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.22"/>
+  <!-- Bright centre point -->
+  <circle cx="450" cy="228" r="7"  fill="white" opacity="0.92"/>
+
+  <!-- INTENT micro-label -->
+  <text x="450" y="260"
+        text-anchor="middle"
+        font-family="'Courier New',monospace"
+        font-size="8.5" letter-spacing="3"
+        fill="#7dd3fc" opacity="0.58">INTENT</text>
+
+  <!-- ═══════════════════════════════════════════════
+       ALEXANDER ARCHITECTURAL DETAIL
+       Subtle arch silhouettes — the classical pattern language
+  ═══════════════════════════════════════════════ -->
+  <g fill="#c9a77a" opacity="0.055">
+    <!-- Left arch & columns -->
+    <path d="M 52 445 Q 52 396 86 396 Q 120 396 120 445 L 120 460 L 52 460 Z"/>
+    <rect x="52"  y="394" width="10" height="66"/>
+    <rect x="110" y="394" width="10" height="66"/>
+    <!-- Right arch & columns -->
+    <path d="M 780 445 Q 780 396 814 396 Q 848 396 848 445 L 848 460 L 780 460 Z"/>
+    <rect x="780" y="394" width="10" height="66"/>
+    <rect x="838" y="394" width="10" height="66"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════
+       TITLE BLOCK
+  ═══════════════════════════════════════════════ -->
+
+  <!-- Gradient fade to black behind title text -->
+  <rect x="0" y="404" width="900" height="176" fill="url(#covTitleFade)"/>
+
+  <!-- Divider rule -->
+  <line x1="135" y1="454" x2="765" y2="454" stroke="#38bdf8" stroke-width="0.7" stroke-opacity="0.3"/>
+  <line x1="215" y1="458" x2="685" y2="458" stroke="#38bdf8" stroke-width="0.3" stroke-opacity="0.15"/>
+
+  <!-- Title -->
+  <text x="450" y="498"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="40" font-weight="bold" letter-spacing="-0.4"
+        fill="white">The Architecture of Intent</text>
+
+  <!-- Subtitle -->
+  <text x="450" y="528"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="14.5" font-style="italic"
+        fill="#93c5fd" opacity="0.85">Designing Agency in an Age Where Code Is No Longer Scarce</text>
+
+  <!-- Author & year -->
+  <text x="450" y="557"
+        text-anchor="middle"
+        font-family="Georgia,'Times New Roman',serif"
+        font-size="11" letter-spacing="4"
+        fill="#60a5fa" opacity="0.62">MARCEL ALDECOA · 2026</text>
+
+  <!-- ═══════════════════════════════════════════════
+       BORDER ORNAMENTS
+  ═══════════════════════════════════════════════ -->
+  <g stroke="#38bdf8" stroke-width="0.9" stroke-opacity="0.22" fill="none">
+    <!-- TL -->
+    <polyline points="18,18 18,54 54,54"/>
+    <polyline points="18,18 54,18"/>
+    <!-- TR -->
+    <polyline points="882,18 882,54 846,54"/>
+    <polyline points="882,18 846,18"/>
+    <!-- BL -->
+    <polyline points="18,562 18,526 54,526"/>
+    <polyline points="18,562 54,562"/>
+    <!-- BR -->
+    <polyline points="882,562 882,526 846,526"/>
+    <polyline points="882,562 846,562"/>
+  </g>
+  <!-- Outer frame -->
+  <rect x="9" y="9" width="882" height="562" fill="none"
+        stroke="#1d4ed8" stroke-width="0.4" stroke-opacity="0.18" rx="3"/>
+
+</svg>

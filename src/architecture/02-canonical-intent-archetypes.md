@@ -138,6 +138,8 @@ The five archetypes are not an arbitrary taxonomy. They represent the stable poi
 
 The five are also stable under the principle of minimum necessary power: they represent the smallest number of categories that distinguish systems with genuinely different risk profiles, oversight requirements, and design constraints.
 
+The formal argument for exhaustiveness: the two axes — primary act and discretion scope — partition the design space because every agent system must have a primary act (what it does) and a discretion scope (how much latitude it has in doing it). The five archetypes occupy distinct regions in this space: Advisor (inform / narrow), Guardian (enforce / narrow), Executor (execute / bounded), Synthesizer (compose / moderate), and Orchestrator (coordinate / broad). Additional archetypes would either overlap with one of these five (failing the "genuinely different governance" test) or represent compositions of them (treated in [Composing Archetypes](05-composing-archetypes.md)). This is not a claim of mathematical proof — it is a design claim validated against observed systems. If a genuinely new archetype emerges that requires a governance model none of the five can provide, the taxonomy should be extended; that extension would be a significant event in the framework's evolution.
+
 ---
 
 ## Therefore

@@ -131,6 +131,9 @@ One of the five canonical intent archetypes. Characterizes systems that coordina
 **Oversight**
 The human function that validates agent outputs against intent, catches divergence before it becomes irreversible, and maintains accountability for system behavior. A first-class design concern, not a quality assurance afterthought. See [Human Oversight Models](../agents/06-human-oversight-models.md).
 
+**Oversight Model**
+One of four structured approaches to human oversight of agent systems: (A) Monitoring — observe and intervene; (B) Periodic — checkpoint-based review; (C) Output Gate — human approval before delivery; (D) Pre-authorized scope with exception escalation. The appropriate model is determined by the agent's archetype, risk posture, and reversibility. See [Archetype Dimensions](../architecture/03-archetype-dimensions.md) and [Human Oversight Models](../agents/06-human-oversight-models.md).
+
 ---
 
 ## P
@@ -148,6 +151,9 @@ A pre-authorized collection of archetypes, templates, constraints, and code stan
 **Reversibility**
 The degree to which an action can be undone or corrected after the fact. A primary design dimension for any system involving agents. High-agency systems acting on irreversible states require maximum oversight. See [Reversibility as a Design Dimension](../theory/04-reversibility-as-design-dimension.md).
 
+**Reversibility Class**
+A classification of an action's reversibility posture, ranging from fully reversible (R1 — soft delete, undo available) through partially reversible (R2–R3 — correctable with effort or within a time window) to irreversible (R4 — cannot be undone once executed). The reversibility class of an agent's highest-consequence action determines the minimum oversight and design requirements. See [Reversibility as a Design Dimension](../theory/04-reversibility-as-design-dimension.md) and [Archetype Dimensions](../architecture/03-archetype-dimensions.md).
+
 ---
 
 ## S
@@ -157,6 +163,9 @@ An operating model where specifications become the primary artifact, the control
 
 **Spec**
 Short for *specification*. In this book: a structured document that encodes intent, constraints, success criteria, and context in a form that agents can act on reliably. Not a requirements document for humans. Not a design document for developers. An operating instruction for machines. See [The Canonical Spec Template](../sdd/07-canonical-spec-template.md).
+
+**Spec Gap Log**
+A maintained record of every instance where agent output diverged from intent due to an incomplete, ambiguous, or incorrect specification. Each entry captures the gap type, which spec section was affected, and how the spec was updated. The primary instrument for organizational learning in a spec-driven practice. See [Living Specs and Feedback Loops](../sdd/06-living-specs.md) and [Metrics That Actually Matter](../operating/06-metrics.md).
 
 **SpecKit**
 An open-source toolkit for spec-driven development, providing slash commands, templates, and structured workflows for creating and managing agent-executable specifications. See [SpecKit in the Architecture of Intent](../sdd/04-speckit.md).

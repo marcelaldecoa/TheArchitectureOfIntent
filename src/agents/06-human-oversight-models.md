@@ -145,6 +145,19 @@ increases expected total cost rather than decreasing it.
 
 This is not an argument for eliminating oversight — it is a framework for deploying it efficiently. Organizations that apply maximum oversight to every agent action are not running a governance program; they are eliminating the productivity advantage of agents while creating the overhead of governance. The discipline is proportionality.
 
+### Oversight at High Velocity
+
+The oversight models described above assume human-scalable volume. When agent systems produce thousands or hundreds of thousands of outputs per hour, direct human review of every output is no longer feasible — even under the lightest oversight model.
+
+At high velocity, oversight shifts from individual output review to statistical and structural mechanisms:
+
+- **Sampling-based review.** A random or stratified sample of outputs is reviewed at a cadence that maintains statistical confidence. The sample rate is proportional to risk: higher for irreversible or high-consequence outputs, lower for fully reversible outputs with established track records.
+- **Automated invariant checking.** Constraints from the spec are encoded as automated validators that run against every output. These are not oversight — they are enforcement. But they reduce the surface area that human oversight must cover.
+- **Anomaly detection.** Statistical monitoring of output distributions detects drift from established baselines. Anomalies trigger human review of the anomalous outputs and potentially a broader audit.
+- **Escalation-only human involvement.** At the highest velocity and maturity levels, human oversight is exercised only when the agent escalates, when automated checks fail, or when anomaly detection triggers. The governance model shifts from "review outputs" to "review the system that produces outputs" — which is spec review, constraint auditing, and periodic behavior audits.
+
+The key principle: high-velocity systems require that governance be encoded in the spec and the constraints, not in per-output human review. The spec becomes the primary oversight artifact, and spec quality becomes the binding constraint on safe scaling.
+
 ---
 
 ## Therefore

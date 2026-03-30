@@ -8,12 +8,12 @@ src = "src"
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "navy"
-git-repository-url = ""
+git-repository-url = "https://github.com/marcelaldecoa/TheArchitectureOfIntent"
 edit-url-template = ""
 site-url = "/"
 mathjax-support = true
 additional-css = ["theme/custom.css"]
-additional-js = []
+additional-js = ["theme/zoom.js"]
 
 [output.html.fold]
 enable = true

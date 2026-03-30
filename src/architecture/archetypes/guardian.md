@@ -91,7 +91,7 @@ A Guardian that is technically correct but systematically wrong about which thin
 
 A Guardian that blocks 20% of otherwise valid operations because its declared constraints are too strict is not protecting the system. It is creating pressure for the bypass mechanisms listed above.
 
-The calibration check: Over a rolling period, what percentage of Guardian blocks are overturned by the human exception process? If the answer is high (>10%), the Guardian's constraints are miscalibrated. The spec needs to be fixed, not the Guardian's strictness. The Guardian is supposed to enforce what the spec says; if the spec says the wrong things, that is a spec problem.
+The calibration check: Over a rolling period, what percentage of Guardian blocks are overturned by the human exception process? If the answer is high (>10%), the Guardian's constraints are miscalibrated. This threshold is a heuristic, not a universal constant — the principle is that a Guardian whose blocks are routinely overridden is not enforcing the organization's actual intent. The right threshold for your context depends on domain: a safety-critical Guardian might warrant investigation at >2%, while a content-formatting Guardian might tolerate >15%. The diagnostic question remains the same: are the constraints the right constraints? The spec needs to be fixed, not the Guardian's strictness. The Guardian is supposed to enforce what the spec says; if the spec says the wrong things, that is a spec problem.
 
 ---
 

@@ -1,5 +1,6 @@
 ﻿# Summary
 
+[Cover](cover.md)
 [Introduction](introduction.md)
 [A Note on Pattern Language](preface.md)
 [How to Read This Book](how-to-read.md)

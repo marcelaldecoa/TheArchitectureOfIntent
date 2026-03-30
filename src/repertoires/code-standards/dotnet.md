@@ -51,7 +51,27 @@
 
 **Maximum method size:** 40 lines. Extract private methods at logical boundaries. Methods that cannot be made readable within 40 lines are doing too much.
 
-**Constructor injection:** Always. No service locator pattern. No `new` for injectable services.
+**Constructor injection:** Always. No service locator pattern. No `new` for injectable services. Use primary constructors (C# 12+) for simple dependency injection cases where the constructor only assigns parameters to fields:
+
+```csharp
+// Preferred (C# 12+) — when constructor only assigns dependencies
+public sealed class CustomerService(ICustomerRepository repository, ILogger<CustomerService> logger)
+{
+    public async Task<Customer?> GetByIdAsync(string id, CancellationToken cancellationToken)
+        => await repository.GetByIdAsync(id, cancellationToken);
+}
+
+// Use traditional constructor when initialization logic is needed
+public sealed class OrderProcessor
+{
+    private readonly IOrderRepository _repository;
+    
+    public OrderProcessor(IOrderRepository repository)
+    {
+        _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+    }
+}
+```
 
 ---
 
@@ -66,6 +86,18 @@
 **`sealed`:** Apply to classes not intended for inheritance. Most application classes should be sealed.
 
 **`dynamic`:** Do not use except in interop boundaries where no alternative exists.
+
+**Collection expressions (C# 12+):** Use collection expression syntax where it improves clarity:
+
+```csharp
+// Preferred
+int[] values = [1, 2, 3];
+List<string> names = ["Alice", "Bob"];
+ReadOnlySpan<byte> bytes = [0x00, 0xFF];
+
+// Acceptable (when collection expression would reduce readability)
+var customers = new List<Customer> { existingCustomer };
+```
 
 ---
 
