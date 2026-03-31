@@ -1,6 +1,6 @@
-# Pattern 7.2 — From Senior Engineer to Intent Architect
+# The Intent Architect
 
-**Part VII: Operating the System** · *2 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -28,7 +28,16 @@ This is not a reduction in skill. It is a different cognitive mode, and it does 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Identity attachment vs. role evolution.** Engineers who have built careers on coding excellence may experience the shift to specification as a loss of status, even when it is a promotion in responsibility.
+- **Immediate productivity vs. long-term capability.** Writing specs feels slower than writing code in the short term. The payoff (reduced rework, higher agent reliability) is back-loaded.
+- **Individual skill vs. organizational support.** A skilled spec writer operating in an organization that rewards code production will be demotivated.
+- **Teaching difficulty vs. practice requirement.** Spec writing improves through feedback on real specs. Reading about it is insufficient.
+
+---
+
+## The Solution
 
 ### The Identity Shift
 
@@ -92,6 +101,17 @@ Part of Part VII's job is giving engineering leaders the language to make that r
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **A named transition path exists.** Engineers can see the progression from spec writing to spec review to failure diagnosis to system-level architecture.
+- **Day-to-day activities are defined.** The intent architect role has concrete daily activities rather than abstract responsibilities.
+- **Organizational legitimacy is achievable.** When spec writing is explicitly valued and promoted, the transition becomes attractive rather than threatening.
+- **Mentorship becomes structured.** Senior intent architects review junior engineers' specs, creating the same feedback loop that code review provided.
+
+---
+
 ## Therefore
 
 > **The transition from senior engineer to intent architect is an identity shift before it is a skill shift: from judgment internalized and applied during implementation, to judgment externalized and applied in specifications. It happens in four phases — spec writing as a discipline, spec review as a responsibility, failure diagnosis as a teaching mode, and system-level intent architecture. The technical depth that made a senior engineer excellent is the foundation of the new role; what changes is where and how that depth is applied.**
@@ -101,16 +121,12 @@ Part of Part VII's job is giving engineering leaders the language to make that r
 ## Connections
 
 **This pattern assumes:**
-- [The Modern Engineering Skill Matrix](01-skill-matrix.md)
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [The Intent-Era Skill Matrix](01-skill-matrix.md)
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 
 **This pattern enables:**
-- [Who Is Allowed to Define Archetypes](03-who-defines-archetypes.md)
-- [Reviewing Intent, Not Code](05-reviewing-intent.md)
+- [Delegated Definition Authority](03-who-defines-archetypes.md)
+- [Intent Review Before Output Review](05-reviewing-intent.md)
 
 ---
-
-*Next: [Who Is Allowed to Define Archetypes](03-who-defines-archetypes.md)*
-
-

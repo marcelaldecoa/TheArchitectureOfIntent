@@ -1,6 +1,6 @@
 # Constraint Library Template
 
-**Part VI: Spec Template Library** · *Template 4*
+**Repertoire & Reference**
 
 ---
 

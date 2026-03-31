@@ -1,6 +1,6 @@
-# Pattern 3.5 — Composing Archetypes in Real Systems
+# Archetype Composition
 
-**Part III: Intent Architecture** · *5 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -15,7 +15,7 @@ You have assigned an archetype to a system. You know it is, say, an Executor —
 
 Real systems are not atomic. They are compositions. The question is how to manage that composition without losing the clarity the archetype gave you.
 
-This pattern assumes [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md), [Archetype Dimensions](03-archetype-dimensions.md), and [Decision Tree for Archetype Selection](04-decision-tree.md).
+This pattern assumes [The Five Archetypes](02-canonical-intent-archetypes.md), [Four Dimensions of Governance](03-archetype-dimensions.md), and [The Archetype Selection Tree](04-decision-tree.md).
 
 ---
 
@@ -33,7 +33,16 @@ There is a structural solution — and it requires treating composition as a fir
 
 ---
 
-## The Resolution
+## Forces
+
+- **Atomicity vs. reality.** The five archetypes describe atomic types, but real systems combine multiple functions. Forcing one archetype onto a multi-archetype system either miscategorizes it or fragments the spec.
+- **Clarity vs. expressiveness.** Allowing composition means accepting systems that resist a single label. Yet disallowing composition creates pressure to misclassify or physically decompose architecturally coherent systems.
+- **Simple governance vs. complex reality.** A pure archetype inherits a clear governance profile. A composed system requires per-component governance that must integrate coherently.
+- **Reusability vs. specificity.** If composition is ad-hoc, every composed system requires custom governance reasoning. Named composition patterns allow pre-thought-through governance.
+
+---
+
+## The Solution
 
 ### The Composition Principle
 
@@ -167,6 +176,17 @@ Composition is meant to clarify layering within a coherent unit. It is not a way
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Governing archetype determines risk.** By identifying the highest-risk autonomous action and using that to set the governing archetype, the composition privileges safety.
+- **Embedded components are constrained separately.** Guardian components embedded in an Executor cannot be bypassed by Executor-level decisions. The Guardian operates in its own governance tier.
+- **Confirm-then-act becomes a governance pattern.** An Advisor phase feeding into an Executor phase is recognized as an Executor implementing its required oversight gate.
+- **Coherence without fragmentation.** A composed system has one authoritative spec, not multiple specs in contradiction.
+
+---
+
 ## Therefore
 
 > **Real systems layer multiple archetype roles. Give the system one governing archetype — determined by its highest-risk autonomous action — and declare embedded components explicitly with their own constraints. A Guardian embedded in an Executor cannot be disabled by Executor-level decisions. An Advisor embedded as a confirmation step is how the Executor implements its oversight model. Composition clarifies layering; it is not a substitute for decomposing a system that is too complex to govern.**
@@ -176,16 +196,13 @@ Composition is meant to clarify layering within a coherent unit. It is not a way
 ## Connections
 
 **This pattern assumes:**
-- [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md)
-- [Archetype Dimensions](03-archetype-dimensions.md)
-- [Decision Tree for Archetype Selection](04-decision-tree.md)
+- [The Five Archetypes](02-canonical-intent-archetypes.md)
+- [Four Dimensions of Governance](03-archetype-dimensions.md)
+- [The Archetype Selection Tree](04-decision-tree.md)
 
 **This pattern enables:**
-- [Evolving Archetypes Without Dogma](06-evolving-archetypes.md)
+- [Governed Archetype Evolution](06-evolving-archetypes.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — multi-component spec structure
 - Each archetype deep-dive: [Advisor](archetypes/advisor.md), [Executor](archetypes/executor.md), [Guardian](archetypes/guardian.md), [Synthesizer](archetypes/synthesizer.md), [Orchestrator](archetypes/orchestrator.md)
 
 ---
-
-*Next: [Evolving Archetypes Without Dogma](06-evolving-archetypes.md)*
-

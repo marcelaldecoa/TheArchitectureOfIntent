@@ -1,6 +1,6 @@
-# Pattern 2.1 — What Is Intent Engineering
+# Intent Engineering as a Discipline
 
-**Part II: Theory of Intent Engineering** · *1 of 6*
+**Foundations**
 
 ---
 
@@ -34,7 +34,15 @@ The problem is that without a name, this skill cannot be taught, measured, or sy
 
 ---
 
-## The Resolution
+## Forces
+
+- **Tacit skill vs. systematic discipline.** Intent specification is practiced widely but has no shared vocabulary, measurement methods, or teaching structures, creating uneven capability levels across teams.
+- **Human judgment compensation vs. agent execution fidelity.** Traditional development relied on developer judgment to bridge ambiguity; agents execute specs with fidelity, exposing every oversight directly to consequences.
+- **Code production abundance vs. intent clarity scarcity.** The bottleneck has shifted from generating code to specifying intent; code is now cheap but clear, precise goal definition remains difficult and rare.
+
+---
+
+## The Solution
 
 ### A Definition
 
@@ -113,6 +121,16 @@ This is engineering. The material is language, the tools are specs and archetype
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **A named discipline enables teaching and improvement.** Intent engineering becomes teachable as a practice with defined vocabulary, patterns, and standards; it becomes measurable and systematically improvable.
+- **Three foundational questions guide all delegation.** Every system is designed around answering what it should achieve, what constraints it must respect, and how correct behavior will be validated.
+- **Intent engineering becomes the load-bearing discipline.** As agents become more capable, the quality of intent specification propagates directly into system behavior, making specification precision the primary technical differentiator.
+
+---
+
 ## Therefore
 
 > **Intent engineering is the discipline of designing, specifying, and governing the intent behind systems delegated to agents. It is organized around three fundamental questions — what is this system trying to achieve, within what constraints, and how will we know it is working? — and four activities: framing, specification, delegation, and validation. It is the load-bearing discipline of an age where code is cheap and judgment is scarce.**
@@ -126,11 +144,8 @@ This is engineering. The material is language, the tools are specs and archetype
 - [From Translation to Orchestration](../foundations/02-from-translation-to-orchestration.md)
 
 **This pattern enables:**
-- [Intent vs. Implementation](02-intent-vs-implementation.md) — the first and most important conceptual distinction
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md) — SDD as the practice of intent engineering
-- [The Modern Engineering Skill Matrix](../operating/01-skill-matrix.md) — what skills this discipline requires
+- [The Intent-Implementation Boundary](02-intent-vs-implementation.md) — the first and most important conceptual distinction
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md) — SDD as the practice of intent engineering
+- [The Intent-Era Skill Matrix](../operating/01-skill-matrix.md) — what skills this discipline requires
 
 ---
-
-*Next: [Intent vs. Implementation](02-intent-vs-implementation.md)*
-

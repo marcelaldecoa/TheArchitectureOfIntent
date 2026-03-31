@@ -1,6 +1,6 @@
-# Pattern 7.1 — The Modern Engineering Skill Matrix
+# The Intent-Era Skill Matrix
 
-**Part VII: Operating the System** · *1 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -30,7 +30,16 @@ At the same time, organizations that stop developing technical depth because "th
 
 ---
 
-## The Resolution
+## Forces
+
+- **Traditional skill valuation vs. new value creation.** Organizations reward implementation speed and technical depth. The skills that now matter most (intent articulation, spec review, failure diagnosis) have no established career path.
+- **Proxy measurement vs. actual value.** A junior engineer with a well-configured agent can produce more code per day than a senior engineer without one. If organizations interpret this as junior engineers being more productive, they are measuring proxy rather than value.
+- **Skill development vs. skill deployment.** Learning to write good specifications requires practice and feedback. But teams under delivery pressure default to the faster path of giving agents informal instructions.
+- **Individual competence vs. organizational capability.** One skilled spec writer can be highly productive. But organizational capability requires multiple people with these skills at different levels.
+
+---
+
+## The Solution
 
 ### The Skill Matrix
 
@@ -93,6 +102,17 @@ The most important observation: **the junior-to-mid transition is no longer prim
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Engineering value is redirected, not eliminated.** Technical skill applies at the specification level rather than the implementation level.
+- **Hiring and promotion criteria can evolve.** With a named skill matrix, organizations can align incentives with the actual value-creation activities.
+- **Career paths include intent architecture.** The path from senior engineer to intent architect is now a named transition with defined competencies.
+- **Measurement shifts to specification quality.** Spec gap rate, first-pass validation rate, and cost-per-correct-output replace lines-of-code as performance indicators.
+
+---
+
 ## Therefore
 
 > **The agent era has elevated intent articulation, specification review, output validation, architectural judgment, and failure diagnosis as the primary engineering competencies. Technical depth persists but its application has shifted from primary production to specification and validation. The seniority ladder has reorganized around spec quality rather than code production speed, and team development should invest accordingly — the spec review workshop is the new code review, and the Spec Gap Log is the new retrospective.**
@@ -102,17 +122,13 @@ The most important observation: **the junior-to-mid transition is no longer prim
 ## Connections
 
 **This pattern assumes:**
-- [Why Specs Are Moral Artifacts](../theory/06-why-specs-are-moral-artifacts.md)
+- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 
 **This pattern enables:**
-- [From Senior Engineer to Intent Architect](02-from-engineer-to-architect.md)
-- [Reviewing Intent, Not Code](05-reviewing-intent.md)
-- [Metrics That Actually Matter](06-metrics.md)
+- [The Intent Architect](02-from-engineer-to-architect.md)
+- [Intent Review Before Output Review](05-reviewing-intent.md)
+- [Four Signal Metrics](06-metrics.md)
 
 ---
-
-*Next: [From Senior Engineer to Intent Architect](02-from-engineer-to-architect.md)*
-
-

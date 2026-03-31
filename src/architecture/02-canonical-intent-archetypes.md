@@ -1,6 +1,6 @@
-# Pattern 3.2 — The Canonical Intent Archetypes
+# The Five Archetypes
 
-**Part III: Intent Architecture** · *2 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -26,7 +26,16 @@ The five archetypes solve this by naming the recurring, stable forms — the cat
 
 ---
 
-## The Resolution
+## Forces
+
+- **Specificity vs. completeness.** A single archetype framework cannot account for every variation without becoming too granular to be useful. Yet too few categories leave genuine differences in risk and governance unmarked.
+- **Stability vs. emergence.** The framework should be stable enough to guide decisions across organizations and time; yet if real systems emerge that don't fit the five archetypes, the framework should be extended rather than forced.
+- **Authority clarity vs. discretion.** Some systems need significant autonomy while others should be highly constrained. Each archetype must give enough discretion to be useful while remaining governable.
+- **Reusability vs. context-sensitivity.** The archetypes should be recognizable across multiple systems. Yet each system is unique. The framework must allow both consistency and specialization.
+
+---
+
+## The Solution
 
 ### How the Five Archetypes Were Derived
 
@@ -134,11 +143,24 @@ The five archetypes emerge from consistent positions on these axes:
 
 Why five? And why these five?
 
-The five archetypes are not an arbitrary taxonomy. They represent the stable points in the space of agent system design when you apply the two axes (primary act × discretion scope) consistently. The stability test: every real system we have encountered fits one of these five, or a deliberate composition of them. The cases that don't fit cleanly are either compositions (treated in [Composing Archetypes](05-composing-archetypes.md)) or systems that have drifted across boundaries without a governance event (treated in [Evolving Archetypes Without Dogma](06-evolving-archetypes.md)).
+The five archetypes are not an arbitrary taxonomy. They represent the stable points in the space of agent system design when you apply the two axes (primary act × discretion scope) consistently. The stability test: every real system we have encountered fits one of these five, or a deliberate composition of them. The cases that don't fit cleanly are either compositions (treated in [Composing Archetypes](05-composing-archetypes.md)) or systems that have drifted across boundaries without a governance event (treated in [Governed Archetype Evolution](06-evolving-archetypes.md)).
 
 The five are also stable under the principle of minimum necessary power: they represent the smallest number of categories that distinguish systems with genuinely different risk profiles, oversight requirements, and design constraints.
 
-The formal argument for exhaustiveness: the two axes — primary act and discretion scope — partition the design space because every agent system must have a primary act (what it does) and a discretion scope (how much latitude it has in doing it). The five archetypes occupy distinct regions in this space: Advisor (inform / narrow), Guardian (enforce / narrow), Executor (execute / bounded), Synthesizer (compose / moderate), and Orchestrator (coordinate / broad). Additional archetypes would either overlap with one of these five (failing the "genuinely different governance" test) or represent compositions of them (treated in [Composing Archetypes](05-composing-archetypes.md)). This is not a claim of mathematical proof — it is a design claim validated against observed systems. If a genuinely new archetype emerges that requires a governance model none of the five can provide, the taxonomy should be extended; that extension would be a significant event in the framework's evolution.
+The formal argument for exhaustiveness: the two axes — primary act and discretion scope — partition the design space because every agent system must have a primary act (what it does) and a discretion scope (how much latitude it has in doing it). The five archetypes occupy distinct regions in this space: Advisor (inform / narrow), Guardian (enforce / narrow), Executor (execute / bounded), Synthesizer (compose / moderate), and Orchestrator (coordinate / broad). Additional archetypes would either overlap with one of these five (failing the "genuinely different governance" test) or represent compositions of them (treated in [Composing Archetypes](05-composing-archetypes.md)). This is not a claim of mathematical proof — it is a design claim validated against observed systems.
+
+**When to suspect a sixth archetype is needed.** If a system consistently fails the decision tree (Pattern 3.4) — if every classification feels forced, if compositions produce more confusion than clarity, and if the system's governance requirements are genuinely unmet by any of the five profiles — that is a signal. Candidate systems to watch for include: **teaching agents** that improve other agents' behavior (their primary act is neither inform, execute, enforce, synthesize, nor coordinate — it is *train*), **negotiation agents** operating in adversarial multi-party contexts (their discretion is neither bounded nor coordinative — it is *strategic*), and **self-modifying agents** that update their own specifications or capabilities. If any of these becomes a recurring design problem requiring its own governance model, the taxonomy should be extended through the same [Governed Archetype Evolution](06-evolving-archetypes.md) process used for individual system reclassification — with the additional requirement that a new archetype must demonstrate a governance profile that none of the existing five can provide.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Shared vocabulary reduces miscalibration.** With named archetypes, discussions about what kind of system is being built become precise. Miscalibration — advisors that drift into executor territory — becomes visible because the category is explicit.
+- **Governance inherits from category choice.** Once an archetype is selected, the minimum oversight model, risk profile, and authority boundaries follow. Teams do not reinvent governance from scratch for each system.
+- **Risk profiles are transparent.** Each archetype carries a canonical risk posture. Teams can reason about whether a particular system matches the risk the organization is accepting, before implementation begins.
+- **Composition becomes deliberate.** When multiple archetypes must be combined in one system, the combination is recognized and named as a design decision, rather than emerging accidentally from feature creep.
 
 ---
 
@@ -151,15 +173,12 @@ The formal argument for exhaustiveness: the two axes — primary act and discret
 ## Connections
 
 **This pattern assumes:**
-- [Archetypes as Constitutional Law](01-archetypes-as-constitutional-law.md)
+- [Constitutional Archetypes](01-archetypes-as-constitutional-law.md)
 
 **This pattern enables:**
-- [Archetype Dimensions](03-archetype-dimensions.md) — formal axes for describing archetype properties
-- [Decision Tree for Archetype Selection](04-decision-tree.md) — how to choose
+- [Four Dimensions of Governance](03-archetype-dimensions.md) — formal axes for describing archetype properties
+- [The Archetype Selection Tree](04-decision-tree.md) — how to choose
 - Individual archetype specifications: [Advisor](archetypes/advisor.md), [Executor](archetypes/executor.md), [Guardian](archetypes/guardian.md), [Synthesizer](archetypes/synthesizer.md), [Orchestrator](archetypes/orchestrator.md)
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — the reference implementation of all five
 
 ---
-
-*Next: [Archetype Dimensions](03-archetype-dimensions.md)*
-

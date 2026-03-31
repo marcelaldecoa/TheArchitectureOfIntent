@@ -1,6 +1,6 @@
-# Pattern 5.4 — Tools, MCP, and Capability Boundaries
+# Least Capability
 
-**Part V: Agents & Execution** · *4 of 7*
+**Agents**
 
 ---
 
@@ -26,7 +26,16 @@ The problem is not the tools. It is the assumption that capability and authoriza
 
 ---
 
-## The Resolution
+## Forces
+
+- **Capability abundance vs. authorization discipline.** Agents can technically access many tools. The principle of least capability requires restricting access to only what the task needs.
+- **Integration variety vs. protocol standardization.** Each tool has its own API interface. Without a standard protocol, N agents connecting to M tools creates N times M integration complexity.
+- **Tool power vs. effect class risk.** Read-only tools are safe. Tools that create, modify, or delete state carry escalating risk. The authorization model must distinguish effect classes.
+- **Specification completeness vs. tool discovery.** The spec must declare what tools are available. Dynamic tool discovery undermines the authorization model.
+
+---
+
+## The Solution
 
 ### What a Tool Is
 
@@ -106,6 +115,17 @@ The NOT-authorized list in Section 12 deserves special attention. An agent with 
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Capability boundaries are declared, not discovered.** The spec's tool manifest makes visible exactly what the agent can do, enabling pre-deployment review.
+- **MCP standardizes tool integration.** A single protocol eliminates N times M integration complexity.
+- **Effect classes drive authorization levels.** Read operations are authorized broadly; delete operations require explicit pre-authorization.
+- **Tool descriptions become behavioral contracts.** Well-described tools enable agents to use them correctly without runtime experimentation.
+
+---
+
 ## Therefore
 
 > **Tools are the mechanism by which agents take action in the world; the Model Context Protocol provides the standard interface for declaring and discovering them; and capability boundaries — declared in the spec, enforced by the tool server — distinguish what the agent can do from what the agent is authorized to do for this task. Least-capability design is the discipline that limits gap-filling to the intended scope, matching authorization level to the reversibility and consequence of each effect class.**
@@ -115,18 +135,14 @@ The NOT-authorized list in Section 12 deserves special attention. An agent with 
 ## Connections
 
 **This pattern assumes:**
-- [Agents as Executors of Intent](03-agents-as-executors.md)
+- [The Executor Model](03-agents-as-executors.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
 - [What Is MCP](mcp/01-what-is-mcp.md)
 - [Designing MCP Tools for Intent](mcp/02-designing-mcp-tools.md)
 - [MCP Tool Safety and Constraints](mcp/03-mcp-safety.md)
-- [Agent Skills: Packaging Domain Knowledge](05-agent-skills.md)
-- [Human Oversight Models](06-human-oversight-models.md)
+- [Portable Domain Knowledge](05-agent-skills.md)
+- [Proportional Oversight](06-human-oversight-models.md)
 
 ---
-
-*Next: [What Is MCP](mcp/01-what-is-mcp.md)*
-
-

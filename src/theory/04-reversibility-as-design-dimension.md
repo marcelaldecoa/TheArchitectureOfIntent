@@ -1,6 +1,6 @@
-# Pattern 2.4 — Reversibility as a Design Dimension
+# Design for Reversibility
 
-**Part II: Theory of Intent Engineering** · *4 of 6*
+**Foundations**
 
 ---
 
@@ -14,7 +14,7 @@ You are calibrating how to delegate work to an agent: how much autonomy to grant
 
 Reversibility is the variable that determines how much a mistake matters. High agency is acceptable when mistakes are cheap to fix. Even low agency can be dangerous when mistakes cannot be undone.
 
-This pattern assumes [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md) and is a prerequisite for [Archetype Dimensions](../architecture/03-archetype-dimensions.md).
+This pattern assumes [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md) and is a prerequisite for [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md).
 
 ---
 
@@ -34,7 +34,15 @@ The pattern of under-constraining familiar irreversible systems is particularly 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Probability focus vs. consequence reality.** Engineering risk management traditionally emphasizes reducing probability of failure; intent engineering must also govern the consequence when failures still occur, which reversibility shapes.
+- **Automation appeal vs. irreversibility danger.** Systems that feel safe and simple often take irreversible actions; high automation on irreversible operations is dangerous regardless of error probability.
+- **Operational efficiency vs. oversight overhead.** Testing and review add cost and latency; but for irreversible operations, the cost of undetected failure is so high that sufficient oversight is non-negotiable.
+
+---
+
+## The Solution
 
 ### Defining Reversibility
 
@@ -48,7 +56,7 @@ Reversibility is a spectrum with four practical zones:
 | **Largely reversible** | Action can be undone with some effort or partial side effects | Publishing a blog post (can be unpublished), creating a cloud resource (can be deleted, but billed) |
 | **Partially reversible** | Primary action can be reversed but side effects persist | Sending one email (can follow up, but first email was received), pushing code to a branch (can be reverted, but others may have seen it) |
 | **Irreversible** | Action cannot be meaningfully undone | Sending mass email, deleting production data without backup, making a financial transaction, revoking credentials |
-
+**Important: reversibility is contextual, not intrinsic.** The same action type can sit at different points on this spectrum depending on the infrastructure and operational context. A database write is largely reversible if you have point-in-time backups and a tested rollback procedure; it is effectively irreversible if you do not. A message sent to an internal Slack channel is partially reversible (you can delete it, though others may have seen it); the same message sent to an external customer mailing list is irreversible. When assessing reversibility for a spec, evaluate the action *as deployed in your specific environment*, not the action type in the abstract.
 ---
 
 ### The Risk Matrix
@@ -120,6 +128,16 @@ The practical rule: the oversight cadence for a system should be proportional to
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Risk matrices become actionable design tools.** Different combinations of agency and reversibility demand different oversight structures; low-risk combinations can be streamlined while high-risk ones receive mandatory controls.
+- **Reversibility becomes a designable property.** Soft deletes, draft queues, and approval gates convert what appears irreversible into manageable, reviewable work — expanding the scope of what can be safely automated.
+- **Oversight intensity calibrates to actual consequence.** High agency is acceptable when mistakes are cheap to fix; low reversibility demands structured oversight regardless of how "simple" the task feels.
+
+---
+
 ## Therefore
 
 > **Reversibility is the most important risk calibration variable in agent system design. The combination of high agency and low reversibility requires the highest oversight. The combination of low agency and high reversibility can be automated freely. Design oversight structures proportional to this combination — not to the probability of error, which agents can reduce, but to the consequence of error, which only humans can govern.**
@@ -129,15 +147,12 @@ The practical rule: the oversight cadence for a system should be proportional to
 ## Connections
 
 **This pattern assumes:**
-- [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md)
+- [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [Failure as a Design Signal](05-failure-as-design-signal.md) — what happens when this calibration fails
-- [Archetype Dimensions](../architecture/03-archetype-dimensions.md) — reversibility as a formal archetype axis
-- [Human Oversight Models](../agents/06-human-oversight-models.md) — designing oversight to match reversibility
+- [Failure as Diagnostic Signal](05-failure-as-design-signal.md) — what happens when this calibration fails
+- [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) — reversibility as a formal archetype axis
+- [Proportional Oversight](../agents/06-human-oversight-models.md) — designing oversight to match reversibility
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the "must never happen" and oversight sections
 
 ---
-
-*Next: [Failure as a Design Signal](05-failure-as-design-signal.md)*
-

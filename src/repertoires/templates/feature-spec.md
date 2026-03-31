@@ -1,6 +1,6 @@
 # Feature Spec Template
 
-**Part VI: Spec Template Library** · *Template 1*
+**Repertoire & Reference**
 
 ---
 

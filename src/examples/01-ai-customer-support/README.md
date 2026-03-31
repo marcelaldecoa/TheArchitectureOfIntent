@@ -1,6 +1,6 @@
 # Designing an AI Customer Support System
 
-**Part VIII: Applied Examples** · *Example 1 of 2*
+**Applied Examples**
 
 ---
 

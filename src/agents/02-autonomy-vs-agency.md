@@ -1,6 +1,6 @@
-# Pattern 5.2 — Operational Autonomy vs. Genuine Agency
+# Autonomy Without Agency
 
-**Part V: Agents & Execution** · *2 of 7*
+**Agents**
 
 ---
 
@@ -38,7 +38,16 @@ Again, four different requirements — each with distinct implications for capab
 
 ---
 
-## The Resolution
+## Forces
+
+- **Operational independence vs. decision-making discretion.** A system can run without human intervention yet exercise no judgment; or it can make consequential decisions while requiring human initiation. The two dimensions are independent.
+- **Escalation as failure vs. escalation as design.** Teams that treat agent escalation as failure create pressure to over-automate. Treating escalation as designed behavior creates safe boundaries.
+- **Spectrum granularity vs. decision simplicity.** A six-level autonomy spectrum captures real-world variation but requires teams to assign precise levels to their systems.
+- **Uniformity vs. per-task calibration.** A single autonomy level for the whole system is simpler to govern. Per-task calibration is more precise but creates complexity.
+
+---
+
+## The Solution
 
 ### Operational Autonomy: A Technical Property
 
@@ -66,10 +75,12 @@ The archetypes from Part III map onto this spectrum:
 | Archetype | Typical Autonomy Level |
 |-----------|----------------------|
 | Advisor | 0–1 |
-| Executor | 1–2 |
+| Executor | 2–4 |
 | Guardian | 2–3 |
 | Synthesizer | 2–3 |
 | Orchestrator | 3–4 |
+
+**Note on autonomy vs. agency:** This table describes *operational autonomy* — how independently the system runs between human checkpoints. It is distinct from the *agency level* in the [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md), which describes *discretionary scope* — how much latitude the system has in deciding how to act. An Executor typically operates at Agency Level 3–4 (bounded to substantial discretion in how it accomplishes tasks) but may run at different autonomy levels depending on deployment maturity: a new Executor might be checkpointed (Autonomy 2), while a mature Executor with a proven spec runs in bounded autonomous mode (Autonomy 4). The two scales are independent design variables.
 
 ### Genuine Agency: Why Current Agents Don't Have It
 
@@ -95,6 +106,17 @@ When you separate operational autonomy from genuine agency, three things become 
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Autonomy becomes configurable.** Systems can be deployed at different autonomy levels for different circumstances without redesigning the agent.
+- **Escalation becomes a first-class design element.** When and how an agent escalates is specified in advance rather than emerging from failures.
+- **Agency and autonomy are tuned independently.** High autonomy with low agency is safe; high agency with high autonomy requires maximum oversight. The combinations become explicit.
+- **Teams gain a vocabulary for deployment decisions.** Discussions about 'how autonomous should this be' become precise and actionable.
+
+---
+
 ## Therefore
 
 > **Operational autonomy — the ability to complete multiple steps without human confirmation per step — is a designed property, not an intrinsic one. Current AI agents have operational autonomy but not genuine agency: they execute delegated intent without their own will or preferences. Every autonomy level decision is a specification decision, and every failure to specify the right level is a governance failure, not an AI failure.**
@@ -104,17 +126,13 @@ When you separate operational autonomy from genuine agency, three things become 
 ## Connections
 
 **This pattern assumes:**
-- [What Agents Are (and Are Not)](01-what-agents-are.md)
+- [Agents Defined by Structure](01-what-agents-are.md)
 - [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)
 - [Agency Levels and Risk Posture](../architecture/03-archetype-dimensions.md)
 
 **This pattern enables:**
-- [Agents as Executors of Intent](03-agents-as-executors.md)
-- [Human Oversight Models](06-human-oversight-models.md)
-- [Failure Modes in Agent Systems](07-failure-modes.md)
+- [The Executor Model](03-agents-as-executors.md)
+- [Proportional Oversight](06-human-oversight-models.md)
+- [Six Failure Categories](07-failure-modes.md)
 
 ---
-
-*Next: [Agents as Executors of Intent](03-agents-as-executors.md)*
-
-

@@ -1,6 +1,6 @@
-# Pattern 7.6 — Metrics That Actually Matter
+# Four Signal Metrics
 
-**Part VII: Operating the System** · *6 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -32,7 +32,16 @@ The measurement framework that follows distinguishes between performance metrics
 
 ---
 
-## The Resolution
+## Forces
+
+- **Proxy metrics vs. signal metrics.** Lines of code, stories completed, and agent utilization rate are proxies. Spec gap rate, first-pass validation rate, and cost-per-correct-output are signals.
+- **Health metrics vs. performance metrics.** A growing spec gap log is healthy (the team is learning). A growing spec gap rate is unhealthy (specs are getting worse). Conflating these produces wrong conclusions.
+- **Short-term measurement vs. long-term improvement.** Weekly performance metrics create pressure to game them. Quarterly rolling averages reveal genuine improvement.
+- **Individual accountability vs. system improvement.** Metrics that blame individuals discourage reporting. Metrics that improve the system encourage learning.
+
+---
+
+## The Solution
 
 ### The Anti-Metrics: What Not to Measure
 
@@ -180,6 +189,17 @@ A team that uses metrics only for retrospective reporting but does not close the
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Four signal metrics replace proxy counting.** Spec gap rate, first-pass validation rate, spec-attributed rework rate, and cost-per-correct-output provide actionable signals.
+- **Health and performance are distinguished.** Teams understand that a growing gap log is learning, not failure.
+- **Metrics connect to repertoire investment.** High gap rates in a domain signal that constraint libraries need investment, not that engineers are failing.
+- **The system is self-improving.** Metrics feedback into spec quality, which improves agent output, which improves metrics.
+
+---
+
 ## Therefore
 
 > **Measure what the system is producing (correct validated outputs, first-pass rates, spec-attributed rework) rather than what the system is doing (agent runs, lines generated, PRs merged). The Spec Gap Log is the primary measurement instrument — without it, all other metrics lose their numerator. Distinguish health metrics (a growing gap log signals a functioning review culture) from performance metrics (rework rate should decrease). Connect metrics to repertoire investment decisions: sustained high gap rates in a domain signal that the constraint library needs work, not that engineers need to write better specs in isolation.**
@@ -190,9 +210,9 @@ A team that uses metrics only for retrospective reporting but does not close the
 
 **This pattern assumes:**
 - [The Spec Gap Log](../sdd/06-living-specs.md)
-- [Reviewing Intent, Not Code](05-reviewing-intent.md)
+- [Intent Review Before Output Review](05-reviewing-intent.md)
 - [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
-- [Governance Without Bureaucracy](04-governance.md)
+- [Proportional Governance](04-governance.md)
 
 **This pattern enables:**
 - Informed investment in the repertoire (constraint libraries, archetype catalog)

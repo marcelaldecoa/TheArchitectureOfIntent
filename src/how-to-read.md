@@ -28,9 +28,9 @@ Useful entry points by role:
 | If you are... | Start here |
 |---------------|------------|
 | **Writing a spec today** | [The Canonical Spec Template](sdd/07-canonical-spec-template.md) |
-| **Choosing how to deploy an agent** | [Decision Tree for Archetype Selection](architecture/04-decision-tree.md) |
-| **Designing oversight for an AI system** | [Human Oversight Models](agents/06-human-oversight-models.md) |
-| **Restructuring your team's skills** | [The Modern Engineering Skill Matrix](operating/01-skill-matrix.md) |
+| **Choosing how to deploy an agent** | [The Archetype Selection Tree](architecture/04-decision-tree.md) |
+| **Designing oversight for an AI system** | [Proportional Oversight](agents/06-human-oversight-models.md) |
+| **Restructuring your team's skills** | [The Intent-Era Skill Matrix](operating/01-skill-matrix.md) |
 | **Starting an applied example** | [How to Use These Examples](examples/00-how-to-use.md) |
 | **Confused about a term** | [Glossary](appendices/glossary.md) |
 

@@ -1,6 +1,6 @@
-# The Model Context Protocol
+﻿# The Model Context Protocol
 
-**Part V: Agents & Execution — MCP** · *MCP 1 of 3*
+**Integration & Tools**
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## Context
 
-[Tools, MCP, and Capability Boundaries](../04-tools-mcp-capability-boundaries.md) introduced the concept that agents need tools — callable functions that let them take action in the world — and that tool capability must be separated from task-level authorization. Before examining how to design and constrain tools, it is worth understanding the protocol that connects agents to tools in the first place.
+[Least Capability](../04-tools-mcp-capability-boundaries.md) introduced the concept that agents need tools — callable functions that let them take action in the world — and that tool capability must be separated from task-level authorization. Before examining how to design and constrain tools, it is worth understanding the protocol that connects agents to tools in the first place.
 
 The Model Context Protocol (MCP) is an open standard for attaching tools, resources, and context to AI agents in a discoverable, composable, and interoperable way. It has become the dominant interface layer between agent frameworks and external capabilities. Understanding it is operational knowledge for any team deploying agents seriously.
 
@@ -26,7 +26,15 @@ This is the N×M integration problem: N agents times M tools, each requiring a c
 
 ---
 
-## The Resolution
+## Forces
+
+- **Integration variety vs. standardization benefit.** Each tool provider has its own API surface. Without standardization, every agent-tool pair requires custom integration.
+- **Protocol simplicity vs. capability richness.** A simple protocol is easy to adopt. A rich protocol captures more capability. MCP balances three primitives (tools, resources, prompts).
+- **Dynamic discovery vs. static authorization.** MCP enables runtime tool discovery, which is powerful. But dynamic discovery can conflict with spec-declared capability boundaries.
+
+---
+
+## The Solution
 
 ### What MCP Is
 
@@ -108,6 +116,16 @@ This is infrastructure work — the kind that pays compounding returns over time
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Tool integration becomes pluggable.** Agents connect to tools through a standard protocol rather than custom integrations.
+- **Tool capability is discoverable.** MCP servers describe their capabilities in a machine-readable format.
+- **Spec governance applies to MCP tools.** Tool manifests in specs declare which MCP servers are authorized, maintaining the authorization model.
+
+---
+
 ## Therefore
 
 > **MCP is the universal interface layer between agents and tools — a JSON-RPC protocol that enables agents to discover, call, and receive results from any MCP-compliant server, eliminating bespoke integrations and centralizing the enforcement of authorization, logging, and rate limiting. It separates what is available from what is authorized: MCP describes the registry; the spec's Tool and Resource Manifest governs what is used.**
@@ -117,7 +135,7 @@ This is infrastructure work — the kind that pays compounding returns over time
 ## Connections
 
 **This pattern assumes:**
-- [Tools, MCP, and Capability Boundaries](../04-tools-mcp-capability-boundaries.md)
+- [Least Capability](../04-tools-mcp-capability-boundaries.md)
 
 **This pattern enables:**
 - [Designing MCP Tools for Intent](02-designing-mcp-tools.md)
@@ -125,7 +143,3 @@ This is infrastructure work — the kind that pays compounding returns over time
 - [The Canonical Spec Template — Section 12](../../sdd/07-canonical-spec-template.md)
 
 ---
-
-*Next: [Designing MCP Tools for Intent](02-designing-mcp-tools.md)*
-
-

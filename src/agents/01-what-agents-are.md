@@ -1,6 +1,6 @@
-# Pattern 5.1 — What Agents Are (and Are Not)
+# Agents Defined by Structure
 
-**Part V: Agents & Execution** · *1 of 7*
+**Agents**
 
 ---
 
@@ -33,7 +33,16 @@ The conflation matters because it collapses the architecture. If everything is a
 
 ---
 
-## The Resolution
+## Forces
+
+- **Marketing language vs. engineering precision.** The term 'agent' has been applied to everything from chatbots to autonomous systems, collapsing distinctions that governance depends on.
+- **Capability vs. authorization.** An agent may be technically capable of many actions; its authorization scope determines what it is permitted to do. Conflating these produces ungovernable systems.
+- **Autonomy appeal vs. oversight necessity.** Teams want agents to work independently to reduce labor. But independence without structured oversight creates unmonitored risk.
+- **Continuous execution vs. human feedback cadence.** Agents can act continuously; humans review periodically. The gap between execution speed and review speed determines how much damage can accumulate undetected.
+
+---
+
+## The Solution
 
 ### The Defining Properties of an Agent
 
@@ -85,6 +94,17 @@ These obligations are not burdens. They are the price of the capability. Systems
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Classification becomes actionable.** With a precise definition (goal persistence, action-taking, iterative planning), teams can distinguish genuine agents from simpler automation and apply appropriate governance.
+- **Authorization boundaries become visible.** What the agent may do is now a design question answered in the spec, not an emergent property of what the agent happened to attempt.
+- **Governance proportionality becomes possible.** Different levels of agent capability receive different oversight structures rather than a one-size-fits-all approach.
+- **Intent remains human-originated.** Every agent executes intent that originated with a human spec author, making accountability traceable.
+
+---
+
 ## Therefore
 
 > **An agent is a goal-persistent, action-taking, iteratively planning system — distinct from chatbots, scripts, and tool-augmented assistants. It is not volitionally autonomous; it executes delegated human intent. Accepting this definition makes every architectural question about agents tractable: it tells you what spec is required, what boundaries matter, what oversight is owed, and how to diagnose failure.**
@@ -94,18 +114,14 @@ These obligations are not burdens. They are the price of the capability. Systems
 ## Connections
 
 **This pattern assumes:**
-- [What Is Intent Engineering?](../theory/01-what-is-intent-engineering.md)
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Intent Engineering as a Discipline?](../theory/01-what-is-intent-engineering.md)
+- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
 - [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)
 
 **This pattern enables:**
-- [Operational Autonomy vs. Genuine Agency](02-autonomy-vs-agency.md)
-- [Agents as Executors of Intent](03-agents-as-executors.md)
-- [Human Oversight Models](06-human-oversight-models.md)
-- [Failure Modes in Agent Systems](07-failure-modes.md)
+- [Autonomy Without Agency](02-autonomy-vs-agency.md)
+- [The Executor Model](03-agents-as-executors.md)
+- [Proportional Oversight](06-human-oversight-models.md)
+- [Six Failure Categories](07-failure-modes.md)
 
 ---
-
-*Next: [Operational Autonomy vs. Genuine Agency](02-autonomy-vs-agency.md)*
-
-

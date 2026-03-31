@@ -1,6 +1,6 @@
 # Writing the Spec
 
-**Part VIII: Example 1 — AI Customer Support** · *Step 2 of 5*
+**Applied Examples**
 
 ---
 

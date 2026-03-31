@@ -1,6 +1,6 @@
-# Pattern 3.3 — Archetype Dimensions
+# Four Dimensions of Governance
 
-**Part III: Intent Architecture** · *3 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -30,7 +30,16 @@ Two systems are both Executors: a CI/CD pipeline that runs tests and a financial
 
 ---
 
-## The Resolution
+## Forces
+
+- **Category vs. detail.** The archetype names the kind of system, but two systems of the same type can differ drastically in their oversight requirements. Yet specifying every system from first principles recreates the classification problem at every decision point.
+- **Standardization vs. customization.** Systems need enough behavioral similarity that the archetype label carries meaning. Yet every real system differs in risk, scope, and consequence.
+- **Expressiveness vs. learnability.** Four dimensions can express the nuance needed to distinguish one Executor from another. Adding more multiplies complexity; removing dimensions loses important distinctions.
+- **Metric-driven vs. judgment-based.** Dimensions should be assessable by analyzing the system itself. Yet some dimensions require subjective assessment. The framework must accommodate both.
+
+---
+
+## The Solution
 
 ### The Four Dimensions
 
@@ -138,6 +147,8 @@ Applying all four dimensions to the five archetypes produces their canonical gov
 | **Advisor** | 1–2 | Low | Monitoring | Fully reversible |
 | **Executor** | 3–4 | Medium–High | Model D (scope gate) | Partially–Irreversible |
 | **Guardian** | 2 (veto only) | Low (when operating) | Monitoring + alert | Depends on what it guards |
+
+**A note on the Guardian's agency level.** The Guardian shares a numeric agency level (2) with an Advisor at level 2, but the *kind* of discretion is qualitatively different. An Advisor at level 2 chooses among pre-enumerated presentation options — its discretion is compositional. A Guardian at level 2 exercises *veto discretion*: the authority to block, halt, or reject actions that violate constraints. Veto power is a categorically different capability from selection among options, even though both sit at level 2 on the numeric scale. The label "veto only" is essential — it signals that the Guardian's agency is directionally negative (it prevents, rather than initiates) and narrower than a general level-2 system.
 | **Synthesizer** | 3 | Low–Medium | Periodic review or Output gate | Largely reversible |
 | **Orchestrator** | 4–5 | High | Model C or D + escalation | Irreversible (coordinates irreversible agents) |
 
@@ -161,6 +172,17 @@ A spec that fails any of these checks is not ready for agent execution.
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Governance profiles become diagnostic.** The four dimensions make it visible when a system is under-governed or over-governed. Mismatch becomes discussable because the dimensions are explicit.
+- **Constraints flow from structure.** Once a system's dimensions are established, the required constraints follow. The spec's constraint density can be calibrated to the dimensions.
+- **Risk is owned explicitly.** By assessing all four dimensions, the organization can no longer ignore risk quietly.
+- **Evolution becomes checkable.** When a system's dimensions change, the change is visible and auditable.
+
+---
+
 ## Therefore
 
 > **The four archetype dimensions — Agency Level, Risk Posture, Oversight Model, and Reversibility Posture — together form the governance profile of any agent system. They transform archetype names from categories into design specifications: they tell you what the spec must contain, what the oversight structure must look like, and what design requirements cannot be waived. Every serious spec review should evaluate all four.**
@@ -170,17 +192,14 @@ A spec that fails any of these checks is not ready for agent execution.
 ## Connections
 
 **This pattern assumes:**
-- [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md)
-- [Reversibility as a Design Dimension](../theory/04-reversibility-as-design-dimension.md)
-- [Agency, Autonomy, and Responsibility](../theory/03-agency-autonomy-responsibility.md)
+- [The Five Archetypes](02-canonical-intent-archetypes.md)
+- [Design for Reversibility](../theory/04-reversibility-as-design-dimension.md)
+- [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [Decision Tree for Archetype Selection](04-decision-tree.md) — putting the dimensions to practical use
+- [The Archetype Selection Tree](04-decision-tree.md) — putting the dimensions to practical use
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the oversight and constraint sections
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — full dimension profiles per archetype
-- [Human Oversight Models](../agents/06-human-oversight-models.md) — implementing the four oversight models
+- [Proportional Oversight](../agents/06-human-oversight-models.md) — implementing the four oversight models
 
 ---
-
-*Next: [Decision Tree for Archetype Selection](04-decision-tree.md)*
-

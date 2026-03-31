@@ -1,6 +1,6 @@
-# Pattern 2.5 — Failure as a Design Signal
+# Failure as Diagnostic Signal
 
-**Part II: Theory of Intent Engineering** · *5 of 6*
+**Foundations**
 
 ---
 
@@ -14,7 +14,7 @@ Your system has produced an incorrect outcome. An agent did something wrong, or 
 
 This pattern teaches how to read failures as signals rather than noise — a practice that is central to the maintenance of living specs and the long-term health of agent-driven systems.
 
-This pattern assumes [Reversibility as a Design Dimension](04-reversibility-as-design-dimension.md) and pairs with [Why Specs Are Moral Artifacts](06-why-specs-are-moral-artifacts.md).
+This pattern assumes [Design for Reversibility](04-reversibility-as-design-dimension.md) and pairs with [The Moral Weight of Specification](06-why-specs-are-moral-artifacts.md).
 
 ---
 
@@ -30,7 +30,15 @@ Worse: in systems where agents execute continuously, an undiagnosed intent error
 
 ---
 
-## The Resolution
+## Forces
+
+- **Quick fixing vs. diagnostic depth.** The immediate response to failure is correction — patch the code and move on; but intent failures require upstream spec analysis, which is slower and demands admitting incomplete thinking.
+- **Probabilistic assumption vs. deterministic execution.** In traditional development, many failures were implementation errors; in agent-mediated systems, many failures are intent gaps that the agent faithfully executes.
+- **Machine speed vs. human diagnosis cadence.** Agents execute continuously; if failures are not diagnosed at the right level, they compound at machine scale before anyone detects a pattern.
+
+---
+
+## The Solution
 
 ### The Four Categories of Agent System Failure
 
@@ -137,7 +145,7 @@ This is what it means to say failure is a design signal: each failure, properly 
 
 ### Failure Modes Are Patterns Too
 
-In the spirit of Alexander's pattern language, failure modes are patterns that can be named, cataloged, and used to guide design before failure occurs. [Failure Modes in Agent Systems](../agents/07-failure-modes.md) provides a catalog of common failure patterns in agent execution. But the more fundamental catalog — the one that matters for intent engineering — is the catalog of **spec failure modes**: the recurring ways in which intent, expressed in language, fails to constrain agent behavior as intended.
+In the spirit of Alexander's pattern language, failure modes are patterns that can be named, cataloged, and used to guide design before failure occurs. [Six Failure Categories](../agents/07-failure-modes.md) provides a catalog of common failure patterns in agent execution. But the more fundamental catalog — the one that matters for intent engineering — is the catalog of **spec failure modes**: the recurring ways in which intent, expressed in language, fails to constrain agent behavior as intended.
 
 The most common spec failure modes:
 
@@ -151,6 +159,16 @@ Each of these is a recurring design problem with a predictable resolution — wh
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Failures become diagnostic data, not just corrective events.** A categorization protocol reveals whether each failure originated in intent, context, constraints, or execution; this diagnosis determines where to fix.
+- **Institutional knowledge accumulates in spec gap logs.** Each failure reveals something the specification assumed but did not express; a failure archaeology practice captures these gaps, making tacit knowledge explicit.
+- **Specs improve systematically through failure-driven evolution.** Rather than accumulating legacy debt, each failure contributes a constraint addition or clarification — the living spec becomes stronger over time.
+
+---
+
 ## Therefore
 
 > **Failure in an agent-mediated system is a diagnostic event, not just a corrective one. Before fixing, categorize: is this an intent failure, a context failure, a constraint omission, or an implementation error? Fix at the correct level. Accumulate the signal in a spec gap log. Treat each failure as a message about what the specification assumed but did not say — and make it more explicit.**
@@ -160,16 +178,13 @@ Each of these is a recurring design problem with a predictable resolution — wh
 ## Connections
 
 **This pattern assumes:**
-- [Reversibility as a Design Dimension](04-reversibility-as-design-dimension.md)
-- [Intent vs. Implementation](02-intent-vs-implementation.md)
+- [Design for Reversibility](04-reversibility-as-design-dimension.md)
+- [The Intent-Implementation Boundary](02-intent-vs-implementation.md)
 
 **This pattern enables:**
-- [Why Specs Are Moral Artifacts](06-why-specs-are-moral-artifacts.md) — the ethical dimension of letting failures propagate
-- [Living Specs and Feedback Loops](../sdd/06-living-specs.md) — the practice structure for failure-driven spec evolution
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md) — the execution-level failure catalog
-- [Metrics That Actually Matter](../operating/06-metrics.md) — measuring spec quality through failure signal
+- [The Moral Weight of Specification](06-why-specs-are-moral-artifacts.md) — the ethical dimension of letting failures propagate
+- [The Living Spec](../sdd/06-living-specs.md) — the practice structure for failure-driven spec evolution
+- [Six Failure Categories](../agents/07-failure-modes.md) — the execution-level failure catalog
+- [Four Signal Metrics](../operating/06-metrics.md) — measuring spec quality through failure signal
 
 ---
-
-*Next: [Why Specs Are Moral Artifacts](06-why-specs-are-moral-artifacts.md)*
-

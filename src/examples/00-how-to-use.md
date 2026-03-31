@@ -1,6 +1,6 @@
 # How to Use These Examples
 
-**Part VIII: Applied Examples** · *Preface*
+**Applied Examples**
 
 ---
 

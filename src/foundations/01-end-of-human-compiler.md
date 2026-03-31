@@ -1,6 +1,6 @@
-﻿# Pattern 1.1 — The End of the Human Compiler
+# Specification as the Primary Artifact
 
-**Part I: Foundations** · *Pattern 1 of 6*
+**Foundations**
 
 ---
 
@@ -38,7 +38,16 @@ The whole edifice made sense. It was built for a world where **code creation was
 
 ---
 
-## The Resolution
+## Forces
+
+- **Code generation is now cheap, but specification quality has not improved proportionally.** The tooling that made translation expensive also enforced a feedback loop: ambiguity was caught during implementation. Removing that bottleneck removes the feedback loop.
+- **Senior developers compensated for poor specifications through judgment.** This compensation was invisible in the old model — no one measured it. Agents expose the gap because they interpret specifications with high fidelity but without the compensatory judgment that human developers applied — filling ambiguities with probabilistic reasoning rather than institutional knowledge.
+- **Organizations are optimized for code review, not intent review.** Hiring, promotion, tooling, and rituals all center on implementation quality. The skills that now matter most — framing, constraint definition, scope governance — have no established institutional support.
+- **The shift feels like demotion.** Engineers trained to value their translation skill may experience the move to specification as a loss of status, even when it is a promotion in responsibility.
+
+---
+
+## The Solution
 
 That scarcity is over.
 
@@ -60,9 +69,20 @@ With agents, that compensation mechanism fails. An agent executing on an ambiguo
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **The specification becomes the primary engineering artifact.** Teams invest review effort in specs rather than code. Code review shifts from "is this correct?" to "did the agent follow the spec?"
+- **Ambiguity becomes visible and measurable.** When agents execute literal specs, every gap in specification clarity produces a visible failure. This creates a feedback loop that the old model lacked.
+- **Technical skill is redirected, not eliminated.** Senior engineers apply their judgment at the level of constraints, invariants, and failure modes — higher leverage than individual implementation decisions.
+- **New institutional structures are needed.** Spec review workflows, intent review rituals, and constraint libraries become organizational investments.
+
+---
+
 ## Therefore
 
-> **The human compiler is not dead — the role has moved. The developer's job is no longer to translate intent into code, but to specify intent so clearly that translation becomes reliable. The specification is now the most important artifact, and the quality of the specification is now the primary determinant of system quality.**
+> **The human compiler is not dead — the role has moved. The developer’s job is no longer to translate intent into code, but to specify intent so clearly that translation becomes reliable. The specification is now the most important artifact, and the quality of the specification is now the primary determinant of the factors within the team’s control. Model capability, tooling reliability, and data quality are also load-bearing — but specification is the variable the team owns and can systematically improve.**
 
 ---
 
@@ -103,9 +123,7 @@ The engineer who understood how to write a clean sorting algorithm still has sup
 **This pattern enables:**
 - [From Translation to Orchestration](02-from-translation-to-orchestration.md) — what the new role actually looks like
 - [Authorship in Software](03-authorship-in-software.md) — who is responsible when machines execute
-- [What Is Intent Engineering](../theory/01-what-is-intent-engineering.md) — naming the discipline this shift requires
-- [The Modern Engineering Skill Matrix](../operating/01-skill-matrix.md) — what skills are now load-bearing
+- [Intent Engineering as a Discipline](../theory/01-what-is-intent-engineering.md) — naming the discipline this shift requires
+- [The Intent-Era Skill Matrix](../operating/01-skill-matrix.md) — what skills are now load-bearing
 
 ---
-
-*Next: [From Translation to Orchestration](02-from-translation-to-orchestration.md)*

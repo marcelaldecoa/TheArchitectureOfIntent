@@ -1,6 +1,6 @@
-# Pattern 2.3 — Agency, Autonomy, and Responsibility
+# Three Dimensions of Delegation
 
-**Part II: Theory of Intent Engineering** · *3 of 6*
+**Foundations**
 
 ---
 
@@ -12,9 +12,9 @@
 
 The vocabulary around agent systems is unstable. "Autonomous," "agentic," "semi-autonomous," "goal-directed" — these terms are used interchangeably in most of the industry, collapsing important distinctions that affect how systems should be designed. This pattern establishes precise definitions for three concepts that must be clearly separated: **agency**, **autonomy**, and **responsibility**.
 
-These definitions form the conceptual backbone of the [Archetype Dimensions](../architecture/03-archetype-dimensions.md) chapter and directly inform every oversight model in this book.
+These definitions form the conceptual backbone of the [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) chapter and directly inform every oversight model in this book.
 
-This pattern assumes [Intent vs. Implementation](02-intent-vs-implementation.md) and builds toward [Reversibility as a Design Dimension](04-reversibility-as-design-dimension.md).
+This pattern assumes [The Intent-Implementation Boundary](02-intent-vs-implementation.md) and builds toward [Design for Reversibility](04-reversibility-as-design-dimension.md).
 
 ---
 
@@ -33,7 +33,15 @@ Similarly, "responsibility" in AI systems discussions is often vague: sometimes 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Automation desire vs. control necessity.** Teams want high autonomy to reduce labor costs; but high autonomy combined with high agency creates ungovernable risk without clear accountability structures.
+- **System capability vs. human understanding.** Agents can exercise discretion in domains the original authors did not fully anticipate; responsibility cannot be shared vaguely — it must be explicitly assigned or failures have no diagnosis path.
+- **Operational efficiency vs. oversight demand.** The faster the agent executes, the faster it can compound mistakes; high autonomy without proportional oversight creates latent catastrophic risk.
+
+---
+
+## The Solution
 
 ### Autonomy: The Operational Dimension
 
@@ -106,6 +114,16 @@ Given these definitions, the primary design question for any agent delegation is
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Three distinct accountability layers become designable.** Authorial, operational, and validation responsibilities can be distributed deliberately across teams with clear boundaries for each group's accountability.
+- **Calibration becomes systematic rather than assumed.** Agency, autonomy, and responsibility can be tuned deliberately as design parameters rather than remaining emergent properties that confuse stakeholder conversations.
+- **Unsafe configurations become explicitly recognizable.** High agency with unclear responsibility is now a named anti-pattern that deployment reviews can reject before systems cause harm.
+
+---
+
 ## Therefore
 
 > **Autonomy (how independently it runs), agency (how much discretion it exercises), and responsibility (who is accountable for outcomes) are three distinct dimensions of agent system design. Conflating them produces unsafe systems. Calibrating them deliberately — specifying agency boundaries in the spec, matching autonomy to the oversight capacity of the team, and assigning responsibility explicitly before deployment — is a primary function of intent engineering.**
@@ -115,16 +133,13 @@ Given these definitions, the primary design question for any agent delegation is
 ## Connections
 
 **This pattern assumes:**
-- [Intent vs. Implementation](02-intent-vs-implementation.md)
+- [The Intent-Implementation Boundary](02-intent-vs-implementation.md)
 - [Where Agency Resides](../foundations/04-where-agency-resides.md)
 
 **This pattern enables:**
-- [Reversibility as a Design Dimension](04-reversibility-as-design-dimension.md) — the fourth key variable in this calibration
-- [Archetype Dimensions](../architecture/03-archetype-dimensions.md) — formal encoding of agency levels in archetypes
-- [Human Oversight Models](../agents/06-human-oversight-models.md) — designing oversight to match agency level
-- [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) — responsibility structures in governance
+- [Design for Reversibility](04-reversibility-as-design-dimension.md) — the fourth key variable in this calibration
+- [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) — formal encoding of agency levels in archetypes
+- [Proportional Oversight](../agents/06-human-oversight-models.md) — designing oversight to match agency level
+- [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — responsibility structures in governance
 
 ---
-
-*Next: [Reversibility as a Design Dimension](04-reversibility-as-design-dimension.md)*
-

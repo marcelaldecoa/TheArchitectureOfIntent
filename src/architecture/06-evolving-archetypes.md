@@ -1,6 +1,6 @@
-# Pattern 3.6 — Evolving Archetypes Without Dogma
+# Governed Archetype Evolution
 
-**Part III: Intent Architecture** · *6 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -35,7 +35,16 @@ Archetypes need to evolve — but evolution must be governed differently from in
 
 ---
 
-## The Resolution
+## Forces
+
+- **Archetype permanence vs. operational reality.** Systems change in scope and capability over months and years; treating archetypes as immutable produces governance models increasingly divorced from actual behavior.
+- **Drift invisibility vs. explicit evolution.** Small incremental decisions that expand scope are invisible until a failure reveals them; formal review processes are heavyweight but catch drift that informal change control misses.
+- **Speed vs. governance.** Formal reclassification takes time. Systems are under deadline pressure. The process cannot be so heavy that teams route around it, yet cannot be so light that drift happens invisibly.
+- **Accountability vs. flexibility.** When an archetype changes, someone made that decision. There must be a record of who and why. Yet expecting formal notification of every scope expansion may create incentives to classify loosely from the start.
+
+---
+
+## The Solution
 
 ### The Distinction Between Evolution and Drift
 
@@ -109,7 +118,7 @@ If no: proceed to Step 4.
 
 In continuous deployment environments, archetype evolution must be integrated into the delivery pipeline rather than treated as an offline governance exercise:
 
-- **Spec-as-code.** Store specs alongside application code in the repository. Spec changes follow the same pull request and review process as code changes. Archetype reclassification is a PR that requires explicit approval from the authority level defined in [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md).
+- **Spec-as-code.** Store specs alongside application code in the repository. Spec changes follow the same pull request and review process as code changes. Archetype reclassification is a PR that requires explicit approval from the authority level defined in [Delegated Definition Authority](../operating/03-who-defines-archetypes.md).
 - **Automated drift detection.** CI checks can validate that the system's declared capabilities (tool manifest, API surface, data access) are consistent with its archetype's authorized scope. A new tool added to the manifest that exceeds the current archetype's boundaries should fail the pipeline and trigger a review.
 - **Gated promotion for archetype changes.** When an archetype is reclassified, the deployment requires a manual gate — the spec reviewer signs off before the pipeline proceeds. This is not bureaucracy; it is the minimum governance for a change that alters oversight requirements, risk posture, and invariants.
 - **Feature flags for planned evolution.** Planned transitions (Advisor → Executor) can be gated behind feature flags that are enabled only after transition criteria are met and the spec is updated. The flag flip is a logged event, not a silent change.
@@ -166,6 +175,17 @@ Write it with that reader in mind.
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Drift becomes detectable.** With a defined separation between drift and evolution, audit can identify when a system has drifted and require remediation. The archetype is no longer fiction.
+- **Transitions are loadbearing.** Planned evolution is now a named transition with explicit criteria. The transition itself is a checkable event.
+- **Constitutional history becomes auditable.** With version history recorded in the spec, any reviewer can see what the system was classified as, when it changed, and why.
+- **Reclassification authority is aligned.** The authority to reclassify a system is the same as the authority to originally classify it, preserving the constitutional principle.
+
+---
+
 ## Therefore
 
 > **Archetype drift occurs when small decisions accumulate without review, producing a system whose actual behavior no longer matches its governance model. Evolution is when the classification is formally updated to reflect a deliberate change — with a behavior audit, the decision tree re-applied, dimensions re-evaluated, and the spec updated before deployment. Planned transitions should be declared upfront with explicit criteria. Every reclassification should be recorded in the spec's constitutional history.**
@@ -175,10 +195,10 @@ Write it with that reader in mind.
 ## Connections
 
 **This pattern assumes:**
-- [Archetypes as Constitutional Law](01-archetypes-as-constitutional-law.md)
-- [Archetype Dimensions](03-archetype-dimensions.md)
-- [Decision Tree for Archetype Selection](04-decision-tree.md)
-- [Composing Archetypes in Real Systems](05-composing-archetypes.md)
+- [Constitutional Archetypes](01-archetypes-as-constitutional-law.md)
+- [Four Dimensions of Governance](03-archetype-dimensions.md)
+- [The Archetype Selection Tree](04-decision-tree.md)
+- [Archetype Composition](05-composing-archetypes.md)
 
 **This pattern enables:**
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the spec version history section

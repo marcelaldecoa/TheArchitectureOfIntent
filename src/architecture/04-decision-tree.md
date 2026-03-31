@@ -1,6 +1,6 @@
-# Pattern 3.4 — Decision Tree for Archetype Selection
+# The Archetype Selection Tree
 
-**Part III: Intent Architecture** · *4 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -14,7 +14,7 @@ You are at the beginning of specifying an agent system — or you are reviewing 
 
 This pattern provides the decision tree. It is meant to be used — in design sessions, in spec reviews, when onboarding a new system. It is deliberately brief at the top, expanding into nuance as needed.
 
-This pattern assumes [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md) and [Archetype Dimensions](03-archetype-dimensions.md).
+This pattern assumes [The Five Archetypes](02-canonical-intent-archetypes.md) and [Four Dimensions of Governance](03-archetype-dimensions.md).
 
 ---
 
@@ -28,7 +28,16 @@ A decision tree that is fast to use and hard to game is the antidote to archetyp
 
 ---
 
-## The Resolution
+## Forces
+
+- **Speed vs. precision.** A decision tree must be fast enough to use in active development. Yet speed must not sacrifice correctness \u2014 misclassification early leads to wrong governance from the start.
+- **Generality vs. ambiguity.** Some questions are clear-cut. Others are genuinely ambiguous. The tree must resolve ambiguity without requiring extended conversation.
+- **Objective inquiry vs. contextual judgment.** The earliest questions should be observable facts about the system. Yet eventually judgment is required. The tree must bridge from observation to judgment.
+- **Reusability vs. customization.** The tree should be the same for every organization. Yet some organizations have specific concerns. The tree must be both standard and customizable.
+
+---
+
+## The Solution
 
 ### The Primary Decision Tree
 
@@ -164,6 +173,17 @@ One paragraph. Written before behavioral specification begins. Reviewed by the s
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Classification becomes observable.** A decision tree grounded in observable questions makes the archetype classification verifiable by examining the system, rather than debating its intent.
+- **Risk overrides are explicit.** The tree acknowledges that risk can require a governance tier higher than the archetype minimum. The override is named and documented.
+- **Misclassification risk is reduced.** By starting with the most discriminating question and proceeding downward, the tree minimizes misclassification.
+- **Newcomers can classify consistently.** With an explicit decision tree, a new team member can classify a system using the same reasoning as an experienced architect.
+
+---
+
 ## Therefore
 
 > **Archetype selection follows a four-question decision tree: Does it act? Does it primarily enforce? Does it coordinate agents? Does it produce an artifact? The first three questions determine whether you have a Guardian, Orchestrator, or need to distinguish Synthesizer from Executor. Nothing should be specced until the archetype is declared and reviewed. The declaration is the most consequential sentence in the spec.**
@@ -173,15 +193,12 @@ One paragraph. Written before behavioral specification begins. Reviewed by the s
 ## Connections
 
 **This pattern assumes:**
-- [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md)
-- [Archetype Dimensions](03-archetype-dimensions.md)
+- [The Five Archetypes](02-canonical-intent-archetypes.md)
+- [Four Dimensions of Governance](03-archetype-dimensions.md)
 
 **This pattern enables:**
-- [Composing Archetypes in Real Systems](05-composing-archetypes.md) — when one archetype isn't enough
+- [Archetype Composition](05-composing-archetypes.md) — when one archetype isn't enough
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the archetype declaration section
-- [SpecKit in the Architecture of Intent](../sdd/04-speckit.md) — SpecKit's archetype integration
+- [SpecKit](../sdd/04-speckit.md) — SpecKit's archetype integration
 
 ---
-
-*Next: [Composing Archetypes in Real Systems](05-composing-archetypes.md)*
-

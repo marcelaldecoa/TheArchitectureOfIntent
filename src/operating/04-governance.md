@@ -1,6 +1,6 @@
-# Pattern 7.4 — Governance Without Bureaucracy
+# Proportional Governance
 
-**Part VII: Operating the System** · *4 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -30,7 +30,16 @@ Effective governance is selective and structural: it controls the decisions that
 
 ---
 
-## The Resolution
+## Forces
+
+- **Governance overhead vs. governance necessity.** Every governance activity consumes human attention. Yet ungoverned agent systems drift, compound errors, and lose architectural coherence.
+- **Heavyweight process vs. lightweight chaos.** Full bureaucracy creates compliance theater. No process creates invisible risk. The framework must be proportional.
+- **Automated efficiency vs. human judgment.** Some governance activities can be automated (structural validation, monitoring). Others require human judgment (spec quality, archetype selection).
+- **Consistency vs. context-sensitivity.** Standard governance cadences apply across teams. Yet different teams have different risk profiles and deployment scales.
+
+---
+
+## The Solution
 
 ### The Four Governance Layers
 
@@ -121,6 +130,17 @@ The total monthly governance overhead for a five-person team operating at modera
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Governance has a named, bounded overhead.** Teams know the approximate time cost of governance and can plan for it.
+- **Four governance layers create proportional control.** Constitutional, spec approval, execution monitoring, and post-execution validation provide defense in depth without redundancy.
+- **What to automate is explicit.** Structural validation and monitoring are automated. Substantive review remains human. The boundary is named.
+- **Anti-patterns are recognized and preventable.** Approval theater, governance gaps, and governance-by-department are named failures with described remedies.
+
+---
+
 ## Therefore
 
 > **Effective governance is proportional and structural: controlled at the constitutional layer (archetype and constraint definitions), confirmed at the spec layer (approval before execution), observed at the execution layer (monitoring without microsupervision), and learned at the validation layer (gap log and repertoire update). The total overhead is comparable to traditional engineering processes; its value is durability — risks caught before execution rather than repaired after, and organizational learning captured in artifacts rather than lost with personnel.**
@@ -130,16 +150,12 @@ The total monthly governance overhead for a five-person team operating at modera
 ## Connections
 
 **This pattern assumes:**
-- [Who Is Allowed to Define Archetypes](03-who-defines-archetypes.md)
-- [Human Oversight Models](../agents/06-human-oversight-models.md)
-- [Why Repertoires Matter](../repertoires/01-why-repertoires-matter.md)
+- [Delegated Definition Authority](03-who-defines-archetypes.md)
+- [Proportional Oversight](../agents/06-human-oversight-models.md)
+- [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md)
 
 **This pattern enables:**
-- [Reviewing Intent, Not Code](05-reviewing-intent.md)
-- [Metrics That Actually Matter](06-metrics.md)
+- [Intent Review Before Output Review](05-reviewing-intent.md)
+- [Four Signal Metrics](06-metrics.md)
 
 ---
-
-*Next: [Reviewing Intent, Not Code](05-reviewing-intent.md)*
-
-

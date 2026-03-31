@@ -1,6 +1,6 @@
-# MCP Tool Safety and Constraints
+﻿# MCP Tool Safety and Constraints
 
-**Part V: Agents & Execution — MCP** · *MCP 3 of 3*
+**Integration & Tools**
 
 ---
 
@@ -30,7 +30,15 @@ Three categories of safety failure are most common in MCP deployments:
 
 ---
 
-## The Resolution
+## Forces
+
+- **Tool availability vs. authorization control.** Agents need tools to be effective. But tool access must be controlled to prevent unauthorized actions.
+- **Session-time authorization vs. call-time authorization.** Authorizing at session start is simpler. But stale grants accumulate risk.
+- **Audit overhead vs. audit value.** Logging every tool call creates storage and processing overhead. But audit logs are the only way to reconstruct what happened during an incident.
+
+---
+
+## The Solution
 
 ### Authorization at the Tool Server
 
@@ -106,6 +114,16 @@ This pattern should be declared in the spec (Section 8: Oversight and Escalation
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Authorization connects to governance.** The spec_id field in audit logs links every tool call back to the spec that authorized it.
+- **Prompt injection becomes detectable.** Behavioral monitoring and context separation reduce the attack surface.
+- **Confirmation patterns protect irreversible operations.** Human-in-the-loop confirmation for high-consequence tool calls creates a safety net.
+
+---
+
 ## Therefore
 
 > **MCP safety is built in three layers: authorization enforced at the tool server (per identity, per scope, validated at call time); comprehensive audit logging linked to spec identity; and prompt injection defense through context separation, scope containment, and behavioral monitoring. Confirmation patterns provide a human checkpoint for irreversible high-risk operations. Least-capability design is simultaneously a performance optimization and a security control.**
@@ -117,15 +135,11 @@ This pattern should be declared in the spec (Section 8: Oversight and Escalation
 **This pattern assumes:**
 - [What Is MCP](01-what-is-mcp.md)
 - [Designing MCP Tools for Intent](02-designing-mcp-tools.md)
-- [Tools, MCP, and Capability Boundaries](../04-tools-mcp-capability-boundaries.md)
+- [Least Capability](../04-tools-mcp-capability-boundaries.md)
 
 **This pattern enables:**
-- [Human Oversight Models](../06-human-oversight-models.md)
-- [Failure Modes in Agent Systems](../07-failure-modes.md)
+- [Proportional Oversight](../06-human-oversight-models.md)
+- [Six Failure Categories](../07-failure-modes.md)
 - [The Canonical Spec Template — Sections 8 and 12](../../sdd/07-canonical-spec-template.md)
 
 ---
-
-*Next: [Agent Skills: Packaging Domain Knowledge](../05-agent-skills.md)*
-
-

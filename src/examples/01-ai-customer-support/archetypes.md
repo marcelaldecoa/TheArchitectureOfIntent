@@ -1,6 +1,6 @@
 # Selecting the Archetypes
 
-**Part VIII: Example 1 — AI Customer Support** · *Step 1 of 5*
+**Applied Examples**
 
 ---
 

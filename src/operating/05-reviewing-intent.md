@@ -1,6 +1,6 @@
-# Pattern 7.5 — Reviewing Intent, Not Code
+# Intent Review Before Output Review
 
-**Part VII: Operating the System** · *5 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -36,7 +36,16 @@ The secondary problem is review automation confusion. Many teams assume that bec
 
 ---
 
-## The Resolution
+## Forces
+
+- **Intent review vs. output review.** A gap caught at intent review stage costs one spec revision. The same gap caught at output review costs revision plus re-execution. The same gap caught in production costs all of the above plus incident response.
+- **Review investment vs. review payoff.** Intent review requires upfront investment from reviewers who could be writing their own specs. The payoff is reduced downstream rework for the whole team.
+- **Individual review vs. team ritual.** An individual reviewing their own spec catches some errors. A team reviewing each other's specs catches patterns that no individual sees.
+- **Code review inertia vs. intent review adoption.** Organizations deeply invested in code review may resist adding intent review. Yet intent review is higher leverage per hour invested.
+
+---
+
+## The Solution
 
 ### Two Review Disciplines, Not One
 
@@ -118,6 +127,17 @@ The value of intent review is not that it replaces other reviews. It is that it 
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **The highest-leverage review happens before execution.** Intent review catches gaps at the cheapest point in the lifecycle.
+- **Output review becomes objective.** When the spec exists, output review asks 'did the agent follow the spec?' rather than 'do I like this output?'
+- **A spec review workshop creates team learning.** Monthly review of real specs builds shared understanding of what good specification looks like.
+- **Code review becomes spec-informed.** Code review shifts from 'is this correct?' to 'does this match the spec?'
+
+---
+
 ## Therefore
 
 > **Intent review and output review are separate disciplines that operate at different points in the spec-execute-validate loop: intent review before execution catches spec gaps before they are implemented; output review after execution validates that the implementation satisfies the spec. Neither replaces code review, but intent review is the highest-leverage activity in the agent-augmented practice — a gap caught before execution costs one spec revision; the same gap caught after production deployment costs a multiple of that. The spec review workshop is the team ritual that develops this discipline collectively.**
@@ -127,17 +147,13 @@ The value of intent review is not that it replaces other reviews. It is that it 
 ## Connections
 
 **This pattern assumes:**
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md)
-- [Governance Without Bureaucracy](04-governance.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md)
+- [Proportional Governance](04-governance.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 - [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
 
 **This pattern enables:**
-- [Metrics That Actually Matter](06-metrics.md)
+- [Four Signal Metrics](06-metrics.md)
 - Team spec quality development over time
 
 ---
-
-*Next: [Metrics That Actually Matter](06-metrics.md)*
-
-

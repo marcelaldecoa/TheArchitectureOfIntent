@@ -1,6 +1,6 @@
-# Pattern 6.4 — Code Standards for Agent-Generated Systems
+# Standards as Agent Skill Source
 
-**Part VI: Standards & Repertoires** · *4 of 5*
+**Repertoire & Reference**
 
 ---
 
@@ -30,7 +30,16 @@ Both failures share the same root cause: the agent is inferring your standards f
 
 ---
 
-## The Resolution
+## Forces
+
+- **Agent training distribution vs. organizational standards.** Agents write code based on training averages. Without explicit standards, agent output varies in style and quality.
+- **Standard overhead vs. consistency benefit.** Maintaining code standards documents requires ongoing effort. But the cost of inconsistent agent-generated code compounds in maintenance and review.
+- **Human-oriented vs. agent-oriented standards.** Traditional standards assume human readers who can interpret guidelines. Agent-oriented standards must be precise enough to function as skill source material.
+- **Adoption friction vs. quality improvement.** Integrating standards into the development workflow requires tool changes. But once integrated, every agent execution benefits.
+
+---
+
+## The Solution
 
 ### Code Standards as Agent Skills
 
@@ -86,6 +95,17 @@ Code standards drift when maintained inconsistently. Some specific risks:
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Agent output is consistent and reviewable.** When agents load code standards as skills, their output converges on the organization's expectations.
+- **Standards become agent skill source material.** Code standards documents feed directly into agent skills, closing the loop between human guidance and agent execution.
+- **Review burden decreases over time.** As agents consistently follow standards, code review can focus on logic and intent rather than style and convention.
+- **New pattern adoption flows through standards.** When the organization adopts a new pattern, updating the standard propagates the change to all future agent output.
+
+---
+
 ## Therefore
 
 > **Code standards for agent-generated systems are not review checklists — they are the source material for code-related agent skills. Written with explicit rules, enumerated conventions, and decision trees for ambiguous cases, they give agents the organizational context needed to produce code that is not just technically correct but fits your codebase. They must be maintained in sync with codebase evolution; a drifted standard is worse than no standard because it produces confidently inconsistent output.**
@@ -95,8 +115,8 @@ Code standards drift when maintained inconsistently. Some specific risks:
 ## Connections
 
 **This pattern assumes:**
-- [Why Repertoires Matter](01-why-repertoires-matter.md)
-- [Agent Skills: Packaging Domain Knowledge](../agents/05-agent-skills.md)
+- [The Organizational Repertoire](01-why-repertoires-matter.md)
+- [Portable Domain Knowledge](../agents/05-agent-skills.md)
 - [The Canonical Spec Template — Section 11](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
@@ -108,7 +128,3 @@ Code standards drift when maintained inconsistently. Some specific risks:
 - [Validation & Acceptance Templates](05-validation-templates.md)
 
 ---
-
-*Next: [Standards for .NET / C# →](code-standards/dotnet.md)*
-
-

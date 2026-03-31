@@ -1,6 +1,6 @@
-# Pattern 2.2 — Intent vs. Implementation
+# The Intent–Implementation Boundary
 
-**Part II: Theory of Intent Engineering** · *2 of 6*
+**Foundations**
 
 ---
 
@@ -14,7 +14,7 @@ You are working in a spec-driven system and something has gone wrong. An agent p
 
 This pattern introduces the most fundamental distinction in intent engineering: the difference between *what a system is trying to do* and *how it does it*. This distinction sounds obvious. It is not. Teams collapse it constantly — and the collapse is the source of most of the chronic dysfunction that SDD is designed to cure.
 
-This pattern assumes [What Is Intent Engineering](01-what-is-intent-engineering.md).
+This pattern assumes [Intent Engineering as a Discipline](01-what-is-intent-engineering.md).
 
 ---
 
@@ -33,7 +33,15 @@ The inability to systematically distinguish intent from implementation is the hi
 
 ---
 
-## The Resolution
+## Forces
+
+- **Coupled history vs. decoupled reality.** Traditional development integrated intent and implementation in one person's judgment; agent systems split these across humans and machines, demanding the ability to diagnose failure origins.
+- **Transient code vs. persistent spec.** Code execution is temporary and repeatable; specs are the persistent artifacts governing repeated executions, yet traditional debugging focuses on implementation rather than specification.
+- **Speed of fixing code vs. difficulty of fixing intent.** It is faster and more satisfying to patch implementation; acknowledging and fixing spec gaps requires confronting incomplete thinking.
+
+---
+
+## The Solution
 
 ### The Definition
 
@@ -132,6 +140,16 @@ Having explicit vocabulary for this distinction — and a shared diagnostic proc
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Intent failures become explicitly recognizable.** A diagnostic test reveals whether a failure originated in the specification or execution, enabling targeted fixes that address root cause rather than symptoms.
+- **Specs stabilize while implementations iterate.** The spec becomes the control artifact governing multiple implementation attempts; implementing agents can be corrected, replaced, or improved without touching the persistent intent layer.
+- **Teams gain shared diagnostic language.** Disputes about system correctness shift from blame attribution ("the agent is wrong") to shared problem-solving ("the spec needs to be clarified").
+
+---
+
 ## Therefore
 
 > **Intent and implementation are distinct artifacts with distinct owners, distinct failure modes, and distinct fixes. When something goes wrong, the first diagnostic question is always: was the spec correct? If yes, fix the execution. If no — or if you cannot answer the question — fix the spec first. The spec is the persistent artifact. The implementation is its shadow.**
@@ -141,16 +159,13 @@ Having explicit vocabulary for this distinction — and a shared diagnostic proc
 ## Connections
 
 **This pattern assumes:**
-- [What Is Intent Engineering](01-what-is-intent-engineering.md)
+- [Intent Engineering as a Discipline](01-what-is-intent-engineering.md)
 
 **This pattern enables:**
-- [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md) — who decides what in each layer
-- [Specs as Control Surfaces](../sdd/02-specs-as-control-surfaces.md) — the mechanism by which intent controls implementation
+- [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md) — who decides what in each layer
+- [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) — the mechanism by which intent controls implementation
 - [The Spec Lifecycle](../sdd/03-spec-lifecycle.md) — how intent and implementation evolve together
-- [Living Specs and Feedback Loops](../sdd/06-living-specs.md) — the fix-the-spec discipline in practice
-- [Reviewing Intent, Not Code](../operating/05-reviewing-intent.md) — applying this distinction in review processes
+- [The Living Spec](../sdd/06-living-specs.md) — the fix-the-spec discipline in practice
+- [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — applying this distinction in review processes
 
 ---
-
-*Next: [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md)*
-

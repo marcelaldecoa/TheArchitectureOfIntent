@@ -1,6 +1,6 @@
-# Designing MCP Tools for Intent
+﻿# Designing MCP Tools for Intent
 
-**Part V: Agents & Execution — MCP** · *MCP 2 of 3*
+**Integration & Tools**
 
 ---
 
@@ -24,7 +24,15 @@ These failures look, from the outside, like "the agent did the wrong thing." The
 
 ---
 
-## The Resolution
+## Forces
+
+- **Tool naming precision vs. agent comprehension.** Precise tool names prevent misuse. But naming requires predicting how agents will interpret semantic cues from the tool name.
+- **Description completeness vs. description conciseness.** Agents need complete descriptions to use tools correctly. But lengthy descriptions consume context window and slow selection.
+- **Idempotency investment vs. reliability guarantee.** Making tools idempotent requires design effort. But non-idempotent tools are dangerous when agents retry failed operations.
+
+---
+
+## The Solution
 
 ### The Four Elements of a Good Tool Interface
 
@@ -125,6 +133,16 @@ In organizations with mature agent practices, tool schemas sit in a central regi
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Tool descriptions become behavioral contracts.** Four-element structure (name, description, input schema, output schema) creates a machine-readable contract.
+- **Idempotent tools enable safe retry.** Agents can retry failed tool calls without risk of duplicate effects.
+- **Anti-patterns are named and preventable.** Overly broad tools, hidden side effects, and ambiguous descriptions become recognizable failures.
+
+---
+
 ## Therefore
 
 > **A well-designed MCP tool has a narrow name that signals its scope, a description that answers when to call it and when not to, an input schema constrained to what is actually valid, and a structured output schema with actionable error fields. Idempotency is a design default. Tool definitions are first-class architecture artifacts — their quality determines whether agents make correct decisions at the critical moment of tool selection.**
@@ -135,14 +153,10 @@ In organizations with mature agent practices, tool schemas sit in a central regi
 
 **This pattern assumes:**
 - [What Is MCP](01-what-is-mcp.md)
-- [Tools, MCP, and Capability Boundaries](../04-tools-mcp-capability-boundaries.md)
+- [Least Capability](../04-tools-mcp-capability-boundaries.md)
 
 **This pattern enables:**
 - [MCP Tool Safety and Constraints](03-mcp-safety.md)
-- [Agent Skills: Packaging Domain Knowledge](../05-agent-skills.md)
+- [Portable Domain Knowledge](../05-agent-skills.md)
 
 ---
-
-*Next: [MCP Tool Safety and Constraints](03-mcp-safety.md)*
-
-

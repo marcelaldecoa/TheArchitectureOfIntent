@@ -1,6 +1,6 @@
-# Validation & Acceptance Templates
+﻿# Validation & Acceptance Templates
 
-**Part VI: Standards & Repertoires** · *5 of 5*
+**Repertoire & Reference**
 
 ---
 
@@ -30,7 +30,16 @@ A second failure: validation categories are incomplete. A spec that validates fu
 
 ---
 
-## The Resolution
+## Forces
+
+- **Validation completeness vs. validation overhead.** A comprehensive validation template catches more errors. But applying every criterion to every task creates overhead that discourages validation.
+- **Output-type specificity vs. template reusability.** Code output needs different validation criteria than document output or API output. But maintaining separate templates for each type increases maintenance burden.
+- **Binary criteria vs. judgment calls.** The strongest validation criteria are binary (pass/fail). But some quality dimensions resist binary assessment. Templates must accommodate both.
+- **Template rigor vs. practical adoption.** Strict templates ensure quality but create friction. Teams under pressure may skip validation rather than engage with complex templates.
+
+---
+
+## The Solution
 
 ### Validation Template Structure
 
@@ -130,6 +139,17 @@ The test for good success criteria is the last sentence: if any criteria cannot 
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Validation becomes consistent and repeatable.** Templates ensure that the same quality dimensions are checked every time, regardless of who performs the validation.
+- **Output-type-specific criteria focus the review.** Code output validation checks test coverage and naming. Document output validation checks structure and completeness. Each template is tailored to its output type.
+- **Validation results are comparable across time.** When the same template is used repeatedly, validation results become trend data that reveals improvement or degradation.
+- **Templates prevent the most common gaps.** By encoding common validation failures as template criteria, the most frequent errors are caught systematically.
+
+---
+
 ## Therefore
 
 > **Validation templates provide structured, category-complete success criteria for common output types — code, documents, APIs, and infrastructure. They solve the two failure modes of validation: missing criteria (nothing to validate against) and untestable criteria (judgment deferred to review time). Used as the starting point for spec Section 6, they ensure every spec closes the spec-execute-validate loop with the same rigor regardless of who wrote it.**
@@ -139,9 +159,9 @@ The test for good success criteria is the last sentence: if any criteria cannot 
 ## Connections
 
 **This pattern assumes:**
-- [Why Repertoires Matter](01-why-repertoires-matter.md)
+- [The Organizational Repertoire](01-why-repertoires-matter.md)
 - [The Canonical Spec Template — Section 6](../sdd/07-canonical-spec-template.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 
 **This pattern enables:**
 - Org-specific validation template additions

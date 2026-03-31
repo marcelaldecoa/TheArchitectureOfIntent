@@ -1,6 +1,6 @@
-# The Spec Template Library
+﻿# The Spec Template Library
 
-**Part VI: Standards & Repertoires** · *3 of 5*
+**Repertoire & Reference**
 
 ---
 
@@ -28,7 +28,16 @@ Typed templates solve both problems: the structure is decided in advance, sectio
 
 ---
 
-## The Resolution
+## Forces
+
+- **Canonical completeness vs. task-specific efficiency.** The canonical 14-section template captures everything. But most tasks only need a subset, and requiring all sections creates overhead.
+- **Template proliferation vs. template coherence.** Task-specific templates (feature, integration, agent instruction) reduce overhead. But too many templates create confusion about which to use.
+- **Standardization vs. flexibility.** Templates should be consistent enough that reviewers know where to look. Yet tasks differ enough that some sections may be irrelevant.
+- **Template quality vs. template availability.** A well-designed template reduces errors. A poorly designed template institutionalizes bad practice.
+
+---
+
+## The Solution
 
 ### What a Typed Template Is
 
@@ -84,6 +93,17 @@ Templates change as the framework evolves and the organization learns. Version-c
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Practitioners spend less time on structure, more on content.** Templates handle the format; authors focus on the substance of their specific task.
+- **Review efficiency improves.** Reviewers know where to find constraints, success criteria, and oversight declarations in any spec because the template structure is consistent.
+- **Template selection guides archetype thinking.** Choosing between feature spec, integration spec, and agent instruction templates forces early consideration of the system's nature.
+- **Templates improve through organizational feedback.** When a template section consistently produces gaps, the template is updated to prevent the gap.
+
+---
+
 ## Therefore
 
 > **The Spec Template Library provides typed, pre-configured specializations of the canonical template for specific task classes. Typed templates eliminate structural variance, reduce spec authoring time, and direct the practitioner's cognitive effort toward task-specific content rather than structural decisions. The library grows from the organization's accumulated spec history — every class of recurring work is a template candidate, and every template makes the next spec of that type faster and more consistent.**
@@ -93,7 +113,7 @@ Templates change as the framework evolves and the organization learns. Version-c
 ## Connections
 
 **This pattern assumes:**
-- [Why Repertoires Matter](01-why-repertoires-matter.md)
+- [The Organizational Repertoire](01-why-repertoires-matter.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 - [The Intent Archetype Catalog](02-archetype-catalog.md)
 
@@ -102,10 +122,6 @@ Templates change as the framework evolves and the organization learns. Version-c
 - [Agent Instruction Template](templates/agent-instruction.md)
 - [Integration Spec Template](templates/integration-spec.md)
 - [Constraint Library Template](templates/constraint-library.md)
-- [Code Standards for Agent-Generated Systems](04-code-standards.md)
+- [Standards as Agent Skill Source](04-code-standards.md)
 
 ---
-
-*Next: [Feature Spec Template →](templates/feature-spec.md)*
-
-

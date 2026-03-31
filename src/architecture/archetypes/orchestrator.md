@@ -1,6 +1,6 @@
-# The Orchestrator Archetype
+﻿# The Orchestrator Archetype
 
-**Part III: Intent Architecture** · *Archetype Deep Dive 5 of 5*
+**Governance & Architecture**
 
 ---
 
@@ -168,9 +168,9 @@ An Orchestrator spec that says "it coordinates various agents as needed" is not 
 ## Connections
 
 **Archetype series:** [← Synthesizer](synthesizer.md) · [Begin Part IV →](../../sdd/01-what-sdd-means.md)  
-**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Archetype Dimensions](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
+**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Four Dimensions of Governance](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
 **Composition:** [Composing Archetypes](../05-composing-archetypes.md) — Orchestrator with typed sub-agents (Pattern C)  
-**Evolution:** [Evolving Archetypes Without Dogma](../06-evolving-archetypes.md) — Orchestrators are the most common subject of scope drift  
+**Evolution:** [Governed Archetype Evolution](../06-evolving-archetypes.md) — Orchestrators are the most common subject of scope drift  
 **SDD:** [The Canonical Spec Template](../../sdd/07-canonical-spec-template.md)  
 
 ---

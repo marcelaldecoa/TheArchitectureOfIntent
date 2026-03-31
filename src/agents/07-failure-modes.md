@@ -1,6 +1,6 @@
-# Pattern 5.7 — Failure Modes in Agent Systems
+# Six Failure Categories
 
-**Part V: Agents & Execution** · *7 of 7*
+**Agents**
 
 ---
 
@@ -12,7 +12,7 @@
 
 We close Part V with failure — not as an afterthought, but as a design discipline in its own right. We have built the full architecture: intent expressed in specs, domain knowledge encoded in skills, capabilities bounded by tools and MCP, execution structured by oversight models. The question now is: how does this architecture fail, what does failure look like when it happens, and what does it teach us?
 
-This chapter draws on Pattern 2.5 (Failure as a Design Signal) from Part II and applies it concretely to agent systems. It assumes everything that came before in Part V.
+This chapter draws on Pattern 2.5 (Failure as Diagnostic Signal) from Part II and applies it concretely to agent systems. It assumes everything that came before in Part V.
 
 ---
 
@@ -30,7 +30,16 @@ The discipline of failure analysis in agent systems is about correctly identifyi
 
 ---
 
-## The Resolution
+## Forces
+
+- **Attribution instinct vs. architectural diagnosis.** When agents fail, the instinct is to blame the model. But architectural failures (spec gaps, tool gaps, oversight gaps) are more common and more fixable.
+- **Quick correction vs. root cause analysis.** Patching the output is faster than diagnosing the failure category. But patching without diagnosis means the same failure will recur.
+- **Model limitations vs. specification gaps.** Some failures are genuinely model-level. Others look model-level but are actually spec gaps. Differentiating requires systematic diagnosis.
+- **Individual failure vs. compounding failure.** A single agent failure may be trivial. But failures that compound across steps or agents produce dramatically wrong outcomes.
+
+---
+
+## The Solution
 
 ### The Six Failure Categories
 
@@ -182,19 +191,30 @@ The Spec Gap Log, the skill review cycle, and the checkpoint adjustment process 
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Failure analysis becomes a structured discipline.** Six categories with a diagnostic protocol replace ad-hoc blame attribution with systematic root cause identification.
+- **Fixable failures are distinguished from model limitations.** Categories 1-5 are fixable through better specs, tools, scope definitions, or oversight. Category 6 requires model-level responses.
+- **Spec gap logs accumulate organizational learning.** Each diagnosed failure enriches the organization's understanding of what specs need to specify.
+- **Compounding failures become preventable.** By identifying the earliest error in a chain, checkpoint reviews can be placed at the most critical juncture.
+
+---
+
 ## Therefore
 
-> **Agent failures fall into five categories — spec, capability, scope creep, oversight, and compounding — each with a distinct mechanism, a specific architectural fix, and a different lesson for the systems that follow. The diagnostic discipline is correct attribution: failures attributed to "the AI" are unactionable; failures attributed to their architectural category are fixable, and the fixes are durable. A well-run agent practice treats every failure as a precise signal pointing at the assumption that was wrong, and corrects that assumption in a versioned artifact that improves every future execution in that domain.**
+> **Agent failures fall into six categories — spec, capability, scope creep, oversight, compounding, and model-level — each with a distinct mechanism, a specific architectural fix, and a different lesson for the systems that follow. The diagnostic discipline is correct attribution: failures attributed to "the AI" are unactionable; failures attributed to their architectural category are fixable, and the fixes are durable. A well-run agent practice treats every failure as a precise signal pointing at the assumption that was wrong, and corrects that assumption in a versioned artifact that improves every future execution in that domain.**
 
 ---
 
 ## Connections
 
 **This pattern assumes:**
-- [What Agents Are (and Are Not)](01-what-agents-are.md)
-- [Agents as Executors of Intent](03-agents-as-executors.md)
-- [Human Oversight Models](06-human-oversight-models.md)
-- [Failure as a Design Signal](../theory/05-failure-as-design-signal.md)
+- [Agents Defined by Structure](01-what-agents-are.md)
+- [The Executor Model](03-agents-as-executors.md)
+- [Proportional Oversight](06-human-oversight-models.md)
+- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
 - [The Spec Lifecycle](../sdd/03-spec-lifecycle.md)
 
 **This pattern enables:**

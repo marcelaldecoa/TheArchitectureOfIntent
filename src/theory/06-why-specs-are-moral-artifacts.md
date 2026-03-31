@@ -1,6 +1,6 @@
-# Pattern 2.6 — Why Specs Are Moral Artifacts
+# The Moral Weight of Specification
 
-**Part II: Theory of Intent Engineering** · *6 of 6*
+**Foundations**
 
 ---
 
@@ -32,7 +32,15 @@ This is the mistake this pattern addresses.
 
 ---
 
-## The Resolution
+## Forces
+
+- **Technical authority vs. ethical responsibility gap.** Engineers are empowered to write specs but may lack domain knowledge in law, ethics, and policy; yet agent execution at scale means spec authors' decisions propagate consequences that were previously buffered by human judgment.
+- **Specification underspecification vs. agent fidelity.** Implicit constraints that seem "obvious" to the author are not obvious to agents; the gap between what was assumed and what was specified gets filled with probability across millions of executions.
+- **Scale invisibility vs. moral consequence multiplication.** A problem a human developer might have noticed in 10 cases gets executed — correctly but wrongly — 10 million times before discovery; the agent's fidelity and scale make moral gaps in specifications catastrophic.
+
+---
+
+## The Solution
 
 ### What Makes a Spec Moral (or Amoral)
 
@@ -101,19 +109,29 @@ When a spec is abandoned — when it is written once, executed, and never update
 
 The commitment to maintain a living spec — to update it when the problem changes, to revisit it when failures indicate gaps, to sunset it when the system is decommissioned — is a moral commitment to continued accountability.
 
-This is why [Living Specs and Feedback Loops](../sdd/06-living-specs.md) is not just a methodology chapter. It is the operational expression of the moral claim in this pattern: the author remains responsible for the system as long as it runs.
+This is why [The Living Spec](../sdd/06-living-specs.md) is not just a methodology chapter. It is the operational expression of the moral claim in this pattern: the author remains responsible for the system as long as it runs.
 
 ---
 
 ### The Organizational Corollary
 
-This pattern has an organizational implication that runs through [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) and [Governance Without Bureaucracy](../operating/04-governance.md):
+This pattern has an organizational implication that runs through [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) and [Proportional Governance](../operating/04-governance.md):
 
 Not everyone should be empowered to write specifications for all classes of system unilaterally.
 
 This is not because some engineers are less skilled. It is because some specifications encode commitments that require domain knowledge — legal, ethical, business — that a technical practitioner may not possess. Responsibility requires context. Authority should follow responsibility.
 
 The [Archetype system](../architecture/01-archetypes-as-constitutional-law.md) addresses this by pre-committing, at the level of archetype definition (controlled by principals), the most consequential decisions about how a class of system will treat the people it affects. Individual spec authors then operate within that pre-committed frame — with latitude for implementation, but within ethical boundaries already established.
+
+---
+
+## Resulting Context
+
+After applying this pattern:
+
+- **Specifications become explicit moral commitments.** Every spec now encodes, through constraints, scope, success criteria, and omissions, a set of commitments about how people affected by the system will be treated — making ethical accountability design-reviewable.
+- **Moral responsibility scales with system power.** As agent capability increases, the responsibility of the spec author for the ethical dimensions of their specification increases proportionally.
+- **Archetype pre-commitment distributes moral authority appropriately.** Principals with domain authority pre-commit the most consequential ethical boundaries at the archetype level; individual spec authors then operate with appropriate latitude within those guardrails.
 
 ---
 
@@ -143,14 +161,14 @@ Part III introduces the Archetypes — the patterns that encode this vocabulary 
 ## Connections
 
 **This pattern assumes:**
-- [Failure as a Design Signal](05-failure-as-design-signal.md)
+- [Failure as Diagnostic Signal](05-failure-as-design-signal.md)
 - [Authorship in Software](../foundations/03-authorship-in-software.md)
-- [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md)
+- [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md) — moral pre-commitment at scale
-- [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) — governance as ethical structure
-- [Writing Specs for Agents, Not Humans](../sdd/05-writing-specs-for-agents.md) — the practice of morally serious specification
+- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md) — moral pre-commitment at scale
+- [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — governance as ethical structure
+- [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) — the practice of morally serious specification
 
 ---
 

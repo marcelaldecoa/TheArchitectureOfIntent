@@ -1,6 +1,6 @@
-﻿# Pattern 5.5 — Agent Skills: Packaging Domain Knowledge
+# Portable Domain Knowledge
 
-**Part V: Agents & Execution** · *5 of 7*
+**Agents**
 
 ---
 
@@ -34,7 +34,16 @@ None of these options separates the concerns appropriately. What is needed is a 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Per-spec knowledge vs. reusable domain knowledge.** Specs encode per-task requirements. Skills encode domain knowledge that applies across many tasks. Without skills, every spec must re-specify shared knowledge.
+- **Agent training distribution vs. organizational context.** Agents carry general knowledge from training. Organizations have specific conventions, standards, and practices that differ from general knowledge.
+- **Knowledge portability vs. platform lock-in.** Skills should work across multiple agent platforms. Yet platform-specific features may tempt platform-specific skill formats.
+- **Organizational consistency vs. individual preference.** Organizational skills enforce consistency. Personal skills encode individual workflows. The two scopes must coexist without conflict.
+
+---
+
+## The Solution
 
 ### What Agent Skills Are
 
@@ -84,7 +93,7 @@ This skill contains no tools and no task-specific instructions. It contains the 
 
 ### The Open Standard
 
-Agent Skills are an open standard, originated by Anthropic and formalized at [agentskills.io](https://agentskills.io). The standard is deliberately minimal — a `SKILL.md` file with YAML frontmatter is all that is required. This simplicity is intentional: the standard spreads because any team can adopt it without tooling investment.
+Agent Skills are an emerging open standard, adopted across multiple AI platforms and formalized in community practice. The standard is deliberately minimal — a `SKILL.md` file with YAML frontmatter is all that is required. This simplicity is intentional: the standard spreads because any team can adopt it without tooling investment. The specific origins and governance of the standard continue to evolve; verify current details against platform documentation.
 
 As of early 2026, the standard is supported by a growing ecosystem. Specific platform support evolves rapidly; verify current capabilities against each platform's documentation:
 
@@ -162,6 +171,17 @@ This declaration serves two purposes. First, it gives the agent's runtime infras
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Domain knowledge becomes portable and persistent.** Skills encode organizational knowledge that persists across team changes and applies across platforms.
+- **Agent output quality improves without per-spec overhead.** Shared knowledge loaded from skills reduces the specification burden on individual tasks.
+- **Cross-platform consistency becomes achievable.** The same skill applies regardless of which agent platform executes it.
+- **Three scopes enable layered knowledge governance.** Project, personal, and organizational skills give appropriate authority levels to different knowledge types.
+
+---
+
 ## Therefore
 
 > **Agent Skills are packages of domain-specific procedural knowledge — written in `SKILL.md` files, governed as a cross-platform open standard — that agents load to apply domain and organizational expertise consistently across any task in that class. Skills solve the problem that tools can't (tools are capabilities, not knowledge) and specs shouldn't (specs are per-task, not per-domain). A skills library is an organization's machine-readable institutional memory, applied at the moment of agent execution.**
@@ -171,16 +191,13 @@ This declaration serves two purposes. First, it gives the agent's runtime infras
 ## Connections
 
 **This pattern assumes:**
-- [Agents as Executors of Intent](03-agents-as-executors.md)
-- [Tools, MCP, and Capability Boundaries](04-tools-mcp-capability-boundaries.md)
+- [The Executor Model](03-agents-as-executors.md)
+- [Least Capability](04-tools-mcp-capability-boundaries.md)
 - [The Canonical Spec Template — Section 11](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
-- [Human Oversight Models](06-human-oversight-models.md)
+- [Proportional Oversight](06-human-oversight-models.md)
 - Standards and Repertoires *(Part VI)*
 - The organizational skills library as a governance artifact
 
 ---
-
-*Next: [Human Oversight Models](06-human-oversight-models.md)*
-

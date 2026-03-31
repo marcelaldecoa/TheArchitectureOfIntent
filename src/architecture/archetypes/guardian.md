@@ -1,6 +1,6 @@
-# The Guardian Archetype
+﻿# The Guardian Archetype
 
-**Part III: Intent Architecture** · *Archetype Deep Dive 3 of 5*
+**Governance & Architecture**
 
 ---
 
@@ -145,7 +145,7 @@ The calibration check: Over a rolling period, what percentage of Guardian blocks
 ## Connections
 
 **Archetype series:** [← Executor](executor.md) · [Synthesizer →](synthesizer.md)  
-**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Archetype Dimensions](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
+**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Four Dimensions of Governance](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
 **Composition:** [Composing Archetypes](../05-composing-archetypes.md) — Guardian as embedded enforcement layer in Executor systems  
 **SDD:** [The Canonical Spec Template](../../sdd/07-canonical-spec-template.md)
 

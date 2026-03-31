@@ -1,6 +1,6 @@
-# The Executor Archetype
+﻿# The Executor Archetype
 
-**Part III: Intent Architecture** · *Archetype Deep Dive 2 of 5*
+**Governance & Architecture**
 
 ---
 
@@ -156,8 +156,8 @@ The fix is not more sophisticated exception handling — it is simpler exception
 ## Connections
 
 **Archetype series:** [← Advisor](advisor.md) · [Guardian →](guardian.md)  
-**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Archetype Dimensions](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
+**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Four Dimensions of Governance](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
 **Composition:** [Composing Archetypes](../05-composing-archetypes.md) — Executor as governing archetype in confirm-then-act and Act+Guardian patterns  
-**Evolution:** [Evolving Archetypes Without Dogma](../06-evolving-archetypes.md) — scope expansion is archetype evolution  
+**Evolution:** [Governed Archetype Evolution](../06-evolving-archetypes.md) — scope expansion is archetype evolution  
 **SDD:** [The Canonical Spec Template](../../sdd/07-canonical-spec-template.md)
 

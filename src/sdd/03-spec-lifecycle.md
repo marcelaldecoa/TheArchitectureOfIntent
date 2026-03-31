@@ -1,6 +1,6 @@
-# Pattern 4.3 — The Spec Lifecycle: From Intent to Validation
+# Five Phases of the Spec
 
-**Part IV: Spec-Driven Development** · *3 of 7*
+**Specification**
 
 ---
 
@@ -14,7 +14,7 @@ You know that specs must precede execution and that they function as control sur
 
 This is the procedural backbone of Spec-Driven Development. It is deliberately not a software development methodology in the project-management sense — it has no sprints, no ceremonies, no artifacts beyond the spec itself. It is a discipline applied to individual tasks delegated to agents.
 
-This pattern assumes [What Spec-Driven Development Really Means](01-what-sdd-means.md) and [Specs as Control Surfaces](02-specs-as-control-surfaces.md).
+This pattern assumes [Spec-Driven Development](01-what-sdd-means.md) and [The Spec as Control Surface](02-specs-as-control-surfaces.md).
 
 ---
 
@@ -26,7 +26,16 @@ A lifecycle gives the discipline repeatability. It makes the required activities
 
 ---
 
-## The Resolution
+## Forces
+
+- **Discipline vs. freedom.** A named lifecycle constrains how teams work. Not having one avoids that constraint but makes practices inconsistent.
+- **Efficiency vs. completeness.** Phase 1 (intent capture) can seem excessive. Yet skipping it produces specs that answer 'how' before establishing 'what.'
+- **Heavyweight vs. visible.** Making the lifecycle explicit creates pressure. But visibility also enables noticing when it is being skipped.
+- **Reusability vs. context-binding.** Each phase produces reusable artifacts. Yet each task is unique. The lifecycle must help without being so prescriptive it prevents legitimate variation.
+
+---
+
+## The Solution
 
 ### The Five Phases
 
@@ -178,6 +187,17 @@ The lifecycle is not final on completion. Phase 5 feeds back into Phase 2. Specs
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Handoff becomes possible.** With a named lifecycle, a task can be handed off at any phase. The phases make handoff explicit.
+- **Failure categories are visible.** When an outcome is rejected, the reason is clear: spec gap or implementation failure.
+- **Learning is systematic.** Each phase produces a formally validated artifact that becomes organizational history.
+- **Gatekeeping becomes strategic.** Gates are at phase transitions: spec approved before execution, outcomes validated against spec. Few gates, but loadbearing.
+
+---
+
 ## Therefore
 
 > **The SDD lifecycle has five phases: intent capture, specification, clarification, execution, and validation. Each phase has a defined input, output, and responsibility. The feedback from validation flows back into the spec — not into the output — so that every failure makes the next execution better. The lifecycle is not a project methodology; it is a discipline applied to every individual task delegated to an agent.**
@@ -187,17 +207,13 @@ The lifecycle is not final on completion. Phase 5 feeds back into Phase 2. Specs
 ## Connections
 
 **This pattern assumes:**
-- [What Spec-Driven Development Really Means](01-what-sdd-means.md)
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [Spec-Driven Development](01-what-sdd-means.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 
 **This pattern enables:**
-- [SpecKit in the Architecture of Intent](04-speckit.md)
-- [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)
-- [Living Specs and Feedback Loops](06-living-specs.md)
+- [SpecKit](04-speckit.md)
+- [Writing for Machine Execution](05-writing-specs-for-agents.md)
+- [The Living Spec](06-living-specs.md)
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 
 ---
-
-*Next: [SpecKit in the Architecture of Intent](04-speckit.md)*
-
-

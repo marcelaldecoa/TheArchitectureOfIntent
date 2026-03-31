@@ -1,6 +1,6 @@
-﻿# Pattern 1.2 — From Translation to Orchestration
+# The Orchestrator's Discipline
 
-**Part I: Foundations** · *Pattern 2 of 6*
+**Foundations**
 
 ---
 
@@ -34,19 +34,28 @@ Orchestration is different in three ways:
 
 ---
 
-## The Resolution
+## Forces
+
+- **Acceleration illusion vs. fundamental role shift.** Teams assume agent tools speed up the same work (translation), when the situation requires a different kind of work entirely (orchestration).
+- **Hidden discretion vs. explicit constraint.** Informal prompts to agents work quickly at the cost of inconsistent results; orchestration requires upfront investment in specification precision.
+- **Feedback loops as auxiliary vs. feedback loops as core.** Traditional development treats oversight as optional; orchestration makes it a first-class responsibility required for coherence.
+- **Implementation skill vs. judgment skill.** Deep coding ability becomes less differentiating than the ability to frame problems, design constraints, and validate outcomes against intent.
+
+---
+
+## The Solution
 
 The new model looks like this:
 
 ```
 Business Intent
-      ↓
+      ?
 Explicit Specification + Context
-      ↓
+      ?
 Agent Execution (code, tests, docs, infra)
-      ↓
+      ?
 Human Oversight & Correction
-      ↓
+      ?
 Refined Specification (living artifact)
 ```
 
@@ -106,6 +115,17 @@ The fix is always more upstream: fix the spec, not the output.
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Specifications become the primary work product.** Engineers operate at the level of intent, constraints, and context provision rather than mechanical implementation.
+- **Feedback loops enable continuous intent refinement.** The system validates outcomes against goals, and specs evolve as systems interact with reality.
+- **Accountability clarifies.** The human author of a specification owns the intent the system expresses, making spec quality a visible, measurable responsibility.
+- **Oversight structures become proportional and systematic.** Rather than ad-hoc code review, oversight is designed into the specification and execution model upfront.
+
+---
+
 ## Therefore
 
 > **The engineer's role has shifted from translator to orchestrator. The work is now: frame the problem precisely, design the constraints that make delegation safe, provide the context that makes execution reliable, and validate outcomes against intent. Implementation is delegated. Judgment is not.**
@@ -119,10 +139,8 @@ The fix is always more upstream: fix the spec, not the output.
 
 **This pattern enables:**
 - [Authorship in Software](03-authorship-in-software.md) — who is responsible when machines act on your orchestration
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md) — the method that makes orchestration systematic
-- [Agents as Executors of Intent](../agents/03-agents-as-executors.md) — how agents fit in the orchestration model
-- [Writing Specs for Agents, Not Humans](../sdd/05-writing-specs-for-agents.md) — the practice of writing briefs for machine collaborators
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md) — the method that makes orchestration systematic
+- [The Executor Model](../agents/03-agents-as-executors.md) — how agents fit in the orchestration model
+- [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) — the practice of writing briefs for machine collaborators
 
 ---
-
-*Next: [Authorship in Software](03-authorship-in-software.md)*

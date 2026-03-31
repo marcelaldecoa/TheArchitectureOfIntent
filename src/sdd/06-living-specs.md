@@ -1,6 +1,6 @@
-# Pattern 4.6 — Living Specs and Feedback Loops
+# The Living Spec
 
-**Part IV: Spec-Driven Development** · *6 of 7*
+**Specification**
 
 ---
 
@@ -30,7 +30,16 @@ Both failures share a diagnosis: the feedback loop from execution to spec is not
 
 ---
 
-## The Resolution
+## Forces
+
+- **Learning vs. stability.** Specs must change as understanding deepens, but continuous change makes the spec unstable. The feedback loop must allow learning without allowing constant thrashing.
+- **Spec gaps vs. implementation failures.** When output is wrong, there are two possible explanations. The response is dramatically different. Yet being certain which applies requires judgment.
+- **Organizational memory vs. noise.** The spec evolution log should record what was learned. But if every preference change gets logged, the log becomes noise.
+- **Experimentation vs. governance.** Some changes are worth trying as experiments. Other changes are constitutional. The feedback loop must allow experimentation while protecting constitutional constraints.
+
+---
+
+## The Solution
 
 ### What Makes a Spec "Living"
 
@@ -138,6 +147,17 @@ The teams that create this kind of asset are not more disciplined than others. T
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Failure drives improvement.** When a failure triggers a spec update instead of an output patch, the next execution learns from the failure. The spec gets richer.
+- **Organizational learning is durable.** The spec evolution log records what was learned, when, and why. This becomes institutional memory.
+- **Spec authority is preserved.** A spec that is consistently updated on failure remains the source of truth.
+- **The feedback loop closes.** Validation flows back into the spec, making the system self-improving.
+
+---
+
 ## Therefore
 
 > **A living spec is not a spec that changes constantly — it is a spec that evolves when failures reveal that the spec was wrong, with a traceable history of why each change was made. The feedback loop from validation to spec must be governed: spec gaps and ambiguities always trigger spec updates; preference changes and implementation failures do not. The rule "fix the spec, not the code" protects the spec's function as a control surface. Over time, a well-maintained living spec becomes an organizational memory artifact: the full map of what was intended, what was learned, and what was decided.**
@@ -147,16 +167,12 @@ The teams that create this kind of asset are not more disciplined than others. T
 ## Connections
 
 **This pattern assumes:**
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [Failure as a Design Signal](../theory/05-failure-as-design-signal.md)
+- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - [The Canonical Spec Template](07-canonical-spec-template.md) — the spec evolution log section
-- [Evolving Archetypes Without Dogma](../architecture/06-evolving-archetypes.md) — the same feedback principle applied to archetype classification
+- [Governed Archetype Evolution](../architecture/06-evolving-archetypes.md) — the same feedback principle applied to archetype classification
 
 ---
-
-*Next: [The Canonical Spec Template](07-canonical-spec-template.md)*
-
-

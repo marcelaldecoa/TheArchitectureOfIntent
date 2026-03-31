@@ -1,6 +1,6 @@
 # A Code Generation Pipeline
 
-**Part VIII: Applied Examples** · *Example 2 of 2*
+**Applied Examples**
 
 ---
 

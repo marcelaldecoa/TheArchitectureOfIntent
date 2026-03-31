@@ -1,6 +1,6 @@
-# Pattern 3.1 — Archetypes as Constitutional Law
+# Constitutional Archetypes
 
-**Part III: Intent Architecture** · *1 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -20,6 +20,8 @@ Archetypes are the solution. They are the mechanism by which accumulated judgmen
 
 This chapter establishes why archetypes should be understood as **constitutional** structures — not stylistic suggestions, not best practices, not guidelines. Constitutional law.
 
+**A note on enforcement.** The constitutional analogy is deliberate and useful, but it has a limit worth naming. Real constitutional law has enforcement mechanisms: courts, judicial review, separation of powers. Archetypes, as described here, are enforced through organizational discipline — spec review processes, governance cadences, authority matrices — not through technical mechanisms that prevent violations at runtime. An agent system can technically take actions outside its declared archetype; nothing in the runtime prevents it. The enforcement is procedural and social. This is not a weakness to be apologized for — it is the same model by which most organizational governance operates. But it means that archetypes are only as strong as the review and oversight practices that surround them. The governance calendar and spec approval processes in Part VII exist precisely to make this enforcement operational.
+
 ---
 
 ## The Problem
@@ -34,7 +36,16 @@ In agent-mediated development, drift happens faster and more quietly. An agent g
 
 ---
 
-## The Resolution
+## Forces
+
+- **Preserving intent vs. enabling scale.** Individual judgment is reliable at small scale but does not distribute. Scaling requires encoding judgment as durable rules that operate independently of whether the original architects are in the room.
+- **Stability vs. responsiveness.** Systems need to respond to new requirements, but every small locally-reasonable decision can compound into architectural drift. Pre-commitment constrains flexibility to protect coherence.
+- **Tacit knowledge vs. transferable authority.** Expert practitioners carry mental models of why systems work; junior engineers and agents lack this context. Making judgment explicit through constitutionalized rules makes authority transferable.
+- **Technical convenience vs. categorical integrity.** At any point, a locally optimal technical choice might cross an architectural boundary. Without constitutional constraint, these choices accumulate until the system has drifted into a different category than it was designed to be.
+
+---
+
+## The Solution
 
 ### What a Constitution Does
 
@@ -117,6 +128,17 @@ In practice, this relationship means that the archetype selection is the first d
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Durable intent at agent speed.** The original frame of a system persists through agent-mediated execution. Individual decisions that would otherwise drift the system are bound by pre-committed category constraints.
+- **Authority distributes without ambiguity.** Different people can make different system decisions without requiring consensus or architectural review, because the constitutional boundaries establish what kinds of decisions each person is authorized to make.
+- **Evolution becomes visible.** When a system must evolve beyond its original archetype, the change is deliberate — it goes through the same governance process that created the original classification, rather than accumulating silently.
+- **Judgment becomes code.** The accumulated judgment of experienced architects that was previously tacit and lost to team turnover is now encoded in archetype specifications — persistent, teachable, and enforceable.
+
+---
+
 ## Therefore
 
 > **Archetypes function as constitutional law for agent systems: they pre-commit the category of system, the scope of authorized agency, the required oversight model, and the invariants that cannot be violated — before any individual system is designed. They make accumulated judgment durable, protect against drift at agent execution speed, and provide interpretive authority for cases the original authors did not anticipate. Understanding this is prerequisite to using them well.**
@@ -127,16 +149,13 @@ In practice, this relationship means that the archetype selection is the first d
 
 **This pattern assumes:**
 - [Why Architecture Must Become Law](../foundations/06-why-architecture-must-become-law.md)
-- [Why Specs Are Moral Artifacts](../theory/06-why-specs-are-moral-artifacts.md)
-- [Agency, Autonomy, and Responsibility](../theory/03-agency-autonomy-responsibility.md)
+- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md)
+- [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md) — the five archetypes defined
-- [Archetype Dimensions](03-archetype-dimensions.md) — the formal axes of variation
-- [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) — the governance structure
+- [The Five Archetypes](02-canonical-intent-archetypes.md) — the five archetypes defined
+- [Four Dimensions of Governance](03-archetype-dimensions.md) — the formal axes of variation
+- [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — the governance structure
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — the reference library
 
 ---
-
-*Next: [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md)*
-

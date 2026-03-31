@@ -1,6 +1,6 @@
-# Pattern 4.5 — Writing Specs for Agents, Not Humans
+# Writing for Machine Execution
 
-**Part IV: Spec-Driven Development** · *5 of 7*
+**Specification**
 
 ---
 
@@ -14,7 +14,7 @@ You know what a spec needs to contain and how it functions as a control surface.
 
 Writing for an agent requires different craft than writing for a human. This pattern describes the specific differences.
 
-This pattern assumes all preceding SDD patterns and [Archetype Dimensions](../architecture/03-archetype-dimensions.md).
+This pattern assumes all preceding SDD patterns and [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md).
 
 ---
 
@@ -30,7 +30,16 @@ The discipline of writing for agents closes the gap between what you intended an
 
 ---
 
-## The Resolution
+## Forces
+
+- **Natural language vs. formal specification.** Natural language is expressive but ambiguous. Agents need precision but teams want readability. The spec must bridge both.
+- **Expert knowledge vs. explicit knowledge.** Domain experts have mental models of what should be done. Encoding that knowledge explicitly is work. Yet it is the only way the knowledge transfers to an agent.
+- **Completeness vs. brevity.** Adding detail makes specs more correct but longer. The spec must be minimal yet complete enough for execution without questions.
+- **Inspiration vs. direction.** Some teams use specs to inspire creativity. Agents cannot work from inspiration; they need direction.
+
+---
+
+## The Solution
 
 ### Principle 1: Specify WHAT and the constraints, never HOW
 
@@ -168,6 +177,17 @@ A spec that passes this checklist is machine-executable. A spec that fails it wi
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Imprecision becomes visible.** Writing for agents reveals where human communication relies on impression and judgment. Making this explicit allows deliberate decisions about what to specify vs. delegate.
+- **Requirement clarity improves.** Specs written for agents often end up clearer for other humans too.
+- **Validation becomes independent.** A spec written precisely enough for an agent can be validated by someone who was not involved in writing it.
+- **Reuse becomes possible.** A clear, complete spec can be run again months later, by a different agent, and produce an equivalent outcome.
+
+---
+
 ## Therefore
 
 > **Writing for agents requires specifying WHAT and constraints, never HOW; naming every constraint explicitly that a human expert would know but an agent would not; writing acceptance criteria that can be tested without the author present; stating invariants as a separate unconditional section; and writing agent instructions as direct second-person imperatives. The anti-patterns — vision documents, implementation prescriptions, and conversation transcripts — all fail by either under-constraining or over-specifying, leaving the agent to make decisions the spec should have made.**
@@ -177,16 +197,12 @@ A spec that passes this checklist is machine-executable. A spec that fails it wi
 ## Connections
 
 **This pattern assumes:**
-- [What Spec-Driven Development Really Means](01-what-sdd-means.md)
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Spec-Driven Development](01-what-sdd-means.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
+- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
 
 **This pattern enables:**
 - [The Canonical Spec Template](07-canonical-spec-template.md) — every section in the template was designed for this reading audience
 - [Spec Template Library](../repertoires/03-spec-template-library.md)
 
 ---
-
-*Next: [Living Specs and Feedback Loops](06-living-specs.md)*
-
-

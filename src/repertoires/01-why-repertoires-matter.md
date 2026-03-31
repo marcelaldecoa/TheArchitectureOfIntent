@@ -1,6 +1,6 @@
-# Pattern 6.1 — Why Repertoires Matter
+# The Organizational Repertoire
 
-**Part VI: Standards & Repertoires** · *1 of 5*
+**Repertoire & Reference**
 
 ---
 
@@ -35,7 +35,16 @@ The absent repertoire is not just a speed problem. It is a consistency problem. 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Individual learning vs. organizational leverage.** Each team that spec-writes from scratch repeats discoveries that other teams have already made. Yet sharing requires abstraction that takes effort.
+- **Best practices vs. authorized patterns.** Best practices are advisory and frequently ignored. Authorized repertoire components are organizational decisions that agents and practitioners follow.
+- **Speed of adoption vs. quality of components.** Teams want to start quickly. High-quality repertoire components require careful design and testing. The tension between speed and quality applies to repertoires as it does to code.
+- **Stability vs. evolution.** Repertoire components must be stable enough to be relied upon. Yet they must evolve as organizational understanding deepens.
+
+---
+
+## The Solution
 
 ### What a Repertoire Is
 
@@ -91,6 +100,17 @@ The repertoire is the accumulated organizational intelligence about how this cla
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **New teams start from a proven baseline.** Archetypes, templates, constraint libraries, and code standards are pre-authorized starting points rather than blank-page exercises.
+- **Consistency improves across teams.** When multiple teams use the same repertoire, their specs, constraints, and code standards converge without requiring central enforcement.
+- **The repertoire flywheel compounds.** Practitioners write, repertoire artifacts accumulate, skills encode them for agents, agents execute consistently, quality feedback improves the repertoire.
+- **Knowledge survives team changes.** When practitioners leave, their codified knowledge remains in the repertoire.
+
+---
+
 ## Therefore
 
 > **A repertoire is the practitioner's inherited library of proven patterns — templates for structure, catalogs for decisions, standards for quality. In an agent-driven practice, the repertoire is simultaneously a human productivity tool and the ground truth from which agent skills are maintained: the flywheel connects practitioner wisdom to agent behavior to output quality back to repertoire refinement. Without it, every team reinvents; with it, teams inherit and improve.**
@@ -100,19 +120,15 @@ The repertoire is the accumulated organizational intelligence about how this cla
 ## Connections
 
 **This pattern assumes:**
-- [Agents as Executors of Intent](../agents/03-agents-as-executors.md)
-- [Agent Skills: Packaging Domain Knowledge](../agents/05-agent-skills.md)
-- [Failure Modes in Agent Systems — Spec Gap Log](../agents/07-failure-modes.md)
+- [The Executor Model](../agents/03-agents-as-executors.md)
+- [Portable Domain Knowledge](../agents/05-agent-skills.md)
+- [Six Failure Categories — Spec Gap Log](../agents/07-failure-modes.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
 - [The Intent Archetype Catalog](02-archetype-catalog.md)
 - [Spec Template Library](03-spec-template-library.md)
-- [Code Standards for Agent-Generated Systems](04-code-standards.md)
+- [Standards as Agent Skill Source](04-code-standards.md)
 - [Validation & Acceptance Templates](05-validation-templates.md)
 
 ---
-
-*Next: [The Intent Archetype Catalog](02-archetype-catalog.md)*
-
-

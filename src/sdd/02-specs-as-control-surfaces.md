@@ -1,6 +1,6 @@
-# Pattern 4.2 — Specs as Control Surfaces
+# The Spec as Control Surface
 
-**Part IV: Spec-Driven Development** · *2 of 7*
+**Specification**
 
 ---
 
@@ -14,7 +14,7 @@ You have adopted the discipline of writing specs before agent execution. Specs e
 
 Something is missing. The specs exist as documents, but they are not functioning as control mechanisms. They are being read, not enforced.
 
-This pattern assumes [What Spec-Driven Development Really Means](01-what-sdd-means.md) and [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md).
+This pattern assumes [Spec-Driven Development](01-what-sdd-means.md) and [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md).
 
 ---
 
@@ -42,7 +42,16 @@ The distinction matters because the benefits of SDD come specifically from the s
 
 ---
 
-## The Resolution
+## Forces
+
+- **Documentation vs. mechanism.** A spec can describe what a system should do or control what it does. The distinction is clear in principle but easy to slip on in practice.
+- **Constraint vs. preference.** Specs must constrain behavior that matters while teams tend to enforce preference. The spec's authority gets divided between non-negotiable and negotiable, weakening both.
+- **Precision vs. readability.** A control surface requires precise, testable language. Making specs precise enough to control agent behavior makes them harder for casual readers.
+- **Enforcement vs. trust.** Making a spec a control surface requires that violations be actioned. Without enforcement, the spec documents what should have happened, not what does happen.
+
+---
+
+## The Solution
 
 ### What a Control Surface Is
 
@@ -120,6 +129,17 @@ This temporal structure is what makes specs reusable. The same spec can be run a
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Compliance becomes checkable.** A spec that is a control surface produces outputs that conform or don't. Conformance can be checked against spec clauses.
+- **Intent persists through iteration.** When the spec is the source of truth, the intent remains stable even as implementation details change.
+- **Drift becomes costly.** When violations must be addressed, there is no incentive to ignore the spec.
+- **Feedback loops function.** Violations feed back into the spec, improving it. The spec becomes richer with use, not stale.
+
+---
+
 ## Therefore
 
 > **A spec functions as a control surface when it is consulted before execution, checked during validation, and updated when intent changes — not after implementation changes. Specs that describe rather than constrain are documentation, not control. The transition from documentation to control requires testable clauses, active use at decision and validation points, and feedback that flows upward into the spec, not sideways into the output.**
@@ -129,17 +149,13 @@ This temporal structure is what makes specs reusable. The same spec can be run a
 ## Connections
 
 **This pattern assumes:**
-- [What Spec-Driven Development Really Means](01-what-sdd-means.md)
-- [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md)
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Spec-Driven Development](01-what-sdd-means.md)
+- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md)
+- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
 
 **This pattern enables:**
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)
-- [Living Specs and Feedback Loops](06-living-specs.md)
+- [Writing for Machine Execution](05-writing-specs-for-agents.md)
+- [The Living Spec](06-living-specs.md)
 
 ---
-
-*Next: [The Spec Lifecycle: From Intent to Validation](03-spec-lifecycle.md)*
-
-

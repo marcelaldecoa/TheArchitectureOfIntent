@@ -1,6 +1,6 @@
-# Pattern 4.1 — What Spec-Driven Development Really Means
+# Spec-Driven Development
 
-**Part IV: Spec-Driven Development** · *1 of 7*
+**Specification**
 
 ---
 
@@ -30,7 +30,16 @@ Spec-Driven Development (SDD) is the discipline that closes that gap — not by 
 
 ---
 
-## The Resolution
+## Forces
+
+- **Human comprehension vs. agent execution.** Humans tolerate ambiguity and resolve it implicitly; agents execute literal text, making human imprecision immediately visible as incorrect outputs.
+- **Implicit judgment vs. explicit specification.** Human developers applied professional judgment silently; agents have no embedded judgment. Either the judgment goes into the spec, or the agent fills the gap with probability.
+- **Feedback speed vs. feedback quality.** With human developers, feedback was immediate and conversational. Agent-mediated work is slower but buys precision: outputs can be validated against explicit criteria.
+- **Completeness vs. pragmatism.** A complete spec seems heavy. Yet incomplete specs produce more rework. The actual time cost of precision is often less than the perceived cost.
+
+---
+
+## The Solution
 
 ### What SDD Is
 
@@ -95,6 +104,17 @@ This means SDD applies everywhere a developer would have previously applied thei
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Rework rate drops dramatically.** When output is validated against explicit criteria, agents produce correct results more often.
+- **Judgment is concentrated but visible.** Rather than judgment being distributed across conversations, it is concentrated in the spec and reviewable before execution.
+- **Agents become reliable.** An agent executing against a clear spec produces consistent, auditable results.
+- **Organizational memory is durable.** The spec captures decision rationale and constraints that transfer when people leave.
+
+---
+
 ## Therefore
 
 > **Spec-Driven Development is the discipline of writing a complete, validated specification before any agent executes work. The spec precedes code; it is the source of truth; and when output is wrong, the first question is whether the spec is wrong. SDD does not make agents smarter — it makes human intent precise enough that execution and validation both become possible.**
@@ -104,17 +124,13 @@ This means SDD applies everywhere a developer would have previously applied thei
 ## Connections
 
 **This pattern assumes:**
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
-- [Failure as a Design Signal](../theory/05-failure-as-design-signal.md)
-- [Why Specs Are Moral Artifacts](../theory/06-why-specs-are-moral-artifacts.md)
+- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
+- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
+- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md)
 
 **This pattern enables:**
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 - [The Spec Lifecycle](03-spec-lifecycle.md)
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 
 ---
-
-*Next: [Specs as Control Surfaces](02-specs-as-control-surfaces.md)*
-
-

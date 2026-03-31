@@ -1,6 +1,6 @@
 # Agent Instruction Template
 
-**Part VI: Spec Template Library** · *Template 2*
+**Repertoire & Reference**
 
 ---
 

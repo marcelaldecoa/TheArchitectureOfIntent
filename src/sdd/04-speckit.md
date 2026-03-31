@@ -1,6 +1,6 @@
-# Pattern 4.4 — SpecKit in the Architecture of Intent
+# SpecKit
 
-**Part IV: Spec-Driven Development** · *4 of 7*
+**Specification**
 
 ---
 
@@ -12,7 +12,7 @@
 
 You are implementing Spec-Driven Development on a team that uses AI coding assistants — GitHub Copilot or similar. You want the SDD lifecycle to happen in the same environment where code is written, not in a separate document management system. You want the spec to live next to the code.
 
-SpecKit is a concrete, opinionated implementation of SDD designed for that environment. This pattern explains how SpecKit aligns with the Architecture of Intent, where it fits in the lifecycle, and what its use reveals that raw SDD practice often obscures.
+SpecKit is a concrete, opinionated implementation of SDD designed for that environment. This chapter describes the **Embedded Spec Tooling** pattern — the recurring need to integrate the spec lifecycle into the development environment — and uses SpecKit as the reference implementation. The pattern is: *a tool that embeds the spec lifecycle into the same workspace where code is written, making specification a first-class step in the development flow rather than a separate documentation activity*. SpecKit is one such tool; others may serve the same pattern differently.
 
 This pattern assumes [The Spec Lifecycle](03-spec-lifecycle.md) and all preceding patterns.
 
@@ -28,7 +28,16 @@ SpecKit solves this specific problem. It puts the spec in the repository, in the
 
 ---
 
-## The Resolution
+## Forces
+
+- **Discipline vs. integration.** SDD as discipline is understood, but practicing it requires making specs central to the workflow. Without tooling, specs are separate documents, easy to ignore.
+- **Automation vs. clarity.** SpecKit automates some drafting. But automation can hide what is being decided. The spec must remain human-readable even when produced by automation.
+- **Constitution vs. flexibility.** The constitution enforces project-wide constraints. This is powerful but can become inflexible. Systems with special requirements need override mechanisms.
+- **Adoption vs. overhead.** Adding SpecKit increases the number of concepts developers need to know. Yet total time cost (spec + code + rework) should decrease.
+
+---
+
+## The Solution
 
 ### What SpecKit Is
 
@@ -136,6 +145,17 @@ The total time is similar; the rework rate is dramatically lower; the spec is no
 
 ---
 
+## Resulting Context
+
+After applying this pattern:
+
+- **Spec-first becomes the default path.** By making the spec command the entry point, SpecKit makes writing a spec the easiest choice.
+- **Constitution propagates automatically.** Project-wide constraints are loaded and inherited by every spec produced. Teams do not have to remember to include them.
+- **Specs live next to code.** By keeping specs in the repository, version control applies to specs the same way as code.
+- **Teams can customize SDD to their practice.** SpecKit is intentionally minimal. Teams extend it with their own governance needs.
+
+---
+
 ## Therefore
 
 > **SpecKit is a practical implementation of Spec-Driven Development that embeds the spec lifecycle into the coding workflow via structured agent commands. Its `/specify`, `/clarify`, and `/constitution` commands map directly to the SDD lifecycle phases. Augmented with archetype declarations, scope invariants, and the spec evolution log, SpecKit becomes the execution engine for the Architecture of Intent's complete governance model.**
@@ -146,18 +166,14 @@ The total time is similar; the rework rate is dramatically lower; the spec is no
 
 **This pattern assumes:**
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md)
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 
 **This pattern enables:**
-- [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)
+- [Writing for Machine Execution](05-writing-specs-for-agents.md)
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 - [Spec Template Library](../repertoires/03-spec-template-library.md)
 
 **External reference:** [github/spec-kit](https://github.com/github/spec-kit) *(verify current availability — tooling evolves rapidly)*
 
 ---
-
-*Next: [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)*
-
-
