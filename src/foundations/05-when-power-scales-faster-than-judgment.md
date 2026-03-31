@@ -1,6 +1,6 @@
-﻿# Pattern 1.5 — When Power Scales Faster Than Judgment
+# Pattern 1.5 — Judgment Encoded Before Power
 
-**Part I: Foundations** · *Pattern 5 of 6*
+**Part I: Foundations** — *Pattern 5 of 6*
 
 ---
 
@@ -97,9 +97,9 @@ After applying this pattern:
 
 **This pattern enables:**
 - [Why Architecture Must Become Law](06-why-architecture-must-become-law.md)
-- [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md)
-- [Governance Without Bureaucracy](../operating/04-governance.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md)
+- [Proportional Governance](../operating/04-governance.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 
 ---
 

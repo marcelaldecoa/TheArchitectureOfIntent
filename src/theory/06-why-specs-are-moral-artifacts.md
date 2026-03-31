@@ -1,4 +1,4 @@
-# Pattern 2.6 — Why Specs Are Moral Artifacts
+﻿# Pattern 2.6 — The Moral Weight of Specification
 
 **Part II: Theory of Intent Engineering** · *6 of 6*
 
@@ -109,13 +109,13 @@ When a spec is abandoned — when it is written once, executed, and never update
 
 The commitment to maintain a living spec — to update it when the problem changes, to revisit it when failures indicate gaps, to sunset it when the system is decommissioned — is a moral commitment to continued accountability.
 
-This is why [Living Specs and Feedback Loops](../sdd/06-living-specs.md) is not just a methodology chapter. It is the operational expression of the moral claim in this pattern: the author remains responsible for the system as long as it runs.
+This is why [The Living Spec](../sdd/06-living-specs.md) is not just a methodology chapter. It is the operational expression of the moral claim in this pattern: the author remains responsible for the system as long as it runs.
 
 ---
 
 ### The Organizational Corollary
 
-This pattern has an organizational implication that runs through [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) and [Governance Without Bureaucracy](../operating/04-governance.md):
+This pattern has an organizational implication that runs through [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) and [Proportional Governance](../operating/04-governance.md):
 
 Not everyone should be empowered to write specifications for all classes of system unilaterally.
 
@@ -161,14 +161,14 @@ Part III introduces the Archetypes — the patterns that encode this vocabulary 
 ## Connections
 
 **This pattern assumes:**
-- [Failure as a Design Signal](05-failure-as-design-signal.md)
+- [Failure as Diagnostic Signal](05-failure-as-design-signal.md)
 - [Authorship in Software](../foundations/03-authorship-in-software.md)
-- [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md)
+- [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md) — moral pre-commitment at scale
-- [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) — governance as ethical structure
-- [Writing Specs for Agents, Not Humans](../sdd/05-writing-specs-for-agents.md) — the practice of morally serious specification
+- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md) — moral pre-commitment at scale
+- [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — governance as ethical structure
+- [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) — the practice of morally serious specification
 
 ---
 

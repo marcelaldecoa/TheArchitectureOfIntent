@@ -1,4 +1,4 @@
-# Pattern 3.4 — Decision Tree for Archetype Selection
+﻿# Pattern 3.4 — The Archetype Selection Tree
 
 **Part III: Intent Architecture** · *4 of 6*
 
@@ -14,7 +14,7 @@ You are at the beginning of specifying an agent system — or you are reviewing 
 
 This pattern provides the decision tree. It is meant to be used — in design sessions, in spec reviews, when onboarding a new system. It is deliberately brief at the top, expanding into nuance as needed.
 
-This pattern assumes [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md) and [Archetype Dimensions](03-archetype-dimensions.md).
+This pattern assumes [The Five Archetypes](02-canonical-intent-archetypes.md) and [Four Dimensions of Governance](03-archetype-dimensions.md).
 
 ---
 
@@ -193,15 +193,15 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md)
-- [Archetype Dimensions](03-archetype-dimensions.md)
+- [The Five Archetypes](02-canonical-intent-archetypes.md)
+- [Four Dimensions of Governance](03-archetype-dimensions.md)
 
 **This pattern enables:**
-- [Composing Archetypes in Real Systems](05-composing-archetypes.md) — when one archetype isn't enough
+- [Archetype Composition](05-composing-archetypes.md) — when one archetype isn't enough
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the archetype declaration section
-- [SpecKit in the Architecture of Intent](../sdd/04-speckit.md) — SpecKit's archetype integration
+- [SpecKit](../sdd/04-speckit.md) — SpecKit's archetype integration
 
 ---
 
-*Next: [Composing Archetypes in Real Systems](05-composing-archetypes.md)*
+*Next: [Archetype Composition](05-composing-archetypes.md)*
 

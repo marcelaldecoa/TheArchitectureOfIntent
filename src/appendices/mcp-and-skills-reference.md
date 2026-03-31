@@ -8,7 +8,7 @@
 
 ---
 
-This reference covers the practical anatomy of both systems: how an MCP server is structured, how tools are described, how SKILL.md files are written, and how the two systems relate to each other in a deployed agent environment. For conceptual treatment, see [Tools, MCP, and Capability Boundaries](../agents/04-tools-mcp-capability-boundaries.md) and [Agent Skills: Packaging Domain Knowledge](../agents/05-agent-skills.md).
+This reference covers the practical anatomy of both systems: how an MCP server is structured, how tools are described, how SKILL.md files are written, and how the two systems relate to each other in a deployed agent environment. For conceptual treatment, see [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) and [Portable Domain Knowledge](../agents/05-agent-skills.md).
 
 ---
 
@@ -434,5 +434,5 @@ Use this table to decide what artifact to create for a given need:
 
 ---
 
-*For conceptual context: [Tools, MCP, and Capability Boundaries](../agents/04-tools-mcp-capability-boundaries.md), [MCP Tool Safety and Constraints](../agents/mcp/03-mcp-safety.md), [Agent Skills: Packaging Domain Knowledge](../agents/05-agent-skills.md)*  
+*For conceptual context: [Least Capability](../agents/04-tools-mcp-capability-boundaries.md), [MCP Tool Safety and Constraints](../agents/mcp/03-mcp-safety.md), [Portable Domain Knowledge](../agents/05-agent-skills.md)*  
 *For spec integration: [SpecKit Quick Reference](speckit-reference.md) — Appendix D*

@@ -1,4 +1,4 @@
-# Pattern 3.2 — The Canonical Intent Archetypes
+﻿# Pattern 3.2 — The Five Archetypes
 
 **Part III: Intent Architecture** · *2 of 6*
 
@@ -143,7 +143,7 @@ The five archetypes emerge from consistent positions on these axes:
 
 Why five? And why these five?
 
-The five archetypes are not an arbitrary taxonomy. They represent the stable points in the space of agent system design when you apply the two axes (primary act × discretion scope) consistently. The stability test: every real system we have encountered fits one of these five, or a deliberate composition of them. The cases that don't fit cleanly are either compositions (treated in [Composing Archetypes](05-composing-archetypes.md)) or systems that have drifted across boundaries without a governance event (treated in [Evolving Archetypes Without Dogma](06-evolving-archetypes.md)).
+The five archetypes are not an arbitrary taxonomy. They represent the stable points in the space of agent system design when you apply the two axes (primary act × discretion scope) consistently. The stability test: every real system we have encountered fits one of these five, or a deliberate composition of them. The cases that don't fit cleanly are either compositions (treated in [Composing Archetypes](05-composing-archetypes.md)) or systems that have drifted across boundaries without a governance event (treated in [Governed Archetype Evolution](06-evolving-archetypes.md)).
 
 The five are also stable under the principle of minimum necessary power: they represent the smallest number of categories that distinguish systems with genuinely different risk profiles, oversight requirements, and design constraints.
 
@@ -171,15 +171,15 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Archetypes as Constitutional Law](01-archetypes-as-constitutional-law.md)
+- [Constitutional Archetypes](01-archetypes-as-constitutional-law.md)
 
 **This pattern enables:**
-- [Archetype Dimensions](03-archetype-dimensions.md) — formal axes for describing archetype properties
-- [Decision Tree for Archetype Selection](04-decision-tree.md) — how to choose
+- [Four Dimensions of Governance](03-archetype-dimensions.md) — formal axes for describing archetype properties
+- [The Archetype Selection Tree](04-decision-tree.md) — how to choose
 - Individual archetype specifications: [Advisor](archetypes/advisor.md), [Executor](archetypes/executor.md), [Guardian](archetypes/guardian.md), [Synthesizer](archetypes/synthesizer.md), [Orchestrator](archetypes/orchestrator.md)
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — the reference implementation of all five
 
 ---
 
-*Next: [Archetype Dimensions](03-archetype-dimensions.md)*
+*Next: [Four Dimensions of Governance](03-archetype-dimensions.md)*
 

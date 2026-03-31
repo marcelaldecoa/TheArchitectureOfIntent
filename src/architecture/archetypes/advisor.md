@@ -1,4 +1,4 @@
-# The Advisor Archetype
+﻿# The Advisor Archetype
 
 **Part III: Intent Architecture** · *Archetype Deep Dive 1 of 5*
 
@@ -138,7 +138,7 @@ This system is NOT authorized to:
 ## Connections
 
 **Archetype series:** [Executor →](executor.md)  
-**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Archetype Dimensions](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
+**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Four Dimensions of Governance](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
 **Composition:** [Composing Archetypes](../05-composing-archetypes.md) — Advisor as the advisory layer in a confirm-then-act Executor pattern  
 **SDD:** [The Canonical Spec Template](../../sdd/07-canonical-spec-template.md)
 

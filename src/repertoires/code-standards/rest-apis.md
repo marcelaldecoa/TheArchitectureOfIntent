@@ -1,4 +1,4 @@
-# Code Standards for REST APIs
+﻿# Code Standards for REST APIs
 
 **Part VI: Code Standards** · *Standard 4*
 
@@ -168,5 +168,5 @@
 
 ---
 
-*Back to: [Code Standards for Agent-Generated Systems](../04-code-standards.md)*
+*Back to: [Standards as Agent Skill Source](../04-code-standards.md)*
 

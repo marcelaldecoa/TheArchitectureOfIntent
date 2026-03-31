@@ -1,4 +1,4 @@
-# MCP Tool Safety and Constraints
+﻿# MCP Tool Safety and Constraints
 
 **Part V: Agents & Execution — MCP** · *MCP 3 of 3*
 
@@ -135,15 +135,15 @@ After applying this pattern:
 **This pattern assumes:**
 - [What Is MCP](01-what-is-mcp.md)
 - [Designing MCP Tools for Intent](02-designing-mcp-tools.md)
-- [Tools, MCP, and Capability Boundaries](../04-tools-mcp-capability-boundaries.md)
+- [Least Capability](../04-tools-mcp-capability-boundaries.md)
 
 **This pattern enables:**
-- [Human Oversight Models](../06-human-oversight-models.md)
-- [Failure Modes in Agent Systems](../07-failure-modes.md)
+- [Proportional Oversight](../06-human-oversight-models.md)
+- [Six Failure Categories](../07-failure-modes.md)
 - [The Canonical Spec Template — Sections 8 and 12](../../sdd/07-canonical-spec-template.md)
 
 ---
 
-*Next: [Agent Skills: Packaging Domain Knowledge](../05-agent-skills.md)*
+*Next: [Portable Domain Knowledge](../05-agent-skills.md)*
 
 

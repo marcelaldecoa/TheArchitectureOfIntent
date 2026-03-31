@@ -1,6 +1,6 @@
-﻿# Pattern 1.2 — From Translation to Orchestration
+# Pattern 1.2 — The Orchestrator's Discipline
 
-**Part I: Foundations** · *Pattern 2 of 6*
+**Part I: Foundations** — *Pattern 2 of 6*
 
 ---
 
@@ -49,13 +49,13 @@ The new model looks like this:
 
 ```
 Business Intent
-      ↓
+      ?
 Explicit Specification + Context
-      ↓
+      ?
 Agent Execution (code, tests, docs, infra)
-      ↓
+      ?
 Human Oversight & Correction
-      ↓
+      ?
 Refined Specification (living artifact)
 ```
 
@@ -139,9 +139,9 @@ After applying this pattern:
 
 **This pattern enables:**
 - [Authorship in Software](03-authorship-in-software.md) — who is responsible when machines act on your orchestration
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md) — the method that makes orchestration systematic
-- [Agents as Executors of Intent](../agents/03-agents-as-executors.md) — how agents fit in the orchestration model
-- [Writing Specs for Agents, Not Humans](../sdd/05-writing-specs-for-agents.md) — the practice of writing briefs for machine collaborators
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md) — the method that makes orchestration systematic
+- [The Executor Model](../agents/03-agents-as-executors.md) — how agents fit in the orchestration model
+- [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) — the practice of writing briefs for machine collaborators
 
 ---
 

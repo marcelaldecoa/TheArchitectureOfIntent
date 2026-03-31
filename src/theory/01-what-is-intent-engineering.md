@@ -1,4 +1,4 @@
-# Pattern 2.1 — What Is Intent Engineering
+﻿# Pattern 2.1 — Intent Engineering as a Discipline
 
 **Part II: Theory of Intent Engineering** · *1 of 6*
 
@@ -144,11 +144,11 @@ After applying this pattern:
 - [From Translation to Orchestration](../foundations/02-from-translation-to-orchestration.md)
 
 **This pattern enables:**
-- [Intent vs. Implementation](02-intent-vs-implementation.md) — the first and most important conceptual distinction
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md) — SDD as the practice of intent engineering
-- [The Modern Engineering Skill Matrix](../operating/01-skill-matrix.md) — what skills this discipline requires
+- [The Intent-Implementation Boundary](02-intent-vs-implementation.md) — the first and most important conceptual distinction
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md) — SDD as the practice of intent engineering
+- [The Intent-Era Skill Matrix](../operating/01-skill-matrix.md) — what skills this discipline requires
 
 ---
 
-*Next: [Intent vs. Implementation](02-intent-vs-implementation.md)*
+*Next: [The Intent-Implementation Boundary](02-intent-vs-implementation.md)*
 

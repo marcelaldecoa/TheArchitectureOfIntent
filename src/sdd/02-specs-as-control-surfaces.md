@@ -1,4 +1,4 @@
-# Pattern 4.2 — Specs as Control Surfaces
+﻿# Pattern 4.2 — The Spec as Control Surface
 
 **Part IV: Spec-Driven Development** · *2 of 7*
 
@@ -14,7 +14,7 @@ You have adopted the discipline of writing specs before agent execution. Specs e
 
 Something is missing. The specs exist as documents, but they are not functioning as control mechanisms. They are being read, not enforced.
 
-This pattern assumes [What Spec-Driven Development Really Means](01-what-sdd-means.md) and [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md).
+This pattern assumes [Spec-Driven Development](01-what-sdd-means.md) and [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md).
 
 ---
 
@@ -149,17 +149,17 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Spec-Driven Development Really Means](01-what-sdd-means.md)
-- [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md)
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Spec-Driven Development](01-what-sdd-means.md)
+- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md)
+- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
 
 **This pattern enables:**
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)
-- [Living Specs and Feedback Loops](06-living-specs.md)
+- [Writing for Machine Execution](05-writing-specs-for-agents.md)
+- [The Living Spec](06-living-specs.md)
 
 ---
 
-*Next: [The Spec Lifecycle: From Intent to Validation](03-spec-lifecycle.md)*
+*Next: [Five Phases of the Spec](03-spec-lifecycle.md)*
 
 

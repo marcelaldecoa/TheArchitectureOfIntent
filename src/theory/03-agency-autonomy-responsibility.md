@@ -1,4 +1,4 @@
-# Pattern 2.3 — Agency, Autonomy, and Responsibility
+﻿# Pattern 2.3 — Three Dimensions of Delegation
 
 **Part II: Theory of Intent Engineering** · *3 of 6*
 
@@ -12,9 +12,9 @@
 
 The vocabulary around agent systems is unstable. "Autonomous," "agentic," "semi-autonomous," "goal-directed" — these terms are used interchangeably in most of the industry, collapsing important distinctions that affect how systems should be designed. This pattern establishes precise definitions for three concepts that must be clearly separated: **agency**, **autonomy**, and **responsibility**.
 
-These definitions form the conceptual backbone of the [Archetype Dimensions](../architecture/03-archetype-dimensions.md) chapter and directly inform every oversight model in this book.
+These definitions form the conceptual backbone of the [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) chapter and directly inform every oversight model in this book.
 
-This pattern assumes [Intent vs. Implementation](02-intent-vs-implementation.md) and builds toward [Reversibility as a Design Dimension](04-reversibility-as-design-dimension.md).
+This pattern assumes [The Intent-Implementation Boundary](02-intent-vs-implementation.md) and builds toward [Design for Reversibility](04-reversibility-as-design-dimension.md).
 
 ---
 
@@ -133,16 +133,16 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Intent vs. Implementation](02-intent-vs-implementation.md)
+- [The Intent-Implementation Boundary](02-intent-vs-implementation.md)
 - [Where Agency Resides](../foundations/04-where-agency-resides.md)
 
 **This pattern enables:**
-- [Reversibility as a Design Dimension](04-reversibility-as-design-dimension.md) — the fourth key variable in this calibration
-- [Archetype Dimensions](../architecture/03-archetype-dimensions.md) — formal encoding of agency levels in archetypes
-- [Human Oversight Models](../agents/06-human-oversight-models.md) — designing oversight to match agency level
-- [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) — responsibility structures in governance
+- [Design for Reversibility](04-reversibility-as-design-dimension.md) — the fourth key variable in this calibration
+- [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) — formal encoding of agency levels in archetypes
+- [Proportional Oversight](../agents/06-human-oversight-models.md) — designing oversight to match agency level
+- [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — responsibility structures in governance
 
 ---
 
-*Next: [Reversibility as a Design Dimension](04-reversibility-as-design-dimension.md)*
+*Next: [Design for Reversibility](04-reversibility-as-design-dimension.md)*
 

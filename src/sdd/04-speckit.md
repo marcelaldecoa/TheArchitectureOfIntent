@@ -1,4 +1,4 @@
-# Pattern 4.4 — SpecKit in the Architecture of Intent
+﻿# Pattern 4.4 — SpecKit
 
 **Part IV: Spec-Driven Development** · *4 of 7*
 
@@ -166,11 +166,11 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md)
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 
 **This pattern enables:**
-- [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)
+- [Writing for Machine Execution](05-writing-specs-for-agents.md)
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 - [Spec Template Library](../repertoires/03-spec-template-library.md)
 
@@ -178,6 +178,6 @@ After applying this pattern:
 
 ---
 
-*Next: [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)*
+*Next: [Writing for Machine Execution](05-writing-specs-for-agents.md)*
 
 

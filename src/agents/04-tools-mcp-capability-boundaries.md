@@ -1,4 +1,4 @@
-# Pattern 5.4 — Tools, MCP, and Capability Boundaries
+﻿# Pattern 5.4 — Least Capability
 
 **Part V: Agents & Execution** · *4 of 7*
 
@@ -135,15 +135,15 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Agents as Executors of Intent](03-agents-as-executors.md)
+- [The Executor Model](03-agents-as-executors.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
 - [What Is MCP](mcp/01-what-is-mcp.md)
 - [Designing MCP Tools for Intent](mcp/02-designing-mcp-tools.md)
 - [MCP Tool Safety and Constraints](mcp/03-mcp-safety.md)
-- [Agent Skills: Packaging Domain Knowledge](05-agent-skills.md)
-- [Human Oversight Models](06-human-oversight-models.md)
+- [Portable Domain Knowledge](05-agent-skills.md)
+- [Proportional Oversight](06-human-oversight-models.md)
 
 ---
 

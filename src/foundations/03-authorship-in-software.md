@@ -1,6 +1,6 @@
-﻿# Pattern 1.3 — Authorship in Software
+# Pattern 1.3 — Authorship Follows Intent
 
-**Part I: Foundations** · *Pattern 3 of 6*
+**Part I: Foundations** — *Pattern 3 of 6*
 
 ---
 
@@ -57,17 +57,17 @@ If the spec said nothing about data privacy, and the agent violated it, who is t
 
 When you write a constraint — *this system must never expose user data to unauthenticated callers* — you are making a commitment on behalf of the users of that system. Constraints are not technical restrictions; they are **ethical commitments encoded in advance**.
 
-This is why [Why Specs Are Moral Artifacts](../theory/06-why-specs-are-moral-artifacts.md) is a theory-level chapter, not a methodology chapter. It addresses what the spec *is*, not just how to write one.
+This is why [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md) is a theory-level chapter, not a methodology chapter. It addresses what the spec *is*, not just how to write one.
 
 ### 3. The Oversight Function Is Irreducible
 
 If a human author is responsible for what a system does, then that human must have the capacity to understand what the system does and to correct it when it diverges from intent.
 
-This is why [Human Oversight Models](../agents/06-human-oversight-models.md) is not optional. Oversight is not a governance formality — it is the mechanism by which authorship remains meaningful. An author who cannot see what their creation is doing has not delegated; they have abandoned.
+This is why [Proportional Oversight](../agents/06-human-oversight-models.md) is not optional. Oversight is not a governance formality — it is the mechanism by which authorship remains meaningful. An author who cannot see what their creation is doing has not delegated; they have abandoned.
 
 ### 4. Authorship Does Not Require Proximity
 
-A specification written six months ago by an engineer who has since left the team is still an expression of authorship. The author is accountable for what the spec said. This has implications for [Living Specs and Feedback Loops](../sdd/06-living-specs.md) — specs cannot be abandoned any more than software can be abandoned.
+A specification written six months ago by an engineer who has since left the team is still an expression of authorship. The author is accountable for what the spec said. This has implications for [The Living Spec](../sdd/06-living-specs.md) — specs cannot be abandoned any more than software can be abandoned.
 
 ---
 
@@ -95,9 +95,9 @@ After applying this pattern:
 
 **This pattern enables:**
 - [Where Agency Resides](04-where-agency-resides.md) — how to think about agency distribution in systems
-- [Why Specs Are Moral Artifacts](../theory/06-why-specs-are-moral-artifacts.md) — the ethical dimension of specification work
-- [Human Oversight Models](../agents/06-human-oversight-models.md) — the practical mechanisms of accountable delegation
-- [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) — governance as authorship protection
+- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md) — the ethical dimension of specification work
+- [Proportional Oversight](../agents/06-human-oversight-models.md) — the practical mechanisms of accountable delegation
+- [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — governance as authorship protection
 
 ---
 

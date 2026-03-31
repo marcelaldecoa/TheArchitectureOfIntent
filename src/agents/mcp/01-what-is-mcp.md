@@ -1,4 +1,4 @@
-# The Model Context Protocol
+﻿# The Model Context Protocol
 
 **Part V: Agents & Execution — MCP** · *MCP 1 of 3*
 
@@ -10,7 +10,7 @@
 
 ## Context
 
-[Tools, MCP, and Capability Boundaries](../04-tools-mcp-capability-boundaries.md) introduced the concept that agents need tools — callable functions that let them take action in the world — and that tool capability must be separated from task-level authorization. Before examining how to design and constrain tools, it is worth understanding the protocol that connects agents to tools in the first place.
+[Least Capability](../04-tools-mcp-capability-boundaries.md) introduced the concept that agents need tools — callable functions that let them take action in the world — and that tool capability must be separated from task-level authorization. Before examining how to design and constrain tools, it is worth understanding the protocol that connects agents to tools in the first place.
 
 The Model Context Protocol (MCP) is an open standard for attaching tools, resources, and context to AI agents in a discoverable, composable, and interoperable way. It has become the dominant interface layer between agent frameworks and external capabilities. Understanding it is operational knowledge for any team deploying agents seriously.
 
@@ -135,7 +135,7 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Tools, MCP, and Capability Boundaries](../04-tools-mcp-capability-boundaries.md)
+- [Least Capability](../04-tools-mcp-capability-boundaries.md)
 
 **This pattern enables:**
 - [Designing MCP Tools for Intent](02-designing-mcp-tools.md)

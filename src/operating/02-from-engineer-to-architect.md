@@ -1,4 +1,4 @@
-# Pattern 7.2 — From Senior Engineer to Intent Architect
+﻿# Pattern 7.2 — The Intent Architect
 
 **Part VII: Operating the System** · *2 of 6*
 
@@ -121,16 +121,16 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [The Modern Engineering Skill Matrix](01-skill-matrix.md)
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [The Intent-Era Skill Matrix](01-skill-matrix.md)
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 
 **This pattern enables:**
-- [Who Is Allowed to Define Archetypes](03-who-defines-archetypes.md)
-- [Reviewing Intent, Not Code](05-reviewing-intent.md)
+- [Delegated Definition Authority](03-who-defines-archetypes.md)
+- [Intent Review Before Output Review](05-reviewing-intent.md)
 
 ---
 
-*Next: [Who Is Allowed to Define Archetypes](03-who-defines-archetypes.md)*
+*Next: [Delegated Definition Authority](03-who-defines-archetypes.md)*
 
 

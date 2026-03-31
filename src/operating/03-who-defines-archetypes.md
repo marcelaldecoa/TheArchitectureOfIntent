@@ -1,4 +1,4 @@
-# Pattern 7.3 — Who Is Allowed to Define Archetypes
+﻿# Pattern 7.3 — Delegated Definition Authority
 
 **Part VII: Operating the System** · *3 of 6*
 
@@ -124,16 +124,16 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [From Senior Engineer to Intent Architect](02-from-engineer-to-architect.md)
+- [The Intent Architect](02-from-engineer-to-architect.md)
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md)
 - [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)
 
 **This pattern enables:**
-- [Governance Without Bureaucracy](04-governance.md)
+- [Proportional Governance](04-governance.md)
 - Organizational authority framework for AI deployment
 
 ---
 
-*Next: [Governance Without Bureaucracy](04-governance.md)*
+*Next: [Proportional Governance](04-governance.md)*
 
 

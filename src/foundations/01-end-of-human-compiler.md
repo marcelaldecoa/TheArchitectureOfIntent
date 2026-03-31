@@ -1,6 +1,6 @@
-﻿# Pattern 1.1 — The End of the Human Compiler
+# Pattern 1.1 — Specification as the Primary Artifact
 
-**Part I: Foundations** · *Pattern 1 of 6*
+**Part I: Foundations** — *Pattern 1 of 6*
 
 ---
 
@@ -123,8 +123,8 @@ The engineer who understood how to write a clean sorting algorithm still has sup
 **This pattern enables:**
 - [From Translation to Orchestration](02-from-translation-to-orchestration.md) — what the new role actually looks like
 - [Authorship in Software](03-authorship-in-software.md) — who is responsible when machines execute
-- [What Is Intent Engineering](../theory/01-what-is-intent-engineering.md) — naming the discipline this shift requires
-- [The Modern Engineering Skill Matrix](../operating/01-skill-matrix.md) — what skills are now load-bearing
+- [Intent Engineering as a Discipline](../theory/01-what-is-intent-engineering.md) — naming the discipline this shift requires
+- [The Intent-Era Skill Matrix](../operating/01-skill-matrix.md) — what skills are now load-bearing
 
 ---
 

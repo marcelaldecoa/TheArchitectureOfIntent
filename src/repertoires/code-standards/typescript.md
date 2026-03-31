@@ -1,4 +1,4 @@
-# Code Standards for TypeScript / Node
+﻿# Code Standards for TypeScript / Node
 
 **Part VI: Code Standards** · *Standard 2*
 
@@ -123,5 +123,5 @@ type Result<T> =
 
 ---
 
-*Back to: [Code Standards for Agent-Generated Systems](../04-code-standards.md)*
+*Back to: [Standards as Agent Skill Source](../04-code-standards.md)*
 

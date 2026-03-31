@@ -1,4 +1,4 @@
-# Pattern 4.5 — Writing Specs for Agents, Not Humans
+﻿# Pattern 4.5 — Writing for Machine Execution
 
 **Part IV: Spec-Driven Development** · *5 of 7*
 
@@ -14,7 +14,7 @@ You know what a spec needs to contain and how it functions as a control surface.
 
 Writing for an agent requires different craft than writing for a human. This pattern describes the specific differences.
 
-This pattern assumes all preceding SDD patterns and [Archetype Dimensions](../architecture/03-archetype-dimensions.md).
+This pattern assumes all preceding SDD patterns and [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md).
 
 ---
 
@@ -197,9 +197,9 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Spec-Driven Development Really Means](01-what-sdd-means.md)
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Spec-Driven Development](01-what-sdd-means.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
+- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
 
 **This pattern enables:**
 - [The Canonical Spec Template](07-canonical-spec-template.md) — every section in the template was designed for this reading audience
@@ -207,6 +207,6 @@ After applying this pattern:
 
 ---
 
-*Next: [Living Specs and Feedback Loops](06-living-specs.md)*
+*Next: [The Living Spec](06-living-specs.md)*
 
 

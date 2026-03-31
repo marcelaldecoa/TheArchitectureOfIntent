@@ -1,4 +1,4 @@
-# Pattern 4.1 — What Spec-Driven Development Really Means
+﻿# Pattern 4.1 — Spec-Driven Development
 
 **Part IV: Spec-Driven Development** · *1 of 7*
 
@@ -124,17 +124,17 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
-- [Failure as a Design Signal](../theory/05-failure-as-design-signal.md)
-- [Why Specs Are Moral Artifacts](../theory/06-why-specs-are-moral-artifacts.md)
+- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
+- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
+- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md)
 
 **This pattern enables:**
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 - [The Spec Lifecycle](03-spec-lifecycle.md)
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 
 ---
 
-*Next: [Specs as Control Surfaces](02-specs-as-control-surfaces.md)*
+*Next: [The Spec as Control Surface](02-specs-as-control-surfaces.md)*
 
 

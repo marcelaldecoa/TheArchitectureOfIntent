@@ -1,4 +1,4 @@
-# Pattern 6.1 — Why Repertoires Matter
+﻿# Pattern 6.1 — The Organizational Repertoire
 
 **Part VI: Standards & Repertoires** · *1 of 5*
 
@@ -120,15 +120,15 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Agents as Executors of Intent](../agents/03-agents-as-executors.md)
-- [Agent Skills: Packaging Domain Knowledge](../agents/05-agent-skills.md)
-- [Failure Modes in Agent Systems — Spec Gap Log](../agents/07-failure-modes.md)
+- [The Executor Model](../agents/03-agents-as-executors.md)
+- [Portable Domain Knowledge](../agents/05-agent-skills.md)
+- [Six Failure Categories — Spec Gap Log](../agents/07-failure-modes.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
 - [The Intent Archetype Catalog](02-archetype-catalog.md)
 - [Spec Template Library](03-spec-template-library.md)
-- [Code Standards for Agent-Generated Systems](04-code-standards.md)
+- [Standards as Agent Skill Source](04-code-standards.md)
 - [Validation & Acceptance Templates](05-validation-templates.md)
 
 ---

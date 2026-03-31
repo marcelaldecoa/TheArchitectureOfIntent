@@ -1,6 +1,6 @@
-﻿# Pattern 1.6 — Why Architecture Must Become Law
+# Pattern 1.6 — Architecture as Enforceable Law
 
-**Part I: Foundations** · *Pattern 6 of 6*
+**Part I: Foundations** — *Pattern 6 of 6*
 
 ---
 
@@ -71,7 +71,7 @@ The most precise analogy for what this kind of architecture looks like is consti
 
 A constitution does not prescribe every action of every actor in a system. It establishes **the principles that govern all actions**, the boundaries no actor may cross, the processes by which consequential decisions must be made, and the oversight structures that prevent concentration of unchecked power.
 
-This is exactly what a well-designed Intent Architecture does. The [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md) chapter unpacks this analogy fully.
+This is exactly what a well-designed Intent Architecture does. The [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md) chapter unpacks this analogy fully.
 
 The result, when done well, is a system where:
 - Agents can act quickly within defined bounds
@@ -104,10 +104,10 @@ After applying this pattern:
 - [When Power Scales Faster Than Judgment](05-when-power-scales-faster-than-judgment.md)
 
 **This pattern enables:**
-- [What Is Intent Engineering](../theory/01-what-is-intent-engineering.md) — naming this as a discipline
-- [Archetypes as Constitutional Law](../architecture/01-archetypes-as-constitutional-law.md) — the load-bearing chapter of the entire book
-- [Specs as Control Surfaces](../sdd/02-specs-as-control-surfaces.md) — how specs become architectural law
-- [Code Standards for Agent-Generated Systems](../repertoires/04-code-standards.md) — the technical expression of architectural law
+- [Intent Engineering as a Discipline](../theory/01-what-is-intent-engineering.md) — naming this as a discipline
+- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md) — the load-bearing chapter of the entire book
+- [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) — how specs become architectural law
+- [Standards as Agent Skill Source](../repertoires/04-code-standards.md) — the technical expression of architectural law
 
 ---
 

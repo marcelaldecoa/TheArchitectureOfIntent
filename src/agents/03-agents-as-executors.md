@@ -1,4 +1,4 @@
-# Pattern 5.3 — Agents as Executors of Intent
+﻿# Pattern 5.3 — The Executor Model
 
 **Part V: Agents & Execution** · *3 of 7*
 
@@ -143,19 +143,19 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Agents Are (and Are Not)](01-what-agents-are.md)
-- [Operational Autonomy vs. Genuine Agency](02-autonomy-vs-agency.md)
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md)
+- [Agents Defined by Structure](01-what-agents-are.md)
+- [Autonomy Without Agency](02-autonomy-vs-agency.md)
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md)
 - [Writing Specs for Agents](../sdd/05-writing-specs-for-agents.md)
 
 **This pattern enables:**
-- [Tools, MCP, and Capability Boundaries](04-tools-mcp-capability-boundaries.md)
-- [Human Oversight Models](06-human-oversight-models.md)
-- [Failure Modes in Agent Systems](07-failure-modes.md)
+- [Least Capability](04-tools-mcp-capability-boundaries.md)
+- [Proportional Oversight](06-human-oversight-models.md)
+- [Six Failure Categories](07-failure-modes.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 
 ---
 
-*Next: [Tools, MCP, and Capability Boundaries](04-tools-mcp-capability-boundaries.md)*
+*Next: [Least Capability](04-tools-mcp-capability-boundaries.md)*
 
 

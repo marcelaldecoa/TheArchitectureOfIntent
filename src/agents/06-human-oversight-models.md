@@ -1,4 +1,4 @@
-# Pattern 5.6 — Human Oversight Models
+﻿# Pattern 5.6 — Proportional Oversight
 
 **Part V: Agents & Execution** · *6 of 7*
 
@@ -189,17 +189,17 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Operational Autonomy vs. Genuine Agency](02-autonomy-vs-agency.md)
-- [Agents as Executors of Intent](03-agents-as-executors.md)
+- [Autonomy Without Agency](02-autonomy-vs-agency.md)
+- [The Executor Model](03-agents-as-executors.md)
 - [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)
 - [The Canonical Spec Template — Section 8](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
-- [Failure Modes in Agent Systems](07-failure-modes.md)
+- [Six Failure Categories](07-failure-modes.md)
 - Governance, Escalation Design *(Part VII)*
 
 ---
 
-*Next: [Failure Modes in Agent Systems](07-failure-modes.md)*
+*Next: [Six Failure Categories](07-failure-modes.md)*
 
 

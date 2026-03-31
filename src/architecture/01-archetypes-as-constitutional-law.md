@@ -1,4 +1,4 @@
-# Pattern 3.1 — Archetypes as Constitutional Law
+﻿# Pattern 3.1 — Constitutional Archetypes
 
 **Part III: Intent Architecture** · *1 of 6*
 
@@ -147,16 +147,16 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [Why Architecture Must Become Law](../foundations/06-why-architecture-must-become-law.md)
-- [Why Specs Are Moral Artifacts](../theory/06-why-specs-are-moral-artifacts.md)
-- [Agency, Autonomy, and Responsibility](../theory/03-agency-autonomy-responsibility.md)
+- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md)
+- [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md) — the five archetypes defined
-- [Archetype Dimensions](03-archetype-dimensions.md) — the formal axes of variation
-- [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md) — the governance structure
+- [The Five Archetypes](02-canonical-intent-archetypes.md) — the five archetypes defined
+- [Four Dimensions of Governance](03-archetype-dimensions.md) — the formal axes of variation
+- [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — the governance structure
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — the reference library
 
 ---
 
-*Next: [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md)*
+*Next: [The Five Archetypes](02-canonical-intent-archetypes.md)*
 

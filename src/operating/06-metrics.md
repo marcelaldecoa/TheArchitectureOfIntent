@@ -1,4 +1,4 @@
-# Pattern 7.6 — Metrics That Actually Matter
+﻿# Pattern 7.6 — Four Signal Metrics
 
 **Part VII: Operating the System** · *6 of 6*
 
@@ -210,9 +210,9 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Spec Gap Log](../sdd/06-living-specs.md)
-- [Reviewing Intent, Not Code](05-reviewing-intent.md)
+- [Intent Review Before Output Review](05-reviewing-intent.md)
 - [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
-- [Governance Without Bureaucracy](04-governance.md)
+- [Proportional Governance](04-governance.md)
 
 **This pattern enables:**
 - Informed investment in the repertoire (constraint libraries, archetype catalog)

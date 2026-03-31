@@ -1,4 +1,4 @@
-# Pattern 5.5 — Agent Skills: Packaging Domain Knowledge
+﻿# Pattern 5.5 — Portable Domain Knowledge
 
 **Part V: Agents & Execution** · *5 of 7*
 
@@ -191,16 +191,16 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Agents as Executors of Intent](03-agents-as-executors.md)
-- [Tools, MCP, and Capability Boundaries](04-tools-mcp-capability-boundaries.md)
+- [The Executor Model](03-agents-as-executors.md)
+- [Least Capability](04-tools-mcp-capability-boundaries.md)
 - [The Canonical Spec Template — Section 11](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
-- [Human Oversight Models](06-human-oversight-models.md)
+- [Proportional Oversight](06-human-oversight-models.md)
 - Standards and Repertoires *(Part VI)*
 - The organizational skills library as a governance artifact
 
 ---
 
-*Next: [Human Oversight Models](06-human-oversight-models.md)*
+*Next: [Proportional Oversight](06-human-oversight-models.md)*
 

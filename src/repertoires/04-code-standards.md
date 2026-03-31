@@ -1,4 +1,4 @@
-# Pattern 6.4 — Code Standards for Agent-Generated Systems
+﻿# Pattern 6.4 — Standards as Agent Skill Source
 
 **Part VI: Standards & Repertoires** · *4 of 5*
 
@@ -115,8 +115,8 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Why Repertoires Matter](01-why-repertoires-matter.md)
-- [Agent Skills: Packaging Domain Knowledge](../agents/05-agent-skills.md)
+- [The Organizational Repertoire](01-why-repertoires-matter.md)
+- [Portable Domain Knowledge](../agents/05-agent-skills.md)
 - [The Canonical Spec Template — Section 11](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**

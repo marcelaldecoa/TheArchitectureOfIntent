@@ -1,4 +1,4 @@
-# Pattern 2.2 — Intent vs. Implementation
+﻿# Pattern 2.2 — The Intent-Implementation Boundary
 
 **Part II: Theory of Intent Engineering** · *2 of 6*
 
@@ -14,7 +14,7 @@ You are working in a spec-driven system and something has gone wrong. An agent p
 
 This pattern introduces the most fundamental distinction in intent engineering: the difference between *what a system is trying to do* and *how it does it*. This distinction sounds obvious. It is not. Teams collapse it constantly — and the collapse is the source of most of the chronic dysfunction that SDD is designed to cure.
 
-This pattern assumes [What Is Intent Engineering](01-what-is-intent-engineering.md).
+This pattern assumes [Intent Engineering as a Discipline](01-what-is-intent-engineering.md).
 
 ---
 
@@ -159,16 +159,16 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Is Intent Engineering](01-what-is-intent-engineering.md)
+- [Intent Engineering as a Discipline](01-what-is-intent-engineering.md)
 
 **This pattern enables:**
-- [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md) — who decides what in each layer
-- [Specs as Control Surfaces](../sdd/02-specs-as-control-surfaces.md) — the mechanism by which intent controls implementation
+- [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md) — who decides what in each layer
+- [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) — the mechanism by which intent controls implementation
 - [The Spec Lifecycle](../sdd/03-spec-lifecycle.md) — how intent and implementation evolve together
-- [Living Specs and Feedback Loops](../sdd/06-living-specs.md) — the fix-the-spec discipline in practice
-- [Reviewing Intent, Not Code](../operating/05-reviewing-intent.md) — applying this distinction in review processes
+- [The Living Spec](../sdd/06-living-specs.md) — the fix-the-spec discipline in practice
+- [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — applying this distinction in review processes
 
 ---
 
-*Next: [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md)*
+*Next: [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md)*
 

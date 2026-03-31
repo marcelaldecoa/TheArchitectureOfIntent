@@ -1,4 +1,4 @@
-# Pattern 7.1 — The Modern Engineering Skill Matrix
+﻿# Pattern 7.1 — The Intent-Era Skill Matrix
 
 **Part VII: Operating the System** · *1 of 6*
 
@@ -122,17 +122,17 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Why Specs Are Moral Artifacts](../theory/06-why-specs-are-moral-artifacts.md)
+- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 
 **This pattern enables:**
-- [From Senior Engineer to Intent Architect](02-from-engineer-to-architect.md)
-- [Reviewing Intent, Not Code](05-reviewing-intent.md)
-- [Metrics That Actually Matter](06-metrics.md)
+- [The Intent Architect](02-from-engineer-to-architect.md)
+- [Intent Review Before Output Review](05-reviewing-intent.md)
+- [Four Signal Metrics](06-metrics.md)
 
 ---
 
-*Next: [From Senior Engineer to Intent Architect](02-from-engineer-to-architect.md)*
+*Next: [The Intent Architect](02-from-engineer-to-architect.md)*
 
 

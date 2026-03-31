@@ -1,4 +1,4 @@
-# The Intent Archetype Catalog
+﻿# The Intent Archetype Catalog
 
 **Part VI: Standards & Repertoires** · *2 of 5*
 
@@ -225,7 +225,7 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Why Repertoires Matter](01-why-repertoires-matter.md)
+- [The Organizational Repertoire](01-why-repertoires-matter.md)
 - [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)
 - [Agency Levels and Risk Posture](../architecture/03-archetype-dimensions.md)
 - [Oversight Models and Reversibility](../architecture/03-archetype-dimensions.md)

@@ -1,4 +1,4 @@
-# Pattern 4.3 — The Spec Lifecycle: From Intent to Validation
+﻿# Pattern 4.3 — Five Phases of the Spec
 
 **Part IV: Spec-Driven Development** · *3 of 7*
 
@@ -14,7 +14,7 @@ You know that specs must precede execution and that they function as control sur
 
 This is the procedural backbone of Spec-Driven Development. It is deliberately not a software development methodology in the project-management sense — it has no sprints, no ceremonies, no artifacts beyond the spec itself. It is a discipline applied to individual tasks delegated to agents.
 
-This pattern assumes [What Spec-Driven Development Really Means](01-what-sdd-means.md) and [Specs as Control Surfaces](02-specs-as-control-surfaces.md).
+This pattern assumes [Spec-Driven Development](01-what-sdd-means.md) and [The Spec as Control Surface](02-specs-as-control-surfaces.md).
 
 ---
 
@@ -207,17 +207,17 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Spec-Driven Development Really Means](01-what-sdd-means.md)
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [Spec-Driven Development](01-what-sdd-means.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 
 **This pattern enables:**
-- [SpecKit in the Architecture of Intent](04-speckit.md)
-- [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)
-- [Living Specs and Feedback Loops](06-living-specs.md)
+- [SpecKit](04-speckit.md)
+- [Writing for Machine Execution](05-writing-specs-for-agents.md)
+- [The Living Spec](06-living-specs.md)
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 
 ---
 
-*Next: [SpecKit in the Architecture of Intent](04-speckit.md)*
+*Next: [SpecKit](04-speckit.md)*
 
 

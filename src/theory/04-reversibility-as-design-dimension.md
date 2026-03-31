@@ -1,4 +1,4 @@
-# Pattern 2.4 — Reversibility as a Design Dimension
+﻿# Pattern 2.4 — Design for Reversibility
 
 **Part II: Theory of Intent Engineering** · *4 of 6*
 
@@ -14,7 +14,7 @@ You are calibrating how to delegate work to an agent: how much autonomy to grant
 
 Reversibility is the variable that determines how much a mistake matters. High agency is acceptable when mistakes are cheap to fix. Even low agency can be dangerous when mistakes cannot be undone.
 
-This pattern assumes [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md) and is a prerequisite for [Archetype Dimensions](../architecture/03-archetype-dimensions.md).
+This pattern assumes [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md) and is a prerequisite for [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md).
 
 ---
 
@@ -147,15 +147,15 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Agency, Autonomy, and Responsibility](03-agency-autonomy-responsibility.md)
+- [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [Failure as a Design Signal](05-failure-as-design-signal.md) — what happens when this calibration fails
-- [Archetype Dimensions](../architecture/03-archetype-dimensions.md) — reversibility as a formal archetype axis
-- [Human Oversight Models](../agents/06-human-oversight-models.md) — designing oversight to match reversibility
+- [Failure as Diagnostic Signal](05-failure-as-design-signal.md) — what happens when this calibration fails
+- [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) — reversibility as a formal archetype axis
+- [Proportional Oversight](../agents/06-human-oversight-models.md) — designing oversight to match reversibility
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the "must never happen" and oversight sections
 
 ---
 
-*Next: [Failure as a Design Signal](05-failure-as-design-signal.md)*
+*Next: [Failure as Diagnostic Signal](05-failure-as-design-signal.md)*
 

@@ -1,4 +1,4 @@
-# Pattern 3.6 — Evolving Archetypes Without Dogma
+﻿# Pattern 3.6 — Governed Archetype Evolution
 
 **Part III: Intent Architecture** · *6 of 6*
 
@@ -118,7 +118,7 @@ If no: proceed to Step 4.
 
 In continuous deployment environments, archetype evolution must be integrated into the delivery pipeline rather than treated as an offline governance exercise:
 
-- **Spec-as-code.** Store specs alongside application code in the repository. Spec changes follow the same pull request and review process as code changes. Archetype reclassification is a PR that requires explicit approval from the authority level defined in [Who Is Allowed to Define Archetypes](../operating/03-who-defines-archetypes.md).
+- **Spec-as-code.** Store specs alongside application code in the repository. Spec changes follow the same pull request and review process as code changes. Archetype reclassification is a PR that requires explicit approval from the authority level defined in [Delegated Definition Authority](../operating/03-who-defines-archetypes.md).
 - **Automated drift detection.** CI checks can validate that the system's declared capabilities (tool manifest, API surface, data access) are consistent with its archetype's authorized scope. A new tool added to the manifest that exceeds the current archetype's boundaries should fail the pipeline and trigger a review.
 - **Gated promotion for archetype changes.** When an archetype is reclassified, the deployment requires a manual gate — the spec reviewer signs off before the pipeline proceeds. This is not bureaucracy; it is the minimum governance for a change that alters oversight requirements, risk posture, and invariants.
 - **Feature flags for planned evolution.** Planned transitions (Advisor → Executor) can be gated behind feature flags that are enabled only after transition criteria are met and the spec is updated. The flag flip is a logged event, not a silent change.
@@ -195,10 +195,10 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Archetypes as Constitutional Law](01-archetypes-as-constitutional-law.md)
-- [Archetype Dimensions](03-archetype-dimensions.md)
-- [Decision Tree for Archetype Selection](04-decision-tree.md)
-- [Composing Archetypes in Real Systems](05-composing-archetypes.md)
+- [Constitutional Archetypes](01-archetypes-as-constitutional-law.md)
+- [Four Dimensions of Governance](03-archetype-dimensions.md)
+- [The Archetype Selection Tree](04-decision-tree.md)
+- [Archetype Composition](05-composing-archetypes.md)
 
 **This pattern enables:**
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the spec version history section

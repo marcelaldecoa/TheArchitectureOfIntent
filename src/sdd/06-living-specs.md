@@ -1,4 +1,4 @@
-# Pattern 4.6 — Living Specs and Feedback Loops
+﻿# Pattern 4.6 — The Living Spec
 
 **Part IV: Spec-Driven Development** · *6 of 7*
 
@@ -167,13 +167,13 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [Failure as a Design Signal](../theory/05-failure-as-design-signal.md)
+- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - [The Canonical Spec Template](07-canonical-spec-template.md) — the spec evolution log section
-- [Evolving Archetypes Without Dogma](../architecture/06-evolving-archetypes.md) — the same feedback principle applied to archetype classification
+- [Governed Archetype Evolution](../architecture/06-evolving-archetypes.md) — the same feedback principle applied to archetype classification
 
 ---
 

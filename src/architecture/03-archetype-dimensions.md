@@ -1,4 +1,4 @@
-# Pattern 3.3 — Archetype Dimensions
+﻿# Pattern 3.3 — Four Dimensions of Governance
 
 **Part III: Intent Architecture** · *3 of 6*
 
@@ -190,17 +190,17 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md)
-- [Reversibility as a Design Dimension](../theory/04-reversibility-as-design-dimension.md)
-- [Agency, Autonomy, and Responsibility](../theory/03-agency-autonomy-responsibility.md)
+- [The Five Archetypes](02-canonical-intent-archetypes.md)
+- [Design for Reversibility](../theory/04-reversibility-as-design-dimension.md)
+- [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [Decision Tree for Archetype Selection](04-decision-tree.md) — putting the dimensions to practical use
+- [The Archetype Selection Tree](04-decision-tree.md) — putting the dimensions to practical use
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the oversight and constraint sections
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — full dimension profiles per archetype
-- [Human Oversight Models](../agents/06-human-oversight-models.md) — implementing the four oversight models
+- [Proportional Oversight](../agents/06-human-oversight-models.md) — implementing the four oversight models
 
 ---
 
-*Next: [Decision Tree for Archetype Selection](04-decision-tree.md)*
+*Next: [The Archetype Selection Tree](04-decision-tree.md)*
 

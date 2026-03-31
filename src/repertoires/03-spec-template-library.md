@@ -1,4 +1,4 @@
-# The Spec Template Library
+﻿# The Spec Template Library
 
 **Part VI: Standards & Repertoires** · *3 of 5*
 
@@ -113,7 +113,7 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Why Repertoires Matter](01-why-repertoires-matter.md)
+- [The Organizational Repertoire](01-why-repertoires-matter.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 - [The Intent Archetype Catalog](02-archetype-catalog.md)
 
@@ -122,7 +122,7 @@ After applying this pattern:
 - [Agent Instruction Template](templates/agent-instruction.md)
 - [Integration Spec Template](templates/integration-spec.md)
 - [Constraint Library Template](templates/constraint-library.md)
-- [Code Standards for Agent-Generated Systems](04-code-standards.md)
+- [Standards as Agent Skill Source](04-code-standards.md)
 
 ---
 

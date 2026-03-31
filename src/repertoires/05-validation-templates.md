@@ -1,4 +1,4 @@
-# Validation & Acceptance Templates
+﻿# Validation & Acceptance Templates
 
 **Part VI: Standards & Repertoires** · *5 of 5*
 
@@ -159,9 +159,9 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Why Repertoires Matter](01-why-repertoires-matter.md)
+- [The Organizational Repertoire](01-why-repertoires-matter.md)
 - [The Canonical Spec Template — Section 6](../sdd/07-canonical-spec-template.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 
 **This pattern enables:**
 - Org-specific validation template additions

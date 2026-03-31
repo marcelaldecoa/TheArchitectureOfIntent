@@ -1,4 +1,4 @@
-# The Synthesizer Archetype
+﻿# The Synthesizer Archetype
 
 **Part III: Intent Architecture** · *Archetype Deep Dive 4 of 5*
 
@@ -154,7 +154,7 @@ Confidence threshold: [when uncertainty must be stated rather than resolved]
 ## Connections
 
 **Archetype series:** [← Guardian](guardian.md) · [Orchestrator →](orchestrator.md)  
-**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Archetype Dimensions](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
+**Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Four Dimensions of Governance](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
 **Composition:** [Composing Archetypes](../05-composing-archetypes.md) — Synthesizer + Executor composition in compose-then-publish patterns  
 **SDD:** [The Canonical Spec Template](../../sdd/07-canonical-spec-template.md)
 

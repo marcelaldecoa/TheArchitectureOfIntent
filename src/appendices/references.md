@@ -1,4 +1,4 @@
-# Reading List & References
+﻿# Reading List & References
 
 **Appendices** · *Appendix C*
 
@@ -101,7 +101,7 @@ These are sources cited specifically within the text of this book.
 
 - Anthropic. (2024). *Model Context Protocol Specification.* Retrieved from https://modelcontextprotocol.io — Referenced in Part V, Chapters 5.4 and the MCP sub-chapters.
 
-- Russell, S. (2019). *Human Compatible: Artificial Intelligence and the Problem of Control.* Viking. — Referenced in Chapter 2.3 (Agency, Autonomy, and Responsibility) and Chapter 1.5 (When Power Scales Faster Than Judgment).
+- Russell, S. (2019). *Human Compatible: Artificial Intelligence and the Problem of Control.* Viking. — Referenced in Chapter 2.3 (Three Dimensions of Delegation) and Chapter 1.5 (When Power Scales Faster Than Judgment).
 
 - Weng, L. (2023). *LLM Powered Autonomous Agents.* Lil'Log. Retrieved from https://lilianweng.github.io/posts/2023-06-23-agent/ — Referenced in Part V as a technical taxonomy companion.
 
@@ -109,21 +109,21 @@ These are sources cited specifically within the text of this book.
 
 - Brooks, F. P. (1995). *The Mythical Man-Month: Essays on Software Engineering* (Anniversary ed.). Addison-Wesley. — Referenced in Chapter 1.1 (The End of the Human Compiler) for the no-silver-bullet framing.
 
-- Feathers, M. C. (2004). *Working Effectively with Legacy Code.* Prentice Hall. — Referenced in Chapter 4.6 (Living Specs and Feedback Loops) as an example of the systems SDD prevents.
+- Feathers, M. C. (2004). *Working Effectively with Legacy Code.* Prentice Hall. — Referenced in Chapter 4.6 (The Living Spec) as an example of the systems SDD prevents.
 
 - Fowler, M. (2002). *Patterns of Enterprise Application Architecture.* Addison-Wesley. — Referenced in Part VI as a model for catalog-format pattern documentation.
 
-- Jackson, M. (1995). *Software Requirements & Specifications.* Addison-Wesley. — Referenced in Chapter 4.5 (Writing Specs for Agents, Not Humans) for the domain/machine distinction.
+- Jackson, M. (1995). *Software Requirements & Specifications.* Addison-Wesley. — Referenced in Chapter 4.5 (Writing for Machine Execution) for the domain/machine distinction.
 
-- Meyer, B. (1997). *Object-Oriented Software Construction* (2nd ed.). Prentice Hall. — Referenced in Chapter 4.2 (Specs as Control Surfaces) for the Design by Contract parallel.
+- Meyer, B. (1997). *Object-Oriented Software Construction* (2nd ed.). Prentice Hall. — Referenced in Chapter 4.2 (The Spec as Control Surface) for the Design by Contract parallel.
 
 ### Organizations and Systems
 
-- Deming, W. E. (1982). *Out of the Crisis.* MIT Press. — Referenced in Chapter 7.6 (Metrics That Actually Matter) for the systems-vs-individuals framing of quality.
+- Deming, W. E. (1982). *Out of the Crisis.* MIT Press. — Referenced in Chapter 7.6 (Four Signal Metrics) for the systems-vs-individuals framing of quality.
 
-- Kim, G., Debois, P., Willis, J., & Humble, J. (2016). *The DevOps Handbook.* IT Revolution Press. — Referenced in Chapter 7.4 (Governance Without Bureaucracy) for the Three Ways framework.
+- Kim, G., Debois, P., Willis, J., & Humble, J. (2016). *The DevOps Handbook.* IT Revolution Press. — Referenced in Chapter 7.4 (Proportional Governance) for the Three Ways framework.
 
-- Meadows, D. H. (2008). *Thinking in Systems: A Primer.* Chelsea Green. — Referenced in Chapter 4.6 (Living Specs and Feedback Loops) for the feedback loop taxonomy.
+- Meadows, D. H. (2008). *Thinking in Systems: A Primer.* Chelsea Green. — Referenced in Chapter 4.6 (The Living Spec) for the feedback loop taxonomy.
 
 ---
 

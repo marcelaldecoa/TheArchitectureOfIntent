@@ -1,4 +1,4 @@
-# Pattern 4.7 — The Canonical Spec Template
+﻿# Pattern 4.7 — The Canonical Spec Template
 
 **Part IV: Spec-Driven Development** · *7 of 7*
 
@@ -344,7 +344,7 @@ Every out-of-scope line is a decision: we decided NOT to do this, for this work,
 
 **Purpose:** Establish the governance framework for agent systems.
 
-This section is the most consequential sentence in the spec for agent systems. See [Archetype Dimensions](../architecture/03-archetype-dimensions.md) for the dimension definitions and [Decision Tree](../architecture/04-decision-tree.md) for how to arrive at the classification.
+This section is the most consequential sentence in the spec for agent systems. See [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) for the dimension definitions and [Decision Tree](../architecture/04-decision-tree.md) for how to arrive at the classification.
 
 The archetype declaration cannot be generic. "It's an agent, so it's an Executor" is not a declaration. The declaration names the specific agency level (1–5), the risk posture rationale, the oversight model mechanism, and the reversibility assessment.
 
@@ -378,7 +378,7 @@ Given/When/Then format is excellent for functional criteria because it forces th
 
 This section should be written last, after all other sections are complete — because it summarizes what the agent may and may not do, and that summary must accurately reflect the entire spec.
 
-The **Skills to load** sub-section specifies which Agent Skills the agent should activate for this task. Skills are packaged domain knowledge — organizational workflows, brand guidelines, specialized analysis procedures — that extend what the agent knows how to do well. A skill is not an authorization; it is a capability enhancement. The authorization boundary is still governed by section 8. See [Agent Skills: Packaging Domain Knowledge](../agents/05-agent-skills.md) for the full treatment.
+The **Skills to load** sub-section specifies which Agent Skills the agent should activate for this task. Skills are packaged domain knowledge — organizational workflows, brand guidelines, specialized analysis procedures — that extend what the agent knows how to do well. A skill is not an authorization; it is a capability enhancement. The authorization boundary is still governed by section 8. See [Portable Domain Knowledge](../agents/05-agent-skills.md) for the full treatment.
 
 The most important clauses are the "NOT authorized" clauses. Agents are expansive by default; without explicit prohibitions, they tend to fill gaps. The explicit prohibition list is the fence around the pre-authorized scope.
 
@@ -405,12 +405,12 @@ The spec, written well, is the work. Everything after it is execution.
 ## Connections
 
 **This pattern assumes all of Part IV:**
-- [What Spec-Driven Development Really Means](01-what-sdd-means.md)
-- [Specs as Control Surfaces](02-specs-as-control-surfaces.md)
+- [Spec-Driven Development](01-what-sdd-means.md)
+- [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [SpecKit in the Architecture of Intent](04-speckit.md)
-- [Writing Specs for Agents, Not Humans](05-writing-specs-for-agents.md)
-- [Living Specs and Feedback Loops](06-living-specs.md)
+- [SpecKit](04-speckit.md)
+- [Writing for Machine Execution](05-writing-specs-for-agents.md)
+- [The Living Spec](06-living-specs.md)
 
 **This pattern is used by:**
 - [Spec Template Library](../repertoires/03-spec-template-library.md) — variant templates for feature specs, agent instructions, integrations

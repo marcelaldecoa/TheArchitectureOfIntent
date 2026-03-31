@@ -1,4 +1,4 @@
-# Pattern 7.5 — Reviewing Intent, Not Code
+﻿# Pattern 7.5 — Intent Review Before Output Review
 
 **Part VII: Operating the System** · *5 of 6*
 
@@ -147,17 +147,17 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Spec-Driven Development Really Means](../sdd/01-what-sdd-means.md)
-- [Governance Without Bureaucracy](04-governance.md)
-- [Failure Modes in Agent Systems](../agents/07-failure-modes.md)
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md)
+- [Proportional Governance](04-governance.md)
+- [Six Failure Categories](../agents/07-failure-modes.md)
 - [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
 
 **This pattern enables:**
-- [Metrics That Actually Matter](06-metrics.md)
+- [Four Signal Metrics](06-metrics.md)
 - Team spec quality development over time
 
 ---
 
-*Next: [Metrics That Actually Matter](06-metrics.md)*
+*Next: [Four Signal Metrics](06-metrics.md)*
 
 

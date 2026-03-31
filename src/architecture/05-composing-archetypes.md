@@ -1,4 +1,4 @@
-# Pattern 3.5 — Composing Archetypes in Real Systems
+﻿# Pattern 3.5 — Archetype Composition
 
 **Part III: Intent Architecture** · *5 of 6*
 
@@ -15,7 +15,7 @@ You have assigned an archetype to a system. You know it is, say, an Executor —
 
 Real systems are not atomic. They are compositions. The question is how to manage that composition without losing the clarity the archetype gave you.
 
-This pattern assumes [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md), [Archetype Dimensions](03-archetype-dimensions.md), and [Decision Tree for Archetype Selection](04-decision-tree.md).
+This pattern assumes [The Five Archetypes](02-canonical-intent-archetypes.md), [Four Dimensions of Governance](03-archetype-dimensions.md), and [The Archetype Selection Tree](04-decision-tree.md).
 
 ---
 
@@ -196,16 +196,16 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [The Canonical Intent Archetypes](02-canonical-intent-archetypes.md)
-- [Archetype Dimensions](03-archetype-dimensions.md)
-- [Decision Tree for Archetype Selection](04-decision-tree.md)
+- [The Five Archetypes](02-canonical-intent-archetypes.md)
+- [Four Dimensions of Governance](03-archetype-dimensions.md)
+- [The Archetype Selection Tree](04-decision-tree.md)
 
 **This pattern enables:**
-- [Evolving Archetypes Without Dogma](06-evolving-archetypes.md)
+- [Governed Archetype Evolution](06-evolving-archetypes.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — multi-component spec structure
 - Each archetype deep-dive: [Advisor](archetypes/advisor.md), [Executor](archetypes/executor.md), [Guardian](archetypes/guardian.md), [Synthesizer](archetypes/synthesizer.md), [Orchestrator](archetypes/orchestrator.md)
 
 ---
 
-*Next: [Evolving Archetypes Without Dogma](06-evolving-archetypes.md)*
+*Next: [Governed Archetype Evolution](06-evolving-archetypes.md)*
 

@@ -1,4 +1,4 @@
-# Designing MCP Tools for Intent
+﻿# Designing MCP Tools for Intent
 
 **Part V: Agents & Execution — MCP** · *MCP 2 of 3*
 
@@ -153,11 +153,11 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [What Is MCP](01-what-is-mcp.md)
-- [Tools, MCP, and Capability Boundaries](../04-tools-mcp-capability-boundaries.md)
+- [Least Capability](../04-tools-mcp-capability-boundaries.md)
 
 **This pattern enables:**
 - [MCP Tool Safety and Constraints](03-mcp-safety.md)
-- [Agent Skills: Packaging Domain Knowledge](../05-agent-skills.md)
+- [Portable Domain Knowledge](../05-agent-skills.md)
 
 ---
 

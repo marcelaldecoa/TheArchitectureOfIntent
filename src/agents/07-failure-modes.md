@@ -1,4 +1,4 @@
-# Pattern 5.7 — Failure Modes in Agent Systems
+﻿# Pattern 5.7 — Six Failure Categories
 
 **Part V: Agents & Execution** · *7 of 7*
 
@@ -12,7 +12,7 @@
 
 We close Part V with failure — not as an afterthought, but as a design discipline in its own right. We have built the full architecture: intent expressed in specs, domain knowledge encoded in skills, capabilities bounded by tools and MCP, execution structured by oversight models. The question now is: how does this architecture fail, what does failure look like when it happens, and what does it teach us?
 
-This chapter draws on Pattern 2.5 (Failure as a Design Signal) from Part II and applies it concretely to agent systems. It assumes everything that came before in Part V.
+This chapter draws on Pattern 2.5 (Failure as Diagnostic Signal) from Part II and applies it concretely to agent systems. It assumes everything that came before in Part V.
 
 ---
 
@@ -211,10 +211,10 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Agents Are (and Are Not)](01-what-agents-are.md)
-- [Agents as Executors of Intent](03-agents-as-executors.md)
-- [Human Oversight Models](06-human-oversight-models.md)
-- [Failure as a Design Signal](../theory/05-failure-as-design-signal.md)
+- [Agents Defined by Structure](01-what-agents-are.md)
+- [The Executor Model](03-agents-as-executors.md)
+- [Proportional Oversight](06-human-oversight-models.md)
+- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
 - [The Spec Lifecycle](../sdd/03-spec-lifecycle.md)
 
 **This pattern enables:**

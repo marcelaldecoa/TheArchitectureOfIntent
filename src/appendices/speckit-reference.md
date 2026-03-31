@@ -1,4 +1,4 @@
-# SpecKit Quick Reference
+﻿# SpecKit Quick Reference
 
 **Appendices** · *Appendix D*
 
@@ -8,7 +8,7 @@
 
 ---
 
-This reference covers SpecKit's commands, the 11-section spec template in quick-reference format, constraint writing patterns, success criteria patterns, and archetype-to-oversight pairing defaults. For the full conceptual treatment, see [SpecKit in the Architecture of Intent](../sdd/04-speckit.md).
+This reference covers SpecKit's commands, the 11-section spec template in quick-reference format, constraint writing patterns, success criteria patterns, and archetype-to-oversight pairing defaults. For the full conceptual treatment, see [SpecKit](../sdd/04-speckit.md).
 
 ---
 

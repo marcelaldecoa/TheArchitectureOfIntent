@@ -1,4 +1,4 @@
-# Pattern 5.2 — Operational Autonomy vs. Genuine Agency
+﻿# Pattern 5.2 — Autonomy Without Agency
 
 **Part V: Agents & Execution** · *2 of 7*
 
@@ -124,17 +124,17 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Agents Are (and Are Not)](01-what-agents-are.md)
+- [Agents Defined by Structure](01-what-agents-are.md)
 - [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)
 - [Agency Levels and Risk Posture](../architecture/03-archetype-dimensions.md)
 
 **This pattern enables:**
-- [Agents as Executors of Intent](03-agents-as-executors.md)
-- [Human Oversight Models](06-human-oversight-models.md)
-- [Failure Modes in Agent Systems](07-failure-modes.md)
+- [The Executor Model](03-agents-as-executors.md)
+- [Proportional Oversight](06-human-oversight-models.md)
+- [Six Failure Categories](07-failure-modes.md)
 
 ---
 
-*Next: [Agents as Executors of Intent](03-agents-as-executors.md)*
+*Next: [The Executor Model](03-agents-as-executors.md)*
 
 

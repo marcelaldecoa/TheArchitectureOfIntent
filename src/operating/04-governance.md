@@ -1,4 +1,4 @@
-# Pattern 7.4 — Governance Without Bureaucracy
+﻿# Pattern 7.4 — Proportional Governance
 
 **Part VII: Operating the System** · *4 of 6*
 
@@ -150,16 +150,16 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Who Is Allowed to Define Archetypes](03-who-defines-archetypes.md)
-- [Human Oversight Models](../agents/06-human-oversight-models.md)
-- [Why Repertoires Matter](../repertoires/01-why-repertoires-matter.md)
+- [Delegated Definition Authority](03-who-defines-archetypes.md)
+- [Proportional Oversight](../agents/06-human-oversight-models.md)
+- [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md)
 
 **This pattern enables:**
-- [Reviewing Intent, Not Code](05-reviewing-intent.md)
-- [Metrics That Actually Matter](06-metrics.md)
+- [Intent Review Before Output Review](05-reviewing-intent.md)
+- [Four Signal Metrics](06-metrics.md)
 
 ---
 
-*Next: [Reviewing Intent, Not Code](05-reviewing-intent.md)*
+*Next: [Intent Review Before Output Review](05-reviewing-intent.md)*
 
 

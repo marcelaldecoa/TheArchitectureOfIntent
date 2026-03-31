@@ -1,6 +1,6 @@
-﻿# Pattern 1.4 — Where Agency Resides
+# Pattern 1.4 — Distributed Agency, Explicit Authority
 
-**Part I: Foundations** · *Pattern 4 of 6*
+**Part I: Foundations** — *Pattern 4 of 6*
 
 ---
 
@@ -12,7 +12,7 @@
 
 You are designing systems where multiple actors — humans, agents, tools, orchestrators — share the work of producing outcomes. You need to reason about **who or what is making decisions** at each point in the system, and what that means for accountability, reversibility, and oversight.
 
-This pattern builds on [Authorship in Software](03-authorship-in-software.md) and prepares for [Agency, Autonomy, and Responsibility](../theory/03-agency-autonomy-responsibility.md).
+This pattern builds on [Authorship in Software](03-authorship-in-software.md) and prepares for [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md).
 
 ---
 
@@ -47,7 +47,7 @@ Agency in a system is distributed across multiple actors, each carrying a portio
 
 The practical implication: **where you put agency matters**. Delegation without constraint gives broad agency to the executor. Delegation with tight constraints narrows it. Delegation with active oversight narrows it further still.
 
-The [Archetype Dimensions](../architecture/03-archetype-dimensions.md) chapter formalizes exactly this: the agency dimension of an archetype expresses how much discretion the system is authorized to exercise.
+The [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) chapter formalizes exactly this: the agency dimension of an archetype expresses how much discretion the system is authorized to exercise.
 
 ---
 
@@ -85,10 +85,10 @@ After applying this pattern:
 
 **This pattern enables:**
 - [When Power Scales Faster Than Judgment](05-when-power-scales-faster-than-judgment.md)
-- [Agency, Autonomy, and Responsibility](../theory/03-agency-autonomy-responsibility.md)
-- [Reversibility as a Design Dimension](../theory/04-reversibility-as-design-dimension.md)
-- [Archetype Dimensions](../architecture/03-archetype-dimensions.md)
-- [Human Oversight Models](../agents/06-human-oversight-models.md)
+- [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md)
+- [Design for Reversibility](../theory/04-reversibility-as-design-dimension.md)
+- [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md)
+- [Proportional Oversight](../agents/06-human-oversight-models.md)
 
 ---
 

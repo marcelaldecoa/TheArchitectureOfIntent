@@ -1,4 +1,4 @@
-# Pattern 5.1 — What Agents Are (and Are Not)
+﻿# Pattern 5.1 — Agents Defined by Structure
 
 **Part V: Agents & Execution** · *1 of 7*
 
@@ -114,18 +114,18 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [What Is Intent Engineering?](../theory/01-what-is-intent-engineering.md)
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Intent Engineering as a Discipline?](../theory/01-what-is-intent-engineering.md)
+- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
 - [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)
 
 **This pattern enables:**
-- [Operational Autonomy vs. Genuine Agency](02-autonomy-vs-agency.md)
-- [Agents as Executors of Intent](03-agents-as-executors.md)
-- [Human Oversight Models](06-human-oversight-models.md)
-- [Failure Modes in Agent Systems](07-failure-modes.md)
+- [Autonomy Without Agency](02-autonomy-vs-agency.md)
+- [The Executor Model](03-agents-as-executors.md)
+- [Proportional Oversight](06-human-oversight-models.md)
+- [Six Failure Categories](07-failure-modes.md)
 
 ---
 
-*Next: [Operational Autonomy vs. Genuine Agency](02-autonomy-vs-agency.md)*
+*Next: [Autonomy Without Agency](02-autonomy-vs-agency.md)*
 
 
