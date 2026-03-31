@@ -1,6 +1,6 @@
-﻿# Pattern 7.3 — Delegated Definition Authority
+# Delegated Definition Authority
 
-**Part VII: Operating the System** · *3 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -133,7 +133,3 @@ After applying this pattern:
 - Organizational authority framework for AI deployment
 
 ---
-
-*Next: [Proportional Governance](04-governance.md)*
-
-

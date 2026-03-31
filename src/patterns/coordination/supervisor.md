@@ -1,4 +1,4 @@
-﻿# Supervisor Agent
+# Supervisor Agent
 
 ---
 
@@ -18,6 +18,15 @@ Individual agents validate their own output against their own spec. But cross-ag
 
 ---
 
+## Forces
+
+- **Individual autonomy vs. system coherence**: Each agent must be autonomous to execute efficiently. But full autonomy means agents don't coordinate. Cross-agent consistency requires some form of coordination layer.
+- **Supervisor bottleneck**: The supervisor reads all worker outputs and validates them. If workers run in parallel and produce large outputs, the supervisor becomes the bottleneck in the pipeline.
+- **Feedback loop latency**: When the supervisor detects inconsistency, requesting correction from workers adds a round-trip delay. For latency-critical pipelines, this is expensive.
+- **Authority ambiguity**: When the supervisor detects an inconsistency, who decides the resolution? If the supervisor corrects it, it has become a worker. If it escalates, latency increases. The decision rule must be clear.
+
+---
+
 ## The Solution
 
 Deploy a **supervisor agent** (Orchestrator archetype) that monitors worker agents' outputs for cross-agent consistency and coordination failures.
@@ -28,6 +37,14 @@ Deploy a **supervisor agent** (Orchestrator archetype) that monitors worker agen
 2. **Intervention on coordination failure.** When the supervisor detects inconsistency, it can: request correction from specific workers (with the inconsistency report as feedback), halt the pipeline, or escalate.
 3. **System-level constraint enforcement.** Constraints that span multiple agents — total cost budget, aggregate output size limits, cross-module API consistency — are the supervisor's responsibility.
 4. **The supervisor does not do the work.** It monitors and coordinates. If it starts producing content, it has drifted from Orchestrator into Executor and needs archetype re-evaluation.
+
+**Example:** A code generation system spawns three worker agents in parallel — AuthAgent (generates auth module), PaymentAgent (generates payment module), APIAgent (generates API definitions). Worker specs are independent; they don't know about each other.
+Supervisor checks:
+- All three agents use the same error code schema ("error_code": "AUTH_EXPIRED" vs. "expired_auth")?
+- API definitions reference auth and payment endpoints correctly?
+- No duplicate endpoints defined by multiple agents?
+- Total generated files < 100 (cost constraint)?
+If APIAgent and AuthAgent define conflicting user types, supervisor requests correction from APIAgent with the report: "User type in api.py conflicts with auth.py. Please reconcile."
 
 ---
 

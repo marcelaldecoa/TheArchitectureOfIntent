@@ -1,6 +1,6 @@
-﻿# Pattern 4.5 — Writing for Machine Execution
+# Writing for Machine Execution
 
-**Part IV: Spec-Driven Development** · *5 of 7*
+**Specification**
 
 ---
 
@@ -206,7 +206,3 @@ After applying this pattern:
 - [Spec Template Library](../repertoires/03-spec-template-library.md)
 
 ---
-
-*Next: [The Living Spec](06-living-specs.md)*
-
-

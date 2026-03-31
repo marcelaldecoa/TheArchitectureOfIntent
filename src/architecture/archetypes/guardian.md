@@ -1,6 +1,6 @@
 ﻿# The Guardian Archetype
 
-**Part III: Intent Architecture** · *Archetype Deep Dive 3 of 5*
+**Governance & Architecture**
 
 ---
 

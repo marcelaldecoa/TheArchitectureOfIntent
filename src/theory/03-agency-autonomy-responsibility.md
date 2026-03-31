@@ -1,6 +1,6 @@
-﻿# Pattern 2.3 — Three Dimensions of Delegation
+# Three Dimensions of Delegation
 
-**Part II: Theory of Intent Engineering** · *3 of 6*
+**Foundations**
 
 ---
 
@@ -143,6 +143,3 @@ After applying this pattern:
 - [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — responsibility structures in governance
 
 ---
-
-*Next: [Design for Reversibility](04-reversibility-as-design-dimension.md)*
-

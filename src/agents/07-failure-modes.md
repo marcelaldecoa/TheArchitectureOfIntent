@@ -1,6 +1,6 @@
-﻿# Pattern 5.7 — Six Failure Categories
+# Six Failure Categories
 
-**Part V: Agents & Execution** · *7 of 7*
+**Agents**
 
 ---
 
@@ -204,7 +204,7 @@ After applying this pattern:
 
 ## Therefore
 
-> **Agent failures fall into five categories — spec, capability, scope creep, oversight, and compounding — each with a distinct mechanism, a specific architectural fix, and a different lesson for the systems that follow. The diagnostic discipline is correct attribution: failures attributed to "the AI" are unactionable; failures attributed to their architectural category are fixable, and the fixes are durable. A well-run agent practice treats every failure as a precise signal pointing at the assumption that was wrong, and corrects that assumption in a versioned artifact that improves every future execution in that domain.**
+> **Agent failures fall into six categories — spec, capability, scope creep, oversight, compounding, and model-level — each with a distinct mechanism, a specific architectural fix, and a different lesson for the systems that follow. The diagnostic discipline is correct attribution: failures attributed to "the AI" are unactionable; failures attributed to their architectural category are fixable, and the fixes are durable. A well-run agent practice treats every failure as a precise signal pointing at the assumption that was wrong, and corrects that assumption in a versioned artifact that improves every future execution in that domain.**
 
 ---
 

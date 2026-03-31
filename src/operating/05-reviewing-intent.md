@@ -1,6 +1,6 @@
-﻿# Pattern 7.5 — Intent Review Before Output Review
+# Intent Review Before Output Review
 
-**Part VII: Operating the System** · *5 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -157,7 +157,3 @@ After applying this pattern:
 - Team spec quality development over time
 
 ---
-
-*Next: [Four Signal Metrics](06-metrics.md)*
-
-

@@ -1,6 +1,6 @@
-﻿# Pattern 7.6 — Four Signal Metrics
+# Four Signal Metrics
 
-**Part VII: Operating the System** · *6 of 6*
+**Governance & Architecture**
 
 ---
 

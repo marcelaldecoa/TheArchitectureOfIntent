@@ -1,6 +1,6 @@
-﻿# Pattern 4.6 — The Living Spec
+# The Living Spec
 
-**Part IV: Spec-Driven Development** · *6 of 7*
+**Specification**
 
 ---
 
@@ -176,7 +176,3 @@ After applying this pattern:
 - [Governed Archetype Evolution](../architecture/06-evolving-archetypes.md) — the same feedback principle applied to archetype classification
 
 ---
-
-*Next: [The Canonical Spec Template](07-canonical-spec-template.md)*
-
-

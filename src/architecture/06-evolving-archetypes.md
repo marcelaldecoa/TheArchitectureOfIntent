@@ -1,6 +1,6 @@
-﻿# Pattern 3.6 — Governed Archetype Evolution
+# Governed Archetype Evolution
 
-**Part III: Intent Architecture** · *6 of 6*
+**Governance & Architecture**
 
 ---
 

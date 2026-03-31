@@ -1,6 +1,6 @@
-﻿# Pattern 3.1 — Constitutional Archetypes
+# Constitutional Archetypes
 
-**Part III: Intent Architecture** · *1 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -19,6 +19,8 @@ The problem is not that experienced practitioners don't know how to design good 
 Archetypes are the solution. They are the mechanism by which accumulated judgment becomes **encoded law**: persistent, transferable, and enforceable without requiring a senior practitioner to be in the room.
 
 This chapter establishes why archetypes should be understood as **constitutional** structures — not stylistic suggestions, not best practices, not guidelines. Constitutional law.
+
+**A note on enforcement.** The constitutional analogy is deliberate and useful, but it has a limit worth naming. Real constitutional law has enforcement mechanisms: courts, judicial review, separation of powers. Archetypes, as described here, are enforced through organizational discipline — spec review processes, governance cadences, authority matrices — not through technical mechanisms that prevent violations at runtime. An agent system can technically take actions outside its declared archetype; nothing in the runtime prevents it. The enforcement is procedural and social. This is not a weakness to be apologized for — it is the same model by which most organizational governance operates. But it means that archetypes are only as strong as the review and oversight practices that surround them. The governance calendar and spec approval processes in Part VII exist precisely to make this enforcement operational.
 
 ---
 
@@ -157,6 +159,3 @@ After applying this pattern:
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — the reference library
 
 ---
-
-*Next: [The Five Archetypes](02-canonical-intent-archetypes.md)*
-

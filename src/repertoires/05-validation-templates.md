@@ -1,6 +1,6 @@
 ﻿# Validation & Acceptance Templates
 
-**Part VI: Standards & Repertoires** · *5 of 5*
+**Repertoire & Reference**
 
 ---
 

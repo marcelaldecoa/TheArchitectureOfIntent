@@ -1,6 +1,6 @@
-﻿# Pattern 4.7 — The Canonical Spec Template
+# The Canonical Spec Template
 
-**Part IV: Spec-Driven Development** · *7 of 7*
+**Specification**
 
 ---
 

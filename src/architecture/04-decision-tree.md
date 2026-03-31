@@ -1,6 +1,6 @@
-﻿# Pattern 3.4 — The Archetype Selection Tree
+# The Archetype Selection Tree
 
-**Part III: Intent Architecture** · *4 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -202,6 +202,3 @@ After applying this pattern:
 - [SpecKit](../sdd/04-speckit.md) — SpecKit's archetype integration
 
 ---
-
-*Next: [Archetype Composition](05-composing-archetypes.md)*
-

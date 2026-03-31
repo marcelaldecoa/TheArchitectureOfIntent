@@ -1,6 +1,6 @@
 ﻿# The Spec Template Library
 
-**Part VI: Standards & Repertoires** · *3 of 5*
+**Repertoire & Reference**
 
 ---
 
@@ -125,7 +125,3 @@ After applying this pattern:
 - [Standards as Agent Skill Source](04-code-standards.md)
 
 ---
-
-*Next: [Feature Spec Template →](templates/feature-spec.md)*
-
-

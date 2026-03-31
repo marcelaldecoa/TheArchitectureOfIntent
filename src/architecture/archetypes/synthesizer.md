@@ -1,6 +1,6 @@
 ﻿# The Synthesizer Archetype
 
-**Part III: Intent Architecture** · *Archetype Deep Dive 4 of 5*
+**Governance & Architecture**
 
 ---
 

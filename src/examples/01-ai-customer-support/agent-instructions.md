@@ -1,6 +1,6 @@
 # Agent Instructions
 
-**Part VIII: Example 1 — AI Customer Support** · *Step 3 of 5*
+**Applied Examples**
 
 ---
 

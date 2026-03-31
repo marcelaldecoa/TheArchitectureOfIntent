@@ -1,6 +1,6 @@
-﻿# Pattern 2.6 — The Moral Weight of Specification
+# The Moral Weight of Specification
 
-**Part II: Theory of Intent Engineering** · *6 of 6*
+**Foundations**
 
 ---
 

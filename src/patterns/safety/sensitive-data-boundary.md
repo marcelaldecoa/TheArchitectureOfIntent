@@ -1,4 +1,4 @@
-﻿# Sensitive Data Boundary
+# Sensitive Data Boundary
 
 ---
 
@@ -18,6 +18,15 @@ Without declared data boundaries, agents treat all data uniformly. A customer's 
 
 ---
 
+## Forces
+
+- **Data necessity vs. protection trade-off**: The agent needs access to sensitive data to perform its job. Locking it down too tightly cripples the agent; allowing free access creates leakage risk.
+- **Classification overhead**: Every data element must be tagged and every tool must enforce classification rules. This adds operational burden and complexity.
+- **Tool integration friction**: Third-party tools don't know about the agent's data classification scheme. Sanitizing output from external tools is manual and error-prone.
+- **Memory paradox**: Long-term memory is valuable for agent continuity, but storing sensitive data violates classification. Rules must define what can be remembered without exposing raw values.
+
+---
+
 ## The Solution
 
 Declare **data classification in the spec** and enforce handling rules per classification level.
@@ -30,6 +39,23 @@ Declare **data classification in the spec** and enforce handling rules per class
    - **Restricted (credentials, health)** — never logged. Never stored in agent memory. Accessed only through authorized tools with minimal exposure.
 3. **Tool-level enforcement.** Tools that handle sensitive data enforce classification: they accept classified fields, process them, and return results without exposing raw values.
 4. **Memory exclusion.** Long-term memory storage respects classification. The agent may remember "the customer has a refund history" but not the specific credit card number used.
+
+**Example:** A financial advisory agent handles customer data:
+- **Public**: Customer name, account type, investment goals → logged fully, stored in memory
+- **Internal**: Account balance, transaction history → logged in summary ("customer viewed high-volatility portfolio"), never transmitted outside system
+- **Confidential**: Social Security number, home address → never logged; accessed only via tools that return redacted results (tool returns "verified" not the SSN itself)
+- **Restricted**: Login credentials, 2FA secrets → never logged, never stored in memory; accessed only via credential vault service that returns "authenticated" without exposing the secret
+
+The agent's memory stores: "Customer optimizing for tax efficiency with restricted budget," but not: "Customer SSN 123-45-6789, credit card 4111-1111-1111-1111."
+
+---
+
+## Resulting Context
+
+- **Data exposure is bounded by classification rules.** Logs and memory comply with declared constraints; sensitive data cannot appear in unintended places.
+- **Compliance is auditable.** The spec declares handling rules; logs and memory accesses can be audited for compliance.
+- **Tool integration is explicit.** Tools that handle sensitive data are declared in the spec; tools that don't need it are never exposed to it.
+- **Secret rotation is simplified.** Credentials are never stored in agent memory, so password changes don't require memory scrubbing.
 
 ---
 

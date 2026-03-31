@@ -1,6 +1,6 @@
-# Pattern 1.2 — The Orchestrator's Discipline
+# The Orchestrator's Discipline
 
-**Part I: Foundations** — *Pattern 2 of 6*
+**Foundations**
 
 ---
 
@@ -144,5 +144,3 @@ After applying this pattern:
 - [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) — the practice of writing briefs for machine collaborators
 
 ---
-
-*Next: [Authorship in Software](03-authorship-in-software.md)*

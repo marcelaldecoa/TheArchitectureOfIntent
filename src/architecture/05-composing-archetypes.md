@@ -1,6 +1,6 @@
-﻿# Pattern 3.5 — Archetype Composition
+# Archetype Composition
 
-**Part III: Intent Architecture** · *5 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -206,6 +206,3 @@ After applying this pattern:
 - Each archetype deep-dive: [Advisor](archetypes/advisor.md), [Executor](archetypes/executor.md), [Guardian](archetypes/guardian.md), [Synthesizer](archetypes/synthesizer.md), [Orchestrator](archetypes/orchestrator.md)
 
 ---
-
-*Next: [Governed Archetype Evolution](06-evolving-archetypes.md)*
-

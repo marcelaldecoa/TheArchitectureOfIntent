@@ -1,6 +1,6 @@
-﻿# Pattern 2.5 — Failure as Diagnostic Signal
+# Failure as Diagnostic Signal
 
-**Part II: Theory of Intent Engineering** · *5 of 6*
+**Foundations**
 
 ---
 
@@ -188,6 +188,3 @@ After applying this pattern:
 - [Four Signal Metrics](../operating/06-metrics.md) — measuring spec quality through failure signal
 
 ---
-
-*Next: [The Moral Weight of Specification](06-why-specs-are-moral-artifacts.md)*
-

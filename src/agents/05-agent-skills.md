@@ -1,6 +1,6 @@
-﻿# Pattern 5.5 — Portable Domain Knowledge
+# Portable Domain Knowledge
 
-**Part V: Agents & Execution** · *5 of 7*
+**Agents**
 
 ---
 
@@ -93,7 +93,7 @@ This skill contains no tools and no task-specific instructions. It contains the 
 
 ### The Open Standard
 
-Agent Skills are an open standard, originated by Anthropic and formalized at [agentskills.io](https://agentskills.io). The standard is deliberately minimal — a `SKILL.md` file with YAML frontmatter is all that is required. This simplicity is intentional: the standard spreads because any team can adopt it without tooling investment.
+Agent Skills are an emerging open standard, adopted across multiple AI platforms and formalized in community practice. The standard is deliberately minimal — a `SKILL.md` file with YAML frontmatter is all that is required. This simplicity is intentional: the standard spreads because any team can adopt it without tooling investment. The specific origins and governance of the standard continue to evolve; verify current details against platform documentation.
 
 As of early 2026, the standard is supported by a growing ecosystem. Specific platform support evolves rapidly; verify current capabilities against each platform's documentation:
 
@@ -201,6 +201,3 @@ After applying this pattern:
 - The organizational skills library as a governance artifact
 
 ---
-
-*Next: [Proportional Oversight](06-human-oversight-models.md)*
-

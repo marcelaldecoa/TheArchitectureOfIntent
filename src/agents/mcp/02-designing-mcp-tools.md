@@ -1,6 +1,6 @@
 ﻿# Designing MCP Tools for Intent
 
-**Part V: Agents & Execution — MCP** · *MCP 2 of 3*
+**Integration & Tools**
 
 ---
 
@@ -160,7 +160,3 @@ After applying this pattern:
 - [Portable Domain Knowledge](../05-agent-skills.md)
 
 ---
-
-*Next: [MCP Tool Safety and Constraints](03-mcp-safety.md)*
-
-

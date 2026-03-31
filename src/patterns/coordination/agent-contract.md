@@ -1,4 +1,4 @@
-﻿# Agent-to-Agent Contract
+# Agent-to-Agent Contract
 
 ---
 
@@ -18,6 +18,15 @@ Without a declared contract, Agent A's output shape drifts over time, and Agent 
 
 ---
 
+## Forces
+
+- **Evolution creates drift**: As requirements change, agents are updated. Without a contract, Agent A's output shape drifts without Agent B's knowledge.
+- **Silent failures hide the mismatch**: Agent B might accept unexpected input gracefully (ignoring unknown fields) or crash. Silent acceptance is worse — B processes incorrect data without knowing it.
+- **Contract enforcement has overhead**: Validating every handoff adds latency. For high-throughput pipelines, validation cost is significant.
+- **Versioning and backward compatibility**: When the contract changes, should Agent B still accept old versions of Agent A's output? How many versions back? The versioning strategy must be clear.
+
+---
+
 ## The Solution
 
 Declare an **explicit contract** between agents — a versioned schema that specifies what one agent produces and what the next agent expects.
@@ -29,6 +38,38 @@ Declare an **explicit contract** between agents — a versioned schema that spec
 3. **Contract validation at handoff.** The pipeline validates Agent A's output against the contract before passing it to Agent B. Contract violations halt the pipeline with a structured error, not a downstream crash.
 4. **Contract versioning.** When the contract changes, both agents must be updated. Breaking changes require coordination. The contract version is logged with every handoff.
 5. **Example payloads.** At least one example of valid contract data, used for testing and documentation.
+
+**Example:** Agent A generates a feature specification; Agent B implements the feature.
+
+**Contract v1.0:**
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["feature_name", "acceptance_criteria", "priority"],
+  "properties": {
+    "feature_name": {"type": "string"},
+    "description": {"type": "string"},
+    "acceptance_criteria": {"type": "array", "items": {"type": "string"}},
+    "priority": {"enum": ["low", "medium", "high"]},
+    "estimated_hours": {"type": "number"}
+  }
+}
+```
+
+Agent A produces:
+```json
+{
+  "feature_name": "User login with OAuth",
+  "description": "Support OAuth login flow",
+  "acceptance_criteria": ["User can login with GitHub", "Session persists"],
+  "priority": "high",
+  "estimated_hours": 8,
+  "contract_version": "1.0"
+}
+```
+
+Agent B validates against contract v1.0 before consuming. If Agent A produces missing `priority` field, validation fails immediately with "Missing required field: priority". The error is caught at the handoff, not three agents downstream.
 
 ---
 

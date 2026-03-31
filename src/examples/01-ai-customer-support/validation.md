@@ -1,6 +1,6 @@
 # Validating Outcomes
 
-**Part VIII: Example 1 — AI Customer Support** · *Step 4 of 5*
+**Applied Examples**
 
 ---
 

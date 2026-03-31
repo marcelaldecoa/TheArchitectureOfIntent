@@ -1,6 +1,6 @@
-﻿# Pattern 4.1 — Spec-Driven Development
+# Spec-Driven Development
 
-**Part IV: Spec-Driven Development** · *1 of 7*
+**Specification**
 
 ---
 
@@ -134,7 +134,3 @@ After applying this pattern:
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 
 ---
-
-*Next: [The Spec as Control Surface](02-specs-as-control-surfaces.md)*
-
-

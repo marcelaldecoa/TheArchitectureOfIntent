@@ -1,6 +1,6 @@
-﻿# Pattern 3.3 — Four Dimensions of Governance
+# Four Dimensions of Governance
 
-**Part III: Intent Architecture** · *3 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -147,6 +147,8 @@ Applying all four dimensions to the five archetypes produces their canonical gov
 | **Advisor** | 1–2 | Low | Monitoring | Fully reversible |
 | **Executor** | 3–4 | Medium–High | Model D (scope gate) | Partially–Irreversible |
 | **Guardian** | 2 (veto only) | Low (when operating) | Monitoring + alert | Depends on what it guards |
+
+**A note on the Guardian's agency level.** The Guardian shares a numeric agency level (2) with an Advisor at level 2, but the *kind* of discretion is qualitatively different. An Advisor at level 2 chooses among pre-enumerated presentation options — its discretion is compositional. A Guardian at level 2 exercises *veto discretion*: the authority to block, halt, or reject actions that violate constraints. Veto power is a categorically different capability from selection among options, even though both sit at level 2 on the numeric scale. The label "veto only" is essential — it signals that the Guardian's agency is directionally negative (it prevents, rather than initiates) and narrower than a general level-2 system.
 | **Synthesizer** | 3 | Low–Medium | Periodic review or Output gate | Largely reversible |
 | **Orchestrator** | 4–5 | High | Model C or D + escalation | Irreversible (coordinates irreversible agents) |
 
@@ -201,6 +203,3 @@ After applying this pattern:
 - [Proportional Oversight](../agents/06-human-oversight-models.md) — implementing the four oversight models
 
 ---
-
-*Next: [The Archetype Selection Tree](04-decision-tree.md)*
-

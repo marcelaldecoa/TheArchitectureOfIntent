@@ -1,6 +1,6 @@
-﻿# Pattern 4.3 — Five Phases of the Spec
+# Five Phases of the Spec
 
-**Part IV: Spec-Driven Development** · *3 of 7*
+**Specification**
 
 ---
 
@@ -217,7 +217,3 @@ After applying this pattern:
 - [The Canonical Spec Template](07-canonical-spec-template.md)
 
 ---
-
-*Next: [SpecKit](04-speckit.md)*
-
-

@@ -1,6 +1,6 @@
 ﻿# Code Standards for TypeScript / Node
 
-**Part VI: Code Standards** · *Standard 2*
+**Repertoire & Reference**
 
 ---
 

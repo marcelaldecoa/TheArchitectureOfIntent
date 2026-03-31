@@ -1,6 +1,6 @@
-﻿# Pattern 4.4 — SpecKit
+# SpecKit
 
-**Part IV: Spec-Driven Development** · *4 of 7*
+**Specification**
 
 ---
 
@@ -12,7 +12,7 @@
 
 You are implementing Spec-Driven Development on a team that uses AI coding assistants — GitHub Copilot or similar. You want the SDD lifecycle to happen in the same environment where code is written, not in a separate document management system. You want the spec to live next to the code.
 
-SpecKit is a concrete, opinionated implementation of SDD designed for that environment. This pattern explains how SpecKit aligns with the Architecture of Intent, where it fits in the lifecycle, and what its use reveals that raw SDD practice often obscures.
+SpecKit is a concrete, opinionated implementation of SDD designed for that environment. This chapter describes the **Embedded Spec Tooling** pattern — the recurring need to integrate the spec lifecycle into the development environment — and uses SpecKit as the reference implementation. The pattern is: *a tool that embeds the spec lifecycle into the same workspace where code is written, making specification a first-class step in the development flow rather than a separate documentation activity*. SpecKit is one such tool; others may serve the same pattern differently.
 
 This pattern assumes [The Spec Lifecycle](03-spec-lifecycle.md) and all preceding patterns.
 
@@ -177,7 +177,3 @@ After applying this pattern:
 **External reference:** [github/spec-kit](https://github.com/github/spec-kit) *(verify current availability — tooling evolves rapidly)*
 
 ---
-
-*Next: [Writing for Machine Execution](05-writing-specs-for-agents.md)*
-
-

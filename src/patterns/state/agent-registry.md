@@ -1,4 +1,4 @@
-﻿# Agent Registry
+# Agent Registry
 
 ---
 
@@ -15,6 +15,17 @@ An organization has multiple agent deployments — customer support agents, code
 ## Problem
 
 Without a registry, the organization cannot answer basic questions: How many agents do we have? Which ones have write access to production systems? Which ones were last reviewed more than six months ago? Duplicate agents are deployed for the same function. Governance reviews cannot enumerate the systems under governance.
+
+**Concrete scenario:** A mid-size fintech company. Engineering deploys "MarketAnalysis-v1" (autonomy archetype, read-only). Two months later, the Data team deploys "MarketWatch" (autonomous archetype, write access to recommendations database) to run the same function. Neither team knows about the other. Six months goes by with both running in production. An audit finds two agents doing the same job with different governance oversight. The Data team's agent has never been reviewed. The Engineering team doesn't know MarketWatch exists. The company cannot answer: "How many agents have production write access?"
+
+---
+
+## Forces
+
+- **Need visibility into agent fleet** vs. **overhead of registry maintenance** (who keeps it current?)
+- **Need to prevent duplication** vs. **freedom for teams to deploy independently** (registry becomes a bottleneck)
+- **Need to enforce governance compliance** vs. **ease of deployment** (registry becomes friction)
+- **Need to track agent lineage** (owner, creation date) vs. **privacy/autonomy** (teams don't want to be audited constantly)
 
 ---
 
@@ -33,6 +44,46 @@ Maintain a **discoverable agent registry** — a catalog of all deployed agent s
 - Escalation path
 
 The registry is the organizational view of the agent fleet. It is maintained alongside the archetype catalog and updated when agents are deployed, modified, or retired.
+
+**Example:** The fintech company implements a registry at `governance.internal/agents/`:
+```
+{
+  "agents": [
+    {
+      "id": "market-analysis-v1",
+      "name": "Market Analysis (Engineering)",
+      "archetype": "autonomy:read_only",
+      "spec_version": "market-analysis/v2.3.1",
+      "owner": {"team": "Engineering", "contact": "eng-leads@company.com"},
+      "status": "active",
+      "last_review": "2026-02-15",
+      "tools_used": ["data:read", "api:market_data"],
+      "escalation": "eng-sre@company.com"
+    },
+    {
+      "id": "market-watch",
+      "name": "Market Watch (Data Team)",
+      "archetype": "autonomy:read_write",
+      "spec_version": "market-watch/v1.0.0",
+      "owner": {"team": "Data", "contact": "data-leads@company.com"},
+      "status": "active",
+      "last_review": null,
+      "tools_used": ["data:read", "database:write", "api:market_data"],
+      "escalation": "data-sre@company.com"
+    }
+  ]
+}
+```
+Query: "Which agents have database write access?" → Returns market-watch. "Which agents haven't been reviewed in 6 months?" → Returns market-watch. Governance team schedules a review. When a new agent is proposed, the team checks registry first: "Market analysis already exists — propose consolidation or a different function."
+
+---
+
+## Resulting Context
+
+- **Duplication is visible and preventable** — teams can see what already exists before deploying
+- **Governance is fleet-wide** — compliance checks can query all agents systematically
+- **Ownership is clear** — every agent has a designated owner and escalation path
+- **Risk is quantified** — how many write-access agents? How many overdue for review?
 
 ---
 

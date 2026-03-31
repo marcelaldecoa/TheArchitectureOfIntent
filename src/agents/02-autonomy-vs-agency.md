@@ -1,6 +1,6 @@
-﻿# Pattern 5.2 — Autonomy Without Agency
+# Autonomy Without Agency
 
-**Part V: Agents & Execution** · *2 of 7*
+**Agents**
 
 ---
 
@@ -75,10 +75,12 @@ The archetypes from Part III map onto this spectrum:
 | Archetype | Typical Autonomy Level |
 |-----------|----------------------|
 | Advisor | 0–1 |
-| Executor | 1–2 |
+| Executor | 2–4 |
 | Guardian | 2–3 |
 | Synthesizer | 2–3 |
 | Orchestrator | 3–4 |
+
+**Note on autonomy vs. agency:** This table describes *operational autonomy* — how independently the system runs between human checkpoints. It is distinct from the *agency level* in the [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md), which describes *discretionary scope* — how much latitude the system has in deciding how to act. An Executor typically operates at Agency Level 3–4 (bounded to substantial discretion in how it accomplishes tasks) but may run at different autonomy levels depending on deployment maturity: a new Executor might be checkpointed (Autonomy 2), while a mature Executor with a proven spec runs in bounded autonomous mode (Autonomy 4). The two scales are independent design variables.
 
 ### Genuine Agency: Why Current Agents Don't Have It
 
@@ -134,7 +136,3 @@ After applying this pattern:
 - [Six Failure Categories](07-failure-modes.md)
 
 ---
-
-*Next: [The Executor Model](03-agents-as-executors.md)*
-
-

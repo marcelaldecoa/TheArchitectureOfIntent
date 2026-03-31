@@ -1,6 +1,6 @@
 ﻿# MCP Tool Safety and Constraints
 
-**Part V: Agents & Execution — MCP** · *MCP 3 of 3*
+**Integration & Tools**
 
 ---
 
@@ -143,7 +143,3 @@ After applying this pattern:
 - [The Canonical Spec Template — Sections 8 and 12](../../sdd/07-canonical-spec-template.md)
 
 ---
-
-*Next: [Portable Domain Knowledge](../05-agent-skills.md)*
-
-

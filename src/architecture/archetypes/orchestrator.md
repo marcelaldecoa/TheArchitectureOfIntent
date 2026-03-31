@@ -1,6 +1,6 @@
 ﻿# The Orchestrator Archetype
 
-**Part III: Intent Architecture** · *Archetype Deep Dive 5 of 5*
+**Governance & Architecture**
 
 ---
 

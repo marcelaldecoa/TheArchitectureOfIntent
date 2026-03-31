@@ -1,6 +1,6 @@
 ﻿# The Model Context Protocol
 
-**Part V: Agents & Execution — MCP** · *MCP 1 of 3*
+**Integration & Tools**
 
 ---
 
@@ -143,7 +143,3 @@ After applying this pattern:
 - [The Canonical Spec Template — Section 12](../../sdd/07-canonical-spec-template.md)
 
 ---
-
-*Next: [Designing MCP Tools for Intent](02-designing-mcp-tools.md)*
-
-

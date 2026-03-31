@@ -1,6 +1,6 @@
 # Agent Instructions
 
-**Part VIII: Example 2 — Code Generation Pipeline** · *Step 3 of 4*
+**Applied Examples**
 
 ---
 

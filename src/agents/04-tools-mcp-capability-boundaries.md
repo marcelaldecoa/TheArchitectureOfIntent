@@ -1,6 +1,6 @@
-﻿# Pattern 5.4 — Least Capability
+# Least Capability
 
-**Part V: Agents & Execution** · *4 of 7*
+**Agents**
 
 ---
 
@@ -146,7 +146,3 @@ After applying this pattern:
 - [Proportional Oversight](06-human-oversight-models.md)
 
 ---
-
-*Next: [What Is MCP](mcp/01-what-is-mcp.md)*
-
-

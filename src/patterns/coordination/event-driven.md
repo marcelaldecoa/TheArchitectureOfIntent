@@ -1,4 +1,4 @@
-﻿# Event-Driven Agent Activation
+# Event-Driven Agent Activation
 
 ---
 
@@ -18,6 +18,15 @@ Continuously running agents consume resources even when idle. Polling-based agen
 
 ---
 
+## Forces
+
+- **Resource consumption vs. responsiveness**: Continuous execution uses resources but is maximally responsive. Event-driven execution saves resources but adds latency between event and response.
+- **Event system reliability**: The event trigger system itself becomes a critical dependency. If the event broker fails, agents don't activate. Monitoring the monitor adds complexity.
+- **Stale event handling**: What happens if an event is delivered late or out of order? If the event payload is stale, the agent's action may be based on outdated information.
+- **Concurrency under load**: If 100 events fire simultaneously, should the system queue them sequentially or process in parallel? Parallel processing requires isolation; sequential processing adds latency.
+
+---
+
 ## The Solution
 
 Bind the agent to **declared events** that trigger execution automatically.
@@ -29,6 +38,28 @@ Bind the agent to **declared events** that trigger execution automatically.
 3. **The agent executes its spec** against the event context, produces output, and terminates. It does not persist between events.
 4. **Concurrency is declared.** What happens if two events fire simultaneously? Sequential processing (queue) or parallel processing (with isolation).
 5. **Dead-letter handling.** Events that fail — the agent errors, the spec validation fails — go to a declared failure queue for review, not silent discard.
+
+**Example:** A code review agent activates on GitHub pull request events.
+
+Trigger: "When PR opened targeting branch:main and files match path:src/**"
+
+Spec injected with per-task context:
+```
+{
+  "pr_number": 3847,
+  "diff": "[complete file diff]",
+  "author": "alice@company.com",
+  "trigger_time": "2026-03-30T14:22:00Z"
+}
+```
+
+Agent executes: "Review the PR diff, check for security issues, code style, and test coverage. Post a review comment."
+
+Concurrency rule: "Sequential - queue PRs; process one at a time within 5 minutes of opening."
+
+Dead-letter: "If review fails or agent times out, the PR event goes to slack://code-review-failures channel for human review."
+
+When 5 PRs open simultaneously, they queue; each is reviewed within 5 minutes of opening. If a review fails, the operator is notified immediately (not silent discard).
 
 ---
 

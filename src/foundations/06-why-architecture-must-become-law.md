@@ -1,6 +1,6 @@
-# Pattern 1.6 — Architecture as Enforceable Law
+# Architecture as Enforceable Law
 
-**Part I: Foundations** — *Pattern 6 of 6*
+**Foundations**
 
 ---
 

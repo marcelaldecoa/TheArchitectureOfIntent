@@ -1,4 +1,4 @@
-﻿# Output Validation Gate
+# Output Validation Gate
 
 ---
 
@@ -18,6 +18,15 @@ Agent output looks correct more often than it is correct. Without validation, in
 
 ---
 
+## Forces
+
+- **Speed vs. quality gate latency**: Adding validation delays output. For latency-critical tasks, expensive semantic validation may be unacceptable. The tradeoff must be chosen per task.
+- **False positives in validation**: A Guardian agent might reject correct output that deviates from expected patterns. Conversely, a programmatic validator might miss subtle semantic errors. No gate is perfect.
+- **Consequence of rejection**: If validation rejects output, what happens? Retry with feedback? Escalate to human? Fail the task? The cost of rejection varies by task and affects gate threshold.
+- **Determining success criteria**: What does "correct" mean? The spec must define success criteria precisely. Ambiguous specs produce ambiguous validation.
+
+---
+
 ## The Solution
 
 Validate agent output **against the spec's success criteria before delivery**. Use the appropriate validation mechanism for the output type.
@@ -33,6 +42,20 @@ Validate agent output **against the spec's success criteria before delivery**. U
 - Low consequence, high volume → tier 1 (programmatic) is sufficient
 - Medium consequence → tiers 1+2 (programmatic + constraint check)
 - High consequence, irreversible → tiers 1+2+3 (add Guardian) or 1+2+4 (add human)
+
+**Example:** A code generation agent produces pull requests.
+- **Low-risk fixes** (tests, minor refactors): Tier 1 — Python AST validation (code is syntactically valid), no constraint check needed.
+- **Medium-risk changes** (API modifications, doc updates): Tier 1+2 — AST validation + constraint check ("does PR reference the issue number?" and "does it not modify database schema without approval?").
+- **High-risk changes** (permission system, payment logic): Tier 1+2+3 — AST validation + constraint check + Guardian agent that reviews architecture consistency and SQL query safety + human code review.
+
+---
+
+## Resulting Context
+
+- **Structural errors are caught immediately.** Tier 1 validation prevents malformed output from reaching downstream systems.
+- **Policy violations are caught before delivery.** Tier 2 constraint checking ensures spec compliance.
+- **Semantic quality is validated without human bottleneck.** Guardian validation (tier 3) provides semantic checking at machine speed.
+- **High-consequence output receives appropriate scrutiny.** The validation gate matches consequence: low-risk tasks are fast, high-risk tasks are slower but more reliable.
 
 ---
 

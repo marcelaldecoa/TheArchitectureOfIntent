@@ -1,4 +1,4 @@
-﻿# Rate Limiting and Throttle
+# Rate Limiting and Throttle
 
 ---
 
@@ -18,6 +18,15 @@ Without throttling, agents overwhelm downstream systems. Rate limit errors casca
 
 ---
 
+## Forces
+
+- **Agent speed vs. system capacity**: Agents process at millisecond scale; many downstream systems have rate limits measured in requests per minute.
+- **Retry loops amplify overflow**: When a downstream system rejects a request, naive retry logic generates even more traffic, pushing the system further into degradation.
+- **Human review throughput is not negotiable**: Even with the best intentions, a human can only review 5-10 items per hour carefully. Queuing 50+ items violates the spec's intent.
+- **Queuing vs. responsiveness**: Adding backpressure improves system health but increases latency for the requester. The tradeoff must be declared upfront.
+
+---
+
 ## The Solution
 
 Declare **rate limits and concurrency constraints** in the spec, matched to downstream system capacity.
@@ -26,6 +35,17 @@ Declare **rate limits and concurrency constraints** in the spec, matched to down
 2. **Pipeline concurrency limits.** "Maximum 3 parallel subtasks hitting the same MCP server." Enforced by the orchestrator.
 3. **Human review throughput.** "Maximum 5 items queued for human review per hour." If more items need review, they queue — they don't skip review.
 4. **Backpressure, not rejection.** When the limit is reached, the agent waits rather than failing. Unless waiting exceeds a declared timeout, in which case: escalate or fail.
+
+**Example:** A customer support agent processes refund requests. The billing API permits 10 calls/minute and takes 2-5 seconds per refund. The spec declares: "Maximum 6 concurrent refund calls. If queue depth exceeds 20 pending refunds, escalate to human override." At peak load, the agent queues excess requests rather than slamming the billing API or silently dropping refunds.
+
+---
+
+## Resulting Context
+
+- **Downstream systems remain healthy during spike loads.** Rate limiting prevents cascading failures in dependent services.
+- **Agent latency is predictable.** Requesters know the declared throughput; they don't face surprises when the agent queues.
+- **Retry storms are prevented.** The agent respects the limit rather than amplifying load through aggressive retries.
+- **Human review capacity is respected.** Review gates don't become rubber-stamp factories because items are queued, not accumulated in-memory.
 
 ---
 

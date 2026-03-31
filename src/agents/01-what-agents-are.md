@@ -1,6 +1,6 @@
-﻿# Pattern 5.1 — Agents Defined by Structure
+# Agents Defined by Structure
 
-**Part V: Agents & Execution** · *1 of 7*
+**Agents**
 
 ---
 
@@ -125,7 +125,3 @@ After applying this pattern:
 - [Six Failure Categories](07-failure-modes.md)
 
 ---
-
-*Next: [Autonomy Without Agency](02-autonomy-vs-agency.md)*
-
-

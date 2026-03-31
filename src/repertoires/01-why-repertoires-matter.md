@@ -1,6 +1,6 @@
-﻿# Pattern 6.1 — The Organizational Repertoire
+# The Organizational Repertoire
 
-**Part VI: Standards & Repertoires** · *1 of 5*
+**Repertoire & Reference**
 
 ---
 
@@ -132,7 +132,3 @@ After applying this pattern:
 - [Validation & Acceptance Templates](05-validation-templates.md)
 
 ---
-
-*Next: [The Intent Archetype Catalog](02-archetype-catalog.md)*
-
-

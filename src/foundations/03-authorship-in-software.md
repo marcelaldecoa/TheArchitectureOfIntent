@@ -1,6 +1,6 @@
-# Pattern 1.3 — Authorship Follows Intent
+# Authorship Follows Intent
 
-**Part I: Foundations** — *Pattern 3 of 6*
+**Foundations**
 
 ---
 
@@ -100,5 +100,3 @@ After applying this pattern:
 - [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — governance as authorship protection
 
 ---
-
-*Next: [Where Agency Resides](04-where-agency-resides.md)*

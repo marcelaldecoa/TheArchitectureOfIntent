@@ -1,6 +1,6 @@
 ﻿# The Executor Archetype
 
-**Part III: Intent Architecture** · *Archetype Deep Dive 2 of 5*
+**Governance & Architecture**
 
 ---
 

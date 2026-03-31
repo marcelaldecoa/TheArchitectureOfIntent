@@ -1,6 +1,6 @@
 ﻿# Code Standards for Python
 
-**Part VI: Code Standards** · *Standard 3*
+**Repertoire & Reference**
 
 ---
 

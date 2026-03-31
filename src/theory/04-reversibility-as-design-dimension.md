@@ -1,6 +1,6 @@
-﻿# Pattern 2.4 — Design for Reversibility
+# Design for Reversibility
 
-**Part II: Theory of Intent Engineering** · *4 of 6*
+**Foundations**
 
 ---
 
@@ -56,7 +56,7 @@ Reversibility is a spectrum with four practical zones:
 | **Largely reversible** | Action can be undone with some effort or partial side effects | Publishing a blog post (can be unpublished), creating a cloud resource (can be deleted, but billed) |
 | **Partially reversible** | Primary action can be reversed but side effects persist | Sending one email (can follow up, but first email was received), pushing code to a branch (can be reverted, but others may have seen it) |
 | **Irreversible** | Action cannot be meaningfully undone | Sending mass email, deleting production data without backup, making a financial transaction, revoking credentials |
-
+**Important: reversibility is contextual, not intrinsic.** The same action type can sit at different points on this spectrum depending on the infrastructure and operational context. A database write is largely reversible if you have point-in-time backups and a tested rollback procedure; it is effectively irreversible if you do not. A message sent to an internal Slack channel is partially reversible (you can delete it, though others may have seen it); the same message sent to an external customer mailing list is irreversible. When assessing reversibility for a spec, evaluate the action *as deployed in your specific environment*, not the action type in the abstract.
 ---
 
 ### The Risk Matrix
@@ -156,6 +156,3 @@ After applying this pattern:
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the "must never happen" and oversight sections
 
 ---
-
-*Next: [Failure as Diagnostic Signal](05-failure-as-design-signal.md)*
-

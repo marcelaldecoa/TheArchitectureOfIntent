@@ -1,6 +1,6 @@
-# Pattern 1.4 — Distributed Agency, Explicit Authority
+# Distributed Agency, Explicit Authority
 
-**Part I: Foundations** — *Pattern 4 of 6*
+**Foundations**
 
 ---
 
@@ -91,5 +91,3 @@ After applying this pattern:
 - [Proportional Oversight](../agents/06-human-oversight-models.md)
 
 ---
-
-*Next: [When Power Scales Faster Than Judgment](05-when-power-scales-faster-than-judgment.md)*

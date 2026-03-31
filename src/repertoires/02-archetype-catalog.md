@@ -1,6 +1,6 @@
 ﻿# The Intent Archetype Catalog
 
-**Part VI: Standards & Repertoires** · *2 of 5*
+**Repertoire & Reference**
 
 ---
 
@@ -235,7 +235,3 @@ After applying this pattern:
 - Org-specific archetype extension
 
 ---
-
-*Next: [Spec Template Library](03-spec-template-library.md)*
-
-

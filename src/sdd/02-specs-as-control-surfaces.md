@@ -1,6 +1,6 @@
-﻿# Pattern 4.2 — The Spec as Control Surface
+# The Spec as Control Surface
 
-**Part IV: Spec-Driven Development** · *2 of 7*
+**Specification**
 
 ---
 
@@ -159,7 +159,3 @@ After applying this pattern:
 - [The Living Spec](06-living-specs.md)
 
 ---
-
-*Next: [Five Phases of the Spec](03-spec-lifecycle.md)*
-
-

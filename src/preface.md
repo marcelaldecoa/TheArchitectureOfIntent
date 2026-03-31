@@ -69,6 +69,12 @@ Alexander wrote: *"Each pattern describes a problem which occurs over and over a
 
 That is the spirit in which everything in this book should be read.
 
+**An honest note on the spectrum between patterns and frameworks.** Not all material in this book sits at the same point on the pattern-to-framework spectrum. The Knowledge & Context patterns (system prompts, skills, RAG, context budget), the Integration patterns (tools, MCP servers, sandboxes), and the Coordination, Safety, Observability, Testing, and Deployment patterns are genuinely independent — you can adopt any of them without adopting the others. They are patterns in the fullest Alexandrian sense.
+
+The Archetype system (Parts III and VII) is different. The five archetypes, four governance dimensions, decision tree, composition rules, evolution governance, delegated authority model, governance calendar, and metrics system form an **integrated governance framework** — they depend on each other and work as a coherent whole. You can adopt the vocabulary without adopting the full system — calling a system "an Executor" is useful even without the formal governance process. But the full value requires operating the complete framework. This is a stronger claim than a pure pattern language makes, and it is honest to name it.
+
+The book presents both — independent patterns and an integrated framework — because the problem requires both. The individual patterns give you tools. The archetype framework gives you the governance structure that makes those tools safe at scale.
+
 ---
 
 ## The Living Nature of This Work

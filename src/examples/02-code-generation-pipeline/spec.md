@@ -1,6 +1,6 @@
 # Writing the Spec
 
-**Part VIII: Example 2 — Code Generation Pipeline** · *Step 2 of 4*
+**Applied Examples**
 
 ---
 

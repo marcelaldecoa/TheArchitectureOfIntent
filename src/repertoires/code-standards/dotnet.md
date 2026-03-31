@@ -1,6 +1,6 @@
 ﻿# Code Standards for .NET / C#
 
-**Part VI: Code Standards** · *Standard 1*
+**Repertoire & Reference**
 
 ---
 

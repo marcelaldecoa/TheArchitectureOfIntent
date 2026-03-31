@@ -1,6 +1,6 @@
-﻿# Pattern 6.4 — Standards as Agent Skill Source
+# Standards as Agent Skill Source
 
-**Part VI: Standards & Repertoires** · *4 of 5*
+**Repertoire & Reference**
 
 ---
 
@@ -128,7 +128,3 @@ After applying this pattern:
 - [Validation & Acceptance Templates](05-validation-templates.md)
 
 ---
-
-*Next: [Standards for .NET / C# →](code-standards/dotnet.md)*
-
-

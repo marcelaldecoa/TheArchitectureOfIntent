@@ -1,6 +1,6 @@
-﻿# Pattern 2.1 — Intent Engineering as a Discipline
+# Intent Engineering as a Discipline
 
-**Part II: Theory of Intent Engineering** · *1 of 6*
+**Foundations**
 
 ---
 
@@ -149,6 +149,3 @@ After applying this pattern:
 - [The Intent-Era Skill Matrix](../operating/01-skill-matrix.md) — what skills this discipline requires
 
 ---
-
-*Next: [The Intent-Implementation Boundary](02-intent-vs-implementation.md)*
-

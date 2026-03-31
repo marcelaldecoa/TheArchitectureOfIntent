@@ -1,6 +1,6 @@
-﻿# Pattern 7.4 — Proportional Governance
+# Proportional Governance
 
-**Part VII: Operating the System** · *4 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -159,7 +159,3 @@ After applying this pattern:
 - [Four Signal Metrics](06-metrics.md)
 
 ---
-
-*Next: [Intent Review Before Output Review](05-reviewing-intent.md)*
-
-

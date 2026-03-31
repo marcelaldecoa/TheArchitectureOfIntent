@@ -1,6 +1,6 @@
-﻿# Pattern 7.2 — The Intent Architect
+# The Intent Architect
 
-**Part VII: Operating the System** · *2 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -130,7 +130,3 @@ After applying this pattern:
 - [Intent Review Before Output Review](05-reviewing-intent.md)
 
 ---
-
-*Next: [Delegated Definition Authority](03-who-defines-archetypes.md)*
-
-

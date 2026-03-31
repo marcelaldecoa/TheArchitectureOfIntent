@@ -1,6 +1,6 @@
 ﻿# Code Standards for REST APIs
 
-**Part VI: Code Standards** · *Standard 4*
+**Repertoire & Reference**
 
 ---
 

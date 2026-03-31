@@ -1,6 +1,6 @@
 ﻿# Code Standards for Infrastructure as Code
 
-**Part VI: Code Standards** · *Standard 5*
+**Repertoire & Reference**
 
 ---
 

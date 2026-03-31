@@ -1,6 +1,6 @@
-﻿# Pattern 2.2 — The Intent-Implementation Boundary
+# The Intent–Implementation Boundary
 
-**Part II: Theory of Intent Engineering** · *2 of 6*
+**Foundations**
 
 ---
 
@@ -169,6 +169,3 @@ After applying this pattern:
 - [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — applying this distinction in review processes
 
 ---
-
-*Next: [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md)*
-

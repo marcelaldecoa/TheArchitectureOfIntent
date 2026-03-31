@@ -1,6 +1,6 @@
-# Pattern 1.5 — Judgment Encoded Before Power
+# Judgment Encoded Before Power
 
-**Part I: Foundations** — *Pattern 5 of 6*
+**Foundations**
 
 ---
 
@@ -102,5 +102,3 @@ After applying this pattern:
 - [Six Failure Categories](../agents/07-failure-modes.md)
 
 ---
-
-*Next: [Why Architecture Must Become Law](06-why-architecture-must-become-law.md)*

@@ -1,6 +1,6 @@
-﻿# Pattern 5.6 — Proportional Oversight
+# Proportional Oversight
 
-**Part V: Agents & Execution** · *6 of 7*
+**Agents**
 
 ---
 
@@ -45,52 +45,52 @@ The second problem is that "human oversight" is often understood as output revie
 
 ### The Four Oversight Models
 
-Building on the archetype framework's Oversight Model dimension, four patterns apply across agent deployments:
+Building on the archetype framework's Oversight Model dimension, four patterns apply across agent deployments. These use the same labels (A–D) defined in [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md):
 
-**Model A — Pre-authorized scope, post-execution review**
+**Model A — Monitoring**
 
-The human's oversight effort concentrates at two points: when the spec is approved (authorizing the agent's scope) and when the output is reviewed (validating that execution was within scope). During execution, no human attention is required.
+Human attention is triggered by anomalies or metrics, not by every output. The system runs continuously; humans review exceptions. During normal operation, no per-output human review occurs.
 
 This model is appropriate when:
 - The task is well-understood and has been executed successfully before
 - All actions taken are reversible or low-consequence
-- The spec is detailed enough that out-of-scope behavior would be obviously detectable in the output
+- Anomaly detection tooling is available to flag deviations in log patterns
 
-Typical archetypes: Advisor, Executor in mature deployments.
+Typical archetypes: Advisor, Guardian.
 
-**Model B — Checkpoint-based review**
+**Model B — Periodic Review**
 
-The agent executes in phases. At defined checkpoints — completing a phase, reaching a decision point, preparing to take an irreversible action — the agent pauses and presents its work for human review. The human approves, rejects, or adjusts before the next phase begins.
+Human reviews a sample of outputs on a scheduled cadence. The agent executes continuously; at defined intervals or milestones, the human reviews a representative set of outputs and can adjust course. Not real-time approval, but regular human checkpoints.
 
 This model is appropriate when:
 - The task spans multiple phases with qualitatively different outputs
 - Some phases produce artifacts that are expensive to redo if the direction is wrong
 - The total task is long enough that a final-output review would be expensive to fail
 
-Typical archetypes: Executor, Synthesizer.
+Typical archetypes: Synthesizer, Executor in established workflows.
 
 **Model B** also applies as a *risk-triggered* checkpoint: the agent pauses not on a schedule, but when it detects it is about to take an action with above-threshold consequence or irreversibility. The spec should declare what the threshold is and what "pause" means in context.
 
-**Model C — Monitored execution with interrupt capability**
+**Model C — Output Gate**
 
-The agent runs continuously, generating logs and structured status updates. The human does not review each step but can observe the stream and interrupt if something appears wrong. The human also reviews logs routinely — not on incident, but as a regular practice.
+Human reviews and approves (or rejects) before any output is released or acted upon. Real-time review. The agent generates output; the human decides whether it proceeds.
 
 This model is appropriate when:
-- The task involves many small actions whose individual inspection is impractical
-- The agent has been operating reliably for some time and the risk of each step is low
-- Anomaly detection tooling is available to flag deviations in log patterns
+- The task involves irreversible or high-consequence actions
+- The system is newly deployed and trust has not been established
+- Regulatory or policy requirements mandate pre-action approval
 
-Typical archetypes: Orchestrator, high-frequency Executor.
+Typical archetypes: Orchestrator, high-risk Executor deployments.
 
-**Model D — Exception-only escalation**
+**Model D — Pre-authorized Scope + Exception Gate**
 
-The agent operates fully autonomously within its pre-authorized scope and escalates to humans only when it encounters a situation outside its authority — an action that was not pre-authorized, an ambiguity the spec does not resolve, a resource it needs that was not available.
+Human defines the authorized scope in advance (the spec's constraint section). The system acts within scope without per-output review. Any action outside the pre-authorized scope must surface for human decision before executing. This is the most powerful production model — it enables high-velocity autonomous execution while preserving human authority at the boundaries.
 
 This model is appropriate when:
 - The agent has an extensive track record of reliable operation in this domain
 - The task domain is well-bounded and fully covered by the spec
 - A robust exception-handling path exists and is tested
-- The consequence of undetected errors is low enough to accept some failure rate
+- The consequence of undetected errors within scope is manageable
 
 Typical archetypes: Mature Executor deployments, bounded Orchestrators.
 
@@ -98,12 +98,12 @@ Typical archetypes: Mature Executor deployments, bounded Orchestrators.
 
 The selection framework depends on four variables:
 
-| Variable | Model A | Model B | Model C | Model D |
+| Variable | Model A (Monitoring) | Model B (Periodic Review) | Model C (Output Gate) | Model D (Pre-auth Scope) |
 |---|---|---|---|---|
-| Reversibility of actions | Fully reversible | Mixed | Mixed | Fully or mostly reversible |
-| Consequence of error | Low-medium | Medium-high | Medium | Low |
-| Task novelty | Familiar | Mixed | Familiar | Well-established |
-| Spec maturity | High | Medium | High | Very high |
+| Reversibility of actions | Fully reversible | Mixed | Low reversibility | Fully or mostly reversible |
+| Consequence of error | Low | Medium | Medium-high | Low-medium |
+| Task novelty | Familiar | Mixed | Novel or high-risk | Well-established |
+| Spec maturity | High | Medium | Medium | Very high |
 
 This is not a strict lookup — it is a set of considerations. When multiple variables point in different directions (high reversibility but high consequence), resolve conservatively: use the model that matches the most constraining variable.
 
@@ -182,7 +182,7 @@ After applying this pattern:
 
 ## Therefore
 
-> **Human oversight is a family of four models — pre-authorized scope review, checkpoint-based review, monitored execution, and exception-only escalation — each appropriate to different combinations of reversibility, consequence, task novelty, and spec maturity. The most consequential oversight moment in a spec-driven system is spec approval, not output review; approval at spec time makes every downstream oversight decision less expensive. Design oversight proportionally: where the cost of not watching exceeds the cost of watching.**
+> **Human oversight is a family of four models — monitoring, periodic review, output gate, and pre-authorized scope with exception gate — each appropriate to different combinations of reversibility, consequence, task novelty, and spec maturity. These correspond to Models A–D as defined in the archetype dimension framework. The most consequential oversight moment in a spec-driven system is spec approval, not output review; approval at spec time makes every downstream oversight decision less expensive. Design oversight proportionally: where the cost of not watching exceeds the cost of watching.**
 
 ---
 
@@ -199,7 +199,3 @@ After applying this pattern:
 - Governance, Escalation Design *(Part VII)*
 
 ---
-
-*Next: [Six Failure Categories](07-failure-modes.md)*
-
-

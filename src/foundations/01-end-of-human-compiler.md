@@ -1,6 +1,6 @@
-# Pattern 1.1 — Specification as the Primary Artifact
+# Specification as the Primary Artifact
 
-**Part I: Foundations** — *Pattern 1 of 6*
+**Foundations**
 
 ---
 
@@ -41,7 +41,7 @@ The whole edifice made sense. It was built for a world where **code creation was
 ## Forces
 
 - **Code generation is now cheap, but specification quality has not improved proportionally.** The tooling that made translation expensive also enforced a feedback loop: ambiguity was caught during implementation. Removing that bottleneck removes the feedback loop.
-- **Senior developers compensated for poor specifications through judgment.** This compensation was invisible in the old model — no one measured it. Agents expose the gap because they execute literally.
+- **Senior developers compensated for poor specifications through judgment.** This compensation was invisible in the old model — no one measured it. Agents expose the gap because they interpret specifications with high fidelity but without the compensatory judgment that human developers applied — filling ambiguities with probabilistic reasoning rather than institutional knowledge.
 - **Organizations are optimized for code review, not intent review.** Hiring, promotion, tooling, and rituals all center on implementation quality. The skills that now matter most — framing, constraint definition, scope governance — have no established institutional support.
 - **The shift feels like demotion.** Engineers trained to value their translation skill may experience the move to specification as a loss of status, even when it is a promotion in responsibility.
 
@@ -82,7 +82,7 @@ After applying this pattern:
 
 ## Therefore
 
-> **The human compiler is not dead — the role has moved. The developer's job is no longer to translate intent into code, but to specify intent so clearly that translation becomes reliable. The specification is now the most important artifact, and the quality of the specification is now the primary determinant of system quality.**
+> **The human compiler is not dead — the role has moved. The developer’s job is no longer to translate intent into code, but to specify intent so clearly that translation becomes reliable. The specification is now the most important artifact, and the quality of the specification is now the primary determinant of the factors within the team’s control. Model capability, tooling reliability, and data quality are also load-bearing — but specification is the variable the team owns and can systematically improve.**
 
 ---
 
@@ -127,5 +127,3 @@ The engineer who understood how to write a clean sorting algorithm still has sup
 - [The Intent-Era Skill Matrix](../operating/01-skill-matrix.md) — what skills are now load-bearing
 
 ---
-
-*Next: [From Translation to Orchestration](02-from-translation-to-orchestration.md)*

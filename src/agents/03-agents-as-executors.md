@@ -1,6 +1,6 @@
-﻿# Pattern 5.3 — The Executor Model
+# The Executor Model
 
-**Part V: Agents & Execution** · *3 of 7*
+**Agents**
 
 ---
 
@@ -155,7 +155,3 @@ After applying this pattern:
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 
 ---
-
-*Next: [Least Capability](04-tools-mcp-capability-boundaries.md)*
-
-

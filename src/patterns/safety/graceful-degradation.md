@@ -1,4 +1,4 @@
-﻿# Graceful Degradation
+# Graceful Degradation
 
 ---
 
@@ -18,6 +18,15 @@ Without declared fallback behavior, agents improvise when dependencies fail. The
 
 ---
 
+## Forces
+
+- **Autonomy vs. accuracy**: The agent wants to complete the task autonomously. But if a dependency fails, autonomy requires improvisation, which sacrifices accuracy. The tradeoff must be declared upfront.
+- **Caching staleness**: Using cached data allows continued execution, but cached data becomes stale. The staleness window is unspecified unless declared.
+- **User frustration with partial results**: Delivering incomplete output to the user ("the following section is missing because...") is honest but frustrating. Silent skipping is dishonest but less frustrating in the moment.
+- **Definition of "partial" is context-dependent**: What counts as a viable partial result? A report missing one section might be useful; missing the summary might be unusable. The spec must define acceptable degradation per task.
+
+---
+
 ## The Solution
 
 Declare **fallback behavior in the spec** for each critical dependency.
@@ -32,6 +41,21 @@ Declare **fallback behavior in the spec** for each critical dependency.
 - Never degrade silently. Every degradation is surfaced in the output.
 - Never fabricate to fill a gap. If the data source is unavailable, the data does not exist — do not invent it.
 - Declare the fallback in the spec, not at runtime. The spec decides how degradation is handled, not the agent.
+
+**Example:** A market analysis agent depends on real-time stock price API and research database.
+- Stock price API fails → Use cached prices from last 1 hour with flagging: "Prices as of 2:15 PM (market closed; current prices unavailable)"
+- Research database times out → Return partial analysis: "Technical analysis available. Fundamental analysis (database unavailable) not included in this report."
+- Both fail → Escalate to human with cached data and analysis attempt. "Dependency failure detected. Incomplete analysis and cached data provided. Human review required before sending to client."
+- If escalation also fails → Fail explicitly: "Analysis unavailable due to service outages. This report cannot be completed. No output produced."
+
+---
+
+## Resulting Context
+
+- **Degradation is transparent to consumers.** Users know when results are partial or stale. They can decide whether to act on degraded output or wait.
+- **Agents don't fabricate.** The agent operates within bounds: either fully autonomous with current data or degraded with explicit flagging. Hallucination is not an option.
+- **Failure categories are measurable.** Escalation rates, partial result rates, and explicit failures are logged separately, providing visibility into which dependencies are unreliable.
+- **Recovery is possible.** If a cached result was used, the agent can retry when the dependency recovers. If partial output was delivered, the user can request the missing section later.
 
 ---
 

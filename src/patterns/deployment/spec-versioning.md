@@ -1,4 +1,4 @@
-﻿# Spec Versioning
+# Spec Versioning
 
 ---
 
@@ -12,6 +12,20 @@ Specs evolve — constraints are tightened, scope is adjusted, success criteria 
 
 ---
 
+## Problem
+
+Unversioned specs create ambiguity: which version of the constraint is currently enforced? When a spec changes, do all downstream consumers get updated automatically or must they explicitly migrate? If a spec is rolled back, which version do systems revert to? Without explicit versioning, teams either over-communicate every change (noise) or under-communicate (silent breakage).
+
+---
+
+## Forces
+
+- **Backward compatibility vs. improvement.** Tightening constraints improves reliability but breaks systems built on the loosely constrained version. Complete backward compatibility prevents improvement. Some level of breaking change is inevitable; versioning makes it explicit and negotiable.
+- **Granularity of versions.** Should every rewording of a constraint trigger a version bump? Every new tool authorization? Only structural changes? Overly granular versions obscure meaningful changes; overly coarse versions hide significant shifts.
+- **Downstream coordination cost.** Each version bump potentially requires consumers to review and acknowledge the change. Too many buckets create overhead; too few hide migration paths.
+
+---
+
 ## The Solution
 
 Version specs with **semantic versioning** tied to behavioral impact.
@@ -20,6 +34,17 @@ Version specs with **semantic versioning** tied to behavioral impact.
 2. **Minor version** — additive changes. New capabilities within existing scope, additional success criteria, new tool authorization. Backward-compatible with existing consumers.
 3. **Patch version** — behavior preservation fixes. Clarifying ambiguous language, fixing typos, adding examples. No behavioral change.
 4. **The spec evolution log** records every version transition with: what changed, why, who approved, and what downstream impact was assessed.
+
+**Example:** Spec `claims-validator` is at v2.3.1. A new requirement emerges: "Validate that claim doesn't duplicate within 30 days." This is a new rule within existing scope (validation). Minor version bump to v2.4.0. Six weeks later, a business rule tightens: claim limits drop from $5K to $3K. This is a constraint tightening. Major version bump to v3.0.0. All systems consuming this spec receive notification. Those set to auto-upgrade minor versions are automatically moved to v2.4.0 but must acknowledge before upgrading to v3.0.0.
+
+---
+
+## Resulting Context
+
+- **Downstream systems know when to react.** Major version changes demand review; minor and patch changes are safe to consume.
+- **A/B testing is possible.** Two agents can run under different spec versions simultaneously to measure impact before rolling out major versions.
+- **Rollback is explicit.** When a spec version causes problems, rolling back to the previous version is a named, auditable action.
+- **Evolution is recorded.** The spec evolution log documents the business reasoning behind each change, not just the technical diff.
 
 ---
 

@@ -1,6 +1,6 @@
 # Integration Spec Template
 
-**Part VI: Spec Template Library** · *Template 3*
+**Repertoire & Reference**
 
 ---
 

@@ -1,6 +1,6 @@
-﻿# Pattern 7.1 — The Intent-Era Skill Matrix
+# The Intent-Era Skill Matrix
 
-**Part VII: Operating the System** · *1 of 6*
+**Governance & Architecture**
 
 ---
 
@@ -132,7 +132,3 @@ After applying this pattern:
 - [Four Signal Metrics](06-metrics.md)
 
 ---
-
-*Next: [The Intent Architect](02-from-engineer-to-architect.md)*
-
-

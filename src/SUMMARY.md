@@ -92,12 +92,12 @@
 - [The State-Changing Tool](patterns/integration/state-changing-tool.md)
 - [The Idempotent Tool](patterns/integration/idempotent-tool.md)
 - [The MCP Server](patterns/integration/mcp-server.md)
-- [Direct Function Calling](patterns/integration/function-calling.md)
-- [Code Execution Sandbox](patterns/integration/code-sandbox.md)
-- [File System Access](patterns/integration/file-system-access.md)
   - [The Model Context Protocol](agents/mcp/01-what-is-mcp.md)
   - [Designing MCP Tools](agents/mcp/02-designing-mcp-tools.md)
   - [MCP Safety](agents/mcp/03-mcp-safety.md)
+- [Direct Function Calling](patterns/integration/function-calling.md)
+- [Code Execution Sandbox](patterns/integration/code-sandbox.md)
+- [File System Access](patterns/integration/file-system-access.md)
 
 ## Coordination
 
@@ -126,7 +126,6 @@
 - [Distributed Trace](patterns/observability/distributed-trace.md)
 - [Anomaly Detection Baseline](patterns/observability/anomaly-baseline.md)
 - [Cost Tracking per Spec](patterns/observability/cost-tracking.md)
-- [Audit Trail](patterns/observability/audit-trail.md)
 - [Health Check and Heartbeat](patterns/observability/health-check.md)
 
 ## Safety
@@ -140,9 +139,8 @@
 
 ## Testing & Validation
 
-- [Spec Conformance Test](patterns/testing/spec-conformance.md)
+- [Spec Conformance Testing](patterns/testing/spec-conformance.md)
 - [Adversarial Input Test](patterns/testing/adversarial-input.md)
-- [Regression on Spec Change](patterns/testing/regression-spec-change.md)
 - [Multi-Agent Integration Test](patterns/testing/multi-agent-integration.md)
 - [Evaluation by Judge Agent](patterns/testing/judge-agent.md)
 
