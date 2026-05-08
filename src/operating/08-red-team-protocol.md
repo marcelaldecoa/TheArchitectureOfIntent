@@ -83,6 +83,24 @@ Composite (1–125): 60+ critical, 30–59 high, 10–29 medium, <10 low. Use th
 
 ---
 
+## Mapping findings to the failure taxonomy
+
+OWASP categorizes by attack surface; the book's [failure taxonomy](../theory/05-failure-as-design-signal.md) categorizes by *fix locus* — which artifact has to change. Every successful exploit has both: an attack-surface label (LLM01–10) and a fix-locus label (Cat 1–7). The fix-locus label is what tells the team *who owns this finding and where the change goes*.
+
+| Finding pattern | Likely fix locus | Where the fix lives |
+|---|---|---|
+| Indirect injection succeeds because the spec didn't forbid acting on document-embedded instructions | **Cat 1 (Spec)** | Spec §4 (NOT-authorized); constraint library |
+| Agent has a tool the spec didn't authorize but the manifest exposed | **Cat 2 (Capability)** | Spec §7 (Tool Manifest); identity-level scope |
+| Agent took action outside task scope to "be helpful" (typosquat install, adjacent edits) | **Cat 3 (Scope creep)** | Spec §4; agent system prompt |
+| Action surface escaped the gate because the gate wasn't configured for that action class | **Cat 4 (Oversight)** | Spec §4 (oversight model); structural gate |
+| Multi-step exploit succeeded by chaining defensible single steps | **Cat 5 (Compounding)** | System spec; checkpoint or evaluator-optimizer pattern |
+| Model confidently produced a non-existent API / function / file path | **Cat 6 (Model-level)** | Structural validation (allowlist resolution); accept residual risk |
+| Computer-use agent acted on a misperceived UI element (lookalike button, modal interception) | **Cat 7 (Perceptual)** | Confirmation gate; screenshot-then-verify discipline |
+
+Without this mapping, findings get labeled by attack surface and the team doesn't know which artifact to update.
+
+---
+
 ## Closing the loop: red-team → spec → eval → constraint library
 
 Every finding feeds three artifacts. This is what makes red-teaming compound.

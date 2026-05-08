@@ -63,7 +63,7 @@ Two reading modes, both supported.
 | Designing oversight for an agent that's about to ship | [Proportional Oversight](agents/06-human-oversight-models.md) |
 | Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Safety patterns](patterns/safety/prompt-injection-defense.md) |
-| Looking at a worked pilot | [How to use these examples](examples/00-how-to-use.md) |
+| Looking at a worked pilot | [Designing an AI Coding Agent](examples/03-coding-agent/README.md) (recommended starting example) — or [How to use these examples](examples/00-how-to-use.md) for the full set |
 
 ---
 
@@ -74,6 +74,21 @@ It does not promise that following these patterns guarantees a successful pilot.
 It does not promise that every pattern applies to every team. Regulated industries (healthcare, finance, defense) have compliance requirements that go beyond what's covered here. Multi-organizational agent systems — where agents from different orgs interact — have governance problems this framework does not solve. Cost-benefit analysis for adopting these practices depends on factors that vary too widely to generalize.
 
 It does not promise to settle every open question in the field. *How precise is "precise enough"?* *What happens when model capability outpaces governance?* *Can intent engineering scale to truly autonomous systems?* These questions are real and unresolved. This book stakes out a working position; treat it as something to test against your own context, not as final word.
+
+---
+
+## Honest scope: what this book is, and what it isn't
+
+This book's strongest contribution is a **design vocabulary and a diagnostic discipline**: archetypes, the four dimensions, the failure taxonomy, the spec template, the oversight models. Teams that adopt it report that their *conversations* about agent systems get sharper — which is exactly what you'd expect when a shared vocabulary replaces ad-hoc framing.
+
+It is **not** a complete technical playbook. Specifically, the book is light on:
+
+- **Prompt caching as architecture** (covered briefly in [Cost and Latency Engineering](operating/09-cost-and-latency.md); deserves more depth for any system at 100+ runs/day).
+- **Model-tier selection** under specific budget and latency constraints — the book names the tiers but doesn't prescribe which goes where.
+- **Multi-tenant fleet governance** — when 50 teams deploy agents against shared infrastructure, spec evolution and constraint-library merging become harder problems than this book solves.
+- **CI/CD wiring details** — when does the eval suite gate a merge versus alert versus observe? The disciplines are described; the specific platform integration is not.
+
+Read the book for the vocabulary, the structural patterns, and the failure diagnosis. Bring your own platform expertise for the wiring.
 
 ---
 

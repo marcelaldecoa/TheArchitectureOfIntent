@@ -37,7 +37,7 @@ After Part 6 the book becomes reference material: a flat **Pattern Reference** f
 | Setting up safety controls | [Prompt injection defense](patterns/safety/prompt-injection-defense.md), [output validation](patterns/safety/output-validation-gate.md) |
 | Choosing an oversight cadence | [Proportional Governance](operating/04-governance.md) |
 | Defining what to measure | [Four Signal Metrics](operating/06-metrics.md) |
-| Looking at a real example | [How to use these examples](examples/00-how-to-use.md) |
+| Looking at a real example | [Designing an AI Coding Agent](examples/03-coding-agent/README.md) (recommended) — or [How to use these examples](examples/00-how-to-use.md) for the full set |
 | Confused about a term | [Glossary](appendices/glossary.md) |
 
 ---

@@ -77,6 +77,22 @@ The spec was correct; the agent violated it. Fix the output. If the failure sugg
 **Preference change (does NOT trigger spec update):**  
 The spec was correct, the output matched the spec, but the engineer prefers a different approach. This is not a spec failure. If the preference represents a genuine requirement, it should be added to the spec for future executions — explicitly, as a requirement, not retroactively applied to the current output.
 
+### How this taxonomy relates to Cat 1–7
+
+The feedback-trigger taxonomy above asks *"should this update the spec?"* The book's diagnostic taxonomy ([Cat 1–7](../theory/05-failure-as-design-signal.md)) asks *"which artifact has to change?"* They are complementary, not duplicative:
+
+| Diagnostic category (fix locus) | Maps to feedback trigger |
+|---|---|
+| **Cat 1 (Spec)** — the spec didn't say what was needed | Spec gap or Spec ambiguity → spec update |
+| **Cat 2 (Capability)** — the agent lacked a tool / had the wrong tool | Implementation failure → tool-manifest fix; spec note if recurrence likely |
+| **Cat 3 (Scope creep)** — the agent acted outside scope | Spec gap (NOT-authorized was incomplete) → spec update |
+| **Cat 4 (Oversight)** — the gate wasn't configured for the action class | Spec gap (oversight model was incomplete) → spec update |
+| **Cat 5 (Compounding)** — chained defensible steps produced wrong outcome | System-spec gap → system-spec update |
+| **Cat 6 (Model-level)** — the model confidently produced something incorrect | Implementation failure (model limit) → spec note + structural validation |
+| **Cat 7 (Perceptual)** *computer-use agents* — perception-vs-reality mismatch | Spec gap (verification step not required) → spec update |
+
+A finding that's pure Cat 6 (model limit) doesn't trigger a spec update; it triggers acceptance and a structural mitigation. Everything else in this table flows into the evolution log below.
+
 ### The Spec Evolution Log
 
 Every spec should have a version history section — the spec evolution log. It is not optional.
