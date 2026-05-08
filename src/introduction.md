@@ -1,6 +1,8 @@
 # Introduction
 
-**A Field Guide to Shipping AI Agents Safely**
+**A Field Guide to Designing and Shipping AI Agent Systems**
+
+*Previously titled: The Architecture of Intent.*
 
 ---
 

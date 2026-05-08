@@ -1,6 +1,6 @@
 [book]
-title = "The Architecture of Intent"
-description = "A field guide to shipping AI agents safely: archetypes, specs, oversight, and metrics for tech leads and platform teams running their first agent pilot."
+title = "Intent Engineering"
+description = "A field guide to designing and shipping AI agent systems: archetypes, specs, oversight, and metrics for tech leads and platform teams running their first — or next — agent pilot."
 authors = ["Marcel Aldecoa"]
 language = "en"
 src = "src"

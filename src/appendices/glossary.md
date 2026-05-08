@@ -4,7 +4,7 @@
 
 ---
 
-This glossary defines the core vocabulary of the Architecture of Intent. Every term defined here appears in at least one spec, archetype, or template elsewhere in this book. This is intentional — terms without referents are decoration.
+This glossary defines the core vocabulary of the Intent Engineering. Every term defined here appears in at least one spec, archetype, or template elsewhere in this book. This is intentional — terms without referents are decoration.
 
 *Terms are listed alphabetically. Each entry includes the pattern where the concept originates.*
 
