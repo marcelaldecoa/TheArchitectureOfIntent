@@ -33,6 +33,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [The Archetype Selection Tree](../architecture/04-decision-tree.md) | How do you choose the right archetype when the answer isn't obvious? |
 | [Composing Archetypes](../architecture/05-composing-archetypes.md) | How do multiple archetypes work together in a single deployment? |
 | [Governed Archetype Evolution](../architecture/06-evolving-archetypes.md) | How do you update the archetype catalog as the technology and your domain change? |
+| [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) | How do you govern an N-agent system as a system, not as N individually-specified components? |
 | [Intent vs. Implementation](../theory/02-intent-vs-implementation.md) | When something goes wrong, was the spec wrong, or did the agent fail to execute it? |
 | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) | What are the six failure categories, and how do you diagnose them? |
 
@@ -65,6 +66,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [The Executor Model](../agents/03-agents-as-executors.md) | How do agents relate to the intent encoded in specs? |
 | [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) | How do tool manifests and MCP define what an agent can reach? |
 | [Portable Domain Knowledge](../agents/05-agent-skills.md) | What are SKILL.md files and how do they carry domain context? |
+| [Coding Agents](../agents/08-coding-agents.md) | How do the framework's archetypes, spec, and oversight apply to the most-deployed agent class (Cursor, Cline, Devin, Claude Code)? |
 
 ### Knowledge & Context
 
@@ -150,6 +152,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Intent Review Before Output Review](../operating/05-reviewing-intent.md) | Spec review as a practice |
 | [Four Signal Metrics](../operating/06-metrics.md) | What to measure, what not to |
 | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) | The four-level eval stack: unit asserts, spec acceptance, regression, production sampling |
+| [Red-Team Protocol](../operating/08-red-team-protocol.md) | Four red-team batteries (pre-launch, per-release, monthly regression, quarterly fresh-attacks) feeding the spec gap log |
 
 ---
 
@@ -169,6 +172,12 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Writing the Spec (Example 2)](../examples/02-code-generation-pipeline/spec.md) | Annotated spec for the Scaffold Synthesizer |
 | [Agent Instructions (Example 2)](../examples/02-code-generation-pipeline/agent-instructions.md) | Non-conversational instructions for all three agents |
 | [Validating Outcomes (Example 2)](../examples/02-code-generation-pipeline/validation.md) | 9-test pipeline acceptance suite |
+| [Designing an AI Coding Agent](../examples/03-coding-agent/README.md) | In-loop coding agent for an internal repo; Executor with Synthesizer composition; explicit decision against Devin-style autonomy |
+| [Selecting the Archetypes (Example 3)](../examples/03-coding-agent/archetypes.md) | Decision-tree walk for a coding agent; the "why not Orchestrator-over-self" decision recorded explicitly |
+| [Writing the Spec (Example 3)](../examples/03-coding-agent/spec.md) | Full canonical spec with coding-agent specifics: file-system scope, dependency allowlist, test-set protection |
+| [Agent Instructions (Example 3)](../examples/03-coding-agent/agent-instructions.md) | System prompt + tool manifest with capability minimalism (no general shell, no web fetch, no merge/close) |
+| [Evals and Acceptance (Example 3)](../examples/03-coding-agent/evals.md) | The four-level eval stack instantiated; 75-issue golden set construction methodology |
+| [Post-mortem Through Intent (Example 3)](../examples/03-coding-agent/postmortem.md) | The deleted-test incident; spec v1.1 → v1.2 change with constraint-library entry |
 
 ---
 
@@ -282,10 +291,22 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Cost Tracking per Spec](../patterns/observability/cost-tracking.md)
 
 ### "I need to design a multi-agent system"
+- [Multi-Agent Governance](../architecture/07-multi-agent-governance.md)
 - [Composing Archetypes](../architecture/05-composing-archetypes.md)
 - [Orchestrator Archetype](../architecture/archetypes/orchestrator.md)
 - [Designing an AI Customer Support System](../examples/01-ai-customer-support/README.md)
 - [A Code Generation Pipeline](../examples/02-code-generation-pipeline/README.md)
+
+### "I'm building a coding agent (Cursor / Cline / Devin / Claude Code style)"
+- [Coding Agents](../agents/08-coding-agents.md)
+- [Designing an AI Coding Agent](../examples/03-coding-agent/README.md)
+- [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) (if going Devin-style)
+
+### "I need to red-team my system"
+- [Red-Team Protocol](../operating/08-red-team-protocol.md)
+- [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md)
+- [Adversarial Input Test](../patterns/testing/adversarial-input.md)
+- [Output Validation Gate](../patterns/safety/output-validation-gate.md)
 
 ### "I need to design safe agent tools"
 - [Least Capability](../agents/04-tools-mcp-capability-boundaries.md)

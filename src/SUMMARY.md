@@ -22,6 +22,7 @@
 - [The Archetype Selection Tree](architecture/04-decision-tree.md)
 - [Composing Archetypes](architecture/05-composing-archetypes.md)
 - [Governed Archetype Evolution](architecture/06-evolving-archetypes.md)
+- [Multi-Agent Governance](architecture/07-multi-agent-governance.md)
 - [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
 - [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
 
@@ -50,6 +51,7 @@
 - [The Executor Model](agents/03-agents-as-executors.md)
 - [Least Capability](agents/04-tools-mcp-capability-boundaries.md)
 - [Portable Domain Knowledge](agents/05-agent-skills.md)
+- [Coding Agents](agents/08-coding-agents.md)
 
 ## Knowledge & Context
 
@@ -132,6 +134,7 @@
 - [Intent Review Before Output Review](operating/05-reviewing-intent.md)
 - [Four Signal Metrics](operating/06-metrics.md)
 - [Evals and Benchmarks](operating/07-evals-and-benchmarks.md)
+- [Red-Team Protocol](operating/08-red-team-protocol.md)
 
 ---
 
@@ -151,6 +154,12 @@
   - [Writing the Spec](examples/02-code-generation-pipeline/spec.md)
   - [Agent Instructions](examples/02-code-generation-pipeline/agent-instructions.md)
   - [Validating Outcomes](examples/02-code-generation-pipeline/validation.md)
+- [Designing an AI Coding Agent](examples/03-coding-agent/README.md)
+  - [Selecting the Archetypes](examples/03-coding-agent/archetypes.md)
+  - [Writing the Spec](examples/03-coding-agent/spec.md)
+  - [Agent Instructions](examples/03-coding-agent/agent-instructions.md)
+  - [Evals and Acceptance](examples/03-coding-agent/evals.md)
+  - [Post-mortem Through Intent](examples/03-coding-agent/postmortem.md)
 
 ---
 
