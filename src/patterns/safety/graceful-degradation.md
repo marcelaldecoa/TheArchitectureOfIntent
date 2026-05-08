@@ -20,7 +20,7 @@ Without declared fallback behavior, agents improvise when dependencies fail. The
 
 ## Forces
 
-- **Autonomy vs. accuracy**: The agent wants to complete the task autonomously. But if a dependency fails, autonomy requires improvisation, which sacrifices accuracy. The tradeoff must be declared upfront.
+- **Autonomy vs. accuracy**: The agent is instructed to complete the task autonomously. If a dependency fails, autonomous completion requires improvisation, which trades accuracy for liveness. The tradeoff must be declared upfront in the spec, not discovered at runtime.
 - **Caching staleness**: Using cached data allows continued execution, but cached data becomes stale. The staleness window is unspecified unless declared.
 - **User frustration with partial results**: Delivering incomplete output to the user ("the following section is missing because...") is honest but frustrating. Silent skipping is dishonest but less frustrating in the moment.
 - **Definition of "partial" is context-dependent**: What counts as a viable partial result? A report missing one section might be useful; missing the summary might be unusable. The spec must define acceptable degradation per task.

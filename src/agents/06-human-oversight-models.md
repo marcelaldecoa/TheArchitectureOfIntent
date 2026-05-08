@@ -195,7 +195,7 @@ After applying this pattern:
 - [The Canonical Spec Template — Section 8](../sdd/07-canonical-spec-template.md)
 
 **This pattern enables:**
-- [Six Failure Categories](07-failure-modes.md)
+- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
 - Governance, Escalation Design *(Part 5 — Ship)*
 
 ---

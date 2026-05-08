@@ -58,7 +58,7 @@ Agent systems vary enormously along multiple dimensions: how much they act vs. a
 
 The result is systems that are miscalibrated: advisors that gradually acquire executor behaviors, executors deployed without adequate oversight, guardians that are actually orchestrators in disguise. The miscalibration is not always intentional — often it is the product of incremental feature additions, each of which seemed reasonable in isolation.
 
-The five archetypes solve this by naming the recurring, stable forms — the categories that emerge from principled reasoning about agency, authority, and consequence. Every agent-mediated system fits one of these forms, or a deliberate composition of them.
+The five archetypes solve this by naming five recurring forms that have so far covered most production agent systems we have classified — categories that emerge from principled reasoning about agency, authority, and consequence. Most systems fit one of these forms; the rest are deliberate compositions. The taxonomy is held provisionally, not settled (see "A working taxonomy, not a settled one" later in this chapter).
 
 ---
 
@@ -175,17 +175,25 @@ The five archetypes emerge from consistent positions on these axes:
 
 ---
 
-### The Stability of These Five
+### A working taxonomy, not a settled one
 
 Why five? And why these five?
 
-The five archetypes are not an arbitrary taxonomy. They represent the stable points in the space of agent system design when you apply the two axes (primary act × discretion scope) consistently. The stability test: every real system we have encountered fits one of these five, or a deliberate composition of them. The cases that don't fit cleanly are either compositions (treated in [Composing Archetypes](05-composing-archetypes.md)) or systems that have drifted across boundaries without a governance event (treated in [Governed Archetype Evolution](06-evolving-archetypes.md)).
+The five archetypes are not arbitrary. They are the regions of design space that emerge from applying two axes — *primary act* and *discretion scope* — consistently, and they are *currently sufficient* for most production agent systems we have encountered. Every system we have classified fits one of the five, or a deliberate composition of them.
 
-The five are also stable under the principle of minimum necessary power: they represent the smallest number of categories that distinguish systems with genuinely different risk profiles, oversight requirements, and design constraints.
+But "currently sufficient" is the right honest claim. This is a working taxonomy — held provisionally, tested against new systems, and extended when extension is genuinely warranted. It is not a settled categorization of agency types and shouldn't be read as one.
 
-The formal argument for exhaustiveness: the two axes — primary act and discretion scope — partition the design space because every agent system must have a primary act (what it does) and a discretion scope (how much latitude it has in doing it). The five archetypes occupy distinct regions in this space: Advisor (inform / narrow), Guardian (enforce / narrow), Executor (execute / bounded), Synthesizer (compose / moderate), and Orchestrator (coordinate / broad). Additional archetypes would either overlap with one of these five (failing the "genuinely different governance" test) or represent compositions of them (treated in [Composing Archetypes](05-composing-archetypes.md)). This is not a claim of mathematical proof — it is a design claim validated against observed systems.
+**Where the taxonomy is under most pressure.** Three classes of system, all increasingly common as of 2026, are not yet cleanly handled:
 
-**When to suspect a sixth archetype is needed.** If a system consistently fails the decision tree (the Archetype Selection Tree) — if every classification feels forced, if compositions produce more confusion than clarity, and if the system's governance requirements are genuinely unmet by any of the five profiles — that is a signal. Candidate systems to watch for include: **teaching agents** that improve other agents' behavior (their primary act is neither inform, execute, enforce, synthesize, nor coordinate — it is *train*), **negotiation agents** operating in adversarial multi-party contexts (their discretion is neither bounded nor coordinative — it is *strategic*), and **self-modifying agents** that update their own specifications or capabilities. If any of these becomes a recurring design problem requiring its own governance model, the taxonomy should be extended through the same [Governed Archetype Evolution](06-evolving-archetypes.md) process used for individual system reclassification — with the additional requirement that a new archetype must demonstrate a governance profile that none of the existing five can provide.
+- **Coding agents** (Cursor, Cline, Devin, Claude Code, Codex CLI). They synthesize structured artifacts (Synthesizer), execute against repositories (Executor), and increasingly orchestrate sub-tasks across files and tools (Orchestrator). Most pilots end up calling them Executors with composition. That works, but the framing is forced — the agent's behavior is genuinely multi-modal in a way the five-archetype frame doesn't sharpen.
+- **Deep-research agents** (long-horizon research with self-directed planning). They synthesize and orchestrate simultaneously. The decision tree puts them in Orchestrator; the spec template fits them awkwardly because their sub-agents are often instances of themselves.
+- **Self-improving / training agents** (whose primary act is to evaluate or fine-tune *another* agent's behavior). Primary act is *train*, which is none of inform, execute, enforce, synthesize, coordinate.
+
+Compositions are how we currently absorb these. Compositions work, but they are not free — every composition introduces a spec-conflict resolution problem (see [Composing Archetypes](05-composing-archetypes.md)), and a system that requires three or four archetypes layered just to be classifiable is a signal that the taxonomy is being asked to do work it wasn't built for.
+
+**When to extend the taxonomy.** If a class of system consistently produces forced classifications, drives compositions of three or more archetypes, and has governance requirements not cleanly served by any of the existing five, propose a sixth. Use the same [Governed Archetype Evolution](06-evolving-archetypes.md) process used for individual system reclassification, with the additional requirement that a candidate sixth archetype must demonstrate a *governance profile* — agency level, oversight model, reversibility posture, invariant set — that no existing archetype provides.
+
+Treat the five as a vocabulary that has earned its keep so far, not as a taxonomic claim about all possible agents. The book is more useful that way, and so is the framework.
 
 ---
 

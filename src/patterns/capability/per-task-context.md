@@ -53,7 +53,7 @@ Inject per-task context as a **structured, labeled block** that is distinct from
 ## Resulting Context
 
 - **Agents work with real data rather than assumptions.** The relevant records, documents, and artifacts are present in context, reducing hallucination and increasing accuracy.
-- **Authority is explicit.** When user claims conflict with system data, the agent knows which to trust because authority levels are declared.
+- **Authority is explicit.** When user claims conflict with system data, the conflict can be resolved deterministically because authority levels are declared in the context block.
 - **Task isolation is maintained.** Each task gets its own context. Previous task context doesn't contaminate current task execution.
 - **Context injection becomes auditable.** Because context is structured and labeled, post-execution review can verify that the agent had the right information.
 

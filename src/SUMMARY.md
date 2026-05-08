@@ -22,6 +22,7 @@
 - [The Archetype Selection Tree](architecture/04-decision-tree.md)
 - [Composing Archetypes](architecture/05-composing-archetypes.md)
 - [Governed Archetype Evolution](architecture/06-evolving-archetypes.md)
+- [Multi-Agent Governance](architecture/07-multi-agent-governance.md)
 - [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
 - [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
 
@@ -37,6 +38,7 @@
 - [Writing for Machine Execution](sdd/05-writing-specs-for-agents.md)
 - [The Living Spec](sdd/06-living-specs.md)
 - [The Canonical Spec Template](sdd/07-canonical-spec-template.md)
+- [Architectural Decision Records](sdd/08-architectural-decision-records.md)
 - [SpecKit](sdd/04-speckit.md)
 
 ---
@@ -45,11 +47,18 @@
 
 *What agents are structurally, what capabilities they need, and how to bound them.*
 
+## Foundations
+
 - [What Agents Are](agents/01-what-agents-are.md)
 - [Autonomy Without Agency](agents/02-autonomy-vs-agency.md)
 - [The Executor Model](agents/03-agents-as-executors.md)
 - [Least Capability](agents/04-tools-mcp-capability-boundaries.md)
 - [Portable Domain Knowledge](agents/05-agent-skills.md)
+
+## Agent Classes (2024–2026)
+
+- [Coding Agents](agents/08-coding-agents.md)
+- [Computer-Use Agents](agents/09-computer-use-agents.md)
 
 ## Knowledge & Context
 
@@ -126,11 +135,27 @@
 - [Model Upgrade Validation](patterns/deployment/model-upgrade.md)
 - [Agent Deprecation Path](patterns/deployment/deprecation.md)
 
-## Governance and Metrics
+## Governance and Reviews
 
 - [Proportional Governance](operating/04-governance.md)
 - [Intent Review Before Output Review](operating/05-reviewing-intent.md)
+
+## Metrics, Evals, and Red-Team
+
 - [Four Signal Metrics](operating/06-metrics.md)
+- [Evals and Benchmarks](operating/07-evals-and-benchmarks.md)
+- [Red-Team Protocol](operating/08-red-team-protocol.md)
+
+## Production Engineering
+
+- [Cost and Latency Engineering](operating/09-cost-and-latency.md)
+- [Production Telemetry](operating/10-production-telemetry.md)
+
+## Adoption
+
+- [Adoption Playbook](operating/11-adoption-playbook.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](operating/12-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](operating/13-co-adoption-with-devsquad.md)
 
 ---
 
@@ -150,6 +175,12 @@
   - [Writing the Spec](examples/02-code-generation-pipeline/spec.md)
   - [Agent Instructions](examples/02-code-generation-pipeline/agent-instructions.md)
   - [Validating Outcomes](examples/02-code-generation-pipeline/validation.md)
+- [Designing an AI Coding Agent](examples/03-coding-agent/README.md)
+  - [Selecting the Archetypes](examples/03-coding-agent/archetypes.md)
+  - [Writing the Spec](examples/03-coding-agent/spec.md)
+  - [Agent Instructions](examples/03-coding-agent/agent-instructions.md)
+  - [Evals and Acceptance](examples/03-coding-agent/evals.md)
+  - [Post-mortem Through Intent](examples/03-coding-agent/postmortem.md)
 
 ---
 

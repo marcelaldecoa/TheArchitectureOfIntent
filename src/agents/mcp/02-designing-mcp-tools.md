@@ -48,7 +48,7 @@ Naming principles:
 
 **2. Description: A behavioral contract.**
 
-The description is how the agent decides whether and when this tool is the right one to call. It should answer four questions:
+The description is the input the model uses to select this tool over others. It should answer four questions:
 
 - *What does this tool do?* (one sentence, precise, no jargon)
 - *When should you call this?* (the conditions under which this is the right tool)

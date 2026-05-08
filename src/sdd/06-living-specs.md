@@ -62,7 +62,7 @@ The output was wrong because the spec didn't say what was needed. The spec was s
 *Example: The spec said "process all incoming orders." An agent processed cancelled orders. The spec needed to say "process all orders with status = active."*
 
 **Spec ambiguity (always triggers spec update):**  
-The spec said something that could be interpreted two reasonable ways, and the agent chose the wrong interpretation. This is also a spec failure — not because the intent was wrong, but because the expression was imprecise. Rewrite the clause to be unambiguous.
+The spec said something that could be interpreted two reasonable ways, and the agent's output reflected the wrong interpretation — not because the model "chose," but because the prompt left both readings within the probable-output region and the model produced one of them. This is also a spec failure: the expression was imprecise. Rewrite the clause to be unambiguous so the probable-output region narrows to the intended reading.
 
 *Example: The spec said "log all errors." The agent logged errors to stdout. The spec needed to say "log all errors to the structured error log at [path], with schema [defined schema]."*
 
@@ -161,6 +161,17 @@ After applying this pattern:
 ## Therefore
 
 > **A living spec is not a spec that changes constantly — it is a spec that evolves when failures reveal that the spec was wrong, with a traceable history of why each change was made. The feedback loop from validation to spec must be governed: spec gaps and ambiguities always trigger spec updates; preference changes and implementation failures do not. The rule "fix the spec, not the code" protects the spec's function as a control surface. Over time, a well-maintained living spec becomes an organizational memory artifact: the full map of what was intended, what was learned, and what was decided.**
+
+---
+
+## Parallel work
+
+The "living spec" framing is convergent across several practitioner sources arriving at the same conclusion through different routes:
+
+- **GitHub spec-kit** uses living specs as the source-of-truth artifact in its spec-driven development methodology.
+- **Microsoft DevSquad Copilot** treats specifications and ADRs as continuously refined artifacts forming a "shared memory" across multi-developer teams, with formal amendment processes triggered when implementation reveals mismatches. See [Microsoft DevSquad Copilot](https://github.com/microsoft/devsquad-copilot).
+
+The convergence is informative: independent teams approaching agent-augmented development from different angles end up with the same load-bearing concept. This isn't original to the book and shouldn't be treated as such.
 
 ---
 
