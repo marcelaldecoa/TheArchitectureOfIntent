@@ -22,10 +22,8 @@ Without a registry, the organization cannot answer basic questions: How many age
 
 ## Forces
 
-- **Need visibility into agent fleet** vs. **overhead of registry maintenance** (who keeps it current?)
-- **Need to prevent duplication** vs. **freedom for teams to deploy independently** (registry becomes a bottleneck)
-- **Need to enforce governance compliance** vs. **ease of deployment** (registry becomes friction)
-- **Need to track agent lineage** (owner, creation date) vs. **privacy/autonomy** (teams don't want to be audited constantly)
+- **Visibility vs. maintenance.** A registry only earns its value if it's kept current. The registry must be wired into the deployment pipeline, not maintained as a separate spreadsheet, or it goes stale within months.
+- **Governance compliance vs. deployment friction.** Heavy registry requirements at deploy time slow teams down. Light requirements produce a registry whose data is unreliable. The discipline is making the minimum required fields trivial to populate (auto-derived from spec) and the optional ones defensible.
 
 ---
 

@@ -22,10 +22,8 @@ Without a declared artifact store, agent outputs live in conversation history, t
 
 ## Forces
 
-- **Need durable, discoverable outputs** vs. **overhead of managing an artifact store** (requires infrastructure, naming conventions)
-- **Need version history** (each spec change should create new artifacts) vs. **storage costs** (every variation is persisted)
-- **Need to link artifacts to specs** (provenance tracking) vs. **metadata management complexity** (who maintains the links?)
-- **Need atomic artifact production** (all artifacts of a task succeed or fail together) vs. **partial artifacts being useful** (a broken test suite with working code)
+- **Need to link artifacts to specs** (an artifact's lineage tells you which spec version, which agent version, which task produced it) vs. **metadata management complexity** (who maintains the links?).
+- **Need atomic artifact production** (related artifacts should succeed or fail together) vs. **partial artifacts being useful** (a working microservice with a broken test suite is still partly recoverable).
 
 ---
 
