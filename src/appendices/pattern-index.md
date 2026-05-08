@@ -149,6 +149,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Proportional Governance](../operating/04-governance.md) | The lightest governance structure that prevents both chaos and bureaucracy |
 | [Intent Review Before Output Review](../operating/05-reviewing-intent.md) | Spec review as a practice |
 | [Four Signal Metrics](../operating/06-metrics.md) | What to measure, what not to |
+| [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) | The four-level eval stack: unit asserts, spec acceptance, regression, production sampling |
 
 ---
 

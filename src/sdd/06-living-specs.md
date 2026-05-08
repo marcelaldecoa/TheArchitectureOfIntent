@@ -62,7 +62,7 @@ The output was wrong because the spec didn't say what was needed. The spec was s
 *Example: The spec said "process all incoming orders." An agent processed cancelled orders. The spec needed to say "process all orders with status = active."*
 
 **Spec ambiguity (always triggers spec update):**  
-The spec said something that could be interpreted two reasonable ways, and the agent chose the wrong interpretation. This is also a spec failure — not because the intent was wrong, but because the expression was imprecise. Rewrite the clause to be unambiguous.
+The spec said something that could be interpreted two reasonable ways, and the agent's output reflected the wrong interpretation — not because the model "chose," but because the prompt left both readings within the probable-output region and the model produced one of them. This is also a spec failure: the expression was imprecise. Rewrite the clause to be unambiguous so the probable-output region narrows to the intended reading.
 
 *Example: The spec said "log all errors." The agent logged errors to stdout. The spec needed to say "log all errors to the structured error log at [path], with schema [defined schema]."*
 

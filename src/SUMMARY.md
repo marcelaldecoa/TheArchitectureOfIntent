@@ -126,11 +126,12 @@
 - [Model Upgrade Validation](patterns/deployment/model-upgrade.md)
 - [Agent Deprecation Path](patterns/deployment/deprecation.md)
 
-## Governance and Metrics
+## Governance, Metrics, and Evals
 
 - [Proportional Governance](operating/04-governance.md)
 - [Intent Review Before Output Review](operating/05-reviewing-intent.md)
 - [Four Signal Metrics](operating/06-metrics.md)
+- [Evals and Benchmarks](operating/07-evals-and-benchmarks.md)
 
 ---
 

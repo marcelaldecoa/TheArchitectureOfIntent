@@ -55,6 +55,20 @@ This test is simple. Applying it rigorously is not. It requires being willing to
 
 ---
 
+### How this taxonomy relates to the empirical literature
+
+Two academic taxonomies are worth knowing before you adopt this one:
+
+**MAST (Multi-Agent System Failure Taxonomy)** — Cemri et al., 2025, *Why Do Multi-Agent LLM Systems Fail?* — empirically analyzes 200+ failure traces across multi-agent systems and partitions failures into three top-level categories (specification issues, inter-agent misalignment, task verification failures) and 14 fine-grained sub-categories. MAST is the most rigorous practitioner-facing failure partition currently published. If you are running a multi-agent system, read it.
+
+**The agent-hallucination taxonomies** — Zhang et al. (arXiv:2509.18970) and the broader 2024–2025 literature on tool-call hallucination, planning hallucination, and instruction-following inconsistency — give finer-grained partitions of what this chapter calls Category 6.
+
+**How the six categories below differ from those.** This chapter's taxonomy is *organized by fix locus* — which artifact (the spec, a tool, a scope clause, an oversight checkpoint, a model choice) you change to prevent recurrence — rather than by *failure mechanism*. Both partitions are useful; they answer different questions. If you want to *understand failure mechanics empirically*, use MAST and the hallucination literature. If you want a triage protocol that maps each failure to the artifact a human will edit, use the six categories below. They are complementary, not competing.
+
+The book takes the practitioner-friendly partition because the discipline it teaches is "fix the right artifact." If your team has the bandwidth to maintain a finer empirical breakdown alongside, do.
+
+---
+
 ### The six failure categories
 
 Failures fall into six categories. Correctly categorizing a failure determines how to fix it — and what it reveals about the design.
@@ -169,9 +183,11 @@ The agent's underlying model produced incorrect output despite a correct, comple
 **Fix:** Model-level failures cannot be fixed through better specs alone. Response depends on frequency and severity:
 - **Low frequency, low severity** — accept as residual risk; rely on validation to catch. Document in the spec gap log as a known model limitation.
 - **Low frequency, high severity** — add automated output validation that checks the specific failure pattern. Add human review checkpoint for the affected output type.
-- **High frequency** — the task exceeds the model's reliable capability boundary. Options: narrow the scope to a subset the model handles reliably, switch to a more capable model, or retain the task for human execution.
+- **High frequency** — the task exceeds the model's reliable capability boundary. Options: narrow the scope to a subset the model handles reliably, switch to a more capable model, retain the task for human execution, or accept that the agent is not deployable in this domain at this time.
 
-This is the category where the framework reaches its limit. A perfect spec executed by an unreliable model still produces unreliable output. The framework's contribution here is diagnostic: by ruling out Categories 1–5, teams avoid the mistake of blaming architects for model limitations, or blaming models for architectural gaps.
+**Be honest about the limit.** This is the category where the framework reaches its boundary. A perfect spec executed by an unreliable model still produces unreliable output. Validation cannot catch every hallucination, especially the high-confidence ones — research consistently shows that LLM confidence is poorly correlated with accuracy. Sampling-based validation will miss failures in the unsampled fraction. Judge models can themselves hallucinate, and they share systematic errors with the agent they are evaluating when both are based on the same model family.
+
+The framework's contribution here is diagnostic, not curative: by ruling out Categories 1–5, teams avoid two opposite errors — blaming architecture for model limits, and blaming models for architectural gaps. But once you have correctly identified a Category 6 failure with high frequency, the honest answer is sometimes "this task is not currently deployable to this agent, regardless of how well we spec it."
 
 ---
 
@@ -285,6 +301,16 @@ After applying this pattern:
 
 ---
 
+## References
+
+- Cemri, M., et al. (2025). *Why Do Multi-Agent LLM Systems Fail? — MAST: A Multi-Agent System Failure Taxonomy.* — Empirical 14-category partition derived from 200+ multi-agent failure traces; the strongest published practitioner-facing failure taxonomy.
+- Zhang, Y., et al. (2025). *LLM-based Agents Suffer from Hallucinations: A Survey of Taxonomy, Methods, and Directions.* arXiv:2509.18970. — Fine-grained partition of model-level (Category 6) failures.
+- *Where LLM Agents Fail and How They Can Learn from Failures.* (2025). arXiv:2509.25370. — Failure-mode-driven self-correction in agent systems.
+- Reason, J. (1990, 1997). *Human Error / Managing the Risks of Organisational Accidents.* — The Swiss-cheese model and the active-vs-latent failure distinction informing this chapter's "log the gap, fix the artifact" discipline.
+- Ohno, T. (1988). *Toyota Production System: Beyond Large-Scale Production.* — Origin of the "5 Whys" practice that the diagnostic protocol simplifies.
+
+---
+
 ## Connections
 
 **This pattern assumes:**
@@ -295,6 +321,7 @@ After applying this pattern:
 - [The Living Spec](../sdd/06-living-specs.md) — failure-driven spec evolution as practice
 - [Proportional Oversight](../agents/06-human-oversight-models.md) — designing oversight that catches the failure categories you can't prevent
 - [Four Signal Metrics](../operating/06-metrics.md) — measuring spec quality through failure signal
+- [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) — the empirical layer that complements the diagnostic protocol
 - [Post-mortem Through Intent](../examples/01-ai-customer-support/postmortem.md) — a worked example of this protocol applied to a real incident
 
 ---

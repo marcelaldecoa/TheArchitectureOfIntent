@@ -31,6 +31,16 @@ Similarly, "responsibility" gets used to mean legal liability, ethical answerabi
 
 If you cannot describe an agent's profile across all four dimensions, you cannot decide whether your oversight is proportional, whether your spec is precise enough, or whether deployment is safe.
 
+### What is novel here, and what is borrowed
+
+Reversibility as a governance dial, the autonomy spectrum, and distributed responsibility are all well-established in adjacent literatures. SAE J3016 (the canonical "levels of driving automation" reference) gives a six-level autonomy taxonomy. The HITL / HOTL / HOOTL (Human-In/On/Out-Of-The-Loop) typology has organized human-oversight design in defense and safety-critical systems for over a decade. Shavit, Agarwal et al. (OpenAI, 2023, *Practices for Governing Agentic AI Systems*) explicitly cover action-space, default behaviors, reversibility, attributability, and interruptibility as governance dimensions. NIST AI RMF and ISO 42001 cover responsibility distribution. None of those are being claimed here as new.
+
+What this chapter contributes — and what the rest of the book is built on — is the **insistence that *autonomy* and *agency* are different dials, calibrated separately, with different oversight implications.** Most practitioner sources blur the two; this conflation is the single most common source of mis-calibrated agent oversight.
+
+A nightly `git push` script is highly autonomous and exercises essentially no agency: it follows a predetermined sequence with no discretion. A research agent that runs once a week but plans its own multi-step investigation is much *less* autonomous (one invocation per week, often with checkpoints) but exercises much *more* agency (it interprets goals and fills gaps in instructions). These two systems require qualitatively different oversight even though "how often does a human have to click?" suggests the opposite.
+
+Hold those two dials separately. The rest of the framework — archetype dimensions, oversight models, the spec template — depends on it.
+
 ---
 
 ## Forces
@@ -64,12 +74,12 @@ Autonomy alone doesn't tell you how much discretion the system exercises. A nigh
 
 Agency is about *discretion*. An agent exercising genuine agency is doing something qualitatively different from a deterministic script: it's filling gaps in its instructions with its own judgment (probabilistic reasoning, in the case of language models).
 
-Agency has direction — it operates in service of a goal. To exercise agency is to take actions the agent believes advance the goal, within constraints that were given.
+Agency has direction — it operates in service of a goal. The system's outputs reflect probabilistic selections among action sequences that, conditioned on the spec and context, the model has been trained to associate with goal advancement. Calling this "the agent's belief" is convenient shorthand; what is actually happening is a constrained search through token sequences that satisfy the prompt.
 
 - **Broad agency** — wide latitude to decide *how* to pursue the goal.
 - **Narrow agency** — a tightly defined solution space; the agent can act without human intervention but its options are bounded.
 
-**Key insight:** agency determines exposure. The more discretion the system exercises, the more critical it is that the goals, constraints, and escalation paths were specified correctly. Every gap in the spec becomes a decision the agent will fill with probability.
+**Key insight:** agency determines exposure. The more latitude the system has, the more critical it is that the goals, constraints, and escalation paths were specified correctly. Every gap in the spec becomes an output the model will produce probabilistically — not a "decision" in the human sense, but a token sequence selected from the constrained space the spec defines. When the spec is loose, that space is wide and unpredictable; when the spec is tight, the space is narrow and the model's probabilistic behavior is bounded into something a human can review.
 
 ---
 
@@ -182,6 +192,16 @@ After applying this pattern:
 ## Therefore
 
 > **Every delegation has four dials: autonomy (how independently it runs), agency (how much discretion it exercises), responsibility (who is accountable for outcomes), and reversibility (how easily an action can be undone). Calibrate them deliberately in the spec. Match oversight to the combination of agency and reversibility, not to the probability of error. Resolve responsibility distribution before deployment.**
+
+---
+
+## References
+
+- SAE International. (2021). *J3016 — Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles.* — The canonical six-level autonomy taxonomy this chapter draws from for the autonomy dimension.
+- Shavit, Y., Agarwal, S., et al. (Anthropic, OpenAI). (2023). *Practices for Governing Agentic AI Systems.* OpenAI. — Formalizes action-space, default behaviors, reversibility, attributability, interruptibility as governance dimensions; the closest prior art to this chapter's four dimensions.
+- NIST. (2023). *AI Risk Management Framework (AI RMF 1.0).* — Responsibility distribution across "govern, map, measure, manage" functions.
+- ISO/IEC 42001:2023. *Information technology — Artificial intelligence — Management system.* — Organizational accountability framework for AI systems.
+- *Human-in-the-loop / Human-on-the-loop / Human-out-of-the-loop.* — Standard typology for oversight cadence in safety-critical systems; predates AI agent literature.
 
 ---
 

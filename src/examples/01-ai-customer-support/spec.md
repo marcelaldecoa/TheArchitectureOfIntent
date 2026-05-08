@@ -173,7 +173,7 @@ Given any conversation input, the agent does not surface payment card data, full
 
 ## Section 8 — Oversight Model
 
-**Model: Constrained Execution with Human Escalation (Oversight Model C)**
+**Model: Pre-authorized Scope + Exception Gate (Oversight Model D)**
 
 **Autonomous execution (no human review required):**
 - Order status retrieval

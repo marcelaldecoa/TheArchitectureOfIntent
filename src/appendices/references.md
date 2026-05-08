@@ -1,132 +1,196 @@
-﻿# Reading List & References
+# Reading List & References
 
 **Appendices** · *Appendix C*
 
 ---
 
-> *"Every book is in conversation with other books. These are the ones this book is most explicitly in debt to."*
+> *"Every book is in conversation with other books. These are the ones this book is most explicitly in debt to, and the ones a serious practitioner should read alongside it."*
 
 ---
 
-This appendix has two sections: the **reading list** (books and papers worth reading alongside or after this one, with annotations about why) and the **formal references** (sources cited explicitly in the text).
+This appendix is organized by topic. Within each topic, a short **Read first** subsection identifies the one or two primary sources that contain most of what you need; **Further reading** provides depth. Citations referenced inline within chapters carry through to the chapter-level References sections.
+
+A note on honest framing: much of what this book describes is not novel. It synthesizes work from the agent design literature (Anthropic, OpenAI, LangChain), AI governance literature (NIST, ISO, OpenAI), spec-driven development practice (GitHub spec-kit), classical software engineering (Brooks, Meyer, Jackson), and human-systems thinking (Deming, Meadows, Reason). Where the book contributes, it contributes a synthesis with consistent vocabulary and an opinionated archetype frame; the underlying ideas are mostly older. The reading list below makes that lineage explicit.
 
 ---
 
-## Reading List
+## Building agents — patterns, architecture, runtime
 
-### On Pattern Languages and Design
+**Read first**
 
-**Christopher Alexander, Sara Ishikawa, Murray Silverstein** — *A Pattern Language: Towns, Buildings, Construction* (1977)  
-The structural ancestor of this book. Alexander's pattern language format — each pattern names a problem, describes its context, offers a solution, and gestures to related patterns — is the direct inspiration for how the Architecture of Intent is organized. Alexander's insight that patterns must address real problems observed in the world rather than invented problems invented for theoretical elegance is a discipline this book tries to honor. Read at least the introduction and Patterns 1–50 before concluding that a "pattern language" is just a list of best practices.
+- **Anthropic.** (Dec 2024). *Building Effective Agents.* anthropic.com/research/building-effective-agents. — The current canonical practitioner reference. Distinguishes workflows (predetermined paths) from agents (model-driven control flow), names the core compositional patterns: prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer. If you read one source on agent design, this is it.
+- **Weng, L.** (June 2023). *LLM Powered Autonomous Agents.* lilianweng.github.io. — The most-cited technical survey; covers planning, memory, tool use, and reflection patterns. Older but foundational.
 
-**Christopher Alexander** — *The Timeless Way of Building* (1979)  
-The companion volume to A Pattern Language, addressing why the language works and what kind of knowledge it embodies. More philosophical than its partner. The opening section on "the quality without a name" — the felt sense that a design is alive rather than dead — maps imperfectly but meaningfully onto the felt sense that a well-written spec captures something real, where a poorly-written spec merely covers the surface.
+**Further reading**
 
-**Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides** — *Design Patterns: Elements of Reusable Object-Oriented Software* (1994)  
-The software engineering application of Alexander's approach to a specific technical domain. Useful primarily as a calibration for what it means to make a pattern catalog in software: each pattern is a reusable solution to a recurring problem, not a universal principle. The Gang of Four's discipline of naming both the problem and the context before the solution is something many "best practices" documents abandon.
-
----
-
-### On Software Architecture and Intent
-
-**Frederick P. Brooks Jr.** — *The Mythical Man-Month: Essays on Software Engineering* (1975, Anniversary Edition 1995)  
-Still the most honest book about why software development is hard and why the difficulty is not engineering but communication. "No Silver Bullet" (the 1986 essay included in the anniversary edition) is directly relevant — Brooks argues that the accidental complexity of software can be reduced but the essential complexity cannot. Agents reduce accidental complexity significantly. The essential complexity — understanding and precisely encoding what the software must do — does not diminish. SDD is a practice for addressing Brooks's essential complexity.
-
-**Martin Fowler** — *Patterns of Enterprise Application Architecture* (2002)  
-Less about the specific patterns (many of which have been superseded) and more about the discipline of naming architectural patterns in a domain — what counts as a pattern, how to scope one, when multiple patterns apply to the same problem. The catalog format is a good reference when designing your own archetype catalog.
-
-**Michael C. Feathers** — *Working Effectively with Legacy Code* (2004)  
-Indirectly relevant but important: a book about how to work with systems you didn't design, which did not capture their own intent, and which express accumulated undocumented decisions. The scenarios Feathers describes are precisely the systems that will increasingly exist as the gap between "code that was generated" and "intent that was specified" grows. The antidote to Feathers's problem is not heroic debugging but SDD.
+- **Liu, Y., et al.** (May 2024). *Agent Design Pattern Catalogue: A Collection of Architectural Patterns for Foundation Model based Agents.* arXiv:2405.10467. — 18 architectural patterns including goal creation, plan generation, tool use, and reflection. The most comprehensive academic pattern catalogue.
+- **OpenAI.** (Oct 2024). *Swarm — Lightweight multi-agent orchestration.* github.com/openai/swarm. — Reference implementation of routing and handoff patterns; useful as a minimal mental model of multi-agent coordination.
+- **LangGraph documentation.** *Supervisor architecture, hierarchical teams, HITL middleware, checkpointing.* langchain-ai.github.io/langgraph. — The most production-tested implementation surface for the patterns Anthropic and Weng describe.
+- **MetaGPT** (Hong et al., 2023, arXiv:2308.00352) and **AutoGen** (Wu et al., 2023, arXiv:2308.08155). — Multi-agent SOPs and conversation-driven coordination; useful comparison points to LangGraph's supervisor model.
 
 ---
 
-### On Agency, Autonomy, and AI Systems
+## Governance and oversight of agentic AI
 
-**Stuart Russell** — *Human Compatible: Artificial Intelligence and the Problem of Control* (2019)  
-Russell's argument for moving from systems that optimize for a fixed objective to systems that are fundamentally uncertain about human preferences — and which therefore seek human input rather than acting unilaterally on assumed preferences. The alignment problem as stated by Russell is the same problem this book addresses at the organizational practice level: how do you ensure an agent does what you actually want rather than what you literally specified? Russell's answer (preference uncertainty, deference to humans) maps onto the SDD answer (tight specs, validation loops, oversight models).
+**Read first**
 
-**Nick Bostrom** — *Superintelligence: Paths, Dangers, Strategies* (2014)  
-More speculative and extreme than Russell, and parts of it have aged poorly in the face of how LLMs actually work. Still worth reading as a systematic catalog of ways that capable AI systems can fail to do what their designers intended. The "paperclip maximizer" thought experiment, however cartoonish, is a useful conceptual tool for understanding why Executors with poorly-bounded objectives are dangerous.
+- **Shavit, Y., Agarwal, S., et al.** (OpenAI, 2023). *Practices for Governing Agentic AI Systems.* cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf. — Closest prior art for this book's four-dimensions framing. Explicitly covers action-space, default behaviors, reversibility, attributability, and interruptibility as governance dimensions.
+- **NIST.** (2023). *AI Risk Management Framework (AI RMF 1.0).* nist.gov/itl/ai-risk-management-framework. — The U.S. governmental framework; Govern / Map / Measure / Manage. Used as compliance ground truth in many regulated settings.
 
-**Kate Crawford** — *Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence* (2021)  
-A critical counterweight to the technical optimism that pervades most AI engineering literature. The costs — labor, environmental, political — that AI systems impose on the world do not appear in spec templates or archetype catalogs. They are real, and the architects of AI systems are responsible for them in ways this book touches but does not fully address.
+**Further reading**
 
----
-
-### On Specification and Formal Methods
-
-**Michael Jackson** — *Software Requirements & Specifications: A Lexicon of Practice, Principles, and Prejudices* (1995)  
-Jackson's *lexicon* is a deliberately opinionated catalog of concepts in requirements engineering, written with unusual clarity and wit. His distinction between "domains" (the real world the software must affect) and "machines" (the implementation) maps directly onto the intent/implementation distinction in this book. His concept of the "problem frame" — the way the world must be divided to understand what the software is supposed to do — is a precursor to what the spec template calls a Problem Statement.
-
-**Bertrand Meyer** — *Object-Oriented Software Construction* (1988, 2nd ed. 1997)  
-The origin of Design by Contract — the idea that software components make explicit promises about what they accept and what they guarantee. The constraint sections in SDD specs are Design by Contract formalized for agent behavior. Meyer's argument that correctness assertions should be first-class elements of program text, not documentation afterthoughts, directly anticipates the SDD argument that constraints belong in the spec, not in the implementation's comments.
+- **ISO/IEC 42001:2023.** *Information technology — Artificial intelligence — Management system.* — The first international management-system standard for AI; complements NIST AI RMF for organizations seeking certification.
+- **Anthropic.** (Sept 2023, ongoing). *Responsible Scaling Policy.* anthropic.com/responsible-scaling-policy. — Anthropic's published commitments on capability evaluations and deployment thresholds.
+- **OpenAI.** (Dec 2023, ongoing). *Preparedness Framework.* openai.com/preparedness. — OpenAI's analogue to RSP; defines model risk categories and deployment gates.
+- **SAE International.** (2021). *J3016 — Taxonomy and Definitions for Terms Related to Driving Automation Systems.* — The canonical six-level autonomy taxonomy that informed the autonomy dimension in [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md).
 
 ---
 
-### On AI Tools, MCP, and Modern Agentic Systems
+## Spec-driven development
 
-**Anthropic** — *Model Context Protocol Specification*  
-The formal specification for MCP: the open standard for how AI models connect to external tools and context sources. The spec is available at [modelcontextprotocol.io](https://modelcontextprotocol.io). Chapter 5.4 of this book provides the conceptual framing; the MCP spec provides the technical reference.
+**Read first**
 
-**Lilian Weng** — *LLM Powered Autonomous Agents* (2023)  
-A comprehensive technical survey of agentic AI system architectures: planning, memory, tool use, multi-agent coordination. Available at [lilianweng.github.io](https://lilianweng.github.io). Useful as a technical companion to the agent-facing chapters of this book (Parts V and VI).
+- **GitHub.** (2024–2025). *spec-kit.* github.com/github/spec-kit. — The most active practitioner project on spec-as-source-of-truth for AI-augmented development. Direct ancestor of this book's SDD chapters and the canonical spec template.
 
-**Simon Willison** — Writings on prompt injection, LLM security, and agentic system risks  
-Willison has been one of the most consistent and technically precise voices on the security implications of giving AI systems tool access. His writing on prompt injection in agentic contexts is directly relevant to Chapter 5.7 (Failure Modes) and the NOT-authorized sections of SDD specs. Available at [simonwillison.net](https://simonwillison.net).
+**Further reading**
 
----
-
-### On Organizations and Human Systems
-
-**W. Edwards Deming** — *Out of the Crisis* (1982)  
-Deming's argument that quality problems are primarily system problems rather than worker problems is the direct ancestor of the SDD argument that spec gaps are primarily system problems — failures of constraint library, archetype catalog, and review process — rather than spec author failures. His 85/15 rule (85% of quality problems are caused by systems, 15% by individuals) should calibrate how you read the Metrics chapter (7.6).
-
-**Donella Meadows** — *Thinking in Systems: A Primer* (2008)  
-The clearest short introduction to systems thinking available. The concept of feedback loops — especially the distinction between balancing loops (self-correcting) and reinforcing loops (self-amplifying) — is directly relevant to understanding how the Spec Gap Log and first-pass validation rate function as balancing feedback in the SDD practice.
-
-**Gene Kim, Patrick Debois, John Willis, Jez Humble** — *The DevOps Handbook* (2016)  
-The practical handbook for high-performing engineering organizations. The Three Ways (flow, feedback, continual learning and experimentation) map cleanly onto SDD practice: spec-execute-validate is flow; the Spec Gap Log is feedback; the constraint library update cycle is continual learning. The DevOps transformation patterns (starting with a single value stream, building feedback loops) apply directly to introducing SDD in an organization.
+- **Jackson, M.** (1995). *Software Requirements & Specifications: A Lexicon of Practice, Principles, and Prejudices.* Addison-Wesley. — The domain/machine distinction maps directly onto the book's intent/implementation distinction. Read for the precision of the language and the discipline of problem framing.
+- **Meyer, B.** (1997). *Object-Oriented Software Construction* (2nd ed.). Prentice Hall. — Origin of Design by Contract. The constraint sections of an SDD spec are Design by Contract for agent behavior.
+- **IEEE 830-1998 / ISO/IEC/IEEE 29148:2018.** *Software Requirements Specifications.* — The canonical SRS structure; sections 1–3, 5, 7, 9 of the Canonical Spec Template are recognizably descended from this lineage.
+- **Cohn, M.** (2004). *User Stories Applied.* — INVEST criteria for specifications.
+- **North, D.** (2006, ongoing). *Behaviour-Driven Development* and the Gherkin Given/When/Then format. — Source of the acceptance criteria style used in Section 9.
 
 ---
 
-## Formal References
+## Failure modes, hallucination, and agent reliability
 
-These are sources cited specifically within the text of this book.
+**Read first**
 
-### Christopher Alexander
+- **Cemri, M., et al.** (2025). *Why Do Multi-Agent LLM Systems Fail? — MAST: A Multi-Agent System Failure Taxonomy.* OpenReview / arXiv. — Empirical 14-category partition derived from 200+ multi-agent failure traces. The most rigorous practitioner-facing failure taxonomy currently published.
+- **Zhang, Y., et al.** (2025). *LLM-based Agents Suffer from Hallucinations: A Survey of Taxonomy, Methods, and Directions.* arXiv:2509.18970. — Fine-grained partition of model-level (Category 6) failures; tool-call hallucination, planning hallucination, instruction-following inconsistency.
 
-- Alexander, C., Ishikawa, S., & Silverstein, M. (1977). *A Pattern Language: Towns, Buildings, Construction.* Oxford University Press. — Referenced in the preface and throughout as the structural model for pattern organization.
+**Further reading**
 
-### AI and Agent Systems
-
-- Anthropic. (2024). *Model Context Protocol Specification.* Retrieved from https://modelcontextprotocol.io — Referenced in [Least Capability] and the MCP sub-chapters.
-
-- Russell, S. (2019). *Human Compatible: Artificial Intelligence and the Problem of Control.* Viking. — Referenced in Chapter 2.3 (Three Dimensions of Delegation) and Chapter 1.5 (When Power Scales Faster Than Judgment).
-
-- Weng, L. (2023). *LLM Powered Autonomous Agents.* Lil'Log. Retrieved from https://lilianweng.github.io/posts/2023-06-23-agent/ — Referenced in Part 3 (The Agent) as a technical taxonomy companion.
-
-### Software Engineering
-
-- Brooks, F. P. (1995). *The Mythical Man-Month: Essays on Software Engineering* (Anniversary ed.). Addison-Wesley. — Referenced in Chapter 1.1 (The End of the Human Compiler) for the no-silver-bullet framing.
-
-- Feathers, M. C. (2004). *Working Effectively with Legacy Code.* Prentice Hall. — Referenced in Chapter 4.6 (The Living Spec) as an example of the systems SDD prevents.
-
-- Fowler, M. (2002). *Patterns of Enterprise Application Architecture.* Addison-Wesley. — Referenced in the Pattern Reference as a model for catalog-format pattern documentation.
-
-- Jackson, M. (1995). *Software Requirements & Specifications.* Addison-Wesley. — Referenced in Chapter 4.5 (Writing for Machine Execution) for the domain/machine distinction.
-
-- Meyer, B. (1997). *Object-Oriented Software Construction* (2nd ed.). Prentice Hall. — Referenced in Chapter 4.2 (The Spec as Control Surface) for the Design by Contract parallel.
-
-### Organizations and Systems
-
-- Deming, W. E. (1982). *Out of the Crisis.* MIT Press. — Referenced in Chapter 7.6 (Four Signal Metrics) for the systems-vs-individuals framing of quality.
-
-- Kim, G., Debois, P., Willis, J., & Humble, J. (2016). *The DevOps Handbook.* IT Revolution Press. — Referenced in Chapter 7.4 (Proportional Governance) for the Three Ways framework.
-
-- Meadows, D. H. (2008). *Thinking in Systems: A Primer.* Chelsea Green. — Referenced in Chapter 4.6 (The Living Spec) for the feedback loop taxonomy.
+- *Where LLM Agents Fail and How They Can Learn from Failures.* (2025). arXiv:2509.25370.
+- **Reason, J.** (1990). *Human Error.* Cambridge. — Active vs. latent failures, the Swiss-cheese model. Underlying theory for "fix the system, not the operator."
+- **Toyota Production System / 5 Whys.** (Ohno, 1988). — Origin of the per-failure root-cause discipline that the book's diagnostic protocol simplifies.
 
 ---
 
-*This list will be updated as the field develops. The most current version of the reading list is maintained at the book's companion site.*
+## Prompt injection and agent security
 
+**Read first**
 
+- **Greshake, K., Abdelnabi, S., et al.** (2023). *Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.* arXiv:2302.12173. — The foundational paper distinguishing direct from indirect prompt injection. Required reading.
+- **Willison, S.** (2022–present). *Prompt injection* series, including *The lethal trifecta for AI agents.* simonwillison.net. — The most consistent practitioner-facing analysis of prompt injection. Where the "lethal trifecta" framing originates.
+- **OWASP.** (2025). *LLM Top 10 — LLM01: Prompt Injection.* genai.owasp.org/llm-top-10. — The industry-standard categorization, including direct, indirect, multimodal, and payload-smuggling subtypes.
+
+**Further reading**
+
+- **Hines, K., et al.** (2024). *Defending Against Indirect Prompt Injection Attacks With Spotlighting.* arXiv:2403.14720. — Microsoft Research's spotlighting / data-marking approach.
+- **Anthropic.** (2025). *Constitutional Classifiers: Defending against universal jailbreaks.* anthropic.com/research. — Inference-time classifier defense; the strongest currently-published mitigation, with documented over-refusal cost.
+- **NIST.** (2024). *AI 100-2 E2024: Adversarial Machine Learning — A Taxonomy and Terminology of Attacks and Mitigations.* nvlpubs.nist.gov.
+- **Anthropic.** (2024). *Many-shot jailbreaking.* anthropic.com/research. — The discovery that long context windows enable a new class of jailbreak attacks.
+
+---
+
+## Tool use, MCP, and capability protocols
+
+**Read first**
+
+- **Anthropic.** (Nov 2024). *Model Context Protocol.* modelcontextprotocol.io. — The open protocol for tool/data integration. The book's MCP chapters provide the conceptual frame; the spec is the technical reference.
+- **Anthropic / OpenAI / Google.** *Tool use / function calling documentation.* — Provider-specific guidance on capability declarations, structured outputs, and tool-result handling.
+
+**Further reading**
+
+- **Schick, T., et al.** (2023). *Toolformer: Language Models Can Teach Themselves to Use Tools.* arXiv:2302.04761. — Foundational work on typed tool interfaces.
+- **Yao, S., et al.** (2022). *ReAct: Synergizing Reasoning and Acting in Language Models.* arXiv:2210.03629. — The reasoning + acting interleaving pattern that underlies most agent loops.
+- **Berkeley Function-Calling Leaderboard (BFCL).** gorilla.cs.berkeley.edu. — Empirical comparison of tool-use reliability across models.
+
+---
+
+## Evals and benchmarks
+
+**Read first**
+
+- **Jimenez, C. E., et al.** (2024). *SWE-bench: Can Language Models Resolve Real-World GitHub Issues?* arXiv:2310.06770; SWE-bench Verified subset. — The reference benchmark for code-fixing agents.
+- **Liu, X., et al.** (2023). *AgentBench: Evaluating LLMs as Agents.* arXiv:2308.03688.
+- **Yao, S., et al.** (2024). *τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains.*
+- **Mialon, G., et al.** (2023). *GAIA: A Benchmark for General AI Assistants.* arXiv:2311.12983.
+
+**Further reading**
+
+- **Liang, P., et al.** (2023). *Holistic Evaluation of Language Models (HELM).* arXiv:2211.09110. — The holistic eval framework that informed much of the agent-eval design space.
+- **Zheng, L., et al.** (2023). *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena.* arXiv:2306.05685. — Foundational analysis of judge-model bias and calibration.
+- **Anthropic.** *Inspect — A framework for large language model evaluations.* inspect.aisi.org.uk. — Open-source eval framework.
+- **OpenAI.** *Evals.* github.com/openai/evals. — The original public agent-eval framework.
+
+---
+
+## Pattern languages and design
+
+**Read first**
+
+- **Alexander, C., Ishikawa, S., & Silverstein, M.** (1977). *A Pattern Language: Towns, Buildings, Construction.* Oxford University Press. — Structural inspiration for how the Architecture of Intent is organized. Read at least the introduction and the first 50 patterns to understand what a pattern language *is* before evaluating any framework that claims to be one.
+
+**Further reading**
+
+- **Alexander, C.** (1979). *The Timeless Way of Building.* Oxford. — The companion volume; addresses the epistemology of pattern languages.
+- **Gamma, E., Helm, R., Johnson, R., & Vlissides, J.** (1994). *Design Patterns: Elements of Reusable Object-Oriented Software.* Addison-Wesley. — The software application of Alexander's approach.
+- **Fowler, M.** (2002). *Patterns of Enterprise Application Architecture.* Addison-Wesley. — Useful primarily for the discipline of catalog-format pattern documentation.
+
+---
+
+## Software engineering foundations
+
+- **Brooks, F. P.** (1995). *The Mythical Man-Month* (Anniversary ed.). Addison-Wesley. — Read "No Silver Bullet" for Brooks's distinction between accidental and essential complexity. Agents reduce accidental complexity dramatically; the essential complexity is what specs address.
+- **Feathers, M. C.** (2004). *Working Effectively with Legacy Code.* Prentice Hall. — A book about systems whose intent was never captured. The kind of system SDD prevents.
+
+---
+
+## Organizations, systems thinking, and quality
+
+- **Deming, W. E.** (1982). *Out of the Crisis.* MIT Press. — Quality problems are primarily system problems. The 85/15 rule should calibrate how the four signal metrics chapter is read.
+- **Meadows, D. H.** (2008). *Thinking in Systems: A Primer.* Chelsea Green. — The clearest short introduction to feedback loops; balancing vs. reinforcing loops directly inform how the Spec Gap Log functions in the SDD practice.
+- **Kim, G., Debois, P., Willis, J., & Humble, J.** (2016). *The DevOps Handbook.* IT Revolution Press. — The Three Ways (flow, feedback, continual learning) map cleanly onto SDD practice.
+
+---
+
+## AI ethics, alignment, and societal context
+
+- **Russell, S.** (2019). *Human Compatible: Artificial Intelligence and the Problem of Control.* Viking. — Russell's preference-uncertainty argument as the alignment framing closest to this book's spec-and-validation discipline.
+- **Bostrom, N.** (2014). *Superintelligence.* — More speculative; useful primarily as a systematic catalog of objective-misalignment failure modes.
+- **Crawford, K.** (2021). *Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence.* Yale. — The costs that don't appear in spec templates. Read as a corrective to the technical-optimism bias that pervades most AI engineering literature.
+
+---
+
+## Inline citations index
+
+Specific sources cited within chapters of this book:
+
+| Source | Cited in |
+|---|---|
+| Anthropic, *Building Effective Agents* (2024) | [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) |
+| Anthropic, *Model Context Protocol* | [Least Capability](../agents/04-tools-mcp-capability-boundaries.md), [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md) |
+| Anthropic, *Constitutional Classifiers* (2025) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
+| Cemri et al., MAST (2025) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
+| GitHub spec-kit | [Spec-Driven Development](../sdd/01-what-sdd-means.md), [SpecKit](../sdd/04-speckit.md) |
+| Greshake et al. (2023) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
+| Hines et al., Spotlighting (2024) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
+| Jimenez et al., SWE-bench (2024) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
+| Liang et al., HELM (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
+| Liu et al., AgentBench (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
+| Liu et al., *Agent Design Pattern Catalogue* (2024) | [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) |
+| Mialon et al., GAIA (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
+| OWASP LLM Top 10 (2025) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
+| SAE J3016 | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
+| Shavit, Agarwal et al. (OpenAI 2023) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
+| Weng, L., *LLM Powered Autonomous Agents* (2023) | [What Agents Are](../agents/01-what-agents-are.md) |
+| Willison, S., *Prompt Injection / Lethal Trifecta* | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
+| Yao et al., ReAct (2022) | [The Executor Model](../agents/03-agents-as-executors.md) |
+| Yao et al., τ-bench (2024) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
+| Zhang et al., LLM-Agent Hallucinations (2025) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
+
+---
+
+*This list will be updated as the field develops. Suggestions and corrections are welcome via the book's repository.*

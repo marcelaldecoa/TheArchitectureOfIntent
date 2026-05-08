@@ -55,7 +55,7 @@ The catalog solves this by making the most common archetype profiles decision-re
 |-----------|---------------|-------|
 | Agency Level | 1 — Minimal | Produces text/analysis only; no direct action |
 | Risk Posture | Low | Output is advice; human decision is the gate |
-| Oversight Model | A — Pre-authorized, post-review | Review output quality; no mid-execution approvals |
+| Oversight Model | A — Monitoring | Anomaly-triggered review; no per-output gate. Human reads outputs and acts on them at their discretion. |
 | Reversibility | R1 — Fully reversible | Output is always text; any action is human-initiated |
 
 **Standard constraints:**
@@ -84,7 +84,7 @@ Identical profile, plus a designated skill file that encodes domain-specific ana
 |-----------|---------------|-------|
 | Agency Level | 2–3 | Multi-step; limited branching |
 | Risk Posture | Medium | Writes, updates, or creates — effects are real |
-| Oversight Model | A or B | Model A for mature/repeatable; Model B for novel |
+| Oversight Model | D or B | Model D (Pre-auth Scope + Exception Gate) for mature/repeatable; Model B (Periodic Review) for novel deployments |
 | Reversibility | R2–R3 | Most writes are reversible; some sends are not |
 
 **Standard constraints:**
@@ -95,14 +95,14 @@ Identical profile, plus a designated skill file that encodes domain-specific ana
 - NOT authorized: refactoring code outside the defined scope, restructuring data schemas, creating new API endpoints
 
 **Standard oversight configuration:**
-- Model A: spec approval required; human reviews output against spec criteria
+- Model D: spec defines pre-authorized scope; agent acts within scope without per-output review; any boundary-crossing surfaces for human decision
 - Model B: phase checkpoints defined in spec; human approves before phase boundary is crossed
 - Escalation triggers: unexpected data format, target resource unavailable, spec appears to conflict with discovered reality
 
 **Typical use cases:** Feature implementation, data transformation, document generation, scheduled report production, migration execution.
 
 **Variant: High-frequency Executor**  
-Agency Level 3, Oversight Model C (monitored execution). Suitable for batch operations that execute hundreds of times per day where per-run review is impractical. Requires enhanced audit logging and anomaly detection.
+Agency Level 3, Oversight Model A (Monitoring + anomaly detection). Suitable for batch operations that execute hundreds of times per day where per-run review is impractical. Requires enhanced audit logging and statistical sampling for review.
 
 ---
 
@@ -114,7 +114,7 @@ Agency Level 3, Oversight Model C (monitored execution). Suitable for batch oper
 |-----------|---------------|-------|
 | Agency Level | 1–2 | Reads broadly; writes only to audit/flag outputs |
 | Risk Posture | Low-Medium | Reading is safe; flagging is advisory |
-| Oversight Model | B — Checkpoint-based | Review findings before remediation is triggered |
+| Oversight Model | A — Monitoring with alert routing | Findings are flagged for human resolution; no remediation by the Guardian itself |
 | Reversibility | R1–R2 | Findings are reversible; triggered remediation is not |
 
 **Standard constraints:**
@@ -140,7 +140,7 @@ Agency Level 3, Oversight Model C (monitored execution). Suitable for batch oper
 |-----------|---------------|-------|
 | Agency Level | 2–3 | Multi-source reads; unified write output |
 | Risk Posture | Medium | Output quality is high-consequence; process is read-heavy |
-| Oversight Model | B — Checkpoint-based | Review synthesized draft before delivery |
+| Oversight Model | B — Periodic Review (or C — Output Gate above threshold) | Sample-based review of synthesized drafts; Output Gate when distribution is high-consequence |
 | Reversibility | R2 | Draft output is revisable; distributed output is not |
 
 **Standard constraints:**
@@ -167,7 +167,7 @@ Agency Level 3, Oversight Model C (monitored execution). Suitable for batch oper
 |-----------|---------------|-------|
 | Agency Level | 4–5 | Multi-step, multi-agent, adaptive planning |
 | Risk Posture | High | Broad effect surface; coordinates irreversible actions |
-| Oversight Model | C or B | Model C for established; Model B for novel workflows |
+| Oversight Model | C or D | Model C (Output Gate) at coordination decision points for novel workflows; Model D (Pre-auth Scope + Exception Gate) for established workflows with bounded sub-agents |
 | Reversibility | R3–R4 | Sub-agent actions may be partially or fully irreversible |
 
 **Standard constraints:**
