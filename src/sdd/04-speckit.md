@@ -53,7 +53,7 @@ The primary commands:
 
 SpecKit's model: the agent is the instrument, the spec is the score, and the `/speckit.constitution` is the key signature that tells the agent what rules apply before any note is played.
 
-### How SpecKit Maps to the Intent Engineering
+### How SpecKit Maps to the Architecture of Intent
 
 SpecKit aligns with the SDD lifecycle at three levels:
 
@@ -61,9 +61,9 @@ SpecKit aligns with the SDD lifecycle at three levels:
 
 **Level 2: The spec template level.** SpecKit's spec output aligns with the categories in the canonical spec template: problem statement, desired outcome, scope, functional intent, constraints, acceptance criteria. SpecKit does not prescribe the same section structure verbatim, but teams using SpecKit should augment its output with the canonical template's invariant and agent-execution sections where relevant.
 
-**Level 3: The constitutional level.** `/speckit.constitution` maps to the archetype layer at the top of the control hierarchy. It is the place where cross-system constraints are declared — the things that are true for all specs in a project. In the Intent Engineering, this is where archetype defaults, organizational invariants, and non-negotiables live.
+**Level 3: The constitutional level.** `/speckit.constitution` maps to the archetype layer at the top of the control hierarchy. It is the place where cross-system constraints are declared — the things that are true for all specs in a project. In the Architecture of Intent, this is where archetype defaults, organizational invariants, and non-negotiables live.
 
-### SpecKit as the Intent Engineering's Execution Engine
+### SpecKit as the Architecture of Intent's Execution Engine
 
 When a team has:
 - Archetype definitions (the five canonical archetypes)
@@ -102,9 +102,9 @@ must include an explicit Archetype section in their spec.
 
 With this constitution loaded, any spec produced by `/specify` in this repository inherits these constraints automatically. The agent doesn't need to be reminded of them in each spec — they are pre-committed at the constitutional level.
 
-### Where SpecKit Extends the Intent Engineering
+### Where SpecKit Extends the Architecture of Intent
 
-SpecKit adds something the Intent Engineering's pure spec discipline does not give you out of the box: **tooling-enforced starting points**.
+SpecKit adds something the Architecture of Intent's pure spec discipline does not give you out of the box: **tooling-enforced starting points**.
 
 In a pure SDD practice without tooling, whether a spec gets written depends on team habit. SpecKit makes writing a spec the path of least resistance — the `/specify` command is the entry point to agent-assisted coding, not a separate step before it. The spec is produced as part of starting the work.
 
@@ -112,7 +112,7 @@ This is significant. Behavioral economics shows that the default path determines
 
 ### Where SpecKit Needs Augmentation
 
-SpecKit is excellent at Phase 2–3 (specification and clarification) and at making the spec machine-executable. It is intentionally minimal about several things that the Intent Engineering treats as critical:
+SpecKit is excellent at Phase 2–3 (specification and clarification) and at making the spec machine-executable. It is intentionally minimal about several things that the Architecture of Intent treats as critical:
 
 **Living specs and evolution tracking.** SpecKit supports iterative refinement via slash commands, but it does not prescribe a spec evolution log. Teams should add the evolution log section from the canonical spec template.
 
@@ -120,9 +120,9 @@ SpecKit is excellent at Phase 2–3 (specification and clarification) and at mak
 
 **Archetype declaration.** SpecKit does not know about the archetype framework. For agent systems, teams should add the archetype section to every spec produced by `/specify`. This is most easily done by including the archetype template fragment in the `/speckit.constitution`.
 
-**Validation checklist.** SpecKit's model assumes the human reviewing the PR is the validator. The Intent Engineering's validation checklist makes this explicit: *what are the specific clauses being checked?* Teams should treat PR review as spec-conformance review, not aesthetic review.
+**Validation checklist.** SpecKit's model assumes the human reviewing the PR is the validator. The Architecture of Intent's validation checklist makes this explicit: *what are the specific clauses being checked?* Teams should treat PR review as spec-conformance review, not aesthetic review.
 
-The augmentation of SpecKit with these additions is not a rejection of SpecKit. It is SpecKit operating as designed — a minimal core that teams customize to their needs. The Intent Engineering provides the framework for that customization.
+The augmentation of SpecKit with these additions is not a rejection of SpecKit. It is SpecKit operating as designed — a minimal core that teams customize to their needs. The Architecture of Intent provides the framework for that customization.
 
 ### The Organizational Argument for SpecKit
 
@@ -158,7 +158,7 @@ After applying this pattern:
 
 ## Therefore
 
-> **SpecKit is a practical implementation of Spec-Driven Development that embeds the spec lifecycle into the coding workflow via structured agent commands. Its `/specify`, `/clarify`, and `/constitution` commands map directly to the SDD lifecycle phases. Augmented with archetype declarations, scope invariants, and the spec evolution log, SpecKit becomes the execution engine for the Intent Engineering's complete governance model.**
+> **SpecKit is a practical implementation of Spec-Driven Development that embeds the spec lifecycle into the coding workflow via structured agent commands. Its `/specify`, `/clarify`, and `/constitution` commands map directly to the SDD lifecycle phases. Augmented with archetype declarations, scope invariants, and the spec evolution log, SpecKit becomes the execution engine for the Architecture of Intent's complete governance model.**
 
 ---
 

@@ -255,8 +255,8 @@
   <text x="450" y="498"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
-        font-size="48" font-weight="bold" letter-spacing="-0.4"
-        fill="white">Intent Engineering</text>
+        font-size="40" font-weight="bold" letter-spacing="-0.4"
+        fill="white">The Architecture of Intent</text>
 
   <!-- Subtitle -->
   <text x="450" y="528"

@@ -222,7 +222,7 @@ The protocol-layer counterpart to MCP at the tool layer; emerging standardizatio
 
 **Read first**
 
-- **Alexander, C., Ishikawa, S., & Silverstein, M.** (1977). *A Pattern Language: Towns, Buildings, Construction.* Oxford University Press. — Structural inspiration for how the Intent Engineering is organized. Read at least the introduction and the first 50 patterns to understand what a pattern language *is* before evaluating any framework that claims to be one.
+- **Alexander, C., Ishikawa, S., & Silverstein, M.** (1977). *A Pattern Language: Towns, Buildings, Construction.* Oxford University Press. — Structural inspiration for how the Architecture of Intent is organized. Read at least the introduction and the first 50 patterns to understand what a pattern language *is* before evaluating any framework that claims to be one.
 
 **Further reading**
 

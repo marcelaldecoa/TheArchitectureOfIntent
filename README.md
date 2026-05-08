@@ -1,10 +1,8 @@
-# Intent Engineering
+# The Architecture of Intent
 
 **A Field Guide to Designing and Shipping AI Agent Systems**
 
 *by Marcel Aldecoa*
-
-*Previously titled: The Architecture of Intent*
 
 ---
 
