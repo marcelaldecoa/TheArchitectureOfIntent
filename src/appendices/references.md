@@ -99,11 +99,11 @@ These are sources cited specifically within the text of this book.
 
 ### AI and Agent Systems
 
-- Anthropic. (2024). *Model Context Protocol Specification.* Retrieved from https://modelcontextprotocol.io — Referenced in Part V, Chapters 5.4 and the MCP sub-chapters.
+- Anthropic. (2024). *Model Context Protocol Specification.* Retrieved from https://modelcontextprotocol.io — Referenced in [Least Capability] and the MCP sub-chapters.
 
 - Russell, S. (2019). *Human Compatible: Artificial Intelligence and the Problem of Control.* Viking. — Referenced in Chapter 2.3 (Three Dimensions of Delegation) and Chapter 1.5 (When Power Scales Faster Than Judgment).
 
-- Weng, L. (2023). *LLM Powered Autonomous Agents.* Lil'Log. Retrieved from https://lilianweng.github.io/posts/2023-06-23-agent/ — Referenced in Part V as a technical taxonomy companion.
+- Weng, L. (2023). *LLM Powered Autonomous Agents.* Lil'Log. Retrieved from https://lilianweng.github.io/posts/2023-06-23-agent/ — Referenced in Part 3 (The Agent) as a technical taxonomy companion.
 
 ### Software Engineering
 
@@ -111,7 +111,7 @@ These are sources cited specifically within the text of this book.
 
 - Feathers, M. C. (2004). *Working Effectively with Legacy Code.* Prentice Hall. — Referenced in Chapter 4.6 (The Living Spec) as an example of the systems SDD prevents.
 
-- Fowler, M. (2002). *Patterns of Enterprise Application Architecture.* Addison-Wesley. — Referenced in Part VI as a model for catalog-format pattern documentation.
+- Fowler, M. (2002). *Patterns of Enterprise Application Architecture.* Addison-Wesley. — Referenced in the Pattern Reference as a model for catalog-format pattern documentation.
 
 - Jackson, M. (1995). *Software Requirements & Specifications.* Addison-Wesley. — Referenced in Chapter 4.5 (Writing for Machine Execution) for the domain/machine distinction.
 

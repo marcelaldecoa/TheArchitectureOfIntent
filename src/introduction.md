@@ -1,113 +1,90 @@
-﻿# The Architecture of Intent
+# Introduction
 
-## Designing Agency in an Age Where Code Is No Longer Scarce
-
----
-
-> *"Specs stop being paperwork. Architecture stops being diagrams.  
-> Code stops being the artifact that matters most.  
-> What matters is the clarity and integrity of your intent."*
+**A Field Guide to Shipping AI Agents Safely**
 
 ---
 
-Something fundamental has shifted in software.
+## Why this book exists
 
-It is not the arrival of AI tools, though those are real. It is not the automation of coding tasks, though that is accelerating. It is something deeper: the bottleneck has moved.
+Most teams adopting AI agents discover the same pattern within a quarter:
 
-For decades, the critical constraint in software was **translation**. Business intent was ambiguous. Machines were literal. The entire machinery of software engineering — requirements documents, flowcharts, UML diagrams, SOLID principles, design patterns, code reviews — existed to bridge this gap. The developer was the human compiler: the one in whose mind business language was transformed into executable logic.
+- The first demo is fast and impressive. The second pilot is slower than expected. By the third, the team is debugging output instead of shipping outcomes.
+- Architectural coherence quietly degrades because no one is reviewing what the agent decided to do — only whether the test passed.
+- The "AI made a mistake" incident reveals that nobody actually agreed, in writing, what the agent was authorized to do, what it must never do, or who was supposed to catch it when it drifted.
+- Adding agents made the team faster on individual tasks and slower at shipping reliable systems. The bottleneck moved, but nobody renegotiated the work to match.
 
-That bottleneck no longer exists in the same form.
+This is a structural problem, not a model problem. The model is doing what it was told. The trouble is that *being told* — what we ask of the agent, what we forbid it, how we check what it did — is the part the team did not learn how to do.
 
-Today, code is not scarce. It can be generated, refactored, and rewritten at machine speed. What remains scarce is something that was always scarce but easy to ignore when code was expensive: **the quality of intent itself**.
-
-What we decide to build. What constraints cannot be violated. What success actually means. What must never happen. How we will know when we are done.
-
-These questions are not new. But they are newly **load-bearing**. A system can now execute your intent before you have fully understood it. Agents can act at scale on ambiguous instructions, producing results that look plausible and are wrong in ways that compound quietly.
-
-This book is about building the structures — conceptual, technical, and organizational — that allow professionals to **delegate power safely**.
+This book is the discipline that addresses that gap. It is a field guide for the people writing the spec, building the agent, and owning the on-call pager when something breaks.
 
 ---
 
-## What This Book Is
+## What you will have at the end
 
-This is a **body of knowledge** for intent engineering.
+A pilot you can defend. Specifically:
 
-It is organized like a book but meant to operate like a reference. You can read it linearly, from foundations to execution. Or you can enter at the point where your work lives: the spec templates, the archetype catalog, the governance models.
+1. **An archetype.** A pre-committed answer to *"what kind of system is this — Advisor, Executor, Guardian, Synthesizer, or Orchestrator?"* — with the agency, oversight, and reversibility profile that follows from that choice.
+2. **A spec.** A written, reviewable artifact that says what the agent must do, what it must never do, what success looks like, and what context it operates in. The agent executes against this. Humans review against this.
+3. **An agent.** A system prompt, a set of skills, a tool manifest, and a capability boundary that match the archetype.
+4. **An oversight model.** A specific answer to *"who reviews what, when, and what triggers escalation?"* — proportional to the blast radius of the agent's actions.
+5. **Metrics that mean something.** Four signal metrics — spec gap rate, first-pass validation, cost per correct outcome, and oversight load — that tell you whether the pilot is healthy without manufacturing a dashboard for its own sake.
+6. **A deployment plan.** Canary, rollback, and spec versioning so you can ship without making the change irreversible.
 
-Each part tightens the abstraction:
-
-- **Part I** asks you to see differently. It is slow and philosophical deliberately — not because the philosophy is decorative, but because the rest cannot stand without it.
-- **Part II** names the discipline formally, giving vocabulary that will be used throughout.
-- **Part III** introduces the architectural grammar: the archetypes, the decision trees, the constitutional structures that make delegation predictable.
-- **Part IV** turns intent into method through Spec-Driven Development.
-- **Part V** examines agents honestly — what they are, what they are not, and how to delegate to them safely.
-- **Part VI** provides the practical acceleration layer: templates, catalogs, code standards, and pre-authorized structures.
-- **Part VII** addresses the human system: skills, governance, and the leadership question at the heart of this shift.
-- **Part VIII** proves all of it through end-to-end applied examples.
+If you finish the book and don't have those six things, the book has failed you. Tell us what was missing.
 
 ---
 
-## The Inspiration: A Pattern Language
+## Who this is for
 
-This book is consciously shaped by the influence of **Christopher Alexander's** *A Pattern Language* (1977).
+This book has one primary reader: the **tech lead, staff engineer, or platform-team member who is on the hook for an agent system going to production**. Everything in the book is aimed at making that person's next decision better.
 
-Alexander argued that good architecture is not invented fresh each time. It is drawn from a vocabulary of **patterns** — recurring solutions to recurring problems, proven over centuries, each one encoding the forces a space must balance and the form that resolves them.
+It is also useful for:
 
-Each pattern in Alexander's work has a form: a name, a context, the problem being solved, the resolution, and connections to other patterns. The language is self-referential and cumulative. Each pattern assumes others and unlocks others. No pattern is complete alone.
+- **Architects and principal engineers** responsible for the structural integrity of systems that agents now help build. Parts 1, 4, and 5 are most relevant.
+- **Engineering managers** trying to understand what their teams are actually doing when they "use AI." The Prologue and Part 1 give you the vocabulary; Part 5 gives you what to ask for in reviews.
+- **Platform teams** building shared agent infrastructure (MCP servers, spec templates, archetype catalogs). Parts 3, 4, and the Pattern Reference are the spine of your platform.
 
-This book borrows that structure. Each section is a pattern in the Architecture of Intent. The vocabulary compounds. The references are intentional. Reading is meant to leave you with a **working language** — one you can use in a spec review, an architecture session, or a conversation with an agent.
-
-The goal is not a framework. It is a language.
-
----
-
-## Who This Book Is For
-
-**Leaders and Executives** who need to understand the real nature of what has changed — not the tools, but the operating model. This is for the reader who asks: *how do we scale judgment, not just output?*
-
-**Architects and Principal Engineers** who are responsible for the structural integrity of systems being built partly or wholly by agents. This is for the reader who asks: *what are the load-bearing decisions, and where do they live now?*
-
-**Senior Engineers and Tech Leads** who are working daily at the intersection of specification, delegation, and validation. This is for the reader who asks: *how do I write something an agent can actually act on correctly?*
-
-**Product and Platform Teams** building the infrastructure of intent: spec systems, agent platforms, governance frameworks. This is for the reader who asks: *what are we building toward?*
+This book is **not** a tutorial on a specific AI tool, a survey of the model landscape, or a strategy document about whether to adopt AI. It assumes you've already decided to ship something with agents and now need to do it without regret.
 
 ---
 
-## What This Book Is Not
+## How to use it
 
-This is not a tutorial on any specific AI tool.
+Two reading modes, both supported.
 
-It is not a framework with mandatory steps — though Parts III through VII describe an integrated governance system (archetypes, dimensions, decision trees, oversight models, metrics) that functions as a framework when adopted as a whole. The individual patterns throughout are independently adoptable; the governance system works best as a coherent unit. It is not a management methodology with certification levels. It is not a claim that human engineering skill is obsolete — the opposite is true. It is not about coding faster.
+**Linear.** Start at the Prologue and read straight through. Each Part assumes the previous one. By the end you have the full vocabulary and the full pilot kit. Estimated time: 6–10 hours, but that's not how anyone actually reads a field guide. Read a Part, apply it, come back.
 
-It is not a replacement for Agile, DevOps, or any existing engineering practice. Intent engineering lives *inside* those practices. Agile provides the iteration cadence; DevOps provides the delivery pipeline; Systems Thinking provides the holistic perspective. What this book adds is a discipline for the specific problem those frameworks were not designed for: how to specify intent precisely enough that autonomous agents can execute it safely at scale. Teams practicing SDD still run sprints, still deploy through CI/CD, and still reason about systems holistically. The difference is that the spec — not the conversation, not the ticket, not the pull request — becomes the primary artifact of engineering judgment.
+**Work-shaped.** Enter at the decision you're currently stuck on. The [Pattern Index](appendices/pattern-index.md) and the [Glossary](appendices/glossary.md) are your navigation tools. Common entry points:
 
-The people who benefit most from this book will not say: *"This helped me ship faster."*
-
-They will say: *"This helped me think more clearly about what I am responsible for."*
-
-That is how disciplines are born.
-
----
-
-## Scope, Limitations, and Open Questions
-
-This book is an early attempt to formalize a discipline that is still forming. It would be dishonest to present it as complete. Several important limitations and open questions deserve acknowledgment:
-
-**What this framework does not address:**
-- **Industry-specific regulatory constraints.** Healthcare, finance, defense, and other regulated domains have compliance frameworks that impose additional requirements beyond what this book covers. The archetype and spec models are compatible with regulatory overlay, but the book does not attempt to map specific regulations to specific patterns.
-- **Multi-organizational agent systems.** The governance model assumes a single organization with authority over its agents. When agents from different organizations interact — an increasingly common scenario — the accountability model becomes significantly more complex. Archetypes from different organizations may conflict, accountability chains may not compose cleanly, and there is no established mechanism for cross-organizational archetype governance.
-- **Economic analysis.** The book does not provide cost-benefit analysis for adopting intent engineering practices. The overhead of spec writing, governance, and formal archetype review is real. Whether the investment pays off depends on factors (team size, domain risk, agent maturity) that vary too widely to generalize.
-- **Multi-model and multi-provider environments.** The framework treats the underlying model as a relatively stable element. In practice, organizations use different models for different tasks, switch models frequently, and deal with varying capability profiles across providers. The impact of model selection on archetype governance, spec precision requirements, and failure category distribution is not addressed.
-- **Spec maintenance at organizational scale.** The book advocates strongly for living specs but does not fully address the maintenance burden at scale. Hundreds of agent-assisted systems each with their own spec creates a spec maintenance workload that could become its own bottleneck — replacing the old code maintenance bottleneck with a new one. Organizations adopting SDD should plan for this overhead explicitly.
-
-**Open questions the framework does not resolve:**
-- **How precise is "precise enough"?** The book argues for specification clarity but does not provide a universal standard for when a spec is sufficiently detailed. This boundary is contextual and will likely remain so.
-- **What happens when model capabilities change faster than governance?** The framework assumes relative stability across review cycles. Rapid model upgrades may invalidate archetype selections and constraint calibrations at a pace that governance processes cannot match.
-- **Can intent engineering scale to truly autonomous systems?** The framework assumes humans remain in the governance loop. As agent systems approach higher autonomy levels, the viability of human-in-the-loop governance may reach practical limits that the current model does not address.
-
-**An invitation to test.** This book presents a framework, not a proof. The strongest validation will come from teams applying these patterns in their own contexts and reporting what works, what fails, and what needs refinement. If your team adopts any of these patterns, the most valuable contribution is documenting what happened — especially the failures. Disciplines are built not from theory alone but from the accumulation of practice.
+| If you are... | Start at |
+|---------------|----------|
+| Choosing how to structure a new agent system | [Pick an archetype](architecture/02-canonical-intent-archetypes.md) |
+| Writing a spec right now | [The canonical spec template](sdd/07-canonical-spec-template.md) |
+| Designing oversight for an agent that's about to ship | [Proportional Oversight](agents/06-human-oversight-models.md) |
+| Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
+| Setting up safety controls | [Safety patterns](patterns/safety/prompt-injection-defense.md) |
+| Looking at a worked pilot | [How to use these examples](examples/00-how-to-use.md) |
 
 ---
 
-*Begin with [A Note on Pattern Language](preface.md) to understand the structure of this work.*  
-*Or go directly to [The End of the Human Compiler](foundations/01-end-of-human-compiler.md) to begin Part I.*
+## What the book does not promise
+
+It does not promise that following these patterns guarantees a successful pilot. Models change, requirements shift, and some failures are genuinely model-level and unfixable by better specs. What this book gives you is the smallest set of structures that make a pilot's failures *diagnosable* and *correctable* rather than mysterious.
+
+It does not promise that every pattern applies to every team. Regulated industries (healthcare, finance, defense) have compliance requirements that go beyond what's covered here. Multi-organizational agent systems — where agents from different orgs interact — have governance problems this framework does not solve. Cost-benefit analysis for adopting these practices depends on factors that vary too widely to generalize.
+
+It does not promise to settle every open question in the field. *How precise is "precise enough"?* *What happens when model capability outpaces governance?* *Can intent engineering scale to truly autonomous systems?* These questions are real and unresolved. This book stakes out a working position; treat it as something to test against your own context, not as final word.
+
+---
+
+## A note on style
+
+This is a working book, not a literary one. Chapters are short, the vocabulary is consistent, and the templates are meant to be copied. Where a pattern can be stated in two pages, it is. Where a pattern needs a diagram, a table, or a worked example, it gets one. There is no philosophical preamble, because the reader of this book is presumed to already be working on the problem and to need the tools, not the argument.
+
+If you want the argument anyway — why this discipline matters, what changed structurally about software when code stopped being the bottleneck — read the [Prologue](prologue.md) next. It's three pages.
+
+If you'd rather just start with the first decision you have to make, go to [Pick an archetype](architecture/02-canonical-intent-archetypes.md).
+
+---
+
+*Continue to the [Prologue](prologue.md) for the short version of why this work matters, or jump straight to [How to read this book](how-to-read.md).*

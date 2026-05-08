@@ -167,7 +167,7 @@ An Orchestrator spec that says "it coordinates various agents as needed" is not 
 
 ## Connections
 
-**Archetype series:** [← Synthesizer](synthesizer.md) · [Begin Part IV →](../../sdd/01-what-sdd-means.md)  
+**Archetype series:** [← Synthesizer](synthesizer.md) · [Begin Part 2 (The Spec) →](../../sdd/01-what-sdd-means.md)  
 **Governing patterns:** [Canonical Intent Archetypes](../02-canonical-intent-archetypes.md) · [Four Dimensions of Governance](../03-archetype-dimensions.md) · [Decision Tree](../04-decision-tree.md)  
 **Composition:** [Composing Archetypes](../05-composing-archetypes.md) — Orchestrator with typed sub-agents (Pattern C)  
 **Evolution:** [Governed Archetype Evolution](../06-evolving-archetypes.md) — Orchestrators are the most common subject of scope drift  
@@ -175,7 +175,7 @@ An Orchestrator spec that says "it coordinates various agents as needed" is not 
 
 ---
 
-*The five archetype deep dives are complete. Continue to [Part IV: Spec-Driven Development](../../sdd/01-what-sdd-means.md).*
+*The five archetype deep dives are complete. Continue to [Part 2 (The Spec)](../../sdd/01-what-sdd-means.md).*
 
 
 

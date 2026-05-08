@@ -31,7 +31,7 @@ The 80 minutes of handle time that agents spend per hour on Tier 1 tasks is 80 m
 
 ## The Architecture
 
-Four agents work together in this system. Each maps to one of the five archetypes from Part II.
+Four agents work together in this system. Each maps to one of the five archetypes from Part 1.
 
 ### Agent 1: Inquiry Orchestrator
 **Archetype:** Orchestrator  

@@ -161,17 +161,17 @@ After applying this pattern:
 **This pattern assumes:**
 - [The Organizational Repertoire](01-why-repertoires-matter.md)
 - [The Canonical Spec Template — Section 6](../sdd/07-canonical-spec-template.md)
-- [Six Failure Categories](../agents/07-failure-modes.md)
+- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - Org-specific validation template additions
 - The Spec Gap Log as a validation quality driver
-- Governance review against consistent acceptance standards *(Part VII)*
+- Governance review against consistent acceptance standards *(Part 5 — Ship)*
 
 ---
 
-*This concludes Part VI: Standards & Repertoires.*
+*This concludes the Pattern Reference.*
 
-*Continue to [Part VII: Operating the System](../operating/01-skill-matrix.md)*
+*Continue to [Proportional Governance](../operating/04-governance.md)*
 
 

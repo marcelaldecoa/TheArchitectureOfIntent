@@ -63,7 +63,7 @@ The inverse failure is also real: an Executor whose pre-authorized scope is so t
 
 4. **Irreversible actions require explicit pre-authorization.** Any action in R3 or R4 (partially reversible through significant effort, or irreversible) must be explicitly listed in the scope declaration. A general authorization does not cover irreversible actions by implication.
 
-5. **Scope does not self-expand.** The Executor may not add items to its own authorized scope. Only the governance process for archetype evolution ([Pattern 3.6](../06-evolving-archetypes.md)) may expand scope.
+5. **Scope does not self-expand.** The Executor may not add items to its own authorized scope. Only the governance process for archetype evolution ([Governed Archetype Evolution](../06-evolving-archetypes.md)) may expand scope.
 
 ---
 

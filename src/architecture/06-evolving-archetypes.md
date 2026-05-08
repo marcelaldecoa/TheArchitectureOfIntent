@@ -15,7 +15,7 @@ You have classified a system, specced it, and shipped it. Three months later, a 
 
 Archetypes are not permanent — but changing them must be a deliberate act, not an accumulation of small decisions.
 
-This pattern assumes all of [Intent Architecture](01-archetypes-as-constitutional-law.md), and is the closing pattern for Part III.
+This pattern assumes all the prior archetype chapters: [Pick an Archetype](02-canonical-intent-archetypes.md), [Four Dimensions of Governance](03-archetype-dimensions.md), [The Archetype Selection Tree](04-decision-tree.md), and [Composing Archetypes](05-composing-archetypes.md).
 
 ---
 
@@ -102,7 +102,7 @@ An archetype review is not a re-evaluation starting from scratch. It is a compar
 
 **Step 2 — Spec gap identification.** Compare the behavior audit against the current spec. Document every discrepancy. There will always be some. The question is whether they are structural (affecting archetype, dimensions, or invariants) or peripheral (affecting implementation detail).
 
-**Step 3 — Re-run the decision tree.** Apply [Pattern 3.4](04-decision-tree.md) to the system as described by the behavior audit. Does the result match the current archetype classification?
+**Step 3 — Re-run the decision tree.** Apply [The Archetype Selection Tree](04-decision-tree.md) to the system as described by the behavior audit. Does the result match the current archetype classification?
 
 If yes: Update the spec to close the peripheral gaps. The archetype stands.
 
@@ -118,7 +118,7 @@ If no: proceed to Step 4.
 
 In continuous deployment environments, archetype evolution must be integrated into the delivery pipeline rather than treated as an offline governance exercise:
 
-- **Spec-as-code.** Store specs alongside application code in the repository. Spec changes follow the same pull request and review process as code changes. Archetype reclassification is a PR that requires explicit approval from the authority level defined in [Delegated Definition Authority](../operating/03-who-defines-archetypes.md).
+- **Spec-as-code.** Store specs alongside application code in the repository. Spec changes follow the same pull request and review process as code changes. Archetype reclassification is a PR that requires explicit approval from the authority level defined in [Proportional Governance](../operating/04-governance.md).
 - **Automated drift detection.** CI checks can validate that the system's declared capabilities (tool manifest, API surface, data access) are consistent with its archetype's authorized scope. A new tool added to the manifest that exceeds the current archetype's boundaries should fail the pipeline and trigger a review.
 - **Gated promotion for archetype changes.** When an archetype is reclassified, the deployment requires a manual gate — the spec reviewer signs off before the pipeline proceeds. This is not bureaucracy; it is the minimum governance for a change that alters oversight requirements, risk posture, and invariants.
 - **Feature flags for planned evolution.** Planned transitions (Advisor → Executor) can be gated behind feature flags that are enabled only after transition criteria are met and the spec is updated. The flag flip is a logged event, not a silent change.
@@ -203,9 +203,9 @@ After applying this pattern:
 **This pattern enables:**
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the spec version history section
 - [Living Specs](../sdd/06-living-specs.md) — how specs evolve over time
-- Part VII (Operating Intent Systems) — governance cadences in production
+- Part 5 (Ship) — governance cadences in production
 
 ---
 
-*Part III is complete. Continue to [Part IV: Spec-Driven Development](../sdd/01-what-sdd-means.md), or to the archetype deep dives: [Advisor](archetypes/advisor.md) · [Executor](archetypes/executor.md) · [Guardian](archetypes/guardian.md) · [Synthesizer](archetypes/synthesizer.md) · [Orchestrator](archetypes/orchestrator.md)*
+*Part 1 (Decisions) is complete. Continue to [Part 2 (The Spec)](../sdd/01-what-sdd-means.md), or to the archetype deep dives: [Advisor](archetypes/advisor.md) · [Executor](archetypes/executor.md) · [Guardian](archetypes/guardian.md) · [Synthesizer](archetypes/synthesizer.md) · [Orchestrator](archetypes/orchestrator.md)*
 

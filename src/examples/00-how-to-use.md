@@ -53,7 +53,7 @@ The answers in these examples are specific to these scenarios. The questions tra
 
 ### Use the Specs as Structural Templates
 
-The specs in these examples follow the canonical template from Part IV. When you write your first spec, use these as concrete references for what each section looks like when it is well-populated — not as content to copy, but as a calibration for completeness and specificity.
+The specs in these examples follow the canonical template from Part 2. When you write your first spec, use these as concrete references for what each section looks like when it is well-populated — not as content to copy, but as a calibration for completeness and specificity.
 
 Pay particular attention to the NOT-authorized sections. The customer support example's NOT-authorized list was not written in one pass — it was built up through spec review as reviewers applied the five questions from Chapter 7.4 and found clauses that needed to be made explicit.
 
@@ -83,9 +83,9 @@ There is no example of a Synthesizer-dominant research system, a Guardian-domina
 If you want to test this framework against your own context, here is a practical exercise:
 
 1. **Pick one agent system** your team is building or operating.
-2. **Run the archetype decision tree** ([Pattern 3.4](../architecture/04-decision-trees-for-archetype-selection.md)). Does the result match what you currently have? If not, document why.
+2. **Run the archetype decision tree** ([The Archetype Selection Tree](../architecture/04-decision-tree.md)). Does the result match what you currently have? If not, document why.
 3. **Write the spec** for the agent's most consequential action using the [Canonical Spec Template](../sdd/07-canonical-spec-template.md). Focus on Sections 3 (Constraints) and 6 (Success Criteria). The first draft will feel incomplete — that is the point.
-4. **Execute against the spec** and categorize the first three failures using the [six failure categories](../agents/07-failure-modes.md). How many are spec gaps versus model-level limitations?
+4. **Execute against the spec** and categorize the first three failures using the [six failure categories](../theory/05-failure-as-design-signal.md). How many are spec gaps versus model-level limitations?
 5. **Document what surprised you.** The gap between what you expected and what happened is the most valuable learning signal the framework produces.
 
 The two examples in this part are meant to show the process. Your system is where the framework gets tested.

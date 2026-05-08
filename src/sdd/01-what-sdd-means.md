@@ -14,7 +14,7 @@ You have an agent that can write code, call APIs, modify databases, compose docu
 
 You are about to discover that most of the corrections are the spec's fault — and that you didn't know you were writing a spec in the first place.
 
-This pattern opens Part IV and assumes the conceptual vocabulary of Parts I–III: intent vs. implementation, agency levels, failure categories, and the archetype framework.
+This pattern opens Part 2 (The Spec) and assumes the conceptual vocabulary of the prologue and Part 1: intent vs. implementation, agency levels, failure categories, and the archetype framework.
 
 ---
 
@@ -124,9 +124,8 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
-- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
-- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md)
+- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - [The Spec as Control Surface](02-specs-as-control-surfaces.md)

@@ -69,4 +69,4 @@ Design the gate as a **named checkpoint** where the agent produces a **structure
 - [Proportional Oversight](../../agents/06-human-oversight-models.md) — gates are placed proportionally to consequence, not uniformly
 - [Escalation Chain](escalation-chain.md) — one of the human's options at a gate is to escalate to a higher authority
 - [Audit Trail](../observability/audit-trail.md) — human decisions at gates are logged as auditable events
-- [Design for Reversibility](../../theory/04-reversibility-as-design-dimension.md) — gates are mandatory before irreversible actions
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md) — gates are mandatory before irreversible actions

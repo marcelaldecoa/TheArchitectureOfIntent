@@ -263,7 +263,7 @@
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
         font-size="14.5" font-style="italic"
-        fill="#93c5fd" opacity="0.85">Designing Agency in an Age Where Code Is No Longer Scarce</text>
+        fill="#93c5fd" opacity="0.85">A Field Guide to Shipping AI Agents Safely</text>
 
   <!-- Author & year -->
   <text x="450" y="557"

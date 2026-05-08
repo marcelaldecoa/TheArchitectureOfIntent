@@ -10,7 +10,7 @@
 
 ## Context
 
-Part III introduced the five canonical archetypes — Advisor, Executor, Guardian, Synthesizer, Orchestrator — and the four dimensions that define each: Agency Level, Risk Posture, Oversight Model, and Reversibility. Those archetypes are conceptual vocabulary.
+Part 1 introduced the five canonical archetypes — Advisor, Executor, Guardian, Synthesizer, Orchestrator — and the four dimensions that define each: Agency Level, Risk Posture, Oversight Model, and Reversibility. Those archetypes are conceptual vocabulary.
 
 This chapter materializes them as a usable catalog: reference profiles that practitioners consult when specifying a new agent deployment, with enough structure to serve as the starting point for Section 3 of any spec, and enough extensibility to accommodate organizational specializations.
 
@@ -37,7 +37,7 @@ The catalog solves this by making the most common archetype profiles decision-re
 
 ### How to Use This Catalog
 
-**Step 1.** Identify the primary archetype your agent will instantiate. If you're uncertain, use the selection table in Part III ([The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)) and the [Agency Levels and Risk Posture](../architecture/03-archetype-dimensions.md) chapter.
+**Step 1.** Identify the primary archetype your agent will instantiate. If you're uncertain, use the selection table in Part 1 ([The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)) and the [Agency Levels and Risk Posture](../architecture/03-archetype-dimensions.md) chapter.
 
 **Step 2.** Find the closest standard profile in the catalog below.
 

@@ -210,7 +210,7 @@ No files written.
 
 ---
 
-*This concludes Example 2 and Part VIII: Applied Examples.*
+*This concludes Example 2 and the Worked Pilots.*
 
 *[Return to the book index](../../SUMMARY.md)*
 

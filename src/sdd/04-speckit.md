@@ -66,10 +66,10 @@ SpecKit aligns with the SDD lifecycle at three levels:
 ### SpecKit as the Architecture of Intent's Execution Engine
 
 When a team has:
-- Archetype definitions (from Part III)
+- Archetype definitions (the five canonical archetypes)
 - A constitutional spec layer (via `/speckit.constitution`)
-- A canonical spec template (from Pattern 4.7)
-- The SDD lifecycle (from Pattern 4.3)
+- A canonical spec template (the [Canonical Spec Template](07-canonical-spec-template.md))
+- The SDD lifecycle (the [Spec Lifecycle](03-spec-lifecycle.md))
 
 ...SpecKit is the tooling that makes all three work together in a development workflow.
 
@@ -95,7 +95,7 @@ must include an explicit Archetype section in their spec.
 
 ## Standards That Apply to All Generated Code
 
-- [Link to language-specific code standards from Part VI]
+- [Link to language-specific code standards in the Pattern Reference]
 - Test coverage requirement: all acceptance criteria must have tests.
 - Error handling: structured error types only; no untyped exceptions.
 ```
@@ -166,7 +166,7 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md)
+- [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md)
 - [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 
 **This pattern enables:**
