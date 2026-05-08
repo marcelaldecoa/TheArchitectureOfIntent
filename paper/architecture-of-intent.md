@@ -11,7 +11,7 @@
 
 ## Abstract *(target ~200 words; below is the skeleton draft)*
 
-Software systems, organizations, and increasingly AI agent systems share a common structural problem: humans must express intent precisely enough that a non-human actor — code, an automated pipeline, an organization, an LLM agent — can execute it without supervisory rescue. We present *The Architecture of Intent*, a framework for designing delegated systems by treating **intent as a primary design artifact distinct from implementation**. The framework has four load-bearing elements: (i) **archetypes**, five canonical pre-commitments to delegation shape (Advisor, Executor, Guardian, Synthesizer, Orchestrator); (ii) four **orthogonal calibration dimensions** (agency, autonomy, responsibility, reversibility) that make Shavit & Agarwal's (2023) operational variables explicit and separable; (iii) a **fix-locus failure taxonomy** (Cat 1–7) that complements Cemri et al.'s (2025) empirical multi-agent failure partition (MAST) by indicating *which artifact must change* in response to a failure; and (iv) **Spec-Driven Development** as the protocol for expressing intent precisely enough to be executable and verifiable. We instantiate the framework against AI agent systems and demonstrate composition with Microsoft's DevSquad Copilot eight-phase agentic development lifecycle. The framework introduces one new failure category — Cat 7 (Perceptual Failure) — for perceiving-then-acting systems that prior taxonomies do not address. We frame and qualify the contribution as a position-and-framework paper without empirical validation at scale.
+Software systems, organizations, and increasingly AI agent systems share a common structural problem: humans must express intent precisely enough that a non-human actor — code, an automated pipeline, an organization, an LLM agent — can execute it without supervisory rescue. We present *The Architecture of Intent*, a framework for designing delegated systems by treating **intent as a primary design artifact distinct from implementation**. The framework has four load-bearing elements: (i) **archetypes**, five canonical pre-commitments to delegation shape (Advisor, Executor, Guardian, Synthesizer, Orchestrator); (ii) four **orthogonal calibration dimensions** (agency, autonomy, responsibility, reversibility) that make Shavit & Agarwal's [@shavitAgarwal2023] operational variables explicit and separable; (iii) a **fix-locus failure taxonomy** (Cat 1–7) that complements Cemri et al.'s [@cemriMAST2025] empirical multi-agent failure partition (MAST) by indicating *which artifact must change* in response to a failure; and (iv) **Spec-Driven Development** [@githubSpecKit2024] as the protocol for expressing intent precisely enough to be executable and verifiable. We instantiate the framework against AI agent systems and demonstrate composition with Microsoft's DevSquad Copilot eight-phase agentic development lifecycle [@microsoftDevSquadCopilot2024]. The framework introduces one new failure category — Cat 7 (Perceptual Failure) — for perceiving-then-acting systems that prior taxonomies do not address. We frame and qualify the contribution as a position-and-framework paper without empirical validation at scale.
 
 **Keywords:** intent engineering, agentic development lifecycle, spec-driven development, agent governance, multi-agent systems, AI safety, software architecture.
 
@@ -47,35 +47,35 @@ Software systems, organizations, and increasingly AI agent systems share a commo
 
 ### 2.1 Spec-Driven Development
 
-> *Stub paragraph.* GitHub spec-kit (2024) operationalizes spec-first development against AI assistants. Microsoft DevSquad Copilot (2024–2025) integrates spec-driven development into an eight-phase iterative cycle for agentic development. Our framework's "Spec-Driven Development" element is direct lineage from these projects, not a new invention; the contribution is positioning SDD as the protocol layer that supports the archetype and dimension layers above it.
+> *Stub paragraph.* GitHub spec-kit [@githubSpecKit2024] operationalizes spec-first development against AI assistants. Microsoft DevSquad Copilot [@microsoftDevSquadCopilot2024] integrates spec-driven development into an eight-phase iterative cycle for agentic development. Our framework's "Spec-Driven Development" element is direct lineage from these projects, not a new invention; the contribution is positioning SDD as the protocol layer that supports the archetype and dimension layers above it.
 
 ### 2.2 Driving automation and graduated delegation
 
-> *Stub paragraph.* SAE J3016 (2021) defines six levels of driving automation as a graduated handoff of operational responsibility from human to system. The structure (operational responsibility shifts as automation widens) is a precedent for the four-dimensions calibration we propose. We draw the *delegation ladder* metaphor explicitly from SAE J3016 and acknowledge the prior work; the contribution is generalizing the ladder to non-driving delegated systems and decomposing the single "automation level" into four orthogonal axes.
+> *Stub paragraph.* SAE J3016 [@saeJ30162021] defines six levels of driving automation as a graduated handoff of operational responsibility from human to system. The structure (operational responsibility shifts as automation widens) is a precedent for the four-dimensions calibration we propose. We draw the *delegation ladder* metaphor explicitly from SAE J3016 and acknowledge the prior work; the contribution is generalizing the ladder to non-driving delegated systems and decomposing the single "automation level" into four orthogonal axes.
 
 ### 2.3 Agent governance
 
-> *Stub paragraph.* Shavit & Agarwal et al. (OpenAI 2023) define seven operational variables for governing agentic AI systems: ability, agency, agency type, autonomy, alignment, accountability, and authority. Our four-dimensions framework is a refactoring of a subset of those variables into explicit, separable axes with explicit cross-cutting operationalization. We do not claim novelty for the dimensions individually; we claim novelty for the orthogonality argument and its operationalization in spec design.
+> *Stub paragraph.* Shavit & Agarwal et al. [@shavitAgarwal2023] define seven operational variables for governing agentic AI systems: ability, agency, agency type, autonomy, alignment, accountability, and authority. Our four-dimensions framework is a refactoring of a subset of those variables into explicit, separable axes with explicit cross-cutting operationalization. We do not claim novelty for the dimensions individually; we claim novelty for the orthogonality argument and its operationalization in spec design.
 
 ### 2.4 Agent design
 
-> *Stub paragraph.* Anthropic's *Building Effective Agents* (2024) catalogues practical agent shapes: prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer, autonomous agents. OpenAI tool-use guidance (2024) catalogues tool-design and capability-boundary practice. The five archetypes we propose are an opinionated synthesis of these shapes into a smaller, more decision-ready taxonomy. The synthesis is the contribution; the underlying patterns are inherited.
+> *Stub paragraph.* Anthropic's *Building Effective Agents* [@anthropicBuildingEffectiveAgents2024] catalogues practical agent shapes: prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer, autonomous agents. The five archetypes we propose are an opinionated synthesis of these shapes into a smaller, more decision-ready taxonomy. The synthesis is the contribution; the underlying patterns are inherited.
 
 ### 2.5 Multi-agent failure analysis
 
-> *Stub paragraph.* Cemri et al. (2025) propose MAST, a Multi-Agent System failure Taxonomy with 14 empirical failure categories observed across 200+ deployments. MAST partitions failures by *symptom and locus of observation*. Our Cat 1–7 taxonomy partitions failures by *fix locus* — which artifact must change to prevent recurrence. The two are complementary, not competing: MAST tells you what failed; Cat 1–7 tells you who owns the fix.
+> *Stub paragraph.* Cemri et al. [@cemriMAST2025] propose MAST, a Multi-Agent System failure Taxonomy with 14 empirical failure categories observed across 200+ deployments. MAST partitions failures by *symptom and locus of observation*. Our Cat 1–7 taxonomy partitions failures by *fix locus* — which artifact must change to prevent recurrence. The two are complementary, not competing: MAST tells you what failed; Cat 1–7 tells you who owns the fix. Zhang et al. [@zhangHallucinationSurvey2025] provide finer partition of model-level (Cat 6) failure, which we cite without re-deriving.
 
 ### 2.6 Pattern languages and software architecture
 
-> *Stub paragraph.* Alexander, Ishikawa, & Silverstein (1977) establish the pattern-language form: structured catalogues of context-problem-solution-resulting-context entries that compose. We borrow the form for the framework's archetype catalogue but explicitly do not claim to be a pattern language in Alexander's sense — the test for that label requires more empirical pattern derivation than this paper offers. Brooks (1975) and Meyer (1992) anchor the broader software-engineering tradition we extend.
+> *Stub paragraph.* Alexander, Ishikawa, & Silverstein [@alexanderPatternLanguage1977] establish the pattern-language form: structured catalogues of context-problem-solution-resulting-context entries that compose. We borrow the form for the framework's archetype catalogue but explicitly do not claim to be a pattern language in Alexander's sense — the test for that label requires more empirical pattern derivation than this paper offers. Brooks [@brooksMythicalManMonth1975], Meyer [@meyerDesignByContract1992], and Jackson [@jacksonRequirements1995] anchor the broader software-engineering tradition we extend.
 
 ### 2.7 Systems thinking
 
-> *Stub paragraph.* Meadows (2008) and Reason (1990) provide the broader systems-thinking and human-error frame. Reason's distinction between active failures and latent conditions parallels our distinction between Cat 6 (Model-level, active) and Cat 1 (Spec, latent). The connection is acknowledged; we do not attempt a thorough re-derivation.
+> *Stub paragraph.* Meadows [@meadowsThinkingInSystems2008] and Reason [@reasonHumanError1990] provide the broader systems-thinking and human-error frame. Reason's distinction between active failures and latent conditions parallels our distinction between Cat 6 (Model-level, active) and Cat 1 (Spec, latent). The connection is acknowledged; we do not attempt a thorough re-derivation.
 
 ### 2.8 Inference economics and prompt architecture
 
-> *Stub paragraph.* Pope et al. (2022) ground the inference-cost economics that prompt caching exposes to API consumers. Liu et al. (2023) document long-context attention degradation ("Lost in the Middle") that motivates the context-budget patterns the framework recommends. These works are referenced for the application section, not the framework section.
+> *Stub paragraph.* Pope et al. [@popeInferenceScaling2022] ground the inference-cost economics that prompt caching exposes to API consumers. Liu et al. [@liuLostInTheMiddle2023] document long-context attention degradation ("Lost in the Middle") that motivates the context-budget patterns the framework recommends. These works are referenced for the application section, not the framework section.
 
 ---
 
@@ -97,7 +97,9 @@ Software systems, organizations, and increasingly AI agent systems share a commo
 > | Synthesizer | Aggregate, distill, or compose from multiple sources | Moderate | Medium | Output review above threshold |
 > | Orchestrator | Coordinate multiple agents or services toward a compound goal | High | High | Active oversight; escalation paths |
 >
-> Argument: this is the smallest decision-ready taxonomy that covers the deployment shapes practitioners actually face. Each archetype is a pre-commitment to a delegation shape; the spec author commits to the archetype before designing the system, not after. We work through the decision tree (which archetype for which system) and discuss composition (multiple archetypes within a single deployment).
+> Argument: this is the smallest decision-ready taxonomy that covers the deployment shapes practitioners actually face. Each archetype is a pre-commitment to a delegation shape; the spec author commits to the archetype before designing the system, not after. The decision tree in **Figure 1** resolves the typical ambiguity in archetype selection in four questions; we discuss composition (multiple archetypes within a single deployment) and the risk-override path that can elevate a system's archetype above what the tree alone would suggest.
+
+![**Figure 1.** The archetype selection tree. Apply questions in order; stop at the first match. Composition is permitted: a single deployment may host multiple archetypes (e.g., an Orchestrator coordinating Executors, with a Guardian validating each Executor's output).](figures/archetype-decision-tree.svg){#fig:archetype-tree width=85%}
 
 ### 3.3 Four dimensions of calibration
 
@@ -108,7 +110,9 @@ Software systems, organizations, and increasingly AI agent systems share a commo
 > 3. **Responsibility** — locus of accountability for outcomes. Distributed across authorial, operational, and validation layers.
 > 4. **Reversibility** — capacity to undo or recover from incorrect actions. A property of the system's environment and tooling, not just the agent.
 >
-> **Orthogonality argument.** These four dimensions are independent in principle and in practice. A system can have wide agency but narrow autonomy (an Advisor surfaces broad options but has no authority to act); narrow agency but wide autonomy (an automated pipeline executes a fixed sequence without intervention); and so on. Treating them as a single "automation level" (cf. SAE J3016 levels) collapses the design space. Treating them as four-dimensional gives spec authors four levers to calibrate independently.
+> **Orthogonality argument.** These four dimensions are independent in principle and in practice. **Figure 2** plots two of the four (Agency × Autonomy) against each other and shows that all four quadrants contain real deployments. A system can have wide agency but narrow autonomy (a Compliance Guardian with explicit gates: high decision latitude per call, but every call surfaces for human approval); narrow agency but wide autonomy (a deterministic CI/CD pipeline: no judgment, no per-step approval); and so on. Treating these as a single "automation level" — as SAE J3016 [@saeJ30162021] does for driving — collapses the design space onto a diagonal. Treating them as four-dimensional gives spec authors four levers to calibrate independently. The same orthogonality argument applies to the other two dimensions (Responsibility, Reversibility); we omit the additional 2D plots for brevity.
+
+![**Figure 2.** Two of the four calibration dimensions plotted against each other. Each quadrant has real deployments; no quadrant is empty. The other two dimensions (Responsibility, Reversibility) are similarly orthogonal.](figures/four-dimensions-orthogonality.svg){#fig:orthogonality width=85%}
 >
 > **Operationalization.** Each dimension maps to specific clauses in a Spec-Driven Development specification. We provide a mapping table and worked examples for two configurations (a low-agency Guardian and a high-agency Executor).
 
@@ -142,19 +146,19 @@ Software systems, organizations, and increasingly AI agent systems share a commo
 
 ### 4.1 The agentic development lifecycle and DevSquad Copilot
 
-> *Stub paragraph.* Microsoft DevSquad Copilot defines an eight-phase iterative cycle: envisioning → spec thin slices → plan with ADRs → decompose → TDD-first implement → learn openly → independent review → continuous refinement. The cycle exemplifies the broader *agentic development lifecycle* — the practice of using AI agents in iterative software delivery alongside human engineers. The Architecture of Intent composes cleanly with this cycle: archetypes commit at envisioning; dimensions calibrate during spec thin slices; the failure taxonomy operates during learn openly; SDD threads through every phase. We provide a phase-to-artifact mapping table (full version in the book; abbreviated here).
+> *Stub paragraph.* Microsoft DevSquad Copilot [@microsoftDevSquadCopilot2024] defines an eight-phase iterative cycle: envisioning → spec thin slices → plan with ADRs → decompose → TDD-first implement → learn openly → independent review → continuous refinement. The cycle exemplifies the broader *agentic development lifecycle* — the practice of using AI agents in iterative software delivery alongside human engineers. The Architecture of Intent composes cleanly with this cycle: archetypes commit at envisioning; dimensions calibrate during spec thin slices; the failure taxonomy operates during learn openly; SDD threads through every phase. We provide a phase-to-artifact mapping table (full version in the book; abbreviated here).
 
 ### 4.2 Capability boundaries via the Model Context Protocol
 
-> *Stub paragraph.* MCP (Anthropic 2024; cross-vendor adoption 2025) is the protocol that makes capability boundaries operationally enforceable. The framework's *Least Capability* discipline — agents receive only the tools their authorized scope requires — is implementable in MCP terms via per-tool authorization at the server. We summarize the MCP-specific patterns from the book.
+> *Stub paragraph.* MCP [@anthropicMCP2024] is the protocol that makes capability boundaries operationally enforceable. The framework's *Least Capability* discipline — agents receive only the tools their authorized scope requires — is implementable in MCP terms via per-tool authorization at the server. We summarize the MCP-specific patterns from the book.
 
 ### 4.3 Coding agents: a worked archetype-by-deployment-posture analysis
 
-> *Stub paragraph: ~800 words.* Coding agents (Cursor, Cline, Devin, Claude Code, Codex CLI) resist clean archetype partitioning. The framework resolves this by archetype-by-deployment-posture: pair-programmer mode is Advisor; in-loop mode is Executor with optional Synthesizer composition; autonomous mode is Orchestrator-over-self. Each posture has different oversight, different capability boundaries, different failure surface. We work through three structural controls (branch protection, dependency allowlist, sandboxed execution) and the most common Cat 1/3 hybrid (the deleted-tests failure: agent removes failing tests instead of fixing them).
+> *Stub paragraph: ~800 words.* Coding agents (Cursor, Cline, Devin, Claude Code, Codex CLI) resist clean archetype partitioning. The framework resolves this by archetype-by-deployment-posture: pair-programmer mode is Advisor; in-loop mode is Executor with optional Synthesizer composition; autonomous mode is Orchestrator-over-self. Each posture has different oversight, different capability boundaries, different failure surface. We work through three structural controls (branch protection, dependency allowlist, sandboxed execution) and the most common Cat 1/3 hybrid (the deleted-tests failure: agent removes failing tests instead of fixing them). External calibration benchmarks: SWE-bench Verified [@jimenezSweBenchVerified2024].
 
 ### 4.4 Computer-use agents: where Cat 7 becomes necessary
 
-> *Stub paragraph: ~600 words.* Computer-use agents (Anthropic Computer Use Oct 2024, OpenAI Operator Jan 2025, Gemini computer use 2025) perceive a screen via vision and act via simulated input. Their failure surface includes shapes that don't exist for text-only agents: lookalike domain navigation, visual instruction injection, modal popup interception, state miscount in dynamic lists. Cat 7 (Perceptual Failure) is the framework's response. Four structural controls follow from the analysis: sandboxed environment, authentication scope minimization, domain allowlist, high-consequence confirmation gates. We also note: when an API exists, computer-use should be the option of last resort.
+> *Stub paragraph: ~600 words.* Computer-use agents [@anthropicComputerUse2024; @openaiOperator2025; @googleGeminiComputerUse2025] perceive a screen via vision and act via simulated input. Their failure surface includes shapes that don't exist for text-only agents: lookalike domain navigation, visual instruction injection [@greshakeIndirectInjection2023; @willisonLethalTrifecta], modal popup interception, state miscount in dynamic lists. Cat 7 (Perceptual Failure) is the framework's response. Four structural controls follow from the analysis: sandboxed environment, authentication scope minimization, domain allowlist, high-consequence confirmation gates. We also note: when an API exists, computer-use should be the option of last resort. External calibration benchmarks: WebArena [@zhouWebArena2024], OSWorld [@xieOSWorld2024]. The OWASP LLM Top 10 [@owaspLLMTop10_2025] provides the baseline attack-surface enumeration we extend.
 
 ---
 
@@ -170,7 +174,7 @@ Software systems, organizations, and increasingly AI agent systems share a commo
 
 ### 5.3 Relation to MAST and other multi-agent failure work
 
-> *Stub paragraph.* We position the framework as complementary to MAST (Cemri et al. 2025), Zhang et al. (2025) hallucination survey, and OWASP LLM Top 10 (2025). None of those compete with Cat 1–7; they cover different partitions of the failure space. We show the mapping.
+> *Stub paragraph.* We position the framework as complementary to MAST [@cemriMAST2025], Zhang et al.'s hallucination survey [@zhangHallucinationSurvey2025], and OWASP LLM Top 10 [@owaspLLMTop10_2025]. None of those compete with Cat 1–7; they cover different partitions of the failure space. We show the mapping.
 
 ### 5.4 Generalization beyond AI agents
 
@@ -203,57 +207,11 @@ Software systems, organizations, and increasingly AI agent systems share a commo
 
 ## References
 
-> *Skeleton list. Each entry will be expanded to full citation form before submission. Items in **bold** are the most load-bearing; items in italics are background.*
+> Bibliography is generated from `references.bib` at compile time. The Markdown source uses Pandoc-style `[@key]` inline citations resolved by `pandoc --citeproc --bibliography references.bib`. The `references.bib` file in this directory contains full BibTeX entries (~30 sources across 9 domains). Citation style: numeric (arXiv default for first version). For workshop or journal submission we will normalize to the venue's required style.
 
-**Spec-Driven Development:**
-- **GitHub.** (2024). *spec-kit.* github.com/github/spec-kit
-- **Microsoft.** (2024–25). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot
-- *Aldecoa, M.* (2026). *The Architecture of Intent: A Field Guide to Designing and Shipping AI Agent Systems.* (Companion book.)
-
-**Driving automation and graduated delegation:**
-- **SAE International.** (2021). *J3016: Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles.*
-
-**Agent governance and design:**
-- **Shavit, Y., Agarwal, S., et al.** (2023). *Practices for Governing Agentic AI Systems.* OpenAI.
-- **Anthropic.** (2024). *Building Effective Agents.* anthropic.com/research/building-effective-agents
-- **Anthropic.** (2024). *Computer Use.* anthropic.com/news/3-5-models-and-computer-use
-- **Anthropic.** (2024). *Model Context Protocol.* modelcontextprotocol.io
-- **Anthropic.** (2024–25). *Prompt caching with Claude.*
-- **Anthropic.** (2025). *Constitutional Classifiers.*
-- **OpenAI.** (2025). *Operator.*
-- **Google.** (2025). *Agent2Agent Protocol.* / *Gemini Computer Use.*
-
-**Multi-agent failure analysis:**
-- **Cemri, B., et al.** (2025). *MAST: Multi-Agent System failure Taxonomy.* arXiv preprint.
-- **Zhang, Y., et al.** (2025). *LLM-based Agents Suffer from Hallucinations: A Survey of Taxonomy, Methods, and Directions.* arXiv:2509.18970.
-- **OWASP.** (2025). *LLM Top 10.* genai.owasp.org/llm-top-10
-
-**Indirect injection and safety:**
-- **Greshake, K., et al.** (2023). *Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.* arXiv:2302.12173.
-- **Willison, S.** (ongoing). *Prompt injection / Lethal trifecta series.* simonwillison.net.
-
-**Inference economics and long context:**
-- **Pope, R., et al.** (2022). *Efficiently Scaling Transformer Inference.* arXiv:2211.05102.
-- **Liu, N. F., et al.** (2023). *Lost in the Middle: How Language Models Use Long Contexts.* arXiv:2307.03172.
-
-**Pattern languages and software architecture:**
-- *Alexander, C., Ishikawa, S., & Silverstein, M.* (1977). *A Pattern Language: Towns, Buildings, Construction.* Oxford University Press.
-- *Brooks, F.* (1975). *The Mythical Man-Month.* Addison-Wesley.
-- *Meyer, B.* (1992). *Applying "Design by Contract."* IEEE Computer.
-- *Jackson, M.* (1995). *Software Requirements & Specifications.* Addison-Wesley.
-
-**Systems thinking and human error:**
-- *Meadows, D.* (2008). *Thinking in Systems: A Primer.* Chelsea Green.
-- *Reason, J.* (1990). *Human Error.* Cambridge University Press.
-
-**Coding agents and benchmarks:**
-- *Jimenez, C. E., et al.* (2024). *SWE-bench Verified.*
-- *Zhou, S., et al.* (2024). *WebArena: A Realistic Web Environment for Building Autonomous Agents.*
-- *Xie, T., et al.* (2024). *OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments.*
-
-**Compliance and standards:**
-- *NIST.* (2023). *AI Risk Management Framework (AI RMF 1.0).*
-- *ISO/IEC.* (2023). *ISO/IEC 42001: AI management system.*
+::: {#refs}
+*Bibliography rendered here at compile time.*
+:::
 
 ---
 

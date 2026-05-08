@@ -1,0 +1,306 @@
+% References for "The Architecture of Intent"
+% Companion arXiv paper to the book of the same title.
+%
+% Citation style: numeric (arXiv default). Pandoc with --citeproc and
+% --bibliography references.bib will resolve [@key] citations in the markdown
+% draft into proper inline citations and a generated bibliography.
+
+% =====================================================================
+% SPEC-DRIVEN DEVELOPMENT
+% =====================================================================
+
+@misc{githubSpecKit2024,
+  title        = {{spec-kit: Toolkit for spec-driven development with AI assistants}},
+  author       = {{GitHub}},
+  year         = {2024},
+  howpublished = {\url{https://github.com/github/spec-kit}},
+  note         = {Open-source project}
+}
+
+@misc{microsoftDevSquadCopilot2024,
+  title        = {{DevSquad Copilot: An eight-phase agentic development lifecycle}},
+  author       = {{Microsoft}},
+  year         = {2024},
+  howpublished = {\url{https://github.com/microsoft/devsquad-copilot}},
+  note         = {Reference implementation; documentation continuously updated}
+}
+
+@book{aldecoaArchitectureIntent2026,
+  title     = {The Architecture of Intent: A Field Guide to Designing and Shipping AI Agent Systems},
+  author    = {Aldecoa, Marcel},
+  year      = {2026},
+  publisher = {Self-published},
+  note      = {Companion book to this paper}
+}
+
+% =====================================================================
+% DRIVING AUTOMATION AND GRADUATED DELEGATION
+% =====================================================================
+
+@techreport{saeJ30162021,
+  title       = {{J3016: Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles}},
+  author      = {{SAE International}},
+  institution = {SAE International},
+  year        = {2021},
+  note        = {Defines six levels of driving automation; foundational reference for graduated delegation}
+}
+
+% =====================================================================
+% AGENT GOVERNANCE AND DESIGN
+% =====================================================================
+
+@misc{shavitAgarwal2023,
+  title        = {{Practices for Governing Agentic AI Systems}},
+  author       = {Shavit, Yonadav and Agarwal, Sandhini and others},
+  year         = {2023},
+  howpublished = {OpenAI},
+  url          = {https://openai.com/research/practices-for-governing-agentic-ai-systems},
+  note         = {Defines seven operational variables: ability, agency, agency type, autonomy, alignment, accountability, authority}
+}
+
+@misc{anthropicBuildingEffectiveAgents2024,
+  title        = {{Building Effective Agents}},
+  author       = {{Anthropic}},
+  year         = {2024},
+  url          = {https://anthropic.com/research/building-effective-agents},
+  note         = {Catalogues practical agent shapes: prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer, autonomous}
+}
+
+@misc{anthropicComputerUse2024,
+  title        = {{Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku}},
+  author       = {{Anthropic}},
+  year         = {2024},
+  month        = oct,
+  url          = {https://anthropic.com/news/3-5-models-and-computer-use},
+  note         = {The reference implementation that made GUI-acting agents mainstream}
+}
+
+@misc{anthropicMCP2024,
+  title        = {{Introducing the Model Context Protocol}},
+  author       = {{Anthropic}},
+  year         = {2024},
+  url          = {https://modelcontextprotocol.io},
+  note         = {Open protocol for tool integration with AI models; cross-vendor adoption 2025}
+}
+
+@misc{anthropicPromptCaching2024,
+  title        = {{Prompt caching with Claude}},
+  author       = {{Anthropic}},
+  year         = {2024},
+  url          = {https://anthropic.com/news/prompt-caching}
+}
+
+@misc{anthropicConstitutionalClassifiers2025,
+  title        = {{Constitutional Classifiers: Defending against universal jailbreaks}},
+  author       = {{Anthropic}},
+  year         = {2025},
+  url          = {https://anthropic.com/research}
+}
+
+@misc{openaiOperator2025,
+  title        = {{Introducing Operator}},
+  author       = {{OpenAI}},
+  year         = {2025},
+  month        = jan,
+  url          = {https://openai.com/index/introducing-operator}
+}
+
+@misc{googleA2A2025,
+  title        = {{Agent2Agent (A2A) Protocol}},
+  author       = {{Google}},
+  year         = {2025},
+  url          = {https://google.github.io/A2A}
+}
+
+@misc{googleGeminiComputerUse2025,
+  title        = {{Gemini computer use}},
+  author       = {{Google}},
+  year         = {2025},
+  url          = {https://ai.google.dev}
+}
+
+% =====================================================================
+% MULTI-AGENT FAILURE ANALYSIS
+% =====================================================================
+
+@article{cemriMAST2025,
+  title   = {{MAST: A Multi-Agent System failure Taxonomy}},
+  author  = {Cemri, Bora and others},
+  year    = {2025},
+  journal = {arXiv preprint},
+  note    = {Empirical 14-category failure partition derived from 200+ multi-agent deployments}
+}
+
+@article{zhangHallucinationSurvey2025,
+  title   = {{LLM-based Agents Suffer from Hallucinations: A Survey of Taxonomy, Methods, and Directions}},
+  author  = {Zhang, Yifan and others},
+  journal = {arXiv preprint arXiv:2509.18970},
+  year    = {2025},
+  note    = {Fine-grained partition of model-level (Cat 6) failures: tool-call hallucination, planning hallucination, instruction-following inconsistency}
+}
+
+@misc{owaspLLMTop10_2025,
+  title        = {{OWASP LLM Top 10 (2025 update)}},
+  author       = {{OWASP Foundation}},
+  year         = {2025},
+  url          = {https://genai.owasp.org/llm-top-10},
+  note         = {Canonical attack-surface enumeration for LLM and agent systems}
+}
+
+% =====================================================================
+% INDIRECT INJECTION AND SAFETY
+% =====================================================================
+
+@article{greshakeIndirectInjection2023,
+  title   = {{Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection}},
+  author  = {Greshake, Kai and Abdelnabi, Sahar and Mishra, Shailesh and Endres, Christoph and Holz, Thorsten and Fritz, Mario},
+  journal = {arXiv preprint arXiv:2302.12173},
+  year    = {2023}
+}
+
+@misc{willisonLethalTrifecta,
+  title        = {{Prompt injection / Lethal trifecta series}},
+  author       = {Willison, Simon},
+  year         = {2023--ongoing},
+  url          = {https://simonwillison.net},
+  note         = {Continuous practitioner-facing analysis of new prompt-injection techniques}
+}
+
+% =====================================================================
+% INFERENCE ECONOMICS AND LONG CONTEXT
+% =====================================================================
+
+@article{popeInferenceScaling2022,
+  title   = {{Efficiently Scaling Transformer Inference}},
+  author  = {Pope, Reiner and Douglas, Sholto and Chowdhery, Aakanksha and Devlin, Jacob and Bradbury, James and Levskaya, Anselm and Heek, Jonathan and Xiao, Kefan and Agrawal, Shivani and Dean, Jeff},
+  journal = {arXiv preprint arXiv:2211.05102},
+  year    = {2022},
+  note    = {Foundational inference-cost economics underlying provider model-tier pricing and prompt caching}
+}
+
+@article{liuLostInTheMiddle2023,
+  title   = {{Lost in the Middle: How Language Models Use Long Contexts}},
+  author  = {Liu, Nelson F. and Lin, Kevin and Hewitt, John and Paranjape, Ashwin and Bevilacqua, Michele and Petroni, Fabio and Liang, Percy},
+  journal = {arXiv preprint arXiv:2307.03172},
+  year    = {2023}
+}
+
+% =====================================================================
+% PATTERN LANGUAGES AND SOFTWARE ARCHITECTURE
+% =====================================================================
+
+@book{alexanderPatternLanguage1977,
+  title     = {A Pattern Language: Towns, Buildings, Construction},
+  author    = {Alexander, Christopher and Ishikawa, Sara and Silverstein, Murray},
+  year      = {1977},
+  publisher = {Oxford University Press},
+  note      = {Foundational pattern-language form: structured catalogues of context-problem-solution-resulting-context}
+}
+
+@book{brooksMythicalManMonth1975,
+  title     = {The Mythical Man-Month: Essays on Software Engineering},
+  author    = {Brooks, Frederick P.},
+  year      = {1975},
+  publisher = {Addison-Wesley}
+}
+
+@article{meyerDesignByContract1992,
+  title   = {{Applying ``Design by Contract''}},
+  author  = {Meyer, Bertrand},
+  journal = {Computer},
+  volume  = {25},
+  number  = {10},
+  pages   = {40--51},
+  year    = {1992}
+}
+
+@book{jacksonRequirements1995,
+  title     = {Software Requirements \& Specifications: A Lexicon of Practice, Principles and Prejudices},
+  author    = {Jackson, Michael},
+  year      = {1995},
+  publisher = {Addison-Wesley}
+}
+
+% =====================================================================
+% SYSTEMS THINKING AND HUMAN ERROR
+% =====================================================================
+
+@book{meadowsThinkingInSystems2008,
+  title     = {Thinking in Systems: A Primer},
+  author    = {Meadows, Donella H.},
+  year      = {2008},
+  publisher = {Chelsea Green Publishing}
+}
+
+@book{reasonHumanError1990,
+  title     = {Human Error},
+  author    = {Reason, James},
+  year      = {1990},
+  publisher = {Cambridge University Press},
+  note      = {Distinguishes active failures from latent conditions; parallels the Cat 6 (active) vs. Cat 1 (latent) framing}
+}
+
+% =====================================================================
+% CODING AGENTS AND BENCHMARKS
+% =====================================================================
+
+@article{jimenezSweBenchVerified2024,
+  title   = {{SWE-bench Verified}},
+  author  = {Jimenez, Carlos E. and others},
+  year    = {2024},
+  journal = {arXiv preprint},
+  note    = {Human-validated subset of SWE-bench; external calibration benchmark for coding agents}
+}
+
+@article{zhouWebArena2024,
+  title   = {{WebArena: A Realistic Web Environment for Building Autonomous Agents}},
+  author  = {Zhou, Shuyan and others},
+  journal = {arXiv preprint},
+  year    = {2024}
+}
+
+@article{xieOSWorld2024,
+  title   = {{OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments}},
+  author  = {Xie, Tianbao and others},
+  journal = {arXiv preprint},
+  year    = {2024}
+}
+
+% =====================================================================
+% COMPLIANCE AND STANDARDS
+% =====================================================================
+
+@techreport{nistAiRMF2023,
+  title       = {{AI Risk Management Framework (AI RMF 1.0)}},
+  author      = {{National Institute of Standards and Technology}},
+  institution = {NIST},
+  year        = {2023},
+  url         = {https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf}
+}
+
+@techreport{isoIEC42001_2023,
+  title       = {{ISO/IEC 42001: Artificial intelligence --- Management system}},
+  author      = {{International Organization for Standardization and IEC}},
+  institution = {ISO/IEC},
+  year        = {2023}
+}
+
+@techreport{nistAiAdversarial2024,
+  title       = {{AI 100-2 E2024: Adversarial Machine Learning --- A Taxonomy and Terminology of Attacks and Mitigations}},
+  author      = {{National Institute of Standards and Technology}},
+  institution = {NIST},
+  year        = {2024},
+  url         = {https://nvlpubs.nist.gov}
+}
+
+% =====================================================================
+% OBSERVABILITY
+% =====================================================================
+
+@misc{otelGenAi2024,
+  title        = {{Semantic conventions for GenAI}},
+  author       = {{OpenTelemetry}},
+  year         = {2024--ongoing},
+  url          = {https://opentelemetry.io/docs/specs/semconv/gen-ai},
+  note         = {Vendor-neutral telemetry standard for LLM and agent spans}
+}

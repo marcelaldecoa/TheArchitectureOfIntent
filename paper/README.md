@@ -10,8 +10,39 @@ Companion arXiv paper to the book of the same title.
 
 | File | Purpose |
 |---|---|
-| `architecture-of-intent.md` | The paper draft (Markdown source) |
+| `architecture-of-intent.md` | The paper draft (Markdown source with Pandoc citation syntax) |
+| `references.bib` | BibTeX bibliography (~30 entries across 9 domains) |
+| `figures/archetype-decision-tree.svg` | Figure 1 — referenced in §3.2 |
+| `figures/four-dimensions-orthogonality.svg` | Figure 2 — referenced in §3.3 |
 | `README.md` | This file |
+
+## Figures
+
+Two figures, both inline SVGs that convert cleanly to LaTeX `\includegraphics{...}`:
+
+- **Figure 1 (`figures/archetype-decision-tree.svg`)** — the four-question decision tree for selecting one of the five archetypes, with the risk-override note. Adapted from the book chapter `src/architecture/04-decision-tree.md`.
+- **Figure 2 (`figures/four-dimensions-orthogonality.svg`)** — Agency × Autonomy plotted against each other with example deployments in each quadrant, supporting the orthogonality argument in §3.3. The other two dimensions (Responsibility, Reversibility) are similarly orthogonal; we omit additional 2D plots for brevity.
+
+If the paper goes to a workshop or journal that prefers TikZ, both figures can be re-rendered natively in LaTeX from the same logical content; SVG is the working format until then.
+
+## Citations and bibliography
+
+The Markdown source uses Pandoc-style `[@key]` inline citations. The bibliography lives in `references.bib`. Pandoc with `--citeproc --bibliography references.bib` resolves all citations and renders the bibliography in place at compile time.
+
+**Citation style:** numeric (arXiv default for the first version). For workshop or journal submission we will normalize to the venue's required style by changing the `--csl` flag.
+
+**Bibliography contents** (~30 entries across 9 domains):
+- Spec-Driven Development (3)
+- Driving automation (1)
+- Agent governance and design (8)
+- Multi-agent failure analysis (3)
+- Indirect injection and safety (2)
+- Inference economics and long context (2)
+- Pattern languages and software architecture (4)
+- Systems thinking and human error (2)
+- Coding agents and benchmarks (3)
+- Compliance and standards (3)
+- Observability (1)
 
 ## Target
 
@@ -38,26 +69,37 @@ The Markdown source uses constructs that map cleanly:
 - Sections (`#`, `##`, `###`) → `\section`, `\subsection`, `\subsubsection`
 - Tables → LaTeX `tabular`
 - Bold and italic → `\textbf`, `\emph`
-- Inline citations (currently in author-year form) → `\cite{key}` against a BibTeX file
+- Inline citations `[@key]` → `\cite{key}`
+- Figures `![caption](path)` → `\includegraphics{path}` with `\caption{...}`
 
-Pandoc can do most of the conversion automatically:
+Pandoc handles the conversion in one shot:
 
 ```bash
 pandoc architecture-of-intent.md \
   --from markdown \
   --to latex \
-  --output architecture-of-intent.tex \
-  --bibliography references.bib  # once we have one
+  --citeproc \
+  --bibliography references.bib \
+  --output architecture-of-intent.tex
 ```
 
-Manual cleanup needed: figures (none yet; planned for §3.2 archetype decision tree and §3.3 orthogonality argument); citation key normalization; abstract formatting; arXiv-specific preamble.
+Or to PDF directly (useful for review iteration):
+
+```bash
+pandoc architecture-of-intent.md \
+  --citeproc \
+  --bibliography references.bib \
+  --output architecture-of-intent.pdf
+```
+
+Manual cleanup typically needed before arXiv: arXiv-specific preamble, abstract formatting (some templates require explicit `\begin{abstract}`), figure placement options (`[h!]`, `[t]`), and any venue-specific style sheet (`--csl acm-sig-proceedings.csl` etc.).
 
 ## Next steps
 
 1. Review the skeleton for shape (does §3 cover the framework completely; does §4 instantiate it convincingly; is the contribution accounting honest enough).
 2. Expand stubs to prose, section by section. Order recommended: §3 (the framework, conceptual core) → §1 (introduction, frames the framework) → §2 (prior work, situates it) → §4 (worked application) → §5 (discussion) → §6 (limitations) → §7 (conclusion) → §0 (abstract, last).
-3. Add figures: archetype decision tree (already in the book at `src/architecture/04-decision-tree.md`) and an orthogonality diagram for the four dimensions.
-4. Compile reference list to BibTeX with consistent keys.
+3. ~~Add figures.~~ Done — Figure 1 (decision tree) and Figure 2 (orthogonality) are in `figures/`.
+4. ~~Compile reference list to BibTeX with consistent keys.~~ Done — see `references.bib`.
 5. First arXiv submission once §3 + §1 + §2 are publication-quality.
 
 ## Relation to the book
