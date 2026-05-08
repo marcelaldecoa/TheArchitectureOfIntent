@@ -10,13 +10,21 @@
 
 ## What These Examples Are
 
-The previous seven Parts of this book established a vocabulary, a set of patterns, and a collection of practices. This part demonstrates them working together on problems that resemble what practitioners actually encounter.
+The previous Parts of this book established a vocabulary, a set of patterns, and a collection of practices. This part demonstrates them working together on problems that resemble what practitioners actually encounter.
 
 These are not toy problems. They are not "hello world" agents. They are simplified versions of the real systems that motivated the ideas in this book — simplified enough to explain clearly, realistic enough to surface the tensions that matter.
 
 **Example 1: Designing an AI Customer Support System** — A mid-size retailer deploys a four-agent system to automate Tier 1 customer inquiries. This example shows the full arc: archetype selection across a multi-agent architecture, a complete SDD spec for the most complex agent, the actual agent instructions derived from that spec, an acceptance test suite, and a postmortem from a real failure that the spec's constraints did not prevent.
 
 **Example 2: A Code Generation Pipeline** — A platform engineering team builds a three-agent pipeline that takes a feature intent document and a data schema and produces a complete service scaffold, automatically checked against their code standards. This example shows how agent systems work differently when the consumer is other software rather than a human, and how pipeline dynamics change the archetype and spec choices.
+
+**Example 3: Designing an AI Coding Agent** — An in-loop coding agent for an internal repository. Executor with Synthesizer composition, with the explicit decision *against* Devin-style autonomy recorded. This example shows the full canonical spec applied to the most-deployed agent class of 2024–2026, the four-level eval stack instantiated against a 75-issue golden set, and a real "deleted-tests" postmortem traced to a specific spec gap that produced spec v1.1 → v1.2 with a constraint-library entry.
+
+---
+
+## Where to start
+
+If you have time for one example, **start with Example 3 (Coding Agent)**. It is the most thoroughly developed of the three, addresses the agent class most readers are deploying in 2026, and demonstrates the full arc — archetype decision, spec, agent instructions, four-level eval stack, and a postmortem that produces a concrete spec evolution. Examples 1 and 2 illustrate multi-agent and pipeline patterns and are worth reading next, in either order.
 
 ---
 
@@ -34,7 +42,7 @@ Each example follows the same structure:
 
 5. **Validating Outcomes** — The acceptance test suite: what inputs were used, what the spec's success criteria predicted, what the actual outputs were, and how validation failures were categorized and resolved.
 
-6. **Post-mortem Through Intent** *(Example 1 only)* — A real incident that occurred during operation: what failed, how it was detected, root cause diagnosis through the SDD lens (was this a spec gap, execution gap, tool gap, or oversight gap?), and what was changed.
+6. **Post-mortem Through Intent** *(Examples 1 and 3)* — A real incident that occurred during operation: what failed, how it was detected, root cause diagnosis through the SDD lens (was this a spec gap, execution gap, tool gap, or oversight gap?), categorized using the six (or seven) failure categories, and what was changed in the spec, the eval suite, and the constraint library as a result.
 
 ---
 
@@ -69,12 +77,13 @@ The postmortem in Example 1 only makes sense in relation to the spec. The failur
 
 ## What These Examples Do Not Cover
 
-These examples do not attempt to cover every archetype, every technology, or every industry. They were chosen because they represent two common and distinct deployment patterns:
+These examples do not attempt to cover every archetype, every technology, or every industry. They were chosen because they represent three common and distinct deployment patterns:
 
 - **Example 1** is a customer-facing system with multiple agents, mixed reversibility, and real safety requirements. It shows the governance and oversight patterns under load.
 - **Example 2** is an internal automation pipeline with a synthetic consumer (other software, not humans) where correctness is the primary value and throughput is the secondary one.
+- **Example 3** is an in-loop coding agent on a real repository — the most-deployed agent class of 2024–2026, with the structural controls (branch protection, dependency allowlist, sandboxed execution) that distinguish a serious deployment from an autonomous-Devin pitch deck.
 
-There is no example of a Synthesizer-dominant research system, a Guardian-dominant compliance system, or an Advisor-only knowledge interface. These exist — and the patterns from the book apply to them — but the two examples here cover the higher-stakes and higher-complexity territory where most practitioners need the most guidance.
+There is no example of a computer-use / browser agent, a Synthesizer-dominant research system, a Guardian-dominant compliance system, or an Advisor-only knowledge interface. These exist — and the patterns from the book apply to them ([Computer-Use Agents](../agents/09-computer-use-agents.md) covers the perception-then-act class without a worked pilot) — but the three examples here cover the higher-stakes and higher-complexity territory where most practitioners need the most guidance.
 
 ---
 
@@ -92,6 +101,6 @@ The two examples in this part are meant to show the process. Your system is wher
 
 ---
 
-*Continue to [Designing an AI Customer Support System](01-ai-customer-support/README.md)*
+*Continue to [Designing an AI Coding Agent](03-coding-agent/README.md) (recommended starting example), or to [Designing an AI Customer Support System](01-ai-customer-support/README.md) for the multi-agent walkthrough.*
 
 
