@@ -84,7 +84,7 @@ This book's strongest contribution is a **design vocabulary and a diagnostic dis
 It is **not** a complete technical playbook. Specifically, the book is light on:
 
 - **Prompt caching as architecture** (covered briefly in [Cost and Latency Engineering](operating/09-cost-and-latency.md); deserves more depth for any system at 100+ runs/day).
-- **Model-tier selection** under specific budget and latency constraints — the book names the tiers but doesn't prescribe which goes where.
+- **Model-tier selection** under specific budget and latency constraints — the [Model-Tier Quick-Select Card](appendices/model-tier-card.md) gives a decision matrix; the underlying chapter goes deeper.
 - **Multi-tenant fleet governance** — when 50 teams deploy agents against shared infrastructure, spec evolution and constraint-library merging become harder problems than this book solves.
 - **CI/CD wiring details** — when does the eval suite gate a merge versus alert versus observe? The disciplines are described; the specific platform integration is not.
 
