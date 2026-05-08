@@ -149,6 +149,7 @@
 ## Production Engineering
 
 - [Cost and Latency Engineering](operating/09-cost-and-latency.md)
+- [Cacheable Prompt Architecture](operating/14-cacheable-prompt-architecture.md)
 - [Production Telemetry](operating/10-production-telemetry.md)
 
 ## Adoption

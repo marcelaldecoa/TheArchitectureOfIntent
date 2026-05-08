@@ -157,6 +157,58 @@ What is a failure: continuing to insist on the full discipline when the team is 
 
 ---
 
+### Wiring into CI/CD
+
+The disciplines this book describes — eval suite, spec gap log, red-team protocol, prompt-stability constraint — only become operational when they are wired into the team's existing CI/CD pipeline. The framework is process-agnostic about *which* CI/CD system; the wiring pattern is the same.
+
+The three-tier model:
+
+| Tier | What it does | What blocks a merge / deploy |
+|---|---|---|
+| **Hard gate** | Fails the build. Cannot be merged or deployed without resolution or explicit override with sign-off. | Level 1 unit asserts on tool I/O; Level 2 spec acceptance suite; secret-pattern hits in trace; broken internal links in spec |
+| **Soft gate** | Fails the build but can be overridden with reviewer approval and a recorded reason. | Level 3 regression on the golden set (some regressions are acceptable trade-offs); cache-hit-rate target violation for new prompt; first-pass acceptance rate drop > 5pp on the eval canary |
+| **Observe** | Does not block. Records the signal for trend monitoring. | Level 4 production sampling; cost-per-task drift; per-step latency drift; spec gap log entry rate |
+
+Each artifact maps to a tier:
+
+- **Eval suite (Level 1, 2)** — hard gate on PR, before merge. CI installs the agent harness, runs the spec acceptance suite, blocks merge on failure.
+- **Eval suite (Level 3)** — soft gate on PR. Regression delta is reported in the PR; reviewer judges whether the regression is intentional.
+- **Eval suite (Level 4)** — observe in production. Drift triggers an alert, not a deploy block.
+- **Spec PR review** — hard gate. A spec change requires explicit sign-off by the spec owner. Use the [Intent Review Before Output Review](05-reviewing-intent.md) discipline as the review checklist.
+- **Red-team finding (critical/high)** — hard gate. New deploys cannot proceed until the finding has a Spec Gap Log entry and an eval test case. Lower-severity findings are soft-gated against the next release window.
+- **Cache hit rate** — soft gate on prompt PRs. Below 50% in the first 1,000 production calls after deploy → reviewer must justify or roll back. See [Cacheable Prompt Architecture](14-cacheable-prompt-architecture.md).
+- **Cost per correct outcome** — observe. Drift is a [Four Signal Metrics](06-metrics.md) signal, not a deploy block.
+
+**A minimal GitHub Actions / Azure DevOps sketch** (the same shape works in either):
+
+```yaml
+on: [pull_request]
+jobs:
+  spec-conformance:                   # HARD GATE
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/run-eval-level-1.sh    # tool I/O asserts
+      - run: ./scripts/run-eval-level-2.sh    # spec acceptance suite
+  regression:                          # SOFT GATE
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/run-eval-level-3.sh --report-only
+      - run: ./scripts/post-regression-comment.sh
+  red-team-delta:                      # HARD GATE on critical/high
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/red-team-delta.sh --severity-threshold high
+```
+
+The principle: **make the gate match the consequence**. A spec acceptance failure is non-negotiable; a 1pp regression on a niche golden-set scenario is a judgment call. Hard-gating everything produces deployment paralysis; soft-gating everything produces deployment theatre.
+
+For teams on DevSquad cadence, the wiring slots into Phase 5 (TDD-first, hard gate on Level 1+2), Phase 7 (independent review, hard gate on red-team and spec PR), and Phase 8 (continuous refinement, observe layer feeding the next sprint's priorities). The [DevSquad Mapping](12-devsquad-mapping.md) chapter has the full phase-by-phase artifact table.
+
+---
+
 ### Connection to the rest of the framework
 
 The adoption playbook is the practical entry-point to the rest of the operational chapters:

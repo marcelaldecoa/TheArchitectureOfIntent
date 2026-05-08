@@ -156,8 +156,9 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) | The four-level eval stack: unit asserts, spec acceptance, regression, production sampling |
 | [Red-Team Protocol](../operating/08-red-team-protocol.md) | Four red-team batteries (pre-launch, per-release, monthly regression, quarterly fresh-attacks) feeding the spec gap log |
 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Model-tier selection, prompt caching strategy, latency budget decomposition, anti-patterns |
+| [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) | Prompt caching as architecture, not optimization: layered prompt structure, cache breakpoints, prompt-stability spec constraint, eval-time pre-warm, `cache_hit_rate` as first-class telemetry |
 | [Production Telemetry](../operating/10-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
-| [Adoption Playbook](../operating/11-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment |
+| [Adoption Playbook](../operating/11-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment; CI/CD wiring with hard-gate / soft-gate / observe tiers |
 | [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/12-devsquad-mapping.md) | Phase-by-phase mapping of the book's artifacts and disciplines into Microsoft DevSquad Copilot's 8-phase iterative cycle |
 | [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md) | The minimum additions from this book that give a DevSquad team the most leverage; vocabulary translation; 30-day co-adoption plan |
 
@@ -317,6 +318,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 
 ### "My agent program's cost or latency isn't penciling"
 - [Cost and Latency Engineering](../operating/09-cost-and-latency.md)
+- [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) — caching as architecture, not optimization; the largest single lever for systems running 100+ tasks/day
 - [Four Signal Metrics](../operating/06-metrics.md) — cost-per-correct-output is the metric this work moves
 - [Context Window Budget](../patterns/capability/context-budget.md)
 
@@ -404,7 +406,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | **OpenAI Operator / Gemini computer use** | 2025 | [Computer-Use Agents](../agents/09-computer-use-agents.md) | Same chapter — three implementations of the new class, all subject to the same structural controls and Cat 7 framework |
 | **Reasoning-tier models (o1, o3, Claude extended thinking, Gemini reasoning)** | 2024–25 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Distinct model tier in the per-role selection table; explicit cost/latency profile (2–10× cost, 5–60s latency); when-to-use vs when-not-to budgeting discipline |
 | **Anthropic Constitutional Classifiers** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | Treated honestly as a probabilistic perimeter, not a fix; documented escape rate and over-refusal cost made explicit |
-| **Anthropic prompt caching / OpenAI cached input / Gemini context caching** | 2024–25 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Caching as structural cost control; 40–70% input-cost reduction shown to be normal when correctly applied; the cacheable-prefix design pattern |
+| **Anthropic prompt caching / OpenAI cached input / Gemini context caching** | 2024–25 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Caching as architecture (layered prompt with cache breakpoints; prompt-stability as a spec constraint; cache-hit-rate as first-class telemetry); 40–70% input-cost reduction is normal when treated architecturally |
 | **Google Agent2Agent (A2A) Protocol** | 2025 | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) | Protocol-layer counterpart to MCP at the tool layer; the governance question for protocol-mediated multi-agent systems |
 | **OpenTelemetry GenAI semantic conventions** | 2024–25 | [Production Telemetry](../operating/10-production-telemetry.md) | Vendor-neutral observability standard; the book recommends emitting OTel-compliant spans alongside vendor SDK telemetry for portability |
 | **OWASP LLM Top 10 (2025 update)** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../operating/08-red-team-protocol.md), [Computer-Use Agents](../agents/09-computer-use-agents.md) | Baseline coverage for the four red-team batteries; instantiation per deployment specifics |
