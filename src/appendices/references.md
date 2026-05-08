@@ -51,6 +51,7 @@ A note on honest framing: much of what this book describes is not novel. It synt
 **Read first**
 
 - **GitHub.** (2024–2025). *spec-kit.* github.com/github/spec-kit. — The most active practitioner project on spec-as-source-of-truth for AI-augmented development. Direct ancestor of this book's SDD chapters and the canonical spec template.
+- **Microsoft.** (2024–2025). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot (site at microsoft.github.io/devsquad-copilot). — Parallel work from Microsoft arriving at compatible conclusions from a different angle. Where this book gives you a *design vocabulary* (archetypes, dimensions, failure taxonomy), DevSquad gives you a *delivery cadence* — an 8-phase iterative cycle (envisioning → thin-slice spec → plan with ADRs → decompose → TDD-first implement → learn → independent review → continuous refinement). The two converge on living specs, risk-tiered human-in-the-loop, principle of least privilege, context isolation across sub-agents, and spec-first response to failure. They diverge on emphasis: DevSquad is process-prescriptive and centered on multi-developer Copilot teams; this book is process-agnostic and centered on agent-system design with deeper coverage of failure modes, prompt injection, evals, and telemetry. Recommended as a complementary read — a team adopting DevSquad's 8-phase cadence plus this book's archetype framework, failure taxonomy, and security/eval/telemetry stacks would have a more complete operating model than either source provides alone. Notable distinctive contribution from DevSquad: the explicit treatment of ADRs as a first-class durable artifact alongside specs.
 
 **Further reading**
 
@@ -175,6 +176,7 @@ Specific sources cited within chapters of this book:
 | Anthropic, *Constitutional Classifiers* (2025) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
 | Cemri et al., MAST (2025) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
 | GitHub spec-kit | [Spec-Driven Development](../sdd/01-what-sdd-means.md), [SpecKit](../sdd/04-speckit.md) |
+| Microsoft DevSquad Copilot | [The Living Spec](../sdd/06-living-specs.md), [Adoption Playbook](../operating/11-adoption-playbook.md) |
 | Greshake et al. (2023) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
 | Hines et al., Spotlighting (2024) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
 | Jimenez et al., SWE-bench (2024) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |

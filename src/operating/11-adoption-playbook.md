@@ -196,6 +196,7 @@ After applying this pattern:
 - Forsgren, N., Humble, J., Kim, G. (2018). *Accelerate.* — Empirical study of high-performing engineering organizations; the four key metrics framework that informed this book's signal-metric design and the iterative adoption pattern.
 - Meadows, D. H. (2008). *Thinking in Systems.* Chelsea Green. — Leverage points for changing systems; the "small change with feedback" model that this chapter applies to organizational adoption.
 - Anthropic. (2024). *Building Effective Agents.* anthropic.com/research/building-effective-agents. — The "start with the simplest pattern" guidance applied at the organizational level: start with the simplest adoption.
+- Microsoft. (2024–2025). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot. — A parallel framework that gives a more prescriptive 8-phase delivery cadence (envisioning → thin-slice spec → plan with ADRs → decompose → TDD-first implement → learn → review → refine) compatible with this book's design vocabulary. A team that wants a turnkey process to wrap around this book's discipline could reasonably adopt DevSquad's cadence and ADR practice while applying the book's archetype framework, failure taxonomy, and security/eval/telemetry stacks. The two are complementary, not competitive.
 
 ---
 

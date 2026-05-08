@@ -164,6 +164,17 @@ After applying this pattern:
 
 ---
 
+## Parallel work
+
+The "living spec" framing is convergent across several practitioner sources arriving at the same conclusion through different routes:
+
+- **GitHub spec-kit** uses living specs as the source-of-truth artifact in its spec-driven development methodology.
+- **Microsoft DevSquad Copilot** treats specifications and ADRs as continuously refined artifacts forming a "shared memory" across multi-developer teams, with formal amendment processes triggered when implementation reveals mismatches. See [Microsoft DevSquad Copilot](https://github.com/microsoft/devsquad-copilot).
+
+The convergence is informative: independent teams approaching agent-augmented development from different angles end up with the same load-bearing concept. This isn't original to the book and shouldn't be treated as such.
+
+---
+
 ## Connections
 
 **This pattern assumes:**
