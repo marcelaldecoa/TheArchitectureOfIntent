@@ -20,10 +20,8 @@ Running independent tasks sequentially wastes time. The total duration is the su
 
 ## Forces
 
-- **Speed vs. coordination complexity.** Parallel execution is faster. But coordinating results, handling partial failure, and managing shared resources adds complexity that sequential execution avoids.
-- **Independence assumption vs. hidden dependencies.** Tasks appear independent but may share resources (database connections, API rate limits, file system paths). Unrecognized dependencies produce concurrency bugs.
-- **All-or-nothing vs. best-effort.** Should the overall task fail if one subtask fails? All-or-nothing is safer but wasteful when most subtasks succeed. Best-effort is more aligned with the cost of reprocessing, but uneven results can be hard to merge.
-- **Merge determinism vs. merge flexibility.** Results from parallel tasks must be combined. A deterministic merge (concatenate in order) is simple but may not fit all cases. A flexible merge (synthesize across results) requires another agent but handles complex combinations.
+- **Independence assumption vs. hidden dependencies.** Subtasks appear independent but may share resources (database connections, API rate limits, model-tier quota). Unrecognized dependencies produce concurrency bugs that only surface under load.
+- **Merge determinism vs. merge flexibility.** A deterministic merge (concatenate in order, key-merge by entity) is auditable and reproducible. A Synthesizer-agent merge handles complex combinations but introduces another spec, another archetype, and another failure surface.
 
 ---
 
