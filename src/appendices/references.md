@@ -30,9 +30,9 @@ The agent landscape has moved quickly between 2024 and 2026. This table maps eac
 | **OpenAI o1, o3 (reasoning tier)** | 2024–25 | [Cost and Latency Engineering — reasoning tier specifics](../operating/09-cost-and-latency.md) | Distinct model tier with 2–10× cost and 5–60s latency profile; deserves explicit per-role budgeting |
 | **Anthropic Claude with extended thinking** | 2025 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | The Anthropic equivalent of the reasoning tier |
 | **Anthropic Constitutional Classifiers** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | Inference-time classifier for jailbreak/injection defense; documented ~5% escape rate against motivated red-teamers, ~25% over-refusal cost |
-| **Anthropic prompt caching** | 2024 | [Cost and Latency Engineering — prompt caching as structural cost control](../operating/09-cost-and-latency.md) | 40–70% structural input-cost reduction when used correctly; cache control parameter at the prompt-architecture level |
-| **OpenAI cached inputs** | 2024–25 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Automatic prefix-based caching; ~50% discount on cached prefix tokens |
-| **Google Gemini context caching** | 2024–25 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Explicit cache resources referenced by ID |
+| **Anthropic prompt caching** | 2024 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | 40–70% structural input-cost reduction; cache-control parameter at the prompt-architecture level; prompt-stability as a spec constraint |
+| **OpenAI cached inputs** | 2024–25 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Automatic prefix-based caching; ~50% discount on cached prefix tokens; 1024-token minimum |
+| **Google Gemini context caching** | 2024–25 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Explicit `CachedContent` resources referenced by ID; storage cost separate from per-call discount |
 | **Google Agent2Agent (A2A) Protocol** | 2025 | [Multi-Agent Governance — Agent-to-agent protocols](../architecture/07-multi-agent-governance.md) | Cross-vendor agent communication standard; the protocol-layer counterpart to MCP at the tool layer |
 | **OpenTelemetry GenAI semantic conventions** | 2024–25 | [Production Telemetry](../operating/10-production-telemetry.md), [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) | Vendor-neutral observability standard that the book recommends emitting alongside vendor SDK telemetry |
 | **OWASP LLM Top 10 (2025 update)** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../operating/08-red-team-protocol.md), [Computer-Use Agents](../agents/09-computer-use-agents.md) | Canonical attack-surface enumeration for agent systems; baseline coverage for the four red-team batteries |
@@ -270,13 +270,13 @@ Specific sources cited within chapters of this book, organized alphabetically by
 | **Anthropic** — *Inspect* (eval framework) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md), [Red-Team Protocol](../operating/08-red-team-protocol.md) |
 | **Anthropic** — *Many-shot jailbreaking* (2024) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
 | **Anthropic** — *Model Context Protocol* (2024) | [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md), [Designing MCP Tools](../agents/mcp/02-designing-mcp-tools.md), [MCP Safety](../agents/mcp/03-mcp-safety.md), [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) |
-| **Anthropic** — *Prompt caching with Claude* (2024) | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
+| **Anthropic** — *Prompt caching with Claude* (2024) | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
 | **Anthropic** — *Responsible Scaling Policy* (2023, ongoing) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
 | **Datadog** — *LLM Observability* | [Production Telemetry](../operating/10-production-telemetry.md) |
 | **GitHub** — *spec-kit* (2024–25) | [Spec-Driven Development](../sdd/01-what-sdd-means.md), [SpecKit](../sdd/04-speckit.md) |
 | **Google** — *Agent2Agent (A2A) Protocol* (2025) | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) |
 | **Google** — *Gemini computer use* (2025) | [Computer-Use Agents](../agents/09-computer-use-agents.md) |
-| **Google** — *Gemini context caching* | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
+| **Google** — *Gemini context caching* | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
 | **Helicone** — LLM observability proxy | [Production Telemetry](../operating/10-production-telemetry.md) |
 | **LangChain** — *LangGraph supervisor / hierarchical / HITL middleware* | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md), [Co-adoption with DevSquad](../operating/13-co-adoption-with-devsquad.md) |
 | **LangChain** — *LangSmith* | [Production Telemetry](../operating/10-production-telemetry.md) |
@@ -289,7 +289,7 @@ Specific sources cited within chapters of this book, organized alphabetically by
 | **OpenAI** — *Agent SDK* (2025) | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) |
 | **OpenAI** — *Operator* (2025) | [Computer-Use Agents](../agents/09-computer-use-agents.md) |
 | **OpenAI** — *Practices for Governing Agentic AI Systems* (Shavit, Agarwal et al., 2023) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md), [References](references.md) |
-| **OpenAI** — *Prompt caching / cached input pricing* (2024) | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
+| **OpenAI** — *Prompt caching / cached input pricing* (2024) | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
 | **OpenAI** — *o1 / o3 reasoning models* (2024–25) | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
 | **OpenInference / Phoenix** (Arize) | [Production Telemetry](../operating/10-production-telemetry.md) |
 | **OpenTelemetry** — *GenAI semantic conventions* | [Production Telemetry](../operating/10-production-telemetry.md), [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) |
@@ -312,7 +312,7 @@ Specific sources cited within chapters of this book, organized alphabetically by
 | **Liu, X., et al.** — *AgentBench* (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
 | **Liu, Y., et al.** — *Agent Design Pattern Catalogue* (2024) | [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md), [References](references.md) |
 | **Mialon, G., et al.** — *GAIA* (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
-| **Pope, R., et al.** — *Efficiently Scaling Transformer Inference* (2022) | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
+| **Pope, R., et al.** — *Efficiently Scaling Transformer Inference* (2022) | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
 | **Schick, T., et al.** — *Toolformer* (2023) | [References — Tool use](references.md) |
 | **Weng, L.** — *LLM Powered Autonomous Agents* (2023) | [What Agents Are](../agents/01-what-agents-are.md) |
 | **Willison, S.** — *Prompt Injection / Lethal Trifecta series* | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../operating/08-red-team-protocol.md) |

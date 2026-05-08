@@ -96,6 +96,8 @@ The implementation discipline is recording the model tier used at each step and 
 
 ### Prompt caching as a structural cost control
 
+*This section gives the operational view; for the architectural treatment — caching as a spec property, not an optimization — see [Cacheable Prompt Architecture](14-cacheable-prompt-architecture.md).*
+
 Modern providers offer prompt caching with material economic effects:
 
 - **Anthropic prompt caching.** Cache reads at ~10% of normal input cost (depending on tier); cache writes at ~125% (a one-time premium); cached content TTL of 5 min default, 1 hour optional. Documented at anthropic.com/news/prompt-caching.
