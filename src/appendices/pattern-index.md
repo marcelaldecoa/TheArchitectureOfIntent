@@ -51,6 +51,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) | What makes an agent-executable spec different from a human-readable one? |
 | [The Living Spec](../sdd/06-living-specs.md) | How do specs evolve after execution and capture learning? |
 | [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) | What does a complete spec look like? |
+| [Architectural Decision Records](../sdd/08-architectural-decision-records.md) | How do ADRs and specs relate; when to write each; the canonical ADR format with Spec Mapping section |
 | [SpecKit](../sdd/04-speckit.md) | How does the SpecKit toolchain support spec-driven development? |
 
 ---
@@ -67,6 +68,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) | How do tool manifests and MCP define what an agent can reach? |
 | [Portable Domain Knowledge](../agents/05-agent-skills.md) | What are SKILL.md files and how do they carry domain context? |
 | [Coding Agents](../agents/08-coding-agents.md) | How do the framework's archetypes, spec, and oversight apply to the most-deployed agent class (Cursor, Cline, Devin, Claude Code)? |
+| [Computer-Use Agents](../agents/09-computer-use-agents.md) | How do the framework's disciplines apply to GUI-acting agents (Claude Computer Use, OpenAI Operator, Gemini computer use); the new Cat 7 Perceptual Failure category |
 
 ### Knowledge & Context
 
@@ -156,6 +158,8 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Model-tier selection, prompt caching strategy, latency budget decomposition, anti-patterns |
 | [Production Telemetry](../operating/10-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
 | [Adoption Playbook](../operating/11-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment |
+| [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/12-devsquad-mapping.md) | Phase-by-phase mapping of the book's artifacts and disciplines into Microsoft DevSquad Copilot's 8-phase iterative cycle |
+| [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md) | The minimum additions from this book that give a DevSquad team the most leverage; vocabulary translation; 30-day co-adoption plan |
 
 ---
 
@@ -327,6 +331,16 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 - [The Living Spec](../sdd/06-living-specs.md)
 - The worked examples ([Customer Support](../examples/01-ai-customer-support/README.md), [Code Gen Pipeline](../examples/02-code-generation-pipeline/README.md), [Coding Agent](../examples/03-coding-agent/README.md))
+
+### "My team already uses Microsoft DevSquad Copilot"
+- [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/12-devsquad-mapping.md)
+- [Architectural Decision Records](../sdd/08-architectural-decision-records.md)
+
+### "I'm building a computer-use / browser-use agent (Claude Computer Use / Operator / Gemini)"
+- [Computer-Use Agents](../agents/09-computer-use-agents.md)
+- [Red-Team Protocol — Computer-use-specific test patterns](../operating/08-red-team-protocol.md)
+- [Multi-Agent Governance — A2A protocols](../architecture/07-multi-agent-governance.md)
 
 ### "I need to design safe agent tools"
 - [Least Capability](../agents/04-tools-mcp-capability-boundaries.md)

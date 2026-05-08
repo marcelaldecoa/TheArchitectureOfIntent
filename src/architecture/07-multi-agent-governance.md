@@ -74,6 +74,37 @@ Three coordination patterns dominate production multi-agent systems. Each has a 
 
 The book's recommendation, following Anthropic's guidance, is to start with the simplest pattern that solves the problem. Most production teams should use a workflow (deterministic sequence) before they use a pipeline; a pipeline before a supervisor; a supervisor before peer handoffs. Each escalation in pattern complexity should be justified by a measured reason, not by aesthetic appeal.
 
+### Agent-to-agent protocols and the 2026 standardization arc
+
+By 2026, agent-to-agent (A2A) communication has begun to standardize, with multiple competing-but-interoperable protocols emerging. The most-cited of these is Google's *Agent2Agent (A2A) Protocol* (announced 2025), which defines how independent agents — possibly from different vendors, possibly running in different organizations — discover each other, negotiate capabilities, exchange tasks, and report results. Anthropic's MCP, originally tool-focused, has begun to extend toward agent-as-server patterns. OpenAI's Agent SDK ships its own coordination primitives. LangGraph's supervisor and handoff patterns continue to be the dominant in-vendor reference.
+
+For the governance discipline this chapter teaches, the protocol-layer specifics matter less than the conceptual question: **does your team's multi-agent system communicate via a standard protocol, or via bespoke point-to-point integration?**
+
+The 2026 default position should be: standard protocol where possible. The reasoning is the same as for MCP at the tool layer:
+
+- Standard protocols centralize observability and governance. Cross-agent traces, contract validation, and authorization boundaries can be enforced at the protocol layer rather than re-implemented per integration.
+- Standard protocols enable cross-vendor portability. If today's orchestrator is in LangGraph and tomorrow's is in OpenAI Agent SDK, a system spec written against a standard A2A protocol composes; one written against in-vendor coordination primitives does not.
+- Standard protocols expose the seam contracts. The protocol-level message schema is the seam contract — formalized, validated, and version-able rather than implicit in the orchestrator's code.
+
+What does NOT change with standardization: the seam contracts still need to be designed, the spec-conflict resolution rules still apply, the compounding-failure runbook is still required. The protocol gives you the wire format; the governance is your responsibility.
+
+The governance addition for protocol-mediated multi-agent systems:
+
+- **Section 7 (Tool Manifest)** of the system spec lists the A2A protocols and the agents reachable through them, with their respective authorization scopes.
+- **Each cross-agent message type** has a Section 6 (Invariants) entry: what content the message may carry, what authority it grants the receiver, what happens on contract violation.
+- **The multi-agent observability stack** (per [Production Telemetry](../operating/10-production-telemetry.md)) consumes the protocol's standard trace format. OpenTelemetry's GenAI semantic conventions cover the cross-agent message attributes alongside the per-agent ones.
+
+Specific protocol references for further reading:
+
+- **A2A (Agent2Agent) Protocol** — Google's open standard for cross-vendor agent communication. As of 2026, the most fully-specified A2A protocol; reference at a2aprotocol.dev.
+- **MCP (Model Context Protocol)** — Anthropic's tool-focused protocol, increasingly used in agent-as-server patterns. See [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md).
+- **OpenAI Agent SDK** — vendor-specific but widely adopted; ships handoff primitives that approximate A2A semantics within OpenAI's ecosystem.
+- **OpenTelemetry GenAI semantic conventions** — the cross-protocol observability layer that lets you trace through any of the above. opentelemetry.io/docs/specs/semconv/gen-ai.
+
+Treat the protocol choice as an architectural decision worth recording in an ADR. The ADR's Spec Mapping should connect to the system spec's Section 7 (the protocols allowed) and Section 6 (the invariants on cross-agent messages).
+
+---
+
 ### Spec-conflict resolution
 
 [Composing Archetypes](05-composing-archetypes.md) raises but does not resolve the case where one agent's spec authorizes behavior another agent's spec forbids. In a multi-agent system this is common — a Synthesizer's "must produce a unified output" can conflict with a Guardian's "must flag contradictions rather than resolve them silently."

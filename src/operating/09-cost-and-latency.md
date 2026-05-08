@@ -48,7 +48,7 @@ A serious cost/latency engineering practice prevents all three. Not by being fru
 
 ### Model-tier selection per role
 
-Not every step in an agent loop needs the same model. The principle from Anthropic's *Building Effective Agents* and OpenAI's tool-use guidance applies: **route the cheap, structured, high-volume steps to small models; route the judgment-bearing, low-volume steps to large models.**
+Not every step in an agent loop needs the same model. The principle from Anthropic's *Building Effective Agents* and OpenAI's tool-use guidance applies: **route the cheap, structured, high-volume steps to small models; route the judgment-bearing, low-volume steps to large models. Reserve reasoning-tier models for the steps that genuinely need extended deliberation.**
 
 Concrete pattern, applied to a typical agent loop:
 
@@ -61,8 +61,34 @@ Concrete pattern, applied to a typical agent loop:
 | Reflection / self-critique | Low | Reasoning over agent's own output | Large |
 | Output synthesis from gathered context | Medium | Long-context handling | Medium to large |
 | Judge model evaluation | Low | Calibrated judgment | Large (and ideally a different family from the agent) |
+| Hard problem-solving / multi-step planning | Very low | Extended deliberation, search | Reasoning tier (o1, o3, Claude with extended thinking, Gemini reasoning) |
 
-The cost shape: **70–85% of agent loop calls** in a well-engineered system should hit a small, fast model. **15–30%** should hit a large, capable one. Programs that send everything to the largest available model are leaving 3–10× cost reduction on the table.
+The cost shape: **70–85% of agent loop calls** in a well-engineered system should hit a small, fast model. **15–25%** should hit a large, capable one. **0–5%** should hit a reasoning-tier model. Programs that send everything to the largest available model — or worse, to the reasoning tier — are leaving 3–10× cost reduction on the table.
+
+### The reasoning-tier specifics
+
+Reasoning-tier models (OpenAI's o1, o3 series, Claude Opus with extended thinking, Gemini reasoning models) are a distinct category that emerged in 2024–2025 and are now mainstream in 2026. They have qualitatively different cost and latency profiles from the standard large-model tier:
+
+- **Cost:** typically 2–10× the per-token cost of standard large models, with the additional cost of "reasoning tokens" that are consumed during deliberation but not always returned to the caller. A single reasoning-tier call can cost $0.50–$5 depending on problem complexity.
+- **Latency:** typically 5–60 seconds for non-trivial problems vs. 1–5 seconds for standard models. Streaming partial answers is often impossible during the deliberation phase.
+- **Strengths:** measurably better on multi-step planning, formal reasoning, mathematical problem-solving, and complex code generation that requires holding many constraints in mind.
+- **Weaknesses:** wasted on tasks that don't need extended deliberation. Routing a simple classification through a reasoning-tier model produces correct outputs at 10× the cost and 20× the latency of the small-tier baseline.
+
+**When to use reasoning tier:**
+
+- Multi-step planning where the steps are genuinely interdependent (the planner's choice at step 1 determines what's possible at step 5)
+- Formal correctness proofs, mathematical computations, schema-design problems
+- Complex code generation where the constraint set is large and dense
+- Adversarial reasoning problems (red-team analysis, vulnerability identification)
+
+**When NOT to use reasoning tier:**
+
+- Classification, routing, argument extraction
+- Single-pass content generation
+- Tasks where the standard large-tier baseline is already 90%+ reliable
+- Latency-sensitive user-facing flows where 30+ seconds is unacceptable
+
+The discipline: **declare reasoning-tier usage explicitly in the spec.** Section 7 (Tool Manifest / Non-Functional Constraints) should name the model tier per agent role and the conditions under which reasoning-tier escalation is allowed. Treat reasoning-tier as a budget-line-item, not a default.
 
 The implementation discipline is recording the model tier used at each step and tracking per-tier cost. This goes in the spec (Section 7 — Non-Functional Constraints) as a per-step cost ceiling, not just a total.
 

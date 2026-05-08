@@ -38,6 +38,7 @@
 - [Writing for Machine Execution](sdd/05-writing-specs-for-agents.md)
 - [The Living Spec](sdd/06-living-specs.md)
 - [The Canonical Spec Template](sdd/07-canonical-spec-template.md)
+- [Architectural Decision Records](sdd/08-architectural-decision-records.md)
 - [SpecKit](sdd/04-speckit.md)
 
 ---
@@ -52,6 +53,7 @@
 - [Least Capability](agents/04-tools-mcp-capability-boundaries.md)
 - [Portable Domain Knowledge](agents/05-agent-skills.md)
 - [Coding Agents](agents/08-coding-agents.md)
+- [Computer-Use Agents](agents/09-computer-use-agents.md)
 
 ## Knowledge & Context
 
@@ -138,6 +140,8 @@
 - [Cost and Latency Engineering](operating/09-cost-and-latency.md)
 - [Production Telemetry](operating/10-production-telemetry.md)
 - [Adoption Playbook](operating/11-adoption-playbook.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](operating/12-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](operating/13-co-adoption-with-devsquad.md)
 
 ---
 

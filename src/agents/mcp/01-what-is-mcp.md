@@ -114,6 +114,17 @@ MCP does not make agents smarter. It does not eliminate the need for good specif
 
 This is infrastructure work — the kind that pays compounding returns over time as the tool ecosystem grows and cross-framework reuse becomes the default rather than the exception.
 
+### The 2026 ecosystem
+
+MCP was introduced by Anthropic in November 2024. By mid-2025 it had become a multi-vendor standard: OpenAI added MCP client support, Google's Gemini SDK added MCP integration, and Microsoft's Copilot platform integrated MCP server hosting. As of 2026, MCP is the *de facto* tool-integration protocol for production agent systems, with the following operational consequences:
+
+- **Public MCP server registries.** Anthropic's, GitHub's, and several community-maintained registries list hundreds of MCP servers ranging from cloud-provider integrations to single-purpose utility tools. The registry is a reference, not an authorization — any team using a public MCP server should subject it to the same scrutiny as any third-party dependency.
+- **Corporate MCP servers.** Most production teams now run *internal* MCP servers that wrap their bespoke services. These are the load-bearing integration layer for spec-driven agents inside the organization. Treat them as first-class infrastructure: versioned, monitored, owned by a specific team, with documented SLAs.
+- **Cross-vendor portability.** The same MCP server can serve a Claude-based agent, an OpenAI-based agent, a Gemini-based agent, and an in-house framework simultaneously. This is the cross-framework reuse that the protocol was designed to enable, now realized in practice. The implication: MCP investment compounds across the team's model choices, even when those choices change.
+- **Supply-chain risk surface.** With public MCP server registries comes the dependency-supply-chain risk that the rest of the software ecosystem has been managing for decades. A compromised MCP server is now an agent compromise. The structural defenses from [Coding Agents](../08-coding-agents.md) — allowlists, registry-pinning, runtime sandboxing — apply to MCP servers as well as to npm packages.
+
+The MCP ecosystem in 2026 is mature enough that *not* using it is the choice that needs justification. Custom point-to-point tool integrations should now be the exception, not the default. Where they exist, treat them as legacy and plan migration to MCP-mediated integration.
+
 ---
 
 ## Resulting Context
