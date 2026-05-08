@@ -195,7 +195,7 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Constitutional Archetypes](01-archetypes-as-constitutional-law.md)
+- [Pick an Archetype](02-canonical-intent-archetypes.md)
 - [Four Dimensions of Governance](03-archetype-dimensions.md)
 - [The Archetype Selection Tree](04-decision-tree.md)
 - [Archetype Composition](05-composing-archetypes.md)

@@ -71,4 +71,4 @@ Deploy backend capabilities as **MCP servers** — standalone services that expo
 - [The Tool Manifest](../capability/tool-manifest.md) — MCP tools are discovered by the agent but authorized by the manifest
 - [The Read-Only Tool](read-only-tool.md) — MCP servers should separate read and write tools
 - [The State-Changing Tool](state-changing-tool.md) — MCP tool descriptions must declare effect class
-- [Audit Trail](../observability/audit-trail.md) — MCP tool calls are logged through the standard protocol
+- [Structured Execution Log](../observability/execution-log.md) — MCP tool calls are logged through the standard protocol

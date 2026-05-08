@@ -14,7 +14,7 @@ You are working in a spec-driven system and something has gone wrong. An agent p
 
 This pattern introduces the most fundamental distinction in intent engineering: the difference between *what a system is trying to do* and *how it does it*. This distinction sounds obvious. It is not. Teams collapse it constantly — and the collapse is the source of most of the chronic dysfunction that SDD is designed to cure.
 
-This pattern assumes [Intent Engineering as a Discipline](01-what-is-intent-engineering.md).
+This pattern assumes the framing established in the [Prologue](../prologue.md).
 
 ---
 
@@ -159,7 +159,7 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Intent Engineering as a Discipline](01-what-is-intent-engineering.md)
+- [Prologue: What Changed and What's at Stake](../prologue.md)
 
 **This pattern enables:**
 - [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md) — who decides what in each layer

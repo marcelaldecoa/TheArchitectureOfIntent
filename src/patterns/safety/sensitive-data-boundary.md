@@ -70,5 +70,4 @@ The agent's memory stores: "Customer optimizing for tax efficiency with restrict
 - [Long-Term Memory](../capability/long-term-memory.md) — memory writes respect classification boundaries
 - [Structured Execution Log](../observability/execution-log.md) — log entries redact classified fields
 - [Session Isolation](../state/session-isolation.md) — cross-session leakage would violate data classification
-- [Audit Trail](../observability/audit-trail.md) — audit entries reference classified data without exposing it
 - [File System Access](../integration/file-system-access.md) — credential files are excluded from file access by default

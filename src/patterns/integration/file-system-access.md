@@ -74,5 +74,5 @@ Scope file system access by **declared directory, declared permission, and decla
 
 - [The Tool Manifest](../capability/tool-manifest.md) — file system access is declared alongside tool access as part of the agent's capability boundary
 - [Sensitive Data Boundary](../safety/sensitive-data-boundary.md) — credential files and sensitive data require explicit exclusion
-- [Audit Trail](../observability/audit-trail.md) — file operations are logged as auditable events
+- [Structured Execution Log](../observability/execution-log.md) — file operations are logged as auditable events
 - [Code Execution Sandbox](code-sandbox.md) — sandbox file systems are scoped to a working directory by default
