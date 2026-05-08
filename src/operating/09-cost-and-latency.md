@@ -48,6 +48,8 @@ A serious cost/latency engineering practice prevents all three. Not by being fru
 
 ### Model-tier selection per role
 
+*For a one-page decision matrix, step-to-tier defaults, and anti-patterns, see the [Model-Tier Quick-Select Card](../appendices/model-tier-card.md).*
+
 Not every step in an agent loop needs the same model. The principle from Anthropic's *Building Effective Agents* and OpenAI's tool-use guidance applies: **route the cheap, structured, high-volume steps to small models; route the judgment-bearing, low-volume steps to large models. Reserve reasoning-tier models for the steps that genuinely need extended deliberation.**
 
 Concrete pattern, applied to a typical agent loop:

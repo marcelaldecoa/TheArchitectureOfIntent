@@ -317,7 +317,8 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Output Validation Gate](../patterns/safety/output-validation-gate.md)
 
 ### "My agent program's cost or latency isn't penciling"
-- [Cost and Latency Engineering](../operating/09-cost-and-latency.md)
+- [Model-Tier Quick-Select Card](model-tier-card.md) — start here: per-step decision matrix and step-to-tier defaults
+- [Cost and Latency Engineering](../operating/09-cost-and-latency.md) — full treatment with vendor pricing and a worked case study
 - [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) — caching as architecture, not optimization; the largest single lever for systems running 100+ tasks/day
 - [Four Signal Metrics](../operating/06-metrics.md) — cost-per-correct-output is the metric this work moves
 - [Context Window Budget](../patterns/capability/context-budget.md)
