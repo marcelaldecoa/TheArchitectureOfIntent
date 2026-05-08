@@ -255,15 +255,15 @@
   <text x="450" y="498"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
-        font-size="40" font-weight="bold" letter-spacing="-0.4"
-        fill="white">The Architecture of Intent</text>
+        font-size="48" font-weight="bold" letter-spacing="-0.4"
+        fill="white">Intent Engineering</text>
 
   <!-- Subtitle -->
   <text x="450" y="528"
         text-anchor="middle"
         font-family="Georgia,'Times New Roman',serif"
-        font-size="14.5" font-style="italic"
-        fill="#93c5fd" opacity="0.85">A Field Guide to Shipping AI Agents Safely</text>
+        font-size="13.5" font-style="italic"
+        fill="#93c5fd" opacity="0.85">A Field Guide to Designing and Shipping AI Agent Systems</text>
 
   <!-- Author & year -->
   <text x="450" y="557"
