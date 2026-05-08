@@ -99,7 +99,7 @@ These responsibilities are **concurrent and non-exclusive**. A failed outcome us
 **The danger zone: high agency + low responsibility clarity.** Three common patterns expose this:
 
 - **The "AI decided" deflection.** When something goes wrong, the response is "the AI did it." This is never a meaningful answer. An AI system acts within a spec, authorized by humans, deployed by humans, running on infrastructure operated by humans. "The AI decided" is shorthand for a chain of human decisions that allocated agency.
-- **The empty oversight seat.** A system with significant agency but no designated human reviewer. The system acts; nobody checks. When the agent's discretionary judgment is wrong, nobody catches it until consequences have compounded.
+- **The empty oversight seat.** A system with significant agency but no designated human reviewer. The system acts; nobody checks. When the system's outputs go wrong in the discretionary regions the spec didn't constrain, nobody catches it until consequences have compounded.
 - **The responsibility gap.** Authorial, operational, and validation responsibilities belong to different teams who never coordinated on what "accountable" means in practice.
 
 ---

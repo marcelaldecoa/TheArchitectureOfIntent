@@ -153,6 +153,8 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Four Signal Metrics](../operating/06-metrics.md) | What to measure, what not to |
 | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) | The four-level eval stack: unit asserts, spec acceptance, regression, production sampling |
 | [Red-Team Protocol](../operating/08-red-team-protocol.md) | Four red-team batteries (pre-launch, per-release, monthly regression, quarterly fresh-attacks) feeding the spec gap log |
+| [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Model-tier selection, prompt caching strategy, latency budget decomposition, anti-patterns |
+| [Production Telemetry](../operating/10-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
 
 ---
 
@@ -307,6 +309,17 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md)
 - [Adversarial Input Test](../patterns/testing/adversarial-input.md)
 - [Output Validation Gate](../patterns/safety/output-validation-gate.md)
+
+### "My agent program's cost or latency isn't penciling"
+- [Cost and Latency Engineering](../operating/09-cost-and-latency.md)
+- [Four Signal Metrics](../operating/06-metrics.md) — cost-per-correct-output is the metric this work moves
+- [Context Window Budget](../patterns/capability/context-budget.md)
+
+### "I need real production observability for my agents"
+- [Production Telemetry](../operating/10-production-telemetry.md)
+- [Structured Execution Log](../patterns/observability/execution-log.md)
+- [Distributed Trace](../patterns/observability/distributed-trace.md)
+- [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md)
 
 ### "I need to design safe agent tools"
 - [Least Capability](../agents/04-tools-mcp-capability-boundaries.md)

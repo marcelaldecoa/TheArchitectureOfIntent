@@ -149,6 +149,56 @@ If there is no review gate — synthesis automatically triggers publish — this
 
 ---
 
+### Worked example: spec-conflict resolution in an Advisor + Executor composition
+
+The four patterns above describe well-formed compositions. In practice, two archetypes' specs eventually conflict on a specific case the framework didn't anticipate. The resolution rules from [Multi-Agent Governance](07-multi-agent-governance.md) — *(1) higher-tier invariant wins; (2) earlier-in-pipeline-wins-on-read, later-on-write; (3) tie-break: surface, don't resolve* — apply here too. This worked example shows the rules in action.
+
+**The system.** A customer-facing financial-planning agent. Pattern A (Advisor → Executor confirm-then-act). The Advisor surfaces investment options; the Executor places trades on the user's confirmation.
+
+**The Advisor's spec (excerpt):**
+- *§3 Scope:* "Surface up to five options across the user's stated risk profile, including options that maximize expected return."
+- *§5 Constraint A1:* "Always include at least one option above the user's stated risk profile when available, clearly flagged. Users may want to be aware of higher-return options even if they ultimately choose conservatively."
+
+**The Executor's spec (excerpt):**
+- *§3 Scope:* "Place trades for options the user confirms."
+- *§5 Constraint E1 (invariant):* "Never place trades that exceed the user's stated risk profile. Any such request must surface."
+- *§5 Constraint E2:* "Trade size limited to $5,000 per session without secondary confirmation."
+
+**The conflict.** The Advisor surfaces a higher-risk option per A1. The user, attracted by the return, confirms it. The Executor receives a confirmation for a trade that violates E1. Two specs are in tension: A1 expects the system to surface higher-risk options; E1 forbids placing those trades.
+
+**Naive resolutions, both wrong:**
+
+- *"The user confirmed, so the Executor should proceed."* This treats user confirmation as overriding the Executor's invariant. It does not. Invariants are not waivable by user request — they are by definition the constraints that cannot be traded.
+- *"The Advisor should not surface options the Executor cannot place."* This treats the Advisor's job as constrained by the Executor's authorization. But the Advisor's job (per A1) is to inform — including about options the user may not be authorized for. Restricting it would lose information value.
+
+**Correct resolution, applying the three rules:**
+
+1. **Rule 1 (higher-tier invariant wins).** E1 is declared as an invariant. A1 is a constraint. The invariant binds. The trade does not happen.
+2. **Rule 2 (earlier-on-read, later-on-write).** The Advisor reads the user's risk profile and informs; that is its read-side authority. The Executor writes (places the trade); on the write side, the Executor's constraints bind. Rule 2 reinforces Rule 1 here.
+3. **Rule 3 (surface, don't resolve).** Even with Rules 1 and 2 deciding the outcome, the *user* needs to know what happened. The system surfaces: "You selected an option above your stated risk profile. To proceed with this trade, please update your risk profile through [process Y] and reconfirm. Otherwise, please select a different option."
+
+**What the system spec should encode (above the per-component specs):**
+
+```
+Conflict resolution policy:
+- Advisor's information surface is bounded only by Advisor §3 and §5.
+- Executor's authorization-to-act is bounded by Executor §3 and §5.
+- When user confirms an Advisor-surfaced option that the Executor's
+  invariant forbids: do not act; surface the conflict to the user
+  with the specific invariant cited and the path to resolve it
+  (update risk profile, choose different option).
+- The system never silently downgrades a user's selection. The user
+  is told their selection cannot be acted on and why.
+- The Advisor's flagging discipline (A1's "clearly flagged") is the
+  first line of defense — if the user is well-informed about which
+  options exceed their profile, the conflict rate drops. This is
+  measured: target conflict-surface rate < 5% of confirmed selections.
+```
+
+**The lesson, generalizing.** Spec conflicts in compositions are common and expected. The rule is not "design specs that never conflict" — that's not achievable. The rule is "make the resolution policy explicit at the system level, before the conflict happens." The three rules give a default; the system spec can refine them per case. What is forbidden is silent resolution by either component, which is itself a Cat 1 spec failure of the *system spec* even when both component specs are individually correct.
+
+---
+
 ### The Composition Checklist
 
 When a system involves more than one archetype role, verify:
