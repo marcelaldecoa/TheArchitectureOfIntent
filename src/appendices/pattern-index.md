@@ -155,6 +155,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Red-Team Protocol](../operating/08-red-team-protocol.md) | Four red-team batteries (pre-launch, per-release, monthly regression, quarterly fresh-attacks) feeding the spec gap log |
 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Model-tier selection, prompt caching strategy, latency budget decomposition, anti-patterns |
 | [Production Telemetry](../operating/10-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
+| [Adoption Playbook](../operating/11-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment |
 
 ---
 
@@ -320,6 +321,12 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Structured Execution Log](../patterns/observability/execution-log.md)
 - [Distributed Trace](../patterns/observability/distributed-trace.md)
 - [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md)
+
+### "I'm trying to introduce this framework to my team"
+- [Adoption Playbook](../operating/11-adoption-playbook.md)
+- [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
+- [The Living Spec](../sdd/06-living-specs.md)
+- The worked examples ([Customer Support](../examples/01-ai-customer-support/README.md), [Code Gen Pipeline](../examples/02-code-generation-pipeline/README.md), [Coding Agent](../examples/03-coding-agent/README.md))
 
 ### "I need to design safe agent tools"
 - [Least Capability](../agents/04-tools-mcp-capability-boundaries.md)

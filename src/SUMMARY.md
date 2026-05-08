@@ -137,6 +137,7 @@
 - [Red-Team Protocol](operating/08-red-team-protocol.md)
 - [Cost and Latency Engineering](operating/09-cost-and-latency.md)
 - [Production Telemetry](operating/10-production-telemetry.md)
+- [Adoption Playbook](operating/11-adoption-playbook.md)
 
 ---
 
