@@ -150,7 +150,7 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Delegated Definition Authority](03-who-defines-archetypes.md)
+- [Governed Archetype Evolution](../architecture/06-evolving-archetypes.md)
 - [Proportional Oversight](../agents/06-human-oversight-models.md)
 - [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md)
 

@@ -190,6 +190,8 @@
 
 ## Coordination
 
+*Workflow shapes for orchestrating agents. For human-shaped coordination patterns (gates, retry, escalation), see Part 4 — Oversight.*
+
 - [Sequential Pipeline](patterns/coordination/sequential-pipeline.md)
 - [Parallel Fan-Out](patterns/coordination/parallel-fan-out.md)
 - [Conditional Routing](patterns/coordination/conditional-routing.md)
@@ -205,6 +207,12 @@
 - [Conversation History Management](patterns/state/conversation-history.md)
 - [Agent Registry](patterns/state/agent-registry.md)
 - [Artifact Store](patterns/state/artifact-store.md)
+
+---
+
+# Repertoires & Reference
+
+*Templates and language guides. Reusable artifacts the team can fork into specs and code reviews.*
 
 ## Repertoire
 

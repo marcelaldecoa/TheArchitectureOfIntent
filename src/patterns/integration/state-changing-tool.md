@@ -67,5 +67,5 @@ Design state-changing tools with **explicit scope, declared effect, and authoriz
 - [The Idempotent Tool](idempotent-tool.md) — state-changing tools should be idempotent to handle retries safely
 - [The Tool Manifest](../capability/tool-manifest.md) — state-changing tools require explicit authorization in the manifest
 - [Human-in-the-Loop Gate](../coordination/human-gate.md) — irreversible state changes may require human confirmation
-- [Audit Trail](../observability/audit-trail.md) — every state change is logged as an auditable event
+- [Structured Execution Log](../observability/execution-log.md) — every state change is logged as an auditable event
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md) — the reversibility of each tool determines its oversight tier

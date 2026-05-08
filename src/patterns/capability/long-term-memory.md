@@ -63,4 +63,4 @@ Implement long-term memory as a **declared, scoped, auditable store** — not as
 - [Per-Task Context](per-task-context.md) — per-task context is injected fresh each time; memory is retrieved from the persistent store
 - [Sensitive Data Boundary](../safety/sensitive-data-boundary.md) — memory storage must respect data classification constraints
 - [The State-Changing Tool](../integration/state-changing-tool.md) — writing to memory is a state-changing operation and should be authorized as such
-- [Audit Trail](../observability/audit-trail.md) — memory writes are auditable events
+- [Structured Execution Log](../observability/execution-log.md) — memory writes are auditable events
