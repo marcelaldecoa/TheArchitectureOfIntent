@@ -1,1 +1,1 @@
-![Intent Engineering](cover.svg)
+![The Architecture of Intent](cover.svg)

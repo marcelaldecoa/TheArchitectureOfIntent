@@ -2,8 +2,6 @@
 
 **A Field Guide to Designing and Shipping AI Agent Systems**
 
-*Previously titled: The Architecture of Intent.*
-
 ---
 
 ## Why this book exists

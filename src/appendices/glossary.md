@@ -1,10 +1,10 @@
-﻿# Glossary of Intent Engineering
+﻿# Glossary
 
 **Appendices** · *Appendix A*
 
 ---
 
-This glossary defines the core vocabulary of the Intent Engineering. Every term defined here appears in at least one spec, archetype, or template elsewhere in this book. This is intentional — terms without referents are decoration.
+This glossary defines the core vocabulary of the Architecture of Intent. Every term defined here appears in at least one spec, archetype, or template elsewhere in this book. This is intentional — terms without referents are decoration.
 
 *Terms are listed alphabetically. Each entry includes the pattern where the concept originates.*
 
@@ -92,7 +92,7 @@ A condition that must always hold, regardless of what the system does. Invariant
 **Intent**
 The human purpose that a system is meant to serve. Distinct from *implementation* (how the purpose is achieved). Intent is what specs encode. Implementation is what agents produce. See [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md).
 
-**Intent Engineering**
+**Architecture of Intent**
 The discipline of designing, specifying, communicating, and governing intent so that it can be executed reliably by agents, validated accurately by humans, and evolved safely over time. Organized around three questions every delegated system must answer — *what is this system trying to achieve, within what constraints, and how will we know it is working?* — and four recurring activities: framing, specification, delegation, and validation. See [Introduction](../introduction.md).
 
 ---
