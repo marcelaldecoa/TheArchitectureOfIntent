@@ -47,11 +47,16 @@
 
 *What agents are structurally, what capabilities they need, and how to bound them.*
 
+## Foundations
+
 - [What Agents Are](agents/01-what-agents-are.md)
 - [Autonomy Without Agency](agents/02-autonomy-vs-agency.md)
 - [The Executor Model](agents/03-agents-as-executors.md)
 - [Least Capability](agents/04-tools-mcp-capability-boundaries.md)
 - [Portable Domain Knowledge](agents/05-agent-skills.md)
+
+## Agent Classes (2024–2026)
+
 - [Coding Agents](agents/08-coding-agents.md)
 - [Computer-Use Agents](agents/09-computer-use-agents.md)
 
@@ -130,15 +135,24 @@
 - [Model Upgrade Validation](patterns/deployment/model-upgrade.md)
 - [Agent Deprecation Path](patterns/deployment/deprecation.md)
 
-## Governance, Metrics, and Evals
+## Governance and Reviews
 
 - [Proportional Governance](operating/04-governance.md)
 - [Intent Review Before Output Review](operating/05-reviewing-intent.md)
+
+## Metrics, Evals, and Red-Team
+
 - [Four Signal Metrics](operating/06-metrics.md)
 - [Evals and Benchmarks](operating/07-evals-and-benchmarks.md)
 - [Red-Team Protocol](operating/08-red-team-protocol.md)
+
+## Production Engineering
+
 - [Cost and Latency Engineering](operating/09-cost-and-latency.md)
 - [Production Telemetry](operating/10-production-telemetry.md)
+
+## Adoption
+
 - [Adoption Playbook](operating/11-adoption-playbook.md)
 - [Mapping the Framework to the DevSquad 8-Phase Cadence](operating/12-devsquad-mapping.md)
 - [Co-adoption with DevSquad Copilot](operating/13-co-adoption-with-devsquad.md)
