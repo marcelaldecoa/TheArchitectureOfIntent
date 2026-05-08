@@ -14,7 +14,7 @@ You have been using AI tools. A colleague proposes "deploying an agent" to handl
 
 Each of these uses the same word — agent — to describe something materially different in terms of capability, risk, and architectural implication. Without a precise definition, every conversation about agents is secretly a conversation about different things. Every design decision sits on an unstable foundation.
 
-This chapter opens Part V with first principles. It assumes familiarity with the intent vocabulary from Parts I–III and the spec discipline from Part IV.
+This chapter opens Part 3 (The Agent) with first principles. It assumes familiarity with the intent vocabulary from the prologue and Part 1 and the spec discipline from Part 2.
 
 ---
 

@@ -14,7 +14,7 @@ We have agents that can execute complex tasks with operational autonomy, using t
 
 Human oversight is not a single mechanism. It is a family of patterns, each appropriate to a different point in the execution lifecycle, a different risk posture, and a different relationship between the human and the work. Treating oversight as binary — either the human approves everything, or the human is not involved — is the failure mode this chapter prevents.
 
-This pattern assumes familiarity with the archetype framework from Part III, particularly the four oversight dimensions: Agency Level, Risk Posture, Oversight Model, and Reversibility.
+This pattern assumes familiarity with the archetype framework from Part 1, particularly the four oversight dimensions: Agency Level, Risk Posture, Oversight Model, and Reversibility.
 
 ---
 
@@ -196,6 +196,6 @@ After applying this pattern:
 
 **This pattern enables:**
 - [Six Failure Categories](07-failure-modes.md)
-- Governance, Escalation Design *(Part VII)*
+- Governance, Escalation Design *(Part 5 — Ship)*
 
 ---

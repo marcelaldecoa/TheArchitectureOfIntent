@@ -70,7 +70,7 @@ Operational autonomy is *designed*. It is not an inherent property of the model 
 
 Most real-world agent deployments should sit at Level 2–4. Level 0 is not an agent in any meaningful sense — it is an AI assistant. Level 5 is a design aspiration for a narrow set of domains and should be adopted with caution and formal governance review.
 
-The archetypes from Part III map onto this spectrum:
+The archetypes from Part 1 map onto this spectrum:
 
 | Archetype | Typical Autonomy Level |
 |-----------|----------------------|

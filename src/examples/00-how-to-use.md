@@ -53,7 +53,7 @@ The answers in these examples are specific to these scenarios. The questions tra
 
 ### Use the Specs as Structural Templates
 
-The specs in these examples follow the canonical template from Part IV. When you write your first spec, use these as concrete references for what each section looks like when it is well-populated — not as content to copy, but as a calibration for completeness and specificity.
+The specs in these examples follow the canonical template from Part 2. When you write your first spec, use these as concrete references for what each section looks like when it is well-populated — not as content to copy, but as a calibration for completeness and specificity.
 
 Pay particular attention to the NOT-authorized sections. The customer support example's NOT-authorized list was not written in one pass — it was built up through spec review as reviewers applied the five questions from Chapter 7.4 and found clauses that needed to be made explicit.
 

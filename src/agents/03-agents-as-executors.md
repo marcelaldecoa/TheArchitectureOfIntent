@@ -14,7 +14,7 @@ We have defined what agents are and clarified the autonomy question. We now arri
 
 This is not a limitation to be overcome. It is the architecture's foundational design principle, and understanding it changes how you write specs, how you assign tasks, how you evaluate outputs, and how you attribute failure.
 
-This chapter assumes Parts I–IV in full. It is the theoretical pivot point between the introductory chapters of Part V and the concrete design patterns that follow.
+This chapter assumes the prologue and Parts 1–2 in full. It is the theoretical pivot point between the introductory chapters of Part 3 (The Agent) and the concrete design patterns that follow.
 
 ---
 

@@ -12,7 +12,7 @@
 
 You have understood the principles of Spec-Driven Development. You need the artifact.
 
-This pattern is different from the others in Part IV: it is primarily reference material. It presents the canonical spec template in full, with an explanation of each section, the key questions each section must answer, and examples of what good and weak entries look like.
+This pattern is different from the others in Part 2: it is primarily reference material. It presents the canonical spec template in full, with an explanation of each section, the key questions each section must answer, and examples of what good and weak entries look like.
 
 Use this pattern as:
 - The primary reference when writing a new spec
@@ -20,7 +20,7 @@ Use this pattern as:
 - The structural model when building project-specific template variants
 - The template fragment library when adding spec sections to SpecKit's constitution
 
-This pattern assumes all of Part IV.
+This pattern assumes all of Part 2.
 
 ---
 
@@ -384,13 +384,13 @@ The most important clauses are the "NOT authorized" clauses. Agents are expansiv
 
 ---
 
-## Part IV Closing: The Spec As The Work
+## Part 2 Closing: The Spec As The Work
 
 The canonical spec template is not a bureaucratic instrument. It is the distillation of a discipline: that the work of engineering systems in an age of agent execution is fundamentally the work of expressing intent precisely.
 
 *"If you can't specify it, you don't understand it well enough yet."*
 
-This statement, which appears in the SDD source material that preceded this book, is the organizing truth of Part IV. The spec is not something you write after you understand the problem. It is the thing that tells you whether you understand the problem. Writing a spec that cannot be completed — because the problem statement is too vague, the desired outcome is unknowable, the acceptance criteria are untestable — is the earliest possible discovery that the work is not ready to start.
+This statement, which appears in the SDD source material that preceded this book, is the organizing truth of Part 2. The spec is not something you write after you understand the problem. It is the thing that tells you whether you understand the problem. Writing a spec that cannot be completed — because the problem statement is too vague, the desired outcome is unknowable, the acceptance criteria are untestable — is the earliest possible discovery that the work is not ready to start.
 
 The spec, written well, is the work. Everything after it is execution.
 
@@ -404,7 +404,7 @@ The spec, written well, is the work. Everything after it is execution.
 
 ## Connections
 
-**This pattern assumes all of Part IV:**
+**This pattern assumes all of Part 2:**
 - [Spec-Driven Development](01-what-sdd-means.md)
 - [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 - [The Spec Lifecycle](03-spec-lifecycle.md)
@@ -415,11 +415,11 @@ The spec, written well, is the work. Everything after it is execution.
 **This pattern is used by:**
 - [Spec Template Library](../repertoires/03-spec-template-library.md) — variant templates for feature specs, agent instructions, integrations
 - [Archetype deep dives](../architecture/archetypes/) — each archetype's spec template fragment
-- Part VII (Operating Intent Systems) — spec review as governance practice
+- Part 5 (Ship) — spec review as governance practice
 
 ---
 
-*Part IV is complete. Continue to [Part V: Agents & Execution](../agents/01-what-agents-are.md).*
+*Part 2 is complete. Continue to [Part 3 (The Agent)](../agents/01-what-agents-are.md).*
 
 
 

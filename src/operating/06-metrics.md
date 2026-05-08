@@ -220,8 +220,8 @@ After applying this pattern:
 
 ---
 
-*This concludes Part VII: Operating the System.*
+*This concludes Proportional Governance.*
 
-*Continue to [Part VIII: Applied Examples](../examples/00-how-to-use.md)*
+*Continue to [the Worked Pilots](../examples/00-how-to-use.md)*
 
 

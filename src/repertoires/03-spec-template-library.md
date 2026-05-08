@@ -10,7 +10,7 @@
 
 ## Context
 
-Part IV produced the [Canonical Spec Template](../sdd/07-canonical-spec-template.md) — a 14-section master structure that covers every element a spec might need. It is comprehensive by design. It must be, to serve as the authoritative reference for the framework.
+Part 2 produced the [Canonical Spec Template](../sdd/07-canonical-spec-template.md) — a 14-section master structure that covers every element a spec might need. It is comprehensive by design. It must be, to serve as the authoritative reference for the framework.
 
 But no practitioner writes from the canonical template every day. It is too comprehensive for routine use — most tasks require seven or eight sections fully, and the other sections partially or not at all. The overhead of deciding which sections to include, which to abbreviate, and which are mandatory for this task type is non-trivial. Multiplied across a team and a year, it is significant.
 

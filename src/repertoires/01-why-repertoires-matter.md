@@ -62,7 +62,7 @@ Together, templates, catalogs, and standards constitute the repertoire. A practi
 
 ### The Skills Connection
 
-Part V introduced Agent Skills as the packaging format for domain knowledge. The relationship between skills and repertoires is direct: **the organization's repertoire is the human-readable version of what its skills files encode for agents**.
+Part 3 introduced Agent Skills as the packaging format for domain knowledge. The relationship between skills and repertoires is direct: **the organization's repertoire is the human-readable version of what its skills files encode for agents**.
 
 A code standards document that describes how the team writes TypeScript is the source material for a `typescript-standards` skill. A spec template library that provides the feature spec template is the source material for a `spec-writing` skill. A validation template that defines acceptance criteria for API integrations encodes the knowledge that becomes the `api-validation` skill.
 
@@ -86,7 +86,7 @@ A living repertoire has three properties:
 
 **Review cadence.** Repertoire artifacts are reviewed on a defined schedule — quarterly for most, immediately after any incident that reveals a gap. The review is not a comprehensive rewrite; it is a diff against current practice. "Is this still how we do it?"
 
-**Gap log integration.** The Spec Gap Log introduced in Part V (Failure Modes and How to Diagnose Them) feeds directly into the repertoire. Every identified spec gap is a candidate repertoire addition. When a practitioner writes the same constraint from scratch twice in two weeks, that constraint belongs in the constraint library. The gap log is the intake queue for the repertoire backlog.
+**Gap log integration.** The Spec Gap Log introduced in Part 3 (Failure Modes and How to Diagnose Them) feeds directly into the repertoire. Every identified spec gap is a candidate repertoire addition. When a practitioner writes the same constraint from scratch twice in two weeks, that constraint belongs in the constraint library. The gap log is the intake queue for the repertoire backlog.
 
 ### What Repertoires Do Not Replace
 

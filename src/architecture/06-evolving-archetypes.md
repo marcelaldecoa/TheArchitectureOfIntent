@@ -15,7 +15,7 @@ You have classified a system, specced it, and shipped it. Three months later, a 
 
 Archetypes are not permanent — but changing them must be a deliberate act, not an accumulation of small decisions.
 
-This pattern assumes all of [Intent Architecture](01-archetypes-as-constitutional-law.md), and is the closing pattern for Part III.
+This pattern assumes all the prior archetype chapters: [Pick an Archetype](02-canonical-intent-archetypes.md), [Four Dimensions of Governance](03-archetype-dimensions.md), [The Archetype Selection Tree](04-decision-tree.md), and [Composing Archetypes](05-composing-archetypes.md).
 
 ---
 
@@ -203,9 +203,9 @@ After applying this pattern:
 **This pattern enables:**
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the spec version history section
 - [Living Specs](../sdd/06-living-specs.md) — how specs evolve over time
-- Part VII (Operating Intent Systems) — governance cadences in production
+- Part 5 (Ship) — governance cadences in production
 
 ---
 
-*Part III is complete. Continue to [Part IV: Spec-Driven Development](../sdd/01-what-sdd-means.md), or to the archetype deep dives: [Advisor](archetypes/advisor.md) · [Executor](archetypes/executor.md) · [Guardian](archetypes/guardian.md) · [Synthesizer](archetypes/synthesizer.md) · [Orchestrator](archetypes/orchestrator.md)*
+*Part 1 (Decisions) is complete. Continue to [Part 2 (The Spec)](../sdd/01-what-sdd-means.md), or to the archetype deep dives: [Advisor](archetypes/advisor.md) · [Executor](archetypes/executor.md) · [Guardian](archetypes/guardian.md) · [Synthesizer](archetypes/synthesizer.md) · [Orchestrator](archetypes/orchestrator.md)*
 
