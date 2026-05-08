@@ -187,11 +187,9 @@
 
 # Pattern Reference
 
-*Patterns to consult once your pilot is running. Browse by problem, not in sequence.*
+*Patterns to consult once your pilot is running. Browse by problem, not in sequence. For human-shaped coordination patterns (gates, retry, escalation), see Part 4 — Oversight.*
 
 ## Coordination
-
-*Workflow shapes for orchestrating agents. For human-shaped coordination patterns (gates, retry, escalation), see Part 4 — Oversight.*
 
 - [Sequential Pipeline](patterns/coordination/sequential-pipeline.md)
 - [Parallel Fan-Out](patterns/coordination/parallel-fan-out.md)
