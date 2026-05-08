@@ -149,7 +149,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [Spec-Driven Development](../sdd/01-what-sdd-means.md)
 - [Proportional Governance](04-governance.md)
-- [Six Failure Categories](../agents/07-failure-modes.md)
+- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
 - [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
 
 **This pattern enables:**

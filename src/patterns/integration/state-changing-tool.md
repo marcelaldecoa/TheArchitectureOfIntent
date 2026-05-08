@@ -68,4 +68,4 @@ Design state-changing tools with **explicit scope, declared effect, and authoriz
 - [The Tool Manifest](../capability/tool-manifest.md) — state-changing tools require explicit authorization in the manifest
 - [Human-in-the-Loop Gate](../coordination/human-gate.md) — irreversible state changes may require human confirmation
 - [Audit Trail](../observability/audit-trail.md) — every state change is logged as an auditable event
-- [Design for Reversibility](../../theory/04-reversibility-as-design-dimension.md) — the reversibility of each tool determines its oversight tier
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md) — the reversibility of each tool determines its oversight tier

@@ -102,7 +102,7 @@ An archetype review is not a re-evaluation starting from scratch. It is a compar
 
 **Step 2 — Spec gap identification.** Compare the behavior audit against the current spec. Document every discrepancy. There will always be some. The question is whether they are structural (affecting archetype, dimensions, or invariants) or peripheral (affecting implementation detail).
 
-**Step 3 — Re-run the decision tree.** Apply [Pattern 3.4](04-decision-tree.md) to the system as described by the behavior audit. Does the result match the current archetype classification?
+**Step 3 — Re-run the decision tree.** Apply [The Archetype Selection Tree](04-decision-tree.md) to the system as described by the behavior audit. Does the result match the current archetype classification?
 
 If yes: Update the spec to close the peripheral gaps. The archetype stands.
 
@@ -118,7 +118,7 @@ If no: proceed to Step 4.
 
 In continuous deployment environments, archetype evolution must be integrated into the delivery pipeline rather than treated as an offline governance exercise:
 
-- **Spec-as-code.** Store specs alongside application code in the repository. Spec changes follow the same pull request and review process as code changes. Archetype reclassification is a PR that requires explicit approval from the authority level defined in [Delegated Definition Authority](../operating/03-who-defines-archetypes.md).
+- **Spec-as-code.** Store specs alongside application code in the repository. Spec changes follow the same pull request and review process as code changes. Archetype reclassification is a PR that requires explicit approval from the authority level defined in [Proportional Governance](../operating/04-governance.md).
 - **Automated drift detection.** CI checks can validate that the system's declared capabilities (tool manifest, API surface, data access) are consistent with its archetype's authorized scope. A new tool added to the manifest that exceeds the current archetype's boundaries should fail the pipeline and trigger a review.
 - **Gated promotion for archetype changes.** When an archetype is reclassified, the deployment requires a manual gate — the spec reviewer signs off before the pipeline proceeds. This is not bureaucracy; it is the minimum governance for a change that alters oversight requirements, risk posture, and invariants.
 - **Feature flags for planned evolution.** Planned transitions (Advisor → Executor) can be gated behind feature flags that are enabled only after transition criteria are met and the spec is updated. The flag flip is a logged event, not a silent change.

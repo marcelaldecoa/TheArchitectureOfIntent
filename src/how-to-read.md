@@ -1,62 +1,64 @@
-﻿# How to Read This Book
+# How to Read This Book
 
 ---
 
-This book supports two reading modes. Choose the one that fits where you are.
+This book is structured as a **field guide**, organized in the order in which the decisions actually have to be made.
 
 ---
 
-## Mode 1: Linear (The Book)
+## The Six Parts
 
-Read from beginning to end. Start with [Introduction](introduction.md), proceed through the Foundations, and let the abstraction tighten gradually from philosophy to execution.
+| Part | What you do here |
+|------|------------------|
+| **Prologue** | The short version of what changed and what's at stake. Three pages. |
+| **1. Decisions** | The decisions you commit to *before* you start: archetype, calibration, failure anticipation, intent vs. implementation. |
+| **2. The Spec** | What spec-driven development means and how to write the spec the agent will execute against. |
+| **3. The Agent** | What agents are structurally, what capabilities they need, and how to bound them via tools and MCP. |
+| **4. Oversight, Safety & Operations** | Proportional oversight, safety patterns, retry, observability, and spec conformance testing. |
+| **5. Ship** | Canary, rollback, spec versioning, governance cadence, the four signal metrics, intent review. |
+| **6. Worked Pilots** | Two end-to-end examples calibrated against the framework. |
 
-This mode is best if:
-- You are new to the concepts of spec-driven development or intent engineering
-- You are preparing to advocate for this shift within your organization
-- You want the full vocabulary before working with the templates and catalogs
-
-Estimated time to read linearly: 8–12 hours. But this book is not meant to be consumed in a sitting. Read a section, put it down, apply it, return.
-
----
-
-## Mode 2: Non-Linear (The Reference)
-
-Enter from wherever your current work lives. Use the table of contents, the [Pattern Index](appendices/pattern-index.md), or the [Glossary](appendices/glossary.md) as entry points.
-
-Useful entry points by role:
-
-| If you are... | Start here |
-|---------------|------------|
-| **Writing a spec today** | [The Canonical Spec Template](sdd/07-canonical-spec-template.md) |
-| **Choosing how to deploy an agent** | [The Archetype Selection Tree](architecture/04-decision-tree.md) |
-| **Designing oversight for an AI system** | [Proportional Oversight](agents/06-human-oversight-models.md) |
-| **Restructuring your team's skills** | [The Intent-Era Skill Matrix](operating/01-skill-matrix.md) |
-| **Starting an applied example** | [How to Use These Examples](examples/00-how-to-use.md) |
-| **Confused about a term** | [Glossary](appendices/glossary.md) |
+After Part 6 the book becomes reference material: a flat **Pattern Reference** for the patterns you'll consult once your pilot is running, code standards by language, and **Appendices** (glossary, archetype card, quick references, pattern index).
 
 ---
 
-## The Page Format
+## Two reading modes
 
-Each content page follows this structure, inspired by A Pattern Language:
+**Linear.** Read straight through. Each part assumes the previous one. By the end you have all six things on the introduction's punch list — archetype, spec, agent, oversight, metrics, deployment plan.
 
-1. **Name and position** — Which part and pattern number this is
-2. **Context** — Where this pattern applies and what it assumes
-3. **The Problem** — The specific tension this chapter resolves, stated precisely
-4. **The Resolution** — The body of the chapter: how this works, why, with examples
-5. **Therefore** — A bold summary statement, the way Alexander used *Therefore*, capturing the resolution in one sentence
-6. **Connections** — What patterns this assumes; what patterns it enables
+**Work-shaped.** Enter at the decision you're currently stuck on. Use the table below, the [Pattern Index](appendices/pattern-index.md), or the [Glossary](appendices/glossary.md). Then radiate outward through the Connections section at the bottom of each chapter.
 
-Some chapters also include:
-- **Code examples** — Concrete, standards-compliant code illustrating the concept
-- **Spec examples** — Fragments of real specs showing intent expressed well
-- **Anti-patterns** — What failure looks like when this pattern is absent
+| If you are... | Start at |
+|---------------|----------|
+| Structuring a new agent system | [Pick an archetype](architecture/02-canonical-intent-archetypes.md) |
+| Writing a spec | [The canonical spec template](sdd/07-canonical-spec-template.md) |
+| Designing oversight | [Proportional Oversight](agents/06-human-oversight-models.md) |
+| Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
+| Setting up safety controls | [Prompt injection defense](patterns/safety/prompt-injection-defense.md), [output validation](patterns/safety/output-validation-gate.md) |
+| Choosing an oversight cadence | [Proportional Governance](operating/04-governance.md) |
+| Defining what to measure | [Four Signal Metrics](operating/06-metrics.md) |
+| Looking at a real example | [How to use these examples](examples/00-how-to-use.md) |
+| Confused about a term | [Glossary](appendices/glossary.md) |
 
 ---
 
-## About the Code Examples
+## Chapter format
 
-Code in this book is **authoritative by intent, not by completeness**. Snippets are written to patterns described in Part VI, and are meant to serve as anchors for agents — structures that can be extended, not copied verbatim.
+Each chapter is short and follows a consistent shape so you can scan it:
+
+1. **Context** — Where this pattern applies and what it assumes.
+2. **The Problem** — The specific tension this chapter resolves.
+3. **The Solution** — The structure, with examples and tables. Where useful, a worked anti-pattern.
+4. **Therefore** — The resolution in one bold sentence. Many readers read only this.
+5. **Connections** — What this chapter assumes, and what it enables next.
+
+Some chapters also include code examples, spec fragments, or named anti-patterns.
+
+---
+
+## About the code
+
+Code in this book is **authoritative by intent, not by completeness**. Snippets are written to the patterns described in the Pattern Reference and code standards, and are meant to anchor agent behavior — structures that can be extended, not copied verbatim.
 
 Languages covered: C# / .NET, TypeScript / Node, Python, REST API design, infrastructure as code.
 
@@ -67,12 +69,12 @@ Every code example includes:
 
 ---
 
-## About the Archetype Definitions
+## About the archetypes
 
-The Intent Archetypes in Part III and the Catalog in Part VI are the core vocabulary of this book. They appear in specs, in agent instructions, in design reviews, and in governance conversations.
+The five archetypes — Advisor, Executor, Guardian, Synthesizer, Orchestrator — are the core vocabulary of this book. They appear in specs, in agent instructions, in design reviews, and in governance conversations.
 
-If you encounter a reference to "the Executor archetype" or "the Guardian pattern" and do not recognize it, the [Archetype Quick-Select Card](appendices/archetype-card.md) gives you a one-page summary.
+If you encounter a reference to "the Executor archetype" or "the Guardian pattern" and don't recognize it, the [Archetype Quick-Select Card](appendices/archetype-card.md) gives you a one-page summary. The full deep-dives live in [`architecture/archetypes/`](architecture/archetypes/advisor.md).
 
 ---
 
-*You are ready. Begin with [Part I](foundations/01-end-of-human-compiler.md) or enter anywhere.*
+*You're ready. Begin with the [Prologue](prologue.md), or jump to [Pick an archetype](architecture/02-canonical-intent-archetypes.md).*

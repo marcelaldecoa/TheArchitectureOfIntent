@@ -95,7 +95,7 @@ Query: "Which agents have database write access?" → Returns market-watch. "Whi
 
 ## Connections
 
-- [Delegated Definition Authority](../../operating/03-who-defines-archetypes.md) — the registry records who authorized each agent's archetype
+- [Proportional Governance](../../operating/04-governance.md) — the registry records who authorized each agent's archetype
 - [Four Signal Metrics](../../operating/06-metrics.md) — registry-level aggregation enables fleet-wide metrics
 - [Agent Deprecation Path](../deployment/deprecation.md) — deprecated agents are marked in the registry with migration guidance
 - [Audit Trail](../observability/audit-trail.md) — registry changes are auditable events

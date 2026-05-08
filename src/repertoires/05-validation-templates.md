@@ -161,7 +161,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [The Organizational Repertoire](01-why-repertoires-matter.md)
 - [The Canonical Spec Template — Section 6](../sdd/07-canonical-spec-template.md)
-- [Six Failure Categories](../agents/07-failure-modes.md)
+- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - Org-specific validation template additions
@@ -172,6 +172,6 @@ After applying this pattern:
 
 *This concludes Part VI: Standards & Repertoires.*
 
-*Continue to [Part VII: Operating the System](../operating/01-skill-matrix.md)*
+*Continue to [Part VII: Operating the System](../operating/04-governance.md)*
 
 

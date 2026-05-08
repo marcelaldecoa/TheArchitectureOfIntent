@@ -14,7 +14,7 @@ You have adopted the discipline of writing specs before agent execution. Specs e
 
 Something is missing. The specs exist as documents, but they are not functioning as control mechanisms. They are being read, not enforced.
 
-This pattern assumes [Spec-Driven Development](01-what-sdd-means.md) and [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md).
+This pattern assumes [Spec-Driven Development](01-what-sdd-means.md) and [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md).
 
 ---
 
@@ -150,7 +150,7 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [Spec-Driven Development](01-what-sdd-means.md)
-- [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md)
+- [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md)
 - [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
 
 **This pattern enables:**

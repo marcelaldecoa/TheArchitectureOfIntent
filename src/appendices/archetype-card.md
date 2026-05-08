@@ -92,5 +92,5 @@ A real system often instantiates multiple archetypes in different layers. A cust
 
 ---
 
-*For full archetype specifications, see Part III: [Intent Architecture](../architecture/01-archetypes-as-constitutional-law.md)*
+*For full archetype specifications, see [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) and the per-archetype deep-dives in [`architecture/archetypes/`](../architecture/archetypes/advisor.md).*
 

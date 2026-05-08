@@ -1,6 +1,6 @@
-# The Five Archetypes
+# Pick an Archetype
 
-**Governance & Architecture**
+**Part 1 — Decisions**
 
 ---
 
@@ -10,9 +10,45 @@
 
 ## Context
 
-You understand that archetypes are constitutional frames, not templates (Pattern 3.1). Now you need the archetypes themselves: their names, their precise definitions, their distinguishing characteristics, and the reasoning behind each.
+This is the first decision of the pilot. Before any spec is written, before any agent is configured, before any tool is wired up — you commit to a category for the system you're about to build.
 
-This chapter introduces the five canonical intent archetypes. Each is named, characterized, and distinguished from the others. Detailed per-archetype specifications live in the [Archetype Catalog](../repertoires/02-archetype-catalog.md) and the individual archetype pages.
+The category is the archetype. There are five canonical archetypes — Advisor, Executor, Guardian, Synthesizer, Orchestrator — and the rest of the book follows from which one you pick.
+
+Detailed per-archetype specifications live in the [Archetype Catalog](../repertoires/02-archetype-catalog.md) and the individual archetype pages linked at the end of each section.
+
+---
+
+## What an archetype is
+
+An archetype is a **pre-committed behavioral frame** for a class of system. It is not a template you fill in. It is not a best practice you can ignore. It's a category you operate within.
+
+An archetype defines five things:
+
+1. **Identity** — what kind of system this is at the categorical level (Advisor / Executor / Guardian / Synthesizer / Orchestrator).
+2. **Agency Level** — the range of discretion the system is authorized to exercise. What classes of decision can it make autonomously?
+3. **Oversight Model** — how human oversight is required to function. Not "some oversight" but: *what kind, at what frequency, triggered by what conditions, performed by whom?*
+4. **Reversibility Posture** — what is the reversibility profile of this system's actions, and what design requirements follow? A system with irreversible action potential has a different minimum design standard than one without.
+5. **Invariants** — the constraints that cannot be violated under any implementation of this archetype. These are the boundaries between *"still this kind of system"* and *"something that has crossed into a different category."*
+
+### Why archetype before spec
+
+Archetypes and specs are different artifacts with different owners and different lifetimes:
+
+|  | Archetype | Spec |
+|---|---|---|
+| **Defines** | The category of system | The behavior of this system |
+| **Owner** | Architects / platform team | Engineers / product team |
+| **Lifetime** | Stable; changes rarely, deliberately | Living; evolves with the system |
+| **Scope** | Applies to all systems of this class | Applies to one system |
+| **Authority** | Cannot be overridden by individual spec | Operates within archetype bounds |
+
+A spec that attempts to authorize behavior that violates the governing archetype is invalid. The archetype represents decisions made by those with the authority to make them. The spec operates within that frame.
+
+In practice, this means archetype selection is the *first* decision in any spec development process — before any behavioral specification is written. Getting the category right is more important than getting any specific behavior right, because all specific behaviors must remain consistent with the category.
+
+### A note on enforcement
+
+The archetype is enforced through organizational discipline — spec review, governance cadence, authority matrices — not through technical mechanisms that prevent violations at runtime. An agent system can technically take actions outside its declared archetype; nothing in the runtime stops it. The enforcement is procedural and social. This is the same model by which most organizational governance operates, and it works only as well as the review and oversight practices around it. [Proportional Governance](../operating/04-governance.md) and [Intent Review Before Output Review](../operating/05-reviewing-intent.md) are how that enforcement becomes operational.
 
 ---
 
@@ -149,7 +185,7 @@ The five are also stable under the principle of minimum necessary power: they re
 
 The formal argument for exhaustiveness: the two axes — primary act and discretion scope — partition the design space because every agent system must have a primary act (what it does) and a discretion scope (how much latitude it has in doing it). The five archetypes occupy distinct regions in this space: Advisor (inform / narrow), Guardian (enforce / narrow), Executor (execute / bounded), Synthesizer (compose / moderate), and Orchestrator (coordinate / broad). Additional archetypes would either overlap with one of these five (failing the "genuinely different governance" test) or represent compositions of them (treated in [Composing Archetypes](05-composing-archetypes.md)). This is not a claim of mathematical proof — it is a design claim validated against observed systems.
 
-**When to suspect a sixth archetype is needed.** If a system consistently fails the decision tree (Pattern 3.4) — if every classification feels forced, if compositions produce more confusion than clarity, and if the system's governance requirements are genuinely unmet by any of the five profiles — that is a signal. Candidate systems to watch for include: **teaching agents** that improve other agents' behavior (their primary act is neither inform, execute, enforce, synthesize, nor coordinate — it is *train*), **negotiation agents** operating in adversarial multi-party contexts (their discretion is neither bounded nor coordinative — it is *strategic*), and **self-modifying agents** that update their own specifications or capabilities. If any of these becomes a recurring design problem requiring its own governance model, the taxonomy should be extended through the same [Governed Archetype Evolution](06-evolving-archetypes.md) process used for individual system reclassification — with the additional requirement that a new archetype must demonstrate a governance profile that none of the existing five can provide.
+**When to suspect a sixth archetype is needed.** If a system consistently fails the decision tree (the Archetype Selection Tree) — if every classification feels forced, if compositions produce more confusion than clarity, and if the system's governance requirements are genuinely unmet by any of the five profiles — that is a signal. Candidate systems to watch for include: **teaching agents** that improve other agents' behavior (their primary act is neither inform, execute, enforce, synthesize, nor coordinate — it is *train*), **negotiation agents** operating in adversarial multi-party contexts (their discretion is neither bounded nor coordinative — it is *strategic*), and **self-modifying agents** that update their own specifications or capabilities. If any of these becomes a recurring design problem requiring its own governance model, the taxonomy should be extended through the same [Governed Archetype Evolution](06-evolving-archetypes.md) process used for individual system reclassification — with the additional requirement that a new archetype must demonstrate a governance profile that none of the existing five can provide.
 
 ---
 
@@ -173,11 +209,12 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Constitutional Archetypes](01-archetypes-as-constitutional-law.md)
+- [Prologue](../prologue.md) — what's at stake when delegating power to agents
 
 **This pattern enables:**
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) — tune the four dials within the archetype's defaults
 - [Four Dimensions of Governance](03-archetype-dimensions.md) — formal axes for describing archetype properties
-- [The Archetype Selection Tree](04-decision-tree.md) — how to choose
+- [The Archetype Selection Tree](04-decision-tree.md) — how to choose when the answer isn't obvious
 - Individual archetype specifications: [Advisor](archetypes/advisor.md), [Executor](archetypes/executor.md), [Guardian](archetypes/guardian.md), [Synthesizer](archetypes/synthesizer.md), [Orchestrator](archetypes/orchestrator.md)
 - [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — the reference implementation of all five
 

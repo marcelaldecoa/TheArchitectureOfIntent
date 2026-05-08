@@ -1,225 +1,309 @@
-﻿# The Pattern Index
+# The Pattern Index
 
 **Appendices** · *Appendix B*
 
 ---
 
-> *"A pattern language is only useful if you can navigate it. This index is the navigation layer."*
+> *"A field guide is only useful if you can navigate it. This index is the navigation layer."*
 
 ---
 
-This index organizes every chapter and pattern in the book by part, by theme, and by the problems they address. Use it to:
+This index lists every chapter and pattern in the book by part, by category, and by the problem they address. Use it to:
 
 - Find a chapter you half-remember
-- Discover all chapters that address a particular problem (cross-reference tables at the end)
+- Discover all chapters relevant to a particular problem
 - Navigate by archetype or by phase of the practice
 
 ---
 
-## Part I: Foundations
+## Part 1 — Decisions
 
-*The slow, deliberate opening. These chapters earn the intellectual debt the rest of the book spends.*
+*The decisions you commit to before you start.*
 
-| # | Title | Key question addressed |
-|---|-------|----------------------|
-| 1.1 | [The End of the Human Compiler](../foundations/01-end-of-human-compiler.md) | What changed about the developer's role when agents can write code? |
-| 1.2 | [From Translation to Orchestration](../foundations/02-from-translation-to-orchestration.md) | If we no longer translate intent into code manually, what do we do instead? |
-| 1.3 | [Authorship in Software](../foundations/03-authorship-in-software.md) | When an agent writes code, who is its author? |
-| 1.4 | [Where Agency Resides](../foundations/04-where-agency-resides.md) | Where does decision-making authority actually live in an agent-augmented system? |
-| 1.5 | [When Power Scales Faster Than Judgment](../foundations/05-when-power-scales-faster-than-judgment.md) | What is the structural risk when capability outpaces governance? |
-| 1.6 | [Why Architecture Must Become Law](../foundations/06-why-architecture-must-become-law.md) | Why do architectural decisions need to be encoded, not assumed? |
-
----
-
-## Part II: Theory of Intent Engineering
-
-*The naming and formalizing. These chapters define the vocabulary everything else uses.*
-
-| # | Title | Key question addressed |
-|---|-------|----------------------|
-| 2.1 | [Intent Engineering as a Discipline](../theory/01-what-is-intent-engineering.md) | What is the discipline, and what makes it distinct from software engineering? |
-| 2.2 | [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md) | Why is the distinction between what we want and how we build it load-bearing? |
-| 2.3 | [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md) | How do agency and responsibility relate when agents act? |
-| 2.4 | [Design for Reversibility](../theory/04-reversibility-as-design-dimension.md) | Why is reversibility a first-class design variable, not a quality concern? |
-| 2.5 | [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md) | How do failure modes inform good architecture rather than just indicating bad luck? |
-| 2.6 | [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md) | What does it mean that a spec is an ethical commitment, not just a technical document? |
+| Title | Key question |
+|-------|-------------|
+| [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) | What kind of system is this — Advisor, Executor, Guardian, Synthesizer, or Orchestrator? |
+| [The Advisor](../architecture/archetypes/advisor.md) | Information-surfacing archetype: full specification |
+| [The Executor](../architecture/archetypes/executor.md) | Bounded-action archetype: full specification |
+| [The Guardian](../architecture/archetypes/guardian.md) | Constraint-enforcement archetype: full specification |
+| [The Synthesizer](../architecture/archetypes/synthesizer.md) | Composite-output archetype: full specification |
+| [The Orchestrator](../architecture/archetypes/orchestrator.md) | Multi-agent coordination archetype: full specification |
+| [Calibrate the Four Dimensions](../theory/03-agency-autonomy-responsibility.md) | How much autonomy, agency, responsibility, and reversibility does this system get? |
+| [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) | How do agency, risk, oversight, and reversibility interact in formal governance terms? |
+| [The Archetype Selection Tree](../architecture/04-decision-tree.md) | How do you choose the right archetype when the answer isn't obvious? |
+| [Composing Archetypes](../architecture/05-composing-archetypes.md) | How do multiple archetypes work together in a single deployment? |
+| [Governed Archetype Evolution](../architecture/06-evolving-archetypes.md) | How do you update the archetype catalog as the technology and your domain change? |
+| [Intent vs. Implementation](../theory/02-intent-vs-implementation.md) | When something goes wrong, was the spec wrong, or did the agent fail to execute it? |
+| [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) | What are the six failure categories, and how do you diagnose them? |
 
 ---
 
-## Part III: Intent Architecture
+## Part 2 — The Spec
 
-*The constitutional design. These chapters define the pre-commitments every system makes.*
+*How to write the artifact the agent executes against.*
 
-| # | Title | Key question addressed |
-|---|-------|----------------------|
-| 3.1 | [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md) | Why are archetypes pre-commitments rather than post-hoc descriptions? |
-| 3.2 | [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md) | What are the five archetypes and how are they distinguished? |
-| — | [The Advisor Archetype](../architecture/archetypes/advisor.md) | Full specification of the information-surfacing archetype |
-| — | [The Executor Archetype](../architecture/archetypes/executor.md) | Full specification of the bounded-action archetype |
-| — | [The Guardian Archetype](../architecture/archetypes/guardian.md) | Full specification of the constraint-enforcement archetype |
-| — | [The Synthesizer Archetype](../architecture/archetypes/synthesizer.md) | Full specification of the composite-output archetype |
-| — | [The Orchestrator Archetype](../architecture/archetypes/orchestrator.md) | Full specification of the multi-agent coordination archetype |
-| 3.3 | [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) | How do the four dimensions (agency, risk, oversight, reversibility) interact? |
-| 3.4 | [The Archetype Selection Tree](../architecture/04-decision-tree.md) | How do you choose the right archetype for a system? |
-| 3.5 | [Archetype Composition](../architecture/05-composing-archetypes.md) | How do multiple archetypes work together in a single deployment? |
-| 3.6 | [Governed Archetype Evolution](../architecture/06-evolving-archetypes.md) | How do you update your archetype catalog as the technology and your domain change? |
+| Title | Key question |
+|-------|-------------|
+| [Spec-Driven Development](../sdd/01-what-sdd-means.md) | What is SDD and how is it different from requirements writing? |
+| [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) | How does a spec actually control what an agent does? |
+| [The Spec Lifecycle](../sdd/03-spec-lifecycle.md) | What phases does a spec move through from intent to validation? |
+| [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) | What makes an agent-executable spec different from a human-readable one? |
+| [The Living Spec](../sdd/06-living-specs.md) | How do specs evolve after execution and capture learning? |
+| [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) | What does a complete spec look like? |
+| [SpecKit](../sdd/04-speckit.md) | How does the SpecKit toolchain support spec-driven development? |
 
 ---
 
-## Part IV: Spec-Driven Development
+## Part 3 — The Agent
 
-*Method. These chapters turn philosophy into a repeatable practice.*
+*What agents are structurally, what capabilities they need, how to bound them.*
 
-| # | Title | Key question addressed |
-|---|-------|----------------------|
-| 4.1 | [Spec-Driven Development](../sdd/01-what-sdd-means.md) | What is SDD and how is it different from requirements writing? |
-| 4.2 | [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) | How does a spec actually control what an agent does? |
-| 4.3 | [The Spec Lifecycle](../sdd/03-spec-lifecycle.md) | What are the phases a spec moves through from intent to validation? |
-| 4.4 | [SpecKit](../sdd/04-speckit.md) | How does the SpecKit toolchain support spec-driven development? |
-| 4.5 | [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) | What makes an agent-executable spec different from a human-readable one? |
-| 4.6 | [The Living Spec](../sdd/06-living-specs.md) | How do specs evolve after execution, and how do they capture learning? |
-| 4.7 | [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) | What does a complete spec look like? (The reference template) |
+| Title | Key question |
+|-------|-------------|
+| [What Agents Are](../agents/01-what-agents-are.md) | What precisely is an agent, and what are its operational limits? |
+| [Autonomy Without Agency](../agents/02-autonomy-vs-agency.md) | Why does the autonomy/agency distinction matter in practice? |
+| [The Executor Model](../agents/03-agents-as-executors.md) | How do agents relate to the intent encoded in specs? |
+| [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) | How do tool manifests and MCP define what an agent can reach? |
+| [Portable Domain Knowledge](../agents/05-agent-skills.md) | What are SKILL.md files and how do they carry domain context? |
 
----
+### Knowledge & Context
 
-## Part V: Agents & Execution
+| Title | Purpose |
+|-------|---------|
+| [The System Prompt](../patterns/capability/system-prompt.md) | The agent's constitution at runtime |
+| [The Skill File](../patterns/capability/skill-file.md) | Encoding domain knowledge the agent can reference |
+| [The Tool Manifest](../patterns/capability/tool-manifest.md) | Declaring what tools the agent can access |
+| [Per-Task Context](../patterns/capability/per-task-context.md) | Task-scoped context provision |
+| [Retrieval-Augmented Generation](../patterns/capability/rag.md) | Grounding outputs in retrieved content |
+| [Long-Term Memory](../patterns/capability/long-term-memory.md) | Cross-session memory patterns |
+| [Context Window Budget](../patterns/capability/context-budget.md) | Managing context window allocation |
+| [Grounding with Verified Sources](../patterns/capability/grounding.md) | Constraining outputs to verified facts |
 
-*Delegation mechanics. These chapters clarify how to use agents safely.*
+### Tools and MCP
 
-| # | Title | Key question addressed |
-|---|-------|----------------------|
-| 5.1 | [Agents Defined by Structure](../agents/01-what-agents-are.md) | What precisely is an agent, and what are its operational limits? |
-| 5.2 | [Autonomy Without Agency](../agents/02-autonomy-vs-agency.md) | Why does the autonomy/agency distinction matter in practice? |
-| 5.3 | [The Executor Model](../agents/03-agents-as-executors.md) | How do agents relate to the intent encoded in specs? |
-| 5.4 | [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) | How do tool manifests and MCP define what an agent can reach? |
-| — | [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md) | What is MCP and why does it matter for agent safety? |
-| — | [Designing MCP Tools for Intent](../agents/mcp/02-designing-mcp-tools.md) | How do you design tools that enforce intent rather than expose raw capability? |
-| — | [MCP Tool Safety and Constraints](../agents/mcp/03-mcp-safety.md) | What safety patterns apply to MCP tool design? |
-| 5.5 | [Portable Domain Knowledge](../agents/05-agent-skills.md) | What are SKILL.md files and how do they carry domain context? |
-| 5.6 | [Proportional Oversight](../agents/06-human-oversight-models.md) | What are the four oversight models and when does each apply? |
-| 5.7 | [Six Failure Categories](../agents/07-failure-modes.md) | What are the canonical failure modes in agent systems and how are they diagnosed? |
-
----
-
-## Part VI: Standards & Repertoires
-
-*Institutional acceleration. These chapters build the infrastructure that makes teams fast.*
-
-| # | Title | Key question addressed |
-|---|-------|----------------------|
-| 6.1 | [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md) | What is a repertoire and why does investing in it compound? |
-| 6.2 | [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) | What does a decision-ready archetype catalog entry look like? |
-| 6.3 | [Spec Template Library](../repertoires/03-spec-template-library.md) | How are spec templates organized and maintained? |
-| — | [Feature Spec Template](../repertoires/templates/feature-spec.md) | Template for feature-development agent tasks |
-| — | [Agent Instruction Template](../repertoires/templates/agent-instruction.md) | Template for agent system-prompt instructions |
-| — | [Integration Spec Template](../repertoires/templates/integration-spec.md) | Template for integration and API agent tasks |
-| — | [Constraint Library Template](../repertoires/templates/constraint-library.md) | Template for capturing reusable constraint sets |
-| 6.4 | [Standards as Agent Skill Source](../repertoires/04-code-standards.md) | How are code standards structured for agent validation? |
-| — | [Standards for .NET / C#](../repertoires/code-standards/dotnet.md) | .NET platform constraints, patterns, and validation rules |
-| — | [Standards for TypeScript / Node](../repertoires/code-standards/typescript.md) | TypeScript platform constraints, patterns, and validation rules |
-| — | [Standards for Python](../repertoires/code-standards/python.md) | Python platform constraints, patterns, and validation rules |
-| — | [Standards for REST APIs](../repertoires/code-standards/rest-apis.md) | REST API design constraints and OpenAPI requirements |
-| — | [Standards for Infrastructure as Code](../repertoires/code-standards/iac.md) | IaC constraints for Bicep, Terraform, and YAML manifests |
-| 6.5 | [Validation & Acceptance Templates](../repertoires/05-validation-templates.md) | What does a reusable acceptance test template look like? |
+| Title | Purpose |
+|-------|---------|
+| [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md) | Protocol overview |
+| [Designing MCP Tools](../agents/mcp/02-designing-mcp-tools.md) | Designing tools that enforce intent rather than expose raw capability |
+| [MCP Safety](../agents/mcp/03-mcp-safety.md) | Safety considerations for MCP tool design |
+| [The Read-Only Tool](../patterns/integration/read-only-tool.md) | Boundary pattern for read-only access |
+| [The State-Changing Tool](../patterns/integration/state-changing-tool.md) | Pattern for stateful operations |
+| [The Idempotent Tool](../patterns/integration/idempotent-tool.md) | Idempotency guarantee pattern |
+| [The MCP Server](../patterns/integration/mcp-server.md) | Standard MCP server design |
+| [Direct Function Calling](../patterns/integration/function-calling.md) | Tool calling protocol |
+| [Code Execution Sandbox](../patterns/integration/code-sandbox.md) | Safe code execution boundary |
+| [File System Access](../patterns/integration/file-system-access.md) | File I/O patterns |
 
 ---
 
-## Part VII: Operating the System
+## Part 4 — Oversight, Safety & Operations
 
-*People, skills, and governance. These chapters address organizational transformation.*
+| Title | Purpose |
+|-------|---------|
+| [Proportional Oversight](../agents/06-human-oversight-models.md) | The four oversight models (Monitoring / Periodic / Output Gate / Pre-authorized) |
+| [Human-in-the-Loop Gate](../patterns/coordination/human-gate.md) | Structured decision gate before consequential actions |
+| [Retry with Structured Feedback](../patterns/coordination/retry-feedback.md) | Structured retry that improves first-pass execution |
+| [Escalation Chain](../patterns/coordination/escalation-chain.md) | Escalation hierarchy design |
 
-| # | Title | Key question addressed |
-|---|-------|----------------------|
-| 7.1 | [The Intent-Era Skill Matrix](../operating/01-skill-matrix.md) | How do value-producing skills shift in an agent-augmented practice? |
-| 7.2 | [The Intent Architect](../operating/02-from-engineer-to-architect.md) | What is the identity and role transition for experienced engineers? |
-| 7.3 | [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) | How is authority over the archetype catalog governed? |
-| 7.4 | [Proportional Governance](../operating/04-governance.md) | What is the lightest governance structure that prevents both chaos and bureaucracy? |
-| 7.5 | [Intent Review Before Output Review](../operating/05-reviewing-intent.md) | How does spec review work as a practice, and how does it differ from code review? |
-| 7.6 | [Four Signal Metrics](../operating/06-metrics.md) | What should be measured in an agent-augmented practice, and what should not? |
+### Safety
+
+| Title | Purpose |
+|-------|---------|
+| [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | Multi-layer defense for any externally-facing agent |
+| [Output Validation Gate](../patterns/safety/output-validation-gate.md) | Tiered validation (programmatic → Guardian → human) |
+| [Sensitive Data Boundary](../patterns/safety/sensitive-data-boundary.md) | PII/secret handling pattern |
+| [Graceful Degradation](../patterns/safety/graceful-degradation.md) | Partial-failure handling |
+| [Rate Limiting and Throttle](../patterns/safety/rate-limiting.md) | Preventing runaway execution |
+| [Blast Radius Containment](../patterns/safety/blast-radius-containment.md) | Limiting the consequence of a single failure |
+
+### Observability
+
+| Title | Purpose |
+|-------|---------|
+| [Structured Execution Log](../patterns/observability/execution-log.md) | Auditable execution trace |
+| [Cost Tracking per Spec](../patterns/observability/cost-tracking.md) | Cost attribution per agent and spec |
+| [Distributed Trace](../patterns/observability/distributed-trace.md) | Tracing multi-agent flows |
+| [Health Check and Heartbeat](../patterns/observability/health-check.md) | Agent health monitoring |
+| [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md) | Anomaly detection setup |
+
+### Testing & Validation
+
+| Title | Purpose |
+|-------|---------|
+| [Spec Conformance Testing](../patterns/testing/spec-conformance.md) | Making spec constraints testable and verifiable |
+| [Adversarial Input Test](../patterns/testing/adversarial-input.md) | Robustness testing |
+| [Multi-Agent Integration Test](../patterns/testing/multi-agent-integration.md) | Testing agent coordination |
+| [Evaluation by Judge Agent](../patterns/testing/judge-agent.md) | Using an agent to validate another agent's output |
 
 ---
 
-## Part VIII: Applied Examples
+## Part 5 — Ship
 
-*The patterns in action. Use these to calibrate your own system designs.*
+| Title | Purpose |
+|-------|---------|
+| [Canary Deployment](../patterns/deployment/canary.md) | Safe spec rollout |
+| [Rollback on Failure](../patterns/deployment/rollback.md) | Reverting a broken spec |
+| [Spec Versioning](../patterns/deployment/spec-versioning.md) | Managing spec versions |
+| [Model Upgrade Validation](../patterns/deployment/model-upgrade.md) | Re-validating when the underlying model changes |
+| [Agent Deprecation Path](../patterns/deployment/deprecation.md) | Sunsetting old agents and specs |
+| [Proportional Governance](../operating/04-governance.md) | The lightest governance structure that prevents both chaos and bureaucracy |
+| [Intent Review Before Output Review](../operating/05-reviewing-intent.md) | Spec review as a practice |
+| [Four Signal Metrics](../operating/06-metrics.md) | What to measure, what not to |
 
-| Title | What it demonstrates |
-|-------|---------------------|
-| [How to Use These Examples](../examples/00-how-to-use.md) | Reading guide for Part VIII |
-| [Designing an AI Customer Support System](../examples/01-ai-customer-support/README.md) | Multi-agent Orchestrator + Executor + Guardian + Advisor in a live customer system |
-| → [Selecting the Archetypes](../examples/01-ai-customer-support/archetypes.md) | Full five-archetype evaluation for the customer support scenario |
-| → [Writing the Spec](../examples/01-ai-customer-support/spec.md) | Complete annotated SDD spec for the Account Executor |
-| → [Agent Instructions](../examples/01-ai-customer-support/agent-instructions.md) | Full operational instructions derived from the spec |
-| → [Validating Outcomes](../examples/01-ai-customer-support/validation.md) | 14-test acceptance suite with one instruction gap found |
-| → [Post-mortem Through Intent](../examples/01-ai-customer-support/postmortem.md) | $0.00 refund incident — spec gap traced and closed |
+---
+
+## Part 6 — Worked Pilots
+
+| Title | Demonstrates |
+|-------|-------------|
+| [How to Use These Examples](../examples/00-how-to-use.md) | Reading guide |
+| [Designing an AI Customer Support System](../examples/01-ai-customer-support/README.md) | Multi-agent Orchestrator + Executor + Guardian + Advisor |
+| [Selecting the Archetypes (Example 1)](../examples/01-ai-customer-support/archetypes.md) | Five-archetype evaluation worked through |
+| [Writing the Spec (Example 1)](../examples/01-ai-customer-support/spec.md) | Annotated SDD spec for the Account Executor |
+| [Agent Instructions (Example 1)](../examples/01-ai-customer-support/agent-instructions.md) | Operational instructions derived from spec |
+| [Validating Outcomes (Example 1)](../examples/01-ai-customer-support/validation.md) | 14-test acceptance suite |
+| [Post-mortem Through Intent (Example 1)](../examples/01-ai-customer-support/postmortem.md) | $0.00 refund incident — spec gap traced and closed |
 | [A Code Generation Pipeline](../examples/02-code-generation-pipeline/README.md) | Synthesizer-Executor-Guardian pipeline with no live human |
-| → [Selecting the Archetypes](../examples/02-code-generation-pipeline/archetypes.md) | Orchestrator rejected; Synthesizer as primary coordinator |
-| → [Writing the Spec](../examples/02-code-generation-pipeline/spec.md) | Complete annotated spec for the Scaffold Synthesizer |
-| → [Agent Instructions](../examples/02-code-generation-pipeline/agent-instructions.md) | Operational (non-conversational) instructions for all three pipeline agents |
-| → [Validating Outcomes](../examples/02-code-generation-pipeline/validation.md) | 9-test pipeline acceptance suite; cross-component consistency testing |
+| [Selecting the Archetypes (Example 2)](../examples/02-code-generation-pipeline/archetypes.md) | Orchestrator rejected; Synthesizer as primary coordinator |
+| [Writing the Spec (Example 2)](../examples/02-code-generation-pipeline/spec.md) | Annotated spec for the Scaffold Synthesizer |
+| [Agent Instructions (Example 2)](../examples/02-code-generation-pipeline/agent-instructions.md) | Non-conversational instructions for all three agents |
+| [Validating Outcomes (Example 2)](../examples/02-code-generation-pipeline/validation.md) | 9-test pipeline acceptance suite |
+
+---
+
+## Pattern Reference
+
+*Patterns to consult once your pilot is running.*
+
+### Coordination
+
+| Title | Purpose |
+|-------|---------|
+| [Sequential Pipeline](../patterns/coordination/sequential-pipeline.md) | Linear pipeline pattern |
+| [Parallel Fan-Out](../patterns/coordination/parallel-fan-out.md) | Parallel execution pattern |
+| [Conditional Routing](../patterns/coordination/conditional-routing.md) | Decision-based routing |
+| [Event-Driven Agent Activation](../patterns/coordination/event-driven.md) | Event-based coordination |
+| [Supervisor Agent](../patterns/coordination/supervisor.md) | Supervisor agent pattern |
+| [Agent-to-Agent Contract](../patterns/coordination/agent-contract.md) | Contracted agent-to-agent interaction |
+
+### State & Memory
+
+| Title | Purpose |
+|-------|---------|
+| [Session Isolation](../patterns/state/session-isolation.md) | Multi-user isolation |
+| [Shared Context Store](../patterns/state/shared-context.md) | Context sharing between agents |
+| [Checkpoint and Resume](../patterns/state/checkpoint-resume.md) | Long-running execution pattern |
+| [Conversation History Management](../patterns/state/conversation-history.md) | Storing conversation state |
+| [Agent Registry](../patterns/state/agent-registry.md) | Registry of agent capabilities |
+| [Artifact Store](../patterns/state/artifact-store.md) | Storing agent-produced artifacts |
+
+### Repertoire
+
+| Title | Purpose |
+|-------|---------|
+| [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md) | Why repertoires exist and how they compound |
+| [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) | Decision-ready archetype catalog entries |
+| [Spec Template Library](../repertoires/03-spec-template-library.md) | Organized spec templates |
+| [Feature Spec Template](../repertoires/templates/feature-spec.md) | Template for feature-development tasks |
+| [Agent Instruction Template](../repertoires/templates/agent-instruction.md) | Template for system-prompt instructions |
+| [Integration Spec Template](../repertoires/templates/integration-spec.md) | Template for integration and API tasks |
+| [Constraint Library Template](../repertoires/templates/constraint-library.md) | Template for reusable constraint sets |
+| [Validation & Acceptance Templates](../repertoires/05-validation-templates.md) | Reusable acceptance test templates |
+
+### Code Standards
+
+| Title | Purpose |
+|-------|---------|
+| [Standards as Agent Skill Source](../repertoires/04-code-standards.md) | How code standards are structured for agent validation |
+| [Standards for .NET / C#](../repertoires/code-standards/dotnet.md) | .NET constraints, patterns, and validation rules |
+| [Standards for TypeScript / Node](../repertoires/code-standards/typescript.md) | TypeScript constraints and patterns |
+| [Standards for Python](../repertoires/code-standards/python.md) | Python constraints and patterns |
+| [Standards for REST APIs](../repertoires/code-standards/rest-apis.md) | REST API design constraints |
+| [Standards for Infrastructure as Code](../repertoires/code-standards/iac.md) | IaC constraints for Bicep, Terraform, YAML |
 
 ---
 
 ## Cross-Reference: By Problem
 
-*Find patterns by the problem you are trying to solve.*
+*Find patterns by the problem you're trying to solve.*
 
 ### "I don't know which archetype to use"
-- [The Archetype Selection Tree](../architecture/04-decision-tree.md) — 3.4
-- [Archetype Quick-Select Card](archetype-card.md) — Appendix E
+- [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md)
+- [The Archetype Selection Tree](../architecture/04-decision-tree.md)
+- [Archetype Quick-Select Card](archetype-card.md)
 - [Selecting the Archetypes (Example 1)](../examples/01-ai-customer-support/archetypes.md)
 - [Selecting the Archetypes (Example 2)](../examples/02-code-generation-pipeline/archetypes.md)
 
 ### "I don't know how to write a good spec"
-- [Spec-Driven Development](../sdd/01-what-sdd-means.md) — 4.1
-- [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) — 4.2
-- [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) — 4.5
-- [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — 4.7
-- [Writing the Spec (Example 1)](../examples/01-ai-customer-support/spec.md) — annotated real spec
-- [SpecKit Quick Reference](speckit-reference.md) — Appendix D
+- [Spec-Driven Development](../sdd/01-what-sdd-means.md)
+- [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md)
+- [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md)
+- [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
+- [Writing the Spec (Example 1)](../examples/01-ai-customer-support/spec.md)
+- [SpecKit Quick Reference](speckit-reference.md)
 
 ### "I don't know what constraints to include"
-- [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) — 4.2
+- [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md)
 - [Constraint Library Template](../repertoires/templates/constraint-library.md)
-- [Writing the Spec — NOT-authorized section](../examples/01-ai-customer-support/spec.md) — §4 annotated
+- [Writing the Spec — NOT-authorized section](../examples/01-ai-customer-support/spec.md)
+
+### "I'm trying to calibrate how much autonomy to give"
+- [Calibrate the Four Dimensions](../theory/03-agency-autonomy-responsibility.md)
+- [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md)
+- [Proportional Oversight](../agents/06-human-oversight-models.md)
 
 ### "Something went wrong and I need to diagnose it"
-- [Six Failure Categories](../agents/07-failure-modes.md) — 5.7
-- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md) — 2.5
-- [Post-mortem Through Intent](../examples/01-ai-customer-support/postmortem.md) — worked example
-- [The Spec Gap Log](../sdd/06-living-specs.md) — 4.6
+- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
+- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Post-mortem Through Intent](../examples/01-ai-customer-support/postmortem.md)
+- [The Living Spec](../sdd/06-living-specs.md)
+
+### "I need to design oversight for this agent"
+- [Proportional Oversight](../agents/06-human-oversight-models.md)
+- [Human-in-the-Loop Gate](../patterns/coordination/human-gate.md)
+- [Escalation Chain](../patterns/coordination/escalation-chain.md)
+- [Output Validation Gate](../patterns/safety/output-validation-gate.md)
+
+### "I need to set up safety controls"
+- [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md)
+- [Output Validation Gate](../patterns/safety/output-validation-gate.md)
+- [Blast Radius Containment](../patterns/safety/blast-radius-containment.md)
+- [Sensitive Data Boundary](../patterns/safety/sensitive-data-boundary.md)
 
 ### "I need to set up governance"
-- [Delegated Definition Authority](../operating/03-who-defines-archetypes.md) — 7.3
-- [Proportional Governance](../operating/04-governance.md) — 7.4
-- [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — 7.5
+- [Proportional Governance](../operating/04-governance.md)
+- [Intent Review Before Output Review](../operating/05-reviewing-intent.md)
+- [Four Signal Metrics](../operating/06-metrics.md)
 
 ### "I need to measure and report on the practice"
-- [Four Signal Metrics](../operating/06-metrics.md) — 7.6
-- [The Living Spec](../sdd/06-living-specs.md) — 4.6
+- [Four Signal Metrics](../operating/06-metrics.md)
+- [The Living Spec](../sdd/06-living-specs.md)
+- [Cost Tracking per Spec](../patterns/observability/cost-tracking.md)
 
 ### "I need to design a multi-agent system"
-- [Archetype Composition](../architecture/05-composing-archetypes.md) — 3.5
+- [Composing Archetypes](../architecture/05-composing-archetypes.md)
 - [Orchestrator Archetype](../architecture/archetypes/orchestrator.md)
-- [Designing an AI Customer Support System](../examples/01-ai-customer-support/README.md) — Example 1
-- [A Code Generation Pipeline](../examples/02-code-generation-pipeline/README.md) — Example 2
-
-### "I need to build or expand a team repertoire"
-- [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md) — 6.1
-- [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md) — 6.2
-- [Spec Template Library](../repertoires/03-spec-template-library.md) — 6.3
-- [Validation & Acceptance Templates](../repertoires/05-validation-templates.md) — 6.5
-
-### "I need to help my team understand what changes"
-- [From Translation to Orchestration](../foundations/02-from-translation-to-orchestration.md) — 1.2
-- [The Intent-Era Skill Matrix](../operating/01-skill-matrix.md) — 7.1
-- [The Intent Architect](../operating/02-from-engineer-to-architect.md) — 7.2
+- [Designing an AI Customer Support System](../examples/01-ai-customer-support/README.md)
+- [A Code Generation Pipeline](../examples/02-code-generation-pipeline/README.md)
 
 ### "I need to design safe agent tools"
-- [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) — 5.4
-- [Designing MCP Tools for Intent](../agents/mcp/02-designing-mcp-tools.md)
-- [MCP Tool Safety and Constraints](../agents/mcp/03-mcp-safety.md)
-- [Proportional Oversight](../agents/06-human-oversight-models.md) — 5.6
+- [Least Capability](../agents/04-tools-mcp-capability-boundaries.md)
+- [Designing MCP Tools](../agents/mcp/02-designing-mcp-tools.md)
+- [MCP Safety](../agents/mcp/03-mcp-safety.md)
+- [The Read-Only Tool](../patterns/integration/read-only-tool.md)
+- [The State-Changing Tool](../patterns/integration/state-changing-tool.md)
+
+### "I need to ship safely without making the change irreversible"
+- [Canary Deployment](../patterns/deployment/canary.md)
+- [Rollback on Failure](../patterns/deployment/rollback.md)
+- [Spec Versioning](../patterns/deployment/spec-versioning.md)
+- [Model Upgrade Validation](../patterns/deployment/model-upgrade.md)
+
+### "I need to build or expand a team repertoire"
+- [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md)
+- [The Intent Archetype Catalog](../repertoires/02-archetype-catalog.md)
+- [Spec Template Library](../repertoires/03-spec-template-library.md)
+- [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
 
 ---
 
@@ -227,12 +311,10 @@ This index organizes every chapter and pattern in the book by part, by theme, an
 
 *Find all chapters relevant to a specific archetype.*
 
-| Archetype | Definitional chapter | Used in example | Governance | Constraints |
-|-----------|---------------------|----------------|-----------|-------------|
-| Advisor | [3.2 / advisor.md](../architecture/archetypes/advisor.md) | Example 1 (Policy Advisor) | [7.3](../operating/03-who-defines-archetypes.md) | [6.3 templates](../repertoires/03-spec-template-library.md) |
-| Executor | [3.2 / executor.md](../architecture/archetypes/executor.md) | Example 1 (Account Executor) | [7.3](../operating/03-who-defines-archetypes.md) | [6.5](../repertoires/05-validation-templates.md) |
-| Guardian | [3.2 / guardian.md](../architecture/archetypes/guardian.md) | Example 1 (Compliance Guardian), Example 2 (Standards Guardian) | [7.3](../operating/03-who-defines-archetypes.md) | [5.4](../agents/04-tools-mcp-capability-boundaries.md) |
-| Synthesizer | [3.2 / synthesizer.md](../architecture/archetypes/synthesizer.md) | Example 2 (Scaffold Synthesizer) | [7.3](../operating/03-who-defines-archetypes.md) | [6.3 templates](../repertoires/03-spec-template-library.md) |
-| Orchestrator | [3.2 / orchestrator.md](../architecture/archetypes/orchestrator.md) | Example 1 (Inquiry Orchestrator) | [7.3](../operating/03-who-defines-archetypes.md) | [5.6](../agents/06-human-oversight-models.md) |
-
-
+| Archetype | Definition | Used in example | Governance | Constraints |
+|-----------|-----------|-----------------|-----------|-------------|
+| Advisor | [advisor.md](../architecture/archetypes/advisor.md) | Example 1 (Policy Advisor) | [Proportional Governance](../operating/04-governance.md) | [Spec template library](../repertoires/03-spec-template-library.md) |
+| Executor | [executor.md](../architecture/archetypes/executor.md) | Example 1 (Account Executor) | [Proportional Governance](../operating/04-governance.md) | [Validation templates](../repertoires/05-validation-templates.md) |
+| Guardian | [guardian.md](../architecture/archetypes/guardian.md) | Example 1 (Compliance Guardian), Example 2 (Standards Guardian) | [Proportional Governance](../operating/04-governance.md) | [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) |
+| Synthesizer | [synthesizer.md](../architecture/archetypes/synthesizer.md) | Example 2 (Scaffold Synthesizer) | [Proportional Governance](../operating/04-governance.md) | [Spec template library](../repertoires/03-spec-template-library.md) |
+| Orchestrator | [orchestrator.md](../architecture/archetypes/orchestrator.md) | Example 1 (Inquiry Orchestrator) | [Proportional Governance](../operating/04-governance.md) | [Proportional Oversight](../agents/06-human-oversight-models.md) |

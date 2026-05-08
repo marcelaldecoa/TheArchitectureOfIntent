@@ -13,13 +13,13 @@ This glossary defines the core vocabulary of the Architecture of Intent. Every t
 ## A
 
 **Agency**
-The capacity to act with discretion in pursuit of a goal. In system design, agency is distributed across instructors (spec authors), executors (agents, tools), and oversight functions. Distinguished from *operational autonomy*. See [Where Agency Resides](../foundations/04-where-agency-resides.md).
+The capacity to act with discretion in pursuit of a goal. In system design, agency is distributed across instructors (spec authors), executors (agents, tools), and oversight functions. Distinguished from *operational autonomy*. See [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md).
 
 **Archetype**
-A pre-committed behavioral frame for a class of system. Archetypes define agency level, risk posture, oversight model, and reversibility requirements in advance — before any specific system is designed. They function as constitutional law for agent systems. See [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md).
+A pre-committed behavioral frame for a class of system. Archetypes define identity, agency level, oversight model, reversibility posture, and invariants in advance — before any specific system is designed. See [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md).
 
 **Authorship**
-The act of originating the intent that a system expresses and accepting accountability for its consequences. Authorship does not require proximity to code generation — the author of a specification is the author of the system that executes it. See [Authorship in Software](../foundations/03-authorship-in-software.md).
+The act of originating the intent that a system expresses and accepting accountability for its consequences. Authorship does not require proximity to code generation — the author of a specification is the author of the system that executes it. See [Prologue](../prologue.md).
 
 ---
 
@@ -37,9 +37,6 @@ A limit on what a system or agent is permitted to do. Boundaries are encoded in 
 
 **Capability Boundary**
 The limit of what a tool or agent is permitted to access or affect. Defined in agent specifications and enforced through MCP tool design and authorization structures. See [Least Capability](../agents/04-tools-mcp-capability-boundaries.md).
-
-**Constitutional Law** *(as metaphor)*
-Used to describe archetypes that pre-commit a system to behavioral rules that apply across all designs governed by that archetype — regardless of implementation details. See [Constitutional Archetypes](../architecture/01-archetypes-as-constitutional-law.md).
 
 **Constraint**
 A non-negotiable rule embedded in a specification. Constraints define what an agent *cannot* do or *must* do. They are distinct from guidelines (advisory) and preferences (soft). See [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md).
@@ -66,7 +63,7 @@ One of the five canonical intent archetypes. Characterizes systems that act auto
 ## F
 
 **Failure Mode**
-A predictable way in which a system, agent, or spec produces wrong outcomes. Cataloging known failure modes is a core activity of intent engineering — because failure modes are design signals, not surprises. See [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md).
+A predictable way in which a system, agent, or spec produces wrong outcomes. Cataloging known failure modes is a core activity of intent engineering — because failure modes are design signals, not surprises. See [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).
 
 **Framing**
 The act of defining the problem space precisely enough that delegation can be both safe and productive. Framing determines what the agent is trying to do, what counts as success, and what must not happen. The foundation of every good spec.
@@ -83,7 +80,7 @@ One of the five canonical intent archetypes. Characterizes systems whose primary
 ## H
 
 **Human Compiler** *(historical)*
-The role of the software developer as the bridge between ambiguous business intent and literal machine execution. The concept whose obsolescence is the starting point of this book. See [The End of the Human Compiler](../foundations/01-end-of-human-compiler.md).
+The role of the software developer as the bridge between ambiguous business intent and literal machine execution. The concept whose obsolescence is the starting point of this book. See [Prologue](../prologue.md).
 
 ---
 
@@ -96,7 +93,7 @@ A condition that must always hold, regardless of what the system does. Invariant
 The human purpose that a system is meant to serve. Distinct from *implementation* (how the purpose is achieved). Intent is what specs encode. Implementation is what agents produce. See [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md).
 
 **Intent Engineering**
-The discipline of designing, specifying, communicating, and governing intent so that it can be executed reliably by agents at scale. The formal name for what this book is about. See [Intent Engineering as a Discipline](../theory/01-what-is-intent-engineering.md).
+The discipline of designing, specifying, communicating, and governing intent so that it can be executed reliably by agents, validated accurately by humans, and evolved safely over time. Organized around three questions every delegated system must answer — *what is this system trying to achieve, within what constraints, and how will we know it is working?* — and four recurring activities: framing, specification, delegation, and validation. See [Introduction](../introduction.md).
 
 ---
 
@@ -112,9 +109,6 @@ A specification that is versioned, evolves with the system, and is updated when 
 **MCP (Model Context Protocol)**
 An open protocol that standardizes how AI models interact with tools, data sources, and external systems. In intent engineering, MCP tools are the mechanism by which capability boundaries are enforced. See [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md).
 
-**Moral Artifact**
-A term used for specifications, to signify that they encode ethical commitments — not just technical requirements. The constraints in a spec are promises made on behalf of the users of the system. See [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md).
-
 ---
 
 ## O
@@ -123,7 +117,7 @@ A term used for specifications, to signify that they encode ethical commitments 
 The ability to execute a pre-defined process without human intervention at each step. Distinguished from *genuine agency*, which involves discretion in novel situations. See [Autonomy Without Agency](../agents/02-autonomy-vs-agency.md).
 
 **Orchestration**
-The act of arranging agents, tools, and human oversight so that each does what they are best suited for, in service of a clearly specified goal. The new core function of the software engineer. See [From Translation to Orchestration](../foundations/02-from-translation-to-orchestration.md).
+The act of arranging agents, tools, and human oversight so that each does what they are best suited for, in service of a clearly specified goal. See [Prologue](../prologue.md).
 
 **Orchestrator Archetype**
 One of the five canonical intent archetypes. Characterizes systems that coordinate multiple agents or services toward a goal. Moderate agency, structured delegation, active oversight with escalation paths. See [The Orchestrator Archetype](../architecture/archetypes/orchestrator.md).
@@ -136,23 +130,16 @@ One of four structured approaches to human oversight of agent systems: (A) Monit
 
 ---
 
-## P
-
-**Pattern Language** *(as inspiration)*
-Christopher Alexander's framework for describing recurring design solutions as interrelated patterns. Adopted as the structural inspiration for this book. See [A Note on Pattern Language](../preface.md).
-
----
-
 ## R
 
 **Repertoire**
 A pre-authorized collection of archetypes, templates, constraints, and code standards that teams can use to accelerate spec-driven development without starting from scratch. Distinguished from "best practices" by their explicit authorization status. See [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md).
 
 **Reversibility**
-The degree to which an action can be undone or corrected after the fact. A primary design dimension for any system involving agents. High-agency systems acting on irreversible states require maximum oversight. See [Design for Reversibility](../theory/04-reversibility-as-design-dimension.md).
+The degree to which an action can be undone or corrected after the fact. A primary design dimension for any system involving agents. High-agency systems acting on irreversible states require maximum oversight. See [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md).
 
 **Reversibility Class**
-A classification of an action's reversibility posture, ranging from fully reversible (R1 — soft delete, undo available) through partially reversible (R2–R3 — correctable with effort or within a time window) to irreversible (R4 — cannot be undone once executed). The reversibility class of an agent's highest-consequence action determines the minimum oversight and design requirements. See [Design for Reversibility](../theory/04-reversibility-as-design-dimension.md) and [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md).
+A classification of an action's reversibility posture, ranging from fully reversible (R1 — soft delete, undo available) through partially reversible (R2–R3 — correctable with effort or within a time window) to irreversible (R4 — cannot be undone once executed). The reversibility class of an agent's highest-consequence action determines the minimum oversight and design requirements. See [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) and [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md).
 
 ---
 
@@ -178,7 +165,7 @@ One of the five canonical intent archetypes. Characterizes systems that aggregat
 ## T
 
 **Translation** *(historical)*
-The old paradigm for software development: converting ambiguous human intent into deterministic machine instructions. The task performed by the human compiler. Contrasted with the new paradigm of *orchestration*. See [From Translation to Orchestration](../foundations/02-from-translation-to-orchestration.md).
+The old paradigm for software development: converting ambiguous human intent into deterministic machine instructions. The task performed by the human compiler. Contrasted with the new paradigm of *orchestration*. See [Prologue](../prologue.md).
 
 ---
 

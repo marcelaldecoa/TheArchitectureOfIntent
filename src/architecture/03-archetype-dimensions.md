@@ -14,7 +14,7 @@ You know the five archetypes. Now you need to characterize them precisely — an
 
 This pattern introduces the four formal dimensions along which archetypes (and systems) are described: **Agency**, **Risk**, **Oversight**, and **Reversibility**. Together these four dimensions form the governance profile of any agent system.
 
-This pattern is the conceptual bridge between archetype identity (Pattern 3.2) and the practical decision tools (Pattern 3.4). It is also the vocabulary used in every individual archetype specification and in the [Archetype Catalog](../repertoires/02-archetype-catalog.md).
+This pattern is the conceptual bridge between archetype identity (the archetype catalog) and the practical decision tools (the Archetype Selection Tree). It is also the vocabulary used in every individual archetype specification and in the [Archetype Catalog](../repertoires/02-archetype-catalog.md).
 
 ---
 
@@ -125,7 +125,7 @@ Model D is the most powerful production model — it enables high-velocity auton
 
 **Definition:** The inherent reversibility profile of this class of system's actions, and the minimum design requirements that follow.
 
-Building on the reversibility spectrum from [Pattern 2.4](../theory/04-reversibility-as-design-dimension.md), each archetype carries a default reversibility posture:
+Building on the reversibility spectrum from [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md), each archetype carries a default reversibility posture:
 
 | Reversibility Posture | Minimum Design Requirement |
 |-----------------------|---------------------------|
@@ -193,7 +193,7 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Five Archetypes](02-canonical-intent-archetypes.md)
-- [Design for Reversibility](../theory/04-reversibility-as-design-dimension.md)
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md)
 - [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**

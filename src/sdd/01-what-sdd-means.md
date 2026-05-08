@@ -124,9 +124,8 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
-- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
-- [The Moral Weight of Specification](../theory/06-why-specs-are-moral-artifacts.md)
+- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - [The Spec as Control Surface](02-specs-as-control-surfaces.md)
