@@ -234,7 +234,7 @@ After applying this pattern:
 
 - Nygard, M. (2011). *Documenting Architecture Decisions.* cognitect.com/blog/2011/11/15/documenting-architecture-decisions. — The original essay defining the ADR format. The canonical reference.
 - ADR Tools and Templates. (ongoing). adr.github.io. — Community resources for ADR format variations.
-- Microsoft. (2024–2025). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot. — ADRs as a first-class artifact in modern AI-augmented delivery; DevSquad's Phase 3 is centered on ADR production.
+- Microsoft. (2026). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot. — ADRs as a first-class artifact in modern AI-augmented delivery; DevSquad's Phase 3 is centered on ADR production.
 - Fowler, M. (2002). *Patterns of Enterprise Application Architecture.* — Foundational discipline of recording architectural patterns and the decisions behind them.
 
 ---
