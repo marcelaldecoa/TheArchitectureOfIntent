@@ -1,92 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" font-family="Georgia, 'Times New Roman', serif">
-  <style>
-    .axis { stroke: #1e293b; stroke-width: 1.5; fill: none; }
-    .grid { stroke: #cbd5e1; stroke-width: 0.5; stroke-dasharray: 3,3; fill: none; }
-    .axis-label { fill: #0f172a; font-size: 14px; font-weight: bold; }
-    .quad-label { fill: #0f172a; font-size: 12px; font-weight: bold; }
-    .example { fill: #1e3a8a; font-size: 11px; }
-    .example-pt { fill: #1e3a8a; }
-    .title { fill: #0f172a; font-size: 16px; font-weight: bold; }
-    .caption { fill: #475569; font-size: 11px; font-style: italic; }
-    .note { fill: #475569; font-size: 11px; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
   <defs>
-    <marker id="arrow-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1e293b"/>
+    <filter id="dotShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="1" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="axisArrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0F1729"/>
     </marker>
   </defs>
 
+  <!-- Background -->
+  <rect width="1100" height="720" fill="#FAFAF7"/>
+
   <!-- Title -->
-  <text x="360" y="30" text-anchor="middle" class="title">Agency × Autonomy: the orthogonality of two of the four dimensions</text>
+  <text x="550" y="44" text-anchor="middle" font-size="22" font-weight="700"
+        fill="#0F1729" letter-spacing="0.5">Agency × Autonomy: Two Independent Dimensions</text>
+  <text x="550" y="68" text-anchor="middle" font-size="13" font-style="italic"
+        fill="#64748B">Real systems sit in all four quadrants. Treating these as a single &quot;automation level&quot; collapses the design space onto a diagonal.</text>
 
-  <!-- Plot area: 100,80 to 620,500 -->
-  <!-- Grid -->
-  <line x1="100" y1="290" x2="620" y2="290" class="grid"/>
-  <line x1="360" y1="80" x2="360" y2="500" class="grid"/>
+  <!-- Plot bounds: x 140..980, y 110..560 -->
 
-  <!-- Axes -->
-  <line x1="100" y1="500" x2="640" y2="500" class="axis" marker-end="url(#arrow-axis)"/>
-  <line x1="100" y1="500" x2="100" y2="60" class="axis" marker-end="url(#arrow-axis)"/>
+  <!-- Quadrant background tints -->
+  <rect x="140" y="110" width="420" height="225" fill="#EEF2FF" opacity="0.5"/>  <!-- Q2: top-left -->
+  <rect x="560" y="110" width="420" height="225" fill="#FEF3C7" opacity="0.4"/>  <!-- Q1: top-right -->
+  <rect x="140" y="335" width="420" height="225" fill="#F0FDF4" opacity="0.5"/>  <!-- Q3: bottom-left -->
+  <rect x="560" y="335" width="420" height="225" fill="#FCE7F3" opacity="0.45"/> <!-- Q4: bottom-right -->
 
-  <!-- Axis labels -->
-  <text x="640" y="525" text-anchor="end" class="axis-label">Agency →</text>
-  <text x="640" y="540" text-anchor="end" class="note">(judgment latitude / decisions made without human consultation)</text>
+  <!-- Mid grid lines (dashed) -->
+  <line x1="140" y1="335" x2="980" y2="335" stroke="#94A3B8"
+        stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="560" y1="110" x2="560" y2="560" stroke="#94A3B8"
+        stroke-width="1" stroke-dasharray="4,4"/>
 
-  <text x="108" y="55" text-anchor="start" class="axis-label">↑ Autonomy</text>
-  <text x="108" y="70" text-anchor="start" class="note">(operational independence; steps without per-step approval)</text>
+  <!-- Axes (drawn on top) -->
+  <line x1="140" y1="560" x2="990" y2="560" stroke="#0F1729"
+        stroke-width="1.8" marker-end="url(#axisArrow)"/>
+  <line x1="140" y1="560" x2="140" y2="100" stroke="#0F1729"
+        stroke-width="1.8" marker-end="url(#axisArrow)"/>
 
-  <!-- Origin labels -->
-  <text x="95" y="515" text-anchor="end" class="note">low</text>
-  <text x="615" y="515" text-anchor="middle" class="note">high</text>
-  <text x="92" y="500" text-anchor="end" class="note">low</text>
-  <text x="92" y="85" text-anchor="end" class="note">high</text>
+  <!-- X-axis label -->
+  <text x="990" y="595" text-anchor="end" font-size="14" font-weight="700"
+        fill="#0F1729">Agency  →</text>
+  <text x="990" y="613" text-anchor="end" font-size="11" fill="#64748B">
+    judgment latitude · decisions made without consultation
+  </text>
 
-  <!-- Quadrant labels -->
-  <text x="230" y="180" class="quad-label" text-anchor="middle">Q2: Wide autonomy,</text>
-  <text x="230" y="196" class="quad-label" text-anchor="middle">narrow agency</text>
+  <!-- Y-axis label (rotated) -->
+  <text transform="translate(108, 335) rotate(-90)" text-anchor="middle"
+        font-size="14" font-weight="700" fill="#0F1729">↑  Autonomy</text>
+  <text transform="translate(126, 335) rotate(-90)" text-anchor="middle"
+        font-size="11" fill="#64748B">operational independence · steps without per-step approval</text>
 
-  <text x="490" y="180" class="quad-label" text-anchor="middle">Q1: Wide autonomy,</text>
-  <text x="490" y="196" class="quad-label" text-anchor="middle">wide agency</text>
+  <!-- Axis end labels -->
+  <text x="140" y="582" text-anchor="middle" font-size="11" fill="#64748B">low</text>
+  <text x="945" y="582" text-anchor="middle" font-size="11" fill="#64748B">high</text>
+  <text x="125" y="565" text-anchor="end" font-size="11" fill="#64748B">low</text>
+  <text x="125" y="115" text-anchor="end" font-size="11" fill="#64748B">high</text>
 
-  <text x="230" y="380" class="quad-label" text-anchor="middle">Q3: Narrow autonomy,</text>
-  <text x="230" y="396" class="quad-label" text-anchor="middle">narrow agency</text>
+  <!-- Quadrant labels (top-right corner of each quadrant, no overlap with examples) -->
+  <text x="555" y="135" text-anchor="end" font-size="13" font-weight="700"
+        fill="#4338CA">Q2 · Wide autonomy, narrow agency</text>
+  <text x="975" y="135" text-anchor="end" font-size="13" font-weight="700"
+        fill="#92400E">Q1 · Wide autonomy, wide agency</text>
+  <text x="555" y="555" text-anchor="end" font-size="13" font-weight="700"
+        fill="#166534">Q3 · Narrow autonomy, narrow agency</text>
+  <text x="975" y="555" text-anchor="end" font-size="13" font-weight="700"
+        fill="#9F1239">Q4 · Narrow autonomy, wide agency</text>
 
-  <text x="490" y="380" class="quad-label" text-anchor="middle">Q4: Narrow autonomy,</text>
-  <text x="490" y="396" class="quad-label" text-anchor="middle">wide agency</text>
+  <!-- Example points & labels (carefully placed; labels in white pill tags, no overlap) -->
 
-  <!-- Examples -->
-  <!-- Q1: cron-job script, autonomous agent -->
-  <circle cx="510" cy="140" r="5" class="example-pt"/>
-  <text x="520" y="144" class="example">Autonomous coding agent (Devin-class)</text>
+  <!-- Q1 (top-right) -->
+  <circle cx="800" cy="180" r="6" fill="#92400E" filter="url(#dotShadow)"/>
+  <line x1="800" y1="180" x2="800" y2="218" stroke="#92400E" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="690" y="218" width="220" height="26" rx="13" fill="#FFFFFF"
+        stroke="#F59E0B" stroke-width="1.2" filter="url(#dotShadow)"/>
+  <text x="800" y="236" text-anchor="middle" font-size="12" font-weight="600"
+        fill="#0F1729">Autonomous coding agent (Devin-class)</text>
 
-  <circle cx="450" cy="160" r="5" class="example-pt"/>
-  <text x="460" y="164" class="example">Orchestrator-over-self deployment</text>
+  <circle cx="700" cy="280" r="6" fill="#92400E" filter="url(#dotShadow)"/>
+  <line x1="700" y1="280" x2="780" y2="305" stroke="#92400E" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="660" y="305" width="240" height="26" rx="13" fill="#FFFFFF"
+        stroke="#F59E0B" stroke-width="1.2" filter="url(#dotShadow)"/>
+  <text x="780" y="323" text-anchor="middle" font-size="12" font-weight="600"
+        fill="#0F1729">Orchestrator-over-self deployment</text>
 
-  <!-- Q2: pipeline executor (high autonomy, narrow agency) -->
-  <circle cx="270" cy="130" r="5" class="example-pt"/>
-  <text x="280" y="134" class="example">Cron-job ETL script (no judgment, no oversight)</text>
+  <!-- Q2 (top-left) -->
+  <circle cx="220" cy="170" r="6" fill="#4338CA" filter="url(#dotShadow)"/>
+  <line x1="220" y1="170" x2="280" y2="200" stroke="#4338CA" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="170" y="200" width="280" height="26" rx="13" fill="#FFFFFF"
+        stroke="#6366F1" stroke-width="1.2" filter="url(#dotShadow)"/>
+  <text x="310" y="218" text-anchor="middle" font-size="12" font-weight="600"
+        fill="#0F1729">Cron-job ETL script (no judgment, no oversight)</text>
 
-  <circle cx="220" cy="160" r="5" class="example-pt"/>
-  <text x="230" y="164" class="example">Deterministic CI/CD pipeline</text>
+  <circle cx="320" cy="270" r="6" fill="#4338CA" filter="url(#dotShadow)"/>
+  <line x1="320" y1="270" x2="320" y2="305" stroke="#4338CA" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="195" y="305" width="250" height="26" rx="13" fill="#FFFFFF"
+        stroke="#6366F1" stroke-width="1.2" filter="url(#dotShadow)"/>
+  <text x="320" y="323" text-anchor="middle" font-size="12" font-weight="600"
+        fill="#0F1729">Deterministic CI/CD pipeline</text>
 
-  <!-- Q3: Advisor (low autonomy, low agency) -->
-  <circle cx="200" cy="430" r="5" class="example-pt"/>
-  <text x="210" y="434" class="example">Code-review Advisor (suggests; never acts)</text>
+  <!-- Q3 (bottom-left) -->
+  <circle cx="240" cy="430" r="6" fill="#166534" filter="url(#dotShadow)"/>
+  <line x1="240" y1="430" x2="290" y2="395" stroke="#166534" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="170" y="370" width="270" height="26" rx="13" fill="#FFFFFF"
+        stroke="#10B981" stroke-width="1.2" filter="url(#dotShadow)"/>
+  <text x="305" y="388" text-anchor="middle" font-size="12" font-weight="600"
+        fill="#0F1729">Code-review Advisor (suggests; never acts)</text>
 
-  <circle cx="270" cy="455" r="5" class="example-pt"/>
-  <text x="280" y="459" class="example">Search agent that surfaces options</text>
+  <circle cx="350" cy="500" r="6" fill="#166534" filter="url(#dotShadow)"/>
+  <line x1="350" y1="500" x2="320" y2="465" stroke="#166534" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="195" y="438" width="245" height="26" rx="13" fill="#FFFFFF"
+        stroke="#10B981" stroke-width="1.2" filter="url(#dotShadow)"/>
+  <text x="318" y="456" text-anchor="middle" font-size="12" font-weight="600"
+        fill="#0F1729">Search agent that surfaces options</text>
 
-  <!-- Q4: human-in-the-loop with high agency surfaced for approval -->
-  <circle cx="490" cy="430" r="5" class="example-pt"/>
-  <text x="500" y="434" class="example">Compliance Guardian with explicit gates</text>
+  <!-- Q4 (bottom-right) -->
+  <circle cx="800" cy="430" r="6" fill="#9F1239" filter="url(#dotShadow)"/>
+  <line x1="800" y1="430" x2="800" y2="395" stroke="#9F1239" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="660" y="370" width="280" height="26" rx="13" fill="#FFFFFF"
+        stroke="#E11D48" stroke-width="1.2" filter="url(#dotShadow)"/>
+  <text x="800" y="388" text-anchor="middle" font-size="12" font-weight="600"
+        fill="#0F1729">Compliance Guardian with explicit gates</text>
 
-  <circle cx="430" cy="460" r="5" class="example-pt"/>
-  <text x="440" y="464" class="example">Refund-approval agent (high stakes,</text>
-  <text x="440" y="478" class="example">human approves every action)</text>
+  <circle cx="730" cy="500" r="6" fill="#9F1239" filter="url(#dotShadow)"/>
+  <line x1="730" y1="500" x2="780" y2="465" stroke="#9F1239" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="650" y="438" width="280" height="26" rx="13" fill="#FFFFFF"
+        stroke="#E11D48" stroke-width="1.2" filter="url(#dotShadow)"/>
+  <text x="790" y="456" text-anchor="middle" font-size="12" font-weight="600"
+        fill="#0F1729">Refund-approval agent (high-stakes, gated)</text>
 
   <!-- Caption -->
-  <text x="360" y="555" text-anchor="middle" class="caption">Figure 2: Two of the four calibration dimensions plotted against each other. Each quadrant has real deployments;</text>
-  <text x="360" y="572" text-anchor="middle" class="caption">no quadrant is empty. Treating Agency and Autonomy as a single &quot;automation level&quot; (e.g., SAE J3016) collapses</text>
-  <text x="360" y="588" text-anchor="middle" class="caption">this design space onto a diagonal. The other two dimensions (Responsibility, Reversibility) are similarly orthogonal.</text>
+  <text x="550" y="660" text-anchor="middle" font-size="12" font-style="italic"
+        fill="#64748B">Figure 2. Two of the four calibration dimensions plotted against each other. No quadrant is empty.</text>
+  <text x="550" y="680" text-anchor="middle" font-size="12" font-style="italic"
+        fill="#64748B">Treating Agency and Autonomy as a single &quot;automation level&quot; (e.g., SAE J3016) collapses this design space onto a diagonal.</text>
+  <text x="550" y="700" text-anchor="middle" font-size="12" font-style="italic"
+        fill="#64748B">The other two dimensions (Responsibility, Reversibility) are similarly orthogonal.</text>
 </svg>
