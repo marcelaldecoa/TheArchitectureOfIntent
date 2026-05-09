@@ -94,7 +94,7 @@ If you want to test this framework against your own context, here is a practical
 1. **Pick one agent system** your team is building or operating.
 2. **Run the archetype decision tree** ([The Archetype Selection Tree](../architecture/04-decision-tree.md)). Does the result match what you currently have? If not, document why.
 3. **Write the spec** for the agent's most consequential action using the [Canonical Spec Template](../sdd/07-canonical-spec-template.md). Focus on Sections 3 (Constraints) and 6 (Success Criteria). The first draft will feel incomplete — that is the point.
-4. **Execute against the spec** and categorize the first three failures using the [six failure categories](../theory/05-failure-as-design-signal.md). How many are spec gaps versus model-level limitations?
+4. **Execute against the spec** and categorize the first three failures using the [seven failure categories](../theory/05-failure-as-design-signal.md). How many are spec gaps versus model-level limitations?
 5. **Document what surprised you.** The gap between what you expected and what happened is the most valuable learning signal the framework produces.
 
 The two examples in this part are meant to show the process. Your system is where the framework gets tested.

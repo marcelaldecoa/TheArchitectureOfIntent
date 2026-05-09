@@ -33,9 +33,8 @@
   <text x="640" y="525" text-anchor="end" class="axis-label">Agency →</text>
   <text x="640" y="540" text-anchor="end" class="note">(judgment latitude / decisions made without human consultation)</text>
 
-  <text x="80" y="65" text-anchor="end" class="axis-label">Autonomy</text>
-  <text x="80" y="80" text-anchor="end" class="note">↑ (operational independence)</text>
-  <text x="80" y="95" text-anchor="end" class="note">(steps without per-step approval)</text>
+  <text x="108" y="55" text-anchor="start" class="axis-label">↑ Autonomy</text>
+  <text x="108" y="70" text-anchor="start" class="note">(operational independence; steps without per-step approval)</text>
 
   <!-- Origin labels -->
   <text x="95" y="515" text-anchor="end" class="note">low</text>

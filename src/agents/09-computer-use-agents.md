@@ -120,7 +120,7 @@ The "surface and stop on ambiguity" instruction is the single most useful constr
 
 ### New failure modes specific to computer-use agents
 
-The six categories from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) all manifest in computer-use agents, with characteristic shapes:
+The first six categories from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) all manifest in computer-use agents, with characteristic shapes:
 
 - **Cat 1 (Spec).** "The spec authorized the agent to use github.com but didn't specify what to do when redirected to github.io for documentation." Fix: tighten scope to include redirect destinations or surface on unexpected redirect.
 - **Cat 2 (Capability).** "The agent had only `browser.click` and `browser.type`; the form required a date-picker that needed keyboard arrow keys to operate; the agent typed the date as text and the form rejected it." Fix: add `browser.keypress` as an explicit tool with allowlisted keys.
@@ -129,7 +129,7 @@ The six categories from [Failure Modes and How to Diagnose Them](../theory/05-fa
 - **Cat 5 (Compounding).** "Step 1 misread a checkbox state; subsequent steps acted as if the wrong state was set; the final action was based on a wrong premise." Fix: structural — for state-dependent actions, the agent must screenshot-then-verify at each step; the verification is the precondition.
 - **Cat 6 (Model-level).** "The agent confidently identified an element that wasn't there." Fix: cross-reference vision-language model output against DOM-based detection where available; when DOM is not available (canvas-rendered apps), accept reduced reliability and require human checkpoints.
 
-**The new category — Cat 7 (Perceptual Failure).** A computer-use-specific failure mode where the agent's perception of the screen does not match the screen's actual state.
+**Cat 7 (Perceptual Failure) — load-bearing for computer-use.** This is the category from the framework's failure taxonomy that becomes operationally central for computer-use deployments: the agent's perception of the screen does not match the screen's actual state, and the agent acts on the wrong perception.
 
 - *Sub-category: misidentification.* The model identifies an element as A when it is B. Two visually similar buttons; two checkboxes in different rows; two form fields with the same placeholder.
 - *Sub-category: missed element.* The model fails to perceive an element that is present. Often due to popup occlusion, dynamic loading, or contrast issues.

@@ -14,6 +14,8 @@ You know the five archetypes. Now you need to characterize them precisely — an
 
 This pattern introduces the four formal dimensions along which archetypes (and systems) are described: **Agency**, **Risk**, **Oversight**, and **Reversibility**. Together these four dimensions form the governance profile of any agent system.
 
+> **A note on the two "four-dimension" frames in this book.** The framework's *calibration* layer ([Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md)) names four dials a spec author tunes per system: agency, autonomy, responsibility, reversibility. This chapter's *governance profile* names four dimensions an archetype declares as a published design contract: agency, risk, oversight, reversibility. The two frames overlap on agency and reversibility and diverge on the middle pair. Autonomy and responsibility (calibration) are inputs the spec author sets; risk and oversight (governance) are outputs the archetype publishes. Read the calibration chapter to set the dials; read this chapter to read off the resulting governance contract. The paper's canonical statement of the calibration dimensions uses the calibration framing (agency, autonomy, responsibility, reversibility); this chapter is the book-only governance encoding.
+
 This pattern is the conceptual bridge between archetype identity (the archetype catalog) and the practical decision tools (the Archetype Selection Tree). It is also the vocabulary used in every individual archetype specification and in the [Archetype Catalog](../repertoires/02-archetype-catalog.md).
 
 ---
@@ -194,7 +196,6 @@ After applying this pattern:
 **This pattern assumes:**
 - [The Five Archetypes](02-canonical-intent-archetypes.md)
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md)
-- [Three Dimensions of Delegation](../theory/03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
 - [The Archetype Selection Tree](04-decision-tree.md) — putting the dimensions to practical use

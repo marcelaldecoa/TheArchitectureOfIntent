@@ -64,13 +64,13 @@ DevSquad uses the term "specialized agent" without formally classifying agent cl
 
 ---
 
-### 2. The six-category failure taxonomy and diagnostic protocol (high leverage)
+### 2. The seven-category failure taxonomy and diagnostic protocol (high leverage)
 
-DevSquad's Phase 6 (Learn openly) is the right discipline but doesn't give you a partition for *what kind of learning this is*. This book's [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) provides the six-category taxonomy (Spec, Capability, Scope creep, Oversight, Compounding, Model-level) and the diagnostic protocol that maps each category to the artifact you change.
+DevSquad's Phase 6 (Learn openly) is the right discipline but doesn't give you a partition for *what kind of learning this is*. This book's [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) provides the seven-category fix-locus taxonomy (Spec, Capability, Scope creep, Oversight, Compounding, Model-level, Perceptual) and the diagnostic protocol that maps each category to the artifact you change. Cat 7 (Perceptual) applies only to perceiving-then-acting deployments — computer-use, browser-use, robotic — and can be skipped if your team is text-only.
 
 **What changes in your practice:**
 
-- Phase 6 reviews now categorize each finding (Cat 1–6) before deciding the fix. Cat 1 → spec section. Cat 2 → tool manifest or new tool. Cat 3 → NOT-Authorized clause. Cat 4 → oversight model adjustment. Cat 5 → checkpoint review. Cat 6 → model-level (often: narrow scope, switch model, or accept residual risk).
+- Phase 6 reviews now categorize each finding (Cat 1–7) before deciding the fix. Cat 1 → spec section. Cat 2 → tool manifest or new tool. Cat 3 → NOT-Authorized clause. Cat 4 → oversight model adjustment. Cat 5 → checkpoint review. Cat 6 → model-level (often: narrow scope, switch model, or accept residual risk). Cat 7 → structural controls + verification step at the perception–action interface (computer-use deployments only).
 - Phase 8 (Continuous refinement) now has *signal* per category — which categories recur, which are decreasing, which are stuck. Drives prioritization for the next sprint's spec work.
 
 **Effort:** ~30 minutes to read the diagnostic protocol; ~10 minutes per failure to categorize. Pays back the first time a Cat 6 (model-level) failure stops being mis-diagnosed as a Cat 1 (spec) failure.

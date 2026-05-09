@@ -26,7 +26,7 @@ If the failure is the agent's, the only fix is a better agent — wait for the n
 
 If the failure is in the architecture around the agent, the fix is available now. The spec was incomplete. The skill was stale. The oversight model didn't catch the error in time. The tool description was ambiguous. These are fixable without waiting for anyone.
 
-This is not a claim that model-level failures never occur — they do, and the sixth category below names them. But teams that systematically categorize their agent failures find that the majority of consequential ones trace back to architectural gaps rather than model limitations. The discipline of failure analysis prioritizes the fixable categories first, because they are the most actionable.
+This is not a claim that model-level failures never occur — they do, and the sixth category below names them. (A seventh category, *Perceptual Failure*, addresses a class of failure specific to perceiving-then-acting systems such as computer-use and browser-use agents.) But teams that systematically categorize their agent failures find that the majority of consequential ones trace back to architectural gaps rather than model limitations. The discipline of failure analysis prioritizes the fixable categories first, because they are the most actionable.
 
 ---
 
@@ -63,15 +63,15 @@ Two academic taxonomies are worth knowing before you adopt this one:
 
 **The agent-hallucination taxonomies** — Zhang et al. (arXiv:2509.18970) and the broader 2024–2025 literature on tool-call hallucination, planning hallucination, and instruction-following inconsistency — give finer-grained partitions of what this chapter calls Category 6.
 
-**How the six categories below differ from those.** This chapter's taxonomy is *organized by fix locus* — which artifact (the spec, a tool, a scope clause, an oversight checkpoint, a model choice) you change to prevent recurrence — rather than by *failure mechanism*. Both partitions are useful; they answer different questions. If you want to *understand failure mechanics empirically*, use MAST and the hallucination literature. If you want a triage protocol that maps each failure to the artifact a human will edit, use the six categories below. They are complementary, not competing.
+**How the seven categories below differ from those.** This chapter's taxonomy is *organized by fix locus* — which artifact (the spec, a tool, a scope clause, an oversight checkpoint, a model choice, a perception-verification step) you change to prevent recurrence — rather than by *failure mechanism*. Both partitions are useful; they answer different questions. If you want to *understand failure mechanics empirically*, use MAST and the hallucination literature. If you want a triage protocol that maps each failure to the artifact a human will edit, use the seven categories below. They are complementary, not competing.
 
 The book takes the practitioner-friendly partition because the discipline it teaches is "fix the right artifact." If your team has the bandwidth to maintain a finer empirical breakdown alongside, do.
 
 ---
 
-### The six failure categories
+### The seven failure categories
 
-Failures fall into six categories. Correctly categorizing a failure determines how to fix it — and what it reveals about the design.
+Failures fall into seven categories. Categories 1–6 cover the failure space common to text-based agent deployments. Category 7 (*Perceptual Failure*) addresses an additional surface that emerges in perceiving-then-acting systems — computer-use agents, browser-use agents, robotic systems — and which prior taxonomies do not partition. Correctly categorizing a failure determines how to fix it — and what it reveals about the design.
 
 ---
 
@@ -191,6 +191,33 @@ The framework's contribution here is diagnostic, not curative: by ruling out Cat
 
 ---
 
+**Category 7: Perceptual Failure**
+
+The system's perception of the environment diverged from the environment's actual state, and the system acted on the wrong perception. This category is specific to *perceiving-then-acting* systems: computer-use agents, browser-use agents, and robotic systems. Prior taxonomies (MAST, the hallucination literature) do not partition this surface as a distinct class.
+
+**Signs:**
+- The agent acted on something that was not actually there, or acted on the wrong instance of something that was
+- A screenshot or sensor record taken at the moment of action would have shown a discrepancy from the agent's claimed reasoning
+- The same spec, with the same authorized scope and the same tools, produces correct behavior in some environments and incorrect behavior in others — environment-shape, not spec-shape, is the differentiator
+
+**Four sub-categories:**
+
+- **Misidentification.** The agent identifies an interface element correctly as a category (e.g., "a button") but assigns it the wrong role (e.g., a "Cancel" button identified as "Confirm"). The fix is structural: a confirmation gate before high-consequence actions, where the gate's prompt is generated from the agent's claimed intent ("you are about to click Confirm — is that what you mean?") and surfaces the discrepancy to a human reviewer or a Guardian.
+- **Missed element.** The agent fails to perceive an element that is visually present (a modal dialog, an error banner, a required field). The fix is *screenshot-then-verify*: before any consequential action, the agent re-grounds on a fresh screenshot and reconciles its planned action against what is currently visible.
+- **Hallucinated element.** The agent acts on an element that is not present in the rendered DOM but that the vision-language model believes it sees. The fix is an *element-allowlist plus DOM-grounded verification*: every claimed element must resolve to a DOM node before action is permitted.
+- **State miscount.** The agent is correct about elements but wrong about position or count (clicks the third row when the second was intended; processes 9 of 10 records and reports 10). The fix is *re-verification of position-based facts at the moment of action* rather than at the moment of planning.
+
+**Common manifestations:**
+- Lookalike-domain navigation (homoglyph or subdomain confusion) where the agent's visual reading of the URL bar diverges from the actual destination
+- Visual instruction injection on a rendered page (text rendered to look like an instruction is treated as authoritative)
+- Modal popup interception where an adversarial dialog is processed as a legitimate prompt
+
+**Fix:** Perceptual failures are not fixed in the prompt. They are fixed at the structural-controls layer — sandboxed environment, authentication-scope minimization, domain allowlist, high-consequence confirmation gates — and at the verification protocol layer — confirmation gate, screenshot-then-verify, multimodal grounding, element-allowlist, DOM-grounded verification, re-verification at action time. None of these live in the agent's instructions; all live in the spec's authorized scope, the tool manifest, or the per-action verification step.
+
+**When Cat 7 applies.** Cat 7 is the load-bearing diagnostic category for any deployment where the agent's input includes a perceptual layer — vision, audio, sensor — that can diverge from the underlying state. Text-only agent deployments do not encounter Cat 7. Computer-use deployments encounter it routinely; browser-use deployments encounter it whenever the page is rendered rather than parsed; robotic deployments encounter it whenever the sensor reading is the input to the action.
+
+---
+
 ### The diagnostic protocol
 
 When a failure occurs, resist the impulse to fix immediately. Apply this protocol:
@@ -210,6 +237,9 @@ When a failure occurs, resist the impulse to fix immediately. Apply this protoco
    - Did the error propagate past where review should have caught? → Cat 4: Oversight
    - Did one early error compound through later steps?              → Cat 5: Compounding
    - Spec correct, tools correct, scope correct, but model wrong?   → Cat 6: Model-level
+   - Did the agent's perception of the environment diverge from
+     the actual state, and was the action taken on that wrong
+     perception? (Computer-use / browser-use / robotic only)        → Cat 7: Perceptual
 
 4. Trace to the specific artifact:
    - Spec → which section, which missing or ambiguous clause?
@@ -218,6 +248,9 @@ When a failure occurs, resist the impulse to fix immediately. Apply this protoco
    - Oversight → at what point in execution did the error exist and go unreviewed?
    - Compounding → where in the chain did the first error occur?
    - Model-level → what specific model behavior? Reproducible? Known limit?
+   - Perceptual → which sub-category (misidentification, missed element,
+     hallucinated element, state miscount), and which structural
+     control or verification step is missing?
 
 5. Fix the artifact, not the output
 
@@ -288,8 +321,8 @@ The Spec Gap Log, the skill review cycle, and checkpoint adjustment processes ar
 
 After applying this pattern:
 
-- **Failure analysis becomes a structured discipline.** Six categories with a diagnostic protocol replace ad-hoc blame attribution with systematic root-cause identification.
-- **Fixable failures are distinguished from model limitations.** Categories 1–5 are fixable through better specs, tools, scope definitions, or oversight. Category 6 requires model-level responses.
+- **Failure analysis becomes a structured discipline.** Seven categories with a diagnostic protocol replace ad-hoc blame attribution with systematic root-cause identification.
+- **Fixable failures are distinguished from model limitations.** Categories 1–5 are fixable through better specs, tools, scope definitions, or oversight. Category 6 requires model-level responses. Category 7 is fixable through structural controls and verification steps at the perception–action interface.
 - **Spec gap logs accumulate organizational learning.** Each diagnosed failure enriches the team's understanding of what specs need to specify.
 - **Compounding failures become preventable.** By identifying the earliest error in a chain, checkpoint reviews can be placed at the most critical juncture.
 
@@ -297,7 +330,7 @@ After applying this pattern:
 
 ## Therefore
 
-> **Agent failures fall into six categories — spec, capability, scope creep, oversight, compounding, and model-level — each with a distinct mechanism, a specific architectural fix, and a different lesson. Diagnose before you fix. Fix the artifact, not the output. Log the gap. Re-execute. Failures attributed to "the AI" are unactionable; failures attributed to their architectural category are fixable, and the fixes are durable.**
+> **Agent failures fall into seven categories — spec, capability, scope creep, oversight, compounding, model-level, and perceptual (for perceiving-then-acting systems) — each with a distinct mechanism, a specific architectural fix, and a different lesson. Diagnose before you fix. Fix the artifact, not the output. Log the gap. Re-execute. Failures attributed to "the AI" are unactionable; failures attributed to their architectural category are fixable, and the fixes are durable.**
 
 ---
 

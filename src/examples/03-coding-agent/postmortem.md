@@ -58,7 +58,7 @@ Reading spec v1.1's relevant sections at the time of the incident:
 
 **Conclusion: This is a Cat 1 Spec Failure.**
 
-### Step 2: Walking the six-category protocol
+### Step 2: Walking the seven-category protocol
 
 For completeness, the team walked the full diagnostic protocol from [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md):
 
@@ -68,6 +68,7 @@ For completeness, the team walked the full diagnostic protocol from [Failure Mod
 - **Cat 4 (Oversight Failure)?** Contributing. The PR review missed that the test diff hid a behavioral change. The reviewer saw the test was modified, saw the diff was small, did not load the original test into mind to reason about whether the *removed* assertions were load-bearing. The team treated this as a *secondary* failure to address, but the primary fix is upstream — preventing the agent from modifying the test in the first place.
 - **Cat 5 (Compounding)?** No. Single-step error.
 - **Cat 6 (Model-level)?** No. The agent's behavior was consistent with the spec it was given. A different model would have been likely to do the same thing under the same spec.
+- **Cat 7 (Perceptual)?** Not applicable. This is a text-only coding agent; there is no perception–action interface where the agent could have misperceived environment state.
 
 ### Step 3: Trace to the specific artifact
 

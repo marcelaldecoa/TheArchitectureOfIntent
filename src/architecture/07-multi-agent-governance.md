@@ -119,9 +119,9 @@ Encode these rules in the system spec. The per-agent specs should reference them
 
 ### MAST as a diagnostic frame
 
-The MAST taxonomy (Cemri et al. 2025) is the most rigorous practitioner-facing partition of multi-agent failures published. Its three top-level categories — specification issues, inter-agent misalignment, task verification failures — and 14 sub-categories give an empirical vocabulary that complements (not replaces) the six categories from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).
+The MAST taxonomy (Cemri et al. 2025) is the most rigorous practitioner-facing partition of multi-agent failures published. Its three top-level categories — specification issues, inter-agent misalignment, task verification failures — and 14 sub-categories give an empirical vocabulary that complements (not replaces) the seven categories from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).
 
-Mapping MAST onto the book's six categories:
+Mapping MAST onto the book's seven categories:
 
 | MAST top-level | Book category | Notes |
 |---|---|---|
@@ -129,7 +129,7 @@ Mapping MAST onto the book's six categories:
 | Inter-agent misalignment | Cat 5 (Compounding Failure), partially Cat 3 (Scope creep) | Cross-agent seam failures |
 | Task verification failures | Cat 4 (Oversight Failure) at system level | No agent owns the validation step |
 
-Use MAST when post-morteming a multi-agent failure: it gives finer-grained diagnostic vocabulary. Use the book's six categories when deciding which artifact to edit (which is what the diagnostic protocol is for).
+Use MAST when post-morteming a multi-agent failure: it gives finer-grained diagnostic vocabulary. Use the book's seven categories when deciding which artifact to edit (which is what the diagnostic protocol is for).
 
 ### Observability requirements
 
@@ -169,14 +169,14 @@ After applying this pattern:
 - **The system spec is written.** The system's objective, the agents' roles, the coordination protocol, the system-level oversight, and the system-level validation are all named in a document above the per-agent specs.
 - **Seam contracts exist.** Every agent-to-agent handoff has an explicit contract on input schema, contract violation handling, and termination conditions.
 - **Spec-conflict resolution is rule-governed.** When per-agent specs conflict, the system spec's resolution rules apply rather than letting either agent resolve silently.
-- **MAST diagnostics are in the toolkit.** Post-mortems use MAST sub-categories for diagnosis and the book's six categories for fix-locus.
+- **MAST diagnostics are in the toolkit.** Post-mortems use MAST sub-categories for diagnosis and the book's seven categories for fix-locus.
 - **Observability spans the system.** Cross-agent traces, seam logs, and per-role cost attribution make multi-agent failures debuggable.
 
 ---
 
 ## Therefore
 
-> **A system of agents requires governance artifacts that single-agent systems do not: a system spec, seam contracts at every handoff, and a compounding-failure runbook. The MAST taxonomy is the empirical frame for diagnosing where multi-agent systems fail; the book's six categories tell you which artifact to edit. Start with the simplest coordination pattern that solves the problem and only escalate when you have measured a reason. Most teams should not be running multi-agent systems they could solve with a workflow.**
+> **A system of agents requires governance artifacts that single-agent systems do not: a system spec, seam contracts at every handoff, and a compounding-failure runbook. The MAST taxonomy is the empirical frame for diagnosing where multi-agent systems fail; the book's seven categories tell you which artifact to edit. Start with the simplest coordination pattern that solves the problem and only escalate when you have measured a reason. Most teams should not be running multi-agent systems they could solve with a workflow.**
 
 ---
 
