@@ -355,4 +355,55 @@ The framework's bet is that as delegation widens, intent precision compounds in 
 
 ---
 
+## Appendix B: Mapping the framework to Microsoft DevSquad Copilot
+
+> *This appendix expands §4.1 with a closer look at how the framework's elements compose with the documented features of Microsoft DevSquad Copilot [@microsoftDevSquadCopilot2024]. Names and feature labels in this appendix follow DevSquad's own README terminology where verified; analytic labels supplied by this paper are noted as such.*
+
+### B.1 What DevSquad Copilot is
+
+Microsoft DevSquad Copilot is an open-source agentic software-delivery framework released in 2024–2025. Its operational core is an **eight-phase iterative cycle** that runs from an *envisioning phase* through *Spec the next slice*, *Plan only what the current slice needs*, *Decompose that slice*, *Implement with TDD discipline*, *Learn in the open*, *Review in an independent context*, and *Refine continuously*. Coordination is performed by a single **conductor agent** that **guides the cycle with Socratic questions** and delegates to **13 specialized sub-agents** running in isolated context windows. User stories are sliced and prioritized as **P1, P2, P3**. **Architectural Decision Records (ADRs)** are persisted as durable artifacts beyond any single slice. Tool access is mediated through a curated set of first-party **MCP servers**, with authorization enforced server-side.
+
+DevSquad's discipline converges with this paper's framework on the same load-bearing concepts: spec-first execution, intent as the durable artifact, archetype-shaped delegation, evolution of specs in response to implementation reality, and least-capability tool boundaries. The paper's framework was substantially derived from observing systems of this shape; the convergence is not coincidental but represents two independent paths arriving at the same operational principles.
+
+### B.2 Element-to-feature mapping
+
+| Framework element | DevSquad feature | Notes |
+|---|---|---|
+| **Intent as a design surface** (§3.1) | The envisioning phase + the spec-slice phase taken together produce DevSquad's intent artifact, distinct from the implementation produced in later phases. | DevSquad does not use the term *intent surface*; the artifact-distinction is the paper's framing. |
+| **Archetypes** (§3.2) | The conductor-agent role is an Orchestrator archetype; the 13 sub-agents are typed by function (refinement agent, decompose agent, code-writing agent, review agent, etc.) and instantiate Executor, Synthesizer, and Guardian archetypes within the conductor's coordination. | DevSquad does not use the paper's archetype terminology; the assignments are the paper's interpretation. |
+| **Four-dimension calibration** (§3.3) | DevSquad's *impact classification scales rigor to risk* discipline calibrates oversight (autonomy) and approval gates (responsibility) per task. | The four-dimension *orthogonality* claim is the paper's contribution; DevSquad treats risk as a single scaling axis. |
+| **Cat 1 – Cat 7 failure taxonomy** (§3.4) | DevSquad's Phase 6 (*Learn in the open*) is the operational surface where this paper's failure-locus diagnosis is performed; spec amendments correspond to Cat 1 fixes, manifest changes to Cat 2, oversight-model changes to Cat 4, system-spec changes to Cat 5. | DevSquad recognizes specification mismatches as a first-class event and amends spec rather than patching code; the paper supplies the categorization scheme. |
+| **Spec-Driven Development as protocol** (§3.5) | DevSquad's spec-as-source-of-truth discipline, with the eight-phase cycle as the lifecycle. | Direct lineage. |
+| **Capability boundaries via MCP** (§4.2) | DevSquad's MCP-server-mediated tool layer; each sub-agent receives only the tools its role requires. | Direct alignment. |
+
+### B.3 Disciplines whose names differ
+
+Several DevSquad practices the paper repeatedly references appear in DevSquad's documentation under different names from the paper's. The paper's framing is supplied to make the framework's vocabulary consistent across delegated systems generally; DevSquad's framing is supplied because DevSquad ships under those terms. Where a passage in the body of the paper is best read alongside DevSquad's own documentation, the table below provides the cross-reference.
+
+| Paper's term | DevSquad's documented language |
+|---|---|
+| *Living spec* / spec evolution (§3.5) | "Specification mismatch is a first-class event"; the amendment process in *Learn in the open* |
+| *Pre-clarification step* (§3.5) | The Socratic-questioning pattern in the conductor's envisioning interview |
+| *Capability minimalism* (§4.2) | "Curated set of first-party MCP servers"; least-privilege scope at the sub-agent boundary |
+| *Risk-tier calibration* (§3.3) | "Impact classification scales rigor to risk" |
+| *Constitutional layer* (§3.5) | The shared-instructions and coding-guidelines configuration files (project-specific paths vary by deployment) |
+
+### B.4 Where the paper extends DevSquad and where DevSquad extends the paper
+
+The paper's framework offers three things DevSquad's documentation does not.
+
+1. The **archetype taxonomy** (§3.2) is a per-component classification with explicit oversight defaults that DevSquad's role-typing approximates but does not formalize.
+2. The **four-dimension orthogonality argument** (§3.3) decomposes DevSquad's single risk-scaling axis into independent levers a spec author can calibrate separately.
+3. The **Cat 1–Cat 7 fix-locus taxonomy** (§3.4), particularly **Cat 7 (Perceptual Failure)**, supplies a diagnostic structure for failure response that DevSquad's amendment process operates on but does not name.
+
+DevSquad's framework offers three things the paper's does not.
+
+1. A **complete operational cadence** — the eight-phase cycle with specific phase boundaries, artifact deliverables per phase, and review checkpoints. The paper is process-agnostic; DevSquad is process-prescriptive.
+2. A **specific multi-agent topology** — the conductor + 13 sub-agents with documented roles. The paper's archetype framework is an analysis tool; DevSquad ships a runnable implementation.
+3. A **convention for ADR-spec separation** — DevSquad's persistence rule (ADRs are durable beyond any single slice) is operationalized in its repository structure. The paper acknowledges this as the right pattern but does not prescribe an implementation.
+
+The two are complementary in production. Teams running DevSquad gain by adopting the paper's archetype, dimension, and fix-locus vocabulary for design conversations and post-incident analysis. Teams adopting the paper's framework gain a runnable cadence by composing it with DevSquad's eight phases. Neither replaces the other; the framework supplies the design vocabulary and the cadence supplies the operational rhythm.
+
+---
+
 *End of paper. Compile via Pandoc: `pandoc architecture-of-intent.md --citeproc --bibliography references.bib --output architecture-of-intent.pdf` (or `--to latex` for arXiv submission). See `paper/README.md` for full conversion instructions.*
