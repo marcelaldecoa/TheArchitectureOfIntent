@@ -67,7 +67,7 @@ Three places where the two frameworks pull in different directions:
 
 ## References
 
-- Microsoft. (2024–2025). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot.
+- Microsoft. (2026). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot.
 - Nygard, M. (2011). *Documenting Architecture Decisions.* — The original ADR format both frameworks inherit from.
 
 ---

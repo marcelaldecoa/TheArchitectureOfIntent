@@ -213,7 +213,7 @@ After applying this co-adoption pattern:
 
 ## References
 
-- Microsoft. (2024–2025). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot.
+- Microsoft. (2026). *DevSquad Copilot.* github.com/microsoft/devsquad-copilot.
 - Anthropic. (2024). *Building Effective Agents.* anthropic.com/research/building-effective-agents. — The framework family within which both DevSquad and this book sit.
 
 ---
