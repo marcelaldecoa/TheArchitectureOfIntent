@@ -1,0 +1,103 @@
+name: Build paper
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "paper/architecture-of-intent.md"
+      - "paper/references.bib"
+      - "paper/figures/**.svg"
+      - "paper/build_presentation.py"
+      - "paper/build_html_presentation.py"
+      - "paper/presentation_content.py"
+      - ".github/workflows/build-paper.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "build-paper"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pandoc + LaTeX + rsvg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-latex-recommended \
+            librsvg2-bin
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Python dependencies
+        run: pip install --quiet python-pptx Pillow
+
+      - name: Regenerate figure PNGs from SVGs
+        working-directory: paper
+        run: |
+          for svg in figures/*.svg; do
+            png="${svg%.svg}.png"
+            rsvg-convert --format=png --width=1800 "$svg" --output "$png"
+            echo "rendered $png"
+          done
+
+      - name: Build PPTX deck
+        working-directory: paper
+        run: python3 build_presentation.py
+
+      - name: Build HTML deck
+        working-directory: paper
+        run: python3 build_html_presentation.py
+
+      - name: Compile paper PDF
+        working-directory: paper
+        run: |
+          pandoc architecture-of-intent.md \
+            --citeproc \
+            --bibliography references.bib \
+            --pdf-engine=xelatex \
+            -V geometry:margin=1in \
+            -V fontsize=11pt \
+            --output architecture-of-intent.pdf
+
+      - name: Upload artifacts to workflow run
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper-artifacts
+          path: |
+            paper/architecture-of-intent.pdf
+            paper/architecture-of-intent.pptx
+            paper/architecture-of-intent.html
+            paper/figures/*.png
+          retention-days: 90
+
+      - name: Commit rebuilt artifacts back to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper/architecture-of-intent.pdf \
+                  paper/architecture-of-intent.pptx \
+                  paper/architecture-of-intent.html \
+                  paper/figures/*.png
+          if git diff --cached --quiet; then
+            echo "No artifact changes detected; nothing to commit."
+          else
+            git commit -m "Auto-rebuild paper artifacts [skip ci]
+
+Triggered by changes to paper sources on commit ${GITHUB_SHA}."
+            git push
+          fi
