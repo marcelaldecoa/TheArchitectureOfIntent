@@ -125,6 +125,18 @@ Pandoc `[@key]` inline citations. Bibliography in `paper/references.bib`. Pandoc
 ### "Structural fixes live in spec / manifest / CI / platform — never only in the prompt"
 This is a *load-bearing discipline* for the framework. When a Cat 1 / Cat 3 hybrid (e.g., the deleted-tests example) recurs, the fix is structural: NOT-authorized clauses, tool-manifest scope, CI guard. Prompt-level patches don't compound.
 
+### Deck / paper sync contract
+Both `paper/architecture-of-intent.md` (the paper) and `paper/presentation_content.py` (the teaching-deck source) reference a small set of load-bearing named facts: the five archetype names, the seven failure category names, the four Cat 7 sub-category names, the eight DevSquad phase names, and the "3 novel / 4 not-claimed" honest-accounting counts.
+
+These are checked by `paper/check-deck-sync.py`. The check runs in the "Compile paper & decks" GH Action *before* any build steps. Run it locally with `python3 paper/check-deck-sync.py` before committing paper or deck changes.
+
+If you intentionally change any of these named facts, update **all three** places:
+1. `paper/architecture-of-intent.md`
+2. `paper/presentation_content.py`
+3. `paper/check-deck-sync.py` — the `CANONICAL_*` lists
+
+The script does NOT enforce prose alignment — only named-fact alignment. Freeform deck narrative can differ from paper prose.
+
 ---
 
 ## mdBook gotchas

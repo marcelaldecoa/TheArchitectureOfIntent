@@ -49,6 +49,9 @@ jobs:
       - name: Install Python dependencies
         run: pip install --quiet python-pptx Pillow lxml
 
+      - name: Verify deck/paper sync
+        run: python3 paper/check-deck-sync.py
+
       - name: Regenerate figure PNGs from SVGs
         working-directory: paper
         run: |
