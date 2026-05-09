@@ -40,8 +40,18 @@ If you're trying to answer "how do we ship this agent without it doing something
 | **4. Oversight, Safety & Operations** | Proportional oversight, safety patterns, retry, observability, conformance testing |
 | **5. Ship** | Canary, rollback, versioning, governance cadence, signal metrics, intent review |
 | **6. Worked Pilots** | Two end-to-end examples: AI customer support, and a code-generation pipeline |
-| **Pattern Reference** | Coordination, state, deployment, advanced safety/testing patterns; code standards by language |
+| **Cross-Cutting Patterns** | Coordination and state patterns that span the framework (12 of ~50 patterns; the other 38 live alongside their parent chapters in Parts 3–5) |
+| **Repertoires & Reference** | Spec templates, archetype catalog, validation templates, code standards |
 | **Appendices** | Glossary, archetype card, MCP & SpecKit references, pattern index |
+
+## Companion paper and teaching deck
+
+Alongside the book, this repo also contains:
+
+- **The paper** — `paper/architecture-of-intent.pdf` (and `.md` source). The arXiv-format distillation of the book, ~15,000 words / 34 pages. Position-and-framework paper.
+- **A teaching deck** — `paper/architecture-of-intent.pptx` (PowerPoint) and `paper/architecture-of-intent.html` (self-contained browser deck). 19 slides built from a single source of truth.
+
+A GitHub Action ("Compile paper & decks") rebuilds all three artifacts when the paper sources change on `main`.
 
 ## Building the book
 
@@ -89,11 +99,20 @@ TheArchitectureOfIntent/
 │   ├── theory/               # Intent vs implementation, calibration, failure diagnosis
 │   ├── sdd/                  # Spec-driven development
 │   ├── agents/               # Agents, MCP, oversight
-│   ├── patterns/             # Pattern reference (capability, integration, coordination, ...)
+│   ├── patterns/             # ~50 pattern one-pagers (capability, integration, coordination, ...)
 │   ├── repertoires/          # Templates, archetype catalog, code standards
 │   ├── operating/            # Governance, metrics, intent review
-│   ├── examples/             # Two end-to-end worked pilots
-│   └── appendices/           # Glossary, archetype card, references
+│   ├── examples/             # End-to-end worked pilots
+│   └── appendices/           # Glossary, archetype card, references, pattern index
+├── paper/                    # Companion arXiv paper + teaching deck
+│   ├── architecture-of-intent.{md,pdf}    # Paper source + compiled PDF
+│   ├── architecture-of-intent.{pptx,html} # Teaching deck (PowerPoint + self-contained HTML)
+│   ├── presentation_content.py             # Single source of truth for both decks
+│   ├── build_{presentation,html_presentation}.py  # Deck builders
+│   ├── check-deck-sync.py                  # Drift detector between paper and deck
+│   ├── figures/                            # Figure SVGs + pre-rendered PNGs
+│   └── references.bib                      # Bibliography
+├── scripts/                  # Helper scripts (link checker, orphan checker)
 └── theme/                    # Custom CSS and zoom widget
 ```
 

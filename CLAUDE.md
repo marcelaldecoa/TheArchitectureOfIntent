@@ -59,17 +59,27 @@ When making future changes, preserve this accounting. Reviewers reward honest fr
 │   ├── operating/                     ← governance, metrics, evals, red-team, cost, telemetry, adoption, DevSquad mapping, co-adoption
 │   ├── examples/                      ← three worked pilots (customer support, code-gen pipeline, coding agent)
 │   └── appendices/                    ← glossary, pattern index, references, archetype card, model-tier card, MCP reference
-├── paper/                             ← the PAPER
-│   ├── architecture-of-intent.md      ← Pandoc Markdown source
-│   ├── architecture-of-intent.pdf     ← compiled artifact (committed for convenience)
+├── paper/                             ← the PAPER + companion DECKS
+│   ├── architecture-of-intent.md      ← Pandoc Markdown source for the paper
+│   ├── architecture-of-intent.pdf     ← compiled paper PDF (committed for convenience)
+│   ├── architecture-of-intent.pptx    ← teaching-deck PowerPoint (committed)
+│   ├── architecture-of-intent.html    ← teaching-deck self-contained HTML (committed)
 │   ├── references.bib                 ← BibTeX (~30 entries)
 │   ├── figures/
-│   │   ├── archetype-decision-tree.svg + .png   ← Figure 1
-│   │   └── four-dimensions-orthogonality.svg + .png  ← Figure 2
-│   └── README.md                      ← compile instructions
+│   │   ├── archetype-decision-tree.svg + .png      ← Figure 1
+│   │   └── four-dimensions-orthogonality.svg + .png ← Figure 2
+│   ├── presentation_content.py        ← single source of truth for both decks
+│   ├── build_presentation.py          ← builds the PPTX from presentation_content.py
+│   ├── build_html_presentation.py     ← builds the HTML deck from presentation_content.py
+│   ├── check-deck-sync.py             ← deck/paper sync check (see contract below)
+│   └── README.md                      ← paper + deck build instructions
 ├── scripts/                           ← helper scripts (link/orphan checkers)
 ├── theme/                             ← mdBook custom CSS/JS
-└── .github/workflows/                 ← deploy.yml publishes book to GitHub Pages on push to main
+└── .github/workflows/
+    ├── deploy.yml                     ← publishes book to GitHub Pages on push to main
+    └── build-paper.yml                ← "Compile paper & decks" — auto-rebuild artifacts
+                                          when paper sources change on main; opens
+                                          bot/paper-artifacts PR via peter-evans/create-pull-request
 ```
 
 ## Build & verification commands
@@ -105,6 +115,37 @@ mdbook serve --open    # live reload at localhost:3000
 ```
 
 GitHub Actions auto-publishes on push to `main` via `.github/workflows/deploy.yml`.
+
+### Build the teaching decks (PPTX + HTML)
+
+```bash
+python3 paper/build_presentation.py        # → paper/architecture-of-intent.pptx
+python3 paper/build_html_presentation.py   # → paper/architecture-of-intent.html
+```
+
+Both consume `paper/presentation_content.py` as their single source of truth. Edit slide text once, rerun both builders. Requires `python-pptx`, `Pillow`, and `lxml`.
+
+The HTML deck supports arrow-key navigation, an overview grid (`o`/`Esc`), fullscreen (`f`), and print-to-PDF (`p`). Both paper figures are embedded as inline SVG.
+
+### Check deck/paper sync
+
+```bash
+python3 paper/check-deck-sync.py
+```
+
+Verifies that the small set of load-bearing named facts (5 archetypes, 7 Cat names, 4 Cat 7 sub-categories, 8 DevSquad phases, 3-novel/4-not-claimed honest-accounting cardinality) match between paper source and deck source. Run before committing paper or deck changes. See "Deck / paper sync contract" below.
+
+### Auto-rebuild on main (`.github/workflows/build-paper.yml`)
+
+The "Compile paper & decks" workflow fires on push to `main` when any of these change:
+- `paper/architecture-of-intent.md`, `paper/references.bib`
+- `paper/figures/**.svg`
+- `paper/build_presentation.py`, `paper/build_html_presentation.py`, `paper/presentation_content.py`
+- `.github/workflows/build-paper.yml`
+
+It runs the sync check, regenerates figure PNGs, rebuilds the PPTX + HTML decks, recompiles the PDF, uploads everything as workflow artifacts (90-day retention), and opens (or updates) a single `bot/paper-artifacts` PR with the rebuilt artifacts via `peter-evans/create-pull-request@v7`. Uses `GITHUB_TOKEN` only — no PAT required. Loop-safety: trigger watches *source* paths only; the bot's commit only touches *artifact* paths, so it can't retrigger itself.
+
+Required runner packages (already in the workflow): `pandoc`, `texlive-xetex`, `texlive-fonts-recommended`, `texlive-latex-recommended`, `texlive-latex-extra`, `lmodern`, `librsvg2-bin`. The `lmodern` package is required separately on Ubuntu — `lmodern.sty` is not in `texlive-fonts-recommended` there.
 
 ---
 
@@ -206,6 +247,12 @@ The repo is `TheArchitectureOfIntent` (preserves the GitHub Pages URL). The book
 - **Position paper, not empirical:** the paper does not claim empirical validation at scale; §6 names this explicitly.
 - **arXiv first, workshop later:** the paper is sized for arXiv (no length limit). For workshop submission, a length-cut pass is needed (~34 pages now; most workshops cap at 10–12). Compression strategy documented in earlier PR descriptions.
 - **`--yolo`, comprehension checkpoint, config paths:** all *are* documented in DevSquad (just in the docs site, not the README). My earlier review dismissed several as unverified — that was wrong; PR #27 corrected. If you read these things in old session transcripts, the corrections are now in main.
+- **Teaching deck shipped (PR #33):** companion 19-slide deck for explaining the framework. Modern aesthetic — off-white + indigo + amber palette, asymmetric layouts, native python-pptx shapes for the data slides, paper figures embedded for the figure slides. Two outputs from one source: PPTX and self-contained HTML. The HTML deck is browser-navigable with keyboard shortcuts and prints to a 13.333×7.5" PDF.
+- **Paper figures redesigned (PR #33, #36):** Figure 1 (decision tree) — card-based layout with dark-navy archetype result cards, ORCHESTRATOR no longer wraps; Figure 2 (orthogonality plot) — tinted quadrants, white pill labels with leader lines, no overlap. Pill widths widened in #36 after a font-fallback caused "Autonomous coding agent (Devin-class)" to overflow. If you add long pill labels in future, give them ≥40px of margin so font fallbacks don't bite.
+- **Pattern Reference renamed → Cross-Cutting Patterns (PR #32):** the SUMMARY's Part 7 section was misleadingly named — it lists 12 of the 50 patterns (the cross-cutting coordination + state ones); the other 38 live inside Parts 3–5. The new name signals these are cross-cutting patterns, not "the patterns list." Updated in 7 files.
+- **Cat 7 backfilled into the book (PR #30):** the paper claimed novelty for a seven-category taxonomy but the book theory chapter still presented six. PR #30 added a full Cat 7 section to `src/theory/05-failure-as-design-signal.md` and updated 8 other book files from "six" to "seven." Architecture chapter's parallel four-dimensions framing was also disambiguated against the calibration-dials framing in the same PR.
+- **GH Action: "Compile paper & decks" (PR #34, #35, #37):** auto-rebuilds paper PDF, PPTX, HTML, and figure PNGs on `main` source changes. Direct push to `main` was the original design (PR #34) but failed at the push step; PR #35 switched to opening a `bot/paper-artifacts` PR via `peter-evans/create-pull-request@v7`, which works regardless of branch protection. PR #37 added `lmodern` and `texlive-latex-extra` to the apt install list (xelatex needed `lmodern.sty` which isn't in `texlive-fonts-recommended` on Ubuntu).
+- **Deck/paper sync contract (PR #38):** added `paper/check-deck-sync.py` to enforce that load-bearing named facts (archetypes, Cat names, Cat 7 subs, DevSquad phases, honest-accounting counts) stay aligned between paper and deck. Runs in the GH workflow before any build step. Three-place contract documented below.
 
 ---
 
@@ -225,6 +272,8 @@ The repo is `TheArchitectureOfIntent` (preserves the GitHub Pages URL). The book
 ### General
 - **Bulk-delete merged remote branches** — sandbox can't do remote ref deletion; needs the GitHub UI.
 - **Optional CI workflow** — currently `deploy.yml` runs `mdbook build` only on push to main, not on PRs. A PR-time mdBook build check would catch SUMMARY parse errors before merge.
+- **Teaching deck refresh cadence** — when the paper acquires new claims or examples, walk the deck slide-by-slide to keep it representative. The sync check covers the named facts; prose alignment is on you.
+- **Bot/paper-artifacts PR queue** — the auto-PR keeps reusing the same `bot/paper-artifacts` branch, so it shouldn't pile up. If you don't merge it for a long time and it goes stale, just close it; the bot reopens on the next source change.
 
 ---
 
@@ -238,7 +287,12 @@ When opening this repo in a new Claude session:
    ```bash
    python3 scripts/check-internal-links.py && python3 scripts/check-orphans.py
    ```
-4. **Branch as `claude/<descriptive-name>`** for any non-trivial change.
-5. **One PR per pass.** Verbose PR descriptions; honest accounting.
-6. **For paper changes:** verify the PDF still compiles cleanly (`pandoc` command above) before committing the .md so the committed PDF stays current.
-7. **For DevSquad-related changes:** verify against the docs site, not just the README. Always.
+4. **For deck or paper changes**, run the sync check:
+   ```bash
+   python3 paper/check-deck-sync.py
+   ```
+5. **Branch as `claude/<descriptive-name>`** for any non-trivial change.
+6. **One PR per pass.** Verbose PR descriptions; honest accounting.
+7. **For paper changes:** verify the PDF still compiles cleanly (`pandoc` command above) before committing the .md so the committed PDF stays current. The "Compile paper & decks" workflow will rebuild on merge to main, but local verification catches errors faster.
+8. **For deck changes:** edit `paper/presentation_content.py` (the shared content), then rebuild both decks via `build_presentation.py` and `build_html_presentation.py`.
+9. **For DevSquad-related changes:** verify against the docs site, not just the README. Always.
