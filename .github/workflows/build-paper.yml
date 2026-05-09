@@ -1,4 +1,4 @@
-name: Build paper
+name: Compile paper & decks
 
 on:
   push:
@@ -16,9 +16,10 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
-  group: "build-paper"
+  group: "compile-paper"
   cancel-in-progress: false
 
 jobs:
@@ -44,7 +45,7 @@ jobs:
           python-version: "3.x"
 
       - name: Install Python dependencies
-        run: pip install --quiet python-pptx Pillow
+        run: pip install --quiet python-pptx Pillow lxml
 
       - name: Regenerate figure PNGs from SVGs
         working-directory: paper
@@ -85,19 +86,30 @@ jobs:
             paper/figures/*.png
           retention-days: 90
 
-      - name: Commit rebuilt artifacts back to main
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add paper/architecture-of-intent.pdf \
-                  paper/architecture-of-intent.pptx \
-                  paper/architecture-of-intent.html \
-                  paper/figures/*.png
-          if git diff --cached --quiet; then
-            echo "No artifact changes detected; nothing to commit."
-          else
-            git commit -m "Auto-rebuild paper artifacts [skip ci]
+      - name: Open or update PR with rebuilt artifacts
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: bot/paper-artifacts
+          base: main
+          add-paths: |
+            paper/architecture-of-intent.pdf
+            paper/architecture-of-intent.pptx
+            paper/architecture-of-intent.html
+            paper/figures/*.png
+          commit-message: |
+            Auto-rebuild paper artifacts
 
-Triggered by changes to paper sources on commit ${GITHUB_SHA}."
-            git push
-          fi
+            Triggered by ${{ github.sha }}.
+          title: "Auto-rebuild paper artifacts"
+          body: |
+            Rebuilt by the **Compile paper & decks** workflow after the source change in `${{ github.sha }}`.
+
+            Includes the regenerated paper PDF, the PPTX deck, the HTML deck, and any updated figure PNGs.
+
+            Loop-safety: the trigger filter on the workflow only watches source paths, so merging this PR will not retrigger the workflow.
+
+            Close this PR if you don't want the rebuilt artifacts; the bot will reopen it on the next source change.
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          delete-branch: true
