@@ -197,7 +197,7 @@ After applying this pattern:
 
 **This pattern enables:**
 - [Proportional Oversight](06-human-oversight-models.md)
-- Standards and Repertoires *(the Pattern Reference)*
+- Standards and Repertoires *(the Cross-Cutting Patterns section)*
 - The organizational skills library as a governance artifact
 
 ---
