@@ -1,107 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 880" font-family="Georgia, 'Times New Roman', serif">
-  <style>
-    .q-box { fill: #f8fafc; stroke: #1e293b; stroke-width: 1.5; }
-    .q-text { fill: #0f172a; font-size: 13px; }
-    .arrow { fill: none; stroke: #475569; stroke-width: 1.5; marker-end: url(#arrow); }
-    .branch-yes { fill: #166534; font-size: 12px; font-weight: bold; }
-    .branch-no { fill: #991b1b; font-size: 12px; font-weight: bold; }
-    .leaf { fill: #1e3a8a; stroke: #1e3a8a; stroke-width: 1.5; }
-    .leaf-text { fill: white; font-size: 14px; font-weight: bold; }
-    .qnum { fill: #0369a1; font-size: 11px; font-weight: bold; letter-spacing: 1px; }
-    .title { fill: #0f172a; font-size: 16px; font-weight: bold; }
-    .caption { fill: #475569; font-size: 11px; font-style: italic; }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 780" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    <!-- Subtle drop shadow for cards -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <marker id="arrowHead" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#475569"/>
     </marker>
   </defs>
 
-  <!-- Title -->
-  <text x="360" y="30" text-anchor="middle" class="title">The Archetype Selection Tree</text>
-  <text x="360" y="50" text-anchor="middle" class="caption">Apply questions in order; stop at the first match.</text>
+  <!-- Background -->
+  <rect width="1100" height="780" fill="#FAFAF7"/>
 
-  <!-- Q1 -->
-  <rect x="120" y="80" width="480" height="64" rx="4" class="q-box"/>
-  <text x="135" y="100" class="qnum">QUESTION 1</text>
-  <text x="135" y="120" class="q-text">Does this system take any consequential action — writing data,</text>
-  <text x="135" y="136" class="q-text">sending messages, calling APIs — without a human between its output and the consequence?</text>
+  <!-- Title -->
+  <text x="550" y="44" text-anchor="middle" font-size="22" font-weight="700"
+        fill="#0F1729" letter-spacing="0.5">The Archetype Selection Tree</text>
+  <text x="550" y="68" text-anchor="middle" font-size="13" font-style="italic"
+        fill="#64748B">Apply each question in order. Stop at the first match.</text>
+
+  <!-- ============================================================ -->
+  <!-- Question 1 -->
+  <g>
+    <rect x="280" y="110" width="540" height="70" rx="10"
+          fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"
+          filter="url(#cardShadow)"/>
+    <text x="300" y="138" font-size="11" font-weight="700"
+          fill="#6366F1" letter-spacing="1.5">QUESTION 1</text>
+    <text x="300" y="161" font-size="13.5" fill="#0F1729">
+      Does the system take any consequential action without a human between
+    </text>
+    <text x="300" y="177" font-size="13.5" fill="#0F1729">
+      its output and the consequence?
+    </text>
+  </g>
 
   <!-- Q1 NO branch -->
-  <line x1="120" y1="112" x2="60" y2="112" class="arrow"/>
-  <line x1="60" y1="112" x2="60" y2="180" class="arrow"/>
-  <text x="80" y="106" class="branch-no">NO</text>
-  <rect x="20" y="180" width="80" height="40" rx="4" class="leaf"/>
-  <text x="60" y="205" text-anchor="middle" class="leaf-text">ADVISOR</text>
+  <path d="M 280 145 L 195 145" stroke="#475569" stroke-width="1.5"
+        fill="none" marker-end="url(#arrowHead)"/>
+  <text x="237" y="138" text-anchor="middle" font-size="11" font-weight="700"
+        fill="#DC2626" letter-spacing="0.8">NO</text>
+  <g>
+    <rect x="60" y="118" width="135" height="54" rx="8"
+          fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="127" y="142" text-anchor="middle" font-size="11" font-weight="700"
+          fill="#94A3B8" letter-spacing="1.2">ARCHETYPE</text>
+    <text x="127" y="161" text-anchor="middle" font-size="15" font-weight="700"
+          fill="#FFFFFF">Advisor</text>
+  </g>
 
   <!-- Q1 YES → Q2 -->
-  <line x1="360" y1="144" x2="360" y2="190" class="arrow"/>
-  <text x="370" y="170" class="branch-yes">YES</text>
+  <path d="M 550 180 L 550 220" stroke="#475569" stroke-width="1.5"
+        fill="none" marker-end="url(#arrowHead)"/>
+  <text x="565" y="205" font-size="11" font-weight="700"
+        fill="#059669" letter-spacing="0.8">YES</text>
 
-  <!-- Q2 -->
-  <rect x="120" y="190" width="480" height="64" rx="4" class="q-box"/>
-  <text x="135" y="210" class="qnum">QUESTION 2</text>
-  <text x="135" y="230" class="q-text">Is the system's PRIMARY purpose to protect a boundary, enforce a</text>
-  <text x="135" y="246" class="q-text">constraint, or prevent a violation — rather than accomplish a positive goal?</text>
+  <!-- ============================================================ -->
+  <!-- Question 2 -->
+  <g>
+    <rect x="280" y="225" width="540" height="70" rx="10"
+          fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"
+          filter="url(#cardShadow)"/>
+    <text x="300" y="253" font-size="11" font-weight="700"
+          fill="#6366F1" letter-spacing="1.5">QUESTION 2</text>
+    <text x="300" y="276" font-size="13.5" fill="#0F1729">
+      Is the system's primary purpose to protect a boundary, enforce a constraint,
+    </text>
+    <text x="300" y="292" font-size="13.5" fill="#0F1729">
+      or prevent a violation — rather than accomplish a positive goal?
+    </text>
+  </g>
 
   <!-- Q2 YES branch -->
-  <line x1="120" y1="222" x2="60" y2="222" class="arrow"/>
-  <line x1="60" y1="222" x2="60" y2="290" class="arrow"/>
-  <text x="80" y="216" class="branch-yes">YES</text>
-  <rect x="20" y="290" width="80" height="40" rx="4" class="leaf"/>
-  <text x="60" y="315" text-anchor="middle" class="leaf-text">GUARDIAN</text>
+  <path d="M 280 260 L 195 260" stroke="#475569" stroke-width="1.5"
+        fill="none" marker-end="url(#arrowHead)"/>
+  <text x="237" y="253" text-anchor="middle" font-size="11" font-weight="700"
+        fill="#059669" letter-spacing="0.8">YES</text>
+  <g>
+    <rect x="60" y="233" width="135" height="54" rx="8"
+          fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="127" y="257" text-anchor="middle" font-size="11" font-weight="700"
+          fill="#94A3B8" letter-spacing="1.2">ARCHETYPE</text>
+    <text x="127" y="276" text-anchor="middle" font-size="15" font-weight="700"
+          fill="#FFFFFF">Guardian</text>
+  </g>
 
   <!-- Q2 NO → Q3 -->
-  <line x1="360" y1="254" x2="360" y2="300" class="arrow"/>
-  <text x="370" y="280" class="branch-no">NO</text>
+  <path d="M 550 295 L 550 335" stroke="#475569" stroke-width="1.5"
+        fill="none" marker-end="url(#arrowHead)"/>
+  <text x="565" y="320" font-size="11" font-weight="700"
+        fill="#DC2626" letter-spacing="0.8">NO</text>
 
-  <!-- Q3 -->
-  <rect x="120" y="300" width="480" height="64" rx="4" class="q-box"/>
-  <text x="135" y="320" class="qnum">QUESTION 3</text>
-  <text x="135" y="340" class="q-text">Does this system's work fundamentally involve directing, coordinating, or</text>
-  <text x="135" y="356" class="q-text">allocating work across OTHER agents, tools, or services — rather than doing the work itself?</text>
+  <!-- ============================================================ -->
+  <!-- Question 3 -->
+  <g>
+    <rect x="280" y="340" width="540" height="70" rx="10"
+          fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"
+          filter="url(#cardShadow)"/>
+    <text x="300" y="368" font-size="11" font-weight="700"
+          fill="#6366F1" letter-spacing="1.5">QUESTION 3</text>
+    <text x="300" y="391" font-size="13.5" fill="#0F1729">
+      Does the work fundamentally involve directing, coordinating, or allocating
+    </text>
+    <text x="300" y="407" font-size="13.5" fill="#0F1729">
+      across other agents — rather than doing the work itself?
+    </text>
+  </g>
 
-  <!-- Q3 YES branch -->
-  <line x1="600" y1="332" x2="670" y2="332" class="arrow"/>
-  <line x1="670" y1="332" x2="670" y2="400" class="arrow"/>
-  <text x="635" y="326" class="branch-yes">YES</text>
-  <rect x="620" y="400" width="100" height="40" rx="4" class="leaf"/>
-  <text x="670" y="421" text-anchor="middle" font-size="11" font-weight="bold" fill="white">ORCHESTRA-</text>
-  <text x="670" y="434" text-anchor="middle" font-size="11" font-weight="bold" fill="white">TOR</text>
+  <!-- Q3 YES branch (right) -->
+  <path d="M 820 375 L 905 375" stroke="#475569" stroke-width="1.5"
+        fill="none" marker-end="url(#arrowHead)"/>
+  <text x="862" y="368" text-anchor="middle" font-size="11" font-weight="700"
+        fill="#059669" letter-spacing="0.8">YES</text>
+  <g>
+    <rect x="905" y="348" width="135" height="54" rx="8"
+          fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="972" y="372" text-anchor="middle" font-size="11" font-weight="700"
+          fill="#94A3B8" letter-spacing="1.2">ARCHETYPE</text>
+    <text x="972" y="391" text-anchor="middle" font-size="15" font-weight="700"
+          fill="#FFFFFF">Orchestrator</text>
+  </g>
 
   <!-- Q3 NO → Q4 -->
-  <line x1="360" y1="364" x2="360" y2="410" class="arrow"/>
-  <text x="370" y="390" class="branch-no">NO</text>
+  <path d="M 550 410 L 550 450" stroke="#475569" stroke-width="1.5"
+        fill="none" marker-end="url(#arrowHead)"/>
+  <text x="565" y="435" font-size="11" font-weight="700"
+        fill="#DC2626" letter-spacing="0.8">NO</text>
 
-  <!-- Q4 -->
-  <rect x="120" y="410" width="480" height="64" rx="4" class="q-box"/>
-  <text x="135" y="430" class="qnum">QUESTION 4</text>
-  <text x="135" y="450" class="q-text">Is this system's primary output a synthesized artifact — combining or</text>
-  <text x="135" y="466" class="q-text">distilling multiple inputs into a coherent whole that did not exist before?</text>
+  <!-- ============================================================ -->
+  <!-- Question 4 -->
+  <g>
+    <rect x="280" y="455" width="540" height="70" rx="10"
+          fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"
+          filter="url(#cardShadow)"/>
+    <text x="300" y="483" font-size="11" font-weight="700"
+          fill="#6366F1" letter-spacing="1.5">QUESTION 4</text>
+    <text x="300" y="506" font-size="13.5" fill="#0F1729">
+      Is the primary output a synthesized artifact — combining or distilling
+    </text>
+    <text x="300" y="522" font-size="13.5" fill="#0F1729">
+      multiple inputs into a coherent whole that did not exist before?
+    </text>
+  </g>
 
   <!-- Q4 YES branch -->
-  <line x1="120" y1="442" x2="60" y2="442" class="arrow"/>
-  <line x1="60" y1="442" x2="60" y2="510" class="arrow"/>
-  <text x="80" y="436" class="branch-yes">YES</text>
-  <rect x="20" y="510" width="100" height="40" rx="4" class="leaf"/>
-  <text x="70" y="535" text-anchor="middle" class="leaf-text">SYNTHESIZER</text>
+  <path d="M 280 490 L 195 490" stroke="#475569" stroke-width="1.5"
+        fill="none" marker-end="url(#arrowHead)"/>
+  <text x="237" y="483" text-anchor="middle" font-size="11" font-weight="700"
+        fill="#059669" letter-spacing="0.8">YES</text>
+  <g>
+    <rect x="60" y="463" width="135" height="54" rx="8"
+          fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="127" y="487" text-anchor="middle" font-size="11" font-weight="700"
+          fill="#94A3B8" letter-spacing="1.2">ARCHETYPE</text>
+    <text x="127" y="506" text-anchor="middle" font-size="15" font-weight="700"
+          fill="#FFFFFF">Synthesizer</text>
+  </g>
 
-  <!-- Q4 NO → EXECUTOR (default) -->
-  <line x1="360" y1="474" x2="360" y2="520" class="arrow"/>
-  <text x="370" y="500" class="branch-no">NO</text>
-  <rect x="320" y="520" width="80" height="40" rx="4" class="leaf"/>
-  <text x="360" y="545" text-anchor="middle" class="leaf-text">EXECUTOR</text>
+  <!-- Q4 NO → EXECUTOR -->
+  <path d="M 550 525 L 550 565" stroke="#475569" stroke-width="1.5"
+        fill="none" marker-end="url(#arrowHead)"/>
+  <text x="565" y="550" font-size="11" font-weight="700"
+        fill="#DC2626" letter-spacing="0.8">NO</text>
+  <g>
+    <rect x="482" y="568" width="135" height="54" rx="8"
+          fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="549" y="592" text-anchor="middle" font-size="11" font-weight="700"
+          fill="#94A3B8" letter-spacing="1.2">DEFAULT</text>
+    <text x="549" y="611" text-anchor="middle" font-size="15" font-weight="700"
+          fill="#FFFFFF">Executor</text>
+  </g>
 
-  <!-- Risk override note -->
-  <rect x="60" y="610" width="600" height="100" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="80" y="635" font-size="12px" font-weight="bold" fill="#78350f">RISK OVERRIDE</text>
-  <text x="80" y="657" font-size="12px" fill="#78350f">If the system's actions touch high-consequence domains (irreversible state, regulated data,</text>
-  <text x="80" y="673" font-size="12px" fill="#78350f">safety-critical control), elevate to the next-most-restrictive archetype regardless of the</text>
-  <text x="80" y="689" font-size="12px" fill="#78350f">tree's answer. The override path: ADVISOR &lt; GUARDIAN &lt; SYNTHESIZER &lt; EXECUTOR &lt; ORCHESTRATOR.</text>
+  <!-- ============================================================ -->
+  <!-- Risk override -->
+  <g>
+    <rect x="60" y="660" width="980" height="80" rx="10"
+          fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5"/>
+    <circle cx="95" cy="700" r="14" fill="#F59E0B"/>
+    <text x="95" y="706" text-anchor="middle" font-size="14" font-weight="700"
+          fill="#FFFFFF">!</text>
+    <text x="125" y="688" font-size="12" font-weight="700"
+          fill="#92400E" letter-spacing="1.2">RISK OVERRIDE</text>
+    <text x="125" y="710" font-size="12.5" fill="#78350F">
+      If actions touch high-consequence domains (irreversible state, regulated data, safety-critical control),
+    </text>
+    <text x="125" y="726" font-size="12.5" fill="#78350F">
+      elevate to the next-most-restrictive archetype:  Advisor &lt; Guardian &lt; Synthesizer &lt; Executor &lt; Orchestrator.
+    </text>
+  </g>
 
   <!-- Caption -->
-  <text x="360" y="755" text-anchor="middle" class="caption">Figure 1: Decision tree for selecting one of the five canonical archetypes.</text>
-  <text x="360" y="772" text-anchor="middle" class="caption">Composition is permitted: a single deployment may host multiple archetypes (e.g., an</text>
-  <text x="360" y="788" text-anchor="middle" class="caption">Orchestrator coordinating Executors, with a Guardian validating each Executor's output).</text>
+  <text x="550" y="765" text-anchor="middle" font-size="11" font-style="italic"
+        fill="#64748B">Figure 1. Composition is permitted: a deployment may host multiple archetypes (e.g., an Orchestrator coordinating Executors with a Guardian validating each Executor's output).</text>
 </svg>
