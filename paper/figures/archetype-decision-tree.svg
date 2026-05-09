@@ -63,12 +63,12 @@
   <text x="135" y="356" class="q-text">allocating work across OTHER agents, tools, or services — rather than doing the work itself?</text>
 
   <!-- Q3 YES branch -->
-  <line x1="600" y1="332" x2="640" y2="332" class="arrow"/>
-  <line x1="640" y1="332" x2="640" y2="400" class="arrow"/>
-  <text x="620" y="326" class="branch-yes">YES</text>
-  <rect x="590" y="400" width="100" height="40" rx="4" class="leaf"/>
-  <text x="640" y="421" text-anchor="middle" font-size="11" font-weight="bold" fill="white">ORCHESTRA-</text>
-  <text x="640" y="434" text-anchor="middle" font-size="11" font-weight="bold" fill="white">TOR</text>
+  <line x1="600" y1="332" x2="670" y2="332" class="arrow"/>
+  <line x1="670" y1="332" x2="670" y2="400" class="arrow"/>
+  <text x="635" y="326" class="branch-yes">YES</text>
+  <rect x="620" y="400" width="100" height="40" rx="4" class="leaf"/>
+  <text x="670" y="421" text-anchor="middle" font-size="11" font-weight="bold" fill="white">ORCHESTRA-</text>
+  <text x="670" y="434" text-anchor="middle" font-size="11" font-weight="bold" fill="white">TOR</text>
 
   <!-- Q3 NO → Q4 -->
   <line x1="360" y1="364" x2="360" y2="410" class="arrow"/>

@@ -52,7 +52,7 @@ Specifically, the book gives you:
 - **Five archetypes** — Advisor, Executor, Guardian, Synthesizer, Orchestrator — that pre-commit a system to a category before any specific behavior is designed.
 - **A canonical spec template** that the agent executes against and humans review against.
 - **Four oversight models** matched to agency level and reversibility.
-- **A failure taxonomy** with six categories and a diagnostic protocol that lets you fix what actually broke instead of patching the output.
+- **A failure taxonomy** with seven categories — six common to text-based agents plus a seventh for perceiving-then-acting systems — and a diagnostic protocol that lets you fix what actually broke instead of patching the output.
 - **Four signal metrics** to tell you whether your pilot is healthy.
 - **Two worked end-to-end pilots** to calibrate against.
 
