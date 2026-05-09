@@ -18,7 +18,7 @@ This book is structured as a **field guide**, organized in the order in which th
 | **5. Ship** | Canary, rollback, spec versioning, governance cadence, the four signal metrics, intent review. |
 | **6. Worked Pilots** | Two end-to-end examples calibrated against the framework. |
 
-After Part 6 the book becomes reference material: a flat **Pattern Reference** for the patterns you'll consult once your pilot is running, code standards by language, and **Appendices** (glossary, archetype card, quick references, pattern index).
+After Part 6 the book becomes reference material: a flat **Cross-Cutting Patterns** section for the coordination and state patterns you'll consult once your pilot is running, code standards by language, and **Appendices** (glossary, archetype card, quick references, pattern index). Most of the framework's patterns live inside Parts 3–5 alongside the chapters they relate to; this section gathers the cross-cutting ones that don't tie to a specific archetype or agent class.
 
 ---
 
@@ -58,7 +58,7 @@ Some chapters also include code examples, spec fragments, or named anti-patterns
 
 ## About the code
 
-Code in this book is **authoritative by intent, not by completeness**. Snippets are written to the patterns described in the Pattern Reference and code standards, and are meant to anchor agent behavior — structures that can be extended, not copied verbatim.
+Code in this book is **authoritative by intent, not by completeness**. Snippets are written to the patterns described in the Cross-Cutting Patterns section and code standards, and are meant to anchor agent behavior — structures that can be extended, not copied verbatim.
 
 Languages covered: C# / .NET, TypeScript / Node, Python, REST API design, infrastructure as code.
 

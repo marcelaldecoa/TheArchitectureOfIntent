@@ -189,9 +189,9 @@ This index lists every chapter and pattern in the book by part, by category, and
 
 ---
 
-## Pattern Reference
+## Cross-Cutting Patterns
 
-*Patterns to consult once your pilot is running.*
+*Coordination and state patterns to consult once your pilot is running. Most patterns in the book live inside Parts 3–5 alongside their parent chapters; this section gathers the cross-cutting ones.*
 
 ### Coordination
 

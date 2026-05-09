@@ -95,7 +95,7 @@ must include an explicit Archetype section in their spec.
 
 ## Standards That Apply to All Generated Code
 
-- [Link to language-specific code standards in the Pattern Reference]
+- [Link to language-specific code standards in the Cross-Cutting Patterns section]
 - Test coverage requirement: all acceptance criteria must have tests.
 - Error handling: structured error types only; no untyped exceptions.
 ```

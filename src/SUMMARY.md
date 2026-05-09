@@ -185,7 +185,7 @@
 
 ---
 
-# Pattern Reference
+# Cross-Cutting Patterns
 
 *Patterns to consult once your pilot is running. Browse by problem, not in sequence. For human-shaped coordination patterns (gates, retry, escalation), see Part 4 — Oversight.*
 

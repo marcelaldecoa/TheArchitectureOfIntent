@@ -42,7 +42,7 @@ It is also useful for:
 
 - **Architects and principal engineers** responsible for the structural integrity of systems that agents now help build. Parts 1, 4, and 5 are most relevant.
 - **Engineering managers** trying to understand what their teams are actually doing when they "use AI." The Prologue and Part 1 give you the vocabulary; Part 5 gives you what to ask for in reviews.
-- **Platform teams** building shared agent infrastructure (MCP servers, spec templates, archetype catalogs). Parts 3, 4, and the Pattern Reference are the spine of your platform.
+- **Platform teams** building shared agent infrastructure (MCP servers, spec templates, archetype catalogs). Parts 3, 4, and the Cross-Cutting Patterns section are the spine of your platform.
 
 This book is **not** a tutorial on a specific AI tool, a survey of the model landscape, or a strategy document about whether to adopt AI. It assumes you've already decided to ship something with agents and now need to do it without regret.
 

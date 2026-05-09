@@ -170,7 +170,7 @@ After applying this pattern:
 
 ---
 
-*This concludes the Pattern Reference.*
+*This concludes the Cross-Cutting Patterns section.*
 
 *Continue to [Proportional Governance](../operating/04-governance.md)*
 
