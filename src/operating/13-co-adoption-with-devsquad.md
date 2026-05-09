@@ -31,14 +31,17 @@ The right move is *additive selective adoption* — keep DevSquad's cadence, add
 If you are a DevSquad-running team, you already have:
 
 - A delivery cadence (the 8 phases)
-- Living specs with formal amendment
-- ADRs as a first-class durable artifact
-- Risk-tiered human-in-the-loop (low / medium / high impact)
-- Principle of least privilege per agent
-- Context isolation across sub-agents
+- Living specs with formal amendment ("specification mismatch is a first-class event")
+- ADRs as a first-class durable artifact, persisted beyond any single slice
+- Risk-tiered human-in-the-loop (low / medium / high impact) with named ceremony per tier
+- Comprehension checkpoint after medium- and high-impact implementations
+- Reasoning log artifact ("every decision recorded with principle, alternatives, justification, and confidence level")
+- Principle of least privilege per agent (granular MCP tool scopes; first-party servers only)
+- Context isolation across sub-agents (coordinator agents delegate to internal workers in private context windows)
 - TDD-first implementation
-- Independent review
+- Independent review (in a fresh sub-agent context)
 - Continuous refinement between sprints
+- A 20-skill catalog with semantic activation (skills load on-demand based on description match, not explicit invocation)
 
 These cover roughly 60–70% of the operational discipline this book teaches. You don't need this book to learn them. You may need this book for the parts that follow.
 
@@ -153,6 +156,10 @@ For DevSquad-fluent readers reading this book, the term mappings:
 | Independent review | [Intent Review Before Output Review](05-reviewing-intent.md) |
 | Continuous refinement | [Four Signal Metrics](06-metrics.md) trends → constraint library updates |
 | TDD-first | Level 2 of the eval stack ([Evals and Benchmarks](07-evals-and-benchmarks.md)) |
+| Comprehension checkpoint | Output Gate (Oversight Model C) calibrated to action class — a structural mid-flight checkpoint distinct from output review |
+| Reasoning log | Spec evolution log entry + ADR, with the "principle, alternatives, justification, confidence" fields aligning to the canonical ADR template |
+| Loop-over-ladder framing | Living-spec discipline ([The Living Spec](../sdd/06-living-specs.md)) — specs evolve when implementation reveals their incompleteness |
+| Skills catalog (semantic activation) | [Portable Domain Knowledge](../agents/05-agent-skills.md) — Anthropic Skills as deployable artifacts |
 | Phase (1–8) | Mapped explicitly in [DevSquad Mapping](12-devsquad-mapping.md) |
 
 ---
@@ -163,7 +170,7 @@ For a team already running DevSquad, here is a concrete sequence:
 
 **Week 1:**
 - Read [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) and [The Archetype Selection Tree](../architecture/04-decision-tree.md). Apply to your existing agents — record the archetype for each.
-- Read [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md). Adopt the six-category taxonomy in your next Phase 6 review.
+- Read [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md). Adopt the seven-category fix-locus taxonomy (Cat 1–7, including Cat 7 Perceptual for any computer-use deployments) in your next Phase 6 review.
 
 **Week 2:**
 - Read [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md). Run the lethal-trifecta question against every agent. Record findings as ADRs.
