@@ -37,6 +37,8 @@ jobs:
             texlive-xetex \
             texlive-fonts-recommended \
             texlive-latex-recommended \
+            texlive-latex-extra \
+            lmodern \
             librsvg2-bin
 
       - name: Set up Python
