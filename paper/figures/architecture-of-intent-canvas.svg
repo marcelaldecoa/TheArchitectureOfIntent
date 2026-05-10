@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1180"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1330"
      font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
   <defs>
     <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
@@ -23,13 +23,13 @@
   </defs>
 
   <!-- Background -->
-  <rect width="1600" height="1180" fill="#FAFAF7"/>
+  <rect width="1600" height="1330" fill="#FAFAF7"/>
 
   <!-- ============ TITLE STRIP ============ -->
   <text x="800" y="48" text-anchor="middle" font-size="28" font-weight="700"
         fill="#0F1729" letter-spacing="0.3">The Architecture of Intent — On One Page</text>
   <text x="800" y="76" text-anchor="middle" font-size="14" font-style="italic"
-        fill="#64748B">Three questions, four activities, one canvas. Every load-bearing list in the framework, in the place it does work.</text>
+        fill="#64748B">Three questions, five activities, one canvas. Every load-bearing list in the framework, in the place it does work.</text>
 
   <!-- ============ THREE QUESTIONS ============ -->
   <g>
@@ -61,8 +61,8 @@
   <line x1="60" y1="200" x2="1540" y2="200" stroke="#E5E7EB" stroke-width="1"/>
 
   <!-- ============ SPINE BACKGROUND ============ -->
-  <rect x="0" y="215" width="140" height="925" fill="#F1F5F9"/>
-  <rect x="1360" y="215" width="240" height="925" fill="#F8FAFC"/>
+  <rect x="0" y="215" width="140" height="1075" fill="#F1F5F9"/>
+  <rect x="1360" y="215" width="240" height="1075" fill="#F8FAFC"/>
 
   <!-- ============ ACTIVITY 1: FRAME ============ -->
   <text x="70" y="248" text-anchor="middle" font-size="11" font-weight="700"
@@ -445,10 +445,10 @@
 
   <!-- ============ RIGHT RAIL: 4 METRICS + LOOP ============ -->
   <text x="1480" y="232" text-anchor="middle" font-size="11" font-weight="700"
-        fill="#6366F1" letter-spacing="1.8">CLOSED LOOP</text>
+        fill="#6366F1" letter-spacing="1.8">SIGNALS</text>
   <text x="1480" y="250" text-anchor="middle" font-size="13" font-weight="700"
         fill="#0F1729">Four signal metrics</text>
-  <text x="1480" y="266" text-anchor="middle" font-size="10" fill="#64748B">feed back to FRAME and SPECIFY</text>
+  <text x="1480" y="266" text-anchor="middle" font-size="10" fill="#64748B">drive the EVOLVE loop</text>
 
   <!-- Metric 1: spec gap rate -->
   <g>
@@ -497,23 +497,74 @@
     <text x="1396" y="700" font-size="10" fill="#475569">Should fall as spec matures.</text>
   </g>
 
-  <!-- Loop annotation -->
-  <text x="1480" y="738" text-anchor="middle" font-size="11" font-style="italic" fill="#6366F1">↺ feed back into the next intent</text>
+  <!-- Loop annotation: signals descend into EVOLVE -->
+  <text x="1480" y="738" text-anchor="middle" font-size="11" font-style="italic" fill="#6366F1">↓ into EVOLVE</text>
 
-  <!-- Curved loop arrow: exit the rail leftward below the metrics, dip under VALIDATE, ascend the spine, and arrive at FRAME -->
+  <!-- ============ ACTIVITY 5: EVOLVE ============ -->
+  <text x="70" y="1140" text-anchor="middle" font-size="11" font-weight="700"
+        fill="#6366F1" letter-spacing="2">ACTIVITY 5</text>
+  <text x="70" y="1172" text-anchor="middle" font-size="22" font-weight="700"
+        fill="#0F1729" letter-spacing="0.5">EVOLVE</text>
+  <text x="70" y="1196" text-anchor="middle" font-size="11" font-style="italic" fill="#64748B">Close the loop</text>
+  <text x="70" y="1216" text-anchor="middle" font-size="10" fill="#64748B">Each diagnosed failure</text>
+  <text x="70" y="1230" text-anchor="middle" font-size="10" fill="#64748B">becomes a structural change.</text>
+
+  <text x="160" y="1128" font-size="11" font-weight="700"
+        fill="#6366F1" letter-spacing="1.5">STRUCTURAL AMENDMENTS — production findings → spec / manifest / CI / framework version (never only the prompt)</text>
+
+  <!-- 4 Evolve chips: w=280, gap=20 → 4×280 + 3×20 = 1180. positions x: 160, 460, 760, 1060. y=1140-1245 (h=105) -->
+  <g>
+    <rect x="160" y="1140" width="280" height="105" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="160" y="1140" width="6" height="105" fill="#6366F1"/>
+    <text x="180" y="1162" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.5">PRACTICE 1</text>
+    <text x="180" y="1185" font-size="15" font-weight="700" fill="#0F1729">Closed Loop</text>
+    <text x="180" y="1206" font-size="10.5" fill="#475569">Trace · Categorize · Fix-locus ·</text>
+    <text x="180" y="1220" font-size="10.5" fill="#475569">Amend. Cat 1–7 names which</text>
+    <text x="180" y="1234" font-size="10.5" fill="#475569">artifact updates.</text>
+  </g>
+  <g>
+    <rect x="460" y="1140" width="280" height="105" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="460" y="1140" width="6" height="105" fill="#6366F1"/>
+    <text x="480" y="1162" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.5">PRACTICE 2</text>
+    <text x="480" y="1185" font-size="15" font-weight="700" fill="#0F1729">Spec Evolution Log</text>
+    <text x="480" y="1206" font-size="10.5" fill="#475569">Per-amendment record:</text>
+    <text x="480" y="1220" font-size="10.5" fill="#475569">§, Cat, prior text, new text,</text>
+    <text x="480" y="1234" font-size="10.5" fill="#475569">reviewer. The durable record.</text>
+  </g>
+  <g>
+    <rect x="760" y="1140" width="280" height="105" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="760" y="1140" width="6" height="105" fill="#B45309"/>
+    <text x="780" y="1162" font-size="10" font-weight="700" fill="#92400E" letter-spacing="1.5">PRACTICE 3</text>
+    <text x="780" y="1185" font-size="15" font-weight="700" fill="#0F1729">Discipline-Health Audit</text>
+    <text x="780" y="1206" font-size="10.5" fill="#475569">11 anti-patterns · quarterly ·</text>
+    <text x="780" y="1220" font-size="10.5" fill="#475569">60 min. Catalogs failure modes</text>
+    <text x="780" y="1234" font-size="10.5" fill="#475569">of the discipline itself.</text>
+  </g>
+  <g>
+    <rect x="1060" y="1140" width="280" height="105" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="1060" y="1140" width="6" height="105" fill="#15803D"/>
+    <text x="1080" y="1162" font-size="10" font-weight="700" fill="#15803D" letter-spacing="1.5">PRACTICE 4</text>
+    <text x="1080" y="1185" font-size="15" font-weight="700" fill="#0F1729">Framework Versioning</text>
+    <text x="1080" y="1206" font-size="10.5" fill="#475569">MAJOR · MINOR · PATCH ·</text>
+    <text x="1080" y="1220" font-size="10.5" fill="#475569">CHANGELOG. The framework</text>
+    <text x="1080" y="1234" font-size="10.5" fill="#475569">itself versions.</text>
+  </g>
+
+  <!-- Curved loop arrow: signals descend from metric 4 into EVOLVE,
+       sweep beneath EVOLVE, ascend the spine, and arrive at FRAME. -->
   <path d="M 1378 705
-           C 1340 705, 1330 1130, 1230 1130
-           L 215 1130
-           C 110 1130, 100 1130, 100 1020
+           C 1340 705, 1330 1280, 1230 1280
+           L 215 1280
+           C 110 1280, 100 1280, 100 1180
            L 100 360"
         stroke="#6366F1" stroke-width="1.6" fill="none" stroke-dasharray="5,4" opacity="0.55"
         marker-end="url(#loopArrow)"/>
-  <text x="720" y="1124" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1" opacity="0.85">metrics &amp; spec amendments → next FRAME</text>
+  <text x="720" y="1274" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1" opacity="0.85">amendments &amp; metrics → next FRAME</text>
 
   <!-- ============ BOTTOM CAPTION ============ -->
-  <line x1="60" y1="1148" x2="1540" y2="1148" stroke="#E5E7EB" stroke-width="1"/>
-  <text x="800" y="1166" text-anchor="middle" font-size="11" fill="#475569">
-    <tspan font-weight="700" fill="#0F1729">FRAME · CALIBRATE · SPECIFY · DELEGATE · VALIDATE</tspan>
-    — the rituals of the Intent Design Session. The dashed loop is the discipline: every run feeds the next intent.
+  <line x1="60" y1="1298" x2="1540" y2="1298" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="800" y="1316" text-anchor="middle" font-size="11" fill="#475569">
+    <tspan font-weight="700" fill="#0F1729">FRAME · SPECIFY · DELEGATE · VALIDATE · EVOLVE</tspan>
+    — the five activities of the Architecture of Intent. The dashed loop is EVOLVE in motion: each diagnosed failure becomes a structural amendment.
   </text>
 </svg>

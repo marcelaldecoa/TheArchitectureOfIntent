@@ -134,9 +134,24 @@ SLIDES = [
     },
     # --------------------------------------------------------------- 6
     {
+        "kind": "table",
+        "section": "02 · ACTIVITIES",
+        "title":   "Five activities, one canvas",
+        "tagline": "The framework is organized along an activity spine. Each activity binds a specific load-bearing list; reading the framework along the spine makes the rest fit together.",
+        "headers": ["Activity", "Binds", "Output"],
+        "rows": [
+            ["Frame",     "5 archetypes · 4 dimensions",            "Archetype + calibration"],
+            ["Specify",   "12 spec sections · sub-blocks",          "The canonical spec"],
+            ["Delegate",  "8 pattern categories · 4 oversight",     "Bound agent + oversight"],
+            ["Validate",  "7 failure cats · 4 signal metrics",      "Diagnosed failures, fix-locus"],
+            ["Evolve",    "Closed loop · audit · versioning",       "Structural amendments"],
+        ],
+    },
+    # --------------------------------------------------------------- 7
+    {
         "kind": "cards4",
         "section": "02 · THE FRAMEWORK",
-        "title":   "Four load-bearing elements",
+        "title":   "Four load-bearing elements bound to the spine",
         "tagline": "The synthesis is the larger contribution. The four bind into a framework you can apply in design, in spec review, and in post-incident diagnosis.",
         "cards": [
             ("01", "ARCHETYPES",
