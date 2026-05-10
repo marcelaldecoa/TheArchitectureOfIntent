@@ -160,7 +160,7 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Organizational Repertoire](01-why-repertoires-matter.md)
-- [The Canonical Spec Template — Section 6](../sdd/07-canonical-spec-template.md)
+- [The Canonical Spec Template — Section 6](../specify/07-canonical-spec-template.md)
 - [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
 
 **This pattern enables:**
@@ -172,6 +172,6 @@ After applying this pattern:
 
 *This concludes the Cross-Cutting Patterns section.*
 
-*Continue to [Proportional Governance](../operating/04-governance.md)*
+*Continue to [Proportional Governance](../evolve/04-governance.md)*
 
 

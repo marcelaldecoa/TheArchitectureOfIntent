@@ -8,7 +8,7 @@
 
 ---
 
-Use this card to choose the model tier for each step in your agent loop. For the full treatment — vendor-specific pricing, latency budget decomposition, anti-patterns, worked case study — see [Cost and Latency Engineering](../operating/09-cost-and-latency.md).
+Use this card to choose the model tier for each step in your agent loop. For the full treatment — vendor-specific pricing, latency budget decomposition, anti-patterns, worked case study — see [Cost and Latency Engineering](../evolve/09-cost-and-latency.md).
 
 ---
 
@@ -89,7 +89,7 @@ If all three answers point to the same tier, use it. If they conflict, the most 
 
 ## What to declare in the spec
 
-§7 (Non-Functional Constraints) of the [canonical spec template](../sdd/07-canonical-spec-template.md) should name, per agent role:
+§7 (Non-Functional Constraints) of the [canonical spec template](../specify/07-canonical-spec-template.md) should name, per agent role:
 
 - The default model tier
 - Conditions for tier escalation (if any)
@@ -102,9 +102,9 @@ Without these, model choices drift and cost regressions go unnoticed. With them,
 
 ## See also
 
-- [Cost and Latency Engineering](../operating/09-cost-and-latency.md) — full treatment with vendor-specific pricing, latency budget decomposition, and a worked cost-reduction case study
-- [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) — caching layered on top of tier selection compounds savings; together they typically deliver 70%+ cost reduction
-- [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) — eval cost-per-task is itself a tier-selection signal
+- [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) — full treatment with vendor-specific pricing, latency budget decomposition, and a worked cost-reduction case study
+- [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) — caching layered on top of tier selection compounds savings; together they typically deliver 70%+ cost reduction
+- [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — eval cost-per-task is itself a tier-selection signal
 - [Model Upgrade Validation](../patterns/deployment/model-upgrade.md) — the deployment pattern when tier or model changes
 - Anthropic — *Building Effective Agents.* anthropic.com/research/building-effective-agents — the route-cheap-by-default principle
 - Pope, R., et al. (2022). *Efficiently Scaling Transformer Inference.* arXiv:2211.05102 — the inference-economics foundation underlying tier pricing

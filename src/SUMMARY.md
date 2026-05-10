@@ -25,17 +25,17 @@
 
 *Pick the shape. Commit to a category before any spec is written.*
 
-- [Pick an Archetype](architecture/02-canonical-intent-archetypes.md)
-  - [The Advisor](architecture/archetypes/advisor.md)
-  - [The Executor](architecture/archetypes/executor.md)
-  - [The Guardian](architecture/archetypes/guardian.md)
-  - [The Synthesizer](architecture/archetypes/synthesizer.md)
-  - [The Orchestrator](architecture/archetypes/orchestrator.md)
-- [Four Dimensions of Governance](architecture/03-archetype-dimensions.md)
-- [The Archetype Selection Tree](architecture/04-decision-tree.md)
-- [Composing Archetypes](architecture/05-composing-archetypes.md)
-- [Governed Archetype Evolution](architecture/06-evolving-archetypes.md)
-- [Multi-Agent Governance](architecture/07-multi-agent-governance.md)
+- [Pick an Archetype](frame/02-canonical-intent-archetypes.md)
+  - [The Advisor](frame/archetypes/advisor.md)
+  - [The Executor](frame/archetypes/executor.md)
+  - [The Guardian](frame/archetypes/guardian.md)
+  - [The Synthesizer](frame/archetypes/synthesizer.md)
+  - [The Orchestrator](frame/archetypes/orchestrator.md)
+- [Four Dimensions of Governance](frame/03-archetype-dimensions.md)
+- [The Archetype Selection Tree](frame/04-decision-tree.md)
+- [Composing Archetypes](frame/05-composing-archetypes.md)
+- [Governed Archetype Evolution](frame/06-evolving-archetypes.md)
+- [Multi-Agent Governance](frame/07-multi-agent-governance.md)
 
 ## Frame in practice
 
@@ -49,14 +49,14 @@
 
 *Write the artifact the agent executes against and humans review against.*
 
-- [Spec-Driven Development](sdd/01-what-sdd-means.md)
-- [The Spec as Control Surface](sdd/02-specs-as-control-surfaces.md)
-- [The Spec Lifecycle](sdd/03-spec-lifecycle.md)
-- [Writing for Machine Execution](sdd/05-writing-specs-for-agents.md)
-- [The Living Spec](sdd/06-living-specs.md)
-- [The Canonical Spec Template](sdd/07-canonical-spec-template.md)
-- [Architectural Decision Records](sdd/08-architectural-decision-records.md)
-- [SpecKit](sdd/04-speckit.md)
+- [Spec-Driven Development](specify/01-what-sdd-means.md)
+- [The Spec as Control Surface](specify/02-specs-as-control-surfaces.md)
+- [The Spec Lifecycle](specify/03-spec-lifecycle.md)
+- [Writing for Machine Execution](specify/05-writing-specs-for-agents.md)
+- [The Living Spec](specify/06-living-specs.md)
+- [The Canonical Spec Template](specify/07-canonical-spec-template.md)
+- [Architectural Decision Records](specify/08-architectural-decision-records.md)
+- [SpecKit](specify/04-speckit.md)
 
 ## Repertoires
 
@@ -83,16 +83,16 @@
 
 ## Foundations
 
-- [What Agents Are](agents/01-what-agents-are.md)
-- [Autonomy Without Agency](agents/02-autonomy-vs-agency.md)
-- [The Executor Model](agents/03-agents-as-executors.md)
-- [Least Capability](agents/04-tools-mcp-capability-boundaries.md)
-- [Portable Domain Knowledge](agents/05-agent-skills.md)
+- [What Agents Are](delegate/01-what-agents-are.md)
+- [Autonomy Without Agency](delegate/02-autonomy-vs-agency.md)
+- [The Executor Model](delegate/03-agents-as-executors.md)
+- [Least Capability](delegate/04-tools-mcp-capability-boundaries.md)
+- [Portable Domain Knowledge](delegate/05-agent-skills.md)
 
 ## Agent Classes (2024–2026)
 
-- [Coding Agents](agents/08-coding-agents.md)
-- [Computer-Use Agents](agents/09-computer-use-agents.md)
+- [Coding Agents](delegate/08-coding-agents.md)
+- [Computer-Use Agents](delegate/09-computer-use-agents.md)
 
 ## Knowledge & Context
 
@@ -107,9 +107,9 @@
 
 ## Tools and MCP
 
-- [The Model Context Protocol](agents/mcp/01-what-is-mcp.md)
-- [Designing MCP Tools](agents/mcp/02-designing-mcp-tools.md)
-- [MCP Safety](agents/mcp/03-mcp-safety.md)
+- [The Model Context Protocol](delegate/mcp/01-what-is-mcp.md)
+- [Designing MCP Tools](delegate/mcp/02-designing-mcp-tools.md)
+- [MCP Safety](delegate/mcp/03-mcp-safety.md)
 - [The Read-Only Tool](patterns/integration/read-only-tool.md)
 - [The State-Changing Tool](patterns/integration/state-changing-tool.md)
 - [The Idempotent Tool](patterns/integration/idempotent-tool.md)
@@ -120,7 +120,7 @@
 
 ## Oversight
 
-- [Proportional Oversight](agents/06-human-oversight-models.md)
+- [Proportional Oversight](delegate/06-human-oversight-models.md)
 - [Human-in-the-Loop Gate](patterns/coordination/human-gate.md)
 - [Retry with Structured Feedback](patterns/coordination/retry-feedback.md)
 - [Escalation Chain](patterns/coordination/escalation-chain.md)
@@ -137,10 +137,10 @@
 
 *Learn in production. Each failure category names the artifact to fix. The Cat 1–7 taxonomy itself lives in Part 0 — Foundations, since it's referenced from every Part; this Part is about applying it in operation.*
 
-- [Intent Review Before Output Review](operating/05-reviewing-intent.md)
-- [Four Signal Metrics](operating/06-metrics.md)
-- [Evals and Benchmarks](operating/07-evals-and-benchmarks.md)
-- [Red-Team Protocol](operating/08-red-team-protocol.md)
+- [Intent Review Before Output Review](validate/05-reviewing-intent.md)
+- [Four Signal Metrics](validate/06-metrics.md)
+- [Evals and Benchmarks](validate/07-evals-and-benchmarks.md)
+- [Red-Team Protocol](validate/08-red-team-protocol.md)
 
 ## Safety Patterns
 
@@ -179,16 +179,16 @@
 *The closed loop. Cat 1s back to spec; the discipline survives the team.*
 
 - [The Closed Loop: From Failures to Spec Amendments](evolve/01-closed-loop.md)
-- [Adoption Playbook](operating/11-adoption-playbook.md)
-- [Minimum Viable Architecture of Intent](operating/16-minimum-viable-aoi.md)
-- [Proportional Governance](operating/04-governance.md)
-- [Cost and Latency Engineering](operating/09-cost-and-latency.md)
-- [Cacheable Prompt Architecture](operating/14-cacheable-prompt-architecture.md)
-- [Production Telemetry](operating/10-production-telemetry.md)
-- [Signs Your Architecture of Intent Is Degrading](operating/15-anti-patterns.md)
+- [Adoption Playbook](evolve/11-adoption-playbook.md)
+- [Minimum Viable Architecture of Intent](evolve/16-minimum-viable-aoi.md)
+- [Proportional Governance](evolve/04-governance.md)
+- [Cost and Latency Engineering](evolve/09-cost-and-latency.md)
+- [Cacheable Prompt Architecture](evolve/14-cacheable-prompt-architecture.md)
+- [Production Telemetry](evolve/10-production-telemetry.md)
+- [Signs Your Architecture of Intent Is Degrading](evolve/15-anti-patterns.md)
 - [Framework Versioning](evolve/07-framework-versioning.md)
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](operating/12-devsquad-mapping.md)
-- [Co-adoption with DevSquad Copilot](operating/13-co-adoption-with-devsquad.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](evolve/12-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](evolve/13-co-adoption-with-devsquad.md)
 
 ## Deployment Patterns
 

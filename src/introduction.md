@@ -80,9 +80,9 @@ Two reading modes, both supported.
 | If you are... | Start at |
 |---------------|----------|
 | Just trying to see the framework applied in one screen | [A Miniature Pilot, End-to-End](miniature-pilot.md) |
-| Choosing how to structure a new agent system | [Pick an archetype](architecture/02-canonical-intent-archetypes.md) |
-| Writing a spec right now | [The canonical spec template](sdd/07-canonical-spec-template.md) |
-| Designing oversight for an agent that's about to ship | [Proportional Oversight](agents/06-human-oversight-models.md) |
+| Choosing how to structure a new agent system | [Pick an archetype](frame/02-canonical-intent-archetypes.md) |
+| Writing a spec right now | [The canonical spec template](specify/07-canonical-spec-template.md) |
+| Designing oversight for an agent that's about to ship | [Proportional Oversight](delegate/06-human-oversight-models.md) |
 | Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Safety patterns](patterns/safety/prompt-injection-defense.md) |
 | Walking one running scenario across all five activities | [Frame in practice — Customer-support](frame/scenarios/customer-support.md), [Coding-agent pipeline](frame/scenarios/coding-pipeline.md), or [Internal docs Q&A (DevSquad)](frame/scenarios/docs-qa.md) |
@@ -106,7 +106,7 @@ This book's strongest contribution is a **design vocabulary and a diagnostic dis
 
 It is **not** a complete technical playbook. Specifically, the book is light on:
 
-- **Prompt caching as architecture** (covered briefly in [Cost and Latency Engineering](operating/09-cost-and-latency.md); deserves more depth for any system at 100+ runs/day).
+- **Prompt caching as architecture** (covered briefly in [Cost and Latency Engineering](evolve/09-cost-and-latency.md); deserves more depth for any system at 100+ runs/day).
 - **Model-tier selection** under specific budget and latency constraints — the [Model-Tier Quick-Select Card](appendices/model-tier-card.md) gives a decision matrix; the underlying chapter goes deeper.
 - **Multi-tenant fleet governance** — when 50 teams deploy agents against shared infrastructure, spec evolution and constraint-library merging become harder problems than this book solves.
 - **CI/CD wiring details** — when does the eval suite gate a merge versus alert versus observe? The disciplines are described; the specific platform integration is not.
@@ -123,7 +123,7 @@ If you want to see the framework applied to one concrete system in one screen be
 
 If you want the argument for why this discipline matters — what changed structurally about software when code stopped being the bottleneck — read the [Prologue](prologue.md) instead. It's three pages.
 
-If you'd rather just start with the first decision you have to make, go to [Pick an archetype](architecture/02-canonical-intent-archetypes.md).
+If you'd rather just start with the first decision you have to make, go to [Pick an archetype](frame/02-canonical-intent-archetypes.md).
 
 ---
 

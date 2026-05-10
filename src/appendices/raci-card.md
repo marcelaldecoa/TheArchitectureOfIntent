@@ -4,7 +4,7 @@
 
 ---
 
-A one-page reference for who owns what across the framework's six operational activities. Use it during the [Intent Design Session](../theory/07-intent-design-session.md) (phases 3 and 6 in particular), in [Proportional Governance](../operating/04-governance.md) reviews, and in onboarding new team members to a system that is already running.
+A one-page reference for who owns what across the framework's six operational activities. Use it during the [Intent Design Session](../theory/07-intent-design-session.md) (phases 3 and 6 in particular), in [Proportional Governance](../evolve/04-governance.md) reviews, and in onboarding new team members to a system that is already running.
 
 ---
 
@@ -107,7 +107,7 @@ Read across each row to find who does what for that activity. Read down each col
 
 **Everyone is A.** "We're all accountable for shipping safely." This is the diffuse-responsibility failure mode named in the [Calibration](../theory/03-agency-autonomy-responsibility.md) chapter. Diagnose by asking "if the system causes an incident at 3am, who gets paged?" The answer is the operator; that is the A for Oversee and Ship.
 
-**No one is consulted before action.** Activities run with zero Cs — the work happens, then everyone is Informed. This is the *retrofit* anti-pattern from the [discipline-health audit](../operating/15-anti-patterns.md): consultation surfaces disagreement *before* the work, which is when disagreement is cheapest to resolve.
+**No one is consulted before action.** Activities run with zero Cs — the work happens, then everyone is Informed. This is the *retrofit* anti-pattern from the [discipline-health audit](../evolve/15-anti-patterns.md): consultation surfaces disagreement *before* the work, which is when disagreement is cheapest to resolve.
 
 **Reviewer is informed, not responsible.** A common drift in *oversight kabuki*: the reviewer is listed in §11 of the spec as the human at the gate, but in the RACI they're shown as I. That contradiction means the gate is firing without anyone responsible for the judgment. Either promote the reviewer to R (with the time and authority to do real review) or downgrade the gate (move from Output Gate to Periodic).
 
@@ -121,9 +121,9 @@ Read across each row to find who does what for that activity. Read down each col
 
 - [The Intent Design Session](../theory/07-intent-design-session.md) — the IDS is where the RACI is *enacted*. Phase 1 establishes domain-owner accountability; phases 2–3 establish architect responsibility; phase 6 establishes operator accountability for oversight.
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) — *Responsibility* as a calibration dimension is what this card operationalizes; the dimension names *authorial / operational / validation* sub-loci, and this RACI maps them to actual roles.
-- [Proportional Governance](../operating/04-governance.md) — the governance practice that runs against this RACI.
-- [Adoption Playbook](../operating/11-adoption-playbook.md) — the adoption practice that introduces these roles to a team progressively, rather than all at once.
-- [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the audit that catches RACI drift, particularly the *oversight kabuki* and *diffuse-responsibility* anti-patterns.
+- [Proportional Governance](../evolve/04-governance.md) — the governance practice that runs against this RACI.
+- [Adoption Playbook](../evolve/11-adoption-playbook.md) — the adoption practice that introduces these roles to a team progressively, rather than all at once.
+- [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) — the audit that catches RACI drift, particularly the *oversight kabuki* and *diffuse-responsibility* anti-patterns.
 
 ---
 

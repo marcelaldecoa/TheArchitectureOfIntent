@@ -120,10 +120,10 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [The Executor Model](../agents/03-agents-as-executors.md)
-- [Portable Domain Knowledge](../agents/05-agent-skills.md)
+- [The Executor Model](../delegate/03-agents-as-executors.md)
+- [Portable Domain Knowledge](../delegate/05-agent-skills.md)
 - [Failure Modes and How to Diagnose Them — Spec Gap Log](../theory/05-failure-as-design-signal.md)
-- [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
+- [The Canonical Spec Template](../specify/07-canonical-spec-template.md)
 
 **This pattern enables:**
 - [The Intent Archetype Catalog](02-archetype-catalog.md)

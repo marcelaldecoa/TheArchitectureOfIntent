@@ -61,7 +61,7 @@ Each skill file is short (under a page) and references back to the spec section 
 
 ## Tool manifest
 
-The team binds tools strictly per [Least Capability](../../agents/04-tools-mcp-capability-boundaries.md):
+The team binds tools strictly per [Least Capability](../../delegate/04-tools-mcp-capability-boundaries.md):
 
 | Tool | Type | Capability bound | Spec section |
 |---|---|---|---|
@@ -173,8 +173,8 @@ The agent ships to staging on Friday. The eval-and-validate phase begins Monday.
 
 ## Conceptual chapters this scenario binds to
 
-- [Proportional Oversight](../../agents/06-human-oversight-models.md) — the four oversight models; this system uses Output Gate at launch
-- [Least Capability](../../agents/04-tools-mcp-capability-boundaries.md) — the tool manifest discipline
+- [Proportional Oversight](../../delegate/06-human-oversight-models.md) — the four oversight models; this system uses Output Gate at launch
+- [Least Capability](../../delegate/04-tools-mcp-capability-boundaries.md) — the tool manifest discipline
 - [The Tool Manifest](../../patterns/capability/tool-manifest.md)
 - [The System Prompt](../../patterns/capability/system-prompt.md) — including the "three paragraphs" discipline
 - [Output Validation Gate](../../patterns/safety/output-validation-gate.md) · [Sensitive Data Boundary](../../patterns/safety/sensitive-data-boundary.md) · [Rate Limiting and Throttle](../../patterns/safety/rate-limiting.md) · [Distributed Trace](../../patterns/observability/distributed-trace.md)

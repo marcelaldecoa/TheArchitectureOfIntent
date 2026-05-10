@@ -97,7 +97,7 @@ TheArchitectureOfIntent/
 │   ├── prologue.md           # Short prologue: what changed and what's at stake
 │   ├── architecture/         # Archetypes, decision tree, dimensions, composition
 │   ├── theory/               # Intent vs implementation, calibration, failure diagnosis
-│   ├── sdd/                  # Spec-driven development
+│   ├── specify/                  # Spec-driven development
 │   ├── agents/               # Agents, MCP, oversight
 │   ├── patterns/             # ~50 pattern one-pagers (capability, integration, coordination, ...)
 │   ├── repertoires/          # Templates, archetype catalog, code standards
@@ -118,7 +118,7 @@ TheArchitectureOfIntent/
 
 ## Framework version
 
-The framework is at **v2.2.1** as of 2026-05-10. The book and the companion paper move together: a change to a load-bearing commitment (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the **five** activities, composition as a first-class design surface) bumps the framework version. See [`CHANGELOG.md`](CHANGELOG.md) for the versioning convention and the release history.
+The framework is at **v2.2.2** as of 2026-05-10. The book and the companion paper move together: a change to a load-bearing commitment (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the **five** activities, composition as a first-class design surface) bumps the framework version. See [`CHANGELOG.md`](CHANGELOG.md) for the versioning convention and the release history.
 
 ## Status
 

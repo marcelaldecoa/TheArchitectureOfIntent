@@ -108,14 +108,14 @@ The book does not carry a separate book version. The framework version *is* the 
 
 ## Where this chapter sits in Part 5
 
-This is **5.7**, near the end of Part 5 — Evolve, after the cost and anti-pattern chapters and before the DevSquad mapping. Framework versioning is the longest-time-scale Evolve activity (per-quarter and per-year), and the chapters that precede it cover progressively shorter time-scales: the [closed loop](01-closed-loop.md) is per-incident; the spec evolution log is per-sprint; the [Discipline-Health Audit](../operating/15-anti-patterns.md) is per-quarter; framework versioning is per-quarter to per-year. Reading Part 5 in order reveals the time-scale gradient.
+This is **5.7**, near the end of Part 5 — Evolve, after the cost and anti-pattern chapters and before the DevSquad mapping. Framework versioning is the longest-time-scale Evolve activity (per-quarter and per-year), and the chapters that precede it cover progressively shorter time-scales: the [closed loop](01-closed-loop.md) is per-incident; the spec evolution log is per-sprint; the [Discipline-Health Audit](../evolve/15-anti-patterns.md) is per-quarter; framework versioning is per-quarter to per-year. Reading Part 5 in order reveals the time-scale gradient.
 
 ---
 
 ## Related material
 
-- [The Living Spec](../sdd/06-living-specs.md) — the per-system analog of framework versioning
+- [The Living Spec](../specify/06-living-specs.md) — the per-system analog of framework versioning
 - [Spec Versioning](../patterns/deployment/spec-versioning.md) — the deployment pattern for amended specs
 - [The Closed Loop](01-closed-loop.md) — the per-incident discipline that rolls up to framework-level versioning at the longest time-scale
-- [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md) — composition is one of the things that has to be re-validated on a MAJOR bump
+- [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md) — composition is one of the things that has to be re-validated on a MAJOR bump
 - [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) — the canonical record at the repo root

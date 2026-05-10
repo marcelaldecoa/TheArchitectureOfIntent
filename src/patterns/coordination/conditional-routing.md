@@ -60,4 +60,4 @@ Implement routing as a **classifier agent** (Advisor archetype) whose only job i
 - [Sequential Pipeline](sequential-pipeline.md) — routing is the first stage in a pipeline, directing the request to the appropriate sub-pipeline
 - [Parallel Fan-Out](parallel-fan-out.md) — some inputs may need to be processed by multiple agents simultaneously
 - [Escalation Chain](escalation-chain.md) — low-confidence or unknown classifications escalate rather than route
-- [The Five Archetypes](../../architecture/02-canonical-intent-archetypes.md) — the classifier is Advisor; destination agents are typed by their archetype
+- [The Five Archetypes](../../frame/02-canonical-intent-archetypes.md) — the classifier is Advisor; destination agents are typed by their archetype

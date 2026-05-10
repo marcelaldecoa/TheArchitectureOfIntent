@@ -4,7 +4,7 @@
 
 ---
 
-> *The four-level eval stack from [Evals and Benchmarks](../../operating/07-evals-and-benchmarks.md) instantiated against the Order-Service Coding Agent.*
+> *The four-level eval stack from [Evals and Benchmarks](../../validate/07-evals-and-benchmarks.md) instantiated against the Order-Service Coding Agent.*
 
 ---
 
@@ -232,7 +232,7 @@ Two things, primarily:
 
 ## Connection to the four signal metrics
 
-The eval program produces all four signal metrics from [Four Signal Metrics](../../operating/06-metrics.md):
+The eval program produces all four signal metrics from [Four Signal Metrics](../../validate/06-metrics.md):
 
 | Metric | Source level | Current value (Q1 2026) |
 |---|---|---|
@@ -247,9 +247,9 @@ The eval program produces all four signal metrics from [Four Signal Metrics](../
 
 Three known gaps the team has not yet closed:
 
-1. **Adversarial inputs at level 3.** The golden set is built from real historical issues, none of which were adversarially constructed. The red-team protocol (per [Red-Team Protocol](../../operating/08-red-team-protocol.md)) is the supplement. As of Q1 2026, the red-team battery includes 18 adversarial scenarios, but they are not yet integrated into the nightly regression — they run pre-release only.
+1. **Adversarial inputs at level 3.** The golden set is built from real historical issues, none of which were adversarially constructed. The red-team protocol (per [Red-Team Protocol](../../validate/08-red-team-protocol.md)) is the supplement. As of Q1 2026, the red-team battery includes 18 adversarial scenarios, but they are not yet integrated into the nightly regression — they run pre-release only.
 
-2. **Long-context tasks.** None of the golden-set issues require the agent to hold >50K tokens of context. The team has not yet built a long-context regression. This matters because the order-service repo includes some large legacy modules (~2K-line files); an issue touching them stresses the long-context attention degradation discussed in [Coding Agents](../../agents/08-coding-agents.md).
+2. **Long-context tasks.** None of the golden-set issues require the agent to hold >50K tokens of context. The team has not yet built a long-context regression. This matters because the order-service repo includes some large legacy modules (~2K-line files); an issue touching them stresses the long-context attention degradation discussed in [Coding Agents](../../delegate/08-coding-agents.md).
 
 3. **Inter-team interaction.** The golden set is from `order-service` only. Issues that span team boundaries (e.g., an order-service change that also requires a payment-service change) are not eval-covered, because such issues are not `agent-eligible` per spec §3.1. This is correct — but if the team ever expands scope, the eval program will need expansion alongside.
 

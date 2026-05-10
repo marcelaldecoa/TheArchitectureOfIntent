@@ -67,4 +67,4 @@ If APIAgent and AuthAgent define conflicting user types, supervisor requests cor
 - [Parallel Fan-Out](parallel-fan-out.md) — the supervisor monitors parallel workers
 - [Agent-to-Agent Contract](agent-contract.md) — the supervisor verifies that inter-agent contracts are honored
 - [Sequential Pipeline](sequential-pipeline.md) — the supervisor can be a validation stage between pipeline phases
-- [Archetype Composition](../../architecture/05-composing-archetypes.md) — the supervisor is an Orchestrator archetype composed with worker archetypes
+- [Archetype Composition](../../frame/05-composing-archetypes.md) — the supervisor is an Orchestrator archetype composed with worker archetypes

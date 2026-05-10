@@ -59,5 +59,5 @@ Require the agent to **anchor factual claims to specific, retrievable sources** 
 
 - [Retrieval-Augmented Generation](rag.md) — RAG provides the sources; grounding ensures the agent uses and cites them
 - [Output Validation Gate](../safety/output-validation-gate.md) — grounding can be validated by checking citations against source material
-- [The Spec as Control Surface](../../sdd/02-specs-as-control-surfaces.md) — grounding requirements are specified as constraints in the spec
+- [The Spec as Control Surface](../../specify/02-specs-as-control-surfaces.md) — grounding requirements are specified as constraints in the spec
 - [Sensitive Data Boundary](../safety/sensitive-data-boundary.md) — some sources contain sensitive data; citations must respect classification

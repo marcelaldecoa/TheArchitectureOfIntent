@@ -20,7 +20,7 @@ This chapter gives you the ritual.
 
 The **Intent Design Session** is a time-boxed working session — typically 3 to 4 hours, run once per system or once per major spec revision — that walks a team through the four activities of the framework (Frame · Specify · Delegate · Validate) in seven concrete phases. It produces a calibrated archetype commitment, a draft spec, a bound set of patterns, an oversight model, and a rollout plan. By the end of the session, the team has the artifacts it needs to start building. By the next session (the post-launch retrospective), the team has the artifacts it needs to learn.
 
-This pattern is the connective tissue between Part 1 (the decisions) and Part 2 (the spec). It assumes you have read [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md), [Calibrate Agency, Autonomy, Responsibility, Reversibility](03-agency-autonomy-responsibility.md), and [Failure Modes and How to Diagnose Them](05-failure-as-design-signal.md). It produces an artifact you will write up using [The Canonical Spec Template](../sdd/07-canonical-spec-template.md).
+This pattern is the connective tissue between Part 1 (the decisions) and Part 2 (the spec). It assumes you have read [Pick an Archetype](../frame/02-canonical-intent-archetypes.md), [Calibrate Agency, Autonomy, Responsibility, Reversibility](03-agency-autonomy-responsibility.md), and [Failure Modes and How to Diagnose Them](05-failure-as-design-signal.md). It produces an artifact you will write up using [The Canonical Spec Template](../specify/07-canonical-spec-template.md).
 
 ---
 
@@ -69,7 +69,7 @@ These five roles are a subset of the seven canonical roles in the framework's [R
 
 - **The canvas** ([Introduction](../introduction.md#the-framework-on-one-page)) — printed or projected, used as the running agenda.
 - **The archetype catalog** ([Repertoire](../repertoires/02-archetype-catalog.md)) — for phase 2.
-- **The canonical spec template** ([Spec Template](../sdd/07-canonical-spec-template.md)) — populated live during phase 4.
+- **The canonical spec template** ([Spec Template](../specify/07-canonical-spec-template.md)) — populated live during phase 4.
 - **The pattern index** ([Pattern Index](../appendices/pattern-index.md)) — referenced during phase 5.
 - **Any prior post-mortem from a related system** — concrete failures in phase 5 are sharper than imagined ones.
 - **Absence of laptops for everyone except the spec author and the architect.** The other roles should be present, not editing.
@@ -92,7 +92,7 @@ If a team cannot agree on the framing in 15 minutes, stop and reschedule. There 
 
 #### Phase 2: Categorize *(20 min, architect leads)*
 
-The architect walks the [archetype selection tree](../architecture/04-decision-tree.md) against the framing from phase 1. The team commits to one of the five archetypes. If a *risk override* applies (irreversible state, regulated data, safety-critical control), the team applies it explicitly and records the elevated archetype.
+The architect walks the [archetype selection tree](../frame/04-decision-tree.md) against the framing from phase 1. The team commits to one of the five archetypes. If a *risk override* applies (irreversible state, regulated data, safety-critical control), the team applies it explicitly and records the elevated archetype.
 
 If the system genuinely composes archetypes (an Orchestrator over Executors with a Guardian on the boundary), the team commits to the *primary* archetype and names the composed components. Each composed component will get its own row in the spec; do not collapse them into a single archetype label.
 
@@ -111,7 +111,7 @@ Each dimension gets a one-sentence answer recorded in the spec's Archetype Decla
 
 #### Phase 4: Populate Spec *(45–60 min, spec author leads, all participate)*
 
-The spec author opens the [canonical spec template](../sdd/07-canonical-spec-template.md) and the team walks all twelve sections in order. Most sections take 2–5 minutes; sections §3 (Scope), §6 (Invariants), and §8 (Authorization Boundary) take longer because they encode the calibration from phase 3 into testable clauses.
+The spec author opens the [canonical spec template](../specify/07-canonical-spec-template.md) and the team walks all twelve sections in order. Most sections take 2–5 minutes; sections §3 (Scope), §6 (Invariants), and §8 (Authorization Boundary) take longer because they encode the calibration from phase 3 into testable clauses.
 
 The spec author writes; everyone else watches and challenges. Do not draft offline and present; the value of this phase is the conversation that produces each clause. A clause no one questioned in the session will be the clause everyone disputes during the first incident.
 
@@ -129,12 +129,12 @@ The binding is driven by what the spec *implies*, not by what the team likes. Us
 | **The agent takes consequential action** (writes to a database, sends a message, modifies code, calls a paid API) | [Human-in-the-Loop Gate](../patterns/coordination/human-gate.md) · [Output Validation Gate](../patterns/safety/output-validation-gate.md) · [Blast Radius Containment](../patterns/safety/blast-radius-containment.md) · [The Idempotent Tool](../patterns/integration/idempotent-tool.md) |
 | **The agent runs long-horizon work** (multi-step plans, multi-day tasks, recursive sub-tasking) | [Checkpoint and Resume](../patterns/state/checkpoint-resume.md) · [Cost Tracking per Spec](../patterns/observability/cost-tracking.md) · [Distributed Trace](../patterns/observability/distributed-trace.md) · [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md) |
 | **The agent coordinates other agents** (Orchestrator pattern, multi-agent system) | [Agent-to-Agent Contract](../patterns/coordination/agent-contract.md) · [Supervisor Agent](../patterns/coordination/supervisor.md) · [Multi-Agent Integration Test](../patterns/testing/multi-agent-integration.md) · [Agent Registry](../patterns/state/agent-registry.md) |
-| **The agent perceives a screen and acts on it** (computer-use, browser-use, GUI automation) | Confirmation gate before high-consequence actions · DOM-grounded element allowlist · Screenshot-then-verify · See [Computer-Use Agents](../agents/09-computer-use-agents.md) for the full Cat 7 pattern set |
+| **The agent perceives a screen and acts on it** (computer-use, browser-use, GUI automation) | Confirmation gate before high-consequence actions · DOM-grounded element allowlist · Screenshot-then-verify · See [Computer-Use Agents](../delegate/09-computer-use-agents.md) for the full Cat 7 pattern set |
 | **The agent uses retrieval or domain knowledge** (RAG, skill files, long memory) | [Retrieval-Augmented Generation](../patterns/capability/rag.md) · [Grounding with Verified Sources](../patterns/capability/grounding.md) · [The Skill File](../patterns/capability/skill-file.md) · [Context Window Budget](../patterns/capability/context-budget.md) |
-| **The agent writes code** (coding agent, code-gen pipeline) | [Spec Conformance Testing](../patterns/testing/spec-conformance.md) · [Code Execution Sandbox](../patterns/integration/code-sandbox.md) · [The Tool Manifest](../patterns/capability/tool-manifest.md) · scope-locked file-system access · See [Coding Agents](../agents/08-coding-agents.md) |
+| **The agent writes code** (coding agent, code-gen pipeline) | [Spec Conformance Testing](../patterns/testing/spec-conformance.md) · [Code Execution Sandbox](../patterns/integration/code-sandbox.md) · [The Tool Manifest](../patterns/capability/tool-manifest.md) · scope-locked file-system access · See [Coding Agents](../delegate/08-coding-agents.md) |
 | **The agent's output is consumed by another agent** (pipeline composition) | [Agent-to-Agent Contract](../patterns/coordination/agent-contract.md) · [Spec Conformance Testing](../patterns/testing/spec-conformance.md) · [Sequential Pipeline](../patterns/coordination/sequential-pipeline.md) |
-| **The system runs at >100 calls/day** (production scale, cost-sensitive) | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) · [Cost Tracking per Spec](../patterns/observability/cost-tracking.md) · [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
-| **The system is being introduced for the first time** (new agent class, new domain) | [Adversarial Input Test](../patterns/testing/adversarial-input.md) · [Red-Team Protocol](../operating/08-red-team-protocol.md) · [Canary Deployment](../patterns/deployment/canary.md) |
+| **The system runs at >100 calls/day** (production scale, cost-sensitive) | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) · [Cost Tracking per Spec](../patterns/observability/cost-tracking.md) · [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
+| **The system is being introduced for the first time** (new agent class, new domain) | [Adversarial Input Test](../patterns/testing/adversarial-input.md) · [Red-Team Protocol](../validate/08-red-team-protocol.md) · [Canary Deployment](../patterns/deployment/canary.md) |
 
 The table is not exhaustive — it is a starting set. The skeptic's job is to surface implications the table misses. Every bound pattern goes into the spec's *Implementation Notes* section with a one-line justification ("we bind output-validation-gate because §3 authorizes external state change").
 
@@ -164,7 +164,7 @@ By the end of a properly run session, the team has:
 4. A **rollout plan** with a scheduled retrospective.
 5. A **list of open questions** captured during the session that did not block the design — these go into §10 (Assumptions and Open Questions) for follow-up.
 
-The artifacts together are sufficient to start implementation. The spec is not yet Approved — it goes through asynchronous review against the [Intent Review Before Output Review](../operating/05-reviewing-intent.md) discipline before promotion.
+The artifacts together are sufficient to start implementation. The spec is not yet Approved — it goes through asynchronous review against the [Intent Review Before Output Review](../validate/05-reviewing-intent.md) discipline before promotion.
 
 ### When to break the script
 
@@ -208,16 +208,16 @@ This is what the framework looks like as a working practice. Without the session
 ## Connections
 
 **This pattern assumes:**
-- [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) — the categorization vocabulary used in phase 2
+- [Pick an Archetype](../frame/02-canonical-intent-archetypes.md) — the categorization vocabulary used in phase 2
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](03-agency-autonomy-responsibility.md) — the calibration dimensions used in phase 3
 - [Failure Modes and How to Diagnose Them](05-failure-as-design-signal.md) — the failure taxonomy the skeptic uses in phase 5
-- [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the spec artifact populated in phase 4
+- [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the spec artifact populated in phase 4
 
 **This pattern enables:**
-- [Spec-Driven Development](../sdd/01-what-sdd-means.md) — the SDD operating model has the IDS as its origin ritual
-- [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — the post-session asynchronous review discipline
-- [Four Signal Metrics](../operating/06-metrics.md) — the metrics committed during phase 6
-- [Adoption Playbook](../operating/11-adoption-playbook.md) — running the IDS is the first concrete practice a new team adopts
+- [Spec-Driven Development](../specify/01-what-sdd-means.md) — the SDD operating model has the IDS as its origin ritual
+- [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — the post-session asynchronous review discipline
+- [Four Signal Metrics](../validate/06-metrics.md) — the metrics committed during phase 6
+- [Adoption Playbook](../evolve/11-adoption-playbook.md) — running the IDS is the first concrete practice a new team adopts
 - [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md) — the canonical role-to-activity matrix the IDS enacts
 
 **This pattern is calibrated by:**

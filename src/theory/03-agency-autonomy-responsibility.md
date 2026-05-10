@@ -184,7 +184,7 @@ Given the four dimensions, the primary design question for any agent delegation 
 
 Practitioners often ask: *if cost is independently calibratable and shapes every spec choice, why isn't it a fifth dimension alongside agency, autonomy, responsibility, and reversibility?*
 
-The framework's working position is that cost is **not** a fifth calibration dimension. It is a structurally distinct kind of commitment that lives in its own §4 sub-block in the [canonical spec template](../sdd/07-canonical-spec-template.md), alongside (and parallel to) the Composition Declaration. Three reasons.
+The framework's working position is that cost is **not** a fifth calibration dimension. It is a structurally distinct kind of commitment that lives in its own §4 sub-block in the [canonical spec template](../specify/07-canonical-spec-template.md), alongside (and parallel to) the Composition Declaration. Three reasons.
 
 **Cost is partially derived, not fully independent.** A system's cost is partly a consequence of the four dimensions: high agency, wide autonomy, and engineered reversibility together push cost up. The four behavioral dimensions are *causes*; cost is partly an *effect* of how they're set. Promoting cost to a dimension would conflate dial with derived quantity, which is exactly the conflation the orthogonality argument above tries to *avoid* for agency and autonomy.
 
@@ -230,12 +230,12 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md)
+- [Pick an Archetype](../frame/02-canonical-intent-archetypes.md)
 
 **This pattern enables:**
-- [Four Dimensions of Governance](../architecture/03-archetype-dimensions.md) — formal encoding of these dials in archetypes
-- [The Archetype Selection Tree](../architecture/04-decision-tree.md) — choosing an archetype that matches your calibration
-- [Proportional Oversight](../agents/06-human-oversight-models.md) — designing oversight to match the agency × reversibility profile
-- [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — where these dials are written down
+- [Four Dimensions of Governance](../frame/03-archetype-dimensions.md) — formal encoding of these dials in archetypes
+- [The Archetype Selection Tree](../frame/04-decision-tree.md) — choosing an archetype that matches your calibration
+- [Proportional Oversight](../delegate/06-human-oversight-models.md) — designing oversight to match the agency × reversibility profile
+- [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — where these dials are written down
 
 ---

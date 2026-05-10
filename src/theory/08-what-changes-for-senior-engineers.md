@@ -55,7 +55,7 @@ The compensatory judgment doesn't disappear. It moves upstream, and it changes s
 
 **Into Skeptic.** The judgment that used to ask "what could go wrong?" during code review now asks the same question during the IDS, when the answer can become a constraint instead of a comment. The skeptic's role in the framework is, in effect, a senior engineer's late-judgment instinct given a structural seat.
 
-**Into Validate.** The judgment that used to debug a confusing failure now diagnoses by [fix locus](05-failure-as-design-signal.md) — naming whether the failure was Cat 1 (Spec) or Cat 4 (Oversight) or Cat 7 (Perceptual), and amending the artifact whose modification prevents recurrence. The senior engineer's reading of *"this is the kind of failure where..."* becomes the categorization that drives the spec evolution log and, downstream, the [Discipline-Health Audit](../operating/15-anti-patterns.md).
+**Into Validate.** The judgment that used to debug a confusing failure now diagnoses by [fix locus](05-failure-as-design-signal.md) — naming whether the failure was Cat 1 (Spec) or Cat 4 (Oversight) or Cat 7 (Perceptual), and amending the artifact whose modification prevents recurrence. The senior engineer's reading of *"this is the kind of failure where..."* becomes the categorization that drives the spec evolution log and, downstream, the [Discipline-Health Audit](../evolve/15-anti-patterns.md).
 
 The pattern across all five: late-judgment skill is not lost; it is *shifted in time and externalized into artifacts*. The skill itself — knowing what's wrong, knowing what to ask, knowing what could go wrong — is the same skill. Where it lands is different.
 
@@ -85,7 +85,7 @@ The framework should not pretend the transition is painless or universal. Some r
 
 Most engineering ladders measure things that no longer correlate well with senior value. *"Lines shipped"* measures implementation throughput; if implementation is automated, the metric measures the wrong thing. *"Code-review counts"* measures involvement; if the spec is doing more of the review work, the metric measures the wrong thing. *"Number of bugs fixed"* measures late-judgment debugging; if structural fixes are landing earlier, the metric measures the wrong thing. *"Mentoring juniors"* measures one form of knowledge transfer; if the framework's discipline is to encode knowledge into specs and constraint libraries, that measure misses the codified part.
 
-A ladder that measures the right thing in 2026 measures **structural artifacts**: specs amended, invariants articulated, oversight gates designed, post-mortems with fix-locus categorization, evolution-log entries authored, repertoire entries contributed, [Discipline-Health Audits](../operating/15-anti-patterns.md) led. These are harder to count than lines or PRs, which is why most ladders haven't updated. Organizations that don't update theirs will systematically reward the wrong work, and their senior engineers will gradually drift toward the rewarded work, regardless of whether it is the valuable work.
+A ladder that measures the right thing in 2026 measures **structural artifacts**: specs amended, invariants articulated, oversight gates designed, post-mortems with fix-locus categorization, evolution-log entries authored, repertoire entries contributed, [Discipline-Health Audits](../evolve/15-anti-patterns.md) led. These are harder to count than lines or PRs, which is why most ladders haven't updated. Organizations that don't update theirs will systematically reward the wrong work, and their senior engineers will gradually drift toward the rewarded work, regardless of whether it is the valuable work.
 
 The framework cannot fix the ladder. It can name the gap. The senior engineer who reads this chapter and recognizes the gap is in a position to be a credible voice for changing how their organization measures senior contribution. The book takes the position that this is part of the senior engineer's responsibility under the new discipline: not just to do the upstream work, but to make the case that the upstream work is what should be measured. Otherwise the ladder will pull good practitioners back to the work that gets noticed, and the discipline will not survive its first few quarters.
 
@@ -129,7 +129,7 @@ After this chapter has done its work:
 
 **This pattern enables:**
 - [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md) — the role-to-activity matrix that locates the senior engineer's judgment by activity
-- [Adoption Playbook](../operating/11-adoption-playbook.md) — the path by which an organization moves to the practice this chapter describes
-- [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the audit that catches when the discipline has decayed back to late-judgment compensation in a different form
+- [Adoption Playbook](../evolve/11-adoption-playbook.md) — the path by which an organization moves to the practice this chapter describes
+- [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) — the audit that catches when the discipline has decayed back to late-judgment compensation in a different form
 
 ---

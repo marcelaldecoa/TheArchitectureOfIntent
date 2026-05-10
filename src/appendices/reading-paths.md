@@ -88,7 +88,7 @@ The docs-qa scenario walks a 4-person docs-platform team building an internal do
 | 4. Validate | [Validate in practice — Internal docs Q&A](../validate/scenarios/docs-qa.md) |
 | 5. Evolve | [Evolve in practice — Internal docs Q&A](../evolve/scenarios/docs-qa.md) |
 
-Pair with [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/12-devsquad-mapping.md) and [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md) for the framework-level vocabulary mapping that this scenario instantiates at scenario grain.
+Pair with [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md) and [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md) for the framework-level vocabulary mapping that this scenario instantiates at scenario grain.
 
 ---
 
@@ -101,11 +101,11 @@ Skip the scenarios entirely. The simplest version is **read all of Part 0 and a 
 
 1. [Prologue](../prologue.md) and [Introduction](../introduction.md) — the framing
 2. **All of Part 0 — FOUNDATIONS** in order: [What is the Architecture of Intent?](../theory/01-what-is-aoi.md), [Intent vs. Implementation](../theory/02-intent-vs-implementation.md), [Calibrate A/A/R/R](../theory/03-agency-autonomy-responsibility.md), [Failure Modes (Cat 1–7)](../theory/05-failure-as-design-signal.md), [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md), [The Intent Design Session](../theory/07-intent-design-session.md)
-3. [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) and the five archetype pages it links to — the taxonomy in detail
-4. [Composing Archetypes](../architecture/05-composing-archetypes.md) — composition first-class
-5. [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the 12-section structure with the Composition Declaration and Cost Posture sub-blocks
-6. [Proportional Oversight](../agents/06-human-oversight-models.md) — the four oversight models
-7. [Four Signal Metrics](../operating/06-metrics.md) — the four signals
+3. [Pick an Archetype](../frame/02-canonical-intent-archetypes.md) and the five archetype pages it links to — the taxonomy in detail
+4. [Composing Archetypes](../frame/05-composing-archetypes.md) — composition first-class
+5. [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the 12-section structure with the Composition Declaration and Cost Posture sub-blocks
+6. [Proportional Oversight](../delegate/06-human-oversight-models.md) — the four oversight models
+7. [Four Signal Metrics](../validate/06-metrics.md) — the four signals
 8. [The Closed Loop: From Failures to Spec Amendments](../evolve/01-closed-loop.md) — the discipline that opens Part 5 — Evolve
 
 After this read you have the framework's full vocabulary without the operational color the scenarios provide. The companion paper at [`paper/architecture-of-intent.pdf`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/paper/architecture-of-intent.pdf) is the same vocabulary at paper grain (~20 pages with §5's worked customer-support pilot included).
@@ -151,8 +151,8 @@ Skip details of Part 3 — Delegate's pattern catalog if your team's pattern sel
 > *Will write the spec and the prompts.*
 
 1. **Part 1 — FRAME** for vocabulary
-2. **Part 2 — SPECIFY** in depth — especially [The Canonical Spec Template](../sdd/07-canonical-spec-template.md), [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md), [The Living Spec](../sdd/06-living-specs.md)
-3. **Part 3 — DELEGATE** in depth — especially [The System Prompt](../patterns/capability/system-prompt.md), [The Tool Manifest](../patterns/capability/tool-manifest.md), [Least Capability](../agents/04-tools-mcp-capability-boundaries.md)
+2. **Part 2 — SPECIFY** in depth — especially [The Canonical Spec Template](../specify/07-canonical-spec-template.md), [Writing for Machine Execution](../specify/05-writing-specs-for-agents.md), [The Living Spec](../specify/06-living-specs.md)
+3. **Part 3 — DELEGATE** in depth — especially [The System Prompt](../patterns/capability/system-prompt.md), [The Tool Manifest](../patterns/capability/tool-manifest.md), [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md)
 4. The Specify and Delegate chapters of the scenario whose system shape matches yours
 
 ### SRE / on-call
@@ -161,9 +161,9 @@ Skip details of Part 3 — Delegate's pattern catalog if your team's pattern sel
 
 1. [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
 2. [The Closed Loop: From Failures to Spec Amendments](../evolve/01-closed-loop.md)
-3. **Part 4 — VALIDATE** in full — especially [Production Telemetry](../operating/10-production-telemetry.md) and the [Distributed Trace](../patterns/observability/distributed-trace.md) pattern
+3. **Part 4 — VALIDATE** in full — especially [Production Telemetry](../evolve/10-production-telemetry.md) and the [Distributed Trace](../patterns/observability/distributed-trace.md) pattern
 4. The Evolve chapter of the scenario whose system shape matches yours
-5. [Cost and Latency Engineering](../operating/09-cost-and-latency.md) and [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) — the cost-incident response surface
+5. [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) and [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) — the cost-incident response surface
 
 ### Engineering manager / domain owner
 
@@ -172,7 +172,7 @@ Skip details of Part 3 — Delegate's pattern catalog if your team's pattern sel
 1. **Foreword** — [Prologue](../prologue.md), [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md)
 2. [The Intent Design Session](../theory/07-intent-design-session.md) — the working ritual you'll be a required participant in
 3. [Roles & Responsibilities (RACI) Card](raci-card.md) — your seat at the table
-4. **Part 5 — EVOLVE** in full — especially [Adoption Playbook](../operating/11-adoption-playbook.md), [Proportional Governance](../operating/04-governance.md), [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md)
+4. **Part 5 — EVOLVE** in full — especially [Adoption Playbook](../evolve/11-adoption-playbook.md), [Proportional Governance](../evolve/04-governance.md), [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md)
 
 You don't need Part 3 — Delegate in detail; the team builds the agent. You do need to know what you're committing to in Frame and what to ask for in Validate and Evolve.
 
@@ -195,14 +195,14 @@ The [Pattern Index](pattern-index.md) is the canonical entry-by-problem table; t
 | If you are... | Start at |
 |---|---|
 | Just trying to see the framework applied in one screen | [A Miniature Pilot, End-to-End](../miniature-pilot.md) |
-| Choosing how to structure a new agent system | [Pick an archetype](../architecture/02-canonical-intent-archetypes.md) |
-| Writing a spec right now | [The canonical spec template](../sdd/07-canonical-spec-template.md) |
-| Designing oversight for an agent that's about to ship | [Proportional Oversight](../agents/06-human-oversight-models.md) |
+| Choosing how to structure a new agent system | [Pick an archetype](../frame/02-canonical-intent-archetypes.md) |
+| Writing a spec right now | [The canonical spec template](../specify/07-canonical-spec-template.md) |
+| Designing oversight for an agent that's about to ship | [Proportional Oversight](../delegate/06-human-oversight-models.md) |
 | Diagnosing a production failure | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) and [The Closed Loop](../evolve/01-closed-loop.md) |
 | Setting up safety controls | [Safety patterns](../patterns/safety/prompt-injection-defense.md) — start anywhere; cross-link from there |
-| Introducing the framework to your team | [Adoption Playbook](../operating/11-adoption-playbook.md) and [Minimum Viable Architecture of Intent](../operating/16-minimum-viable-aoi.md) |
-| Composing with DevSquad Copilot | [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/12-devsquad-mapping.md), [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md), and Scenario 3's chapters |
-| Auditing whether your discipline is decaying | [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) |
+| Introducing the framework to your team | [Adoption Playbook](../evolve/11-adoption-playbook.md) and [Minimum Viable Architecture of Intent](../evolve/16-minimum-viable-aoi.md) |
+| Composing with DevSquad Copilot | [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md), [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md), and Scenario 3's chapters |
+| Auditing whether your discipline is decaying | [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) |
 | Evaluating the framework for your org | The companion paper at [`paper/architecture-of-intent.pdf`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/paper/architecture-of-intent.pdf), then path 5 (conceptual-only) above |
 
 ---

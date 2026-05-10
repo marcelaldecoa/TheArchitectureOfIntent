@@ -59,5 +59,5 @@ Deploy a **judge agent** — a separate agent (Advisor archetype) that evaluates
 
 - [Output Validation Gate](../safety/output-validation-gate.md) — the judge is the semantic tier of the validation gate
 - [Spec Conformance Test](spec-conformance.md) — conformance tests handle structural validation; the judge handles semantic evaluation
-- [The Advisor Archetype](../../architecture/archetypes/advisor.md) — the judge is an Advisor: it informs, it does not act
+- [The Advisor Archetype](../../frame/archetypes/advisor.md) — the judge is an Advisor: it informs, it does not act
 - [Anomaly Detection Baseline](../observability/anomaly-baseline.md) — judge score trends can detect quality drift

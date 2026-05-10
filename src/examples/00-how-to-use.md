@@ -83,7 +83,7 @@ These examples do not attempt to cover every archetype, every technology, or eve
 - **Example 2** is an internal automation pipeline with a synthetic consumer (other software, not humans) where correctness is the primary value and throughput is the secondary one.
 - **Example 3** is an in-loop coding agent on a real repository — the most-deployed agent class of 2024–2026, with the structural controls (branch protection, dependency allowlist, sandboxed execution) that distinguish a serious deployment from an autonomous-Devin pitch deck.
 
-There is no example of a computer-use / browser agent, a Synthesizer-dominant research system, a Guardian-dominant compliance system, or an Advisor-only knowledge interface. These exist — and the patterns from the book apply to them ([Computer-Use Agents](../agents/09-computer-use-agents.md) covers the perception-then-act class without a worked pilot) — but the three examples here cover the higher-stakes and higher-complexity territory where most practitioners need the most guidance.
+There is no example of a computer-use / browser agent, a Synthesizer-dominant research system, a Guardian-dominant compliance system, or an Advisor-only knowledge interface. These exist — and the patterns from the book apply to them ([Computer-Use Agents](../delegate/09-computer-use-agents.md) covers the perception-then-act class without a worked pilot) — but the three examples here cover the higher-stakes and higher-complexity territory where most practitioners need the most guidance.
 
 ---
 
@@ -92,8 +92,8 @@ There is no example of a computer-use / browser agent, a Synthesizer-dominant re
 If you want to test this framework against your own context, here is a practical exercise:
 
 1. **Pick one agent system** your team is building or operating.
-2. **Run the archetype decision tree** ([The Archetype Selection Tree](../architecture/04-decision-tree.md)). Does the result match what you currently have? If not, document why.
-3. **Write the spec** for the agent's most consequential action using the [Canonical Spec Template](../sdd/07-canonical-spec-template.md). Focus on Sections 3 (Constraints) and 6 (Success Criteria). The first draft will feel incomplete — that is the point.
+2. **Run the archetype decision tree** ([The Archetype Selection Tree](../frame/04-decision-tree.md)). Does the result match what you currently have? If not, document why.
+3. **Write the spec** for the agent's most consequential action using the [Canonical Spec Template](../specify/07-canonical-spec-template.md). Focus on Sections 3 (Constraints) and 6 (Success Criteria). The first draft will feel incomplete — that is the point.
 4. **Execute against the spec** and categorize the first three failures using the [seven failure categories](../theory/05-failure-as-design-signal.md). How many are spec gaps versus model-level limitations?
 5. **Document what surprised you.** The gap between what you expected and what happened is the most valuable learning signal the framework produces.
 

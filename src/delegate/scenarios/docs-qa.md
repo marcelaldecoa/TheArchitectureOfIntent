@@ -203,5 +203,5 @@ The agent ships to a 5% canary on Friday. The eval-and-validate phase begins Mon
 - [Grounding with Verified Sources](../../patterns/capability/grounding.md)
 - [Output Validation Gate](../../patterns/safety/output-validation-gate.md) — citation-grounding enforcement
 - [Sensitive Data Boundary](../../patterns/safety/sensitive-data-boundary.md) — at the index layer
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../operating/12-devsquad-mapping.md) — the *Decompose* + *Implement* phases
-- [Co-adoption with DevSquad Copilot](../../operating/13-co-adoption-with-devsquad.md) — least-capability per task
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../evolve/12-devsquad-mapping.md) — the *Decompose* + *Implement* phases
+- [Co-adoption with DevSquad Copilot](../../evolve/13-co-adoption-with-devsquad.md) — least-capability per task

@@ -69,4 +69,4 @@ When output fails validation, **re-execute with the validation failure report as
 - [Output Validation Gate](../safety/output-validation-gate.md) — validation produces the failure report that feeds the retry
 - [The Idempotent Tool](../integration/idempotent-tool.md) — retries require idempotent tools to prevent duplicate side effects
 - [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md) — retry is appropriate for spec failures and capability failures, not for model-level failures
-- [The Living Spec](../../sdd/06-living-specs.md) — repeated retry failures are signals to update the spec
+- [The Living Spec](../../specify/06-living-specs.md) — repeated retry failures are signals to update the spec

@@ -46,7 +46,7 @@ These are *constraints*, not preferences. They become §4 NOT-authorized clauses
 
 **3. How will we know it's working?**
 
-The team commits to four signals (the [four signal metrics](../../operating/06-metrics.md), instantiated for this system):
+The team commits to four signals (the [four signal metrics](../../validate/06-metrics.md), instantiated for this system):
 
 - *Spec-gap rate* — amendments per 1000 conversations. Target trajectory: high in month 1 (the spec is new), declining through month 3.
 - *First-pass validation* — % of agent responses Priya's team accepts without rework. Target: ≥ 92% by day 30.
@@ -59,7 +59,7 @@ These are written down before any spec is drafted. If the team can't agree on th
 
 ## The archetype call
 
-The team walks the [archetype selection tree](../../architecture/04-decision-tree.md), question by question:
+The team walks the [archetype selection tree](../../frame/04-decision-tree.md), question by question:
 
 **Q1 — does the system *act*, or only *inform*?** It acts: it issues refunds, drafts customer-facing responses, escalates with context. *Not Advisor alone.*
 
@@ -79,7 +79,7 @@ The team decides no, for two specific reasons: (1) the refund cap of $500 makes 
 
 ## Composition declaration
 
-The team uses [composition first-class](../../architecture/05-composing-archetypes.md) (Pattern A — *Confirm-then-Act* and Pattern B — *Executor + Guardian*) rather than treating the system as a single Executor. Specifically:
+The team uses [composition first-class](../../frame/05-composing-archetypes.md) (Pattern A — *Confirm-then-Act* and Pattern B — *Executor + Guardian*) rather than treating the system as a single Executor. Specifically:
 
 - **Executor (governing).** The agent acts on tier-1 tickets within the documented response repertoire.
 - **Advisor (embedded).** When the agent escalates to a human supervisor, it does so in *Advisor mode* — surfacing the relevant KB articles, the candidate response it would have drafted, and its uncertainty. The human picks; the agent doesn't decide for them.
@@ -137,8 +137,8 @@ The Frame session takes 90 minutes. Maya circulates the artifact for sign-off th
 
 ## Conceptual chapters this scenario binds to
 
-- [Pick an Archetype](../../architecture/02-canonical-intent-archetypes.md) — the Executor archetype
-- [Composing Archetypes](../../architecture/05-composing-archetypes.md) — Pattern A (Confirm-then-Act), Pattern B (Executor + Guardian)
+- [Pick an Archetype](../../frame/02-canonical-intent-archetypes.md) — the Executor archetype
+- [Composing Archetypes](../../frame/05-composing-archetypes.md) — Pattern A (Confirm-then-Act), Pattern B (Executor + Guardian)
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md) — the four-dial model
 - [The Intent Design Session](../../theory/07-intent-design-session.md) — Frame is its first phase
 - [Roles & Responsibilities (RACI) Card](../../appendices/raci-card.md) — Priya as the domain owner

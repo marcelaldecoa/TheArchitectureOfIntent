@@ -66,7 +66,7 @@ Design the gate as a **named checkpoint** where the agent produces a **structure
 ## Connections
 
 - [Sequential Pipeline](sequential-pipeline.md) — the gate is a named stage in the pipeline
-- [Proportional Oversight](../../agents/06-human-oversight-models.md) — gates are placed proportionally to consequence, not uniformly
+- [Proportional Oversight](../../delegate/06-human-oversight-models.md) — gates are placed proportionally to consequence, not uniformly
 - [Escalation Chain](escalation-chain.md) — one of the human's options at a gate is to escalate to a higher authority
 - [Structured Execution Log](../observability/execution-log.md) — human decisions at gates are logged as auditable events
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md) — gates are mandatory before irreversible actions

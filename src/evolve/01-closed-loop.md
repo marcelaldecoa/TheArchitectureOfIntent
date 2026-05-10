@@ -40,7 +40,7 @@ The closed-loop discipline is not a fourth option. It is the *integration* of al
 
 - **Speed of fix vs. durability of fix.** A prompt patch ships in hours. A spec amendment with review takes days. Production pressure pushes toward the prompt; the closed-loop discipline pushes toward the spec. Most teams over-correct toward speed once a few systems are healthy and discover the cost a quarter later.
 
-- **Visible artifact vs. invisible discipline.** The spec is easy to point at; the per-incident loop that updates it is not. A team can preserve the artifact perfectly while losing every habit that gave it meaning. The [Discipline-Health Audit](../operating/15-anti-patterns.md) exists because this drift is hard to spot from inside.
+- **Visible artifact vs. invisible discipline.** The spec is easy to point at; the per-incident loop that updates it is not. A team can preserve the artifact perfectly while losing every habit that gave it meaning. The [Discipline-Health Audit](../evolve/15-anti-patterns.md) exists because this drift is hard to spot from inside.
 
 - **Per-incident discipline vs. per-sprint discipline.** Doing the loop per-incident (trace, categorize, amend, ship) is mechanical. Rolling the spec evolution log up per-sprint to find systemic patterns is judgment-heavy and easily skipped. Teams that are good at per-incident often plateau because they're not doing per-sprint.
 
@@ -54,7 +54,7 @@ The closed-loop discipline is not a fourth option. It is the *integration* of al
 
 Four steps, executed per consequential failure:
 
-**1. Trace.** Every consequential action emits a structured trace — input, retrieved context, tool calls, outputs, oversight decisions, the spec version the agent was running against. Production telemetry is what makes diagnosis possible. Without traces, you have an after-the-fact narrative; with them, you have evidence. The [Production Telemetry](../operating/10-production-telemetry.md) chapter names what to instrument.
+**1. Trace.** Every consequential action emits a structured trace — input, retrieved context, tool calls, outputs, oversight decisions, the spec version the agent was running against. Production telemetry is what makes diagnosis possible. Without traces, you have an after-the-fact narrative; with them, you have evidence. The [Production Telemetry](../evolve/10-production-telemetry.md) chapter names what to instrument.
 
 **2. Categorize.** Apply the diagnostic test from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md): *"If a perfectly competent agent had executed this spec exactly as written, would the outcome have been correct?"* The answer determines the category:
 
@@ -78,7 +78,7 @@ Four steps, executed per consequential failure:
 
 The fix-locus framing is what makes the loop *structural* rather than reactive. A team that traces every failure to a specific spec section or manifest field is doing closed-loop work; a team that traces every failure to "let's update the prompt" is not.
 
-**4. Amend.** The amendment lands in the structural artifact. For a Cat 1, the spec gets updated and re-published — the [Living Spec](../sdd/06-living-specs.md) chapter names the mechanics. For a Cat 2, the tool manifest gets a new permission boundary or fixed description. For a Cat 3, a NOT-authorized clause gets added or sharpened. The change ships through the spec evolution log.
+**4. Amend.** The amendment lands in the structural artifact. For a Cat 1, the spec gets updated and re-published — the [Living Spec](../specify/06-living-specs.md) chapter names the mechanics. For a Cat 2, the tool manifest gets a new permission boundary or fixed description. For a Cat 3, a NOT-authorized clause gets added or sharpened. The change ships through the spec evolution log.
 
 A prompt patch may exist in parallel as a *temporary compensation* while the structural amendment is in review. When that happens, it is logged as such — a prompt patch with no corresponding structural amendment is the failure mode this discipline exists to prevent.
 
@@ -96,7 +96,7 @@ A near-empty log over months of production is a signal, not an achievement. It u
 
 **Per-sprint — weeks.** The team rolls up the spec evolution log entries for the sprint and looks for patterns. A cluster of Cat 1 amendments to §11 means the spec is drifting from how the agent is actually being asked to operate; the team schedules a structural rewrite of §11. A cluster of Cat 3 amendments means the original §4 was incomplete in a class-coherent way; the team adds a new sub-clause or invariant rather than enumerating each instance. The per-sprint pass is where the highest-value structural amendments get scheduled.
 
-**Per-quarter — months.** The [Discipline-Health Audit](../operating/15-anti-patterns.md) (60 minutes per system) walks the 12 anti-patterns and writes a one-paragraph verdict per anti-pattern — *not present*, *early signs*, or *active*. Most relevantly here: prompt-patch drift, archetype drift, calibration without commitment, and metrics theater are the four anti-patterns that most directly indicate the closed loop has stopped functioning. If the audit surfaces any of those as *active*, the structural amendment cadence is the artifact to fix, not the system the audit was nominally about.
+**Per-quarter — months.** The [Discipline-Health Audit](../evolve/15-anti-patterns.md) (60 minutes per system) walks the 12 anti-patterns and writes a one-paragraph verdict per anti-pattern — *not present*, *early signs*, or *active*. Most relevantly here: prompt-patch drift, archetype drift, calibration without commitment, and metrics theater are the four anti-patterns that most directly indicate the closed loop has stopped functioning. If the audit surfaces any of those as *active*, the structural amendment cadence is the artifact to fix, not the system the audit was nominally about.
 
 ### What breaks the loop
 
@@ -118,14 +118,14 @@ Validate is *learning in production*. Evolve is *what you do with what you learn
 
 This chapter sits at 5.1 because everything else in Part 5 is a *practice that supports the loop*:
 
-- The [Adoption Playbook](../operating/11-adoption-playbook.md) keeps the loop going as the team grows.
-- [MVP-AoI](../operating/16-minimum-viable-aoi.md) is the closed loop in compressed form for systems too small for the full discipline.
-- [Proportional Governance](../operating/04-governance.md) gives the loop a role-and-responsibility frame.
-- [Cost and Latency Engineering](../operating/09-cost-and-latency.md) and [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) name the particular Cat that needs its own escalation pattern (Cost Posture incidents).
-- [Production Telemetry](../operating/10-production-telemetry.md) is the trace surface that step 1 of the loop requires.
-- The [Anti-patterns chapter](../operating/15-anti-patterns.md) catalogs the discipline failures the loop is meant to prevent.
+- The [Adoption Playbook](../evolve/11-adoption-playbook.md) keeps the loop going as the team grows.
+- [MVP-AoI](../evolve/16-minimum-viable-aoi.md) is the closed loop in compressed form for systems too small for the full discipline.
+- [Proportional Governance](../evolve/04-governance.md) gives the loop a role-and-responsibility frame.
+- [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) and [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) name the particular Cat that needs its own escalation pattern (Cost Posture incidents).
+- [Production Telemetry](../evolve/10-production-telemetry.md) is the trace surface that step 1 of the loop requires.
+- The [Anti-patterns chapter](../evolve/15-anti-patterns.md) catalogs the discipline failures the loop is meant to prevent.
 - [Framework Versioning](07-framework-versioning.md) is the loop at the longest time-scale — when the framework itself acquires new capability, every system inherits it through controlled upgrade rather than ad-hoc adoption.
-- The [DevSquad mapping](../operating/12-devsquad-mapping.md) and [Co-adoption](../operating/13-co-adoption-with-devsquad.md) chapters show how the loop composes with DevSquad Copilot's *Refine continuously* phase.
+- The [DevSquad mapping](../evolve/12-devsquad-mapping.md) and [Co-adoption](../evolve/13-co-adoption-with-devsquad.md) chapters show how the loop composes with DevSquad Copilot's *Refine continuously* phase.
 
 ---
 
@@ -144,8 +144,8 @@ Read at least one end-to-end before adopting the loop in your team. The vocabula
 ## Related material
 
 - [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
-- [The Living Spec](../sdd/06-living-specs.md) — the artifact the loop updates
-- [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — the review discipline that surfaces Cat 1s
+- [The Living Spec](../specify/06-living-specs.md) — the artifact the loop updates
+- [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — the review discipline that surfaces Cat 1s
 - [Spec Versioning](../patterns/deployment/spec-versioning.md) — the deployment pattern for amended specs
-- [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the audit that catches loop decay
+- [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) — the audit that catches loop decay
 - [Framework Versioning](07-framework-versioning.md) — the loop at the longest time-scale

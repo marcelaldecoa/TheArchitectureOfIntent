@@ -266,7 +266,7 @@ The agent runs as a containerized service:
 - **Resource budget:** 4GB RAM, 1 vCPU per run; 30-minute wall-clock; $4 cost ceiling per run (P95 budget per spec §7)
 - **Termination:** Run ends on PR creation, surface, or any budget exceeded
 - **Logging:** Full trace to LangSmith with the issue ID as correlation; tool calls and arguments captured; sensitive content (file content >500 chars) referenced by hash in trace, full content in retained working storage with 30-day retention
-- **Cost attribution:** Per-run cost tagged to the issue, the team, and the agent role; aggregated weekly into the cost-per-correct-output metric per [Four Signal Metrics](../../operating/06-metrics.md)
+- **Cost attribution:** Per-run cost tagged to the issue, the team, and the agent role; aggregated weekly into the cost-per-correct-output metric per [Four Signal Metrics](../../validate/06-metrics.md)
 
 ---
 

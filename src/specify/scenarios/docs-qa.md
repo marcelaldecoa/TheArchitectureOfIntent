@@ -218,7 +218,7 @@ The agent's tool manifest reach is enumerated in §5. Beyond that:
 - *At launch:* Monitoring active; four signal metrics + docs-gap-finding rate emitting; docs-team trained on the docs-gap-candidate workflow.
 - *Per-incident:* trace categorized to Cat 1–7 (note: Cat 7 will not apply — no perception/action interface); fix-locus identified; amendment filed.
 - *Per-sprint (DevSquad Phase 8):* roll up the spec evolution log; look for Cat patterns; schedule structural amendments. *Roll up the docs-gap-candidate feed; the docs team uses it as a backlog input.*
-- *Per-quarter:* run the [Discipline-Health Audit](../../operating/15-anti-patterns.md).
+- *Per-quarter:* run the [Discipline-Health Audit](../../evolve/15-anti-patterns.md).
 
 ---
 
@@ -242,7 +242,7 @@ The framework spec at this point is partial: §1, §2, §3, §4, §5, §6, §7, 
 
 ## Conceptual chapters this scenario binds to
 
-- [The Canonical Spec Template](../../sdd/07-canonical-spec-template.md)
+- [The Canonical Spec Template](../../specify/07-canonical-spec-template.md)
 - [The Intent Design Session](../../theory/07-intent-design-session.md) — the IDS happens here, but compressed to fit DevSquad's *Spec the next slice* time-box
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../operating/12-devsquad-mapping.md)
-- [Co-adoption with DevSquad Copilot](../../operating/13-co-adoption-with-devsquad.md) — vocabulary translation
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../evolve/12-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](../../evolve/13-co-adoption-with-devsquad.md) — vocabulary translation

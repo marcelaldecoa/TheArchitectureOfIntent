@@ -88,7 +88,7 @@ Agent output is not deterministic. The same input may produce slightly different
 - [Output Validation Gate](../safety/output-validation-gate.md) — conformance tests are the design-time version of runtime validation
 - [Adversarial Input Test](adversarial-input.md) — adversarial tests go beyond conformance to test resilience against hostile input
 - [Multi-Agent Integration Test](multi-agent-integration.md) — integration tests verify that conformant individual agents work correctly together
-- [The Living Spec](../../sdd/06-living-specs.md) — conformance test failures can reveal spec gaps that feed back into spec evolution
+- [The Living Spec](../../specify/06-living-specs.md) — conformance test failures can reveal spec gaps that feed back into spec evolution
 - [Spec Versioning](../deployment/spec-versioning.md) — test sets are versioned alongside specs
 - [Canary Deployment](../deployment/canary.md) — canary deploys compare old and new spec versions in production after regression tests pass
 - [Evaluation by Judge Agent](judge-agent.md) — for semantic quality tests that can't be checked programmatically

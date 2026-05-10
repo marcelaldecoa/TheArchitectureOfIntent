@@ -79,6 +79,6 @@ The critical design decision in the structured execution log is the `spec_id` fi
 - [Anomaly Detection Baseline](anomaly-baseline.md) — baselines are computed from aggregated execution log data
 - [Cost Tracking](cost-tracking.md) — cost is derived from token counts, durations, and tool calls in the log
 - [Sensitive Data Boundary](../safety/sensitive-data-boundary.md) — log entries respect data classification through redaction
-- [Proportional Governance](../../operating/04-governance.md) — the governance layer records who authorized the archetype
+- [Proportional Governance](../../evolve/04-governance.md) — the governance layer records who authorized the archetype
 - [Human-in-the-Loop Gate](../coordination/human-gate.md) — human decisions at gates become log entries with the governance layer
 - [Agent Registry](../state/agent-registry.md) — the registry connects deployed agents to their governance metadata visible in the log

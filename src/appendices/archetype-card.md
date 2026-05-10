@@ -8,7 +8,7 @@
 
 ---
 
-Use this card to quickly identify which archetype applies to your system. For full definitions, see [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md).
+Use this card to quickly identify which archetype applies to your system. For full definitions, see [The Five Archetypes](../frame/02-canonical-intent-archetypes.md).
 
 ---
 
@@ -88,9 +88,9 @@ If the system's primary job is to prevent bad things rather than do good things,
 If there is no agent-to-agent coordination or compound state management, an Executor is simpler and safer. Orchestrators are for genuinely multi-agent, multi-step compound goals.
 
 **Forgetting that systems can composite archetypes**
-A real system often instantiates multiple archetypes in different layers. A customer support system might be an **Advisor** at the user interface, an **Executor** for ticket creation, and a **Guardian** for PII handling. See [Archetype Composition](../architecture/05-composing-archetypes.md).
+A real system often instantiates multiple archetypes in different layers. A customer support system might be an **Advisor** at the user interface, an **Executor** for ticket creation, and a **Guardian** for PII handling. See [Archetype Composition](../frame/05-composing-archetypes.md).
 
 ---
 
-*For full archetype specifications, see [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) and the per-archetype deep-dives in [`architecture/archetypes/`](../architecture/archetypes/advisor.md).*
+*For full archetype specifications, see [Pick an Archetype](../frame/02-canonical-intent-archetypes.md) and the per-archetype deep-dives in [`frame/archetypes/`](../frame/archetypes/advisor.md).*
 

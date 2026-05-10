@@ -37,7 +37,7 @@ The catalog solves this by making the most common archetype profiles decision-re
 
 ### How to Use This Catalog
 
-**Step 1.** Identify the primary archetype your agent will instantiate. If you're uncertain, use the selection table in Part 1 ([The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)) and the [Agency Levels and Risk Posture](../architecture/03-archetype-dimensions.md) chapter.
+**Step 1.** Identify the primary archetype your agent will instantiate. If you're uncertain, use the selection table in Part 1 ([The Five Archetypes](../frame/02-canonical-intent-archetypes.md)) and the [Agency Levels and Risk Posture](../frame/03-archetype-dimensions.md) chapter.
 
 **Step 2.** Find the closest standard profile in the catalog below.
 
@@ -226,9 +226,9 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Organizational Repertoire](01-why-repertoires-matter.md)
-- [The Five Archetypes](../architecture/02-canonical-intent-archetypes.md)
-- [Agency Levels and Risk Posture](../architecture/03-archetype-dimensions.md)
-- [Oversight Models and Reversibility](../architecture/03-archetype-dimensions.md)
+- [The Five Archetypes](../frame/02-canonical-intent-archetypes.md)
+- [Agency Levels and Risk Posture](../frame/03-archetype-dimensions.md)
+- [Oversight Models and Reversibility](../frame/03-archetype-dimensions.md)
 
 **This pattern enables:**
 - [Spec Template Library](03-spec-template-library.md)

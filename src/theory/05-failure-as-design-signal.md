@@ -355,10 +355,10 @@ After applying this pattern:
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
-- [The Living Spec](../sdd/06-living-specs.md) — failure-driven spec evolution as practice
-- [Proportional Oversight](../agents/06-human-oversight-models.md) — designing oversight that catches the failure categories you can't prevent
-- [Four Signal Metrics](../operating/06-metrics.md) — measuring spec quality through failure signal
-- [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) — the empirical layer that complements the diagnostic protocol
+- [The Living Spec](../specify/06-living-specs.md) — failure-driven spec evolution as practice
+- [Proportional Oversight](../delegate/06-human-oversight-models.md) — designing oversight that catches the failure categories you can't prevent
+- [Four Signal Metrics](../validate/06-metrics.md) — measuring spec quality through failure signal
+- [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — the empirical layer that complements the diagnostic protocol
 - [Post-mortem Through Intent](../examples/01-ai-customer-support/postmortem.md) — a worked example of this protocol applied to a real incident
 
 ---

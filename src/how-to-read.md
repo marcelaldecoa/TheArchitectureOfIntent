@@ -31,13 +31,13 @@ After Part 6 the book becomes reference material: a flat **Cross-Cutting Pattern
 | If you are... | Start at |
 |---------------|----------|
 | Wanting the framework on one screen | [A Miniature Pilot, End-to-End](miniature-pilot.md) |
-| Structuring a new agent system | [Pick an archetype](architecture/02-canonical-intent-archetypes.md) |
-| Writing a spec | [The canonical spec template](sdd/07-canonical-spec-template.md) |
-| Designing oversight | [Proportional Oversight](agents/06-human-oversight-models.md) |
+| Structuring a new agent system | [Pick an archetype](frame/02-canonical-intent-archetypes.md) |
+| Writing a spec | [The canonical spec template](specify/07-canonical-spec-template.md) |
+| Designing oversight | [Proportional Oversight](delegate/06-human-oversight-models.md) |
 | Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Prompt injection defense](patterns/safety/prompt-injection-defense.md), [output validation](patterns/safety/output-validation-gate.md) |
-| Choosing an oversight cadence | [Proportional Governance](operating/04-governance.md) |
-| Defining what to measure | [Four Signal Metrics](operating/06-metrics.md) |
+| Choosing an oversight cadence | [Proportional Governance](evolve/04-governance.md) |
+| Defining what to measure | [Four Signal Metrics](validate/06-metrics.md) |
 | Looking at a real example | [Designing an AI Coding Agent](examples/03-coding-agent/README.md) (recommended) — or [How to use these examples](examples/00-how-to-use.md) for the full set |
 | Confused about a term | [Glossary](appendices/glossary.md) |
 
@@ -74,8 +74,8 @@ Every code example includes:
 
 The five archetypes — Advisor, Executor, Guardian, Synthesizer, Orchestrator — are the core vocabulary of this book. They appear in specs, in agent instructions, in design reviews, and in governance conversations.
 
-If you encounter a reference to "the Executor archetype" or "the Guardian pattern" and don't recognize it, the [Archetype Quick-Select Card](appendices/archetype-card.md) gives you a one-page summary. The full deep-dives live in [`architecture/archetypes/`](architecture/archetypes/advisor.md).
+If you encounter a reference to "the Executor archetype" or "the Guardian pattern" and don't recognize it, the [Archetype Quick-Select Card](appendices/archetype-card.md) gives you a one-page summary. The full deep-dives live in [`frame/archetypes/`](frame/archetypes/advisor.md).
 
 ---
 
-*You're ready. Begin with the [Prologue](prologue.md), or jump to [Pick an archetype](architecture/02-canonical-intent-archetypes.md).*
+*You're ready. Begin with the [Prologue](prologue.md), or jump to [Pick an archetype](frame/02-canonical-intent-archetypes.md).*

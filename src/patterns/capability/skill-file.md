@@ -85,4 +85,4 @@ The `applyWhen` field is critical — it tells the agent **when** to load this s
 - [Per-Task Context](per-task-context.md) — skills provide stable domain knowledge; per-task context provides task-specific information
 - [Standards as Agent Skill Source](../../repertoires/04-code-standards.md) — code standards documents are natural skill file source material
 - [Context Window Budget](context-budget.md) — skills compete for context space; the budget pattern determines priority
-- [Portable Domain Knowledge](../../agents/05-agent-skills.md) — the full treatment of skills in agent architecture
+- [Portable Domain Knowledge](../../delegate/05-agent-skills.md) — the full treatment of skills in agent architecture
