@@ -282,6 +282,21 @@ The repo is `TheArchitectureOfIntent` (preserves the GitHub Pages URL). The book
 
 ---
 
+## Pending git tags (push from your own environment)
+
+The sandbox blocks tag pushes with HTTP 403, so these v2 tags were created locally during the framework restructure but never pushed to origin. Run from your own shell:
+
+```bash
+git fetch origin
+git push origin v2.0.0 v2.0.1 v2.1.0 v2.2.0 v2.2.1 v2.2.2
+```
+
+If any tag is missing locally (e.g., a session reset wiped `.git/refs/tags/`), recreate it pointing at the merge commit of the corresponding PR before pushing. The CHANGELOG.md entries name each version's PR; `git log --oneline --grep="v2\."` finds the merge commits.
+
+Once all six tags are on origin, delete this section.
+
+---
+
 ## Session continuation playbook
 
 When opening this repo in a new Claude session:
