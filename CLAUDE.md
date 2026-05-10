@@ -110,6 +110,14 @@ python3 scripts/check-orphans.py
 
 Both are fast and run before every commit that touches the book or SUMMARY.
 
+### Check README path drift
+
+```bash
+python3 scripts/check-readme-paths.py
+```
+
+Verifies that every repo-relative path mentioned in `README.md` (root) and `paper/README.md` still exists on disk. Catches the kind of drift that bit the canvas-readme-fixes pass: a directory rename leaves the README's repository-layout tree pointing at directories that no longer exist. Brace expansion is supported (`paper/architecture-of-intent.{md,pdf}`); glob tokens (`paper/figures/**.svg`) are skipped. Run it after any directory rename or after editing a README's repository-layout section.
+
 ### Build the book locally
 
 ```bash
@@ -292,9 +300,9 @@ When opening this repo in a new Claude session:
 
 1. **Read this file first.** It's the registry.
 2. **Check `git log --oneline -10`** to see recent merged PRs.
-3. **Run the link/orphan checkers** before making any book changes:
+3. **Run the link/orphan/README checkers** before making any book changes:
    ```bash
-   python3 scripts/check-internal-links.py && python3 scripts/check-orphans.py
+   python3 scripts/check-internal-links.py && python3 scripts/check-orphans.py && python3 scripts/check-readme-paths.py
    ```
 4. **For deck or paper changes**, run the sync check:
    ```bash
