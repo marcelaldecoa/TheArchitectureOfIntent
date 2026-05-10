@@ -60,4 +60,4 @@ Route a **percentage of traffic to the new spec version** while the majority con
 - [Spec Versioning](spec-versioning.md) — canary deploys compare two spec versions in production
 - [Spec Conformance Testing](../testing/spec-conformance.md) — pre-deployment testing catches many issues; canary catches the rest
 - [Rollback on Failure](rollback.md) — canary revert is a specific case of rollback
-- [Four Signal Metrics](../../operating/06-metrics.md) — signal metrics are the comparison criteria
+- [Four Signal Metrics](../../validate/06-metrics.md) — signal metrics are the comparison criteria

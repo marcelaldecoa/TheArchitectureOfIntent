@@ -109,7 +109,7 @@ The Cost Posture *discipline* worked: the breach was caught within 6 hours by a 
 
 ## The Discipline-Health Audit at day 90
 
-Per §10 and the [anti-patterns chapter](../../operating/15-anti-patterns.md), the team runs the 60-minute Discipline-Health Audit at day 90. Maya facilitates; Sam, Jordan, Ari, and Priya participate.
+Per §10 and the [anti-patterns chapter](../../evolve/15-anti-patterns.md), the team runs the 60-minute Discipline-Health Audit at day 90. Maya facilitates; Sam, Jordan, Ari, and Priya participate.
 
 The audit walks the 12 anti-patterns and writes a one-paragraph verdict per anti-pattern. (Citation theater, anti-pattern #6 in the catalog as of framework v2.1.0, is Synthesizer-specific and doesn't apply to this Executor system — the auditor records *not applicable* for that entry.)
 
@@ -179,7 +179,7 @@ The agent is in steady-state operation. The team starts framing their next syste
 ## Conceptual chapters this scenario binds to
 
 - [The Closed Loop: From Failures to Spec Amendments](../01-closed-loop.md)
-- [Signs Your Architecture of Intent Is Degrading](../../operating/15-anti-patterns.md)
-- [Cost and Latency Engineering](../../operating/09-cost-and-latency.md)
-- [Adoption Playbook](../../operating/11-adoption-playbook.md)
+- [Signs Your Architecture of Intent Is Degrading](../../evolve/15-anti-patterns.md)
+- [Cost and Latency Engineering](../../evolve/09-cost-and-latency.md)
+- [Adoption Playbook](../../evolve/11-adoption-playbook.md)
 - [Framework Versioning](../07-framework-versioning.md)

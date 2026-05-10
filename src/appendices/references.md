@@ -20,34 +20,34 @@ The agent landscape has moved quickly between 2024 and 2026. This table maps eac
 
 | Innovation | Year | Where addressed | Relation to the framework |
 |---|---|---|---|
-| **Anthropic Model Context Protocol (MCP)** | 2024–25 | [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md), [Designing MCP Tools](../agents/mcp/02-designing-mcp-tools.md), [MCP Safety](../agents/mcp/03-mcp-safety.md) | The protocol that makes [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) operationally enforceable |
-| **MCP cross-vendor adoption** (OpenAI, Google, Microsoft Copilot) | 2025 | [The Model Context Protocol — 2026 ecosystem](../agents/mcp/01-what-is-mcp.md) | Treats MCP as the *de facto* tool integration protocol; not using it is now the choice that needs justification |
-| **GitHub spec-kit** | 2024–25 | [Spec-Driven Development](../sdd/01-what-sdd-means.md), [SpecKit](../sdd/04-speckit.md) | The direct ancestor of the book's SDD chapters and canonical spec template |
-| **Microsoft DevSquad Copilot** | 2026 | [DevSquad Mapping](../operating/12-devsquad-mapping.md), [Co-adoption with DevSquad](../operating/13-co-adoption-with-devsquad.md), [The Living Spec](../sdd/06-living-specs.md), [Adoption Playbook](../operating/11-adoption-playbook.md) | Parallel framework with high conceptual overlap; the book is process-agnostic, DevSquad is process-prescriptive; they compose cleanly |
-| **Anthropic Computer Use** | Oct 2024 | [Computer-Use Agents](../agents/09-computer-use-agents.md), [Red-Team Protocol](../operating/08-red-team-protocol.md) | The reference implementation that made GUI-acting agents mainstream; introduced the new failure-mode surface Cat 7 (Perceptual Failure) |
-| **OpenAI Operator** | Early 2025 | [Computer-Use Agents](../agents/09-computer-use-agents.md) | Browser-use agent with autonomous task completion posture; canonical Orchestrator-over-self deployment for the new class |
-| **Google Gemini computer use** | 2025 | [Computer-Use Agents](../agents/09-computer-use-agents.md) | Third major implementation of the GUI-acting agent class |
-| **OpenAI o1, o3 (reasoning tier)** | 2024–25 | [Cost and Latency Engineering — reasoning tier specifics](../operating/09-cost-and-latency.md) | Distinct model tier with 2–10× cost and 5–60s latency profile; deserves explicit per-role budgeting |
-| **Anthropic Claude with extended thinking** | 2025 | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | The Anthropic equivalent of the reasoning tier |
+| **Anthropic Model Context Protocol (MCP)** | 2024–25 | [The Model Context Protocol](../delegate/mcp/01-what-is-mcp.md), [Designing MCP Tools](../delegate/mcp/02-designing-mcp-tools.md), [MCP Safety](../delegate/mcp/03-mcp-safety.md) | The protocol that makes [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md) operationally enforceable |
+| **MCP cross-vendor adoption** (OpenAI, Google, Microsoft Copilot) | 2025 | [The Model Context Protocol — 2026 ecosystem](../delegate/mcp/01-what-is-mcp.md) | Treats MCP as the *de facto* tool integration protocol; not using it is now the choice that needs justification |
+| **GitHub spec-kit** | 2024–25 | [Spec-Driven Development](../specify/01-what-sdd-means.md), [SpecKit](../specify/04-speckit.md) | The direct ancestor of the book's SDD chapters and canonical spec template |
+| **Microsoft DevSquad Copilot** | 2026 | [DevSquad Mapping](../evolve/12-devsquad-mapping.md), [Co-adoption with DevSquad](../evolve/13-co-adoption-with-devsquad.md), [The Living Spec](../specify/06-living-specs.md), [Adoption Playbook](../evolve/11-adoption-playbook.md) | Parallel framework with high conceptual overlap; the book is process-agnostic, DevSquad is process-prescriptive; they compose cleanly |
+| **Anthropic Computer Use** | Oct 2024 | [Computer-Use Agents](../delegate/09-computer-use-agents.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) | The reference implementation that made GUI-acting agents mainstream; introduced the new failure-mode surface Cat 7 (Perceptual Failure) |
+| **OpenAI Operator** | Early 2025 | [Computer-Use Agents](../delegate/09-computer-use-agents.md) | Browser-use agent with autonomous task completion posture; canonical Orchestrator-over-self deployment for the new class |
+| **Google Gemini computer use** | 2025 | [Computer-Use Agents](../delegate/09-computer-use-agents.md) | Third major implementation of the GUI-acting agent class |
+| **OpenAI o1, o3 (reasoning tier)** | 2024–25 | [Cost and Latency Engineering — reasoning tier specifics](../evolve/09-cost-and-latency.md) | Distinct model tier with 2–10× cost and 5–60s latency profile; deserves explicit per-role budgeting |
+| **Anthropic Claude with extended thinking** | 2025 | [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | The Anthropic equivalent of the reasoning tier |
 | **Anthropic Constitutional Classifiers** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | Inference-time classifier for jailbreak/injection defense; documented ~5% escape rate against motivated red-teamers, ~25% over-refusal cost |
-| **Anthropic prompt caching** | 2024 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | 40–70% structural input-cost reduction; cache-control parameter at the prompt-architecture level; prompt-stability as a spec constraint |
-| **OpenAI cached inputs** | 2024–25 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Automatic prefix-based caching; ~50% discount on cached prefix tokens; 1024-token minimum |
-| **Google Gemini context caching** | 2024–25 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Explicit `CachedContent` resources referenced by ID; storage cost separate from per-call discount |
-| **Google Agent2Agent (A2A) Protocol** | 2025 | [Multi-Agent Governance — Agent-to-agent protocols](../architecture/07-multi-agent-governance.md) | Cross-vendor agent communication standard; the protocol-layer counterpart to MCP at the tool layer |
-| **OpenTelemetry GenAI semantic conventions** | 2024–25 | [Production Telemetry](../operating/10-production-telemetry.md), [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) | Vendor-neutral observability standard that the book recommends emitting alongside vendor SDK telemetry |
-| **OWASP LLM Top 10 (2025 update)** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../operating/08-red-team-protocol.md), [Computer-Use Agents](../agents/09-computer-use-agents.md) | Canonical attack-surface enumeration for agent systems; baseline coverage for the four red-team batteries |
-| **MAST taxonomy** (Cemri et al.) | 2025 | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md), [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) | Empirical 14-category multi-agent failure partition; complements the book's seven-category fix-locus partition |
-| **Anthropic Skills as deployable artifact** | 2025 | [Portable Domain Knowledge](../agents/05-agent-skills.md) | Skills as versioned, distributed deployment units; the maturation of the "domain knowledge as packaged context" pattern |
-| **SWE-bench Verified** | 2024 | [Coding Agents](../agents/08-coding-agents.md), [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) | Human-validated subset of SWE-bench; the external calibration benchmark for coding agents |
-| **WebArena, VisualWebArena, OSWorld, ScreenSpot-Pro** | 2024–25 | [Computer-Use Agents](../agents/09-computer-use-agents.md), [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) | External calibration benchmarks for computer-use agents; reveal that "computer-use works" is an overclaim for many task domains |
-| **τ-bench, GAIA, AgentBench** | 2023–24 | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) | General agent evaluation; multi-environment task suites |
-| **Berkeley Function-Calling Leaderboard (BFCL)** | 2024 | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md), [Designing MCP Tools](../agents/mcp/02-designing-mcp-tools.md) | Tool-call correctness comparison across model versions |
-| **Anthropic Inspect / OpenAI Evals / Promptfoo / PyRIT / Garak** | 2024–25 | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md), [Red-Team Protocol](../operating/08-red-team-protocol.md) | Open-source eval and red-team frameworks; the toolchain layer the book recommends adopting rather than building custom |
-| **LangSmith / Langfuse / Phoenix / Helicone / Datadog LLM** | 2024–25 | [Production Telemetry](../operating/10-production-telemetry.md) | The vendor-stack landscape for production agent observability |
-| **Cursor, Cline, Aider, Devin, Claude Code, Codex CLI** | 2023–25 | [Coding Agents](../agents/08-coding-agents.md), [Designing an AI Coding Agent](../examples/03-coding-agent/README.md) | The dominant implementation of the in-loop coding-agent pattern; treated by the book as a deployment-posture-dependent composition (Advisor / Executor / Orchestrator-over-self) |
+| **Anthropic prompt caching** | 2024 | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | 40–70% structural input-cost reduction; cache-control parameter at the prompt-architecture level; prompt-stability as a spec constraint |
+| **OpenAI cached inputs** | 2024–25 | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | Automatic prefix-based caching; ~50% discount on cached prefix tokens; 1024-token minimum |
+| **Google Gemini context caching** | 2024–25 | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | Explicit `CachedContent` resources referenced by ID; storage cost separate from per-call discount |
+| **Google Agent2Agent (A2A) Protocol** | 2025 | [Multi-Agent Governance — Agent-to-agent protocols](../frame/07-multi-agent-governance.md) | Cross-vendor agent communication standard; the protocol-layer counterpart to MCP at the tool layer |
+| **OpenTelemetry GenAI semantic conventions** | 2024–25 | [Production Telemetry](../evolve/10-production-telemetry.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Vendor-neutral observability standard that the book recommends emitting alongside vendor SDK telemetry |
+| **OWASP LLM Top 10 (2025 update)** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md) | Canonical attack-surface enumeration for agent systems; baseline coverage for the four red-team batteries |
+| **MAST taxonomy** (Cemri et al.) | 2025 | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Empirical 14-category multi-agent failure partition; complements the book's seven-category fix-locus partition |
+| **Anthropic Skills as deployable artifact** | 2025 | [Portable Domain Knowledge](../delegate/05-agent-skills.md) | Skills as versioned, distributed deployment units; the maturation of the "domain knowledge as packaged context" pattern |
+| **SWE-bench Verified** | 2024 | [Coding Agents](../delegate/08-coding-agents.md), [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) | Human-validated subset of SWE-bench; the external calibration benchmark for coding agents |
+| **WebArena, VisualWebArena, OSWorld, ScreenSpot-Pro** | 2024–25 | [Computer-Use Agents](../delegate/09-computer-use-agents.md), [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) | External calibration benchmarks for computer-use agents; reveal that "computer-use works" is an overclaim for many task domains |
+| **τ-bench, GAIA, AgentBench** | 2023–24 | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) | General agent evaluation; multi-environment task suites |
+| **Berkeley Function-Calling Leaderboard (BFCL)** | 2024 | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md), [Designing MCP Tools](../delegate/mcp/02-designing-mcp-tools.md) | Tool-call correctness comparison across model versions |
+| **Anthropic Inspect / OpenAI Evals / Promptfoo / PyRIT / Garak** | 2024–25 | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) | Open-source eval and red-team frameworks; the toolchain layer the book recommends adopting rather than building custom |
+| **LangSmith / Langfuse / Phoenix / Helicone / Datadog LLM** | 2024–25 | [Production Telemetry](../evolve/10-production-telemetry.md) | The vendor-stack landscape for production agent observability |
+| **Cursor, Cline, Aider, Devin, Claude Code, Codex CLI** | 2023–25 | [Coding Agents](../delegate/08-coding-agents.md), [Designing an AI Coding Agent](../examples/03-coding-agent/README.md) | The dominant implementation of the in-loop coding-agent pattern; treated by the book as a deployment-posture-dependent composition (Advisor / Executor / Orchestrator-over-self) |
 | **Indirect prompt injection (Greshake et al.)** | 2023 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | The attack class that cannot be defended at the prompt layer; the lethal trifecta framing centers on it |
 | **Microsoft Spotlighting** | 2024 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | Data-marking technique for indirect injection mitigation; partial defense, not a fix |
-| **Lost in the Middle attention degradation** | 2023 | [Coding Agents](../agents/08-coding-agents.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) | Empirical grounding for the long-context anti-pattern; informs context-budget discipline |
+| **Lost in the Middle attention degradation** | 2023 | [Coding Agents](../delegate/08-coding-agents.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | Empirical grounding for the long-context anti-pattern; informs context-budget discipline |
 
 This is the working set as of the book's current revision. The list will grow as the field develops.
 
@@ -71,7 +71,7 @@ This is the working set as of the book's current revision. The list will grow as
 
 ## AI agent class developments (2024–2026)
 
-The two new agent classes that emerged during the 2024–2026 period — *coding agents* and *computer-use agents* — each have their own chapter in the book ([Coding Agents](../agents/08-coding-agents.md), [Computer-Use Agents](../agents/09-computer-use-agents.md)). The references below ground those chapters.
+The two new agent classes that emerged during the 2024–2026 period — *coding agents* and *computer-use agents* — each have their own chapter in the book ([Coding Agents](../delegate/08-coding-agents.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md)). The references below ground those chapters.
 
 ### Coding agents
 
@@ -94,7 +94,7 @@ The two new agent classes that emerged during the 2024–2026 period — *coding
 
 ### Reasoning-tier models
 
-The reasoning-tier class emerged in 2024–2025 as a distinct deployment category from standard large-tier models, with characteristic 2–10× cost and 5–60s latency profiles. Treatment in [Cost and Latency Engineering](../operating/09-cost-and-latency.md).
+The reasoning-tier class emerged in 2024–2025 as a distinct deployment category from standard large-tier models, with characteristic 2–10× cost and 5–60s latency profiles. Treatment in [Cost and Latency Engineering](../evolve/09-cost-and-latency.md).
 
 - **OpenAI.** (2024). *Introducing OpenAI o1.* openai.com/o1. — The reasoning tier's first mainstream release.
 - **OpenAI.** (2025). *o3 system card.* — Successor reasoning model with different cost/latency profile.
@@ -103,7 +103,7 @@ The reasoning-tier class emerged in 2024–2025 as a distinct deployment categor
 
 ### Agent-to-agent protocols
 
-The protocol-layer counterpart to MCP at the tool layer; emerging standardization arc as of 2026. Treatment in [Multi-Agent Governance — Agent-to-agent protocols](../architecture/07-multi-agent-governance.md).
+The protocol-layer counterpart to MCP at the tool layer; emerging standardization arc as of 2026. Treatment in [Multi-Agent Governance — Agent-to-agent protocols](../frame/07-multi-agent-governance.md).
 
 - **Google.** (2025). *Agent2Agent (A2A) Protocol.* a2aprotocol.dev. — Cross-vendor agent communication standard.
 - **OpenAI.** (2025, ongoing). *Agent SDK.* — Vendor-specific coordination primitives that approximate A2A semantics within OpenAI's ecosystem.
@@ -148,7 +148,7 @@ The protocol-layer counterpart to MCP at the tool layer; emerging standardizatio
 - **IEEE 830-1998 / ISO/IEC/IEEE 29148:2018.** *Software Requirements Specifications.* — The canonical SRS structure; sections 1–3, 5, 7, 9 of the Canonical Spec Template are recognizably descended from this lineage.
 - **Cohn, M.** (2004). *User Stories Applied.* — INVEST criteria for specifications.
 - **North, D.** (2006, ongoing). *Behaviour-Driven Development* and the Gherkin Given/When/Then format. — Source of the acceptance criteria style used in Section 9.
-- **Nygard, M.** (2011). *Documenting Architecture Decisions.* cognitect.com/blog/2011/11/15/documenting-architecture-decisions. — The original ADR format that this book inherits in [Architectural Decision Records](../sdd/08-architectural-decision-records.md), and that Microsoft DevSquad Copilot also adopts.
+- **Nygard, M.** (2011). *Documenting Architecture Decisions.* cognitect.com/blog/2011/11/15/documenting-architecture-decisions. — The original ADR format that this book inherits in [Architectural Decision Records](../specify/08-architectural-decision-records.md), and that Microsoft DevSquad Copilot also adopts.
 - **ADR Tools and Templates.** (ongoing). adr.github.io. — Community resources for ADR format variations.
 
 ---
@@ -263,67 +263,67 @@ Specific sources cited within chapters of this book, organized alphabetically by
 
 | Source | Cited in |
 |---|---|
-| **Anthropic** — *Building Effective Agents* (Dec 2024) | [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md), [Coding Agents](../agents/08-coding-agents.md), [Multi-Agent Governance](../architecture/07-multi-agent-governance.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md), [Adoption Playbook](../operating/11-adoption-playbook.md), [Co-adoption with DevSquad](../operating/13-co-adoption-with-devsquad.md) |
-| **Anthropic** — *Claude Code* | [Coding Agents](../agents/08-coding-agents.md), [Designing an AI Coding Agent](../examples/03-coding-agent/README.md) |
-| **Anthropic** — *Computer Use* (Oct 2024) | [Computer-Use Agents](../agents/09-computer-use-agents.md), [Red-Team Protocol](../operating/08-red-team-protocol.md) |
+| **Anthropic** — *Building Effective Agents* (Dec 2024) | [Pick an Archetype](../frame/02-canonical-intent-archetypes.md), [Coding Agents](../delegate/08-coding-agents.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md), [Adoption Playbook](../evolve/11-adoption-playbook.md), [Co-adoption with DevSquad](../evolve/13-co-adoption-with-devsquad.md) |
+| **Anthropic** — *Claude Code* | [Coding Agents](../delegate/08-coding-agents.md), [Designing an AI Coding Agent](../examples/03-coding-agent/README.md) |
+| **Anthropic** — *Computer Use* (Oct 2024) | [Computer-Use Agents](../delegate/09-computer-use-agents.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) |
 | **Anthropic** — *Constitutional Classifiers* (2025) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
-| **Anthropic** — *Inspect* (eval framework) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md), [Red-Team Protocol](../operating/08-red-team-protocol.md) |
+| **Anthropic** — *Inspect* (eval framework) | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) |
 | **Anthropic** — *Many-shot jailbreaking* (2024) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
-| **Anthropic** — *Model Context Protocol* (2024) | [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md), [Designing MCP Tools](../agents/mcp/02-designing-mcp-tools.md), [MCP Safety](../agents/mcp/03-mcp-safety.md), [Least Capability](../agents/04-tools-mcp-capability-boundaries.md) |
-| **Anthropic** — *Prompt caching with Claude* (2024) | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
+| **Anthropic** — *Model Context Protocol* (2024) | [The Model Context Protocol](../delegate/mcp/01-what-is-mcp.md), [Designing MCP Tools](../delegate/mcp/02-designing-mcp-tools.md), [MCP Safety](../delegate/mcp/03-mcp-safety.md), [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md) |
+| **Anthropic** — *Prompt caching with Claude* (2024) | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
 | **Anthropic** — *Responsible Scaling Policy* (2023, ongoing) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
-| **Datadog** — *LLM Observability* | [Production Telemetry](../operating/10-production-telemetry.md) |
-| **GitHub** — *spec-kit* (2024–25) | [Spec-Driven Development](../sdd/01-what-sdd-means.md), [SpecKit](../sdd/04-speckit.md) |
-| **Google** — *Agent2Agent (A2A) Protocol* (2025) | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) |
-| **Google** — *Gemini computer use* (2025) | [Computer-Use Agents](../agents/09-computer-use-agents.md) |
-| **Google** — *Gemini context caching* | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
-| **Helicone** — LLM observability proxy | [Production Telemetry](../operating/10-production-telemetry.md) |
-| **LangChain** — *LangGraph supervisor / hierarchical / HITL middleware* | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md), [Co-adoption with DevSquad](../operating/13-co-adoption-with-devsquad.md) |
-| **LangChain** — *LangSmith* | [Production Telemetry](../operating/10-production-telemetry.md) |
-| **Langfuse** — open-source LLM observability | [Production Telemetry](../operating/10-production-telemetry.md) |
-| **Microsoft** — *DevSquad Copilot* (2026) | [The Living Spec](../sdd/06-living-specs.md), [Architectural Decision Records](../sdd/08-architectural-decision-records.md), [DevSquad Mapping](../operating/12-devsquad-mapping.md), [Co-adoption with DevSquad](../operating/13-co-adoption-with-devsquad.md), [Adoption Playbook](../operating/11-adoption-playbook.md), [References — Spec-driven development](references.md) |
-| **Microsoft** — *PyRIT* | [Red-Team Protocol](../operating/08-red-team-protocol.md) |
-| **NIST** — *AI 100-2 E2024* (Adversarial ML) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../operating/08-red-team-protocol.md) |
+| **Datadog** — *LLM Observability* | [Production Telemetry](../evolve/10-production-telemetry.md) |
+| **GitHub** — *spec-kit* (2024–25) | [Spec-Driven Development](../specify/01-what-sdd-means.md), [SpecKit](../specify/04-speckit.md) |
+| **Google** — *Agent2Agent (A2A) Protocol* (2025) | [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
+| **Google** — *Gemini computer use* (2025) | [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
+| **Google** — *Gemini context caching* | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
+| **Helicone** — LLM observability proxy | [Production Telemetry](../evolve/10-production-telemetry.md) |
+| **LangChain** — *LangGraph supervisor / hierarchical / HITL middleware* | [Multi-Agent Governance](../frame/07-multi-agent-governance.md), [Co-adoption with DevSquad](../evolve/13-co-adoption-with-devsquad.md) |
+| **LangChain** — *LangSmith* | [Production Telemetry](../evolve/10-production-telemetry.md) |
+| **Langfuse** — open-source LLM observability | [Production Telemetry](../evolve/10-production-telemetry.md) |
+| **Microsoft** — *DevSquad Copilot* (2026) | [The Living Spec](../specify/06-living-specs.md), [Architectural Decision Records](../specify/08-architectural-decision-records.md), [DevSquad Mapping](../evolve/12-devsquad-mapping.md), [Co-adoption with DevSquad](../evolve/13-co-adoption-with-devsquad.md), [Adoption Playbook](../evolve/11-adoption-playbook.md), [References — Spec-driven development](references.md) |
+| **Microsoft** — *PyRIT* | [Red-Team Protocol](../validate/08-red-team-protocol.md) |
+| **NIST** — *AI 100-2 E2024* (Adversarial ML) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) |
 | **NIST** — *AI Risk Management Framework (AI RMF 1.0)* | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
-| **NVIDIA** — *Garak* (LLM vulnerability scanner) | [Red-Team Protocol](../operating/08-red-team-protocol.md) |
-| **OpenAI** — *Agent SDK* (2025) | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) |
-| **OpenAI** — *Operator* (2025) | [Computer-Use Agents](../agents/09-computer-use-agents.md) |
+| **NVIDIA** — *Garak* (LLM vulnerability scanner) | [Red-Team Protocol](../validate/08-red-team-protocol.md) |
+| **OpenAI** — *Agent SDK* (2025) | [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
+| **OpenAI** — *Operator* (2025) | [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
 | **OpenAI** — *Practices for Governing Agentic AI Systems* (Shavit, Agarwal et al., 2023) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md), [References](references.md) |
-| **OpenAI** — *Prompt caching / cached input pricing* (2024) | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
-| **OpenAI** — *o1 / o3 reasoning models* (2024–25) | [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
-| **OpenInference / Phoenix** (Arize) | [Production Telemetry](../operating/10-production-telemetry.md) |
-| **OpenTelemetry** — *GenAI semantic conventions* | [Production Telemetry](../operating/10-production-telemetry.md), [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) |
-| **OWASP** — *LLM Top 10* (2025) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../operating/08-red-team-protocol.md), [Computer-Use Agents](../agents/09-computer-use-agents.md) |
+| **OpenAI** — *Prompt caching / cached input pricing* (2024) | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
+| **OpenAI** — *o1 / o3 reasoning models* (2024–25) | [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
+| **OpenInference / Phoenix** (Arize) | [Production Telemetry](../evolve/10-production-telemetry.md) |
+| **OpenTelemetry** — *GenAI semantic conventions* | [Production Telemetry](../evolve/10-production-telemetry.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
+| **OWASP** — *LLM Top 10* (2025) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
 | **SAE International** — *J3016 driving automation taxonomy* | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
 
 ### Academic and research references
 
 | Source | Cited in |
 |---|---|
-| **Cemri, M., et al.** — *MAST: Multi-Agent System Failure Taxonomy* (2025) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md), [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) |
+| **Cemri, M., et al.** — *MAST: Multi-Agent System Failure Taxonomy* (2025) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
 | **Greshake, K., et al.** — *Not what you've signed up for* (2023, indirect prompt injection) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
 | **Hines, K., et al.** — *Spotlighting* (Microsoft Research, 2024) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
-| **Hong, S., et al.** — *MetaGPT* (2023) | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md), [References](references.md) |
-| **Jimenez, C. E., et al.** — *SWE-bench* (2024) | [Coding Agents](../agents/08-coding-agents.md), [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
-| **Koh, J. Y., et al.** — *VisualWebArena* (2024) | [Computer-Use Agents](../agents/09-computer-use-agents.md) |
-| **Li, K., et al.** — *ScreenSpot-Pro* (2024) | [Computer-Use Agents](../agents/09-computer-use-agents.md) |
-| **Liang, P., et al.** — *HELM* (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
-| **Liu, N. F., et al.** — *Lost in the Middle* (2023) | [Coding Agents](../agents/08-coding-agents.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
-| **Liu, X., et al.** — *AgentBench* (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
-| **Liu, Y., et al.** — *Agent Design Pattern Catalogue* (2024) | [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md), [References](references.md) |
-| **Mialon, G., et al.** — *GAIA* (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
-| **Pope, R., et al.** — *Efficiently Scaling Transformer Inference* (2022) | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operating/09-cost-and-latency.md) |
+| **Hong, S., et al.** — *MetaGPT* (2023) | [Multi-Agent Governance](../frame/07-multi-agent-governance.md), [References](references.md) |
+| **Jimenez, C. E., et al.** — *SWE-bench* (2024) | [Coding Agents](../delegate/08-coding-agents.md), [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) |
+| **Koh, J. Y., et al.** — *VisualWebArena* (2024) | [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
+| **Li, K., et al.** — *ScreenSpot-Pro* (2024) | [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
+| **Liang, P., et al.** — *HELM* (2023) | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) |
+| **Liu, N. F., et al.** — *Lost in the Middle* (2023) | [Coding Agents](../delegate/08-coding-agents.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
+| **Liu, X., et al.** — *AgentBench* (2023) | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) |
+| **Liu, Y., et al.** — *Agent Design Pattern Catalogue* (2024) | [Pick an Archetype](../frame/02-canonical-intent-archetypes.md), [References](references.md) |
+| **Mialon, G., et al.** — *GAIA* (2023) | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) |
+| **Pope, R., et al.** — *Efficiently Scaling Transformer Inference* (2022) | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
 | **Schick, T., et al.** — *Toolformer* (2023) | [References — Tool use](references.md) |
-| **Weng, L.** — *LLM Powered Autonomous Agents* (2023) | [What Agents Are](../agents/01-what-agents-are.md) |
-| **Willison, S.** — *Prompt Injection / Lethal Trifecta series* | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../operating/08-red-team-protocol.md) |
-| **Wu, Q., et al.** — *AutoGen* (2023) | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md), [References](references.md) |
-| **Xie, T., et al.** — *OSWorld* (2024) | [Computer-Use Agents](../agents/09-computer-use-agents.md) |
-| **Yang, J., et al.** — *SWE-agent* (2024) | [Coding Agents](../agents/08-coding-agents.md) |
-| **Yao, S., et al.** — *ReAct* (2022) | [The Executor Model](../agents/03-agents-as-executors.md) |
-| **Yao, S., et al.** — *τ-bench* (2024) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
+| **Weng, L.** — *LLM Powered Autonomous Agents* (2023) | [What Agents Are](../delegate/01-what-agents-are.md) |
+| **Willison, S.** — *Prompt Injection / Lethal Trifecta series* | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) |
+| **Wu, Q., et al.** — *AutoGen* (2023) | [Multi-Agent Governance](../frame/07-multi-agent-governance.md), [References](references.md) |
+| **Xie, T., et al.** — *OSWorld* (2024) | [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
+| **Yang, J., et al.** — *SWE-agent* (2024) | [Coding Agents](../delegate/08-coding-agents.md) |
+| **Yao, S., et al.** — *ReAct* (2022) | [The Executor Model](../delegate/03-agents-as-executors.md) |
+| **Yao, S., et al.** — *τ-bench* (2024) | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) |
 | **Zhang, Y., et al.** — *LLM-Agent Hallucinations Survey* (2025) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
-| **Zheng, L., et al.** — *Judging LLM-as-a-Judge / MT-Bench* (2023) | [Evals and Benchmarks](../operating/07-evals-and-benchmarks.md) |
-| **Zhou, S., et al.** — *WebArena* (2024) | [Computer-Use Agents](../agents/09-computer-use-agents.md) |
+| **Zheng, L., et al.** — *Judging LLM-as-a-Judge / MT-Bench* (2023) | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) |
+| **Zhou, S., et al.** — *WebArena* (2024) | [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
 
 ### Foundational software engineering and organizational
 
@@ -332,22 +332,22 @@ Specific sources cited within chapters of this book, organized alphabetically by
 | **Alexander, C.** — *A Pattern Language* (1977) | [References — Pattern languages and design](references.md) |
 | **Brooks, F. P.** — *The Mythical Man-Month* (1995) | [References — Software engineering foundations](references.md) |
 | **Cohn, M.** — *User Stories Applied* (2004) | [References — Spec-driven development](references.md) |
-| **Deming, W. E.** — *Out of the Crisis* (1982) | [Four Signal Metrics](../operating/06-metrics.md), [References](references.md) |
-| **Forsgren, N., Humble, J., Kim, G.** — *Accelerate* (2018) | [Adoption Playbook](../operating/11-adoption-playbook.md) |
-| **Fowler, M.** — *Patterns of Enterprise Application Architecture* (2002) | [Architectural Decision Records](../sdd/08-architectural-decision-records.md), [References](references.md) |
+| **Deming, W. E.** — *Out of the Crisis* (1982) | [Four Signal Metrics](../validate/06-metrics.md), [References](references.md) |
+| **Forsgren, N., Humble, J., Kim, G.** — *Accelerate* (2018) | [Adoption Playbook](../evolve/11-adoption-playbook.md) |
+| **Fowler, M.** — *Patterns of Enterprise Application Architecture* (2002) | [Architectural Decision Records](../specify/08-architectural-decision-records.md), [References](references.md) |
 | **IEEE 830-1998 / ISO/IEC/IEEE 29148:2018** | [References — Spec-driven development](references.md) |
 | **ISO/IEC 42001:2023** | [References — Governance and oversight](references.md) |
-| **Jackson, M.** — *Software Requirements & Specifications* (1995) | [Writing for Machine Execution](../sdd/05-writing-specs-for-agents.md) |
-| **Kim, G., Debois, P., Willis, J., Humble, J.** — *The DevOps Handbook* (2016) | [Proportional Governance](../operating/04-governance.md) |
-| **Kotter, J. P.** — *Leading Change* (1996) | [Adoption Playbook](../operating/11-adoption-playbook.md) |
-| **Meadows, D. H.** — *Thinking in Systems* (2008) | [The Living Spec](../sdd/06-living-specs.md), [Adoption Playbook](../operating/11-adoption-playbook.md) |
-| **Meyer, B.** — *Object-Oriented Software Construction* (1997) | [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) |
-| **North, D.** — *Behaviour-Driven Development / Gherkin* | [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) |
-| **Nygard, M.** — *Documenting Architecture Decisions* (2011) | [Architectural Decision Records](../sdd/08-architectural-decision-records.md), [DevSquad Mapping](../operating/12-devsquad-mapping.md) |
+| **Jackson, M.** — *Software Requirements & Specifications* (1995) | [Writing for Machine Execution](../specify/05-writing-specs-for-agents.md) |
+| **Kim, G., Debois, P., Willis, J., Humble, J.** — *The DevOps Handbook* (2016) | [Proportional Governance](../evolve/04-governance.md) |
+| **Kotter, J. P.** — *Leading Change* (1996) | [Adoption Playbook](../evolve/11-adoption-playbook.md) |
+| **Meadows, D. H.** — *Thinking in Systems* (2008) | [The Living Spec](../specify/06-living-specs.md), [Adoption Playbook](../evolve/11-adoption-playbook.md) |
+| **Meyer, B.** — *Object-Oriented Software Construction* (1997) | [The Spec as Control Surface](../specify/02-specs-as-control-surfaces.md) |
+| **North, D.** — *Behaviour-Driven Development / Gherkin* | [The Canonical Spec Template](../specify/07-canonical-spec-template.md) |
+| **Nygard, M.** — *Documenting Architecture Decisions* (2011) | [Architectural Decision Records](../specify/08-architectural-decision-records.md), [DevSquad Mapping](../evolve/12-devsquad-mapping.md) |
 | **Ohno, T.** — *Toyota Production System* (1988, 5 Whys) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
 | **Reason, J.** — *Human Error / Swiss-cheese model* (1990) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
 | **Russell, S.** — *Human Compatible* (2019) | [References — AI ethics, alignment](references.md) |
-| **Westrum, R.** — *A typology of organisational cultures* (2004) | [Adoption Playbook](../operating/11-adoption-playbook.md) |
+| **Westrum, R.** — *A typology of organisational cultures* (2004) | [Adoption Playbook](../evolve/11-adoption-playbook.md) |
 
 ---
 

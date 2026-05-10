@@ -16,7 +16,7 @@ An in-loop coding agent that reads issues from the team's tracker, drafts branch
 
 ## Walking the decision tree
 
-From [The Archetype Selection Tree](../../architecture/04-decision-tree.md):
+From [The Archetype Selection Tree](../../frame/04-decision-tree.md):
 
 **Q1: Does this system take any consequential action without a human between its output and the consequence?**
 
@@ -34,7 +34,7 @@ This rules out Advisor.
 
 **Q4: Is the primary output a synthesized artifact rather than action on a target system?**
 
-*Mixed.* The agent produces a structured artifact (the diff, the PR description) AND takes actions on a target system (file writes, commits, pushes). This is the mode-mixing characteristic of coding agents called out in [Coding Agents](../../agents/08-coding-agents.md).
+*Mixed.* The agent produces a structured artifact (the diff, the PR description) AND takes actions on a target system (file writes, commits, pushes). This is the mode-mixing characteristic of coding agents called out in [Coding Agents](../../delegate/08-coding-agents.md).
 
 The dominant primary act here is *act* — the diff exists in the repo as state, not as a draft for review. So **Executor with Synthesizer composition**, not Synthesizer alone.
 
@@ -42,7 +42,7 @@ The dominant primary act here is *act* — the diff exists in the repo as state,
 
 ## Final classification
 
-**Primary archetype:** Executor (in-loop coding agent posture per [Coding Agents](../../agents/08-coding-agents.md))
+**Primary archetype:** Executor (in-loop coding agent posture per [Coding Agents](../../delegate/08-coding-agents.md))
 
 **Composition:** Synthesizer for diff-and-PR-description generation
 
@@ -80,7 +80,7 @@ The team considered an autonomous-engineering-agent posture: file an issue, get 
 
 **Conditions under which the team will revisit:** if the in-loop posture is producing >88% acceptable PRs sustainably for two quarters, if the eval suite covers the team's actual issue distribution, and if the team has bandwidth to maintain a more elaborate spec, the team will pilot a hybrid: autonomous on a narrow class of issues (dependency upgrades within the allowlist, test-only PRs) while keeping the in-loop posture for everything else.
 
-This explicit "we are not doing this, and here is what would change our minds" record is part of the spec evolution log and should be revisited at each quarterly review per [Governed Archetype Evolution](../../architecture/06-evolving-archetypes.md).
+This explicit "we are not doing this, and here is what would change our minds" record is part of the spec evolution log and should be revisited at each quarterly review per [Governed Archetype Evolution](../../frame/06-evolving-archetypes.md).
 
 ---
 
@@ -96,7 +96,7 @@ Naming what the agent is not authorized to do is part of the archetype classific
 
 ## Risk Override check
 
-From [The Archetype Selection Tree — Risk Override](../../architecture/04-decision-tree.md):
+From [The Archetype Selection Tree — Risk Override](../../frame/04-decision-tree.md):
 
 > *If the system's consequence-of-failure is Critical (broad impact, high severity, or slow detectability), document that explicitly and escalate the governance tier.*
 

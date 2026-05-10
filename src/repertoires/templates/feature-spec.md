@@ -10,7 +10,7 @@
 
 ## How to Use This Template
 
-This template is a pre-configured specialization of the [Canonical Spec Template](../../sdd/07-canonical-spec-template.md) for feature development: new functionality, fixes, refactors, or capability extensions built by an Executor agent.
+This template is a pre-configured specialization of the [Canonical Spec Template](../../specify/07-canonical-spec-template.md) for feature development: new functionality, fixes, refactors, or capability extensions built by an Executor agent.
 
 **Mandatory sections:** 1, 2, 3, 5, 6, 8, 11, 12  
 **Conditional sections:** 4 (multiple owners), 7 (external systems), 9 (data schema changes), 10 (non-functional requirements apply)  

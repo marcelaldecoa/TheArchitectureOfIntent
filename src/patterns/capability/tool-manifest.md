@@ -76,6 +76,6 @@ Declare a **tool manifest in the spec** — a section that lists exactly which t
 
 - [The Read-Only Tool](../integration/read-only-tool.md) — the lowest-risk effect class in the manifest
 - [The State-Changing Tool](../integration/state-changing-tool.md) — write tools require explicit authorization and constraints
-- [Least Capability](../../agents/04-tools-mcp-capability-boundaries.md) — the principle that agents should have access to the minimum set of tools necessary
+- [Least Capability](../../delegate/04-tools-mcp-capability-boundaries.md) — the principle that agents should have access to the minimum set of tools necessary
 - [The MCP Server](../integration/mcp-server.md) — MCP provides standardized tool discovery; the manifest constrains what the agent may use from what it discovers
-- [Proportional Oversight](../../agents/06-human-oversight-models.md) — the tool manifest's effect classes help determine the required oversight model
+- [Proportional Oversight](../../delegate/06-human-oversight-models.md) — the tool manifest's effect classes help determine the required oversight model

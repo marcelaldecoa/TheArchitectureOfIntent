@@ -57,7 +57,7 @@ The metric definitions are written down before any spec is drafted. The team exp
 
 ## The archetype call
 
-The team walks the [archetype selection tree](../../architecture/04-decision-tree.md):
+The team walks the [archetype selection tree](../../frame/04-decision-tree.md):
 
 **Q1 — does the system *act*, or only *inform*?** It acts (creates branches, writes commits, opens PRs). *Not Advisor alone.*
 
@@ -150,9 +150,9 @@ This artifact is the input to [Specify in practice — Coding-agent pipeline](..
 
 ## Conceptual chapters this scenario binds to
 
-- [Pick an Archetype](../../architecture/02-canonical-intent-archetypes.md) — Executor with mode-switching
-- [Composing Archetypes](../../architecture/05-composing-archetypes.md) — Pattern E (mode-switching)
-- [Coding Agents](../../agents/08-coding-agents.md) — the agent class
+- [Pick an Archetype](../../frame/02-canonical-intent-archetypes.md) — Executor with mode-switching
+- [Composing Archetypes](../../frame/05-composing-archetypes.md) — Pattern E (mode-switching)
+- [Coding Agents](../../delegate/08-coding-agents.md) — the agent class
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md)
 
 ## Source material

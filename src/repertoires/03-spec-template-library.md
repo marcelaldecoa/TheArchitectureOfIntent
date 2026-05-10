@@ -10,7 +10,7 @@
 
 ## Context
 
-Part 2 produced the [Canonical Spec Template](../sdd/07-canonical-spec-template.md) — a 14-section master structure that covers every element a spec might need. It is comprehensive by design. It must be, to serve as the authoritative reference for the framework.
+Part 2 produced the [Canonical Spec Template](../specify/07-canonical-spec-template.md) — a 14-section master structure that covers every element a spec might need. It is comprehensive by design. It must be, to serve as the authoritative reference for the framework.
 
 But no practitioner writes from the canonical template every day. It is too comprehensive for routine use — most tasks require seven or eight sections fully, and the other sections partially or not at all. The overhead of deciding which sections to include, which to abbreviate, and which are mandatory for this task type is non-trivial. Multiplied across a team and a year, it is significant.
 
@@ -114,7 +114,7 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Organizational Repertoire](01-why-repertoires-matter.md)
-- [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
+- [The Canonical Spec Template](../specify/07-canonical-spec-template.md)
 - [The Intent Archetype Catalog](02-archetype-catalog.md)
 
 **This pattern enables:**

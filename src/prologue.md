@@ -66,4 +66,4 @@ You don't have to take this as philosophy. Take it as engineering: the more powe
 
 ---
 
-*Continue to [Part 1: Decisions](architecture/02-canonical-intent-archetypes.md) — pick an archetype.*
+*Continue to [Part 1: Decisions](frame/02-canonical-intent-archetypes.md) — pick an archetype.*

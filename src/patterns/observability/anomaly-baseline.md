@@ -65,6 +65,6 @@ Establish **quantitative baselines** for key behavioral metrics and alert when o
 ## Connections
 
 - [Structured Execution Log](execution-log.md) — baselines are computed from aggregated log data
-- [Four Signal Metrics](../../operating/06-metrics.md) — signal metrics are the organizational view; baselines are the per-agent view
-- [Governed Archetype Evolution](../../architecture/06-evolving-archetypes.md) — behavioral drift detected by baselines may indicate archetype drift
-- [The Living Spec](../../sdd/06-living-specs.md) — anomalies feed back into spec evolution
+- [Four Signal Metrics](../../validate/06-metrics.md) — signal metrics are the organizational view; baselines are the per-agent view
+- [Governed Archetype Evolution](../../frame/06-evolving-archetypes.md) — behavioral drift detected by baselines may indicate archetype drift
+- [The Living Spec](../../specify/06-living-specs.md) — anomalies feed back into spec evolution

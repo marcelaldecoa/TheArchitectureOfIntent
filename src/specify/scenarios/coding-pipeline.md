@@ -235,7 +235,7 @@ Per-step gates and exception escalation:
 - *At launch:* Pre-authorized model active; four signal metrics emitting; reviewer training session held (the team picks up new review-flow habits).
 - *Per-incident:* trace categorized to Cat 1–7; fix-locus identified; amendment filed.
 - *Per-sprint:* roll up the spec evolution log; look for per-mode patterns (which mode produces which Cat); schedule structural amendments.
-- *Per-quarter:* run the [Discipline-Health Audit](../../operating/15-anti-patterns.md).
+- *Per-quarter:* run the [Discipline-Health Audit](../../evolve/15-anti-patterns.md).
 
 ---
 
@@ -259,7 +259,7 @@ The spec lands in a PR for review the second evening. Daniel, Theo, Jess, and Ma
 
 ## Conceptual chapters this scenario binds to
 
-- [The Canonical Spec Template](../../sdd/07-canonical-spec-template.md) — including the Composition Declaration sub-block (Pattern E)
-- [Coding Agents](../../agents/08-coding-agents.md)
-- [Composing Archetypes](../../architecture/05-composing-archetypes.md) — Pattern E (mode-switching)
+- [The Canonical Spec Template](../../specify/07-canonical-spec-template.md) — including the Composition Declaration sub-block (Pattern E)
+- [Coding Agents](../../delegate/08-coding-agents.md)
+- [Composing Archetypes](../../frame/05-composing-archetypes.md) — Pattern E (mode-switching)
 - [The Tool Manifest](../../patterns/capability/tool-manifest.md)

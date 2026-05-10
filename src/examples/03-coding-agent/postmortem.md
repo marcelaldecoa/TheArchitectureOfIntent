@@ -168,4 +168,4 @@ That cycle — incident → diagnostic protocol → spec gap log → fix at mult
 
 *This concludes Example 3: the Order-Service Coding Agent.*
 
-*Return to [the Worked Pilots](../../examples/00-how-to-use.md) or to [Coding Agents](../../agents/08-coding-agents.md) for the chapter that frames this example.*
+*Return to [the Worked Pilots](../../examples/00-how-to-use.md) or to [Coding Agents](../../delegate/08-coding-agents.md) for the chapter that frames this example.*

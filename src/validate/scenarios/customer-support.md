@@ -41,7 +41,7 @@ The pre-launch suite catching 24 failures is *the suite doing its job*. The team
 
 ## Red-team protocol
 
-The team runs a structured **two-week red-team exercise** before production launch, per the [Red-Team Protocol](../../operating/08-red-team-protocol.md). The held-out 30-case adversarial set is the starting point; the team adds ad-hoc adversarial probes through the two weeks.
+The team runs a structured **two-week red-team exercise** before production launch, per the [Red-Team Protocol](../../validate/08-red-team-protocol.md). The held-out 30-case adversarial set is the starting point; the team adds ad-hoc adversarial probes through the two weeks.
 
 The four attack surfaces:
 
@@ -159,8 +159,8 @@ The Validate phase blends into Evolve from here. The same metrics, the same log,
 ## Conceptual chapters this scenario binds to
 
 - [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
-- [Four Signal Metrics](../../operating/06-metrics.md)
-- [Evals and Benchmarks](../../operating/07-evals-and-benchmarks.md)
-- [Red-Team Protocol](../../operating/08-red-team-protocol.md)
+- [Four Signal Metrics](../../validate/06-metrics.md)
+- [Evals and Benchmarks](../../validate/07-evals-and-benchmarks.md)
+- [Red-Team Protocol](../../validate/08-red-team-protocol.md)
 - [Spec Conformance Testing](../../patterns/testing/spec-conformance.md)
 - [Adversarial Input Test](../../patterns/testing/adversarial-input.md)

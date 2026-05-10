@@ -167,9 +167,9 @@ After applying this pattern:
 
 **This pattern enables:**
 - [Three Dimensions of Delegation](03-agency-autonomy-responsibility.md) — who decides what in each layer
-- [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md) — the mechanism by which intent controls implementation
-- [The Spec Lifecycle](../sdd/03-spec-lifecycle.md) — how intent and implementation evolve together
-- [The Living Spec](../sdd/06-living-specs.md) — the fix-the-spec discipline in practice
-- [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — applying this distinction in review processes
+- [The Spec as Control Surface](../specify/02-specs-as-control-surfaces.md) — the mechanism by which intent controls implementation
+- [The Spec Lifecycle](../specify/03-spec-lifecycle.md) — how intent and implementation evolve together
+- [The Living Spec](../specify/06-living-specs.md) — the fix-the-spec discipline in practice
+- [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — applying this distinction in review processes
 
 ---

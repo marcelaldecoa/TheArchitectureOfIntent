@@ -8,7 +8,7 @@
 
 ---
 
-This reference covers SpecKit's commands, the 11-section spec template in quick-reference format, constraint writing patterns, success criteria patterns, and archetype-to-oversight pairing defaults. For the full conceptual treatment, see [SpecKit](../sdd/04-speckit.md).
+This reference covers SpecKit's commands, the 11-section spec template in quick-reference format, constraint writing patterns, success criteria patterns, and archetype-to-oversight pairing defaults. For the full conceptual treatment, see [SpecKit](../specify/04-speckit.md).
 
 ---
 
@@ -295,7 +295,7 @@ Before submitting a spec for intent review, verify:
 
 ---
 
-*For the full conceptual treatment of each section, see [The Canonical Spec Template](../sdd/07-canonical-spec-template.md).*  
+*For the full conceptual treatment of each section, see [The Canonical Spec Template](../specify/07-canonical-spec-template.md).*  
 *For worked examples of complete specs, see [Writing the Spec (Example 1)](../examples/01-ai-customer-support/spec.md) and [Writing the Spec (Example 2)](../examples/02-code-generation-pipeline/spec.md).*
 
 

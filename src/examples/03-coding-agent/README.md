@@ -18,7 +18,7 @@
 
 It does *not* merge PRs. It does *not* deploy. Engineers review, request changes, and merge through the normal review process. The agent is a productivity multiplier on the implementation step, not a substitute for engineering judgment.
 
-This worked example is informed by, and tested against, the [Coding Agents](../../agents/08-coding-agents.md) chapter of the book.
+This worked example is informed by, and tested against, the [Coding Agents](../../delegate/08-coding-agents.md) chapter of the book.
 
 ---
 

@@ -60,4 +60,4 @@ Retire agents through a **declared deprecation path** with communication, migrat
 - [Agent Registry](../state/agent-registry.md) — the registry tracks deprecation status
 - [Spec Versioning](spec-versioning.md) — the deprecated agent's last spec version is archived
 - [Structured Execution Log](../observability/execution-log.md) — the deprecation decision is an auditable governance event
-- [Governed Archetype Evolution](../../architecture/06-evolving-archetypes.md) — deprecation is one outcome of archetype evolution
+- [Governed Archetype Evolution](../../frame/06-evolving-archetypes.md) — deprecation is one outcome of archetype evolution

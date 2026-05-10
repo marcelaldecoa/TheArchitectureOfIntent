@@ -18,6 +18,65 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.2.2 — 2026-05-10
+
+**PATCH** — filesystem cleanup. Chapter directories renamed to match the v2.0+ Part placement, closing the file-path-rename item that has been deferred since rc1. No reader-facing change beyond URL stability for deep links; SUMMARY-driven navigation is identical. No load-bearing commitments change; no impact on the paper's structure.
+
+### Renamed — directory structure
+
+| v1.x / v2.x path | v2.2.2 path | Rationale |
+|---|---|---|
+| `src/architecture/` | `src/frame/` | All chapters live in Part 1 — FRAME |
+| `src/sdd/` | `src/specify/` | All chapters live in Part 2 — SPECIFY |
+| `src/agents/` | `src/delegate/` | All chapters live in Part 3 — DELEGATE |
+| `src/operating/05–08` | `src/validate/05–08` | Intent Review / Signal Metrics / Evals / Red-Team — Part 4 — VALIDATE |
+| `src/operating/04, 09–16` | `src/evolve/04, 09–16` | Governance / Cost / Telemetry / Adoption / DevSquad / Anti-patterns / MVP-AoI — Part 5 — EVOLVE |
+
+The directory names now match their Part labels. The chapter file numbering is preserved across all moves: `architecture/02-canonical-intent-archetypes.md` becomes `frame/02-canonical-intent-archetypes.md` (same stem, new directory).
+
+### Subdirectories preserved
+
+- `src/frame/archetypes/` retains the five archetype subchapters (advisor, executor, guardian, synthesizer, orchestrator) that were `src/architecture/archetypes/`
+- `src/delegate/mcp/` retains the three MCP subchapters that were `src/agents/mcp/`
+- `src/frame/scenarios/`, `src/specify/scenarios/`, `src/delegate/scenarios/`, `src/validate/scenarios/`, `src/evolve/scenarios/` were already present from PR-A; the directory rename merges existing scenario chapters with the relocated conceptual chapters into the same Part directory
+
+### Unchanged
+
+- `src/theory/` retains the Part 0 — Foundations chapters (intentionally; theory/ is a fine name for foundations material, and Part 0 is the one Part where the directory name doesn't perfectly match the Part label — that's a deferrable polish, not a v2.2.2 target)
+- `src/repertoires/`, `src/patterns/`, `src/examples/`, `src/appendices/`, `src/images/`, top-level `cover.md` / `introduction.md` / `miniature-pilot.md` / `how-to-read.md` / `prologue.md` / `SUMMARY.md` — unchanged, all referenced from across multiple Parts and not phase-specific
+
+### Cross-reference updates
+
+**~580 cross-references updated** across the book and paper via `git mv` for file moves and `sed` for path-prefix replacement. Two passes required:
+
+1. **First pass** — replace `architecture/` → `frame/`, `sdd/` → `specify/`, `agents/` → `delegate/` plus per-file replacements for the 13 `operating/*.md` files that split between `validate/` and `evolve/`.
+2. **Second pass** — fix bare-relative links that were intra-`operating/` (e.g., `evolve/11-adoption-playbook.md` linking to `06-metrics.md`, which moved to `validate/06-metrics.md`). 33 such bare-relative links became cross-directory after the operating split and required `../validate/` or `../evolve/` prefixes.
+
+### Verification
+
+- `python3 scripts/check-internal-links.py` — 0 broken (after both sed passes)
+- `python3 scripts/check-orphans.py` — 0 orphans, 0 missing
+- `python3 paper/check-deck-sync.py` — all 6 checks pass
+
+### Updated — version markers
+
+Version markers advanced from **v2.2.1** to **v2.2.2** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header). `paper/architecture-of-intent.pdf` recompiled.
+
+### Why PATCH, not MINOR
+
+This is purely cosmetic at the filesystem layer. The book's content is unchanged; the SUMMARY structure is unchanged; the rendered HTML structure is identical. What changes is which directory each chapter file lives in. Per the versioning convention, PATCH is the right shape.
+
+### Trade-off honesty
+
+Existing deep links to `architecture/`, `sdd/`, `agents/`, `operating/` paths break with this release. There are no redirects (mdBook doesn't support native redirects, and the v2.2.x line has not committed to a redirect-management strategy). External readers who bookmarked specific chapter URLs at v1.x or v2.0–v2.2.1 will see 404s and need to re-navigate from the SUMMARY. This is the trade-off that justified deferring the rename for 8 release candidates plus three stable releases; the cost is taken now to align the filesystem with the Part vocabulary going forward.
+
+### Deferred (and possibly indefinite)
+
+- Renaming `src/theory/` → `src/foundations/` to match Part 0's label. Low value (the directory name is hidden from readers; theory/ is a reasonable name for Foundations content). Probably indefinite defer.
+- Adding redirects from old paths to new paths via an mdBook preprocessor. Possibly v2.2.3 if reader feedback indicates the link rot is meaningful.
+
+---
+
 ## v2.2.1 — 2026-05-10
 
 **PATCH** — three small refinements on top of v2.2.0 stable: paper ↔ book cross-references, voice pass on the five archetype subchapters, and a sharpening of paper §1.1–1.2's empirical-claim prose. No load-bearing commitments change.

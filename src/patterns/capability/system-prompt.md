@@ -66,4 +66,4 @@ The system prompt does **not** contain:
 - [Per-Task Context](per-task-context.md) — information specific to one task, layered on top of the system prompt
 - [Prompt Injection Defense](../safety/prompt-injection-defense.md) — system prompt boundaries are the first line of defense against prompt injection
 - [The Tool Manifest](tool-manifest.md) — tool authorization declarations complement the system prompt's behavioral boundaries
-- [Pick an Archetype](../../architecture/02-canonical-intent-archetypes.md) — the system prompt operationalizes the archetype's constraints for a specific deployment
+- [Pick an Archetype](../../frame/02-canonical-intent-archetypes.md) — the system prompt operationalizes the archetype's constraints for a specific deployment

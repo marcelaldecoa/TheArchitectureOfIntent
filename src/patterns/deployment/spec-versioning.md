@@ -56,7 +56,7 @@ Version specs with **semantic versioning** tied to behavioral impact.
 
 ## Connections
 
-- [The Living Spec](../../sdd/06-living-specs.md) — the living spec practice produces version changes through the feedback loop
+- [The Living Spec](../../specify/06-living-specs.md) — the living spec practice produces version changes through the feedback loop
 - [Spec Conformance Testing](../testing/spec-conformance.md) — version changes trigger regression of spec-conformance tests
 - [Canary Deployment](canary.md) — new versions can be canary-deployed
 - [Agent-to-Agent Contract](../coordination/agent-contract.md) — contract versions align with spec versions

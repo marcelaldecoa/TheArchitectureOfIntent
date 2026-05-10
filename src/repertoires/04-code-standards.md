@@ -116,8 +116,8 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Organizational Repertoire](01-why-repertoires-matter.md)
-- [Portable Domain Knowledge](../agents/05-agent-skills.md)
-- [The Canonical Spec Template — Section 11](../sdd/07-canonical-spec-template.md)
+- [Portable Domain Knowledge](../delegate/05-agent-skills.md)
+- [The Canonical Spec Template — Section 11](../specify/07-canonical-spec-template.md)
 
 **This pattern enables:**
 - [Standards for .NET / C#](code-standards/dotnet.md)

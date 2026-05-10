@@ -196,9 +196,9 @@ The agent ships to a single pilot service (chosen for its breadth of tier-1 tick
 
 ## Conceptual chapters this scenario binds to
 
-- [Coding Agents](../../agents/08-coding-agents.md)
-- [Composing Archetypes](../../architecture/05-composing-archetypes.md) — Pattern E (mode-switching)
-- [Proportional Oversight](../../agents/06-human-oversight-models.md) — Pre-authorized scope
+- [Coding Agents](../../delegate/08-coding-agents.md)
+- [Composing Archetypes](../../frame/05-composing-archetypes.md) — Pattern E (mode-switching)
+- [Proportional Oversight](../../delegate/06-human-oversight-models.md) — Pre-authorized scope
 - [The Tool Manifest](../../patterns/capability/tool-manifest.md)
 - [Spec Conformance Testing](../../patterns/testing/spec-conformance.md)
 - [Distributed Trace](../../patterns/observability/distributed-trace.md)

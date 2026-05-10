@@ -61,6 +61,6 @@ Track cost per spec execution and aggregate into **cost per correct output**.
 ## Connections
 
 - [Structured Execution Log](execution-log.md) — cost data is derived from log entries
-- [Four Signal Metrics](../../operating/06-metrics.md) — cost per correct output is one of the four organizational signal metrics
+- [Four Signal Metrics](../../validate/06-metrics.md) — cost per correct output is one of the four organizational signal metrics
 - [Retry with Structured Feedback](../coordination/retry-feedback.md) — retries are the largest hidden cost multiplier
 - [Distributed Trace](distributed-trace.md) — per-trace cost shows the total cost of multi-agent pipelines

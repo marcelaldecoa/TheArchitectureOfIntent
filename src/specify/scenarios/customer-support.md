@@ -10,7 +10,7 @@
 
 ## Setting
 
-Day after the Frame session. Ari sits down with the Frame artifact, the [canonical 12-section spec template](../../sdd/07-canonical-spec-template.md), and a clean doc. Maya has blocked the team's calendar for the day; Priya is on call for domain questions. The goal is a complete spec by end of day. The team's prior experience with the framework is that *§3 (Authorized scope) writes quickly* — usually under an hour — and *§4 (NOT-authorized) takes 3× longer*. Not because §4 is bigger, but because every NOT-authorized clause is a place to think hard about what the agent might do that the team doesn't want.
+Day after the Frame session. Ari sits down with the Frame artifact, the [canonical 12-section spec template](../../specify/07-canonical-spec-template.md), and a clean doc. Maya has blocked the team's calendar for the day; Priya is on call for domain questions. The goal is a complete spec by end of day. The team's prior experience with the framework is that *§3 (Authorized scope) writes quickly* — usually under an hour — and *§4 (NOT-authorized) takes 3× longer*. Not because §4 is bigger, but because every NOT-authorized clause is a place to think hard about what the agent might do that the team doesn't want.
 
 This chapter walks the spec section by section, showing what each section looks like for the customer-support agent and where the most thinking goes.
 
@@ -93,7 +93,7 @@ CROSS-MODE INVARIANTS:
 
 ### §4 Cost Posture sub-block
 
-Per the [Cost Posture sub-block](../../sdd/07-canonical-spec-template.md) added at framework v1.4.0:
+Per the [Cost Posture sub-block](../../specify/07-canonical-spec-template.md) added at framework v1.4.0:
 
 ```
 MODEL TIER PER STEP:
@@ -223,7 +223,7 @@ Per-step gates and exception escalation:
 - *At launch:* Output Gate active, four signal metrics emitting, Priya's team trained on the review workflow.
 - *Per-incident:* trace categorized to Cat 1–7, fix-locus identified, amendment filed in the spec evolution log.
 - *Per-sprint:* roll up the spec evolution log, look for Cat patterns, schedule structural amendments.
-- *Per-quarter:* run the [Discipline-Health Audit](../../operating/15-anti-patterns.md).
+- *Per-quarter:* run the [Discipline-Health Audit](../../evolve/15-anti-patterns.md).
 
 ---
 
@@ -247,7 +247,7 @@ By end of day, the spec is in a PR for review. Maya, Sam, Jordan, and Priya all 
 
 ## Conceptual chapters this scenario binds to
 
-- [The Canonical Spec Template](../../sdd/07-canonical-spec-template.md) — including the Composition Declaration and Cost Posture sub-blocks
-- [Writing for Machine Execution](../../sdd/05-writing-specs-for-agents.md)
-- [The Spec as Control Surface](../../sdd/02-specs-as-control-surfaces.md)
+- [The Canonical Spec Template](../../specify/07-canonical-spec-template.md) — including the Composition Declaration and Cost Posture sub-blocks
+- [Writing for Machine Execution](../../specify/05-writing-specs-for-agents.md)
+- [The Spec as Control Surface](../../specify/02-specs-as-control-surfaces.md)
 - [The Intent Design Session](../../theory/07-intent-design-session.md)

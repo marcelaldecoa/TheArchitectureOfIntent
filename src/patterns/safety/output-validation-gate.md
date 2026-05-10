@@ -69,5 +69,5 @@ Validate agent output **against the spec's success criteria before delivery**. U
 
 - [Retry with Structured Feedback](../coordination/retry-feedback.md) — validation failures feed the retry mechanism
 - [Spec Conformance Test](../testing/spec-conformance.md) — conformance tests are the test-time version of validation gates
-- [The Guardian Archetype](../../architecture/archetypes/guardian.md) — the Guardian is the agent-based semantic validator
-- [Proportional Oversight](../../agents/06-human-oversight-models.md) — the oversight model determines which validation tier is required
+- [The Guardian Archetype](../../frame/archetypes/guardian.md) — the Guardian is the agent-based semantic validator
+- [Proportional Oversight](../../delegate/06-human-oversight-models.md) — the oversight model determines which validation tier is required
