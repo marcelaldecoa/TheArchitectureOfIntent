@@ -322,7 +322,9 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Output Validation Gate](../patterns/safety/output-validation-gate.md)
 
 ### "My agent program's cost or latency isn't penciling"
-- [Model-Tier Quick-Select Card](model-tier-card.md) — start here: per-step decision matrix and step-to-tier defaults
+- [The Canonical Spec Template — §4 Cost Posture sub-block](../sdd/07-canonical-spec-template.md) — the upstream surface where model-tier, latency budget, prompt-stability invariant, per-call ceiling, and cost-incident escalation get committed *before* deployment
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../theory/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) — the structural rationale for why cost is a §4 sub-block instead of a fifth dimension
+- [Model-Tier Quick-Select Card](model-tier-card.md) — per-step decision matrix and step-to-tier defaults
 - [Cost and Latency Engineering](../operating/09-cost-and-latency.md) — full treatment with vendor pricing and a worked case study
 - [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) — caching as architecture, not optimization; the largest single lever for systems running 100+ tasks/day
 - [Four Signal Metrics](../operating/06-metrics.md) — cost-per-correct-output is the metric this work moves

@@ -178,6 +178,26 @@ Given the four dimensions, the primary design question for any agent delegation 
 
 ---
 
+### Cost is not a fifth dimension
+
+Practitioners often ask: *if cost is independently calibratable and shapes every spec choice, why isn't it a fifth dimension alongside agency, autonomy, responsibility, and reversibility?*
+
+The framework's working position is that cost is **not** a fifth calibration dimension. It is a structurally distinct kind of commitment that lives in its own §4 sub-block in the [canonical spec template](../sdd/07-canonical-spec-template.md), alongside (and parallel to) the Composition Declaration. Three reasons.
+
+**Cost is partially derived, not fully independent.** A system's cost is partly a consequence of the four dimensions: high agency, wide autonomy, and engineered reversibility together push cost up. The four behavioral dimensions are *causes*; cost is partly an *effect* of how they're set. Promoting cost to a dimension would conflate dial with derived quantity, which is exactly the conflation the orthogonality argument above tries to *avoid* for agency and autonomy.
+
+**Cost is a different category of commitment.** The four dimensions are *behavioral* commitments about what the system **does** — what decisions it makes, what gates apply, who is accountable, what state it can recover. Cost is a *resource* commitment about what the system **consumes** — model tier, latency budget, cache strategy, per-call ceiling. Behavioral and resource commitments compose, but the framework's argument that the four behavioral dimensions are orthogonal does not extend cleanly to a behavioral-plus-resource fifth.
+
+**The lineage is thin.** The framework's honest accounting (paper §1.3) cites SAE J3016 [@saeJ30162021] and Shavit & Agarwal [@shavitAgarwal2023] as the sources for the four dimensions individually. Neither has cost-as-a-dimension; SAE J3016 treats cost as derived from the automation level, and Shavit & Agarwal's seven operational variables (ability, agency, agency type, autonomy, alignment, accountability, authority) do not include cost. Adding a fifth dimension here would either require a novelty claim (weak — practitioners have been calibrating cost as a resource concern for decades) or a manufactured lineage citation. The framework declines both.
+
+**What we do instead.** Cost gets a structural seat in the spec, but as a §4 *sub-block* rather than a calibration dimension. The Cost Posture sub-block declares: model-tier commitment per step; latency budget; prompt-stability invariant; per-call cost ceiling; cost-incident escalation. The Composition Declaration was the precedent — §4 can absorb structural commitments that aren't dimensions. Cost Posture follows the same shape.
+
+**What the four dimensions still do.** The four-dimension calibration determines the *envelope* within which cost is calibrated. A Reasoning-tier model on every step is cheap if Agency is narrow and Autonomy is bounded (few calls, simple prompts); the same Reasoning-tier commitment is ruinous if Agency is wide and Autonomy is high (many calls, expanding context). The Cost Posture sub-block makes the cost commitment *visible upstream*, where the four-dimension calibration has already constrained what is possible. Operators reading the spec can then see how the behavioral and resource commitments interact, instead of discovering the interaction in the production cost graph.
+
+If a future class of system makes cost behave like a dimension — independently calibratable, orthogonal to A/A/R/R, with a clear governance profile no §4 sub-block provides — the framework can revisit. As of v1.x, no such class has surfaced. The §4 sub-block does the work cleanly, and the orthogonality argument the four behavioral dimensions rest on stays uncluttered.
+
+---
+
 ## Resulting Context
 
 After applying this pattern:
