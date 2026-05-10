@@ -158,6 +158,7 @@
 ## Adoption
 
 - [Adoption Playbook](operating/11-adoption-playbook.md)
+- [Minimum Viable Architecture of Intent](operating/16-minimum-viable-aoi.md)
 - [Signs Your Architecture of Intent Is Degrading](operating/15-anti-patterns.md)
 - [Mapping the Framework to the DevSquad 8-Phase Cadence](operating/12-devsquad-mapping.md)
 - [Co-adoption with DevSquad Copilot](operating/13-co-adoption-with-devsquad.md)

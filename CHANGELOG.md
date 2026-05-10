@@ -18,6 +18,30 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v1.3.0 — 2026-05-10
+
+**MINOR** — adds the *Minimum Viable Architecture of Intent* chapter (operating/16) without changing any load-bearing commitment.
+
+### Added
+
+- **[Minimum Viable Architecture of Intent](src/operating/16-minimum-viable-aoi.md)** — a new Operating Practice chapter at the end of the *Adoption* sub-section of Part 5, naming the floor of the discipline for systems too small to warrant the full Intent Design Session. The MVP is one page of structured text — archetype, scope (in and out), oversight commitment, one signal, escalation trigger — written in ~15 minutes. Applicable when the system is small across all five of audience, stakes (R1–R2), cohesion (one person), scale (bounded), and diagnosability (failures visible in real time). Five graduation triggers signal when the MVP should upgrade to the full IDS.
+- New **Minimum Viable Architecture of Intent (MVP-AoI)** entry in the glossary under M.
+- New *"My system is too small for the full framework"* By-Problem entry in the Pattern Index, distinguishing the MVP from the Miniature Pilot (which is the full canvas applied to small-but-production-bound systems).
+
+### Why this is MINOR, not MAJOR
+
+The chapter scales the discipline *down* without changing any load-bearing commitment: the five archetypes, four dimensions, seven Cats, four oversight models, four signal metrics, four canvas activities, and composition-first-class are unchanged. The MVP is a *deliberately compressed* form of the discipline, not a separate framework. The deck/paper sync check is unaffected. No paper changes (the paper does not currently address the MVP angle; that may become a future paper-side addition).
+
+### Distinction worth naming
+
+The MVP-AoI is *not* a substitute for the [Miniature Pilot](src/miniature-pilot.md). The miniature pilot is the *full canvas* applied to a small but production-bound system; the MVP-AoI is a *deliberately compressed* discipline for systems below that production threshold. Both shapes are correct for their respective scopes; the distinction is named explicitly in both files.
+
+### PRs
+
+- **#51** — Add *Minimum Viable Architecture of Intent* chapter (operating/16)
+
+---
+
 ## v1.2.0 — 2026-05-10
 
 **MINOR** — adds the *What Changes for the Senior Engineer* chapter (theory/08) without changing any load-bearing commitment.

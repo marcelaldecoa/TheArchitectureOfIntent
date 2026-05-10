@@ -161,6 +161,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) | Prompt caching as architecture, not optimization: layered prompt structure, cache breakpoints, prompt-stability spec constraint, eval-time pre-warm, `cache_hit_rate` as first-class telemetry |
 | [Production Telemetry](../operating/10-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
 | [Adoption Playbook](../operating/11-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment; CI/CD wiring with hard-gate / soft-gate / observe tiers |
+| [Minimum Viable Architecture of Intent](../operating/16-minimum-viable-aoi.md) | The floor of the discipline for small systems: when is the IDS too heavy, what's the smallest set of artifacts that still does work, when should an MVP graduate to the full framework |
 | [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) | The 11-anti-pattern catalog of how the discipline itself decays — spec theater, oversight kabuki, metrics theater, prompt-patch drift, archetype drift, the retrofit IDS — and the quarterly discipline-health audit that surfaces them |
 | [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/12-devsquad-mapping.md) | Phase-by-phase mapping of the book's artifacts and disciplines into Microsoft DevSquad Copilot's 8-phase iterative cycle |
 | [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md) | The minimum additions from this book that give a DevSquad team the most leverage; vocabulary translation; 30-day co-adoption plan |
@@ -354,6 +355,11 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md) — where late judgment goes, what is honestly lost, what is gained, and the career-ladder gap
 - [The Intent Design Session](../theory/07-intent-design-session.md) — the operational ritual where the upstream-judgment work actually lands
 - [Roles & Responsibilities (RACI) Card](raci-card.md) — which of the seven canonical roles best matches your actual leverage
+
+### "My system is too small for the full framework"
+- [Minimum Viable Architecture of Intent](../operating/16-minimum-viable-aoi.md) — the one-page MVP and the five thresholds that say it's the right shape; the five graduation triggers that say it isn't anymore
+- [The Intent Design Session](../theory/07-intent-design-session.md) — what the MVP graduates *to* when any threshold crosses
+- [A Miniature Pilot, End-to-End](../miniature-pilot.md) — the contrast case: small but production-bound systems that warrant the full canvas anyway
 
 ### "My team has been using the framework for a while and something feels off"
 - [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the 11-anti-pattern catalog and the quarterly discipline-health audit
