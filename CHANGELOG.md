@@ -18,6 +18,51 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0-rc6 — 2026-05-10
+
+**MAJOR (release candidate, continues v2.0.0 line)** — ships **Scenario 2 (the coding-agent pipeline) end-to-end** across all five activities. Five chapters (~10K words total) replace the rc1 stubs with full prose. Framework load-bearing commitments unchanged from rc5.
+
+### Added
+
+- **`src/frame/scenarios/coding-pipeline.md` — full chapter prose.** A second team at the same e-commerce SaaS as Scenario 1 (Daniel/Naomi/Theo/Jess from platform-engineering, with Maya from S1 advising) frames an in-loop coding agent for tier-1 engineering tickets across 17 services. Walks the three questions, the archetype call (Executor with **Pattern E mode-switching composition** — Frame/Plan/Implement/Review), the high-autonomy / medium-reversibility calibration, the four cross-mode invariants (test-skip-set monotonic, no protected-branch push, no unrestricted shell, PR description names spec section), and the deliberate decision to elevate or not (rejected — the structural controls compensate for high autonomy).
+- **`src/specify/scenarios/coding-pipeline.md` — full chapter prose.** Walks the canonical 12-section spec for a system whose load-bearing constraint lives in the manifest and CI rather than in the prose. Detailed §3/§4/§5 with the per-mode tool manifest (the strongest case of mode-scoped tool binding in the framework's body of examples), the Composition Declaration sub-block (Pattern E with explicit transition triggers), the Cost Posture sub-block ($4.50 per-merged-PR ceiling), the four §6 invariants as CI guards.
+- **`src/delegate/scenarios/coding-pipeline.md` — full chapter prose.** The build phase: a 2-paragraph system prompt (even shorter than Scenario 1's 3-paragraph one because the manifest carries more load), per-mode tool manifest with deliberate exclusions enumerated and `git_push_protected` / `gh_pr_merge` explicitly absent, the four CI guards (test-skip monotonicity, branch-protection at the platform layer, manifest-scope check, spec-conformance gate) shown with shell snippets, oversight wiring for **Pre-authorized scope with exception escalation** (not Output Gate — the PR review process is itself the validation gate), the launch readiness checklist.
+- **`src/validate/scenarios/coding-pipeline.md` — full chapter prose.** Pre-launch eval suite (60 known-good ticket scenarios + 15 adversarial; first run lands at 71%, post-amendment at 82%), red-team protocol four attack surfaces with two findings (a Cat 7-adjacent file-misidentification pattern in Frame mode; a Cat 4 escalation routing dropping tickets when reviewers are on PTO), launch gate decision (all gates pass; 4-service pilot expansion), 30 days of metrics with FPV short of target at 78%, the first month's 22 categorized failures distributed across modes (Plan dominates, as expected and as the discipline intends).
+- **`src/evolve/scenarios/coding-pipeline.md` — full chapter prose.** The 90-day operating window: 22 amendments distributed 17 Cat 1 / 1 Cat 2 / 4 Cat 4 / 0 Cat 6, two structural rewrites of §11 (the operationally-thin section was the under-specified surface), the model-tier rotation event at day 60 (Sonnet 4.7 lands; the framework's model-upgrade-validation pattern fires; eval re-runs at 89% with a $4.10 cost baseline), the cross-team adoption pattern (two other teams ask for help; one-hour Frame consultations rather than full IDS; the platform team's discipline deepens through teaching), the Discipline-Health Audit at day 90 catching **active prompt-patch drift, active pattern inventory, and early signs of composition by accident** with corrective actions, and the post-90 disposition with the **Anomaly Baseline pattern de-bound** as net-unused.
+
+### Continuity
+
+- Scenario 2 introduces **named characters who carry forward into Scenario 3**: Daniel, Naomi, Theo, Jess on the platform-engineering team; Maya from Scenario 1 advising as the first-adopter. The narrative continuity reinforces the company-level adoption arc: customer-support team adopts the framework in Scenario 1; their 90-day success leads the platform team to adopt in Scenario 2; the platform team's adoption is itself a vector for cross-team adoption (two other teams in Scenario 2's Evolve chapter; Scenario 3 will show the third).
+- The five chapters cross-link via the *Reading path* table at the end of each.
+- Scenario 2's Evolve chapter mentions a *service overlay* construct that emerged from operating across 17 services — a per-service file naming dev-dependency allowlist additions, test-runner config, and ticket-template hints. The construct is named in this rc as worked development; if it generalizes to a framework-level concept, that elevation will land in a subsequent rc with the appropriate cardinality update to `paper/check-deck-sync.py`.
+
+### Voice
+
+All five chapters open vignette-before-exposition, per the v2.0.0 commitment. Specifics carry through: Daniel's *"the temptation to start prompting now and call it framing later"* warning at the Frame session opening; Maya's parting note that *"the spec for a coding agent reads weirder"*; Naomi's *"§11 was the under-specified section"* per-sprint roll-up call; the *"the model bump did some of the work that incremental amendments would have done"* observation from the day-60 model-tier rotation; Naomi's *"explaining the §11 rewrite to the product-engineering team forced me to articulate why we wrote it that way"* reflection on cross-team adoption.
+
+### Updated
+
+- Version markers advanced from **v2.0.0-rc5** to **v2.0.0-rc6** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+- `paper/architecture-of-intent.pdf` recompiled with the updated status header.
+
+### Why MAJOR-rc
+
+Continues the v2.0.0 MAJOR line because Scenario 2 is the second of the three running scenarios v2.0.0 introduced as load-bearing. The mode-switching composition (Pattern E) is the v2.0.0 canonical demonstration case — the strongest case of the framework's composition-first-class commitment — and it had been a stub from rc1 to rc5. rc6 makes Pattern E concrete in book-grade prose. The version stays in the rc-line because Scenario 3, the file-path renames, and the voice rewrites are still pending.
+
+### Deferred (unchanged from rc5's plan)
+
+- File-path renames (`architecture/` → `frame/`, etc.)
+- Scenario 3 (internal docs Q&A, DevSquad-built) end-to-end — PR-F
+- Voice rewrites for older chapters — PR-G, PR-H, PR-I
+- Light Evolve-framing intros for the 9 existing `operating/*` chapters in Part 5 — folded into PR-G
+- Reading paths appendix + final v2.0.0 release tag — PR-J
+
+### PRs
+
+- **PR-E** (this rc) — five coding-pipeline scenario chapters, version markers, paper PDF rebuild.
+
+---
+
 ## v2.0.0-rc5 — 2026-05-10
 
 **MAJOR (release candidate, continues v2.0.0 line)** — adds **paper §5**, a paper-grade end-to-end walkthrough of the customer-support pilot drawing on the rc4 book material, plus the section renumbering it requires. Closes the rc1 commitment that the paper acquires its own worked walkthrough as a complement to §4's agent-class deep-dives. Framework load-bearing commitments are unchanged from rc4.
