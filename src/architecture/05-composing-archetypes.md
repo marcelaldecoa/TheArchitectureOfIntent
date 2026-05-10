@@ -149,6 +149,100 @@ If there is no review gate — synthesis automatically triggers publish — this
 
 ---
 
+**Pattern E: Mode-switching compositions (the 2026 pressure-point classes)**
+
+The four patterns above are *layered* compositions — every archetype is active simultaneously. Pattern E names a different shape: at any given moment the system is in *one* archetype's mode, and it transitions between modes within a single session. The transitions are first-class events with their own invariants. This is the structural answer to the three pressure-point classes named in [Pick an Archetype — A working taxonomy, not a settled one](02-canonical-intent-archetypes.md#a-working-taxonomy-not-a-settled-one).
+
+**Coding agents.** A Cursor / Claude Code / Cline / Devin session moves between Synthesizer mode (planning, summarizing changes, explaining intent) and Executor mode (writing files, running tests, opening PRs). On harder tasks the same session may also enter Orchestrator-over-self mode (delegating sub-tasks to itself or to subordinate agents). The governing archetype is **Executor** — it is the highest-risk action mode the system reaches — and the embedded modes are Synthesizer and (sometimes) Orchestrator.
+
+```
+GOVERNING ARCHETYPE: Executor
+  Mode 1: Synthesizer (plan, explain, summarize)
+  Mode 2: Executor (write files, run tests, open PR)  ← governing
+  Mode 3: Orchestrator-over-self (delegate sub-task)
+
+Cross-mode invariants (cannot break, regardless of active mode):
+  • File-system scope: identical in every mode
+  • Test-deletion: forbidden in every mode
+  • Authorized-domain list for outbound traffic: same in every mode
+```
+
+The structural insight: invariants that hold in *every* mode go in the spec at the system level (a sub-section of §6 Invariants in the canonical spec template, declared in §4's Composition Declaration). Invariants that hold only within a mode go in that mode's component spec. This is the failure-prevention discipline — every documented coding-agent failure (deleted tests, unauthorized refactors, scope-creep PRs) has been a cross-mode invariant that was not declared as cross-mode.
+
+**Deep-research agents.** A long-horizon research agent moves between Synthesizer mode (composing the final report from gathered sources) and Orchestrator-over-self mode (planning what to search next, dispatching parallel sub-research). The governing archetype is **Synthesizer** — its deliverable is a composed artifact and it does not act on the world during research. Embedded: Orchestrator-over-self for planning.
+
+```
+GOVERNING ARCHETYPE: Synthesizer
+  Mode 1: Synthesizer (compose report)              ← governing
+  Mode 2: Orchestrator-over-self (plan further searches)
+
+Cross-mode invariants:
+  • Do not act on the world: never make API calls outside the
+    read-only research tool manifest
+  • Every claim in the synthesized report cites a source URL
+    (see Grounding with Verified Sources)
+  • The agent does not recurse beyond depth N (cost cap)
+```
+
+**Self-improving / training agents.** A system whose primary act is to evaluate or fine-tune *another* agent's behavior. The honest reading is that this is **two systems with a clean handoff**, not one mode-switching system: the meta-system is a Synthesizer (it produces a training signal or fine-tune dataset); the inner agent is an Executor or whichever archetype its deployment shape calls for. Document them with two specs and an explicitly-defined handoff. The handoff itself is the design surface — what data crosses, who validates it, what audit trail the meta-system leaves on the inner agent's training history.
+
+```
+META-SYSTEM (Synthesizer)         INNER AGENT (Executor, separate spec)
+  Reads inner agent's outputs       Operates on its own deployment
+  Composes a training signal        ↑ Handoff (validated, audited)
+  Outputs to fine-tune queue  ─────→ Loaded as new model weights
+```
+
+**The contrast with the layered patterns.** In Patterns A through D, all archetypes are active simultaneously and the layering is structural. In Pattern E, the system is in *one* mode at a time and the transitions are temporal. This places extra weight on the spec's transition logic — what triggers a mode change, what state the agent carries across the change, and what invariants from the previous mode persist. A spec that documents the modes but not the transitions is missing the load-bearing surface.
+
+---
+
+### The Composition Declaration in the spec
+
+For systems with embedded components (Patterns A–D) or mode-switching (Pattern E), §4 of the [canonical spec template](../sdd/07-canonical-spec-template.md) (Archetype Declaration) is extended with a **Composition Declaration** sub-block. The fragment below is the canonical form:
+
+```markdown
+## 4. Archetype Declaration
+
+**Classification:** Executor (governing)
+
+**Composition:** Mode-switching (Pattern E) — coding agent shape
+- Mode 1: Synthesizer — plan, explain, summarize the change
+- Mode 2: Executor — write files, run tests, open PR  (governing)
+- Mode 3: Orchestrator-over-self — delegate sub-tasks across files
+
+**Mode transitions:**
+- Synthesizer → Executor: when the user accepts a plan
+- Executor → Synthesizer: when a sub-task is blocked or the spec
+  is ambiguous; produce a clarification request, do not guess
+- Executor → Orchestrator-over-self: when a sub-task requires
+  more than 5 file edits; surface a sub-task plan for confirmation
+
+**Cross-mode invariants** (hold regardless of active mode):
+- File-system scope: read+write limited to repository root,
+  excluding the test directory in every mode
+- Test deletion forbidden
+- No outbound traffic except to whitelisted domains
+- Spec amendments cannot be made by the agent; only by humans
+  via spec review
+
+**Per-mode oversight** (referenced in §11 Agent Execution Instructions):
+- Synthesizer mode: Periodic — sample 1 in 5 plans
+- Executor mode: Pre-authorized scope, exceptions escalate
+- Orchestrator-over-self mode: Output Gate at PR boundary
+```
+
+Two things this fragment guarantees:
+
+1. **Cross-mode invariants are written down where the spec author had to think about them.** They cannot be "implicitly assumed" across modes. A reviewer reading §4 sees them as first-class declarations, not as scattered constraints.
+2. **The transitions become a reviewable surface.** A reviewer can ask "what triggers this transition? what state carries across? which invariants persist?" before the system ships, instead of after the first incident.
+
+Without this fragment, mode-switching systems often have *implicit* transitions that nobody specced. Cat 1 (Spec) failures in coding agents are disproportionately *transition* failures: the agent moved from Synthesizer mode into Executor mode without re-checking a constraint that the spec only declared in one of the two modes. Declaring the transitions makes those failures visible at review time.
+
+For Patterns A–D (layered compositions), the Composition Declaration is simpler — it names the governing archetype and lists the embedded components with their archetype roles, instead of naming modes and transitions. The cross-component invariants section still applies: invariants that hold across all components go in §6 at the system level, not inside any single component's section.
+
+---
+
 ### Worked example: spec-conflict resolution in an Advisor + Executor composition
 
 The four patterns above describe well-formed compositions. In practice, two archetypes' specs eventually conflict on a specific case the framework didn't anticipate. The resolution rules from [Multi-Agent Governance](07-multi-agent-governance.md) — *(1) higher-tier invariant wins; (2) earlier-in-pipeline-wins-on-read, later-on-write; (3) tie-break: surface, don't resolve* — apply here too. This worked example shows the rules in action.
@@ -204,11 +298,13 @@ Conflict resolution policy:
 When a system involves more than one archetype role, verify:
 
 - [ ] The governing archetype has been identified (highest-risk autonomous action)
-- [ ] Each embedded component has been named and typed
+- [ ] Each embedded component or mode has been named and typed
 - [ ] Guardian-class embedded components cannot be bypassed by the governing layer
 - [ ] Advisory-class embedded components feeding confirm-then-act patterns are recognized as oversight model implementations, not separate systems
 - [ ] Each sub-agent in an Orchestrator composition has its own archetype declaration
-- [ ] The spec has distinct sections for each component requiring separate governance  
+- [ ] **For mode-switching systems (Pattern E):** every transition between modes is documented with its trigger and the state that carries across
+- [ ] **For mode-switching systems:** every invariant that must hold across modes is declared once at the system level, not duplicated (or worse, omitted) in mode-specific sections
+- [ ] The spec includes a §4 Composition Declaration naming the governing archetype, the embedded components or modes, the transitions (if any), the cross-mode/cross-component invariants, and the per-component or per-mode oversight notes
 - [ ] The governing invariants are written at the system level, not the component level
 - [ ] No section of the spec says "mostly X with some Y" — each component has a definite type
 
@@ -239,7 +335,7 @@ After applying this pattern:
 
 ## Therefore
 
-> **Real systems layer multiple archetype roles. Give the system one governing archetype — determined by its highest-risk autonomous action — and declare embedded components explicitly with their own constraints. A Guardian embedded in an Executor cannot be disabled by Executor-level decisions. An Advisor embedded as a confirmation step is how the Executor implements its oversight model. Composition clarifies layering; it is not a substitute for decomposing a system that is too complex to govern.**
+> **Real systems layer or mode-switch across multiple archetype roles, and composition is the structural surface that captures both. Give the system one governing archetype — determined by its highest-risk autonomous action — and declare embedded components or modes explicitly with their own constraints, transitions, and cross-mode invariants in a §4 Composition Declaration. A Guardian embedded in an Executor cannot be disabled by Executor-level decisions. An Advisor embedded as a confirmation step is how the Executor implements its oversight model. A coding agent's Synthesizer-Executor-Orchestrator mode-switching is a single Executor with declared transitions, not three systems and not a missing archetype. Composition clarifies layering and mode-switching; it is not a substitute for decomposing a system that is too complex to govern.**
 
 ---
 
