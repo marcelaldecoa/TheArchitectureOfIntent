@@ -103,6 +103,18 @@ For composed systems, declare the governing archetype above and list the embedde
 - **Cross-mode / cross-component invariants** (hold regardless of active mode or layer): [list — these are what §6 Invariants enforces at the system level]
 - **Per-component / per-mode oversight notes** (referenced from §11): [Component 1: oversight model]; [Component 2: oversight model]
 
+**Cost Posture** *(required for systems running in production at any scale; omit only for true throwaways at the [MVP-AoI](../operating/16-minimum-viable-aoi.md) floor)*
+
+Cost is *not* a fifth calibration dimension — it is a *resource* commitment that the four behavioral dimensions partly determine and partly leave open. Declare the parts left open here. See [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../theory/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) for the structural rationale, and [Cost and Latency Engineering](../operating/09-cost-and-latency.md) for the operational treatment this sub-block sits above.
+
+- **Model-tier commitment** (per step where relevant): [step-name → tier (Reasoning / Frontier / Mid / Fast); one-line rationale]; [next step → tier]; *…*
+- **Latency budget**: p50 = [value]; p95 = [value]; p99 = [value]. *Behavior on breach:* [degrade · alert · halt — one of].
+- **Prompt-stability invariant**: [which prompt elements (system prompt, skill files, persistent context) are guaranteed stable across runs to support caching; what change would break the invariant and trigger a spec amendment]. See [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md).
+- **Per-call cost ceiling**: hard cap = [tokens or dollars]. *Behavior on breach:* [escalate to §11 oversight gate · halt with audit-log entry · degrade to a cheaper tier — one of].
+- **Cost-incident escalation**: [what cost-side condition triggers a stop or a human-review gate — e.g. "any single call exceeding the per-call ceiling," "cumulative cost exceeding $X across N runs," "cache-hit-rate dropping below Y for M consecutive runs"]. Connects to §11 Agent Execution Instructions.
+
+*The operational target this calibration serves is the **cost-per-correct-outcome** signal metric (§12 Validation Checklist; [Four Signal Metrics](../operating/06-metrics.md)). The Cost Posture sub-block is what the spec author commits to upstream; the metric is what the operator measures downstream.*
+
 *For archetype definitions, see the [Intent Archetype Catalog](../architecture/02-canonical-intent-archetypes.md). For composition patterns and the Pattern E mode-switching structure, see [Composing Archetypes](../architecture/05-composing-archetypes.md).*
 
 ---

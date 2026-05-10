@@ -206,6 +206,7 @@ After applying this pattern:
 - [The Skill File](../patterns/capability/skill-file.md) — the stable Layer 2
 - [The Tool Manifest](../patterns/capability/tool-manifest.md) — the stable Layer 3
 - [Cost and Latency Engineering](09-cost-and-latency.md) — the broader cost-engineering chapter this one specializes
+- [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the **Cost Posture** sub-block in §4 is where the *prompt-stability invariant* gets declared; this chapter is how the invariant gets implemented
 
 **This pattern enables:**
 - [Production Telemetry](10-production-telemetry.md) — `cache_hit_rate` joins the per-step capture set

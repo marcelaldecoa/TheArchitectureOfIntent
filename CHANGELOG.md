@@ -18,6 +18,33 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v1.4.0 — 2026-05-10
+
+**MINOR** — adds the *Cost Posture* sub-block to §4 of the canonical spec template, plus the structural framing that explains *why* cost is a §4 sub-block and not a fifth calibration dimension. No load-bearing commitment changed.
+
+### Added
+
+- **§4 Cost Posture sub-block** in [`src/sdd/07-canonical-spec-template.md`](src/sdd/07-canonical-spec-template.md), parallel to the existing Composition Declaration. Five fields: model-tier commitment per step, latency budget (p50/p95/p99 + behavior on breach), prompt-stability invariant, per-call cost ceiling (with breach behavior), cost-incident escalation. Required for systems running in production at any scale; omittable only at the [MVP-AoI](src/operating/16-minimum-viable-aoi.md) floor.
+- **"Cost is not a fifth dimension" framing sub-section** in [`src/theory/03-agency-autonomy-responsibility.md`](src/theory/03-agency-autonomy-responsibility.md) that explains the working position with three structural reasons (cost is partially derived from the four dimensions; cost is a *resource* commitment whereas A/A/R/R are *behavioral* commitments; the lineage is thin — neither SAE J3016 nor Shavit & Agarwal treat cost as a dimension).
+- **Paper §3.3 paragraph** giving the same structural rationale at paper grain.
+- **Cost Posture** glossary entry under C (in proper alphabetical position between Context Provision and Delegation), naming the five fields and the resource-vs-behavioral distinction.
+- New **Cost Posture sub-block** entry at the top of the Pattern Index *"My agent program's cost or latency isn't penciling"* By-Problem entry, with the framing-sub-section as the second link. Practitioners reaching for that By-Problem entry now see the upstream spec surface before the operational chapters.
+- Light cross-references added from [Cost and Latency Engineering](src/operating/09-cost-and-latency.md) and [Cacheable Prompt Architecture](src/operating/14-cacheable-prompt-architecture.md) to the new §4 sub-block.
+
+### Why this is MINOR, not MAJOR
+
+The sub-block extends §4 alongside the existing Composition Declaration without changing any load-bearing commitment: the five archetypes, **four** dimensions, seven Cats, four oversight models, four signal metrics, four canvas activities, and composition-first-class are all unchanged. The four-dimension cardinality the deck/paper sync check enforces is unaffected. The orthogonality argument in paper §3.3 stands. The honest accounting in paper §1.3 ("3 novel / 4 not claimed") is unchanged because Cost Posture is presented as a *structural surface* on top of existing operational treatments (Cost & Latency Engineering, Cacheable Prompt Architecture), not as a novel claim.
+
+### Why a §4 sub-block instead of a fifth dimension
+
+The candidate alternative — promoting cost to a fifth calibration dimension alongside A/A/R/R — would have been a MAJOR bump (v1.3.0 → v2.0.0). It was rejected for three reasons documented in the new framing sub-section: (1) cost is partly *derived* from the four behavioral dimensions, conflating dial with derived quantity; (2) cost is a *resource* commitment whereas A/A/R/R are *behavioral* commitments — different category; (3) the lineage is thin — neither SAE J3016 nor Shavit & Agarwal treat cost as a dimension, so promoting it would require either a weak novelty claim or a manufactured citation. The §4 sub-block does the work the recommendation actually wanted done — give cost a structural upstream seat in the spec — without overclaiming. The Composition Declaration sub-block established the precedent: §4 can absorb structural commitments that aren't dimensions.
+
+### PRs
+
+- **#52** — Add Cost Posture sub-block to spec template §4; framing sub-section in theory/03 and paper §3.3
+
+---
+
 ## v1.3.0 — 2026-05-10
 
 **MINOR** — adds the *Minimum Viable Architecture of Intent* chapter (operating/16) without changing any load-bearing commitment.
