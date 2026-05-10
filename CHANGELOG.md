@@ -18,6 +18,47 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0-rc2 — 2026-05-10
+
+**MAJOR (release candidate, continues v2.0.0 line)** — ships the five-row canvas redraw and the teaching-deck activities slide that were deferred from rc1. This rc closes the rc1 prose-vs-figure gap (rc1 said "five activities" but the canvas figure still showed four rows). The framework's load-bearing commitments are unchanged from rc1.
+
+### Added
+
+- **Canvas redraw to five rows.** `paper/figures/architecture-of-intent-canvas.svg` extended from a 1180px-tall, four-activity layout to a 1330px-tall, five-activity layout. New EVOLVE row contains four practice chips (Closed Loop · Spec Evolution Log · Discipline-Health Audit · Framework Versioning) parallel in width and spacing to the SPECIFY row's grid. Loop arrow redrawn to descend from the right-rail metrics into EVOLVE, sweep beneath EVOLVE, and ascend the left spine back to FRAME — preserving the "metrics → next intent" semantic while making EVOLVE a first-class waypoint instead of an implicit feedback. Right-rail title softened from "CLOSED LOOP" to "SIGNALS" with the strap "drive the EVOLVE loop," reflecting that the metrics are now the *input* to a named activity rather than a self-contained closing loop. Bottom caption updated from "FRAME · CALIBRATE · SPECIFY · DELEGATE · VALIDATE" to "FRAME · SPECIFY · DELEGATE · VALIDATE · EVOLVE — the five activities of the Architecture of Intent."
+- **Canvas PNG regenerated** at 1600×1330 (was 1600×1180) and mirrored to `src/images/architecture-of-intent-canvas.png` for mdBook.
+- **Deck activities slide.** `paper/presentation_content.py` gains a new slide at position 6 (`kind=table`, `section="02 · ACTIVITIES"`, title *"Five activities, one canvas"*) showing the five activities with the load-bearing list each binds and the artifact each produces. Existing "Four load-bearing elements" cards4 slide retitled to *"Four load-bearing elements bound to the spine"* to clarify the activities-as-spine framing. Both PPTX and HTML decks rebuilt; deck count goes from 19 → 20 slides.
+- **Deck-side phase check.** `paper/check-deck-sync.py`'s `check_phases()` previously checked the paper only at rc1; it now checks both the paper *and* the deck's activities table (mirrors `check_archetypes()`'s deck-side enforcement). The five-activity cardinality is now sync-locked across both artifacts.
+
+### Updated
+
+- **`src/introduction.md`** — image alt-text rewritten to describe the new five-row canvas; the rc1 deferral annotation paragraph removed.
+- **`paper/architecture-of-intent.md`** — figure caption rewritten to describe the new five-row layout; the rc1 deferral language removed; status header advances to **v2.0.0-rc2** with the rc2-shipped notation.
+- **`paper/architecture-of-intent.pdf`** — recompiled with the new figure caption; PDF size grows from ~982KB to ~1.16MB to accommodate the taller figure.
+- **Version markers advanced from `v2.0.0-rc1` to `v2.0.0-rc2`** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md` (Framework version section), and `README.md` (Framework version section). The README's "four activities" enumeration also gets corrected to "five activities" — this was a v1.4.0-era leftover that PR #53 missed.
+
+### Deferred to subsequent rcs (unchanged from rc1's plan)
+
+- File-path renames (`architecture/` → `frame/` etc.) — purely filesystem cleanup; no reader-facing change.
+- Phase-5 chapter prose (PR-B).
+- Three scenarios written in full (PR-C, PR-E, PR-F).
+- Voice rewrites (PR-G, PR-H, PR-I).
+- Paper §5 — single canonical scenario walked end-to-end (PR-D).
+- Reading paths appendix (PR-J).
+
+### Trade-offs
+
+The rc2 canvas redraw extends the SVG height by 150px and adds a 105px-tall row of four chips. The chips deliberately mirror SPECIFY's four-column grid for visual consistency with the rest of the canvas. The right-rail metrics column intentionally does NOT move into the EVOLVE row — keeping it on the right rail preserves the existing visual conceit that signals are continuous (always emitting) while the activity rows are sequential (each happens at a particular phase of the work).
+
+### Why MAJOR-rc
+
+This rc continues the v2.0.0 MAJOR line because the deck-side phases check goes from non-existent to enforcing five activities — a net new sync constraint. Decks or papers that had been authored against v1.x's four-activity assumption fail this check; that's the intended behavior. The version number stays in the rc-line until the prose work and the file-path renames land; v2.0.0 final ships when the rc series stabilizes.
+
+### PRs
+
+- **PR-A2** (this rc) — canvas redraw, deck activities slide, deck-side phase check, version markers, paper PDF rebuild.
+
+---
+
 ## v2.0.0-rc1 — 2026-05-10
 
 **MAJOR (release candidate)** — promotes *Evolve* from a closing-Validate sub-discipline to a peer fifth activity, introduces three running scenarios across the five activities, and reorganizes the book around the activity spine. This is the structural commit of the v2.0.0 line; the prose work for the Phase-5 chapters and the 15 scenario chapters lands in subsequent rcs (PR-B through PR-F per the rollout plan in PR-A's description). The canvas redraw to a five-row layout, the teaching-deck refresh, and any file-path renames are deferred to PR-A2 / PR-A3 within the v2.0.0-rc line.

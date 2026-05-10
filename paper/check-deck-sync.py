@@ -84,8 +84,7 @@ CANONICAL_NOT_CLAIMED_COUNT = 4
 
 # Five framework activities — promoted to a load-bearing list in v2.0.0
 # (Evolve was elevated from a closing-Validate sub-discipline to a peer
-# fifth activity). Paper-side only at rc1 because the deck has no
-# activities slide yet; the deck-side check activates when a slide lands.
+# fifth activity). Both paper and deck checked from rc2 onward.
 CANONICAL_PHASES = [
     "Frame",
     "Specify",
@@ -208,13 +207,12 @@ def check_devsquad_phases(paper_text):
     return failures
 
 
-def check_phases(paper_text):
-    """All 5 framework activity names appear in the paper.
+def check_phases(paper_text, deck):
+    """All 5 framework activity names appear in both paper and deck.
 
-    v2.0.0-rc1: paper-side only. The deck has no activities slide yet;
-    when one lands, add a deck-side check that mirrors check_archetypes's
-    pattern (find slide by section substring 'ACTIVITIES', verify rows
-    match CANONICAL_PHASES).
+    Paper side: capitalized phase names appear as standalone words.
+    Deck side: there is a `kind=table` slide whose section contains
+    'ACTIVITIES' and whose first column matches CANONICAL_PHASES in order.
 
     Match is verbatim and case-sensitive on the capitalized phase names
     (Frame, Specify, Delegate, Validate, Evolve) — the activity names
@@ -224,6 +222,16 @@ def check_phases(paper_text):
     for phase in CANONICAL_PHASES:
         if not re.search(rf"\b{re.escape(phase)}\b", paper_text):
             failures.append(f"framework activity '{phase}' missing from paper")
+
+    slide = find_slide(deck.SLIDES, "table", section_substr="ACTIVITIES")
+    if slide is None:
+        failures.append("deck has no activities table slide (kind=table, section contains 'ACTIVITIES')")
+    else:
+        deck_phases = [row[0] for row in slide["rows"]]
+        if deck_phases != CANONICAL_PHASES:
+            failures.append(
+                f"deck activities table is {deck_phases}, expected {CANONICAL_PHASES}"
+            )
     return failures
 
 
@@ -267,7 +275,7 @@ def main():
         ("Failure categories (7)",  lambda: check_categories(paper_text, deck)),
         ("Cat 7 sub-categories (4)", lambda: check_cat7_subs(paper_text, deck)),
         ("DevSquad phases (8)",     lambda: check_devsquad_phases(paper_text)),
-        ("Framework activities (5)", lambda: check_phases(paper_text)),
+        ("Framework activities (5)", lambda: check_phases(paper_text, deck)),
         ("Honest-accounting cardinality (3 / 4)", lambda: check_honest_accounting(deck)),
     ]:
         f = fn()
