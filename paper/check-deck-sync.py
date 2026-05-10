@@ -14,6 +14,8 @@ Drift surface (intentionally small):
   - Four Cat 7 sub-category names
   - Eight DevSquad phase names (paper only — the deck condenses some)
   - "3 novel / 4 not-claimed" honest-accounting counts
+  - Five framework activities (paper only at v2.0.0-rc1; deck-side check
+    activates when an activities slide lands)
 
 If you intentionally rename or add to any of these, update all THREE places:
   1. paper/architecture-of-intent.md
@@ -79,6 +81,18 @@ CANONICAL_DEVSQUAD_PHASES = [
 # Paper claims THREE explicit novel contributions; deck mirrors that.
 CANONICAL_NOVEL_COUNT = 3
 CANONICAL_NOT_CLAIMED_COUNT = 4
+
+# Five framework activities — promoted to a load-bearing list in v2.0.0
+# (Evolve was elevated from a closing-Validate sub-discipline to a peer
+# fifth activity). Paper-side only at rc1 because the deck has no
+# activities slide yet; the deck-side check activates when a slide lands.
+CANONICAL_PHASES = [
+    "Frame",
+    "Specify",
+    "Delegate",
+    "Validate",
+    "Evolve",
+]
 
 
 # ============================================================================
@@ -194,6 +208,25 @@ def check_devsquad_phases(paper_text):
     return failures
 
 
+def check_phases(paper_text):
+    """All 5 framework activity names appear in the paper.
+
+    v2.0.0-rc1: paper-side only. The deck has no activities slide yet;
+    when one lands, add a deck-side check that mirrors check_archetypes's
+    pattern (find slide by section substring 'ACTIVITIES', verify rows
+    match CANONICAL_PHASES).
+
+    Match is verbatim and case-sensitive on the capitalized phase names
+    (Frame, Specify, Delegate, Validate, Evolve) — the activity names
+    are the load-bearing form; lowercase mentions in prose don't count.
+    """
+    failures = []
+    for phase in CANONICAL_PHASES:
+        if not re.search(rf"\b{re.escape(phase)}\b", paper_text):
+            failures.append(f"framework activity '{phase}' missing from paper")
+    return failures
+
+
 def check_honest_accounting(deck):
     """Deck's compare slide for honest accounting must have the right cardinality."""
     failures = []
@@ -234,6 +267,7 @@ def main():
         ("Failure categories (7)",  lambda: check_categories(paper_text, deck)),
         ("Cat 7 sub-categories (4)", lambda: check_cat7_subs(paper_text, deck)),
         ("DevSquad phases (8)",     lambda: check_devsquad_phases(paper_text)),
+        ("Framework activities (5)", lambda: check_phases(paper_text)),
         ("Honest-accounting cardinality (3 / 4)", lambda: check_honest_accounting(deck)),
     ]:
         f = fn()
