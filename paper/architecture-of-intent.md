@@ -3,7 +3,9 @@
 **Marcel Aldecoa**
 *Independent practitioner*
 
-**Status:** Skeleton draft (v0.1). Position/framework paper, ~12–15 pages target. Companion artifact to the book of the same title.
+**Paper status:** Skeleton draft (paper v0.1). Position/framework paper, ~12–15 pages target. Companion artifact to the book of the same title.
+
+**Framework version:** v1.0.0 (2026-05-10). Both this paper and the [companion book](https://github.com/marcelaldecoa/TheArchitectureOfIntent) reflect the same framework version; load-bearing commitments (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface) move together. See `CHANGELOG.md` at the repository root for the versioning convention and release history.
 
 **Target venue:** arXiv (cs.SE / cs.AI cross-listing). Workshop or journal submission to be decided after first arXiv version is released.
 
@@ -345,19 +347,24 @@ The framework's bet is that as delegation widens, intent precision compounds in 
 
 ## Appendix A: Mapping to the book
 
-> *For readers of the companion book (Aldecoa 2026), this appendix maps each section of the paper to the relevant book chapter so the paper can be read as a distillation rather than a substitute.*
+> *For readers of the companion book [@aldecoaArchitectureIntent2026], this appendix maps each section of the paper to the relevant book chapter so the paper can be read as a distillation rather than a substitute. The book also contains the inverse mapping in its [Companion Paper appendix](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/src/appendices/companion-paper.md), which lists every paper section against the book chapters that elaborate it; this appendix is the symmetric paper-side index.*
 
-| Paper section | Book chapter |
+| Paper section | Book chapters that elaborate |
 |---|---|
+| §1 Introduction & §1.3 Contribution | Prologue; Introduction; *What is the Architecture of Intent?* (Introduction); *A Miniature Pilot, End-to-End* |
+| §3 *(framework canvas, Figure 1)* | *The framework on one page* (Introduction) — the same canvas appears in both artifacts as the visual summary |
 | §3.1 Intent as a design surface | Theory ch. 2 (Intent vs. Implementation) |
-| §3.2 Archetypes | Architecture ch. 2–6 |
+| §3.2 Archetypes (with composition first-class) | Architecture ch. 2 (Pick an Archetype), ch. 3 (Four Dimensions of Governance), ch. 4 (Selection Tree), ch. 5 (Composing Archetypes — including Pattern E mode-switching and the Composition Declaration), ch. 6 (Governed Archetype Evolution); Repertoire ch. 2 (Intent Archetype Catalog) |
 | §3.3 Four dimensions | Theory ch. 3 (Calibrate Agency, Autonomy, Responsibility, Reversibility) |
-| §3.4 Cat 1–7 | Theory ch. 5 (Failure Modes and How to Diagnose Them) |
-| §3.5 SDD as the protocol | Part 2 (The Spec) |
-| §4.1 Agentic development lifecycle | Operating ch. 12–13 (DevSquad Mapping & Co-adoption) |
-| §4.2 MCP capability boundaries | Agents ch. 4, MCP ch. 1–3 |
-| §4.3 Coding agents | Agents ch. 8; Examples ch. 3 |
+| §3.4 Cat 1–7 fix-locus failure taxonomy | Theory ch. 5 (Failure Modes and How to Diagnose Them); Agents ch. 9 (Computer-Use Agents) for the Cat 7 detail |
+| §3.5 SDD as the protocol | Part 2 in full; especially SDD ch. 7 (The Canonical Spec Template — including the §4 Composition Declaration sub-block) |
+| §4.1 Agentic development lifecycle | Operating ch. 12 (DevSquad Mapping), ch. 13 (Co-adoption with DevSquad), ch. 11 (Adoption Playbook) |
+| §4.2 MCP capability boundaries | Agents ch. 4 (Least Capability), MCP ch. 1–3 |
+| §4.3 Coding agents | Agents ch. 8; Examples ch. 3 (Designing an AI Coding Agent) |
 | §4.4 Computer-use agents | Agents ch. 9 |
+| §5 Discussion (applicability, MAST complementarity) | Architecture ch. 7 (Multi-Agent Governance); Theory ch. 5 §"How this taxonomy relates to the empirical literature" |
+| §6 Limitations | Introduction §"Honest scope"; Operating ch. 15 (Signs Your Architecture of Intent Is Degrading) |
+| Working practices not covered in the paper | Theory ch. 7 (The Intent Design Session); Operating ch. 15 (anti-patterns + Discipline-Health Audit) — both are operational rituals expressed in the book and not separately argued in the paper |
 
 ---
 

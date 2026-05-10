@@ -338,6 +338,14 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 - [The Living Spec](../sdd/06-living-specs.md)
 - The worked examples ([Customer Support](../examples/01-ai-customer-support/README.md), [Code Gen Pipeline](../examples/02-code-generation-pipeline/README.md), [Coding Agent](../examples/03-coding-agent/README.md))
+- [The Companion Paper](companion-paper.md) — give skeptical stakeholders the executive-summary version; the paper is shorter and structured for evaluation rather than adoption
+
+### "I'm evaluating the framework, not yet adopting it"
+- [The Companion Paper](companion-paper.md) — the arXiv-format distillation; ~15,000 words; structured for a reader who needs to decide whether the larger investment in the book is worth their time
+- [What is the Architecture of Intent?](../introduction.md#what-is-the-architecture-of-intent) — the one-page prose definition
+- [The framework on one page](../introduction.md#the-framework-on-one-page) — the canvas summary
+- [A Miniature Pilot, End-to-End](../miniature-pilot.md) — the canvas applied to one concrete pilot
+- [Honest scope: what this book is, and what it isn't](../introduction.md#honest-scope-what-this-book-is-and-what-it-isnt) — what the framework does not promise
 
 ### "My team has been using the framework for a while and something feels off"
 - [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the 11-anti-pattern catalog and the quarterly discipline-health audit
