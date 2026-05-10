@@ -256,6 +256,7 @@
 
 - [Glossary](appendices/glossary.md)
 - [The Pattern Index](appendices/pattern-index.md)
+- [Reading Paths](appendices/reading-paths.md)
 - [The Companion Paper](appendices/companion-paper.md)
 - [Reading List & References](appendices/references.md)
 - [SpecKit Quick Reference](appendices/speckit-reference.md)
