@@ -1,0 +1,42 @@
+name: Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Internal links
+        run: python3 scripts/check-internal-links.py
+
+      - name: Orphans
+        run: python3 scripts/check-orphans.py
+
+      - name: README path drift
+        run: python3 scripts/check-readme-paths.py
+
+      - name: Deck/paper sync
+        run: python3 paper/check-deck-sync.py
+
+      - name: Install mdBook
+        uses: peaceiris/actions-mdbook@v2
+        with:
+          mdbook-version: "0.4.44"
+
+      - name: Build book
+        run: mdbook build

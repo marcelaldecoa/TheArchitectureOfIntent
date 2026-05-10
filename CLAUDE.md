@@ -80,9 +80,11 @@ When making future changes, preserve this accounting. Reviewers reward honest fr
 ├── theme/                             ← mdBook custom CSS/JS
 └── .github/workflows/
     ├── deploy.yml                     ← publishes book to GitHub Pages on push to main
-    └── build-paper.yml                ← "Compile paper & decks" — auto-rebuild artifacts
-                                          when paper sources change on main; opens
-                                          bot/paper-artifacts PR via peter-evans/create-pull-request
+    ├── build-paper.yml                ← "Compile paper & decks" — auto-rebuild artifacts
+    │                                     when paper sources change on main; opens
+    │                                     bot/paper-artifacts PR via peter-evans/create-pull-request
+    └── check.yml                      ← "Checks" — runs link/orphan/README-path/deck-sync
+                                          checkers + mdbook build on every PR to main
 ```
 
 ## Build & verification commands
@@ -288,7 +290,7 @@ The repo is `TheArchitectureOfIntent` (preserves the GitHub Pages URL). The book
 
 ### General
 - **Bulk-delete merged remote branches** — sandbox can't do remote ref deletion; needs the GitHub UI.
-- **Optional CI workflow** — currently `deploy.yml` runs `mdbook build` only on push to main, not on PRs. A PR-time mdBook build check would catch SUMMARY parse errors before merge.
+- **PR-time CI workflow** — done. `.github/workflows/check.yml` runs the four checkers (links, orphans, README paths, deck sync) plus `mdbook build` on every PR to main.
 - **Teaching deck refresh cadence** — when the paper acquires new claims or examples, walk the deck slide-by-slide to keep it representative. The sync check covers the named facts; prose alignment is on you.
 - **Bot/paper-artifacts PR queue** — the auto-PR keeps reusing the same `bot/paper-artifacts` branch, so it shouldn't pile up. If you don't merge it for a long time and it goes stale, just close it; the bot reopens on the next source change.
 
