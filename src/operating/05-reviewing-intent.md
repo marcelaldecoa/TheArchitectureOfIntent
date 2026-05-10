@@ -8,6 +8,10 @@
 
 ---
 
+> *Where this sits in v2.0.0: this chapter is part of **Part 4 — Validate**. Intent review is what you do **before** the agent runs the spec — review the intent surface, not the output. The discipline complements the per-incident closed loop in Part 5 by catching spec gaps **upstream** rather than as production failures. Pair with [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) for what to look for during intent review.*
+
+---
+
 ## Context
 
 Code review is one of the most established practices in software engineering. It evolved to catch implementation errors: logic bugs, style violations, security vulnerabilities, missing tests. It works because the reviewer can read the implementation and evaluate whether it is correct.

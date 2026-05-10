@@ -8,6 +8,10 @@
 
 ---
 
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The framework's vocabulary maps cleanly onto DevSquad Copilot's eight-phase iterative cycle because both projects independently arrived at the same load-bearing concerns. [Scenario 3 (the internal docs Q&A agent)](../frame/scenarios/docs-qa.md) is the worked instantiation of the mapping at scenario grain — every phase chapter shows the AoI ↔ DevSquad mapping inline. This chapter is the vocabulary-grain version, useful for any team running both frameworks.*
+
+---
+
 ## Context
 
 Microsoft's [DevSquad Copilot](https://github.com/microsoft/devsquad-copilot) is a delivery framework that integrates Copilot with specialized agents into an explicit 8-phase iterative cycle. It converges with this book on the load-bearing concepts (living specs, risk-tiered human-in-the-loop, principle of least privilege, context isolation, spec-first response to failure) but is more *operationally prescriptive*: it gives a team a delivery cadence rather than a design vocabulary.

@@ -10,6 +10,10 @@
 
 ## Context
 
+A team is in the Frame session, calibrating dimensions. Reversibility is mixed. Agency is medium. Autonomy is the disputed dial — half the room wants high, half wants low. Forty minutes in, someone notices the disagreement isn't really about autonomy; it's about *oversight*. *"How will we know what the agent did, and when do we get to intervene?"* Once the question is framed that way, the autonomy debate collapses — the four oversight models give them four named answers, not a sliding scale, and the team can pick the one that matches their reversibility profile in five minutes.
+
+Human oversight is not a single mechanism. It is a family of four patterns. Treating oversight as binary — either the human approves everything, or the human is not involved — is the failure mode this chapter prevents.
+
 We have agents that can execute complex tasks with operational autonomy, using tools within defined capability boundaries, guided by skills that encode organizational knowledge. The final design question before examining failure is: where does human attention go, and when?
 
 Human oversight is not a single mechanism. It is a family of patterns, each appropriate to a different point in the execution lifecycle, a different risk posture, and a different relationship between the human and the work. Treating oversight as binary — either the human approves everything, or the human is not involved — is the failure mode this chapter prevents.

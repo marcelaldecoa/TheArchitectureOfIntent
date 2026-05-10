@@ -10,6 +10,10 @@
 
 ## Context
 
+A team has finished its Frame session. The Frame artifact is on the wall: archetype committed, dimensions calibrated, three questions answered. Now someone has to write the spec. The lead opens an empty doc and pastes in the canonical 12-section template. The cursor sits at §1. *"Where do I start?"*
+
+This chapter is the answer. The template is reference material, not a checklist; you don't fill it out from §1 through §12 in order. You fill the structural commitments first — §3 *Authorized scope*, §4 *NOT-authorized scope* (with the Composition Declaration and Cost Posture sub-blocks), §6 *Invariants* — and let the rest fall out from those. This chapter walks each section with examples of strong and weak entries, so the cursor at §1 has somewhere to go.
+
 You have understood the principles of Spec-Driven Development. You need the artifact.
 
 This pattern is different from the others in Part 2: it is primarily reference material. It presents the canonical spec template in full, with an explanation of each section, the key questions each section must answer, and examples of what good and weak entries look like.

@@ -8,6 +8,10 @@
 
 ---
 
+> *Where this sits in v2.0.0: this chapter is part of **Part 4 — Validate**. The red-team protocol is structured adversarial probing — a different validation surface from the eval suite, exercising the agent against attack patterns the eval doesn't cover. The customer-support and coding-pipeline scenarios both surface findings the pre-launch eval missed; the red-team is what catches them, and the structural amendments those findings produce are what makes the next eval suite stronger.*
+
+---
+
 ## Context
 
 Evals measure against the spec. Red-team measures against the threat. Prompt-injection defense is the *control*; this chapter is the *protocol* — what to test, how often, who runs it, how to score, and how findings feed back into specs and evals.

@@ -8,6 +8,10 @@
 
 ---
 
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. Production telemetry is the trace surface that the [closed loop](../evolve/01-closed-loop.md) requires — without traces, you have an after-the-fact narrative; with them, you have evidence. The Distributed Trace, Cost Tracking, and Anomaly Baseline patterns this chapter integrates feed the Cat-by-Cat categorization and the per-mode failure observability that the running scenarios demonstrate.*
+
+---
+
 ## Context
 
 Evals measure offline against the spec. Red-team batteries measure offline against threats. Production telemetry is what you can see *while the system is running on real traffic*. This chapter is the integrated stack: what to capture, what to alert, what to retain, and how the signal feeds back into the spec gap log and the eval suite.
