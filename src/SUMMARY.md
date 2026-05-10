@@ -2,6 +2,7 @@
 
 [Cover](cover.md)
 [Introduction](introduction.md)
+[A Miniature Pilot, End-to-End](miniature-pilot.md)
 [How to Read This Book](how-to-read.md)
 [Prologue: What Changed and What's at Stake](prologue.md)
 

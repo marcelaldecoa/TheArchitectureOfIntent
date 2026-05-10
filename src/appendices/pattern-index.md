@@ -331,6 +331,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md)
 
 ### "I'm trying to introduce this framework to my team"
+- [A Miniature Pilot, End-to-End](../miniature-pilot.md) — start here; show the framework on one screen before asking anyone to read three parts of a book
 - [The Intent Design Session](../theory/07-intent-design-session.md) — the working ritual; run this for the first system that matters
 - [Adoption Playbook](../operating/11-adoption-playbook.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)

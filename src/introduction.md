@@ -95,6 +95,7 @@ Two reading modes, both supported.
 
 | If you are... | Start at |
 |---------------|----------|
+| Just trying to see the framework applied in one screen | [A Miniature Pilot, End-to-End](miniature-pilot.md) |
 | Choosing how to structure a new agent system | [Pick an archetype](architecture/02-canonical-intent-archetypes.md) |
 | Writing a spec right now | [The canonical spec template](sdd/07-canonical-spec-template.md) |
 | Designing oversight for an agent that's about to ship | [Proportional Oversight](agents/06-human-oversight-models.md) |
@@ -133,10 +134,12 @@ Read the book for the vocabulary, the structural patterns, and the failure diagn
 
 This is a working book, not a literary one. Chapters are short, the vocabulary is consistent, and the templates are meant to be copied. Where a pattern can be stated in two pages, it is. Where a pattern needs a diagram, a table, or a worked example, it gets one. There is no philosophical preamble, because the reader of this book is presumed to already be working on the problem and to need the tools, not the argument.
 
-If you want the argument anyway — why this discipline matters, what changed structurally about software when code stopped being the bottleneck — read the [Prologue](prologue.md) next. It's three pages.
+If you want to see the framework applied to one concrete system in one screen before going any further, read [A Miniature Pilot, End-to-End](miniature-pilot.md) next. It is the canvas walked top-to-bottom on a recognizable pilot, with one failure traced back to its fix locus.
+
+If you want the argument for why this discipline matters — what changed structurally about software when code stopped being the bottleneck — read the [Prologue](prologue.md) instead. It's three pages.
 
 If you'd rather just start with the first decision you have to make, go to [Pick an archetype](architecture/02-canonical-intent-archetypes.md).
 
 ---
 
-*Continue to the [Prologue](prologue.md) for the short version of why this work matters, or jump straight to [How to read this book](how-to-read.md).*
+*Continue to [A Miniature Pilot, End-to-End](miniature-pilot.md) to see the framework applied to one concrete system, or jump to the [Prologue](prologue.md) for why this work matters.*
