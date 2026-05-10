@@ -5,7 +5,19 @@
 [A Miniature Pilot, End-to-End](miniature-pilot.md)
 [How to Read This Book](how-to-read.md)
 [Foreword: What Changed and What's at Stake](prologue.md)
-[Foreword: What Changes for the Senior Engineer](theory/08-what-changes-for-senior-engineers.md)
+
+---
+
+# Part 0 — FOUNDATIONS
+
+*The conceptual preface. Read once; come back when you get lost. Every other Part stands on these chapters.*
+
+- [What is the Architecture of Intent?](theory/01-what-is-aoi.md)
+- [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](theory/03-agency-autonomy-responsibility.md)
+- [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
+- [What Changes for the Senior Engineer](theory/08-what-changes-for-senior-engineers.md)
+- [The Intent Design Session](theory/07-intent-design-session.md)
 
 ---
 
@@ -13,14 +25,12 @@
 
 *Pick the shape. Commit to a category before any spec is written.*
 
-- [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
 - [Pick an Archetype](architecture/02-canonical-intent-archetypes.md)
   - [The Advisor](architecture/archetypes/advisor.md)
   - [The Executor](architecture/archetypes/executor.md)
   - [The Guardian](architecture/archetypes/guardian.md)
   - [The Synthesizer](architecture/archetypes/synthesizer.md)
   - [The Orchestrator](architecture/archetypes/orchestrator.md)
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](theory/03-agency-autonomy-responsibility.md)
 - [Four Dimensions of Governance](architecture/03-archetype-dimensions.md)
 - [The Archetype Selection Tree](architecture/04-decision-tree.md)
 - [Composing Archetypes](architecture/05-composing-archetypes.md)
@@ -46,7 +56,6 @@
 - [The Living Spec](sdd/06-living-specs.md)
 - [The Canonical Spec Template](sdd/07-canonical-spec-template.md)
 - [Architectural Decision Records](sdd/08-architectural-decision-records.md)
-- [The Intent Design Session](theory/07-intent-design-session.md)
 - [SpecKit](sdd/04-speckit.md)
 
 ## Repertoires
@@ -126,9 +135,8 @@
 
 # Part 4 — VALIDATE
 
-*Learn in production. Each failure category names the artifact to fix.*
+*Learn in production. Each failure category names the artifact to fix. The Cat 1–7 taxonomy itself lives in Part 0 — Foundations, since it's referenced from every Part; this Part is about applying it in operation.*
 
-- [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
 - [Intent Review Before Output Review](operating/05-reviewing-intent.md)
 - [Four Signal Metrics](operating/06-metrics.md)
 - [Evals and Benchmarks](operating/07-evals-and-benchmarks.md)

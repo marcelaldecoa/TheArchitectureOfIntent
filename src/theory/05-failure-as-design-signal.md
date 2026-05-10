@@ -1,6 +1,6 @@
 # Failure Modes and How to Diagnose Them
 
-**Part 4 — Validate**
+**Part 0 — Foundations**
 
 ---
 
@@ -18,7 +18,7 @@ Your system has produced a wrong outcome. An agent did something incorrect, harm
 
 Don't. Every failure in an agent-mediated system carries diagnostic information that, read correctly, prevents a class of future failures. The discipline is: categorize first, fix at the right level, and capture the lesson in a versioned artifact.
 
-This chapter sits in **Part 4 — Validate** because failure diagnosis is the validation activity in operation. You read it before your pilot runs, not after — knowing the failure taxonomy in advance is how you anticipate where to put oversight, what constraints to add to the spec, and what to log. You return to it during Validate, when actual failures need categorizing.
+This chapter sits in **Part 0 — Foundations** because the seven-category fix-locus taxonomy is referenced from every Part — scenarios in Frame, Specify, Delegate, and Validate all categorize failures by Cat 1–7, and the [closed-loop discipline](../evolve/01-closed-loop.md) in Part 5 ships its amendments to the artifact each Cat names. You read it before your pilot runs, not after — knowing the failure taxonomy in advance is how you anticipate where to put oversight, what constraints to add to the spec, and what to log. You return to it during Validate (and during every other phase), when actual failures need categorizing.
 
 ---
 

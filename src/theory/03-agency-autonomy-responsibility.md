@@ -1,6 +1,6 @@
 # Calibrate Agency, Autonomy, Responsibility, Reversibility
 
-**Part 1 — Frame**
+**Part 0 — Foundations**
 
 ---
 

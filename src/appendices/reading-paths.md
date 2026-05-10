@@ -21,14 +21,15 @@ The default recommendation is **the linear field-guide read** below, but only be
 
 Top-to-bottom by Part:
 
-1. **Foreword** — [Prologue](../prologue.md), [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md)
+1. **Foreword** — [Prologue](../prologue.md)
 2. **Introduction** — [Why this book exists, and the framework on one page](../introduction.md), [A Miniature Pilot, End-to-End](../miniature-pilot.md), [How to Read This Book](../how-to-read.md)
-3. **Part 1 — FRAME** — top-to-bottom; ends with the three *Frame in practice* scenario chapters
-4. **Part 2 — SPECIFY** — top-to-bottom; ends with the three *Specify in practice* scenario chapters
-5. **Part 3 — DELEGATE** — top-to-bottom; ends with the three *Delegate in practice* scenario chapters
-6. **Part 4 — VALIDATE** — top-to-bottom; ends with the three *Validate in practice* scenario chapters
-7. **Part 5 — EVOLVE** — top-to-bottom; ends with the three *Evolve in practice* scenario chapters
-8. **Part 6 — REFERENCE** — browse rather than read linearly
+3. **Part 0 — FOUNDATIONS** — top-to-bottom: [What is the Architecture of Intent?](../theory/01-what-is-aoi.md), [Intent vs. Implementation](../theory/02-intent-vs-implementation.md), [Calibrate A/A/R/R](../theory/03-agency-autonomy-responsibility.md), [Failure Modes (Cat 1–7)](../theory/05-failure-as-design-signal.md), [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md), [The Intent Design Session](../theory/07-intent-design-session.md). The conceptual preface every other Part stands on.
+4. **Part 1 — FRAME** — top-to-bottom; ends with the three *Frame in practice* scenario chapters
+5. **Part 2 — SPECIFY** — top-to-bottom; ends with the three *Specify in practice* scenario chapters
+6. **Part 3 — DELEGATE** — top-to-bottom; ends with the three *Delegate in practice* scenario chapters
+7. **Part 4 — VALIDATE** — top-to-bottom; ends with the three *Validate in practice* scenario chapters
+8. **Part 5 — EVOLVE** — top-to-bottom; ends with the three *Evolve in practice* scenario chapters
+9. **Part 6 — REFERENCE** — browse rather than read linearly
 
 ---
 
@@ -96,18 +97,16 @@ Pair with [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/1
 > *Recommended for: readers evaluating the framework before adopting; reviewers; people writing about the framework.*  
 > *Time: ~3 hours of focused reading.*
 
-Skip the scenarios entirely. Read:
+Skip the scenarios entirely. The simplest version is **read all of Part 0 and a few additional binding chapters**:
 
 1. [Prologue](../prologue.md) and [Introduction](../introduction.md) — the framing
-2. [Intent vs. Implementation](../theory/02-intent-vs-implementation.md) — the foundational distinction
-3. [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) and the five archetype pages it links to — the taxonomy
-4. [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) — the four-dimension calibration with the orthogonality argument
-5. [Composing Archetypes](../architecture/05-composing-archetypes.md) — composition first-class
-6. [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the 12-section structure with the Composition Declaration and Cost Posture sub-blocks
-7. [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) — the seven Cats with the fix-locus framing and the Cat 7 (Perceptual) addition
-8. [Proportional Oversight](../agents/06-human-oversight-models.md) — the four oversight models
-9. [Four Signal Metrics](../operating/06-metrics.md) — the four signals
-10. [The Closed Loop: From Failures to Spec Amendments](../evolve/01-closed-loop.md) — the discipline that opens Part 5 — Evolve
+2. **All of Part 0 — FOUNDATIONS** in order: [What is the Architecture of Intent?](../theory/01-what-is-aoi.md), [Intent vs. Implementation](../theory/02-intent-vs-implementation.md), [Calibrate A/A/R/R](../theory/03-agency-autonomy-responsibility.md), [Failure Modes (Cat 1–7)](../theory/05-failure-as-design-signal.md), [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md), [The Intent Design Session](../theory/07-intent-design-session.md)
+3. [Pick an Archetype](../architecture/02-canonical-intent-archetypes.md) and the five archetype pages it links to — the taxonomy in detail
+4. [Composing Archetypes](../architecture/05-composing-archetypes.md) — composition first-class
+5. [The Canonical Spec Template](../sdd/07-canonical-spec-template.md) — the 12-section structure with the Composition Declaration and Cost Posture sub-blocks
+6. [Proportional Oversight](../agents/06-human-oversight-models.md) — the four oversight models
+7. [Four Signal Metrics](../operating/06-metrics.md) — the four signals
+8. [The Closed Loop: From Failures to Spec Amendments](../evolve/01-closed-loop.md) — the discipline that opens Part 5 — Evolve
 
 After this read you have the framework's full vocabulary without the operational color the scenarios provide. The companion paper at [`paper/architecture-of-intent.pdf`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/paper/architecture-of-intent.pdf) is the same vocabulary at paper grain (~20 pages with §5's worked customer-support pilot included).
 
