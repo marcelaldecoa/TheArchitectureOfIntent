@@ -61,6 +61,14 @@ jobs:
             echo "rendered $png"
           done
 
+      - name: Mirror cross-cutting figures into src/images/ for the book
+        run: |
+          mkdir -p src/images
+          # The framework canvas is referenced from both the paper (figures/) and
+          # the mdBook introduction (src/images/). Keep the book copy in lockstep
+          # with the paper copy so the SVG remains the single source of truth.
+          cp paper/figures/architecture-of-intent-canvas.png src/images/architecture-of-intent-canvas.png
+
       - name: Build PPTX deck
         working-directory: paper
         run: python3 build_presentation.py
@@ -89,6 +97,7 @@ jobs:
             paper/architecture-of-intent.pptx
             paper/architecture-of-intent.html
             paper/figures/*.png
+            src/images/architecture-of-intent-canvas.png
           retention-days: 90
 
       - name: Open or update PR with rebuilt artifacts
@@ -102,6 +111,7 @@ jobs:
             paper/architecture-of-intent.pptx
             paper/architecture-of-intent.html
             paper/figures/*.png
+            src/images/architecture-of-intent-canvas.png
           commit-message: |
             Auto-rebuild paper artifacts
 

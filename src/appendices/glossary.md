@@ -93,7 +93,7 @@ A condition that must always hold, regardless of what the system does. Invariant
 The human purpose that a system is meant to serve. Distinct from *implementation* (how the purpose is achieved). Intent is what specs encode. Implementation is what agents produce. See [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md).
 
 **Architecture of Intent**
-The discipline of designing, specifying, communicating, and governing intent so that it can be executed reliably by agents, validated accurately by humans, and evolved safely over time. Organized around three questions every delegated system must answer — *what is this system trying to achieve, within what constraints, and how will we know it is working?* — and four recurring activities: framing, specification, delegation, and validation. See [Introduction](../introduction.md).
+The discipline of designing, specifying, communicating, and governing intent so that it can be executed reliably by agents, validated accurately by humans, and evolved safely over time. Organized around three questions every delegated system must answer — *what is this system trying to achieve, within what constraints, and how will we know it is working?* — and four recurring activities: **Frame**, **Specify**, **Delegate**, **Validate**. The whole framework is summarized in the one-page canvas in the [Introduction](../introduction.md#the-framework-on-one-page); the rest of this book elaborates each row of that canvas.
 
 ---
 

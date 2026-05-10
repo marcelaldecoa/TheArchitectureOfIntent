@@ -50,6 +50,7 @@ When making future changes, preserve this accounting. Reviewers reward honest fr
 ├── src/                               ← the BOOK
 │   ├── SUMMARY.md                     ← table of contents (mdBook reads this)
 │   ├── introduction.md, prologue.md, how-to-read.md
+│   ├── images/                        ← book-side image copies (currently: framework canvas mirror, kept in sync by the GH workflow)
 │   ├── theory/                        ← intent vs implementation, calibration, failure modes
 │   ├── architecture/                  ← archetypes, decision tree, dimensions, multi-agent
 │   ├── sdd/                           ← spec-driven development
@@ -66,8 +67,9 @@ When making future changes, preserve this accounting. Reviewers reward honest fr
 │   ├── architecture-of-intent.html    ← teaching-deck self-contained HTML (committed)
 │   ├── references.bib                 ← BibTeX (~30 entries)
 │   ├── figures/
-│   │   ├── archetype-decision-tree.svg + .png      ← Figure 1
-│   │   └── four-dimensions-orthogonality.svg + .png ← Figure 2
+│   │   ├── architecture-of-intent-canvas.svg + .png ← Figure 1 — framework on one page (mirror of PNG also lives in src/images/)
+│   │   ├── archetype-decision-tree.svg + .png      ← Figure 2
+│   │   └── four-dimensions-orthogonality.svg + .png ← Figure 3
 │   ├── presentation_content.py        ← single source of truth for both decks
 │   ├── build_presentation.py          ← builds the PPTX from presentation_content.py
 │   ├── build_html_presentation.py     ← builds the HTML deck from presentation_content.py
@@ -253,6 +255,7 @@ The repo is `TheArchitectureOfIntent` (preserves the GitHub Pages URL). The book
 - **Cat 7 backfilled into the book (PR #30):** the paper claimed novelty for a seven-category taxonomy but the book theory chapter still presented six. PR #30 added a full Cat 7 section to `src/theory/05-failure-as-design-signal.md` and updated 8 other book files from "six" to "seven." Architecture chapter's parallel four-dimensions framing was also disambiguated against the calibration-dials framing in the same PR.
 - **GH Action: "Compile paper & decks" (PR #34, #35, #37):** auto-rebuilds paper PDF, PPTX, HTML, and figure PNGs on `main` source changes. Direct push to `main` was the original design (PR #34) but failed at the push step; PR #35 switched to opening a `bot/paper-artifacts` PR via `peter-evans/create-pull-request@v7`, which works regardless of branch protection. PR #37 added `lmodern` and `texlive-latex-extra` to the apt install list (xelatex needed `lmodern.sty` which isn't in `texlive-fonts-recommended` on Ubuntu).
 - **Deck/paper sync contract (PR #38):** added `paper/check-deck-sync.py` to enforce that load-bearing named facts (archetypes, Cat names, Cat 7 subs, DevSquad phases, honest-accounting counts) stay aligned between paper and deck. Runs in the GH workflow before any build step. Three-place contract documented below.
+- **Single-page framework canvas (current pass):** added `paper/figures/architecture-of-intent-canvas.svg/.png` — a one-page diagram that puts every load-bearing list in the framework (3 questions, 4 activities, 5 archetypes, 4 dimensions, 12 spec sections, 8 pattern categories, 4 oversight models, 7 fix-locus failure categories, 4 signal metrics) in the activity row where it does work. Embedded as Figure 1 in paper §3 (renumbering the prior Fig 1 → Fig 2 and Fig 2 → Fig 3) and as the new "The framework on one page" section in `src/introduction.md`. The book references the PNG from `src/images/architecture-of-intent-canvas.png` (mdBook can only serve files under `src/`); the workflow's `Mirror cross-cutting figures into src/images/` step copies the rebuilt PNG there on every paper rebuild so the SVG in `paper/figures/` remains the single source of truth. The deliverables list in the Introduction was rewired so each item names which canvas row produces it. The glossary's "Architecture of Intent" entry now points at the canvas section anchor instead of the broken `[Introduction]` link.
 
 ---
 
