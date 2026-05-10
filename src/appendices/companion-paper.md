@@ -73,6 +73,6 @@ The same accounting applies to the book. When you cite the framework, cite what 
 
 ## Framework version
 
-This appendix and the rest of the book reflect framework **v2.0.0-rc2** (2026-05-10). The paper reflects the same framework version. Both move together — the framework's load-bearing commitments are versioned, and a change in either artifact that touches a load-bearing commitment bumps the framework version. See [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) at the repository root for the versioning convention and the release history.
+This appendix and the rest of the book reflect framework **v2.0.0-rc3** (2026-05-10). The paper reflects the same framework version. Both move together — the framework's load-bearing commitments are versioned, and a change in either artifact that touches a load-bearing commitment bumps the framework version. See [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) at the repository root for the versioning convention and the release history.
 
 ---

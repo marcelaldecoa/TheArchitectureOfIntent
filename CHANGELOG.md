@@ -18,6 +18,44 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0-rc3 — 2026-05-10
+
+**MAJOR (release candidate, continues v2.0.0 line)** — ships the full prose for the two new Phase-5 conceptual chapters that landed as stubs at rc1: *The Closed Loop: From Failures to Spec Amendments* (5.1) and *Framework Versioning* (5.7). The framework's load-bearing commitments are unchanged from rc2.
+
+### Added
+
+- **`src/evolve/01-closed-loop.md` — full chapter prose.** Replaces the rc1 stub. Names the discipline that opens Part 5: every diagnosed failure produces a structural change (spec, manifest, CI guard, framework version) — never only a prompt patch. Sections: Context (a Friday-afternoon vignette of a closed-loop violation: the on-call engineer reaching for a prompt patch instead of the spec amendment), The problem, Forces, The solution (the loop in detail with a Cat-to-fix-locus table; spec evolution log discipline; the loop at three time-scales — per-incident hours, per-sprint weeks, per-quarter months; what breaks the loop with five named loop-break patterns), Why this chapter opens Part 5 (it positions every other Part-5 chapter as practice that *supports* the loop), and a tour of the loop in operation across the three running scenarios.
+
+- **`src/evolve/07-framework-versioning.md` — full chapter prose.** Replaces the rc1 stub. Elevates the existing repo-level `CHANGELOG.md` discipline to a first-class chapter. Sections: Context (a vignette of a platform team asking *"does our v1.4 spec break against v2.0?"* — naming the question framework versioning is meant to answer), The problem, Forces, The solution (MAJOR · MINOR · PATCH convention with grounded examples from the v1 line; the three-place contract for load-bearing changes — book / paper / sync-check; CHANGELOG as primary record with the v1.4.0 cost-as-fifth-dimension entry as a worked design-record example; what a MAJOR bump looks like in practice using v1 → v2 as the worked example; what downstream teams do with each bump as a table; framework version vs paper status version distinction), and the chapter's place in Part 5 as the longest-time-scale Evolve activity.
+
+### Updated
+
+- Version markers advanced from **v2.0.0-rc2** to **v2.0.0-rc3** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+- `paper/architecture-of-intent.pdf` recompiled with the updated status header.
+
+### Voice
+
+Both new chapters open with a vignette before exposition, per the v2.0.0 commitment to a field-guide voice. The closed-loop chapter opens on a $2,400 unauthorized refund and the engineer's instinct to patch the prompt; the framework-versioning chapter opens on a platform team reading a MAJOR-bump announcement and asking what their existing specs need. The vignettes set the stakes; the rest of each chapter exposits the discipline that addresses them.
+
+### Why MAJOR-rc
+
+Continues the v2.0.0 MAJOR line because the new chapters are foundational to the *Evolve* activity that v2.0.0 introduced as a peer fifth activity. The chapters were stubs at rc1; until they shipped as full prose, the *Evolve* commitment was structural-only (the Part exists, the SUMMARY links resolve) without conceptual ground. rc3 closes that gap. The version stays in the rc-line because the scenario chapters and file-path renames are still pending.
+
+### Deferred (unchanged from rc2's plan)
+
+- File-path renames (`architecture/` → `frame/`, etc.) — purely filesystem cleanup; no reader-facing change
+- Three scenarios written in full — PR-C, PR-E, PR-F
+- Voice rewrites for the older chapters — PR-G, PR-H, PR-I
+- Paper §5 (single canonical scenario) — PR-D
+- Reading paths appendix + final v2.0.0 release tag — PR-J
+- Light Evolve-framing intros for the 9 existing `operating/*` chapters that now sit in Part 5 — folded into PR-G
+
+### PRs
+
+- **PR-B** (this rc) — closed-loop and framework-versioning chapter prose, version markers, paper PDF rebuild.
+
+---
+
 ## v2.0.0-rc2 — 2026-05-10
 
 **MAJOR (release candidate, continues v2.0.0 line)** — ships the five-row canvas redraw and the teaching-deck activities slide that were deferred from rc1. This rc closes the rc1 prose-vs-figure gap (rc1 said "five activities" but the canvas figure still showed four rows). The framework's load-bearing commitments are unchanged from rc1.
