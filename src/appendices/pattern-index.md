@@ -162,7 +162,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Production Telemetry](../operating/10-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
 | [Adoption Playbook](../operating/11-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment; CI/CD wiring with hard-gate / soft-gate / observe tiers |
 | [Minimum Viable Architecture of Intent](../operating/16-minimum-viable-aoi.md) | The floor of the discipline for small systems: when is the IDS too heavy, what's the smallest set of artifacts that still does work, when should an MVP graduate to the full framework |
-| [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) | The 11-anti-pattern catalog of how the discipline itself decays — spec theater, oversight kabuki, metrics theater, prompt-patch drift, archetype drift, the retrofit IDS — and the quarterly discipline-health audit that surfaces them |
+| [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) | The 12-anti-pattern catalog of how the discipline itself decays — spec theater, oversight kabuki, metrics theater, citation theater, prompt-patch drift, archetype drift, the retrofit IDS — and the quarterly discipline-health audit that surfaces them |
 | [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/12-devsquad-mapping.md) | Phase-by-phase mapping of the book's artifacts and disciplines into Microsoft DevSquad Copilot's 8-phase iterative cycle |
 | [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md) | The minimum additions from this book that give a DevSquad team the most leverage; vocabulary translation; 30-day co-adoption plan |
 
@@ -364,7 +364,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [A Miniature Pilot, End-to-End](../miniature-pilot.md) — the contrast case: small but production-bound systems that warrant the full canvas anyway
 
 ### "My team has been using the framework for a while and something feels off"
-- [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the 11-anti-pattern catalog and the quarterly discipline-health audit
+- [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the 12-anti-pattern catalog and the quarterly discipline-health audit
 - [The Living Spec](../sdd/06-living-specs.md) — is the spec evolution log accumulating entries?
 - [Four Signal Metrics](../operating/06-metrics.md) — is anyone actually looking at the metrics?
 - [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — has output review absorbed all the cost while spec review fell away?

@@ -97,6 +97,8 @@ The amendment was Cat 4 (oversight-layer fix to the cost-monitoring discipline),
 
 The audit runs at day 90 per §10 / §12. Logan facilitates; Pri, Devon, Yuki, and Maya (advisor from S1) participate.
 
+The audit walks the 12 anti-patterns and writes a one-paragraph verdict per anti-pattern. (Citation theater entered the framework's catalog at v2.1.0 *as a result of this audit*; the table below presents the audit's findings against the catalog as the reader sees it now, with citation theater at #6 in cluster 1. At the time the audit ran, the team's finding was the proposal that the framework subsequently adopted.)
+
 | # | Anti-pattern | Verdict | Notes |
 |---|---|---|---|
 | 1 | Spec theater | Not present | 44 amendments + 142 docs-amendments triggered; the system is producing structural change |
@@ -104,20 +106,20 @@ The audit runs at day 90 per §10 / §12. Logan facilitates; Pri, Devon, Yuki, a
 | 3 | Metrics theater | Not present | All five metrics (four standard + docs-gap-finding rate) get daily attention; docs-amendments-triggered is also tracked |
 | 4 | Pattern inventory | Not present | Patterns bound deliberately; Anomaly Baseline kept in active use (different from S2's experience — here the corpus-growth-aware ceiling came from anomaly detection on cost trajectory) |
 | 5 | Calibration without commitment | Not present | The four-dimension calibration drove concrete decisions (high autonomy + low agency + high reversibility → minimal action surface, no per-step gates, low-tier model dominance) |
-| 6 | Prompt-patch drift | Not present | The team's discipline of *all amendments go to spec or skill file, never only the prompt* held throughout |
-| 7 | Archetype drift | Not present | Synthesizer remains the governing shape; Advisor stays as the embedded mode |
-| 8 | Glossary by import | Not present | Team uses framework + DevSquad vocabulary consistently; the DevSquad mapping inline at every phase keeps both alive |
-| 9 | Composition by accident | Not present | Synthesizer + Advisor was declared in the Composition Declaration sub-block from kickoff |
-| 10 | Retrofit IDS | Not present | The IDS happened during the DevSquad envisioning phase, before any spec was written |
-| 11 | Adoption Playbook problem | Not present | The team learned the framework via Maya + the platform team, but adapted to its own context — the docs-gap-finding metric is novel to this team |
-| **(NEW)** | **Citation theater** *(team-proposed)* | **Early signs** | The team proposes a new anti-pattern specific to Synthesizer-flavored systems: every answer cites a URL, but a sample audit reveals that ~6% of citations are *technically grounded* (the URL contains the claim) but *contextually shallow* (the citation is a sentence taken out of a larger context that, read in full, complicates the answer). The current grounding classifier doesn't catch this. The team commits to a sample-audit cadence and a classifier improvement |
+| 6 | **Citation theater** | **Early signs** | A sample audit reveals that ~6% of citations are *technically grounded* (the URL contains the claim) but *contextually shallow* (the citation is a sentence taken out of a larger context that, read in full, complicates the answer). The current grounding classifier doesn't catch this. The team commits to a monthly sample-audit cadence and a classifier improvement (a *contextual-completeness* score). **This audit's finding is what surfaced citation theater as a candidate anti-pattern; the framework adopted it in v2.1.0.** |
+| 7 | Prompt-patch drift | Not present | The team's discipline of *all amendments go to spec or skill file, never only the prompt* held throughout |
+| 8 | Archetype drift | Not present | Synthesizer remains the governing shape; Advisor stays as the embedded mode |
+| 9 | Glossary by import | Not present | Team uses framework + DevSquad vocabulary consistently; the DevSquad mapping inline at every phase keeps both alive |
+| 10 | Composition by accident | Not present | Synthesizer + Advisor was declared in the Composition Declaration sub-block from kickoff |
+| 11 | Retrofit IDS | Not present | The IDS happened during the DevSquad envisioning phase, before any spec was written |
+| 12 | Adoption Playbook problem | Not present | The team learned the framework via Maya + the platform team, but adapted to its own context — the docs-gap-finding metric is novel to this team |
 
-**Zero anti-patterns scored *active*** — the cleanest audit among the three scenarios. **One *early signs*** finding (citation theater), and the team proposes adding it to the framework's anti-pattern catalog as a Synthesizer-specific 12th anti-pattern.
+**Zero anti-patterns scored *active*** — the cleanest audit among the three scenarios. **One *early signs*** finding: citation theater, which the team proposed back to the framework's catalog and which was adopted in v2.1.0 as the catalog's sixth entry.
 
 The corrective action plan:
 
 - **For citation theater:** the team commits to a monthly sample-audit (50 random answers, manual deep-grounding check) and to extending the grounding classifier with a *contextual-completeness* score. The first audit lands in week 14.
-- **The team also proposes contributing the *citation theater* anti-pattern back to the framework.** Logan opens a discussion on the framework's repository: *"is citation theater a Synthesizer-specific 12th anti-pattern, or a generalization of an existing anti-pattern (closer to spec theater for Synthesizer-flavored systems)?"* The discussion is itself the framework's living-document discipline at work.
+- **The team also contributes the *citation theater* anti-pattern back to the framework.** Logan opens a discussion on the framework's repository: *"is citation theater a Synthesizer-specific 12th anti-pattern, or a generalization of an existing anti-pattern (closer to spec theater for Synthesizer-flavored systems)?"* The discussion is itself the framework's living-document discipline at work — and the framework adopted citation theater as anti-pattern #6 (cluster 1, *form without function*) in v2.1.0.
 
 ---
 

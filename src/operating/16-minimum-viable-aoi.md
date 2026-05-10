@@ -14,7 +14,7 @@
 
 ## Context
 
-The full framework — a 3-to-4-hour [Intent Design Session](../theory/07-intent-design-session.md), a 12-section spec, four-dimension calibration, ~50 patterns to bind from, four oversight models, four signal metrics, an 11-anti-pattern audit, a 7×6 RACI — is calibrated for systems that *deserve* it. A non-trivial pilot, a team of more than one, a deployment with reversibility cost, a regulated domain.
+The full framework — a 3-to-4-hour [Intent Design Session](../theory/07-intent-design-session.md), a 12-section spec, four-dimension calibration, ~50 patterns to bind from, four oversight models, four signal metrics, a 12-anti-pattern audit, a 7×6 RACI — is calibrated for systems that *deserve* it. A non-trivial pilot, a team of more than one, a deployment with reversibility cost, a regulated domain.
 
 Some systems do not deserve that treatment. A solo prototype. A weekend agent. An internal one-week pilot the team will throw away. A side-project assistant that talks only to its author. For these, the framework as written is more expensive than the system is worth, and applying it produces *spec theater* — the form of discipline without the function — which is worse than skipping the discipline honestly.
 

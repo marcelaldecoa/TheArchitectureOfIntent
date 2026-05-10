@@ -89,7 +89,7 @@ The platform team observes a side effect: their own framework adoption *deepens*
 
 The audit runs at day 90 per §10 / §12. Daniel facilitates; Theo, Naomi, Jess, and the platform-engineering lead participate.
 
-The eleven anti-patterns walked:
+The twelve anti-patterns walked:
 
 | # | Anti-pattern | Verdict | Notes |
 |---|---|---|---|
@@ -98,12 +98,13 @@ The eleven anti-patterns walked:
 | 3 | Metrics theater | Not present | All four metrics + per-mode rate get daily attention |
 | 4 | **Pattern inventory** | **Active** | Eight patterns bound at launch; in 90 days, only four (Spec Conformance, Distributed Trace, Cost Tracking, Anomaly Baseline) actually fired meaningfully. Health Check fired but produced no amendments; three others (Output Validation Gate, Sensitive Data Boundary, Long-Term Memory) were correctly *rejected*, but the audit asks: *for the four that fired, are they pulling their weight?* The Anomaly Baseline pattern fires infrequently and the team realizes they're not consuming its alerts |
 | 5 | Calibration without commitment | Not present | The four-dimension calibration in the Frame artifact has driven concrete decisions (high autonomy + medium reversibility → CI guards rather than per-step gates) |
-| 6 | **Prompt-patch drift** | **Active** | Investigation finds 4 prompt-only patches applied during the early-launch eval-suite remediation that didn't migrate to the spec; only the structural rewrites at days 38-45 absorbed some of them. The remaining 2 are still living only in the prompt |
-| 7 | Archetype drift | Not present | Executor with mode-switching remains the governing shape |
-| 8 | Glossary by import | Not present | The team uses framework vocabulary consistently; the cross-team consultations did not introduce dialect |
-| 9 | **Composition by accident** | **Early signs** | An engineer prototyping a multi-PR refactor pattern (across two services) wired what was effectively a second mode-switching agent without going through the framework's compose-then-publish discipline. The prototype is in a side branch, but the pattern is concerning. The team commits to a compose-then-publish review for any composition that lands in main |
-| 10 | Retrofit IDS | Not present | The IDS happened before the spec was written |
-| 11 | Adoption Playbook problem | Not present | The two cross-team adoptions were structured per the Playbook |
+| 6 | Citation theater | *Not applicable* | Synthesizer-specific anti-pattern; the coding agent is an Executor with mode-switching composition — citation discipline is not load-bearing here |
+| 7 | **Prompt-patch drift** | **Active** | Investigation finds 4 prompt-only patches applied during the early-launch eval-suite remediation that didn't migrate to the spec; only the structural rewrites at days 38-45 absorbed some of them. The remaining 2 are still living only in the prompt |
+| 8 | Archetype drift | Not present | Executor with mode-switching remains the governing shape |
+| 9 | Glossary by import | Not present | The team uses framework vocabulary consistently; the cross-team consultations did not introduce dialect |
+| 10 | **Composition by accident** | **Early signs** | An engineer prototyping a multi-PR refactor pattern (across two services) wired what was effectively a second mode-switching agent without going through the framework's compose-then-publish discipline. The prototype is in a side branch, but the pattern is concerning. The team commits to a compose-then-publish review for any composition that lands in main |
+| 11 | Retrofit IDS | Not present | The IDS happened before the spec was written |
+| 12 | Adoption Playbook problem | Not present | The two cross-team adoptions were structured per the Playbook |
 
 **Three findings:** Active prompt-patch drift, active pattern inventory, early signs of composition by accident. The audit is doing its job — these are precisely the failures the audit is meant to catch.
 
