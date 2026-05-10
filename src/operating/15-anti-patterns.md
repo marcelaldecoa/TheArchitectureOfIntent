@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The Discipline-Health Audit is the per-quarter cadence that catches loop decay before it becomes terminal; the audit's instrument is the eleven-anti-pattern catalog this chapter develops. The audit fires on each system the team operates, on a calendar (not on incident-driven) cadence, and produces a one-paragraph verdict per anti-pattern. The three running scenarios in v2.0.0 each include an audit at day 90 — see the customer-support, coding-pipeline, and docs-qa Evolve chapters for worked examples.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The Discipline-Health Audit is the per-quarter cadence that catches loop decay before it becomes terminal; the audit's instrument is the twelve-anti-pattern catalog this chapter develops. The audit fires on each system the team operates, on a calendar (not on incident-driven) cadence, and produces a one-paragraph verdict per anti-pattern. The three running scenarios in v2.0.0 each include an audit at day 90 — see the customer-support, coding-pipeline, and docs-qa Evolve chapters for worked examples. The twelfth anti-pattern (citation theater) was elevated to the catalog in v2.1.0 after first surfacing in Scenario 3's Evolve chapter as a team-proposed addition.*
 
 ---
 
@@ -98,13 +98,23 @@ The biggest cluster. The team has the artifact; the artifact has stopped working
 
 *The fix.* Re-do §4 as if you were running the [Intent Design Session](../theory/07-intent-design-session.md) phase 3 today. Each value gets a one-sentence operational answer ("Agency narrow: the system decides X but never Y"; "Autonomy bounded: every Z action gates on a human confirmation"). Disagreement during this re-do is productive; resolve it before signing off, and update the spec.
 
+**6. Citation theater.**
+
+*The shape.* Every Synthesizer-mode answer cites a URL. The form is preserved. But a sample audit reveals that some non-trivial fraction of citations are *technically grounded* (the URL contains the claim) but *contextually shallow* — the cited sentence is taken out of a larger context that, read in full, complicates or contradicts the answer. The agent has learned to satisfy the citation-grounding check at the level the check operates on, without the citation actually grounding the asker's understanding.
+
+*The signs.* The citation-grounding classifier reports near-100% pass rate. The first-answer-satisfaction metric is healthy. But asker feedback occasionally flags answers as *"technically right but missed the point"* — and re-reading the cited source confirms the citation is there but the surrounding context says something different. The classifier doesn't catch this because its training focuses on sentence-level grounding rather than contextual completeness. The audit's *active* flag fires when ≥5% of a 50-answer monthly sample audit surfaces this pattern.
+
+*The fix.* Two parts: (1) extend the grounding check with a *contextual-completeness* score that re-reads the citation's larger neighborhood (paragraph, section) for material that complicates the claim; (2) add a per-month sample-audit cadence (e.g., 50 random answers, manual deep-grounding check) that catches what the automated check misses. Both fixes are structural — the audit cadence and the classifier extension — not promptual. The third fix the team's instinct reaches for, *"tell the model to read more context before citing,"* is a prompt patch that doesn't compound; the structural fixes do.
+
+*Applies primarily to:* Synthesizer-flavored systems where citation discipline is load-bearing. Less applicable to Executor- or Guardian-flavored systems whose primary act is bounded action rather than composed retrieval. The anti-pattern was first surfaced by the docs-platform team's day-90 Discipline-Health Audit in [Scenario 3's Evolve chapter](../evolve/scenarios/docs-qa.md) and elevated to the framework's catalog in v2.1.0.
+
 ---
 
 ### Cluster 2 — Drift
 
 The system the spec describes is no longer the system you have.
 
-**6. Prompt-patch drift.**
+**7. Prompt-patch drift.**
 
 *The shape.* When the agent misbehaves, fixes land in the system prompt instead of in the spec, the manifest, the oversight model, or a CI guard. Each prompt patch is local and fast; cumulatively they form an undocumented constitution that the actual artifact (the spec) doesn't reflect.
 
@@ -112,7 +122,7 @@ The system the spec describes is no longer the system you have.
 
 *The fix.* Run a prompt-to-spec diff. For every prompt patch, identify whether it should be a spec amendment, a tool-manifest restriction, an oversight-gate addition, or a CI guard. The load-bearing discipline named in the [Introduction](../introduction.md#what-is-the-architecture-of-intent) — *structural fixes live in spec, manifest, CI, or platform — never only in the prompt* — is what this anti-pattern most directly violates. A team that is not periodically auditing the prompt against the spec has effectively forked the system's constitution.
 
-**7. Archetype drift.**
+**8. Archetype drift.**
 
 *The shape.* A system declared as Advisor gradually acquires Executor behaviors. Each addition was reasonable in isolation: "let's let it draft the email"; "let's let it send the email if the user clicks send"; "let's let it send the email automatically for low-risk recipients." Each step was small; the cumulative shift moved the system across an archetype boundary without the spec, the oversight model, or the calibration following.
 
@@ -120,7 +130,7 @@ The system the spec describes is no longer the system you have.
 
 *The fix.* When archetype drift is suspected, run [Governed Archetype Evolution](../architecture/06-evolving-archetypes.md). Either roll back the drift (revert the features that crossed the boundary) or accept the new archetype and re-do the calibration, the oversight model, the bound patterns, and the signal metrics for the new shape. The framework does not forbid re-classification; it forbids *implicit* re-classification.
 
-**8. Glossary by import.**
+**9. Glossary by import.**
 
 *The shape.* The team uses the framework's vocabulary but means something subtly different by each term. "Executor" in code review means "any agent that takes action," not the canonical archetype with its specific governance profile. "Spec" means whatever document is named "spec.md," not the canonical 12-section template.
 
@@ -128,7 +138,7 @@ The system the spec describes is no longer the system you have.
 
 *The fix.* Make the canonical glossary the source of record for the team. In design conversations, when a term is used loosely, *say so* — "we're using Executor here in the loose sense; the canonical Executor archetype would require X." That single re-anchoring habit, repeated weekly, restores the vocabulary's load-bearing function. Specs use the canonical terms; if the team needs domain-specific extensions, they go in a [team-specific glossary fragment](../repertoires/01-why-repertoires-matter.md), not in redefinitions of canonical terms.
 
-**9. Composition by accident.**
+**10. Composition by accident.**
 
 *The shape.* A system was built by stacking patterns until it worked, then "documented" with a single archetype label that doesn't match its actual behavior. The composition (Patterns A–E in [Composing Archetypes](../architecture/05-composing-archetypes.md)) isn't declared; the cross-mode invariants aren't named; the transitions are implicit.
 
@@ -142,7 +152,7 @@ The system the spec describes is no longer the system you have.
 
 The artifacts are healthy; the rituals that produced them have stopped.
 
-**10. The retrofit IDS.**
+**11. The retrofit IDS.**
 
 *The shape.* A team runs an Intent Design Session *after* the system has shipped, "to document what we built." The session rationalizes existing implementation rather than constraining future implementation. The spec produced exactly matches the system that already exists — no clauses surfaced as gaps, no calibration disagreements, no spec-conflict resolutions.
 
@@ -150,7 +160,7 @@ The artifacts are healthy; the rituals that produced them have stopped.
 
 *The fix.* Acknowledge what just happened — that was a documentation pass disguised as a design session. Call it that. Then run the *real* IDS as a refactor session: assume the system is already in v1, but the design surface is genuinely open for v2. Phase 5 (Bind Patterns) is the most important phase in this case, because the existing patterns may have been inventory rather than design.
 
-**11. The Adoption Playbook problem.**
+**12. The Adoption Playbook problem.**
 
 *The shape.* The team treats "adopting the framework" as a checklist completed at launch, not as an ongoing practice. After 30 days, no one has run the post-launch retrospective. After 90 days, no one has updated the spec. After 180 days, the framework is "what we used at the start," and the system is operating outside its boundaries.
 
@@ -162,9 +172,9 @@ The artifacts are healthy; the rituals that produced them have stopped.
 
 ### Running a discipline-health audit
 
-The eleven anti-patterns above are the audit checklist. We recommend running the audit quarterly, paired with the [Adoption Playbook](11-adoption-playbook.md)'s ongoing-practice review, and tied to a specific live system rather than to "the team's practice in general."
+The twelve anti-patterns above are the audit checklist. We recommend running the audit quarterly, paired with the [Adoption Playbook](11-adoption-playbook.md)'s ongoing-practice review, and tied to a specific live system rather than to "the team's practice in general."
 
-The audit takes ~60 minutes per system. One auditor (rotating; not the system's primary owner) walks the eleven entries against the system's artifacts and writes a one-paragraph verdict per anti-pattern: *not present*, *early signs*, or *active*. Anti-patterns flagged *active* go into the spec evolution log as findings, with named follow-up actions and dates.
+The audit takes ~60 minutes per system (allow ~5 additional minutes for the citation-theater entry on Synthesizer-flavored systems; the entry is brief on systems where it doesn't apply). One auditor (rotating; not the system's primary owner) walks the twelve entries against the system's artifacts and writes a one-paragraph verdict per anti-pattern: *not present*, *early signs*, or *active*. Anti-patterns flagged *active* go into the spec evolution log as findings, with named follow-up actions and dates.
 
 The audit's value is not in catching every drift. It is in *naming* the drift in a vocabulary the team already shares, so the conversation can happen without anyone having to invent the language for it on the spot. The hardest part of catching discipline decay is having the words for it.
 

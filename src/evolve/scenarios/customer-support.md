@@ -111,7 +111,7 @@ The Cost Posture *discipline* worked: the breach was caught within 6 hours by a 
 
 Per §10 and the [anti-patterns chapter](../../operating/15-anti-patterns.md), the team runs the 60-minute Discipline-Health Audit at day 90. Maya facilitates; Sam, Jordan, Ari, and Priya participate.
 
-The audit walks the 11 anti-patterns and writes a one-paragraph verdict per anti-pattern.
+The audit walks the 12 anti-patterns and writes a one-paragraph verdict per anti-pattern. (Citation theater, anti-pattern #6 in the catalog as of framework v2.1.0, is Synthesizer-specific and doesn't apply to this Executor system — the auditor records *not applicable* for that entry.)
 
 | # | Anti-pattern | Verdict | Notes |
 |---|---|---|---|
@@ -120,12 +120,13 @@ The audit walks the 11 anti-patterns and writes a one-paragraph verdict per anti
 | 3 | Metrics theater | **Early signs** | Two of the four metrics (FPV and oversight load) get daily attention; spec-gap rate and cost-per-resolved are checked weekly. The team commits to elevating the latter two to daily |
 | 4 | Pattern inventory | Not present | Patterns bound deliberately; deferred Cacheable Prompt Architecture is in flight, not abandoned |
 | 5 | Calibration without commitment | Not present | The four-dimension calibration in §4 has driven concrete decisions (asymmetric Reversibility → asymmetric tool gating) |
-| 6 | **Prompt-patch drift** | **Active** | Investigation finds 3 prompt-only patches that didn't migrate to the spec, applied during weeks 2 and 3 when the team was under pressure to fix things fast. The patches addressed real failures but never produced amendments |
-| 7 | Archetype drift | Not present | Executor remains the governing archetype; Composition Declaration unchanged |
-| 8 | Glossary by import | Not present | Team uses the framework vocabulary consistently |
-| 9 | Composition by accident | Not present | The Advisor and Guardian embeddings were declared in the Composition Declaration sub-block from the start |
-| 10 | Retrofit IDS | Not present | The IDS happened before the spec was written |
-| 11 | Adoption Playbook problem | Not present | Adoption is on track; the team is the only one running it, but the playbook is documented for the next adopter |
+| 6 | Citation theater | *Not applicable* | Synthesizer-specific anti-pattern; the customer-support agent is an Executor with embedded Advisor and Guardian — citation discipline is not load-bearing here |
+| 7 | **Prompt-patch drift** | **Active** | Investigation finds 3 prompt-only patches that didn't migrate to the spec, applied during weeks 2 and 3 when the team was under pressure to fix things fast. The patches addressed real failures but never produced amendments |
+| 8 | Archetype drift | Not present | Executor remains the governing archetype; Composition Declaration unchanged |
+| 9 | Glossary by import | Not present | Team uses the framework vocabulary consistently |
+| 10 | Composition by accident | Not present | The Advisor and Guardian embeddings were declared in the Composition Declaration sub-block from the start |
+| 11 | Retrofit IDS | Not present | The IDS happened before the spec was written |
+| 12 | Adoption Playbook problem | Not present | Adoption is on track; the team is the only one running it, but the playbook is documented for the next adopter |
 
 **Two findings:** Active prompt-patch drift, early signs of metrics theater. The audit is doing its job — these are precisely the failures the audit is meant to catch.
 

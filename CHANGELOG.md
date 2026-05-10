@@ -18,6 +18,51 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.1.0 — 2026-05-10
+
+**MINOR** — elevates *citation theater* from a team-proposed addition to the framework's Discipline-Health Audit catalog as anti-pattern #6 in cluster 1 (*form without function*). The proposal originated in [Scenario 3's Evolve chapter](src/evolve/scenarios/docs-qa.md) at the docs-platform team's day-90 audit. Adopting it as a framework-level anti-pattern is the **closed loop running at framework grain** — the same discipline that takes per-system Cat 1s back to spec, taking team-proposed catalog additions back to the framework. No other load-bearing commitments change.
+
+### Why MINOR, not MAJOR
+
+Adding a catalog entry is an *addition*. It does not break existing v2.0.x specs because no spec hardcodes the anti-pattern count. The audit's existing 11 entries continue to produce the same verdicts on existing systems; the new 12th entry simply records *not applicable* for non-Synthesizer-flavored systems. Per the versioning convention, MINOR is the right shape.
+
+### Added
+
+- **`src/operating/15-anti-patterns.md`** — new anti-pattern entry **6. Citation theater** in cluster 1 (*form without function*), placed after *Calibration without commitment*. The entry follows the existing format (*The shape*, *The signs*, *The fix*) plus a closing *Applies primarily to* note that scopes the anti-pattern to Synthesizer-flavored systems and cross-references its origin in S3.
+  
+  Existing anti-patterns in the chapter renumbered to accommodate the insertion: 6→7, 7→8, 8→9, 9→10, 10→11, 11→12. Cluster headings (cluster 2 — drift, cluster 3 — process degradation) unchanged; only the within-catalog numbering shifted.
+
+### Updated
+
+- **Catalog cardinality references** updated from "11 anti-patterns" / "eleven anti-patterns" to "12 anti-patterns" / "twelve anti-patterns" across the book and paper, in:
+  - `src/operating/15-anti-patterns.md` — the *Where this sits in v2.0.0* intro paragraph and the *Running a discipline-health audit* closing section
+  - `src/appendices/pattern-index.md` — two cross-reference rows
+  - `src/evolve/01-closed-loop.md` — the per-quarter time-scale paragraph
+  - `src/operating/16-minimum-viable-aoi.md` — the *full framework* enumeration
+  - `paper/architecture-of-intent.md` — the §5.5 audit-walkthrough sentence
+  - `paper/figures/architecture-of-intent-canvas.svg` — the *Discipline-Health Audit* practice chip in the EVOLVE row
+- **Canvas PNG regenerated** at 1600×1330 from the updated SVG, mirrored to `src/images/architecture-of-intent-canvas.png`.
+- **Three running scenarios' audit tables** updated to use the v2.1 catalog numbering:
+  - **`src/evolve/scenarios/customer-support.md`** — added row #6 *Citation theater* with verdict *Not applicable* (Executor archetype); existing rows 6–11 renumbered to 7–12. Intro paragraph notes the catalog-state expectation.
+  - **`src/evolve/scenarios/coding-pipeline.md`** — same shape as S1 (Executor with mode-switching; citation theater is N/A).
+  - **`src/evolve/scenarios/docs-qa.md`** — the *(NEW)* row that previously sat outside the numbered table is now row #6 in the catalog with verdict *Early signs* and notes preserved verbatim. Closing prose updated: the team's proposal is named as having *been adopted in v2.1.0* rather than as still pending.
+- **Glossary's Discipline-Health Audit entry** updated: citation theater inserted into the comma-separated anti-pattern list with a *(Synthesizer-specific; added at v2.1.0)* parenthetical, and the verdict vocabulary expanded from *not present / early signs / active* to include *not applicable* for catalog entries that don't apply to a system's archetype.
+
+### Updated — version markers
+
+Version markers advanced from **v2.0.1** to **v2.1.0** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header). `paper/architecture-of-intent.pdf` recompiled.
+
+### The closed loop at framework grain
+
+This release demonstrates a discipline the framework names but had not previously executed at the framework's own level: **the closed loop applied to the framework itself.** The S3 docs-qa team ran their day-90 Discipline-Health Audit, found a pattern the existing 11-anti-pattern catalog didn't cover, proposed it back to the framework via repository discussion, and the framework adopted it. The same loop — diagnose → categorize → trace to fix locus → amend the structural artifact → record in the evolution log — runs at the per-system level (the spec evolution log) and at the framework level (this CHANGELOG). v2.1.0 is the framework's own *Cat 1 fix* in operation, with the spec evolution log being the CHANGELOG and the prior text being the v2.0 catalog of 11 anti-patterns.
+
+### Deferred (unchanged from v2.0.1's plan)
+
+- File-path renames (`architecture/` → `frame/`, etc.)
+- Vignettes on the remaining v1.x chapters (~6 conceptual chapters across `sdd/01–06`, `agents/01–05`, `architecture/03/04/06/07` could still benefit)
+
+---
+
 ## v2.0.1 — 2026-05-10
 
 **PATCH** — voice-pass round 2 and Part-framing-intro completion on top of v2.0.0 stable. Adds vignette-before-exposition openings to four high-prominence conceptual chapters that didn't get the v2.0.0 voice pass, and Part-framing intros to eight operating chapters that didn't get them in v2.0.0. No load-bearing framework changes.
