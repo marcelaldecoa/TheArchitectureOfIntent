@@ -157,5 +157,6 @@ After applying this pattern:
 **This pattern enables:**
 - [Intent Review Before Output Review](05-reviewing-intent.md)
 - [Four Signal Metrics](06-metrics.md)
+- [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md) — who is Accountable, Responsible, Consulted, Informed across Frame · Specify · Build · Oversee · Ship · Evolve
 
 ---
