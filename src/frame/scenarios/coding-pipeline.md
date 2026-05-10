@@ -153,7 +153,7 @@ This artifact is the input to [Specify in practice — Coding-agent pipeline](..
 - [Pick an Archetype](../../frame/02-canonical-intent-archetypes.md) — Executor with mode-switching
 - [Composing Archetypes](../../frame/05-composing-archetypes.md) — Pattern E (mode-switching)
 - [Coding Agents](../../delegate/08-coding-agents.md) — the agent class
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md)
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../foundations/03-agency-autonomy-responsibility.md)
 
 ## Source material
 

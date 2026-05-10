@@ -182,4 +182,4 @@ After applying this pattern:
 - [Blast Radius Containment](blast-radius-containment.md) — when injection succeeds, blast radius is what determines whether it is recoverable
 - [Sensitive Data Boundary](sensitive-data-boundary.md) — minimizing private-data exposure removes one leg of the lethal trifecta
 - [The Tool Manifest](../capability/tool-manifest.md) — capability gating is the load-bearing structural defense
-- [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md) — successful injections produce specific failure signatures (Categories 3 and 4 in particular)
+- [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md) — successful injections produce specific failure signatures (Categories 3 and 4 in particular)

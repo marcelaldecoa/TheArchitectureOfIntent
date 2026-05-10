@@ -12,12 +12,12 @@
 
 *The conceptual preface. Read once; come back when you get lost. Every other Part stands on these chapters.*
 
-- [What is the Architecture of Intent?](theory/01-what-is-aoi.md)
-- [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](theory/03-agency-autonomy-responsibility.md)
-- [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
-- [What Changes for the Senior Engineer](theory/08-what-changes-for-senior-engineers.md)
-- [The Intent Design Session](theory/07-intent-design-session.md)
+- [What is the Architecture of Intent?](foundations/01-what-is-aoi.md)
+- [Intent vs. Implementation](foundations/02-intent-vs-implementation.md)
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](foundations/03-agency-autonomy-responsibility.md)
+- [Failure Modes and How to Diagnose Them](foundations/05-failure-as-design-signal.md)
+- [What Changes for the Senior Engineer](foundations/08-what-changes-for-senior-engineers.md)
+- [The Intent Design Session](foundations/07-intent-design-session.md)
 
 ---
 

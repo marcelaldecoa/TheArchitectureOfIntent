@@ -124,8 +124,8 @@ After applying this pattern:
 ## Connections
 
 **This pattern assumes:**
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
+- [Intent vs. Implementation](../foundations/02-intent-vs-implementation.md)
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - [The Spec as Control Surface](02-specs-as-control-surfaces.md)

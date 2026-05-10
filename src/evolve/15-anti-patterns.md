@@ -14,13 +14,13 @@
 
 ## Context
 
-You have adopted the framework. You ran the [Intent Design Session](../theory/07-intent-design-session.md). You have a spec, an oversight model, instrumented metrics, a rollout plan. The first pilot shipped. A few more followed. Six months in, something feels off — but the artifacts are all still there. The spec exists. The dashboard exists. The team still uses the vocabulary. Why does it feel like the discipline has stopped doing work?
+You have adopted the framework. You ran the [Intent Design Session](../foundations/07-intent-design-session.md). You have a spec, an oversight model, instrumented metrics, a rollout plan. The first pilot shipped. A few more followed. Six months in, something feels off — but the artifacts are all still there. The spec exists. The dashboard exists. The team still uses the vocabulary. Why does it feel like the discipline has stopped doing work?
 
 Because the artifacts can be preserved long after the function has gone. A discipline that produces structures is durable only as long as those structures keep doing something — keep constraining behavior, keep surfacing disagreements, keep getting amended after incidents. When the structures freeze and the function quietly drains, you get a team that *calls itself spec-driven but is actually code-driven, with paperwork*.
 
-This chapter catalogs the predictable ways the Architecture of Intent decays in practice. It is the anti-pattern catalog of the discipline itself, not of the systems built with it. (For the latter — the seven fix-locus failure categories Cat 1–7 — see [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).)
+This chapter catalogs the predictable ways the Architecture of Intent decays in practice. It is the anti-pattern catalog of the discipline itself, not of the systems built with it. (For the latter — the seven fix-locus failure categories Cat 1–7 — see [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md).)
 
-This pattern assumes [The Intent Design Session](../theory/07-intent-design-session.md), [Proportional Governance](04-governance.md), [Intent Review Before Output Review](../validate/05-reviewing-intent.md), and [Adoption Playbook](11-adoption-playbook.md).
+This pattern assumes [The Intent Design Session](../foundations/07-intent-design-session.md), [Proportional Governance](04-governance.md), [Intent Review Before Output Review](../validate/05-reviewing-intent.md), and [Adoption Playbook](11-adoption-playbook.md).
 
 ---
 
@@ -88,7 +88,7 @@ The biggest cluster. The team has the artifact; the artifact has stopped working
 
 *The signs.* Removing a bound pattern triggers the question "what spec clause was this satisfying?" and no one can answer. The pattern list grew over time without corresponding spec amendments. Two specs in the same team have wildly different pattern lists for similar systems, with no spec-clause justification for the differences.
 
-*The fix.* For every bound pattern, write the one-line justification tying it to a specific spec clause. Patterns whose justification reads "good practice" or "we always do this" are inventory; either remove them or amend the spec to add the clause that justifies them. The discipline named in the [Intent Design Session's Bind Patterns phase](../theory/07-intent-design-session.md#phase-5-bind-patterns-45-60-min-skeptic-leads-architect--operator-participate) — *patterns are picked by spec implications, not team taste* — is what this anti-pattern violates.
+*The fix.* For every bound pattern, write the one-line justification tying it to a specific spec clause. Patterns whose justification reads "good practice" or "we always do this" are inventory; either remove them or amend the spec to add the clause that justifies them. The discipline named in the [Intent Design Session's Bind Patterns phase](../foundations/07-intent-design-session.md#phase-5-bind-patterns-45-60-min-skeptic-leads-architect--operator-participate) — *patterns are picked by spec implications, not team taste* — is what this anti-pattern violates.
 
 **5. Calibration without commitment.**
 
@@ -96,7 +96,7 @@ The biggest cluster. The team has the artifact; the artifact has stopped working
 
 *The signs.* When the system misbehaves, the team can't reference §4 to diagnose which dimension was wrong. Two team members asked separately to describe what "Autonomy: high" means in this system give different answers. The values were never revisited after the original spec write.
 
-*The fix.* Re-do §4 as if you were running the [Intent Design Session](../theory/07-intent-design-session.md) phase 3 today. Each value gets a one-sentence operational answer ("Agency narrow: the system decides X but never Y"; "Autonomy bounded: every Z action gates on a human confirmation"). Disagreement during this re-do is productive; resolve it before signing off, and update the spec.
+*The fix.* Re-do §4 as if you were running the [Intent Design Session](../foundations/07-intent-design-session.md) phase 3 today. Each value gets a one-sentence operational answer ("Agency narrow: the system decides X but never Y"; "Autonomy bounded: every Z action gates on a human confirmation"). Disagreement during this re-do is productive; resolve it before signing off, and update the spec.
 
 **6. Citation theater.**
 
@@ -184,7 +184,7 @@ The audit's value is not in catching every drift. It is in *naming* the drift in
 
 Not a comprehensive failure taxonomy of the discipline. Eleven anti-patterns is an opinionated working set, not a derived classification. Real teams will surface variants and additions; encourage that, name them, and contribute the named ones back.
 
-Not a substitute for the system-level failure taxonomy in [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md). The Cat 1–7 categories tell you which artifact to update when a *system* misbehaves. This chapter tells you when the *artifacts themselves* have stopped doing work. Both audits matter; they are not interchangeable.
+Not a substitute for the system-level failure taxonomy in [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md). The Cat 1–7 categories tell you which artifact to update when a *system* misbehaves. This chapter tells you when the *artifacts themselves* have stopped doing work. Both audits matter; they are not interchangeable.
 
 Not an indictment of teams that surface anti-patterns during an audit. Surfacing a degradation is the audit working as designed. The teams that fail are the ones whose audits return clean for two consecutive years.
 
@@ -210,8 +210,8 @@ After this pattern is in place:
 ## Connections
 
 **This pattern assumes:**
-- [The Intent Design Session](../theory/07-intent-design-session.md) — the ritual whose decay several of these anti-patterns describe
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) — the system-level failure taxonomy this chapter complements
+- [The Intent Design Session](../foundations/07-intent-design-session.md) — the ritual whose decay several of these anti-patterns describe
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) — the system-level failure taxonomy this chapter complements
 - [Proportional Governance](04-governance.md) and [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — the governance practices that surface drift
 - [Four Signal Metrics](../validate/06-metrics.md) — the metrics whose theater this chapter names
 - [Adoption Playbook](11-adoption-playbook.md) — the ongoing practice this audit is paired with

@@ -139,7 +139,7 @@ After applying this pattern:
 
 **This pattern enables:**
 - [Proportional Oversight](../06-human-oversight-models.md)
-- [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md)
 - [The Canonical Spec Template — Sections 8 and 12](../../specify/07-canonical-spec-template.md)
 
 ---

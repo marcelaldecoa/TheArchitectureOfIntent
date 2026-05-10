@@ -133,6 +133,6 @@ After applying this pattern:
 **This pattern enables:**
 - [The Executor Model](03-agents-as-executors.md)
 - [Proportional Oversight](06-human-oversight-models.md)
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
 
 ---

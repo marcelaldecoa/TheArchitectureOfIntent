@@ -158,7 +158,7 @@ The Validate phase blends into Evolve from here. The same metrics, the same log,
 
 ## Conceptual chapters this scenario binds to
 
-- [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
+- [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
 - [Four Signal Metrics](../../validate/06-metrics.md)
 - [Evals and Benchmarks](../../validate/07-evals-and-benchmarks.md)
 - [Red-Team Protocol](../../validate/08-red-team-protocol.md)

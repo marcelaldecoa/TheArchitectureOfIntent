@@ -60,4 +60,4 @@ Maintain the **previous spec version as a deployable artifact** and revert to it
 - [Spec Versioning](spec-versioning.md) — immutable versions make rollback possible
 - [Canary Deployment](canary.md) — canary catches most issues before full deployment; rollback handles the rest
 - [Checkpoint and Resume](../state/checkpoint-resume.md) — in-flight pipeline executions may need to resume under the rolled-back spec
-- [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md) — the rollback trigger signals either a spec failure or a model-level failure
+- [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md) — the rollback trigger signals either a spec failure or a model-level failure

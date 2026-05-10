@@ -151,7 +151,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [Spec-Driven Development](01-what-sdd-means.md)
 - [Pick an Archetype](../frame/02-canonical-intent-archetypes.md)
-- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
+- [The Intent-Implementation Boundary](../foundations/02-intent-vs-implementation.md)
 
 **This pattern enables:**
 - [The Spec Lifecycle](03-spec-lifecycle.md)

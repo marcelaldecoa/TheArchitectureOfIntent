@@ -119,7 +119,7 @@ Encode these rules in the system spec. The per-agent specs should reference them
 
 ### MAST as a diagnostic frame
 
-The MAST taxonomy (Cemri et al. 2025) is the most rigorous practitioner-facing partition of multi-agent failures published. Its three top-level categories — specification issues, inter-agent misalignment, task verification failures — and 14 sub-categories give an empirical vocabulary that complements (not replaces) the seven categories from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).
+The MAST taxonomy (Cemri et al. 2025) is the most rigorous practitioner-facing partition of multi-agent failures published. Its three top-level categories — specification issues, inter-agent misalignment, task verification failures — and 14 sub-categories give an empirical vocabulary that complements (not replaces) the seven categories from [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md).
 
 Mapping MAST onto the book's seven categories:
 
@@ -196,7 +196,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [Pick an Archetype](02-canonical-intent-archetypes.md)
 - [Composing Archetypes](05-composing-archetypes.md) — for two-archetype layering; this chapter generalizes to N agents
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - [The Orchestrator Archetype](archetypes/orchestrator.md) — multi-agent governance is the operational specification of Orchestrator deployments

@@ -44,7 +44,7 @@ Twelve sections; here are the ones that carry weight:
 
 ### Delegate — bind patterns to what the spec implies
 
-Reading the spec aloud, the [Bind Patterns phase](theory/07-intent-design-session.md) of the Intent Design Session pulls the following:
+Reading the spec aloud, the [Bind Patterns phase](foundations/07-intent-design-session.md) of the Intent Design Session pulls the following:
 
 | Spec implies… | Bound patterns |
 |---|---|
@@ -74,7 +74,7 @@ Each pattern is bound to a specific clause. Patterns the spec does not justify d
 
 Day 14. The agent attributes an action item to *Alex* when there are two Alexes on the team. The team lead edits the draft, approves it, and adds a note: *"please disambiguate by full name when there are duplicates."*
 
-What just happened: the [diagnostic protocol](theory/05-failure-as-design-signal.md) names this as **Cat 1 (Spec)**. The agent did exactly what the spec said. The spec said "attribute owners" — it did not say "disambiguate by full name when more than one participant shares a first name." The fix locus is the spec, not the prompt. The team amends §6 (Invariants) to add the disambiguation rule and bumps the spec to v1.1 in §13 (Spec Evolution Log).
+What just happened: the [diagnostic protocol](foundations/05-failure-as-design-signal.md) names this as **Cat 1 (Spec)**. The agent did exactly what the spec said. The spec said "attribute owners" — it did not say "disambiguate by full name when more than one participant shares a first name." The fix locus is the spec, not the prompt. The team amends §6 (Invariants) to add the disambiguation rule and bumps the spec to v1.1 in §13 (Spec Evolution Log).
 
 Note what did **not** happen: the team did not patch the system prompt with "remember to disambiguate Alex from Alex." A prompt patch would not compound — it would silently accumulate as model context without ever entering the artifact that other team members read. The structural fix lives in the spec; it survives a model upgrade, a team transition, a context loss. That is the load-bearing discipline named in the [Introduction](introduction.md#what-is-the-architecture-of-intent): *structural fixes live in spec, manifest, CI, or platform — never only in the prompt.*
 
@@ -84,7 +84,7 @@ Note what did **not** happen: the team did not patch the system prompt with "rem
 
 Not a complete spec. Not a worked pilot in the [Part 6](examples/00-how-to-use.md) sense — those are richer, with full specs, agent instructions, evals, and post-mortems. This is the canvas applied to one concrete system in one screen, so the reader can see the *shape* of a pass through the framework before reading the chapters that elaborate each row.
 
-Real specs are longer. Real failures take longer to diagnose. Real teams disagree about calibration dials and resolve it during the [Intent Design Session](theory/07-intent-design-session.md). The miniature pilot is the smallest concrete instance the canvas can carry; the rest of the book builds out from here.
+Real specs are longer. Real failures take longer to diagnose. Real teams disagree about calibration dials and resolve it during the [Intent Design Session](foundations/07-intent-design-session.md). The miniature pilot is the smallest concrete instance the canvas can carry; the rest of the book builds out from here.
 
 ---
 

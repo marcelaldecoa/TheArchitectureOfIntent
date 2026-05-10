@@ -120,7 +120,7 @@ The "surface and stop on ambiguity" instruction is the single most useful constr
 
 ### New failure modes specific to computer-use agents
 
-The first six categories from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) all manifest in computer-use agents, with characteristic shapes:
+The first six categories from [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) all manifest in computer-use agents, with characteristic shapes:
 
 - **Cat 1 (Spec).** "The spec authorized the agent to use github.com but didn't specify what to do when redirected to github.io for documentation." Fix: tighten scope to include redirect destinations or surface on unexpected redirect.
 - **Cat 2 (Capability).** "The agent had only `browser.click` and `browser.type`; the form required a date-picker that needed keyboard arrow keys to operate; the agent typed the date as text and the form rejected it." Fix: add `browser.keypress` as an explicit tool with allowlisted keys.

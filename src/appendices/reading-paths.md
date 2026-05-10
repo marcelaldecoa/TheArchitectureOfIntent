@@ -23,7 +23,7 @@ Top-to-bottom by Part:
 
 1. **Foreword** — [Prologue](../prologue.md)
 2. **Introduction** — [Why this book exists, and the framework on one page](../introduction.md), [A Miniature Pilot, End-to-End](../miniature-pilot.md), [How to Read This Book](../how-to-read.md)
-3. **Part 0 — FOUNDATIONS** — top-to-bottom: [What is the Architecture of Intent?](../theory/01-what-is-aoi.md), [Intent vs. Implementation](../theory/02-intent-vs-implementation.md), [Calibrate A/A/R/R](../theory/03-agency-autonomy-responsibility.md), [Failure Modes (Cat 1–7)](../theory/05-failure-as-design-signal.md), [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md), [The Intent Design Session](../theory/07-intent-design-session.md). The conceptual preface every other Part stands on.
+3. **Part 0 — FOUNDATIONS** — top-to-bottom: [What is the Architecture of Intent?](../foundations/01-what-is-aoi.md), [Intent vs. Implementation](../foundations/02-intent-vs-implementation.md), [Calibrate A/A/R/R](../foundations/03-agency-autonomy-responsibility.md), [Failure Modes (Cat 1–7)](../foundations/05-failure-as-design-signal.md), [What Changes for the Senior Engineer](../foundations/08-what-changes-for-senior-engineers.md), [The Intent Design Session](../foundations/07-intent-design-session.md). The conceptual preface every other Part stands on.
 4. **Part 1 — FRAME** — top-to-bottom; ends with the three *Frame in practice* scenario chapters
 5. **Part 2 — SPECIFY** — top-to-bottom; ends with the three *Specify in practice* scenario chapters
 6. **Part 3 — DELEGATE** — top-to-bottom; ends with the three *Delegate in practice* scenario chapters
@@ -100,7 +100,7 @@ Pair with [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-d
 Skip the scenarios entirely. The simplest version is **read all of Part 0 and a few additional binding chapters**:
 
 1. [Prologue](../prologue.md) and [Introduction](../introduction.md) — the framing
-2. **All of Part 0 — FOUNDATIONS** in order: [What is the Architecture of Intent?](../theory/01-what-is-aoi.md), [Intent vs. Implementation](../theory/02-intent-vs-implementation.md), [Calibrate A/A/R/R](../theory/03-agency-autonomy-responsibility.md), [Failure Modes (Cat 1–7)](../theory/05-failure-as-design-signal.md), [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md), [The Intent Design Session](../theory/07-intent-design-session.md)
+2. **All of Part 0 — FOUNDATIONS** in order: [What is the Architecture of Intent?](../foundations/01-what-is-aoi.md), [Intent vs. Implementation](../foundations/02-intent-vs-implementation.md), [Calibrate A/A/R/R](../foundations/03-agency-autonomy-responsibility.md), [Failure Modes (Cat 1–7)](../foundations/05-failure-as-design-signal.md), [What Changes for the Senior Engineer](../foundations/08-what-changes-for-senior-engineers.md), [The Intent Design Session](../foundations/07-intent-design-session.md)
 3. [Pick an Archetype](../frame/02-canonical-intent-archetypes.md) and the five archetype pages it links to — the taxonomy in detail
 4. [Composing Archetypes](../frame/05-composing-archetypes.md) — composition first-class
 5. [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the 12-section structure with the Composition Declaration and Cost Posture sub-blocks
@@ -159,7 +159,7 @@ Skip details of Part 3 — Delegate's pattern catalog if your team's pattern sel
 
 > *On the pager when the agent fails in production.*
 
-1. [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
+1. [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
 2. [The Closed Loop: From Failures to Spec Amendments](../evolve/01-closed-loop.md)
 3. **Part 4 — VALIDATE** in full — especially [Production Telemetry](../evolve/10-production-telemetry.md) and the [Distributed Trace](../patterns/observability/distributed-trace.md) pattern
 4. The Evolve chapter of the scenario whose system shape matches yours
@@ -169,8 +169,8 @@ Skip details of Part 3 — Delegate's pattern catalog if your team's pattern sel
 
 > *Owns the outcome the agent is producing; not necessarily building it.*
 
-1. **Foreword** — [Prologue](../prologue.md), [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md)
-2. [The Intent Design Session](../theory/07-intent-design-session.md) — the working ritual you'll be a required participant in
+1. **Foreword** — [Prologue](../prologue.md), [What Changes for the Senior Engineer](../foundations/08-what-changes-for-senior-engineers.md)
+2. [The Intent Design Session](../foundations/07-intent-design-session.md) — the working ritual you'll be a required participant in
 3. [Roles & Responsibilities (RACI) Card](raci-card.md) — your seat at the table
 4. **Part 5 — EVOLVE** in full — especially [Adoption Playbook](../evolve/11-adoption-playbook.md), [Proportional Governance](../evolve/04-governance.md), [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md)
 
@@ -181,7 +181,7 @@ You don't need Part 3 — Delegate in detail; the team builds the agent. You do 
 > *Owns the customer-facing outcome; not technical.*
 
 1. [Introduction](../introduction.md) — the canvas
-2. [The Intent Design Session](../theory/07-intent-design-session.md) — your role in the ritual
+2. [The Intent Design Session](../foundations/07-intent-design-session.md) — your role in the ritual
 3. The Frame and Evolve chapters of the scenario whose system shape best matches yours
 
 This read is intentionally short. The framework's vocabulary travels with engineering; the PM's job is to bring the customer-facing intent and the constraint surface, which the Frame session formalizes.
@@ -198,7 +198,7 @@ The [Pattern Index](pattern-index.md) is the canonical entry-by-problem table; t
 | Choosing how to structure a new agent system | [Pick an archetype](../frame/02-canonical-intent-archetypes.md) |
 | Writing a spec right now | [The canonical spec template](../specify/07-canonical-spec-template.md) |
 | Designing oversight for an agent that's about to ship | [Proportional Oversight](../delegate/06-human-oversight-models.md) |
-| Diagnosing a production failure | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) and [The Closed Loop](../evolve/01-closed-loop.md) |
+| Diagnosing a production failure | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) and [The Closed Loop](../evolve/01-closed-loop.md) |
 | Setting up safety controls | [Safety patterns](../patterns/safety/prompt-injection-defense.md) — start anywhere; cross-link from there |
 | Introducing the framework to your team | [Adoption Playbook](../evolve/11-adoption-playbook.md) and [Minimum Viable Architecture of Intent](../evolve/16-minimum-viable-aoi.md) |
 | Composing with DevSquad Copilot | [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md), [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md), and Scenario 3's chapters |

@@ -250,4 +250,4 @@ By end of day, the spec is in a PR for review. Maya, Sam, Jordan, and Priya all 
 - [The Canonical Spec Template](../../specify/07-canonical-spec-template.md) — including the Composition Declaration and Cost Posture sub-blocks
 - [Writing for Machine Execution](../../specify/05-writing-specs-for-agents.md)
 - [The Spec as Control Surface](../../specify/02-specs-as-control-surfaces.md)
-- [The Intent Design Session](../../theory/07-intent-design-session.md)
+- [The Intent Design Session](../../foundations/07-intent-design-session.md)

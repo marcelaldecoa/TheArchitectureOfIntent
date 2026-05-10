@@ -73,7 +73,7 @@ What you are *not* doing in week 1: convincing other teams, writing process docu
 
 After week 1, the agent is running. Things will go wrong. The discipline that distinguishes a real adoption from spec theater is what you do when they go wrong:
 
-- Each failure: walk the diagnostic protocol from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md). Categorize. Identify the artifact to change.
+- Each failure: walk the diagnostic protocol from [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md). Categorize. Identify the artifact to change.
 - Each Cat 1 (Spec Failure): update the spec, log the gap. The log entry has to include *which spec section was affected* and *why intent review didn't catch it*.
 - Each pattern that recurs: ask "is this a constraint that belongs in a constraint library, not just in this spec?" If yes, it goes in a shared place — a folder, a Notion page, a repo — that future specs can reference.
 
@@ -261,7 +261,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — what week 1 produces
 - [The Living Spec](../specify/06-living-specs.md) — the gap log discipline
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) — the diagnostic protocol that month 1 depends on
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) — the diagnostic protocol that month 1 depends on
 
 **This pattern enables:**
 - [Proportional Governance](04-governance.md) — at quarter 1+, governance becomes relevant

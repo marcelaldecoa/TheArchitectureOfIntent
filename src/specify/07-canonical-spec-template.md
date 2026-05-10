@@ -109,7 +109,7 @@ For composed systems, declare the governing archetype above and list the embedde
 
 **Cost Posture** *(required for systems running in production at any scale; omit only for true throwaways at the [MVP-AoI](../evolve/16-minimum-viable-aoi.md) floor)*
 
-Cost is *not* a fifth calibration dimension — it is a *resource* commitment that the four behavioral dimensions partly determine and partly leave open. Declare the parts left open here. See [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../theory/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) for the structural rationale, and [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) for the operational treatment this sub-block sits above.
+Cost is *not* a fifth calibration dimension — it is a *resource* commitment that the four behavioral dimensions partly determine and partly leave open. Declare the parts left open here. See [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../foundations/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) for the structural rationale, and [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) for the operational treatment this sub-block sits above.
 
 - **Model-tier commitment** (per step where relevant): [step-name → tier (Reasoning / Frontier / Mid / Fast); one-line rationale]; [next step → tier]; *…*
 - **Latency budget**: p50 = [value]; p95 = [value]; p99 = [value]. *Behavior on breach:* [degrade · alert · halt — one of].

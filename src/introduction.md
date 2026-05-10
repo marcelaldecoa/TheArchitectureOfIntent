@@ -21,7 +21,7 @@ This book is the discipline that addresses that gap. It is a field guide for the
 
 ## What is the Architecture of Intent?
 
-The framework's one-page definition lives in [Part 0 — Foundations, *What is the Architecture of Intent?*](theory/01-what-is-aoi.md): three questions every delegated system has to answer; five activities that answer them (Frame · Specify · Delegate · Validate · Evolve); three properties that make this an *architecture* rather than an *art* (intent as a designed artifact; fixes live in structure, not prompts; calibration is deliberate). Read that chapter once; come back when you get lost.
+The framework's one-page definition lives in [Part 0 — Foundations, *What is the Architecture of Intent?*](foundations/01-what-is-aoi.md): three questions every delegated system has to answer; five activities that answer them (Frame · Specify · Delegate · Validate · Evolve); three properties that make this an *architecture* rather than an *art* (intent as a designed artifact; fixes live in structure, not prompts; calibration is deliberate). Read that chapter once; come back when you get lost.
 
 For the visual version of the same content, see *The framework on one page* below.
 
@@ -83,7 +83,7 @@ Two reading modes, both supported.
 | Choosing how to structure a new agent system | [Pick an archetype](frame/02-canonical-intent-archetypes.md) |
 | Writing a spec right now | [The canonical spec template](specify/07-canonical-spec-template.md) |
 | Designing oversight for an agent that's about to ship | [Proportional Oversight](delegate/06-human-oversight-models.md) |
-| Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
+| Diagnosing a failure | [Failure modes and how to diagnose them](foundations/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Safety patterns](patterns/safety/prompt-injection-defense.md) |
 | Walking one running scenario across all five activities | [Frame in practice — Customer-support](frame/scenarios/customer-support.md), [Coding-agent pipeline](frame/scenarios/coding-pipeline.md), or [Internal docs Q&A (DevSquad)](frame/scenarios/docs-qa.md) |
 | Looking at a v1.x worked pilot (legacy) | [Designing an AI Coding Agent](examples/03-coding-agent/README.md) — superseded by the running scenario chapters above |

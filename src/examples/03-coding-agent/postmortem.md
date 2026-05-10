@@ -4,7 +4,7 @@
 
 ---
 
-> *The deleted-test incident from spec v1.1, traced through the diagnostic protocol from [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md). The fix that resulted is what introduced spec v1.2's test-set protection (§3.3, C2, Invariant 1) and SC4's five test cases.*
+> *The deleted-test incident from spec v1.1, traced through the diagnostic protocol from [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md). The fix that resulted is what introduced spec v1.2's test-set protection (§3.3, C2, Invariant 1) and SC4's five test cases.*
 
 ---
 
@@ -60,7 +60,7 @@ Reading spec v1.1's relevant sections at the time of the incident:
 
 ### Step 2: Walking the seven-category protocol
 
-For completeness, the team walked the full diagnostic protocol from [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md):
+For completeness, the team walked the full diagnostic protocol from [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md):
 
 - **Cat 1 (Spec Failure)?** Yes. Spec did not prohibit test modification. ✓
 - **Cat 2 (Capability Failure)?** No. The agent did not lack a tool; it had the `file.write` tool and used it as authorized.

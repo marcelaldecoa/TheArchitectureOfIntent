@@ -161,7 +161,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [The Organizational Repertoire](01-why-repertoires-matter.md)
 - [The Canonical Spec Template — Section 6](../specify/07-canonical-spec-template.md)
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - Org-specific validation template additions

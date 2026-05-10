@@ -247,7 +247,7 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the **Cost Posture** sub-block in §4 is the upstream surface this chapter sits above; Section 7 is where non-functional cost and latency constraints live
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../theory/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) — the structural rationale for why cost has its own §4 sub-block instead of being a fifth calibration dimension
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../foundations/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) — the structural rationale for why cost has its own §4 sub-block instead of being a fifth calibration dimension
 - [Four Signal Metrics](../validate/06-metrics.md) — cost-per-correct-output is the metric this work moves
 - [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — eval suite must include cost and latency regressions, not just behavioral regressions
 

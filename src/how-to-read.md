@@ -34,7 +34,7 @@ After Part 6 the book becomes reference material: a flat **Cross-Cutting Pattern
 | Structuring a new agent system | [Pick an archetype](frame/02-canonical-intent-archetypes.md) |
 | Writing a spec | [The canonical spec template](specify/07-canonical-spec-template.md) |
 | Designing oversight | [Proportional Oversight](delegate/06-human-oversight-models.md) |
-| Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
+| Diagnosing a failure | [Failure modes and how to diagnose them](foundations/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Prompt injection defense](patterns/safety/prompt-injection-defense.md), [output validation](patterns/safety/output-validation-gate.md) |
 | Choosing an oversight cadence | [Proportional Governance](evolve/04-governance.md) |
 | Defining what to measure | [Four Signal Metrics](validate/06-metrics.md) |

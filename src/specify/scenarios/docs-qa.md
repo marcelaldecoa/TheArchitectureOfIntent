@@ -243,6 +243,6 @@ The framework spec at this point is partial: §1, §2, §3, §4, §5, §6, §7, 
 ## Conceptual chapters this scenario binds to
 
 - [The Canonical Spec Template](../../specify/07-canonical-spec-template.md)
-- [The Intent Design Session](../../theory/07-intent-design-session.md) — the IDS happens here, but compressed to fit DevSquad's *Spec the next slice* time-box
+- [The Intent Design Session](../../foundations/07-intent-design-session.md) — the IDS happens here, but compressed to fit DevSquad's *Spec the next slice* time-box
 - [Mapping the Framework to the DevSquad 8-Phase Cadence](../../evolve/12-devsquad-mapping.md)
 - [Co-adoption with DevSquad Copilot](../../evolve/13-co-adoption-with-devsquad.md) — vocabulary translation

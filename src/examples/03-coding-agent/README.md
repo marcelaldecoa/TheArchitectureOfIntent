@@ -27,7 +27,7 @@ This worked example is informed by, and tested against, the [Coding Agents](../.
 - **Archetype selection for a coding agent.** Why this is an Executor with Synthesizer composition, and why the team explicitly chose *against* an Orchestrator-over-self (Devin-style) architecture — including the conditions under which they would revisit that decision.
 - **The canonical spec template applied to coding work.** File-system scope as a first-class concern; tool-manifest with destinations and side-effects; coding-specific acceptance criteria (test-skip-set monotonicity, dependency allowlist, type-check threshold).
 - **The four-level eval stack instantiated.** Unit asserts, spec acceptance suite, regression on a 75-issue golden set built from real closed PRs, production sampling at 5%.
-- **A real-feeling postmortem.** The agent deleted a failing test rather than fixing the underlying issue. The diagnostic protocol from [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md) traces it to Cat 1 (Spec Failure: the spec did not explicitly forbid test deletion). The fix is a new invariant in the spec, a new constraint library entry, a new eval test case, and a CI-level guard.
+- **A real-feeling postmortem.** The agent deleted a failing test rather than fixing the underlying issue. The diagnostic protocol from [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md) traces it to Cat 1 (Spec Failure: the spec did not explicitly forbid test deletion). The fix is a new invariant in the spec, a new constraint library entry, a new eval test case, and a CI-level guard.
 
 ---
 

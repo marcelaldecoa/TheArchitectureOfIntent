@@ -46,7 +46,7 @@ The agent called `order.lookup`, used the returned `total_value` of $0.00, and i
 
 The agent followed constraint C3 faithfully. The spec said to use the order data; the order data said $0.00; the agent initiated a $0.00 refund.
 
-**Conclusion: This is a spec gap, not an execution gap.** In the failure taxonomy from [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md), this is a **Cat 1 (Spec Failure)**: the spec was self-consistent and faithfully executed, but it did not anticipate a legitimate edge case (zero-value orders). Cat 1 is the most common category for incidents in mature deployments — once tool boundaries (Cat 2), scope (Cat 3), and oversight (Cat 4) are structurally enforced, the residual failure surface concentrates in spec completeness.
+**Conclusion: This is a spec gap, not an execution gap.** In the failure taxonomy from [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md), this is a **Cat 1 (Spec Failure)**: the spec was self-consistent and faithfully executed, but it did not anticipate a legitimate edge case (zero-value orders). Cat 1 is the most common category for incidents in mature deployments — once tool boundaries (Cat 2), scope (Cat 3), and oversight (Cat 4) are structurally enforced, the residual failure surface concentrates in spec completeness.
 
 ---
 

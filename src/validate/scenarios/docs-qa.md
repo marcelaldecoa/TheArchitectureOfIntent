@@ -158,7 +158,7 @@ The Validate phase blends into Evolve from here. The same metrics, the same DevS
 
 ## Conceptual chapters this scenario binds to
 
-- [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md)
 - [Four Signal Metrics](../../validate/06-metrics.md)
 - [Mapping the Framework to the DevSquad 8-Phase Cadence](../../evolve/12-devsquad-mapping.md) — the *Review in independent context* phase
 - [Co-adoption with DevSquad Copilot](../../evolve/13-co-adoption-with-devsquad.md)

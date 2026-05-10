@@ -67,4 +67,4 @@ If the agent malfunctions and enters a retry loop, the blast radius is 1 incorre
 - [Rate Limiting](rate-limiting.md) — rate limits are a temporal blast radius constraint
 - [Session Isolation](../state/session-isolation.md) — isolation prevents cross-user blast radius
 - [Code Execution Sandbox](../integration/code-sandbox.md) — the sandbox is a blast radius boundary for generated code
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md) — reversible actions have smaller effective blast radius
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../foundations/03-agency-autonomy-responsibility.md) — reversible actions have smaller effective blast radius
