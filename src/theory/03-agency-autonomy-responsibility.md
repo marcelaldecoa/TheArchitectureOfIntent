@@ -1,6 +1,6 @@
 # Calibrate Agency, Autonomy, Responsibility, Reversibility
 
-**Part 1 — Decisions**
+**Part 1 — Frame**
 
 ---
 
@@ -9,6 +9,8 @@
 ---
 
 ## Context
+
+A team is mid-Frame, debating whether their data-export agent should be *"high autonomy"* or *"medium autonomy."* The conversation goes in circles for fifteen minutes — every argument for high autonomy turns up a counter-example where high autonomy would be reckless, and every argument for medium turns up a case where medium would be paralyzing. The tech lead stops them: *"We're conflating four things into one word. The agent's autonomy from us during a single export is one decision. Its agency to choose what to export when our instructions don't cover the case is a different decision. Who's accountable when an export goes wrong is a third. And how easily we can undo an export is a fourth. Let's split them out."* Forty minutes later, the team has four committed dial positions instead of one unresolved argument.
 
 You have selected an archetype. Now you have to decide, for the system you are about to specify, *how much* of each of four things it gets:
 

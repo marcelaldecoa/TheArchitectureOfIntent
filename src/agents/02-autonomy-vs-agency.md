@@ -1,6 +1,6 @@
 # Autonomy Without Agency
 
-**Agents**
+**Part 3 — Delegate**
 
 ---
 

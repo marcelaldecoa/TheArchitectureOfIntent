@@ -1,6 +1,6 @@
 # Archetype Composition
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 
@@ -10,6 +10,8 @@
 ---
 
 ## Context
+
+A team is reviewing the spec for an Executor agent. The reviewer points at §11: *"this part where the agent checks its own output before sending — that's a Guardian behavior. And §10's escalation flow looks like an Advisor handoff. Are we doing composition by accident, or composition by design?"* The room goes quiet. The team had committed to Executor in Frame, then quietly accumulated Guardian and Advisor behaviors as the spec evolved, without ever declaring the composition. The result was a system whose actual shape was not the shape its spec advertised — the most-common cause of the *composition by accident* anti-pattern the [Discipline-Health Audit](../operating/15-anti-patterns.md) catches.
 
 You have assigned an archetype to a system. You know it is, say, an Executor — it takes bounded, pre-authorized action. But the system also has a component that checks its own outputs before applying them, another that reports results to a dashboard, and a third that refuses to act if a given condition is violated.
 

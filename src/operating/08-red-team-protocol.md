@@ -1,6 +1,6 @@
 # Red-Team Protocol
 
-**Part 5 — Ship**
+**Part 4 — Validate**
 
 ---
 

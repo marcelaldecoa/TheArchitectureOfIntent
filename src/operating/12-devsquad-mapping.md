@@ -1,6 +1,6 @@
 # Mapping the Framework to the DevSquad 8-Phase Cadence
 
-**Part 5 — Ship**
+**Part 5 — Evolve**
 
 ---
 

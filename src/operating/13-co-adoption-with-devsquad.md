@@ -1,6 +1,6 @@
 # Co-adoption with DevSquad Copilot
 
-**Part 5 — Ship**
+**Part 5 — Evolve**
 
 ---
 

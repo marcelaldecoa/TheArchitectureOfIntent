@@ -1,6 +1,6 @@
 # The Executor Model
 
-**Agents**
+**Part 3 — Delegate**
 
 ---
 

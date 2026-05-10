@@ -1,6 +1,6 @@
 # Agents Defined by Structure
 
-**Agents**
+**Part 3 — Delegate**
 
 ---
 

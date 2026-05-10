@@ -1,6 +1,6 @@
 # SpecKit
 
-**Specification**
+**Part 2 — Specify**
 
 ---
 

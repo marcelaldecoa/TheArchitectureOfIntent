@@ -1,6 +1,6 @@
 # The Canonical Spec Template
 
-**Specification**
+**Part 2 — Specify**
 
 ---
 

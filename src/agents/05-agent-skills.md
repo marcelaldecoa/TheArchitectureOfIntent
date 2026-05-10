@@ -1,6 +1,6 @@
 # Portable Domain Knowledge
 
-**Agents**
+**Part 3 — Delegate**
 
 ---
 

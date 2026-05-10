@@ -1,6 +1,6 @@
 # The Spec as Control Surface
 
-**Specification**
+**Part 2 — Specify**
 
 ---
 

@@ -1,6 +1,6 @@
 # Architectural Decision Records
 
-**Part 2 — The Spec**
+**Part 2 — Specify**
 
 ---
 

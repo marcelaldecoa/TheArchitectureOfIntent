@@ -1,6 +1,6 @@
 # Four Signal Metrics
 
-**Governance & Architecture**
+**Part 4 — Validate**
 
 ---
 

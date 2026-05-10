@@ -1,6 +1,6 @@
 # The Archetype Selection Tree
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 

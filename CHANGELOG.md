@@ -18,6 +18,69 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0-rc8 — 2026-05-10
+
+**MAJOR (release candidate, continues v2.0.0 line)** — voice pass and chapter-subtitle alignment for v1.x book chapters that hadn't been touched in v2.0.0. No load-bearing framework changes; this is the editorial cleanup pass that brings the older conceptual chapters into the field-guide voice the new (rc3–rc7) chapters established. Framework load-bearing commitments unchanged from rc7.
+
+### Added — vignettes (vignette-before-exposition openings)
+
+Four highest-impact Frame conceptual chapters get a short vignette before the existing Context section, in the same shape as the rc3 closed-loop chapter and the scenario chapters:
+
+- **`src/theory/02-intent-vs-implementation.md`** — opens on a sprint-review moment where the agent's PR-merge-without-amendment rate dropped, the team investigates the agent's recent commits, and one engineer says *"the code is fine. The agent is doing exactly what the spec says. The spec is wrong about how cross-service refactors should be planned."* That moment is the chapter's load-bearing distinction.
+- **`src/architecture/02-canonical-intent-archetypes.md`** — opens on a team in a Frame session 30 minutes in, the PM impatient to start naming features, the tech lead writing one word on the board: ARCHETYPE.
+- **`src/theory/03-agency-autonomy-responsibility.md`** — opens on a team debating *"high autonomy"* vs *"medium autonomy"* in circles, until the tech lead splits the four dimensions out as four separate decisions.
+- **`src/architecture/05-composing-archetypes.md`** — opens on a spec review where the reviewer asks *"this part where the agent checks its own output before sending — that's a Guardian behavior. And §10's escalation flow looks like an Advisor handoff. Are we doing composition by accident, or composition by design?"*
+
+### Added — Evolve-framing intros
+
+Four operating chapters that now sit in **Part 5 — Evolve** get a short *Where this sits in v2.0.0* intro paragraph after the epigraph, anchoring them in the Evolve activity and naming their relationship to the closed loop:
+
+- **`src/operating/04-governance.md`** — names governance as the role-and-responsibility frame that makes the closed loop survive contact with a real organization.
+- **`src/operating/15-anti-patterns.md`** — names the Discipline-Health Audit as the per-quarter cadence that catches loop decay; cross-references the three running scenarios.
+- **`src/operating/16-minimum-viable-aoi.md`** — names MVP-AoI as the closed loop in compressed form; the discipline travels down-scale.
+- **`src/operating/09-cost-and-latency.md`** — names cost incidents as a particular Cat 4 class that requires its own escalation pattern; cross-references the customer-support and coding-pipeline Cost Posture incidents.
+- **`src/operating/11-adoption-playbook.md`** — names the playbook as what keeps the loop going as the team grows; cross-references the cross-team adoption arc that runs through scenarios 1–3.
+
+### Updated — chapter-subtitle alignment to v2.0.0 Part placement
+
+Approximately **25 chapter subtitles** updated to match the v2.0.0 SUMMARY structure rather than the v1.x Part naming. The SUMMARY itself defines the Part placement; the chapter-level subtitles were lagging. This rc closes the gap.
+
+| Old subtitle | New subtitle | Files |
+|---|---|---|
+| `**Part 5 — Ship**` | `**Part 4 — Validate**` | operating/07, 08 |
+| `**Part 5 — Ship**` | `**Part 5 — Evolve**` | operating/09, 10, 11, 12, 13, 14 |
+| `**Governance & Architecture**` | `**Part 4 — Validate**` | operating/05, 06 |
+| `**Governance & Architecture**` | `**Part 5 — Evolve**` | operating/04 |
+| `**Governance & Architecture**` | `**Part 1 — Frame**` | architecture/03, 04, 05, 06 |
+| `**Operating Practice**` | `**Part 5 — Evolve**` | operating/15, 16 |
+| `**Part 1 — Decisions**` | `**Part 1 — Frame**` | architecture/02, 07; theory/03 |
+| `**Part 1 — Decisions**` | `**Part 4 — Validate**` | theory/05 |
+| `**Foundations**` | `**Part 1 — Frame**` | theory/02 |
+| `**Foundations**` | `**Foreword**` | theory/08 |
+| `**Working Practice**` | `**Part 2 — Specify**` | theory/07 |
+| `**Specification**` | `**Part 2 — Specify**` | sdd/01–07 (7 chapters) |
+| `**Part 2 — The Spec**` | `**Part 2 — Specify**` | sdd/08 |
+| `**Agents**` | `**Part 3 — Delegate**` | agents/01–06 (6 chapters) |
+| `**Part 3 — The Agent**` | `**Part 3 — Delegate**` | agents/08, 09 |
+
+### Why MAJOR-rc
+
+Continues the v2.0.0 MAJOR line. The voice pass is the v2.0.0 commitment that addressed the most-cited reader complaint about v1.x — *"boring, declarative not narrative"* — by introducing vignette-before-exposition openings on new chapters. rc8 retroactively applies the same voice to the older chapters that hadn't had the pass. The chapter-subtitle alignment is also v2.0.0-structural — it brings the in-chapter Part markers into agreement with the SUMMARY structure that v2.0.0 reshaped. The version stays in the rc-line because the file-path renames and the reading-paths appendix are still pending.
+
+### Deferred (unchanged from rc7's plan, plus one more)
+
+- File-path renames (`architecture/` → `frame/`, etc.)
+- Vignettes on the remaining v1.x chapters (PR-G covered the highest-impact 4; ~10 more conceptual chapters could benefit from the same pass) — folded into PR-H if needed
+- Light Evolve-framing intros for the 4 remaining operating/* chapters in Part 5 (10, 12, 13, 14) — same comment
+- Reading paths appendix + final v2.0.0 release tag — PR-J
+- (Possibly) elevating the team-proposed *citation theater* anti-pattern from S3's Evolve chapter to the framework's catalog as a 12th anti-pattern — pending repository discussion
+
+### PRs
+
+- **PR-G** (this rc) — vignettes on 4 Frame conceptual chapters, Evolve-framing intros on 5 Part 5 operating chapters, ~25 chapter-subtitle alignments, version markers, paper PDF rebuild.
+
+---
+
 ## v2.0.0-rc7 — 2026-05-10
 
 **MAJOR (release candidate, continues v2.0.0 line)** — ships **Scenario 3 (internal docs Q&A, DevSquad-built) end-to-end** across all five activities, completing the three-scenario commitment v2.0.0 introduced at rc1. Five chapters (~10K words total). Framework load-bearing commitments unchanged from rc6.

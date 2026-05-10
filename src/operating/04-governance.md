@@ -1,10 +1,14 @@
 # Proportional Governance
 
-**Governance & Architecture**
+**Part 5 — Evolve**
 
 ---
 
 > *"Every governance failure has the same root cause: the control was in the wrong place at the wrong time. Bureaucracy controls everything moderately. Good governance controls the right things exactly."*
+
+---
+
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. Governance is the role-and-responsibility frame that makes the [closed loop](../evolve/01-closed-loop.md) survive contact with a real organization; without it, the loop runs as a per-incident discipline only and stops at the team boundary. The chapter develops what *proportional* means structurally — control concentrated where consequence is concentrated — and how that shape composes with the per-system Discipline-Health Audit and the cross-team Adoption Playbook.*
 
 ---
 
