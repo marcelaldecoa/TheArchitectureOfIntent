@@ -18,6 +18,25 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v1.2.0 — 2026-05-10
+
+**MINOR** — adds the *What Changes for the Senior Engineer* chapter (theory/08) without changing any load-bearing commitment.
+
+### Added
+
+- **[What Changes for the Senior Engineer](src/theory/08-what-changes-for-senior-engineers.md)** — a new Foundations chapter at the end of Part 1 that responds to the question the [Prologue](src/prologue.md) raises but never resolves: *if late-judgment compensation was the senior engineer's value-add, what is the value-add now?* The chapter names where the judgment goes (Frame, Specify, Bind Patterns, Skeptic, Validate); names what is honestly lost (the flow state of late-judgment debugging, tribal knowledge as a moat, pure-implementation seniority, the practitioners who will not make the transition); names what is gained (authorship that compounds, durable artifacts, leverage across teams, a different kind of seniority); and names the career-ladder gap explicitly.
+- New *"I'm a senior engineer wondering what this all means for me"* By-Problem entry in the Pattern Index, pointing at the Prologue, the new chapter, the IDS, and the RACI Card.
+
+### Why this is MINOR, not MAJOR
+
+The chapter extends the framework's vocabulary about *practitioner experience* without changing any load-bearing commitment: the five archetypes, four dimensions, seven Cats, four oversight models, four signal metrics, four canvas activities, and composition-first-class are unchanged. The deck/paper sync check is unaffected. No paper changes (the paper does not currently address the senior-engineer angle; that may become a future paper-side addition).
+
+### PRs
+
+- **#50** — Add *What Changes for the Senior Engineer* chapter (theory/08)
+
+---
+
 ## v1.1.0 — 2026-05-10
 
 **MINOR** — adds the Roles & Responsibilities (RACI) Card appendix without changing any load-bearing commitment.

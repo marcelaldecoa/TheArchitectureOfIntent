@@ -27,6 +27,7 @@
 - [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
 - [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
 - [The Intent Design Session](theory/07-intent-design-session.md)
+- [What Changes for the Senior Engineer](theory/08-what-changes-for-senior-engineers.md)
 
 ---
 
