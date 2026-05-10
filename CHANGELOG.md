@@ -18,6 +18,59 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0-rc5 — 2026-05-10
+
+**MAJOR (release candidate, continues v2.0.0 line)** — adds **paper §5**, a paper-grade end-to-end walkthrough of the customer-support pilot drawing on the rc4 book material, plus the section renumbering it requires. Closes the rc1 commitment that the paper acquires its own worked walkthrough as a complement to §4's agent-class deep-dives. Framework load-bearing commitments are unchanged from rc4.
+
+### Added
+
+- **Paper §5: Walking a pilot end-to-end: the customer-support agent.** Six subsections — 5.1 Frame, 5.2 Specify, 5.3 Delegate, 5.4 Validate, 5.5 Evolve, 5.6 What the walkthrough demonstrates. Roughly 4,000 words; condenses the ~10,000-word rc4 book scenario into a paper-grade narrative without losing the structural specifics (asymmetric Reversibility commitment, Composition Declaration sub-block, Cost Posture sub-block with the Sonnet 4.6→4.7 cost incident at day 47, Cat-by-Cat distribution of the 11 amendments, Output Gate→Periodic transition at day 44, Discipline-Health Audit findings at day 90, Haiku-fallback deprecation decision based on operational evidence). Voice is paper-academic — anonymous team roles rather than named individuals — while preserving the load-bearing operational details.
+
+### Changed (renumbering)
+
+The new §5 inserts after the existing §4 (Worked application: AI agent systems), shifting downstream sections:
+- Old §5 Discussion → **new §6 Discussion**
+- Old §6 Limitations → **new §7 Limitations**
+- Old §7 Conclusion → **new §8 Conclusion**
+
+Cross-references updated throughout the paper:
+- §1.3 (Contribution) — now refers to §7 for limitations enumeration; mentions §5 as the existence-proof walkthrough
+- §1.4 (Paper structure) — fully rewritten to describe §5 + the renumbered §6/§7/§8
+- §2.4 (MAST relation) — `§5.3` → `§6.3`
+- §3.5 (closing summary of §3) — fully rewritten to mention §5/§6/§7
+- §6.5 (What this paper does not claim) — `§6 enumerates` → `§7 enumerates`
+- §7 (Limitations) — `§5.4` reference → `§6.4`; the *no-empirical-validation* bullet rewritten to acknowledge that paper §5 walks one of the three book scenarios as an existence proof
+- §8 (Conclusion) — closing paragraph rewritten to mention §5 alongside §4 and §6.4
+- Appendix A (Mapping to the book) — new row added for §5 (pointing at the five book "in practice — Customer-support agent" chapters and the Closed Loop chapter); existing rows for §6 Discussion and §7 Limitations renumbered
+
+### Updated
+
+- Version markers advanced from **v2.0.0-rc4** to **v2.0.0-rc5** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+- `paper/architecture-of-intent.pdf` recompiled with the new §5 and the renumbering. The PDF page count grows by ~6 pages (paper word count from ~16,100 to ~20,200).
+
+### Voice
+
+§5 opens directly with the operational setting (the e-commerce SaaS, the volume, the team shape, the deployment target) without the book's vignette form — the paper voice is more academic. The structural specifics are preserved verbatim: the asymmetric Reversibility argument, the Guardian wrapper logic, the day-47 Cost Posture incident's measurement-based decision, the day-51 review-handoff failure with the *"approve message"* misinterpretation, the day-90 Discipline-Health Audit findings (active prompt-patch drift, early signs of metrics theater). The paper makes the case that one worked pilot is an existence proof of the discipline, not a statistical validation; quantitative validation across many independent deployments remains future work (§7).
+
+### Why MAJOR-rc
+
+Continues the v2.0.0 MAJOR line because §5 is structural to the paper — it changes the section count, the cross-reference graph, and the limitations bullet that previously said *"the book provides three worked examples; the paper provides none."* External readers of v2.0.0-rc4 paper PDFs would find the rc5 paper substantially different (one entire new section, six subsections, ~4K new words). The version stays in the rc-line because Scenarios 2 and 3 are still pending, the file-path renames are still pending, and the voice rewrites for older book chapters are still pending.
+
+### Deferred (unchanged from rc4's plan)
+
+- File-path renames (`architecture/` → `frame/`, etc.)
+- Scenario 2 (coding-agent pipeline) end-to-end — PR-E
+- Scenario 3 (internal docs Q&A, DevSquad) end-to-end — PR-F
+- Voice rewrites for older chapters — PR-G, PR-H, PR-I
+- Light Evolve-framing intros for the 9 existing `operating/*` chapters in Part 5 — folded into PR-G
+- Reading paths appendix + final v2.0.0 release tag — PR-J
+
+### PRs
+
+- **PR-D** (this rc) — paper §5, section renumbering, cross-reference updates, version markers, paper PDF rebuild.
+
+---
+
 ## v2.0.0-rc4 — 2026-05-10
 
 **MAJOR (release candidate, continues v2.0.0 line)** — ships **Scenario 1 (the customer-support agent) end-to-end** across all five activities. Five chapters (~10K words total) replace the rc1 stubs with full prose; the running-scenario tour at the end of `evolve/01-closed-loop.md` now resolves to substantive content rather than placeholders. Framework load-bearing commitments unchanged from rc3.
