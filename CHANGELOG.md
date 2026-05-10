@@ -18,6 +18,52 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.1 — 2026-05-10
+
+**PATCH** — voice-pass round 2 and Part-framing-intro completion on top of v2.0.0 stable. Adds vignette-before-exposition openings to four high-prominence conceptual chapters that didn't get the v2.0.0 voice pass, and Part-framing intros to eight operating chapters that didn't get them in v2.0.0. No load-bearing framework changes.
+
+### Added — vignettes
+
+Four conceptual chapters get a short scene before the existing Context section:
+
+- **`src/theory/05-failure-as-design-signal.md`** — opens on a Wednesday-morning post-incident review where the team's first reaction is *"the model hallucinated"* and the on-call engineer reframes: *"the model didn't hallucinate. The trace shows the model emitted the right tool call. The Guardian wrap wasn't bound on this code path."* Also fixes the chapter's outdated *"This chapter sits in Decisions"* note (now correctly Part 4 — Validate).
+- **`src/theory/07-intent-design-session.md`** — opens on 9 AM Monday, the team about to skip the IDS and start typing the spec, the tech lead stopping them: *"We're skipping a step. Read the framework, write the spec — that's the failure pattern Part 1 named. We need the session in between."*
+- **`src/sdd/07-canonical-spec-template.md`** — opens on a team finishing Frame, the cursor sitting at §1 of an empty 12-section template, the question *"where do I start?"* The chapter then names the structural-commitments-first answer.
+- **`src/agents/06-human-oversight-models.md`** — opens on a team in Frame disputing autonomy, until they realize the autonomy debate is actually an oversight debate — and oversight has four named models, not a sliding scale.
+
+### Added — Part-framing intros
+
+Eight operating chapters get a short *Where this sits in v2.0.0* paragraph after the epigraph, anchoring them in their activity:
+
+**Part 4 — Validate:**
+- **`src/operating/05-reviewing-intent.md`** — intent review as the upstream complement to the closed loop
+- **`src/operating/06-metrics.md`** — the four signal metrics across three time-scales
+- **`src/operating/07-evals-and-benchmarks.md`** — evals as the spec-conformance discipline; cross-references the running scenarios
+- **`src/operating/08-red-team-protocol.md`** — red-team as the validation surface the eval suite doesn't cover
+
+**Part 5 — Evolve:**
+- **`src/operating/10-production-telemetry.md`** — telemetry as the trace surface the closed loop requires
+- **`src/operating/12-devsquad-mapping.md`** — vocabulary-grain version of the AoI ↔ DevSquad mapping; cross-references Scenario 3
+- **`src/operating/13-co-adoption-with-devsquad.md`** — co-adoption recommendation; cross-references Scenario 3
+- **`src/operating/14-cacheable-prompt-architecture.md`** — caching as the prompt-stability invariant for §4 Cost Posture; cross-references Scenario 1's day-47 incident
+
+### Updated
+
+- Version markers advanced from **v2.0.0** to **v2.0.1** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+- `paper/architecture-of-intent.pdf` recompiled with the v2.0.1 status header.
+
+### Why PATCH, not MINOR
+
+This is a prose-and-orientation refinement: vignettes and Part-framing intros that surface what's already in the chapters more legibly. The framework's load-bearing commitments are unchanged; existing v2.0.0 specs continue to validate against the same vocabulary. PATCH is the right shape per the versioning convention.
+
+### Deferred (unchanged from v2.0.0's plan)
+
+- File-path renames (`architecture/` → `frame/`, etc.)
+- Vignettes on the remaining v1.x chapters (~6 conceptual chapters across `sdd/01–06`, `agents/01–05`, `architecture/03/04/06/07` could still benefit; this rc covered the highest-prominence remaining 4)
+- Elevating S3's team-proposed *citation theater* anti-pattern to the framework's catalog as a 12th anti-pattern — would be a v2.1 MINOR addition; queued as the next release after v2.0.1
+
+---
+
 ## v2.0.0 — 2026-05-10
 
 **MAJOR (stable)** — graduates the v2.0.0 release-candidate series (rc1–rc8) to stable. Adds the *Reading Paths* appendix as the navigation aid for readers picking their entry point, and bumps version markers from `v2.0.0-rc8` to `v2.0.0`. No load-bearing framework changes from rc8; this is the publication of the v2.0 line.

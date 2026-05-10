@@ -8,6 +8,10 @@
 
 ---
 
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The co-adoption recommendation is for teams already running DevSquad: the framework's archetype taxonomy, four-dimension calibration, and seven-Cat fix-locus failure analysis are the additions that give the most leverage on top of DevSquad's process scaffolding. [Scenario 3](../frame/scenarios/docs-qa.md) demonstrates the composition end-to-end across all five activities of the AoI cycle paired with the eight phases of the DevSquad cycle.*
+
+---
+
 ## Context
 
 Microsoft's [DevSquad Copilot](https://github.com/microsoft/devsquad-copilot) and this book are *parallel works*: independent frameworks that arrive at substantially overlapping conclusions through different lenses. DevSquad gives a delivery cadence (the 8-phase iterative cycle); this book gives a design vocabulary (archetypes, dimensions, failure taxonomy, security/eval/telemetry stacks). They compose cleanly — the convergence on living specs, risk-tiered HITL, principle of least privilege, context isolation, and spec-first failure response is independent rediscovery of what falls out of taking specs and risk seriously when agents are involved.

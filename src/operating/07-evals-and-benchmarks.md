@@ -8,6 +8,10 @@
 
 ---
 
+> *Where this sits in v2.0.0: this chapter is part of **Part 4 — Validate**. Evals are what turn the spec's §9 acceptance criteria into a repeatable measurement; the spec-conformance discipline is what gives the eval its shape. Pair with [Spec Conformance Testing](../patterns/testing/spec-conformance.md) and [Adversarial Input Test](../patterns/testing/adversarial-input.md) for the pattern-level instantiation. The three running scenarios show eval suites in operation — first runs landing below threshold, post-amendment landing above; the cycle is the discipline working.*
+
+---
+
 ## Context
 
 You have a spec, an agent, an oversight model, deployment plan, and four signal metrics. The remaining question is the empirical one: *how do you know the agent is actually doing what the spec says?*

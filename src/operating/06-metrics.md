@@ -8,6 +8,10 @@
 
 ---
 
+> *Where this sits in v2.0.0: this chapter is part of **Part 4 — Validate**. The four signal metrics — spec-gap rate, first-pass validation, cost per correct outcome, oversight load — are how the team knows the system is healthy in operation. They feed the [closed loop](../evolve/01-closed-loop.md) at three time-scales: per-incident (an alert fires), per-sprint (the team rolls up the trajectory), per-quarter (the [Discipline-Health Audit](15-anti-patterns.md) reviews the metrics' attention against the *metrics theater* anti-pattern). The three running scenarios all instantiate these four metrics with target trajectories.*
+
+---
+
 ## Context
 
 When agent-augmented development enters an organization, the instinct is to measure what is visible. Lines of code generated. Agent runs per day. Pull requests merged. Time-to-first-output. These are easy to count because they are produced as a side effect of normal operations.

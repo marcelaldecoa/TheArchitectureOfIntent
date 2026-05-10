@@ -118,7 +118,7 @@ TheArchitectureOfIntent/
 
 ## Framework version
 
-The framework is at **v2.0.0** as of 2026-05-10. The book and the companion paper move together: a change to a load-bearing commitment (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the **five** activities, composition as a first-class design surface) bumps the framework version. See [`CHANGELOG.md`](CHANGELOG.md) for the versioning convention and the release history.
+The framework is at **v2.0.1** as of 2026-05-10. The book and the companion paper move together: a change to a load-bearing commitment (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the **five** activities, composition as a first-class design surface) bumps the framework version. See [`CHANGELOG.md`](CHANGELOG.md) for the versioning convention and the release history.
 
 ## Status
 

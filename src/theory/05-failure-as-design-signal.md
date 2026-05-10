@@ -10,11 +10,15 @@
 
 ## Context
 
+Wednesday morning, post-incident review. The agent issued a refund without checking the cap. The room's first reaction is uniform: *"the model hallucinated."* The on-call engineer pulls up the trace and stops the conversation: *"the model didn't hallucinate. The trace shows the model emitted the right tool call. The Guardian wrap wasn't bound on this code path."* The failure was in the manifest, not the model; in the architecture, not the agent.
+
+That moment — *re-attribution* from "the AI is broken" to "our architecture is broken" — is what this chapter exists to teach. The instinct to attribute failure to the model is strong, comfortable, and almost always wrong in the way that matters; correctly diagnosing the failure determines whether the fix is *wait for the next model* (stuck) or *amend the spec / tighten the manifest / add a CI guard* (actionable now).
+
 Your system has produced a wrong outcome. An agent did something incorrect, harmful, or off-target. The instinct is to fix the immediate symptom and move on.
 
 Don't. Every failure in an agent-mediated system carries diagnostic information that, read correctly, prevents a class of future failures. The discipline is: categorize first, fix at the right level, and capture the lesson in a versioned artifact.
 
-This chapter sits in *Decisions* deliberately. You read it before your pilot runs, not after. Knowing the failure taxonomy in advance is how you anticipate where to put oversight, what constraints to add to the spec, and what to log.
+This chapter sits in **Part 4 — Validate** because failure diagnosis is the validation activity in operation. You read it before your pilot runs, not after — knowing the failure taxonomy in advance is how you anticipate where to put oversight, what constraints to add to the spec, and what to log. You return to it during Validate, when actual failures need categorizing.
 
 ---
 

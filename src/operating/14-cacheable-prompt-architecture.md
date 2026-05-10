@@ -8,6 +8,10 @@
 
 ---
 
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. Cacheable prompt architecture is what makes the [Cost Posture](../sdd/07-canonical-spec-template.md) sub-block's prompt-stability invariant operationally achievable at scale. The §4 Cost Posture commitment names the cache-hit-rate target; this chapter is how teams build prompts to actually hit it. The customer-support scenario's [Cost Posture incident at day 47](../evolve/scenarios/customer-support.md) demonstrates what happens when caching architecture and model-tier rotation interact under production pressure.*
+
+---
+
 ## Context
 
 [Cost and Latency Engineering](09-cost-and-latency.md) describes prompt caching as one of several cost levers. This chapter goes deeper on the *architectural* consequences of taking caching seriously, because for any agent system running 100+ tasks per day in 2026, caching is not optional and not separable from prompt design.

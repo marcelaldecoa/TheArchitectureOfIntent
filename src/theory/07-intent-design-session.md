@@ -10,6 +10,10 @@
 
 ## Context
 
+9 AM Monday. The team has the framework's vocabulary, has read the book, has agreed they need to ship a new agent next quarter. Someone opens a doc and starts typing the spec. The tech lead stops them: *"We're skipping a step. Read the framework, write the spec — that's the failure pattern Part 1 named. We need the session in between."* They book a 4-hour conference room for Wednesday and put the spec doc away.
+
+What gets skipped, when teams skip it, is the working session that turns the framework's vocabulary into a calibrated commitment for *one specific system*. The session is what bridges the abstract framework and the concrete spec. Without it, the spec is written against an implicit shape the team never agreed on, which is the most-common source of *"this system grew into something we didn't intend"* a quarter later.
+
 You have read Part 1. You understand archetypes, dimensions, failure modes, intent versus implementation. You have seen the canvas in the [Introduction](../introduction.md#the-framework-on-one-page). You know what a spec looks like (Part 2) and roughly which patterns exist (Parts 3–4). What you do not yet have is a *ritual* that puts these pieces together for one specific system you are about to build.
 
 This chapter gives you the ritual.
