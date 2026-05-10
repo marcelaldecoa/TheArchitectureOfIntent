@@ -37,6 +37,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Intent vs. Implementation](../theory/02-intent-vs-implementation.md) | When something goes wrong, was the spec wrong, or did the agent fail to execute it? |
 | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) | What are the seven failure categories, and how do you diagnose them? |
 | [The Intent Design Session](../theory/07-intent-design-session.md) | What is the time-boxed working ritual that turns the framework into a session a team can run? |
+| [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md) | If late judgment was the senior engineer's value-add, what is the value-add now? |
 
 ---
 
@@ -347,6 +348,12 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [The framework on one page](../introduction.md#the-framework-on-one-page) — the canvas summary
 - [A Miniature Pilot, End-to-End](../miniature-pilot.md) — the canvas applied to one concrete pilot
 - [Honest scope: what this book is, and what it isn't](../introduction.md#honest-scope-what-this-book-is-and-what-it-isnt) — what the framework does not promise
+
+### "I'm a senior engineer wondering what this all means for me"
+- [Prologue: What Changed and What's at Stake](../prologue.md) — the framing
+- [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md) — where late judgment goes, what is honestly lost, what is gained, and the career-ladder gap
+- [The Intent Design Session](../theory/07-intent-design-session.md) — the operational ritual where the upstream-judgment work actually lands
+- [Roles & Responsibilities (RACI) Card](raci-card.md) — which of the seven canonical roles best matches your actual leverage
 
 ### "My team has been using the framework for a while and something feels off"
 - [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the 11-anti-pattern catalog and the quarterly discipline-health audit
