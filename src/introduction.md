@@ -19,11 +19,36 @@ This book is the discipline that addresses that gap. It is a field guide for the
 
 ---
 
+## What is the Architecture of Intent?
+
+**The Architecture of Intent** is the discipline of designing intent — what a delegated system is supposed to do, what it must never do, and how we will know it is working — so that a non-human executor can act on it reliably and a human can validate the action accurately.
+
+Three questions every delegated system has to answer:
+
+1. *What is this system trying to achieve?*
+2. *Within what constraints?*
+3. *How will we know it is working?*
+
+Four activities answer them:
+
+- **Frame.** Commit to an archetype (Advisor, Executor, Guardian, Synthesizer, or Orchestrator) and to a calibration of the four dimensions — agency, autonomy, responsibility, reversibility — *before any spec is written*. The category is the strongest single predictor of how the system will behave under stress; choosing it deliberately costs an hour and saves a quarter.
+- **Specify.** Write the artifact the agent executes against and humans review against. Twelve canonical sections; each section operationalizes one of the four dimensions. The spec is not a requirements document for humans, not a design document for developers — it is an operating instruction for machines that humans can audit.
+- **Delegate.** Bind cross-cutting patterns (capability, integration, coordination, safety, observability, testing, state, deployment) by what the spec implies, not by what the team likes building. Pick one of four oversight models — Monitoring, Periodic, Output Gate, or Pre-authorized — proportional to autonomy and reversibility.
+- **Validate.** Track four signal metrics. When something fails, diagnose by *fix locus* — which artifact upstream needs to change — across seven failure categories. The diagnosis closes the loop back to the next intent.
+
+Three properties make this an *architecture* rather than an *art*:
+
+- **Intent is a designed artifact.** Distinct from *implementation* (what the executor produces), distinct from *requirements* (what stakeholders ask for), distinct from *policy* (what the organization or law requires across all systems). The author of the spec is the author of the system that executes it.
+- **Fixes live in structure, not in prompts.** When a spec gap surfaces as a wrong agent action, the durable response amends the spec, the manifest, the oversight model, or the CI guard. A patch in the prompt layer does not compound across teams or runs; a change in the structural layer does. This is the load-bearing discipline of the framework: *structural fixes live in spec, manifest, CI, or platform — never only in the prompt.*
+- **Calibration is deliberate.** Each system commits to specific levels of agency and autonomy within its archetype's envelope, rather than getting as much of either as the model technically allows. The framework's worked claim is that the four calibration dimensions are *orthogonal* — independently controllable — and that collapsing them into a single "automation level" loses design space practitioners need.
+
+The framework's primary worked instance is AI agent systems, which are the most-acute current case of delegation. The book defaults to that frame. The same vocabulary — archetypes, dimensions, fix-locus failure categories, signal metrics — applies to other delegated systems too: automated pipelines, organizational delegation, regulated workflows. The book notes generalizations where they hold and stops short of claiming them where they don't.
+
+---
+
 ## The framework on one page
 
-Every delegated system, AI agent or otherwise, has to answer three questions: *what is it trying to achieve, within what constraints, and how will we know it's working?* The discipline of answering them well is what this book calls **the Architecture of Intent**. It has four activities — **Frame · Specify · Delegate · Validate** — and each activity binds a specific set of load-bearing constructs.
-
-The canvas below is the whole framework on one page. Every numbered list this book introduces — five archetypes, four calibration dimensions, twelve spec sections, eight pattern categories, four oversight models, seven failure categories, four signal metrics — appears here, in the activity row where it does work. The rest of the book elaborates this picture; when you get lost, return here.
+The four activities and every load-bearing list in the framework — five archetypes, four calibration dimensions, twelve spec sections, eight pattern categories, four oversight models, seven failure categories, four signal metrics — fit on a single page. The canvas below is that page, with each construct in the activity row where it does work. The rest of the book elaborates this picture; when you get lost, return here.
 
 ![The Architecture of Intent on One Page. Three questions every delegated system answers (top); four activities that work them out — Frame, Specify, Delegate, Validate; the load-bearing constructs each activity binds; and the four signal metrics on the right rail that close the loop back to the next intent.](images/architecture-of-intent-canvas.png)
 
