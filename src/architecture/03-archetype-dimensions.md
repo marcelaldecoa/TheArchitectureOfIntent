@@ -1,6 +1,6 @@
 # Four Dimensions of Governance
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 

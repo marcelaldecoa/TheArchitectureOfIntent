@@ -1,10 +1,14 @@
 # Signs Your Architecture of Intent Is Degrading
 
-**Operating Practice**
+**Part 5 — Evolve**
 
 ---
 
 > *"The discipline is not the spec, the canvas, or the design session. The discipline is the daily refusal to skip them."*
+
+---
+
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The Discipline-Health Audit is the per-quarter cadence that catches loop decay before it becomes terminal; the audit's instrument is the eleven-anti-pattern catalog this chapter develops. The audit fires on each system the team operates, on a calendar (not on incident-driven) cadence, and produces a one-paragraph verdict per anti-pattern. The three running scenarios in v2.0.0 each include an audit at day 90 — see the customer-support, coding-pipeline, and docs-qa Evolve chapters for worked examples.*
 
 ---
 

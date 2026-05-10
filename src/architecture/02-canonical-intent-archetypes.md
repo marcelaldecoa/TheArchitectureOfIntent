@@ -1,6 +1,6 @@
 # Pick an Archetype
 
-**Part 1 — Decisions**
+**Part 1 — Frame**
 
 ---
 
@@ -9,6 +9,8 @@
 ---
 
 ## Context
+
+A team in a Frame session, 30 minutes in. The whiteboard has the system's three questions answered. The product manager is impatient — they want to start naming features. The tech lead writes one word at the top of the board: **ARCHETYPE**. *"We pick this first. Everything else writes itself once we commit."* The product manager pushes back: *"can't we just start specifying and figure out the shape as we go?"* The tech lead's answer is no. Picking the shape *after* the spec means the spec was written against an implicit shape that the team never agreed on, which is the most-common source of the *"this system grew into something we didn't intend"* failure pattern.
 
 This is the first decision of the pilot. Before any spec is written, before any agent is configured, before any tool is wired up — you commit to a category for the system you're about to build.
 

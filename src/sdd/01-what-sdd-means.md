@@ -1,6 +1,6 @@
 # Spec-Driven Development
 
-**Specification**
+**Part 2 — Specify**
 
 ---
 

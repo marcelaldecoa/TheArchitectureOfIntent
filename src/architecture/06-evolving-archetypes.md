@@ -1,6 +1,6 @@
 # Governed Archetype Evolution
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 

@@ -1,6 +1,6 @@
 # Proportional Oversight
 
-**Agents**
+**Part 3 — Delegate**
 
 ---
 

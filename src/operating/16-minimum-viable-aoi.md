@@ -1,10 +1,14 @@
 # Minimum Viable Architecture of Intent
 
-**Operating Practice**
+**Part 5 — Evolve**
 
 ---
 
 > *"The smallest version of the discipline that still does work. Below this floor is not adoption; it is just deployment."*
+
+---
+
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. MVP-AoI is the [closed loop](../evolve/01-closed-loop.md) in compressed form for systems too small for the full discipline; the discipline travels down-scale, not just across-scale. The MVP applies when the system is small across all five of audience, stakes, cohesion, scale, and diagnosability, and graduates to the full discipline when any of the five graduation triggers fire.*
 
 ---
 

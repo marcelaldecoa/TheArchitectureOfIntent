@@ -1,6 +1,6 @@
 # Least Capability
 
-**Agents**
+**Part 3 — Delegate**
 
 ---
 

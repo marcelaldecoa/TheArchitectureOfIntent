@@ -1,6 +1,6 @@
 # Computer-Use Agents
 
-**Part 3 — The Agent**
+**Part 3 — Delegate**
 
 ---
 

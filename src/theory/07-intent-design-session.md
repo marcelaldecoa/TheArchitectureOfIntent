@@ -1,6 +1,6 @@
 # The Intent Design Session
 
-**Working Practice**
+**Part 2 — Specify**
 
 ---
 

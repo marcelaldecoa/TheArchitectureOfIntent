@@ -1,6 +1,6 @@
 # Failure Modes and How to Diagnose Them
 
-**Part 1 — Decisions**
+**Part 4 — Validate**
 
 ---
 

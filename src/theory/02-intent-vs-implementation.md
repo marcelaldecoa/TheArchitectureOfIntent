@@ -1,6 +1,6 @@
 # The Intent–Implementation Boundary
 
-**Foundations**
+**Part 1 — Frame**
 
 ---
 
@@ -9,6 +9,10 @@
 ---
 
 ## Context
+
+Tuesday morning, sprint review. The engineering manager points at the dashboard: *"the agent's PR-merge-without-amendment rate dropped from 84% to 71% over the last week."* The team's first instinct is to look at the agent's recent commits — what code did it write that's not landing? Two engineers open the agent's last 30 PRs side-by-side. After 20 minutes, one of them looks up: *"the code is fine. The agent is doing exactly what the spec says. The spec is wrong about how cross-service refactors should be planned."*
+
+That moment — recognizing that the wrong-output is in the *spec*, not the *code* — is what this chapter is about. It is the most fundamental distinction in intent engineering, and the moment of recognition is harder to reach than it sounds because in traditional software development, the developer's own judgment was the bridge between the spec and the code, and that bridge made the distinction invisible.
 
 You are working in a spec-driven system and something has gone wrong. An agent produced incorrect behavior. A system does not satisfy its users. A test passes but the outcome is wrong. Before you can fix it, you need to diagnose it — and the most important diagnostic question is: **was the problem in the intent or in the implementation?**
 

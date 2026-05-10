@@ -1,6 +1,6 @@
 # The Living Spec
 
-**Specification**
+**Part 2 — Specify**
 
 ---
 

@@ -1,6 +1,6 @@
 # Multi-Agent Governance
 
-**Part 1 — Decisions**
+**Part 1 — Frame**
 
 ---
 

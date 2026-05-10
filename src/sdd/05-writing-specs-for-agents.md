@@ -1,6 +1,6 @@
 # Writing for Machine Execution
 
-**Specification**
+**Part 2 — Specify**
 
 ---
 

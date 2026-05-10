@@ -1,6 +1,6 @@
 # Intent Review Before Output Review
 
-**Governance & Architecture**
+**Part 4 — Validate**
 
 ---
 

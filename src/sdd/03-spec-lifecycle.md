@@ -1,6 +1,6 @@
 # Five Phases of the Spec
 
-**Specification**
+**Part 2 — Specify**
 
 ---
 
