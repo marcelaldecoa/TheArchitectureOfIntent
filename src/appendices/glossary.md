@@ -51,6 +51,9 @@ The act of making institutional knowledge, architectural decisions, and domain-s
 **Delegation**
 The act of transferring execution authority to an agent or automated system while retaining authorship and accountability. Delegation without constraints is abandonment. See [The Executor Model](../agents/03-agents-as-executors.md).
 
+**Discipline-Health Audit**
+A 60-minute, per-system, quarterly review that walks an opinionated catalog of *discipline anti-patterns* — spec theater, oversight kabuki, metrics theater, pattern inventory, calibration without commitment, prompt-patch drift, archetype drift, glossary by import, composition by accident, the retrofit IDS, the Adoption Playbook problem — and writes a one-paragraph verdict per anti-pattern (*not present*, *early signs*, or *active*). Distinguished from system-level failure diagnosis (the Cat 1–7 fix-locus taxonomy in [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)): the audit catalogs failure modes of the *discipline*, not of the systems built with it. See [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md).
+
 ---
 
 ## E

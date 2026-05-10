@@ -160,6 +160,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Cacheable Prompt Architecture](../operating/14-cacheable-prompt-architecture.md) | Prompt caching as architecture, not optimization: layered prompt structure, cache breakpoints, prompt-stability spec constraint, eval-time pre-warm, `cache_hit_rate` as first-class telemetry |
 | [Production Telemetry](../operating/10-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
 | [Adoption Playbook](../operating/11-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment; CI/CD wiring with hard-gate / soft-gate / observe tiers |
+| [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) | The 11-anti-pattern catalog of how the discipline itself decays — spec theater, oversight kabuki, metrics theater, prompt-patch drift, archetype drift, the retrofit IDS — and the quarterly discipline-health audit that surfaces them |
 | [Mapping the Framework to the DevSquad 8-Phase Cadence](../operating/12-devsquad-mapping.md) | Phase-by-phase mapping of the book's artifacts and disciplines into Microsoft DevSquad Copilot's 8-phase iterative cycle |
 | [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md) | The minimum additions from this book that give a DevSquad team the most leverage; vocabulary translation; 30-day co-adoption plan |
 
@@ -337,6 +338,12 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 - [The Living Spec](../sdd/06-living-specs.md)
 - The worked examples ([Customer Support](../examples/01-ai-customer-support/README.md), [Code Gen Pipeline](../examples/02-code-generation-pipeline/README.md), [Coding Agent](../examples/03-coding-agent/README.md))
+
+### "My team has been using the framework for a while and something feels off"
+- [Signs Your Architecture of Intent Is Degrading](../operating/15-anti-patterns.md) — the 11-anti-pattern catalog and the quarterly discipline-health audit
+- [The Living Spec](../sdd/06-living-specs.md) — is the spec evolution log accumulating entries?
+- [Four Signal Metrics](../operating/06-metrics.md) — is anyone actually looking at the metrics?
+- [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — has output review absorbed all the cost while spec review fell away?
 
 ### "My team already uses Microsoft DevSquad Copilot"
 - [Co-adoption with DevSquad Copilot](../operating/13-co-adoption-with-devsquad.md)
