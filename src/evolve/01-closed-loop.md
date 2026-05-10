@@ -1,6 +1,6 @@
 # The Closed Loop: From Failures to Spec Amendments
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -56,7 +56,7 @@ Four steps, executed per consequential failure:
 
 **1. Trace.** Every consequential action emits a structured trace — input, retrieved context, tool calls, outputs, oversight decisions, the spec version the agent was running against. Production telemetry is what makes diagnosis possible. Without traces, you have an after-the-fact narrative; with them, you have evidence. The [Production Telemetry](../evolve/10-production-telemetry.md) chapter names what to instrument.
 
-**2. Categorize.** Apply the diagnostic test from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md): *"If a perfectly competent agent had executed this spec exactly as written, would the outcome have been correct?"* The answer determines the category:
+**2. Categorize.** Apply the diagnostic test from [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md): *"If a perfectly competent agent had executed this spec exactly as written, would the outcome have been correct?"* The answer determines the category:
 
 | Answer | Category | What it means |
 |---|---|---|
@@ -143,7 +143,7 @@ Read at least one end-to-end before adopting the loop in your team. The vocabula
 
 ## Related material
 
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) — the seven Cats and the diagnostic test
 - [The Living Spec](../specify/06-living-specs.md) — the artifact the loop updates
 - [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — the review discipline that surfaces Cat 1s
 - [Spec Versioning](../patterns/deployment/spec-versioning.md) — the deployment pattern for amended specs

@@ -1,6 +1,6 @@
 # Proportional Governance
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. Governance is the role-and-responsibility frame that makes the [closed loop](../evolve/01-closed-loop.md) survive contact with a real organization; without it, the loop runs as a per-incident discipline only and stops at the team boundary. The chapter develops what *proportional* means structurally — control concentrated where consequence is concentrated — and how that shape composes with the per-system Discipline-Health Audit and the cross-team Adoption Playbook.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. Governance is the role-and-responsibility frame that makes the [closed loop](../evolve/01-closed-loop.md) survive contact with a real organization; without it, the loop runs as a per-incident discipline only and stops at the team boundary. The chapter develops what *proportional* means structurally — control concentrated where consequence is concentrated — and how that shape composes with the per-system Discipline-Health Audit and the cross-team Adoption Playbook.*
 
 ---
 

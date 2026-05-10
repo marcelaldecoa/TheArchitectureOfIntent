@@ -89,4 +89,4 @@ If Tier 1 had checked "Amount <= $300?", it would escalate to Tier 2: Human spec
 - [Conditional Routing](conditional-routing.md) — routing directs requests to the right agent initially; escalation handles cases where the initial agent was insufficient
 - [Human-in-the-Loop Gate](human-gate.md) — escalation to a human follows the same structured handoff pattern
 - [Proportional Oversight](../../delegate/06-human-oversight-models.md) — escalation is the oversight mechanism for exception cases
-- [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md) — escalation is the appropriate response when the failure exceeds the agent's correction capability
+- [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md) — escalation is the appropriate response when the failure exceeds the agent's correction capability

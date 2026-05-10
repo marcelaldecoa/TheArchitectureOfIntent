@@ -1,6 +1,6 @@
-# Evolve in practice — Coding-agent pipeline
+# Evolve & Operate in practice — Coding-agent pipeline
 
-**Part 5 · EVOLVE · Scenario 2 of 3**
+**Part 5 · EVOLVE & OPERATE · Scenario 2 of 3**
 
 ---
 

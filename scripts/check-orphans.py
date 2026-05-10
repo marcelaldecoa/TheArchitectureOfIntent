@@ -19,13 +19,21 @@ REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 SRC_ROOT = os.path.join(REPO_ROOT, "src")
 SUMMARY_PATH = os.path.join(SRC_ROOT, "SUMMARY.md")
 
+# Directories whose Markdown files are intentionally not in SUMMARY.md.
+# These files are reachable through appendix pages (e.g. the Legacy v1.x
+# Worked Pilots Archive) and are kept as a v1.x → v2.0 comparison artifact.
+IGNORED_PREFIXES = ("examples/",)
+
 
 def main() -> int:
     all_md: set[str] = set()
     for dirpath, _, files in os.walk(SRC_ROOT):
         for f in files:
             if f.endswith(".md") and f != "SUMMARY.md":
-                all_md.add(os.path.relpath(os.path.join(dirpath, f), SRC_ROOT))
+                rel = os.path.relpath(os.path.join(dirpath, f), SRC_ROOT)
+                if rel.startswith(IGNORED_PREFIXES):
+                    continue
+                all_md.add(rel)
 
     summary_text = open(SUMMARY_PATH).read()
     listed: set[str] = set(

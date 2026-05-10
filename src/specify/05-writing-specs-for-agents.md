@@ -199,7 +199,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [Spec-Driven Development](01-what-sdd-means.md)
 - [The Spec as Control Surface](02-specs-as-control-surfaces.md)
-- [The Intent-Implementation Boundary](../theory/02-intent-vs-implementation.md)
+- [The Intent-Implementation Boundary](../foundations/02-intent-vs-implementation.md)
 
 **This pattern enables:**
 - [The Canonical Spec Template](07-canonical-spec-template.md) — every section in the template was designed for this reading audience

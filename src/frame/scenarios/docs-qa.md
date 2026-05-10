@@ -164,7 +164,7 @@ Maya's note at the kickoff: *"the docs-gap-finding metric is what makes this sce
 | 2. Specify | [Specify in practice — Internal docs Q&A](../../specify/scenarios/docs-qa.md) |
 | 3. Delegate | [Delegate in practice — Internal docs Q&A](../../delegate/scenarios/docs-qa.md) |
 | 4. Validate | [Validate in practice — Internal docs Q&A](../../validate/scenarios/docs-qa.md) |
-| 5. Evolve | [Evolve in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
+| 5. Evolve | [Evolve & Operate in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
 
 ## Conceptual chapters this scenario binds to
 

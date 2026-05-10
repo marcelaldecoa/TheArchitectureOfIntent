@@ -146,14 +146,14 @@ This artifact is the input to [Specify in practice — Coding-agent pipeline](..
 | 2. Specify | [Specify in practice — Coding-agent pipeline](../../specify/scenarios/coding-pipeline.md) |
 | 3. Delegate | [Delegate in practice — Coding-agent pipeline](../../delegate/scenarios/coding-pipeline.md) |
 | 4. Validate | [Validate in practice — Coding-agent pipeline](../../validate/scenarios/coding-pipeline.md) |
-| 5. Evolve | [Evolve in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
+| 5. Evolve | [Evolve & Operate in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
 
 ## Conceptual chapters this scenario binds to
 
 - [Pick an Archetype](../../frame/02-canonical-intent-archetypes.md) — Executor with mode-switching
 - [Composing Archetypes](../../frame/05-composing-archetypes.md) — Pattern E (mode-switching)
 - [Coding Agents](../../delegate/08-coding-agents.md) — the agent class
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md)
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../foundations/03-agency-autonomy-responsibility.md)
 
 ## Source material
 

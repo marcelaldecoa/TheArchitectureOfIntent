@@ -115,13 +115,13 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [Introduction](../introduction.md) — the discipline of intent engineering
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Intent vs. Implementation](../foundations/02-intent-vs-implementation.md)
 - [Pick an Archetype](../frame/02-canonical-intent-archetypes.md)
 
 **This pattern enables:**
 - [Autonomy Without Agency](02-autonomy-vs-agency.md)
 - [The Executor Model](03-agents-as-executors.md)
 - [Proportional Oversight](06-human-oversight-models.md)
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
 
 ---

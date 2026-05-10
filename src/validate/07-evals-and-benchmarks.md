@@ -161,10 +161,10 @@ Used carelessly, they are circular: a judge built on the same base model as the 
 
 ### Connecting evals to the spec gap log
 
-Every failing eval — at any of the four levels — is a candidate Spec Gap Log entry, and every entry should be tagged with a fix-locus from the [seven failure categories](../theory/05-failure-as-design-signal.md). The connection is mechanical:
+Every failing eval — at any of the four levels — is a candidate Spec Gap Log entry, and every entry should be tagged with a fix-locus from the [seven failure categories](../foundations/05-failure-as-design-signal.md). The connection is mechanical:
 
 - **Level 1 failure** → tool contract or runtime issue. Usually **Cat 2 (Capability)** or infrastructure; rarely a spec gap.
-- **Level 2 failure** → the spec said the agent should do X; the agent did not. **Cat 1 (Spec Failure)** if the spec was self-contradictory, **Cat 6 (Model-level)** if the model is not capable enough at this difficulty. Diagnose using the protocol from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).
+- **Level 2 failure** → the spec said the agent should do X; the agent did not. **Cat 1 (Spec Failure)** if the spec was self-contradictory, **Cat 6 (Model-level)** if the model is not capable enough at this difficulty. Diagnose using the protocol from [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md).
 - **Level 3 regression** → the agent's behavior changed in a way the spec did not anticipate. Often **Cat 1** (the spec was incomplete and the previous behavior worked by accident) or **Cat 6** (model upgrade introduced new failure modes — see [Model Upgrade Validation](../patterns/deployment/model-upgrade.md)).
 - **Level 4 distribution shift / production sampling** → the spec was correct for the original distribution and is now incomplete for the current one (**Cat 1** with a "spec needs to grow" annotation), or scope-creep behavior is appearing under real load (**Cat 3**), or compounding failures are surfacing in long sessions (**Cat 5**), or — for computer-use deployments — perceptual mismatch incidents are appearing (**Cat 7**).
 

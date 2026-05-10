@@ -28,16 +28,16 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [The Guardian](../frame/archetypes/guardian.md) | Constraint-enforcement archetype: full specification |
 | [The Synthesizer](../frame/archetypes/synthesizer.md) | Composite-output archetype: full specification |
 | [The Orchestrator](../frame/archetypes/orchestrator.md) | Multi-agent coordination archetype: full specification |
-| [Calibrate the Four Dimensions](../theory/03-agency-autonomy-responsibility.md) | How much autonomy, agency, responsibility, and reversibility does this system get? |
+| [Calibrate the Four Dimensions](../foundations/03-agency-autonomy-responsibility.md) | How much autonomy, agency, responsibility, and reversibility does this system get? |
 | [Four Dimensions of Governance](../frame/03-archetype-dimensions.md) | How do agency, risk, oversight, and reversibility interact in formal governance terms? |
 | [The Archetype Selection Tree](../frame/04-decision-tree.md) | How do you choose the right archetype when the answer isn't obvious? |
 | [Composing Archetypes](../frame/05-composing-archetypes.md) | How do multiple archetypes work together in a single deployment? |
 | [Governed Archetype Evolution](../frame/06-evolving-archetypes.md) | How do you update the archetype catalog as the technology and your domain change? |
 | [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | How do you govern an N-agent system as a system, not as N individually-specified components? |
-| [Intent vs. Implementation](../theory/02-intent-vs-implementation.md) | When something goes wrong, was the spec wrong, or did the agent fail to execute it? |
-| [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) | What are the seven failure categories, and how do you diagnose them? |
-| [The Intent Design Session](../theory/07-intent-design-session.md) | What is the time-boxed working ritual that turns the framework into a session a team can run? |
-| [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md) | If late judgment was the senior engineer's value-add, what is the value-add now? |
+| [Intent vs. Implementation](../foundations/02-intent-vs-implementation.md) | When something goes wrong, was the spec wrong, or did the agent fail to execute it? |
+| [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) | What are the seven failure categories, and how do you diagnose them? |
+| [The Intent Design Session](../foundations/07-intent-design-session.md) | What is the time-boxed working ritual that turns the framework into a session a team can run? |
+| [What Changes for the Senior Engineer](../foundations/08-what-changes-for-senior-engineers.md) | If late judgment was the senior engineer's value-add, what is the value-add now? |
 
 ---
 
@@ -270,13 +270,13 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Writing the Spec — NOT-authorized section](../examples/01-ai-customer-support/spec.md)
 
 ### "I'm trying to calibrate how much autonomy to give"
-- [Calibrate the Four Dimensions](../theory/03-agency-autonomy-responsibility.md)
+- [Calibrate the Four Dimensions](../foundations/03-agency-autonomy-responsibility.md)
 - [Four Dimensions of Governance](../frame/03-archetype-dimensions.md)
 - [Proportional Oversight](../delegate/06-human-oversight-models.md)
 
 ### "Something went wrong and I need to diagnose it"
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
-- [Intent vs. Implementation](../theory/02-intent-vs-implementation.md)
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
+- [Intent vs. Implementation](../foundations/02-intent-vs-implementation.md)
 - [Post-mortem Through Intent](../examples/01-ai-customer-support/postmortem.md)
 - [The Living Spec](../specify/06-living-specs.md)
 
@@ -323,7 +323,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 
 ### "My agent program's cost or latency isn't penciling"
 - [The Canonical Spec Template — §4 Cost Posture sub-block](../specify/07-canonical-spec-template.md) — the upstream surface where model-tier, latency budget, prompt-stability invariant, per-call ceiling, and cost-incident escalation get committed *before* deployment
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../theory/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) — the structural rationale for why cost is a §4 sub-block instead of a fifth dimension
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../foundations/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) — the structural rationale for why cost is a §4 sub-block instead of a fifth dimension
 - [Model-Tier Quick-Select Card](model-tier-card.md) — per-step decision matrix and step-to-tier defaults
 - [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) — full treatment with vendor pricing and a worked case study
 - [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) — caching as architecture, not optimization; the largest single lever for systems running 100+ tasks/day
@@ -338,7 +338,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 
 ### "I'm trying to introduce this framework to my team"
 - [A Miniature Pilot, End-to-End](../miniature-pilot.md) — start here; show the framework on one screen before asking anyone to read three parts of a book
-- [The Intent Design Session](../theory/07-intent-design-session.md) — the working ritual; run this for the first system that matters
+- [The Intent Design Session](../foundations/07-intent-design-session.md) — the working ritual; run this for the first system that matters
 - [Adoption Playbook](../evolve/11-adoption-playbook.md)
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md)
 - [The Living Spec](../specify/06-living-specs.md)
@@ -354,13 +354,13 @@ This index lists every chapter and pattern in the book by part, by category, and
 
 ### "I'm a senior engineer wondering what this all means for me"
 - [Prologue: What Changed and What's at Stake](../prologue.md) — the framing
-- [What Changes for the Senior Engineer](../theory/08-what-changes-for-senior-engineers.md) — where late judgment goes, what is honestly lost, what is gained, and the career-ladder gap
-- [The Intent Design Session](../theory/07-intent-design-session.md) — the operational ritual where the upstream-judgment work actually lands
+- [What Changes for the Senior Engineer](../foundations/08-what-changes-for-senior-engineers.md) — where late judgment goes, what is honestly lost, what is gained, and the career-ladder gap
+- [The Intent Design Session](../foundations/07-intent-design-session.md) — the operational ritual where the upstream-judgment work actually lands
 - [Roles & Responsibilities (RACI) Card](raci-card.md) — which of the seven canonical roles best matches your actual leverage
 
 ### "My system is too small for the full framework"
 - [Minimum Viable Architecture of Intent](../evolve/16-minimum-viable-aoi.md) — the one-page MVP and the five thresholds that say it's the right shape; the five graduation triggers that say it isn't anymore
-- [The Intent Design Session](../theory/07-intent-design-session.md) — what the MVP graduates *to* when any threshold crosses
+- [The Intent Design Session](../foundations/07-intent-design-session.md) — what the MVP graduates *to* when any threshold crosses
 - [A Miniature Pilot, End-to-End](../miniature-pilot.md) — the contrast case: small but production-bound systems that warrant the full canvas anyway
 
 ### "My team has been using the framework for a while and something feels off"
@@ -445,7 +445,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | **Google Agent2Agent (A2A) Protocol** | 2025 | [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Protocol-layer counterpart to MCP at the tool layer; the governance question for protocol-mediated multi-agent systems |
 | **OpenTelemetry GenAI semantic conventions** | 2024–25 | [Production Telemetry](../evolve/10-production-telemetry.md) | Vendor-neutral observability standard; the book recommends emitting OTel-compliant spans alongside vendor SDK telemetry for portability |
 | **OWASP LLM Top 10 (2025 update)** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md) | Baseline coverage for the four red-team batteries; instantiation per deployment specifics |
-| **MAST taxonomy** (Cemri et al.) | 2025 | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Empirical 14-category multi-agent failure partition; complementary to (not replacing) the book's seven-category fix-locus taxonomy |
+| **MAST taxonomy** (Cemri et al.) | 2025 | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Empirical 14-category multi-agent failure partition; complementary to (not replacing) the book's seven-category fix-locus taxonomy |
 | **Indirect prompt injection** (Greshake et al. 2023) + the **lethal trifecta** (Willison) | 2023, ongoing | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | The structural defense (trifecta reduction; capability gating) is centered on the indirect injection class that cannot be filtered at the prompt layer |
 | **SWE-bench Verified, AgentBench, τ-bench, GAIA, BFCL, WebArena, OSWorld, ScreenSpot-Pro** | 2023–25 | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md), [Coding Agents](../delegate/08-coding-agents.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md) | External calibration benchmarks; the book recommends using public benchmarks for harness calibration and team-built golden sets for actual task fit |
 | **Open-source eval / red-team frameworks** (Inspect, OpenAI Evals, Promptfoo, PyRIT, Garak) | 2024–25 | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) | The toolchain layer the book recommends adopting rather than building custom |
@@ -453,4 +453,4 @@ This index lists every chapter and pattern in the book by part, by category, and
 | **Coding agent platforms** (Cursor, Cline, Aider, Devin, Claude Code, Codex CLI) | 2023–25 | [Coding Agents](../delegate/08-coding-agents.md), [Designing an AI Coding Agent](../examples/03-coding-agent/README.md) | Treated as deployment-posture-dependent compositions; explicit decision-against-Devin-style-autonomy criteria documented in Example 3 |
 | **Anthropic Skills as deployable artifact** | 2025 | [Portable Domain Knowledge](../delegate/05-agent-skills.md) | The maturation of "domain knowledge as packaged context" — skills as versioned, distributed deployment units |
 | **Lost in the Middle long-context attention degradation** (Liu et al. 2023) | 2023, ongoing | [Coding Agents](../delegate/08-coding-agents.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | Empirical grounding for the long-context anti-pattern; informs context-budget discipline and the warning against long-context dumping |
-| **NIST AI RMF / ISO 42001 / Anthropic RSP / OpenAI Preparedness Framework** | 2023–25 | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) | Compliance-layer reference points; the book's four-dimensions framing is compatible with each |
+| **NIST AI RMF / ISO 42001 / Anthropic RSP / OpenAI Preparedness Framework** | 2023–25 | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) | Compliance-layer reference points; the book's four-dimensions framing is compatible with each |

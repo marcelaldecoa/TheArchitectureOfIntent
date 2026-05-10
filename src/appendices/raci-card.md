@@ -4,7 +4,7 @@
 
 ---
 
-A one-page reference for who owns what across the framework's six operational activities. Use it during the [Intent Design Session](../theory/07-intent-design-session.md) (phases 3 and 6 in particular), in [Proportional Governance](../evolve/04-governance.md) reviews, and in onboarding new team members to a system that is already running.
+A one-page reference for who owns what across the framework's six operational activities. Use it during the [Intent Design Session](../foundations/07-intent-design-session.md) (phases 3 and 6 in particular), in [Proportional Governance](../evolve/04-governance.md) reviews, and in onboarding new team members to a system that is already running.
 
 ---
 
@@ -19,23 +19,23 @@ The standard responsibility-assignment shorthand:
 | **C — Consulted** | Provides input *before* the work happens. Two-way communication. | Zero or more. |
 | **I — Informed** | Receives the result *after* the work happens. One-way communication. | Zero or more. |
 
-The framework's discipline is broken when **A** is unclear ("we're all accountable" = no one is) or when **A** is held by someone with no operational authority over the activity. Both failures are common; both produce the *diffuse responsibility* failure mode named in [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) §"Responsibility."
+The framework's discipline is broken when **A** is unclear ("we're all accountable" = no one is) or when **A** is held by someone with no operational authority over the activity. Both failures are common; both produce the *diffuse responsibility* failure mode named in [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) §"Responsibility."
 
 ---
 
 ## The seven roles
 
-The framework assumes seven roles. Two people may share a role; one person should not hold more than one role on the same system unless the system is small enough that a one-person practice is honest. The five roles required to run an [Intent Design Session](../theory/07-intent-design-session.md) (spec author, architect, operator, domain owner, skeptic) are a subset of these seven.
+The framework assumes seven roles. Two people may share a role; one person should not hold more than one role on the same system unless the system is small enough that a one-person practice is honest. The five roles required to run an [Intent Design Session](../foundations/07-intent-design-session.md) (spec author, architect, operator, domain owner, skeptic) are a subset of these seven.
 
 | Role | Responsibility |
 |---|---|
 | **Domain owner** | Knows what the system is being built for, in the domain language of the people it serves. Owns the framing — *what* the system is supposed to achieve. |
-| **Spec author** | Owns the spec as a living artifact. Writes it during [phase 4 of the IDS](../theory/07-intent-design-session.md); amends it after every incident; maintains §13 (Spec Evolution Log). |
+| **Spec author** | Owns the spec as a living artifact. Writes it during [phase 4 of the IDS](../foundations/07-intent-design-session.md); amends it after every incident; maintains §13 (Spec Evolution Log). |
 | **Architect / tech lead** | Owns the archetype commitment and the dimensional calibration. Has authority to say "that crosses the archetype's invariant." |
 | **Builder** | The engineer or engineering team that implements the agent — system prompt, skill files, tool manifests, capability boundaries. Often plural; Accountability is on the team lead. |
 | **Operator** | The person on the production pager. Owns the oversight model, the canary plan, the rollback trigger, the metrics instrumentation. |
 | **Reviewer** | The human who validates outputs against the spec at the oversight gate. May be the operator, may be the spec author, may be a separate role for high-touch systems. |
-| **Skeptic / security** | The role whose explicit job is to ask "what could go wrong?" Surfaces failure modes during [phase 5 of the IDS](../theory/07-intent-design-session.md), red-team protocols, and discipline-health audits. Often a security or platform person; sometimes a Cat 7 specialist for computer-use deployments. |
+| **Skeptic / security** | The role whose explicit job is to ask "what could go wrong?" Surfaces failure modes during [phase 5 of the IDS](../foundations/07-intent-design-session.md), red-team protocols, and discipline-health audits. Often a security or platform person; sometimes a Cat 7 specialist for computer-use deployments. |
 
 Two roles intentionally absent from this matrix: *executive sponsor* (who funds the work and is Informed at major milestones — they show up in the project's parent governance, not in the per-system RACI) and *end user* (whose voice belongs in framing via the domain owner, not as a separate RACI row, because end users do not typically have operational authority over framework activities).
 
@@ -105,7 +105,7 @@ Read across each row to find who does what for that activity. Read down each col
 
 ## Anti-patterns
 
-**Everyone is A.** "We're all accountable for shipping safely." This is the diffuse-responsibility failure mode named in the [Calibration](../theory/03-agency-autonomy-responsibility.md) chapter. Diagnose by asking "if the system causes an incident at 3am, who gets paged?" The answer is the operator; that is the A for Oversee and Ship.
+**Everyone is A.** "We're all accountable for shipping safely." This is the diffuse-responsibility failure mode named in the [Calibration](../foundations/03-agency-autonomy-responsibility.md) chapter. Diagnose by asking "if the system causes an incident at 3am, who gets paged?" The answer is the operator; that is the A for Oversee and Ship.
 
 **No one is consulted before action.** Activities run with zero Cs — the work happens, then everyone is Informed. This is the *retrofit* anti-pattern from the [discipline-health audit](../evolve/15-anti-patterns.md): consultation surfaces disagreement *before* the work, which is when disagreement is cheapest to resolve.
 
@@ -119,8 +119,8 @@ Read across each row to find who does what for that activity. Read down each col
 
 ## Connections
 
-- [The Intent Design Session](../theory/07-intent-design-session.md) — the IDS is where the RACI is *enacted*. Phase 1 establishes domain-owner accountability; phases 2–3 establish architect responsibility; phase 6 establishes operator accountability for oversight.
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) — *Responsibility* as a calibration dimension is what this card operationalizes; the dimension names *authorial / operational / validation* sub-loci, and this RACI maps them to actual roles.
+- [The Intent Design Session](../foundations/07-intent-design-session.md) — the IDS is where the RACI is *enacted*. Phase 1 establishes domain-owner accountability; phases 2–3 establish architect responsibility; phase 6 establishes operator accountability for oversight.
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) — *Responsibility* as a calibration dimension is what this card operationalizes; the dimension names *authorial / operational / validation* sub-loci, and this RACI maps them to actual roles.
 - [Proportional Governance](../evolve/04-governance.md) — the governance practice that runs against this RACI.
 - [Adoption Playbook](../evolve/11-adoption-playbook.md) — the adoption practice that introduces these roles to a team progressively, rather than all at once.
 - [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) — the audit that catches RACI drift, particularly the *oversight kabuki* and *diffuse-responsibility* anti-patterns.

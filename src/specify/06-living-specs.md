@@ -79,7 +79,7 @@ The spec was correct, the output matched the spec, but the engineer prefers a di
 
 ### How this taxonomy relates to Cat 1–7
 
-The feedback-trigger taxonomy above asks *"should this update the spec?"* The book's diagnostic taxonomy ([Cat 1–7](../theory/05-failure-as-design-signal.md)) asks *"which artifact has to change?"* They are complementary, not duplicative:
+The feedback-trigger taxonomy above asks *"should this update the spec?"* The book's diagnostic taxonomy ([Cat 1–7](../foundations/05-failure-as-design-signal.md)) asks *"which artifact has to change?"* They are complementary, not duplicative:
 
 | Diagnostic category (fix locus) | Maps to feedback trigger |
 |---|---|
@@ -196,7 +196,7 @@ The convergence is informative: independent teams approaching agent-augmented de
 **This pattern assumes:**
 - [The Spec as Control Surface](02-specs-as-control-surfaces.md)
 - [The Spec Lifecycle](03-spec-lifecycle.md)
-- [Failure as Diagnostic Signal](../theory/05-failure-as-design-signal.md)
+- [Failure as Diagnostic Signal](../foundations/05-failure-as-design-signal.md)
 
 **This pattern enables:**
 - [The Canonical Spec Template](07-canonical-spec-template.md) — the spec evolution log section

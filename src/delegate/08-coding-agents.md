@@ -116,7 +116,7 @@ These three controls make most coding-agent deployments structurally safe even b
 
 ### Failure modes specific to coding agents
 
-Six of the seven categories from [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) manifest in coding agents — Cat 7 (Perceptual) does not, since coding agents do not have a perceptual surface that can diverge from environment state. Several show up in characteristic shapes:
+Six of the seven categories from [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) manifest in coding agents — Cat 7 (Perceptual) does not, since coding agents do not have a perceptual surface that can diverge from environment state. Several show up in characteristic shapes:
 
 - **Cat 1 (Spec).** "The spec said add a feature; the agent also refactored adjacent code." Fix: tighten Section 4 (NOT-Authorized) on adjacent-modification.
 - **Cat 2 (Capability).** "The agent used `shell.exec("npm install")` because no `package.install` tool was provided; it installed a typosquatted package." Fix: provide the dependency-installation tool with the allowlist enforced; remove unrestricted shell from the manifest.
@@ -179,7 +179,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [Pick an Archetype](../frame/02-canonical-intent-archetypes.md)
 - [Least Capability](04-tools-mcp-capability-boundaries.md)
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md)
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md)
 
 **This pattern enables:**
 - [Multi-Agent Governance](../frame/07-multi-agent-governance.md) — when the coding-agent deployment is multi-agent, the governance specifics live here

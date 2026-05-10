@@ -34,7 +34,7 @@ Between these extremes is a spectrum of oversight designs, each with a different
 
 The second problem is that "human oversight" is often understood as output review: a human sees what the agent produced and judges whether it's acceptable. This is the lowest-quality form of oversight because it occurs after execution, meaning any irreversible effects have already been produced.
 
-When oversight is wrong — wrong model, wrong gate placement, wrong escalation trigger — the resulting incidents are **Cat 4 (Oversight Failure)** in the [failure taxonomy](../theory/05-failure-as-design-signal.md). The fix is structural: change the gate or the model, not the spec text and not the agent.
+When oversight is wrong — wrong model, wrong gate placement, wrong escalation trigger — the resulting incidents are **Cat 4 (Oversight Failure)** in the [failure taxonomy](../foundations/05-failure-as-design-signal.md). The fix is structural: change the gate or the model, not the spec text and not the agent.
 
 ---
 
@@ -201,7 +201,7 @@ After applying this pattern:
 - [The Canonical Spec Template — Section 8](../specify/07-canonical-spec-template.md)
 
 **This pattern enables:**
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
 - Governance, Escalation Design *(Part 5 — Ship)*
 
 ---

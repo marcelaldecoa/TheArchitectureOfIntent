@@ -18,6 +18,174 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.3.1 — 2026-05-10
+
+**PATCH** — collapses the legacy v1.x worked-pilots multi-chapter listing in Part 6 — Reference into a single *Legacy v1.x Worked Pilots Archive* appendix entry. Removes the "(legacy — superseded by phase scenarios in Parts 1–5)" parenthetical from the published TOC, which read as visible technical debt. The example files themselves are preserved; only the SUMMARY footprint shrinks.
+
+### Added
+
+- **`src/appendices/legacy-pilots.md`** — new archive appendix that introduces the three v1.x pilots (Customer Support, Code Generation Pipeline, Coding Agent), names what each pilot covers, links to every chapter of every pilot, names which v2.0.0 *in practice* scenario supersedes each one, and gives reading guidance ("don't start here unless you are evaluating how the framework matured between v1.x and v2.0").
+
+### Removed from SUMMARY.md
+
+- The flat-listed `## Worked Pilots (legacy — superseded by phase scenarios in Parts 1–5)` section with 17 chapter bullets is removed from Part 6 — Reference.
+- Replaced by a single bullet *Legacy v1.x Worked Pilots Archive* under `## Appendices`, between *The Companion Paper* and *Reading List & References*.
+
+### Preserved on disk
+
+- `src/examples/00-how-to-use.md`
+- `src/examples/01-ai-customer-support/` (6 files)
+- `src/examples/02-code-generation-pipeline/` (5 files)
+- `src/examples/03-coding-agent/` (6 files)
+
+All 17 files are reachable from:
+
+- The new `src/appendices/legacy-pilots.md` archive appendix (every chapter linked)
+- `src/appendices/pattern-index.md` worked-examples table and by-problem section
+- `src/appendices/references.md` citation table
+- `src/frame/scenarios/customer-support.md` and `src/frame/scenarios/coding-pipeline.md` — both explicitly cite their v1.x predecessor for v1.x → v2.0 comparison
+- `src/miniature-pilot.md`, `src/evolve/11-adoption-playbook.md`, `src/appendices/speckit-reference.md`, `src/appendices/companion-paper.md` — supplementary references
+
+### Updated — orphan-check script
+
+`scripts/check-orphans.py` now whitelists `examples/` as intentionally-not-in-SUMMARY. The script's purpose is to catch *forgotten* orphans; intentionally-archived files reachable through the appendix should not trigger an error. The whitelist is documented in a comment naming the archive intent.
+
+### Updated — wayfinding
+
+- `src/introduction.md` — the "Looking at a v1.x worked pilot (legacy)" row of the *Where to start* table now points at the archive appendix rather than directly at one specific pilot.
+- `src/how-to-read.md` — the "Looking at a real example" row reordered to recommend the v2.0.0 running scenarios first, with the v1.x archive as the secondary option.
+
+### Verification
+
+- `python3 scripts/check-internal-links.py` — 0 broken
+- `python3 scripts/check-orphans.py` — 0 orphans, 0 missing (with `examples/` whitelisted)
+- `python3 paper/check-deck-sync.py` — all 6 checks pass
+
+### Updated — version markers
+
+Version markers advanced from **v2.3.0** to **v2.3.1** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+
+### Why PATCH, not MINOR
+
+The change is a navigation refinement. No new chapters; no removed content; no load-bearing commitment moves. The 17 example files keep their paths so all inbound links (~40 of them across pattern-index, references, scenarios, and supplementary chapters) continue to resolve. The reader's experience changes only at the SUMMARY level — Part 6 is shorter and the "(legacy — superseded by…)" mid-renovation parenthetical is gone — and the change is reversible by restoring the SUMMARY entries.
+
+### Trade-off honesty
+
+External readers who bookmarked the SUMMARY anchor *#worked-pilots-legacy-superseded-by-phase-scenarios-in-parts-15* will get a 404 on that anchor; the chapter URLs themselves are unchanged. The new appendix anchor *#legacy-v1x-worked-pilots-archive* is the replacement.
+
+---
+
+## v2.3.0 — 2026-05-10
+
+**MINOR** — renames book Part 5 from "EVOLVE" to "EVOLVE & OPERATE" and reorganizes its 11 chapters plus Deployment Patterns into three reader-facing sub-sections. Closes the "Part 5 is doing two jobs" critique by acknowledging the dual scope in the Part name and grouping the chapters by which job they serve. The framework retains its five activities; the rename is a *book navigation* change, not a *framework commitment* change.
+
+### Renamed
+
+- **Part 5 — EVOLVE** → **Part 5 — EVOLVE & OPERATE**
+
+### Restructured — SUMMARY.md
+
+The 11 Part 5 chapters and 5 deployment patterns were reorganized from a flat list into three sub-sections by the time-scale and concern they serve:
+
+**Evolution** — what changes about the system over time (per-incident through per-year):
+- The Closed Loop: From Failures to Spec Amendments
+- Signs Your Architecture of Intent Is Degrading
+- Framework Versioning
+
+**Deployment Patterns** — the patterns that make changes safe (between Evolution and Operations because each pattern enables a structural change):
+- Canary Deployment
+- Rollback on Failure
+- Spec Versioning
+- Model Upgrade Validation
+- Agent Deprecation Path
+
+**Operations** — what runs the system day to day:
+- Proportional Governance
+- Cost and Latency Engineering
+- Cacheable Prompt Architecture
+- Production Telemetry
+- Adoption Playbook
+- Minimum Viable Architecture of Intent
+- Mapping the Framework to the DevSquad 8-Phase Cadence
+- Co-adoption with DevSquad Copilot
+
+The scenario sub-section is renamed **Evolve & Operate in practice** for symmetry with other Parts' *<Part> in practice* convention.
+
+### Updated — chapter subtitles and prose
+
+- All 11 Part 5 chapter subtitles updated from `**Part 5 — Evolve**` to `**Part 5 — Evolve & Operate**`. The 11 *Where this sits in v2.0.0* callout block-quotes updated similarly.
+- Three Evolve scenario chapter subtitles updated from `**Part 5 · EVOLVE · Scenario N of 3**` to `**Part 5 · EVOLVE & OPERATE · Scenario N of 3**`. Three Evolve scenario H1 titles updated from `# Evolve in practice — ...` to `# Evolve & Operate in practice — ...`.
+- Twelve scenario reading-path tables across Parts 1–5 updated their bottom-row link text from "Evolve in practice — …" to "Evolve & Operate in practice — …" while keeping the column label "5. Evolve" (the activity name is unchanged in the framework).
+- `src/evolve/07-framework-versioning.md` "Where this chapter sits in Part 5" prose rewritten to reflect the new sub-section ordering: framework versioning now closes the Evolution sub-section rather than sitting "near the end of Part 5", and its time-scale-gradient claim is relocalized to the Evolution sub-section ordering.
+- `src/introduction.md` Part 5 description rewritten to introduce the Evolution / Operations sub-section split and to name explicitly that the framework retains five activities while the book Part covers two adjacent jobs.
+- `src/appendices/reading-paths.md` four references to "Part 5 — EVOLVE" updated; "Evolve in practice" italics updated to "Evolve & Operate in practice".
+
+### Verification
+
+- `python3 scripts/check-internal-links.py` — 0 broken
+- `python3 scripts/check-orphans.py` — 0 orphans, 0 missing
+- `python3 paper/check-deck-sync.py` — all 6 checks pass; the framework activity count remains 5 (Frame, Specify, Delegate, Validate, Evolve)
+
+### Why MINOR, not PATCH or MAJOR
+
+- Not PATCH because the change is structural, not prose-only — it adds new SUMMARY sub-section structure inside Part 5 and renames the Part itself.
+- Not MAJOR because no load-bearing commitment changes: the five activities remain five (Operate is treated as a slice of Evolve, not promoted to a peer activity); the deck/paper sync contract is unaffected; existing specs and existing adoption are unbroken; the canvas figure's five-row spine is unchanged. The change is a book-navigation refinement, not a framework-commitment change.
+
+### Why "Evolve & Operate" rather than promoting Operate to a sixth activity
+
+Promoting Operate to a peer activity would be a MAJOR change: it would re-cardinalize the activity count from five to six, force a redesign of the canvas figure, change the deck/paper sync contract, and break every existing spec that names "the five activities". The honest read is that ongoing operations *are* part of evolving a deployed system — there is no clean line between "the team is operating today" and "the team is evolving today" because the same closed loop runs continuously. The Part rename acknowledges the dual scope without forcing the framework to grow a sixth peer.
+
+### Trade-off honesty
+
+External readers who bookmarked the URL of the **Part 5 — EVOLVE** SUMMARY anchor may experience confusion when the rendered HTML now reads **Part 5 — EVOLVE & OPERATE**. Chapter URLs are unchanged (no file moves; no path renames). Internal links resolve identically.
+
+---
+
+## v2.2.3 — 2026-05-10
+
+**PATCH** — closes the filesystem cleanup begun in v2.2.2 by renaming `src/theory/` → `src/foundations/` so the Part 0 directory matches its Part label. After v2.2.2, the five Part-aligned directories (`frame/`, `specify/`, `delegate/`, `validate/`, `evolve/`) already matched their Part labels; Part 0's `theory/` was the one outlier explicitly deferred at v2.2.2. v2.2.3 closes that gap. No load-bearing commitments change; no impact on the paper's structure.
+
+### Renamed
+
+| v2.2.2 path | v2.2.3 path | Rationale |
+|---|---|---|
+| `src/theory/` | `src/foundations/` | Directory name now matches the Part 0 — Foundations label |
+
+The six chapters keep their stems (`01-what-is-aoi.md`, `02-intent-vs-implementation.md`, `03-agency-autonomy-responsibility.md`, `05-failure-as-design-signal.md`, `07-intent-design-session.md`, `08-what-changes-for-senior-engineers.md`); only the directory changed.
+
+### Cross-reference updates
+
+**~170 cross-references updated** across the book and CLAUDE.md via `sed` for the path-prefix replacement. 57 files touched: SUMMARY.md, the six moved chapters themselves, 49 other book chapters that link into Part 0, four appendices, README, CHANGELOG (v2.2.2 retrospective entry preserved historically — see below), and CLAUDE.md.
+
+The paper has no `theory/` references (it cites the book by repository URL, not by source-tree path), so the paper Markdown source is unchanged except for the framework-version header bump.
+
+### Verification
+
+- `python3 scripts/check-internal-links.py` — 0 broken
+- `python3 scripts/check-orphans.py` — 0 orphans, 0 missing
+
+### Updated — version markers
+
+Version markers advanced from **v2.2.2** to **v2.2.3** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+
+### Updated — CLAUDE.md repo-structure tree
+
+The repo-structure tree in CLAUDE.md was stale beyond just `theory/` — it still listed `src/architecture/`, `src/sdd/`, `src/agents/`, `src/operating/`, all of which were absorbed into the phase-aligned directories at v2.2.2. v2.2.3 brings the tree current: each Part directory is shown with its scenarios subdirectory and a brief description; legacy worked-pilot status is named explicitly. The file-numbering note's example was also refreshed (`foundations/` and `evolve/` gaps documented).
+
+### Why PATCH, not MINOR
+
+Same reasoning as v2.2.2: this is purely cosmetic at the filesystem layer. The book's content is unchanged; the SUMMARY structure is unchanged; the rendered HTML structure is identical except for URL paths. Per the versioning convention, PATCH is the right shape.
+
+### Trade-off honesty
+
+Existing deep links to `src/theory/...` paths break with this release. There are no redirects (same v2.2.2 reasoning: mdBook doesn't support native redirects, and the v2.2.x line has not committed to a redirect-management strategy). External readers who bookmarked Part 0 chapter URLs at v1.x or v2.0–v2.2.2 will see 404s and need to re-navigate from the SUMMARY.
+
+### Note on historical CHANGELOG entries
+
+The path-rename `sed` swept the entire repo, including older CHANGELOG entries that referenced `src/theory/...` historically. Two structurally important lines in the v2.2.2 entry — where v2.2.2 explicitly stated it was *not* renaming `src/theory/` — have been restored to their historical wording with a forward-pointer to v2.2.3. Other historical mentions of `theory/...` paths in v2.0.0 / v2.1.0 / v2.2.0 entries have been left as-is at the new path; the file references still resolve to current files, and recovering the precise wording of older entries adds noise without adding signal. The v2.2.2 entry's unique value was its statement that the rename was deferred — that needed preserving.
+
+---
+
 ## v2.2.2 — 2026-05-10
 
 **PATCH** — filesystem cleanup. Chapter directories renamed to match the v2.0+ Part placement, closing the file-path-rename item that has been deferred since rc1. No reader-facing change beyond URL stability for deep links; SUMMARY-driven navigation is identical. No load-bearing commitments change; no impact on the paper's structure.
@@ -42,7 +210,7 @@ The directory names now match their Part labels. The chapter file numbering is p
 
 ### Unchanged
 
-- `src/theory/` retains the Part 0 — Foundations chapters (intentionally; theory/ is a fine name for foundations material, and Part 0 is the one Part where the directory name doesn't perfectly match the Part label — that's a deferrable polish, not a v2.2.2 target)
+- `src/theory/` retains the Part 0 — Foundations chapters (intentionally for v2.2.2; theory/ is a reasonable name for foundations material, and Part 0 is the one Part where the directory name doesn't perfectly match the Part label — that's a deferrable polish, not a v2.2.2 target). *(Renamed to `src/foundations/` in v2.2.3.)*
 - `src/repertoires/`, `src/patterns/`, `src/examples/`, `src/appendices/`, `src/images/`, top-level `cover.md` / `introduction.md` / `miniature-pilot.md` / `how-to-read.md` / `prologue.md` / `SUMMARY.md` — unchanged, all referenced from across multiple Parts and not phase-specific
 
 ### Cross-reference updates
@@ -72,7 +240,7 @@ Existing deep links to `architecture/`, `sdd/`, `agents/`, `operating/` paths br
 
 ### Deferred (and possibly indefinite)
 
-- Renaming `src/theory/` → `src/foundations/` to match Part 0's label. Low value (the directory name is hidden from readers; theory/ is a reasonable name for Foundations content). Probably indefinite defer.
+- Renaming `src/theory/` → `src/foundations/` to match Part 0's label. *(Resolved in v2.2.3.)*
 - Adding redirects from old paths to new paths via an mdBook preprocessor. Possibly v2.2.3 if reader feedback indicates the link rot is meaningful.
 
 ---
@@ -133,18 +301,18 @@ Adding a Part is a *navigation addition*. Existing v2.1.x specs continue to vali
 
 ### Added
 
-- **`src/theory/01-what-is-aoi.md`** — new chapter *What is the Architecture of Intent?*, extracted from the *What is AoI?* section that previously lived inside the Introduction. Re-cast as a standalone chapter with a Part 0 subtitle, an epigraph, and a *Where to go next* closing section that lists the rest of Part 0 in order plus pointers to the canvas, the IDS, the miniature pilot, and the Reading Paths appendix.
+- **`src/foundations/01-what-is-aoi.md`** — new chapter *What is the Architecture of Intent?*, extracted from the *What is AoI?* section that previously lived inside the Introduction. Re-cast as a standalone chapter with a Part 0 subtitle, an epigraph, and a *Where to go next* closing section that lists the rest of Part 0 in order plus pointers to the canvas, the IDS, the miniature pilot, and the Reading Paths appendix.
 
 ### Updated — SUMMARY structure
 
 `src/SUMMARY.md` reshaped to add **Part 0 — FOUNDATIONS** between the Foreword and Part 1. The new Part lists six chapters:
 
-1. [What is the Architecture of Intent?](src/theory/01-what-is-aoi.md) *(new)*
-2. [Intent vs. Implementation](src/theory/02-intent-vs-implementation.md) *(was Part 1)*
-3. [Calibrate Agency, Autonomy, Responsibility, Reversibility](src/theory/03-agency-autonomy-responsibility.md) *(was Part 1)*
-4. [Failure Modes and How to Diagnose Them](src/theory/05-failure-as-design-signal.md) *(was Part 4 opener)*
-5. [What Changes for the Senior Engineer](src/theory/08-what-changes-for-senior-engineers.md) *(was Foreword)*
-6. [The Intent Design Session](src/theory/07-intent-design-session.md) *(was Part 2)*
+1. [What is the Architecture of Intent?](src/foundations/01-what-is-aoi.md) *(new)*
+2. [Intent vs. Implementation](src/foundations/02-intent-vs-implementation.md) *(was Part 1)*
+3. [Calibrate Agency, Autonomy, Responsibility, Reversibility](src/foundations/03-agency-autonomy-responsibility.md) *(was Part 1)*
+4. [Failure Modes and How to Diagnose Them](src/foundations/05-failure-as-design-signal.md) *(was Part 4 opener)*
+5. [What Changes for the Senior Engineer](src/foundations/08-what-changes-for-senior-engineers.md) *(was Foreword)*
+6. [The Intent Design Session](src/foundations/07-intent-design-session.md) *(was Part 2)*
 
 Removed from their previous Parts:
 - Foreword: now contains only the Prologue (Senior Engineer relocated to Part 0).
@@ -154,12 +322,12 @@ Removed from their previous Parts:
 
 ### Updated — chapter subtitles and Part-framing prose
 
-- Subtitles in the five moved chapters updated to **`**Part 0 — Foundations**`**: theory/02, 03, 05, 07, 08.
-- `theory/05`'s Part-framing intro paragraph (added in rc8 / v2.0.1) updated to reflect the Part 0 placement: *"This chapter sits in Part 0 — Foundations because the seven-category fix-locus taxonomy is referenced from every Part."*
+- Subtitles in the five moved chapters updated to **`**Part 0 — Foundations**`**: foundations/02, 03, 05, 07, 08.
+- `foundations/05`'s Part-framing intro paragraph (added in rc8 / v2.0.1) updated to reflect the Part 0 placement: *"This chapter sits in Part 0 — Foundations because the seven-category fix-locus taxonomy is referenced from every Part."*
 
 ### Updated — Introduction
 
-The Introduction's *What is the Architecture of Intent?* section (~25 lines of definition-style content) is removed; the intro now points readers at [Part 0's *What is AoI?* chapter](src/theory/01-what-is-aoi.md) for the canonical definition. The Introduction keeps its *Why this book exists*, *The framework on one page* (canvas), *What you will have at the end*, *Who this is for*, *How to use it*, *What the book does not promise*, *Honest scope*, and *A note on style* sections.
+The Introduction's *What is the Architecture of Intent?* section (~25 lines of definition-style content) is removed; the intro now points readers at [Part 0's *What is AoI?* chapter](src/foundations/01-what-is-aoi.md) for the canonical definition. The Introduction keeps its *Why this book exists*, *The framework on one page* (canvas), *What you will have at the end*, *Who this is for*, *How to use it*, *What the book does not promise*, *Honest scope*, and *A note on style* sections.
 
 ### Updated — Reading Paths appendix
 
@@ -172,7 +340,7 @@ Version markers advanced from **v2.1.0** to **v2.2.0** in `src/appendices/glossa
 
 ### What did *not* change
 
-- **No file paths changed.** The five moved chapters keep their `src/theory/0N-*.md` paths; only their SUMMARY placement and chapter subtitle changed. All deep links to those chapters from elsewhere in the book continue to resolve.
+- **No file paths changed.** The five moved chapters keep their `src/foundations/0N-*.md` paths; only their SUMMARY placement and chapter subtitle changed. All deep links to those chapters from elsewhere in the book continue to resolve.
 - **No load-bearing commitments changed.** Five archetypes, four dimensions, seven Cats, four oversight models, four signal metrics, five activities, twelve spec sections, eight pattern categories, twelve anti-patterns, composition first-class — all unchanged.
 - **No impact on the paper.** The paper's structure (sections 1–8, plus appendices) is unchanged; only the status-header version updated.
 
@@ -240,8 +408,8 @@ This release demonstrates a discipline the framework names but had not previousl
 
 Four conceptual chapters get a short scene before the existing Context section:
 
-- **`src/theory/05-failure-as-design-signal.md`** — opens on a Wednesday-morning post-incident review where the team's first reaction is *"the model hallucinated"* and the on-call engineer reframes: *"the model didn't hallucinate. The trace shows the model emitted the right tool call. The Guardian wrap wasn't bound on this code path."* Also fixes the chapter's outdated *"This chapter sits in Decisions"* note (now correctly Part 4 — Validate).
-- **`src/theory/07-intent-design-session.md`** — opens on 9 AM Monday, the team about to skip the IDS and start typing the spec, the tech lead stopping them: *"We're skipping a step. Read the framework, write the spec — that's the failure pattern Part 1 named. We need the session in between."*
+- **`src/foundations/05-failure-as-design-signal.md`** — opens on a Wednesday-morning post-incident review where the team's first reaction is *"the model hallucinated"* and the on-call engineer reframes: *"the model didn't hallucinate. The trace shows the model emitted the right tool call. The Guardian wrap wasn't bound on this code path."* Also fixes the chapter's outdated *"This chapter sits in Decisions"* note (now correctly Part 4 — Validate).
+- **`src/foundations/07-intent-design-session.md`** — opens on 9 AM Monday, the team about to skip the IDS and start typing the spec, the tech lead stopping them: *"We're skipping a step. Read the framework, write the spec — that's the failure pattern Part 1 named. We need the session in between."*
 - **`src/sdd/07-canonical-spec-template.md`** — opens on a team finishing Frame, the cursor sitting at §1 of an empty 12-section template, the question *"where do I start?"* The chapter then names the structural-commitments-first answer.
 - **`src/agents/06-human-oversight-models.md`** — opens on a team in Frame disputing autonomy, until they realize the autonomy debate is actually an oversight debate — and oversight has four named models, not a sliding scale.
 
@@ -363,9 +531,9 @@ After this release lands on `main`, a **`v2.0.0` git tag** can be created agains
 
 Four highest-impact Frame conceptual chapters get a short vignette before the existing Context section, in the same shape as the rc3 closed-loop chapter and the scenario chapters:
 
-- **`src/theory/02-intent-vs-implementation.md`** — opens on a sprint-review moment where the agent's PR-merge-without-amendment rate dropped, the team investigates the agent's recent commits, and one engineer says *"the code is fine. The agent is doing exactly what the spec says. The spec is wrong about how cross-service refactors should be planned."* That moment is the chapter's load-bearing distinction.
+- **`src/foundations/02-intent-vs-implementation.md`** — opens on a sprint-review moment where the agent's PR-merge-without-amendment rate dropped, the team investigates the agent's recent commits, and one engineer says *"the code is fine. The agent is doing exactly what the spec says. The spec is wrong about how cross-service refactors should be planned."* That moment is the chapter's load-bearing distinction.
 - **`src/architecture/02-canonical-intent-archetypes.md`** — opens on a team in a Frame session 30 minutes in, the PM impatient to start naming features, the tech lead writing one word on the board: ARCHETYPE.
-- **`src/theory/03-agency-autonomy-responsibility.md`** — opens on a team debating *"high autonomy"* vs *"medium autonomy"* in circles, until the tech lead splits the four dimensions out as four separate decisions.
+- **`src/foundations/03-agency-autonomy-responsibility.md`** — opens on a team debating *"high autonomy"* vs *"medium autonomy"* in circles, until the tech lead splits the four dimensions out as four separate decisions.
 - **`src/architecture/05-composing-archetypes.md`** — opens on a spec review where the reviewer asks *"this part where the agent checks its own output before sending — that's a Guardian behavior. And §10's escalation flow looks like an Advisor handoff. Are we doing composition by accident, or composition by design?"*
 
 ### Added — Evolve-framing intros
@@ -390,11 +558,11 @@ Approximately **25 chapter subtitles** updated to match the v2.0.0 SUMMARY struc
 | `**Governance & Architecture**` | `**Part 5 — Evolve**` | operating/04 |
 | `**Governance & Architecture**` | `**Part 1 — Frame**` | architecture/03, 04, 05, 06 |
 | `**Operating Practice**` | `**Part 5 — Evolve**` | operating/15, 16 |
-| `**Part 1 — Decisions**` | `**Part 1 — Frame**` | architecture/02, 07; theory/03 |
-| `**Part 1 — Decisions**` | `**Part 4 — Validate**` | theory/05 |
-| `**Foundations**` | `**Part 1 — Frame**` | theory/02 |
-| `**Foundations**` | `**Foreword**` | theory/08 |
-| `**Working Practice**` | `**Part 2 — Specify**` | theory/07 |
+| `**Part 1 — Decisions**` | `**Part 1 — Frame**` | architecture/02, 07; foundations/03 |
+| `**Part 1 — Decisions**` | `**Part 4 — Validate**` | foundations/05 |
+| `**Foundations**` | `**Part 1 — Frame**` | foundations/02 |
+| `**Foundations**` | `**Foreword**` | foundations/08 |
+| `**Working Practice**` | `**Part 2 — Specify**` | foundations/07 |
 | `**Specification**` | `**Part 2 — Specify**` | sdd/01–07 (7 chapters) |
 | `**Part 2 — The Spec**` | `**Part 2 — Specify**` | sdd/08 |
 | `**Agents**` | `**Part 3 — Delegate**` | agents/01–06 (6 chapters) |
@@ -747,7 +915,7 @@ The phased rollout means rc1 ships with the new *shape* visible (TOC, activity v
 ### Added
 
 - **§4 Cost Posture sub-block** in [`src/sdd/07-canonical-spec-template.md`](src/sdd/07-canonical-spec-template.md), parallel to the existing Composition Declaration. Five fields: model-tier commitment per step, latency budget (p50/p95/p99 + behavior on breach), prompt-stability invariant, per-call cost ceiling (with breach behavior), cost-incident escalation. Required for systems running in production at any scale; omittable only at the [MVP-AoI](src/operating/16-minimum-viable-aoi.md) floor.
-- **"Cost is not a fifth dimension" framing sub-section** in [`src/theory/03-agency-autonomy-responsibility.md`](src/theory/03-agency-autonomy-responsibility.md) that explains the working position with three structural reasons (cost is partially derived from the four dimensions; cost is a *resource* commitment whereas A/A/R/R are *behavioral* commitments; the lineage is thin — neither SAE J3016 nor Shavit & Agarwal treat cost as a dimension).
+- **"Cost is not a fifth dimension" framing sub-section** in [`src/foundations/03-agency-autonomy-responsibility.md`](src/foundations/03-agency-autonomy-responsibility.md) that explains the working position with three structural reasons (cost is partially derived from the four dimensions; cost is a *resource* commitment whereas A/A/R/R are *behavioral* commitments; the lineage is thin — neither SAE J3016 nor Shavit & Agarwal treat cost as a dimension).
 - **Paper §3.3 paragraph** giving the same structural rationale at paper grain.
 - **Cost Posture** glossary entry under C (in proper alphabetical position between Context Provision and Delegation), naming the five fields and the resource-vs-behavioral distinction.
 - New **Cost Posture sub-block** entry at the top of the Pattern Index *"My agent program's cost or latency isn't penciling"* By-Problem entry, with the framing-sub-section as the second link. Practitioners reaching for that By-Problem entry now see the upstream spec surface before the operational chapters.
@@ -763,7 +931,7 @@ The candidate alternative — promoting cost to a fifth calibration dimension al
 
 ### PRs
 
-- **#52** — Add Cost Posture sub-block to spec template §4; framing sub-section in theory/03 and paper §3.3
+- **#52** — Add Cost Posture sub-block to spec template §4; framing sub-section in foundations/03 and paper §3.3
 
 ---
 
@@ -793,11 +961,11 @@ The MVP-AoI is *not* a substitute for the [Miniature Pilot](src/miniature-pilot.
 
 ## v1.2.0 — 2026-05-10
 
-**MINOR** — adds the *What Changes for the Senior Engineer* chapter (theory/08) without changing any load-bearing commitment.
+**MINOR** — adds the *What Changes for the Senior Engineer* chapter (foundations/08) without changing any load-bearing commitment.
 
 ### Added
 
-- **[What Changes for the Senior Engineer](src/theory/08-what-changes-for-senior-engineers.md)** — a new Foundations chapter at the end of Part 1 that responds to the question the [Prologue](src/prologue.md) raises but never resolves: *if late-judgment compensation was the senior engineer's value-add, what is the value-add now?* The chapter names where the judgment goes (Frame, Specify, Bind Patterns, Skeptic, Validate); names what is honestly lost (the flow state of late-judgment debugging, tribal knowledge as a moat, pure-implementation seniority, the practitioners who will not make the transition); names what is gained (authorship that compounds, durable artifacts, leverage across teams, a different kind of seniority); and names the career-ladder gap explicitly.
+- **[What Changes for the Senior Engineer](src/foundations/08-what-changes-for-senior-engineers.md)** — a new Foundations chapter at the end of Part 1 that responds to the question the [Prologue](src/prologue.md) raises but never resolves: *if late-judgment compensation was the senior engineer's value-add, what is the value-add now?* The chapter names where the judgment goes (Frame, Specify, Bind Patterns, Skeptic, Validate); names what is honestly lost (the flow state of late-judgment debugging, tribal knowledge as a moat, pure-implementation seniority, the practitioners who will not make the transition); names what is gained (authorship that compounds, durable artifacts, leverage across teams, a different kind of seniority); and names the career-ladder gap explicitly.
 - New *"I'm a senior engineer wondering what this all means for me"* By-Problem entry in the Pattern Index, pointing at the Prologue, the new chapter, the IDS, and the RACI Card.
 
 ### Why this is MINOR, not MAJOR
@@ -806,7 +974,7 @@ The chapter extends the framework's vocabulary about *practitioner experience* w
 
 ### PRs
 
-- **#50** — Add *What Changes for the Senior Engineer* chapter (theory/08)
+- **#50** — Add *What Changes for the Senior Engineer* chapter (foundations/08)
 
 ---
 
@@ -818,7 +986,7 @@ The chapter extends the framework's vocabulary about *practitioner experience* w
 
 - **[Roles & Responsibilities (RACI) Card](src/appendices/raci-card.md)** — a one-page reference appendix that maps the seven canonical roles (domain owner, spec author, architect, builder, operator, reviewer, skeptic) against the six operational activities (Frame · Specify · Build · Oversee · Ship · Evolve). Standard RACI shorthand: R does the work, A owns the outcome (exactly one per activity), C is consulted before action, I is informed after. Five common patterns and five anti-patterns documented.
 - New **RACI** entry in the glossary; new *RACI Card* row added to the *Roles & Responsibilities* governance entry of the Pattern Index.
-- Light cross-references added from the [Intent Design Session](src/theory/07-intent-design-session.md) chapter (the IDS is where the RACI is *enacted* for one specific system; the card is the matrix the team enacts against), [Proportional Governance](src/operating/04-governance.md), and the [Adoption Playbook](src/operating/11-adoption-playbook.md).
+- Light cross-references added from the [Intent Design Session](src/foundations/07-intent-design-session.md) chapter (the IDS is where the RACI is *enacted* for one specific system; the card is the matrix the team enacts against), [Proportional Governance](src/operating/04-governance.md), and the [Adoption Playbook](src/operating/11-adoption-playbook.md).
 
 ### Why this is MINOR, not MAJOR
 
@@ -869,7 +1037,7 @@ The first stable release of the framework as documented in this book and its com
 |---|---|
 | #42 | The framework canvas — *Figure 1* of paper §3 and *The framework on one page* in the book Introduction |
 | #43 | The one-page definition of *Architecture of Intent* at the front of the book Introduction |
-| #44 | The Intent Design Session chapter (`theory/07`) — the 7-phase ritual that turns the framework from a vocabulary into a discipline |
+| #44 | The Intent Design Session chapter (`foundations/07`) — the 7-phase ritual that turns the framework from a vocabulary into a discipline |
 | #45 | The opening miniature pilot (`miniature-pilot.md`) — the canvas applied to one concrete system in one screen |
 | #46 | Composition first-class (Pattern E mode-switching + Composition Declaration sub-template) — the structural answer to the taxonomy-pressure question, with no sixth archetype |
 | #47 | The anti-patterns chapter (`operating/15`) — Signs Your Architecture of Intent Is Degrading; the 11-anti-pattern catalog and the quarterly Discipline-Health Audit |

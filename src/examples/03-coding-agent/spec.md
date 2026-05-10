@@ -283,7 +283,7 @@ Completed by the human reviewer (typically the issue's original assignee or the 
 - [ ] No constraints surfaced during execution that suggest a spec gap
 - [ ] If surfaced (no PR produced): the surface report is well-structured and actionable
 
-If validation fails: categorize per the protocol in [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md), log to the spec gap log, decide whether to fix the spec or treat as one-off.
+If validation fails: categorize per the protocol in [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md), log to the spec gap log, decide whether to fix the spec or treat as one-off.
 
 ---
 

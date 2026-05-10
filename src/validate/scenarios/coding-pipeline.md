@@ -155,11 +155,11 @@ The Validate phase blends into Evolve from here. The same metrics, the same log,
 | 2. Specify | [Specify in practice — Coding-agent pipeline](../../specify/scenarios/coding-pipeline.md) |
 | 3. Delegate | [Delegate in practice — Coding-agent pipeline](../../delegate/scenarios/coding-pipeline.md) |
 | 4. **Validate** | *(this chapter)* |
-| 5. Evolve | [Evolve in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
+| 5. Evolve | [Evolve & Operate in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
 
 ## Conceptual chapters this scenario binds to
 
-- [Failure Modes and How to Diagnose Them](../../theory/05-failure-as-design-signal.md) — the seven Cats
+- [Failure Modes and How to Diagnose Them](../../foundations/05-failure-as-design-signal.md) — the seven Cats
 - [Coding Agents](../../delegate/08-coding-agents.md)
 - [Spec Conformance Testing](../../patterns/testing/spec-conformance.md)
 - [Adversarial Input Test](../../patterns/testing/adversarial-input.md)

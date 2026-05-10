@@ -1,6 +1,6 @@
 # Co-adoption with DevSquad Copilot
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The co-adoption recommendation is for teams already running DevSquad: the framework's archetype taxonomy, four-dimension calibration, and seven-Cat fix-locus failure analysis are the additions that give the most leverage on top of DevSquad's process scaffolding. [Scenario 3](../frame/scenarios/docs-qa.md) demonstrates the composition end-to-end across all five activities of the AoI cycle paired with the eight phases of the DevSquad cycle.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The co-adoption recommendation is for teams already running DevSquad: the framework's archetype taxonomy, four-dimension calibration, and seven-Cat fix-locus failure analysis are the additions that give the most leverage on top of DevSquad's process scaffolding. [Scenario 3](../frame/scenarios/docs-qa.md) demonstrates the composition end-to-end across all five activities of the AoI cycle paired with the eight phases of the DevSquad cycle.*
 
 ---
 
@@ -70,7 +70,7 @@ DevSquad uses the term "specialized agent" without formally classifying agent cl
 
 ### 2. The seven-category failure taxonomy and diagnostic protocol (high leverage)
 
-DevSquad's Phase 6 (Learn openly) is the right discipline but doesn't give you a partition for *what kind of learning this is*. This book's [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) provides the seven-category fix-locus taxonomy (Spec, Capability, Scope creep, Oversight, Compounding, Model-level, Perceptual) and the diagnostic protocol that maps each category to the artifact you change. Cat 7 (Perceptual) applies only to perceiving-then-acting deployments — computer-use, browser-use, robotic — and can be skipped if your team is text-only.
+DevSquad's Phase 6 (Learn openly) is the right discipline but doesn't give you a partition for *what kind of learning this is*. This book's [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) provides the seven-category fix-locus taxonomy (Spec, Capability, Scope creep, Oversight, Compounding, Model-level, Perceptual) and the diagnostic protocol that maps each category to the artifact you change. Cat 7 (Perceptual) applies only to perceiving-then-acting deployments — computer-use, browser-use, robotic — and can be skipped if your team is text-only.
 
 **What changes in your practice:**
 
@@ -174,7 +174,7 @@ For a team already running DevSquad, here is a concrete sequence:
 
 **Week 1:**
 - Read [Pick an Archetype](../frame/02-canonical-intent-archetypes.md) and [The Archetype Selection Tree](../frame/04-decision-tree.md). Apply to your existing agents — record the archetype for each.
-- Read [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md). Adopt the seven-category fix-locus taxonomy (Cat 1–7, including Cat 7 Perceptual for any computer-use deployments) in your next Phase 6 review.
+- Read [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md). Adopt the seven-category fix-locus taxonomy (Cat 1–7, including Cat 7 Perceptual for any computer-use deployments) in your next Phase 6 review.
 
 **Week 2:**
 - Read [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md). Run the lethal-trifecta question against every agent. Record findings as ADRs.

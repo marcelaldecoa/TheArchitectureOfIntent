@@ -243,11 +243,11 @@ By end of day, the spec is in a PR for review. Maya, Sam, Jordan, and Priya all 
 | 2. **Specify** | *(this chapter)* |
 | 3. Delegate | [Delegate in practice — Customer-support agent](../../delegate/scenarios/customer-support.md) |
 | 4. Validate | [Validate in practice — Customer-support agent](../../validate/scenarios/customer-support.md) |
-| 5. Evolve | [Evolve in practice — Customer-support agent](../../evolve/scenarios/customer-support.md) |
+| 5. Evolve | [Evolve & Operate in practice — Customer-support agent](../../evolve/scenarios/customer-support.md) |
 
 ## Conceptual chapters this scenario binds to
 
 - [The Canonical Spec Template](../../specify/07-canonical-spec-template.md) — including the Composition Declaration and Cost Posture sub-blocks
 - [Writing for Machine Execution](../../specify/05-writing-specs-for-agents.md)
 - [The Spec as Control Surface](../../specify/02-specs-as-control-surfaces.md)
-- [The Intent Design Session](../../theory/07-intent-design-session.md)
+- [The Intent Design Session](../../foundations/07-intent-design-session.md)

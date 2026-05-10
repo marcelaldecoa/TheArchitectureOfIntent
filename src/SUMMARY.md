@@ -12,12 +12,12 @@
 
 *The conceptual preface. Read once; come back when you get lost. Every other Part stands on these chapters.*
 
-- [What is the Architecture of Intent?](theory/01-what-is-aoi.md)
-- [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](theory/03-agency-autonomy-responsibility.md)
-- [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
-- [What Changes for the Senior Engineer](theory/08-what-changes-for-senior-engineers.md)
-- [The Intent Design Session](theory/07-intent-design-session.md)
+- [What is the Architecture of Intent?](foundations/01-what-is-aoi.md)
+- [Intent vs. Implementation](foundations/02-intent-vs-implementation.md)
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](foundations/03-agency-autonomy-responsibility.md)
+- [Failure Modes and How to Diagnose Them](foundations/05-failure-as-design-signal.md)
+- [What Changes for the Senior Engineer](foundations/08-what-changes-for-senior-engineers.md)
+- [The Intent Design Session](foundations/07-intent-design-session.md)
 
 ---
 
@@ -174,21 +174,15 @@
 
 ---
 
-# Part 5 — EVOLVE
+# Part 5 — EVOLVE & OPERATE
 
-*The closed loop. Cat 1s back to spec; the discipline survives the team.*
+*The closed loop and the day-to-day. Cat 1s back to spec; the discipline survives the team. Operations sustain the system between evolutions.*
+
+## Evolution
 
 - [The Closed Loop: From Failures to Spec Amendments](evolve/01-closed-loop.md)
-- [Adoption Playbook](evolve/11-adoption-playbook.md)
-- [Minimum Viable Architecture of Intent](evolve/16-minimum-viable-aoi.md)
-- [Proportional Governance](evolve/04-governance.md)
-- [Cost and Latency Engineering](evolve/09-cost-and-latency.md)
-- [Cacheable Prompt Architecture](evolve/14-cacheable-prompt-architecture.md)
-- [Production Telemetry](evolve/10-production-telemetry.md)
 - [Signs Your Architecture of Intent Is Degrading](evolve/15-anti-patterns.md)
 - [Framework Versioning](evolve/07-framework-versioning.md)
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](evolve/12-devsquad-mapping.md)
-- [Co-adoption with DevSquad Copilot](evolve/13-co-adoption-with-devsquad.md)
 
 ## Deployment Patterns
 
@@ -198,7 +192,18 @@
 - [Model Upgrade Validation](patterns/deployment/model-upgrade.md)
 - [Agent Deprecation Path](patterns/deployment/deprecation.md)
 
-## Evolve in practice
+## Operations
+
+- [Proportional Governance](evolve/04-governance.md)
+- [Cost and Latency Engineering](evolve/09-cost-and-latency.md)
+- [Cacheable Prompt Architecture](evolve/14-cacheable-prompt-architecture.md)
+- [Production Telemetry](evolve/10-production-telemetry.md)
+- [Adoption Playbook](evolve/11-adoption-playbook.md)
+- [Minimum Viable Architecture of Intent](evolve/16-minimum-viable-aoi.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](evolve/12-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](evolve/13-co-adoption-with-devsquad.md)
+
+## Evolve & Operate in practice
 
 - [Customer-support agent (90 days post-launch)](evolve/scenarios/customer-support.md)
 - [Coding-agent pipeline](evolve/scenarios/coding-pipeline.md)
@@ -239,33 +244,13 @@
 - [Standards for REST APIs](repertoires/code-standards/rest-apis.md)
 - [Standards for Infrastructure as Code](repertoires/code-standards/iac.md)
 
-## Worked Pilots (legacy — superseded by phase scenarios in Parts 1–5)
-
-- [How to Use These Examples](examples/00-how-to-use.md)
-- [Designing an AI Customer Support System](examples/01-ai-customer-support/README.md)
-  - [Selecting the Archetypes](examples/01-ai-customer-support/archetypes.md)
-  - [Writing the Spec](examples/01-ai-customer-support/spec.md)
-  - [Agent Instructions](examples/01-ai-customer-support/agent-instructions.md)
-  - [Validating Outcomes](examples/01-ai-customer-support/validation.md)
-  - [Post-mortem Through Intent](examples/01-ai-customer-support/postmortem.md)
-- [A Code Generation Pipeline](examples/02-code-generation-pipeline/README.md)
-  - [Selecting the Archetypes](examples/02-code-generation-pipeline/archetypes.md)
-  - [Writing the Spec](examples/02-code-generation-pipeline/spec.md)
-  - [Agent Instructions](examples/02-code-generation-pipeline/agent-instructions.md)
-  - [Validating Outcomes](examples/02-code-generation-pipeline/validation.md)
-- [Designing an AI Coding Agent](examples/03-coding-agent/README.md)
-  - [Selecting the Archetypes](examples/03-coding-agent/archetypes.md)
-  - [Writing the Spec](examples/03-coding-agent/spec.md)
-  - [Agent Instructions](examples/03-coding-agent/agent-instructions.md)
-  - [Evals and Acceptance](examples/03-coding-agent/evals.md)
-  - [Post-mortem Through Intent](examples/03-coding-agent/postmortem.md)
-
 ## Appendices
 
 - [Glossary](appendices/glossary.md)
 - [The Pattern Index](appendices/pattern-index.md)
 - [Reading Paths](appendices/reading-paths.md)
 - [The Companion Paper](appendices/companion-paper.md)
+- [Legacy v1.x Worked Pilots Archive](appendices/legacy-pilots.md)
 - [Reading List & References](appendices/references.md)
 - [SpecKit Quick Reference](appendices/speckit-reference.md)
 - [Archetype Quick-Select Card](appendices/archetype-card.md)

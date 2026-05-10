@@ -195,7 +195,7 @@ The agent ships to a 5% canary on Friday. The eval-and-validate phase begins Mon
 | 2. Specify | [Specify in practice — Internal docs Q&A](../../specify/scenarios/docs-qa.md) |
 | 3. **Delegate** | *(this chapter)* |
 | 4. Validate | [Validate in practice — Internal docs Q&A](../../validate/scenarios/docs-qa.md) |
-| 5. Evolve | [Evolve in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
+| 5. Evolve | [Evolve & Operate in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
 
 ## Conceptual chapters this scenario binds to
 

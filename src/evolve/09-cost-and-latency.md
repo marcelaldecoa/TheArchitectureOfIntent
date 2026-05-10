@@ -1,6 +1,6 @@
 # Cost and Latency Engineering
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. Cost incidents are a particular Cat 4 (Oversight) class that requires its own escalation pattern — the [Cost Posture sub-block](../specify/07-canonical-spec-template.md) of §4 of the spec template names the structural commitment, and this chapter names what to do when the structural commitment is breached in production. The customer-support scenario's day-47 Sonnet-4.7 incident and the coding-pipeline scenario's day-60 model-tier rotation are worked examples of the discipline in operation.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. Cost incidents are a particular Cat 4 (Oversight) class that requires its own escalation pattern — the [Cost Posture sub-block](../specify/07-canonical-spec-template.md) of §4 of the spec template names the structural commitment, and this chapter names what to do when the structural commitment is breached in production. The customer-support scenario's day-47 Sonnet-4.7 incident and the coding-pipeline scenario's day-60 model-tier rotation are worked examples of the discipline in operation.*
 
 ---
 
@@ -247,7 +247,7 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the **Cost Posture** sub-block in §4 is the upstream surface this chapter sits above; Section 7 is where non-functional cost and latency constraints live
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../theory/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) — the structural rationale for why cost has its own §4 sub-block instead of being a fifth calibration dimension
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../foundations/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) — the structural rationale for why cost has its own §4 sub-block instead of being a fifth calibration dimension
 - [Four Signal Metrics](../validate/06-metrics.md) — cost-per-correct-output is the metric this work moves
 - [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — eval suite must include cost and latency regressions, not just behavioral regressions
 

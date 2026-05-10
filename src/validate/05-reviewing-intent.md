@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 4 — Validate**. Intent review is what you do **before** the agent runs the spec — review the intent surface, not the output. The discipline complements the per-incident closed loop in Part 5 by catching spec gaps **upstream** rather than as production failures. Pair with [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) for what to look for during intent review.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 4 — Validate**. Intent review is what you do **before** the agent runs the spec — review the intent surface, not the output. The discipline complements the per-incident closed loop in Part 5 by catching spec gaps **upstream** rather than as production failures. Pair with [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) for what to look for during intent review.*
 
 ---
 
@@ -153,7 +153,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [Spec-Driven Development](../specify/01-what-sdd-means.md)
 - [Proportional Governance](../evolve/04-governance.md)
-- [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
 - [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
 
 **This pattern enables:**

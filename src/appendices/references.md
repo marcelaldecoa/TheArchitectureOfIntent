@@ -36,7 +36,7 @@ The agent landscape has moved quickly between 2024 and 2026. This table maps eac
 | **Google Agent2Agent (A2A) Protocol** | 2025 | [Multi-Agent Governance — Agent-to-agent protocols](../frame/07-multi-agent-governance.md) | Cross-vendor agent communication standard; the protocol-layer counterpart to MCP at the tool layer |
 | **OpenTelemetry GenAI semantic conventions** | 2024–25 | [Production Telemetry](../evolve/10-production-telemetry.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Vendor-neutral observability standard that the book recommends emitting alongside vendor SDK telemetry |
 | **OWASP LLM Top 10 (2025 update)** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md) | Canonical attack-surface enumeration for agent systems; baseline coverage for the four red-team batteries |
-| **MAST taxonomy** (Cemri et al.) | 2025 | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Empirical 14-category multi-agent failure partition; complements the book's seven-category fix-locus partition |
+| **MAST taxonomy** (Cemri et al.) | 2025 | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Empirical 14-category multi-agent failure partition; complements the book's seven-category fix-locus partition |
 | **Anthropic Skills as deployable artifact** | 2025 | [Portable Domain Knowledge](../delegate/05-agent-skills.md) | Skills as versioned, distributed deployment units; the maturation of the "domain knowledge as packaged context" pattern |
 | **SWE-bench Verified** | 2024 | [Coding Agents](../delegate/08-coding-agents.md), [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) | Human-validated subset of SWE-bench; the external calibration benchmark for coding agents |
 | **WebArena, VisualWebArena, OSWorld, ScreenSpot-Pro** | 2024–25 | [Computer-Use Agents](../delegate/09-computer-use-agents.md), [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) | External calibration benchmarks for computer-use agents; reveal that "computer-use works" is an overclaim for many task domains |
@@ -130,7 +130,7 @@ The protocol-layer counterpart to MCP at the tool layer; emerging standardizatio
 - **ISO/IEC 42001:2023.** *Information technology — Artificial intelligence — Management system.* — The first international management-system standard for AI; complements NIST AI RMF for organizations seeking certification.
 - **Anthropic.** (Sept 2023, ongoing). *Responsible Scaling Policy.* anthropic.com/responsible-scaling-policy. — Anthropic's published commitments on capability evaluations and deployment thresholds.
 - **OpenAI.** (Dec 2023, ongoing). *Preparedness Framework.* openai.com/preparedness. — OpenAI's analogue to RSP; defines model risk categories and deployment gates.
-- **SAE International.** (2021). *J3016 — Taxonomy and Definitions for Terms Related to Driving Automation Systems.* — The canonical six-level autonomy taxonomy that informed the autonomy dimension in [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md).
+- **SAE International.** (2021). *J3016 — Taxonomy and Definitions for Terms Related to Driving Automation Systems.* — The canonical six-level autonomy taxonomy that informed the autonomy dimension in [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md).
 
 ---
 
@@ -271,7 +271,7 @@ Specific sources cited within chapters of this book, organized alphabetically by
 | **Anthropic** — *Many-shot jailbreaking* (2024) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
 | **Anthropic** — *Model Context Protocol* (2024) | [The Model Context Protocol](../delegate/mcp/01-what-is-mcp.md), [Designing MCP Tools](../delegate/mcp/02-designing-mcp-tools.md), [MCP Safety](../delegate/mcp/03-mcp-safety.md), [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md) |
 | **Anthropic** — *Prompt caching with Claude* (2024) | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
-| **Anthropic** — *Responsible Scaling Policy* (2023, ongoing) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
+| **Anthropic** — *Responsible Scaling Policy* (2023, ongoing) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) |
 | **Datadog** — *LLM Observability* | [Production Telemetry](../evolve/10-production-telemetry.md) |
 | **GitHub** — *spec-kit* (2024–25) | [Spec-Driven Development](../specify/01-what-sdd-means.md), [SpecKit](../specify/04-speckit.md) |
 | **Google** — *Agent2Agent (A2A) Protocol* (2025) | [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
@@ -284,23 +284,23 @@ Specific sources cited within chapters of this book, organized alphabetically by
 | **Microsoft** — *DevSquad Copilot* (2026) | [The Living Spec](../specify/06-living-specs.md), [Architectural Decision Records](../specify/08-architectural-decision-records.md), [DevSquad Mapping](../evolve/12-devsquad-mapping.md), [Co-adoption with DevSquad](../evolve/13-co-adoption-with-devsquad.md), [Adoption Playbook](../evolve/11-adoption-playbook.md), [References — Spec-driven development](references.md) |
 | **Microsoft** — *PyRIT* | [Red-Team Protocol](../validate/08-red-team-protocol.md) |
 | **NIST** — *AI 100-2 E2024* (Adversarial ML) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) |
-| **NIST** — *AI Risk Management Framework (AI RMF 1.0)* | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
+| **NIST** — *AI Risk Management Framework (AI RMF 1.0)* | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) |
 | **NVIDIA** — *Garak* (LLM vulnerability scanner) | [Red-Team Protocol](../validate/08-red-team-protocol.md) |
 | **OpenAI** — *Agent SDK* (2025) | [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
 | **OpenAI** — *Operator* (2025) | [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
-| **OpenAI** — *Practices for Governing Agentic AI Systems* (Shavit, Agarwal et al., 2023) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md), [References](references.md) |
+| **OpenAI** — *Practices for Governing Agentic AI Systems* (Shavit, Agarwal et al., 2023) | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md), [References](references.md) |
 | **OpenAI** — *Prompt caching / cached input pricing* (2024) | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
 | **OpenAI** — *o1 / o3 reasoning models* (2024–25) | [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
 | **OpenInference / Phoenix** (Arize) | [Production Telemetry](../evolve/10-production-telemetry.md) |
 | **OpenTelemetry** — *GenAI semantic conventions* | [Production Telemetry](../evolve/10-production-telemetry.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
 | **OWASP** — *LLM Top 10* (2025) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
-| **SAE International** — *J3016 driving automation taxonomy* | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) |
+| **SAE International** — *J3016 driving automation taxonomy* | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) |
 
 ### Academic and research references
 
 | Source | Cited in |
 |---|---|
-| **Cemri, M., et al.** — *MAST: Multi-Agent System Failure Taxonomy* (2025) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
+| **Cemri, M., et al.** — *MAST: Multi-Agent System Failure Taxonomy* (2025) | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) |
 | **Greshake, K., et al.** — *Not what you've signed up for* (2023, indirect prompt injection) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
 | **Hines, K., et al.** — *Spotlighting* (Microsoft Research, 2024) | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) |
 | **Hong, S., et al.** — *MetaGPT* (2023) | [Multi-Agent Governance](../frame/07-multi-agent-governance.md), [References](references.md) |
@@ -321,7 +321,7 @@ Specific sources cited within chapters of this book, organized alphabetically by
 | **Yang, J., et al.** — *SWE-agent* (2024) | [Coding Agents](../delegate/08-coding-agents.md) |
 | **Yao, S., et al.** — *ReAct* (2022) | [The Executor Model](../delegate/03-agents-as-executors.md) |
 | **Yao, S., et al.** — *τ-bench* (2024) | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) |
-| **Zhang, Y., et al.** — *LLM-Agent Hallucinations Survey* (2025) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
+| **Zhang, Y., et al.** — *LLM-Agent Hallucinations Survey* (2025) | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) |
 | **Zheng, L., et al.** — *Judging LLM-as-a-Judge / MT-Bench* (2023) | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) |
 | **Zhou, S., et al.** — *WebArena* (2024) | [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
 
@@ -344,8 +344,8 @@ Specific sources cited within chapters of this book, organized alphabetically by
 | **Meyer, B.** — *Object-Oriented Software Construction* (1997) | [The Spec as Control Surface](../specify/02-specs-as-control-surfaces.md) |
 | **North, D.** — *Behaviour-Driven Development / Gherkin* | [The Canonical Spec Template](../specify/07-canonical-spec-template.md) |
 | **Nygard, M.** — *Documenting Architecture Decisions* (2011) | [Architectural Decision Records](../specify/08-architectural-decision-records.md), [DevSquad Mapping](../evolve/12-devsquad-mapping.md) |
-| **Ohno, T.** — *Toyota Production System* (1988, 5 Whys) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
-| **Reason, J.** — *Human Error / Swiss-cheese model* (1990) | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) |
+| **Ohno, T.** — *Toyota Production System* (1988, 5 Whys) | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) |
+| **Reason, J.** — *Human Error / Swiss-cheese model* (1990) | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) |
 | **Russell, S.** — *Human Compatible* (2019) | [References — AI ethics, alignment](references.md) |
 | **Westrum, R.** — *A typology of organisational cultures* (2004) | [Adoption Playbook](../evolve/11-adoption-playbook.md) |
 

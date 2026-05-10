@@ -89,7 +89,7 @@ Composite (1–125): 60+ critical, 30–59 high, 10–29 medium, <10 low. Use th
 
 ## Mapping findings to the failure taxonomy
 
-OWASP categorizes by attack surface; the book's [failure taxonomy](../theory/05-failure-as-design-signal.md) categorizes by *fix locus* — which artifact has to change. Every successful exploit has both: an attack-surface label (LLM01–10) and a fix-locus label (Cat 1–7). The fix-locus label is what tells the team *who owns this finding and where the change goes*.
+OWASP categorizes by attack surface; the book's [failure taxonomy](../foundations/05-failure-as-design-signal.md) categorizes by *fix locus* — which artifact has to change. Every successful exploit has both: an attack-surface label (LLM01–10) and a fix-locus label (Cat 1–7). The fix-locus label is what tells the team *who owns this finding and where the change goes*.
 
 | Finding pattern | Likely fix locus | Where the fix lives |
 |---|---|---|

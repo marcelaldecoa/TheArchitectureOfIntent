@@ -91,7 +91,7 @@ The Composition Declaration is written explicitly. It will land in §4 of the sp
 
 ## Calibration of the four dimensions
 
-The team works the four orthogonal calibration dials ([Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md)). The temptation is to collapse them into "how autonomous is the agent?" — Maya rejects that explicitly: *"Set them independently. Treat each dimension as its own commitment."*
+The team works the four orthogonal calibration dials ([Calibrate Agency, Autonomy, Responsibility, Reversibility](../../foundations/03-agency-autonomy-responsibility.md)). The temptation is to collapse them into "how autonomous is the agent?" — Maya rejects that explicitly: *"Set them independently. Treat each dimension as its own commitment."*
 
 | Dimension | Setting | Reason |
 |---|---|---|
@@ -133,14 +133,14 @@ The Frame session takes 90 minutes. Maya circulates the artifact for sign-off th
 | 2. Specify | [Specify in practice — Customer-support agent](../../specify/scenarios/customer-support.md) |
 | 3. Delegate | [Delegate in practice — Customer-support agent](../../delegate/scenarios/customer-support.md) |
 | 4. Validate | [Validate in practice — Customer-support agent](../../validate/scenarios/customer-support.md) |
-| 5. Evolve | [Evolve in practice — Customer-support agent (90 days post-launch)](../../evolve/scenarios/customer-support.md) |
+| 5. Evolve | [Evolve & Operate in practice — Customer-support agent (90 days post-launch)](../../evolve/scenarios/customer-support.md) |
 
 ## Conceptual chapters this scenario binds to
 
 - [Pick an Archetype](../../frame/02-canonical-intent-archetypes.md) — the Executor archetype
 - [Composing Archetypes](../../frame/05-composing-archetypes.md) — Pattern A (Confirm-then-Act), Pattern B (Executor + Guardian)
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../theory/03-agency-autonomy-responsibility.md) — the four-dial model
-- [The Intent Design Session](../../theory/07-intent-design-session.md) — Frame is its first phase
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../../foundations/03-agency-autonomy-responsibility.md) — the four-dial model
+- [The Intent Design Session](../../foundations/07-intent-design-session.md) — Frame is its first phase
 - [Roles & Responsibilities (RACI) Card](../../appendices/raci-card.md) — Priya as the domain owner
 
 ## Source material

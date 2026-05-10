@@ -21,7 +21,7 @@ This book is the discipline that addresses that gap. It is a field guide for the
 
 ## What is the Architecture of Intent?
 
-The framework's one-page definition lives in [Part 0 — Foundations, *What is the Architecture of Intent?*](theory/01-what-is-aoi.md): three questions every delegated system has to answer; five activities that answer them (Frame · Specify · Delegate · Validate · Evolve); three properties that make this an *architecture* rather than an *art* (intent as a designed artifact; fixes live in structure, not prompts; calibration is deliberate). Read that chapter once; come back when you get lost.
+The framework's one-page definition lives in [Part 0 — Foundations, *What is the Architecture of Intent?*](foundations/01-what-is-aoi.md): three questions every delegated system has to answer; five activities that answer them (Frame · Specify · Delegate · Validate · Evolve); three properties that make this an *architecture* rather than an *art* (intent as a designed artifact; fixes live in structure, not prompts; calibration is deliberate). Read that chapter once; come back when you get lost.
 
 For the visual version of the same content, see *The framework on one page* below.
 
@@ -33,7 +33,7 @@ The five activities and every load-bearing list in the framework — five archet
 
 ![The Architecture of Intent on One Page. Three questions every delegated system answers (top); the five activities that work them out — Frame, Specify, Delegate, Validate, Evolve; the load-bearing constructs each activity binds; and the four signal metrics on the right rail that descend into the EVOLVE row, where each diagnosed failure becomes a structural amendment that feeds the next intent.](images/architecture-of-intent-canvas.png)
 
-The book is organized around the five activities. **Part 1 — FRAME** stands up the archetypes, the four dimensions, and composition first-class. **Part 2 — SPECIFY** stands up the canonical spec template, the Composition Declaration and Cost Posture sub-blocks, the Intent Design Session, and the repertoires. **Part 3 — DELEGATE** stands up agent classes, capability and tool-manifest patterns, MCP, oversight, and the patterns that bind to what the spec implies. **Part 4 — VALIDATE** stands up failure diagnosis (the seven Cats), the four signal metrics, evals, red-team protocol, and the safety / observability / testing patterns that emit the validation signal. **Part 5 — EVOLVE** stands up the closed loop, governance, the Adoption Playbook, MVP-AoI, anti-patterns, framework versioning, and DevSquad co-adoption. **Part 6 — REFERENCE** is the catalog: cross-cutting coordination and state patterns, code standards, the legacy worked pilots that v2.0.0 supersedes with the in-practice scenarios, and the appendices.
+The book is organized around the five activities. **Part 1 — FRAME** stands up the archetypes, the four dimensions, and composition first-class. **Part 2 — SPECIFY** stands up the canonical spec template, the Composition Declaration and Cost Posture sub-blocks, the Intent Design Session, and the repertoires. **Part 3 — DELEGATE** stands up agent classes, capability and tool-manifest patterns, MCP, oversight, and the patterns that bind to what the spec implies. **Part 4 — VALIDATE** stands up failure diagnosis (the seven Cats), the four signal metrics, evals, red-team protocol, and the safety / observability / testing patterns that emit the validation signal. **Part 5 — EVOLVE & OPERATE** stands up two adjacent activities the framework distinguishes: *Evolution* (the closed loop, anti-patterns, framework versioning, deployment patterns) — what changes about the system over time — and *Operations* (governance, cost and latency, telemetry, cacheable prompt architecture, the Adoption Playbook, MVP-AoI, DevSquad mapping and co-adoption) — what runs the system day to day. The framework retains five activities; Part 5 acknowledges that *Evolve* in operation has an inseparable ongoing-ops slice that the book treats together. **Part 6 — REFERENCE** is the catalog: cross-cutting coordination and state patterns, code standards, the legacy worked pilots that v2.0.0 supersedes with the in-practice scenarios, and the appendices.
 
 Each of Parts 1–5 ends with three short *in practice* chapters that walk one of three running scenarios — a customer-support agent, a coding-agent pipeline, and an internal docs Q&A agent built by a DevSquad team — through that activity. You can read the book linearly by phase, or follow one scenario end-to-end across all five activities; the *in practice* chapters cross-link both ways.
 
@@ -83,10 +83,10 @@ Two reading modes, both supported.
 | Choosing how to structure a new agent system | [Pick an archetype](frame/02-canonical-intent-archetypes.md) |
 | Writing a spec right now | [The canonical spec template](specify/07-canonical-spec-template.md) |
 | Designing oversight for an agent that's about to ship | [Proportional Oversight](delegate/06-human-oversight-models.md) |
-| Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
+| Diagnosing a failure | [Failure modes and how to diagnose them](foundations/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Safety patterns](patterns/safety/prompt-injection-defense.md) |
 | Walking one running scenario across all five activities | [Frame in practice — Customer-support](frame/scenarios/customer-support.md), [Coding-agent pipeline](frame/scenarios/coding-pipeline.md), or [Internal docs Q&A (DevSquad)](frame/scenarios/docs-qa.md) |
-| Looking at a v1.x worked pilot (legacy) | [Designing an AI Coding Agent](examples/03-coding-agent/README.md) — superseded by the running scenario chapters above |
+| Looking at a v1.x worked pilot (legacy) | [Legacy v1.x Worked Pilots Archive](appendices/legacy-pilots.md) — superseded by the running scenario chapters above |
 
 ---
 

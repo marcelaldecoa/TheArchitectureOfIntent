@@ -224,7 +224,7 @@ After applying this pattern:
 - [Prologue](../prologue.md) — what's at stake when delegating power to agents
 
 **This pattern enables:**
-- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md) — tune the four dials within the archetype's defaults
+- [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) — tune the four dials within the archetype's defaults
 - [Four Dimensions of Governance](03-archetype-dimensions.md) — formal axes for describing archetype properties
 - [The Archetype Selection Tree](04-decision-tree.md) — how to choose when the answer isn't obvious
 - Individual archetype specifications: [Advisor](archetypes/advisor.md), [Executor](archetypes/executor.md), [Guardian](archetypes/guardian.md), [Synthesizer](archetypes/synthesizer.md), [Orchestrator](archetypes/orchestrator.md)

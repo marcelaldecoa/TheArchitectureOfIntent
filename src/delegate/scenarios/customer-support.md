@@ -169,7 +169,7 @@ The agent ships to staging on Friday. The eval-and-validate phase begins Monday.
 | 2. Specify | [Specify in practice — Customer-support agent](../../specify/scenarios/customer-support.md) |
 | 3. **Delegate** | *(this chapter)* |
 | 4. Validate | [Validate in practice — Customer-support agent](../../validate/scenarios/customer-support.md) |
-| 5. Evolve | [Evolve in practice — Customer-support agent](../../evolve/scenarios/customer-support.md) |
+| 5. Evolve | [Evolve & Operate in practice — Customer-support agent](../../evolve/scenarios/customer-support.md) |
 
 ## Conceptual chapters this scenario binds to
 

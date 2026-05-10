@@ -1,6 +1,6 @@
 # Minimum Viable Architecture of Intent
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,19 +8,19 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. MVP-AoI is the [closed loop](../evolve/01-closed-loop.md) in compressed form for systems too small for the full discipline; the discipline travels down-scale, not just across-scale. The MVP applies when the system is small across all five of audience, stakes, cohesion, scale, and diagnosability, and graduates to the full discipline when any of the five graduation triggers fire.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. MVP-AoI is the [closed loop](../evolve/01-closed-loop.md) in compressed form for systems too small for the full discipline; the discipline travels down-scale, not just across-scale. The MVP applies when the system is small across all five of audience, stakes, cohesion, scale, and diagnosability, and graduates to the full discipline when any of the five graduation triggers fire.*
 
 ---
 
 ## Context
 
-The full framework — a 3-to-4-hour [Intent Design Session](../theory/07-intent-design-session.md), a 12-section spec, four-dimension calibration, ~50 patterns to bind from, four oversight models, four signal metrics, a 12-anti-pattern audit, a 7×6 RACI — is calibrated for systems that *deserve* it. A non-trivial pilot, a team of more than one, a deployment with reversibility cost, a regulated domain.
+The full framework — a 3-to-4-hour [Intent Design Session](../foundations/07-intent-design-session.md), a 12-section spec, four-dimension calibration, ~50 patterns to bind from, four oversight models, four signal metrics, a 12-anti-pattern audit, a 7×6 RACI — is calibrated for systems that *deserve* it. A non-trivial pilot, a team of more than one, a deployment with reversibility cost, a regulated domain.
 
 Some systems do not deserve that treatment. A solo prototype. A weekend agent. An internal one-week pilot the team will throw away. A side-project assistant that talks only to its author. For these, the framework as written is more expensive than the system is worth, and applying it produces *spec theater* — the form of discipline without the function — which is worse than skipping the discipline honestly.
 
 This chapter names the **floor** of the discipline. Below the floor is not Architecture of Intent; it is just deploying an agent and hoping. At the floor, you have the smallest set of artifacts that still does structural work. Above the floor, the rest of the book takes over.
 
-This pattern assumes [What is the Architecture of Intent?](../introduction.md#what-is-the-architecture-of-intent), [The Intent Design Session](../theory/07-intent-design-session.md), and [Adoption Playbook](11-adoption-playbook.md).
+This pattern assumes [What is the Architecture of Intent?](../introduction.md#what-is-the-architecture-of-intent), [The Intent Design Session](../foundations/07-intent-design-session.md), and [Adoption Playbook](11-adoption-playbook.md).
 
 ---
 
@@ -135,7 +135,7 @@ The MVP graduates to the full framework when *any one* of these crosses:
 | **Scale crosses ~100 runs/day** | Cost, latency, and oversight load become first-class concerns. The four signal metrics start mattering. |
 | **A failure recurs and you cannot diagnose why** | The MVP's missing artifacts (the spec gap log, the four signal metrics, the failure taxonomy) start earning their keep. The same failure repeating is the strongest possible signal that you have crossed the floor. |
 
-Graduation is not a one-time event; it is a transition that takes a session. Run the [Intent Design Session](../theory/07-intent-design-session.md) on the now-larger system, with the MVP as the starting artifact. Phase 5 (Bind Patterns) will be the most-changed; the patterns the MVP let you skip are now the patterns the spec needs.
+Graduation is not a one-time event; it is a transition that takes a session. Run the [Intent Design Session](../foundations/07-intent-design-session.md) on the now-larger system, with the MVP as the starting artifact. Phase 5 (Bind Patterns) will be the most-changed; the patterns the MVP let you skip are now the patterns the spec needs.
 
 ### A worked example, end to end
 
@@ -207,7 +207,7 @@ After this pattern is in place:
 
 **This pattern assumes:**
 - [What is the Architecture of Intent?](../introduction.md#what-is-the-architecture-of-intent) — the discipline this chapter scales down
-- [The Intent Design Session](../theory/07-intent-design-session.md) — the full ritual the MVP graduates to
+- [The Intent Design Session](../foundations/07-intent-design-session.md) — the full ritual the MVP graduates to
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the 12-section spec the MVP omits most of
 
 **This pattern enables:**

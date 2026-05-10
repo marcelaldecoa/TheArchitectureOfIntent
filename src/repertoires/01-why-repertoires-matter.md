@@ -122,7 +122,7 @@ After applying this pattern:
 **This pattern assumes:**
 - [The Executor Model](../delegate/03-agents-as-executors.md)
 - [Portable Domain Knowledge](../delegate/05-agent-skills.md)
-- [Failure Modes and How to Diagnose Them — Spec Gap Log](../theory/05-failure-as-design-signal.md)
+- [Failure Modes and How to Diagnose Them — Spec Gap Log](../foundations/05-failure-as-design-signal.md)
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md)
 
 **This pattern enables:**

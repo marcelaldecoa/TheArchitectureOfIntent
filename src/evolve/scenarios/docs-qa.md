@@ -1,6 +1,6 @@
-# Evolve in practice — Internal docs Q&A (DevSquad)
+# Evolve & Operate in practice — Internal docs Q&A (DevSquad)
 
-**Part 5 · EVOLVE · Scenario 3 of 3**
+**Part 5 · EVOLVE & OPERATE · Scenario 3 of 3**
 
 ---
 
