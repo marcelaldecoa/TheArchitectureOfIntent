@@ -18,6 +18,51 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0-rc4 — 2026-05-10
+
+**MAJOR (release candidate, continues v2.0.0 line)** — ships **Scenario 1 (the customer-support agent) end-to-end** across all five activities. Five chapters (~10K words total) replace the rc1 stubs with full prose; the running-scenario tour at the end of `evolve/01-closed-loop.md` now resolves to substantive content rather than placeholders. Framework load-bearing commitments unchanged from rc3.
+
+### Added
+
+- **`src/frame/scenarios/customer-support.md` — full chapter prose.** Walks Maya, Ari, Sam, Jordan, and Priya through a 90-minute Frame session. Names the three questions, the archetype call (Executor with embedded Advisor and Guardian), the explicit risk-override consideration and rejection, the Composition Declaration, and the four-dimension calibration with an asymmetric Reversibility commitment. Produces a one-page Frame artifact that flows into Specify.
+- **`src/specify/scenarios/customer-support.md` — full chapter prose.** Walks the team through writing the canonical 12-section spec. Spends the most ink on §3 / §4 (with concrete clauses), §4 Composition Declaration, §4 Cost Posture (Haiku/Sonnet routing, p95/p99 latency budget, $0.04 ceiling), §6 invariants, and §11 escalation triggers. Produces a complete spec in 8 hours.
+- **`src/delegate/scenarios/customer-support.md` — full chapter prose.** Walks the build through five layers — system prompt (3 paragraphs), tool manifest (5 tools with deliberate exclusions enumerated), patterns bound from Part 4, oversight wiring, and the launch readiness checklist. Names the *"three paragraphs"* discipline for system prompts and shows the Guardian wrap on `issue_refund_within_cap` as code.
+- **`src/validate/scenarios/customer-support.md` — full chapter prose.** Walks pre-launch eval suite (150 known-good + 30 adversarial; first run lands at 84%, post-amendment at 91%), red-team protocol with four attack surfaces, the launch gate decision (all gates pass; 10% canary → 50% → 100%), the first 30 days of signal metrics with FPV short of target at 89%, and the eight Cat 1–7 categorized failures from the first month with their fix-locus amendments.
+- **`src/evolve/scenarios/customer-support.md` — full chapter prose.** Opens with the $2,400-unauthorized-refund vignette from `evolve/01-closed-loop.md`, then resolves it: the Guardian did its job, the failure was Cat 4 in the review-and-action handoff, and the fix lives in §10 and Priya's runbook (not the prompt). Walks 90 days of operation: the full 11-amendment spec evolution log, the Output Gate → Periodic transition (held at day 30, executed at day 44), the Cost Posture incident at day 47, the Discipline-Health Audit at day 90 (which catches *active* prompt-patch drift and *early signs* of metrics theater), and the post-90 disposition including the deprecation of the Haiku fallback path as net-negative.
+
+### Continuity
+
+The five chapters cross-link both ways through the *Reading path through this scenario* table at the end of each. The closed-loop chapter's running-scenario tour at `evolve/01-closed-loop.md` now points to substantive prose rather than the rc1 stubs. The $2,400-refund vignette in `evolve/01-closed-loop.md` (rc3) and `evolve/scenarios/customer-support.md` (rc4) are now narratively connected — the Evolve scenario chapter is the resolution of the closed-loop chapter's opening scene.
+
+### Voice
+
+All five chapters open vignette-before-exposition, per the v2.0.0 commitment. Specifics carry through: a five-person team with named roles (Maya / Ari / Sam / Jordan / Priya); concrete numbers (~3,000 chats/day, ~50K customers, $500 cap, $0.04 ceiling, 92% FPV target); operational details (the model-tier rotation at day 47; the contractor reviewer's interpretation of "approve message" at day 51); and explicit decisions documented with their reasoning.
+
+### Updated
+
+- Version markers advanced from **v2.0.0-rc3** to **v2.0.0-rc4** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+- `paper/architecture-of-intent.pdf` recompiled with the updated status header.
+
+### Why MAJOR-rc
+
+Continues the v2.0.0 MAJOR line because Scenario 1 is one of the three running scenarios v2.0.0 introduced as load-bearing — the v2.0.0 commitment to *running scenarios across the five activities* was structural at rc1 (the SUMMARY links resolved to stubs) but not yet substantive. rc4 makes the commitment substantive for one of the three scenarios. The version stays in the rc-line because Scenarios 2 and 3, paper §5, the file-path renames, and the voice rewrites are still pending.
+
+### Deferred (unchanged from rc3's plan)
+
+- File-path renames (`architecture/` → `frame/`, etc.) — purely filesystem cleanup
+- Scenario 2 (coding-agent pipeline) end-to-end — PR-E
+- Scenario 3 (internal docs Q&A, DevSquad) end-to-end — PR-F
+- Voice rewrites for older chapters — PR-G, PR-H, PR-I
+- Light Evolve-framing intros for the 9 existing `operating/*` chapters in Part 5 — folded into PR-G
+- Paper §5 (single canonical scenario, drawing on the rc4 customer-support material) — PR-D
+- Reading paths appendix + final v2.0.0 release tag — PR-J
+
+### PRs
+
+- **PR-C** (this rc) — five customer-support scenario chapters, version markers, paper PDF rebuild.
+
+---
+
 ## v2.0.0-rc3 — 2026-05-10
 
 **MAJOR (release candidate, continues v2.0.0 line)** — ships the full prose for the two new Phase-5 conceptual chapters that landed as stubs at rc1: *The Closed Loop: From Failures to Spec Amendments* (5.1) and *Framework Versioning* (5.7). The framework's load-bearing commitments are unchanged from rc2.
