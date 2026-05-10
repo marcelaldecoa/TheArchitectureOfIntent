@@ -162,27 +162,28 @@
         fill="#6366F1" letter-spacing="1.5">CANONICAL SPEC TEMPLATE — 12 sections, colored by dimension</text>
 
   <!-- 12 spec cells: 4 cols × 3 rows. cell=280×55, gap=10. positions x: 160, 460, 760, 1060 -->
+  <!-- Layout per cell: label (top, small uppercase, dimension color), title (middle, bold), description (bottom). -->
   <!-- Row 1 y=510 -->
   <g>
     <rect x="160" y="510" width="280" height="55" rx="6" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
     <rect x="160" y="510" width="5" height="55" fill="#64748B"/>
-    <text x="178" y="530" font-size="10" font-weight="700" fill="#475569" letter-spacing="1">§1</text>
-    <text x="200" y="530" font-size="10" font-weight="700" fill="#475569">PROBLEM STATEMENT</text>
-    <text x="178" y="551" font-size="10" fill="#64748B">Frames the goal that licenses delegation</text>
+    <text x="178" y="525" font-size="9.5" font-weight="700" fill="#475569" letter-spacing="1">§1</text>
+    <text x="178" y="542" font-size="11" font-weight="700" fill="#0F1729">PROBLEM STATEMENT</text>
+    <text x="178" y="558" font-size="9.5" fill="#64748B">Frames the goal that licenses delegation</text>
   </g>
   <g>
     <rect x="460" y="510" width="280" height="55" rx="6" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.2"/>
     <rect x="460" y="510" width="5" height="55" fill="#64748B"/>
-    <text x="478" y="530" font-size="10" font-weight="700" fill="#475569" letter-spacing="1">§2</text>
-    <text x="500" y="530" font-size="10" font-weight="700" fill="#475569">DESIRED OUTCOME</text>
-    <text x="478" y="551" font-size="10" fill="#64748B">Observable success state, not activity</text>
+    <text x="478" y="525" font-size="9.5" font-weight="700" fill="#475569" letter-spacing="1">§2</text>
+    <text x="478" y="542" font-size="11" font-weight="700" fill="#0F1729">DESIRED OUTCOME</text>
+    <text x="478" y="558" font-size="9.5" fill="#64748B">Observable success state, not activity</text>
   </g>
   <g>
     <rect x="760" y="510" width="280" height="55" rx="6" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.2"/>
     <rect x="760" y="510" width="5" height="55" fill="#3730A3"/>
-    <text x="778" y="530" font-size="10" font-weight="700" fill="#3730A3" letter-spacing="1">§3 · AGENCY</text>
-    <text x="894" y="530" font-size="10" font-weight="700" fill="#3730A3">SCOPE (in / out)</text>
-    <text x="778" y="551" font-size="10" fill="#475569">Decision space; bounded action surface</text>
+    <text x="778" y="525" font-size="9.5" font-weight="700" fill="#3730A3" letter-spacing="1">§3 · AGENCY</text>
+    <text x="778" y="542" font-size="11" font-weight="700" fill="#0F1729">SCOPE (in / out)</text>
+    <text x="778" y="558" font-size="9.5" fill="#475569">Decision space; bounded action surface</text>
   </g>
   <g>
     <rect x="1060" y="510" width="280" height="55" rx="6" fill="#FFFFFF" stroke="#0F1729" stroke-width="1.4" stroke-dasharray="3,2"/>
@@ -190,68 +191,69 @@
     <rect x="1060" y="523" width="5" height="13" fill="#B45309"/>
     <rect x="1060" y="536" width="5" height="13" fill="#15803D"/>
     <rect x="1060" y="549" width="5" height="16" fill="#9F1239"/>
-    <text x="1078" y="530" font-size="10" font-weight="700" fill="#0F1729" letter-spacing="1">§4 · ALL DIMENSIONS</text>
-    <text x="1078" y="551" font-size="10" fill="#475569">ARCHETYPE DECLARATION — calibration record</text>
+    <text x="1078" y="525" font-size="9.5" font-weight="700" fill="#0F1729" letter-spacing="1">§4 · ALL DIMENSIONS</text>
+    <text x="1078" y="542" font-size="11" font-weight="700" fill="#0F1729">ARCHETYPE DECLARATION</text>
+    <text x="1078" y="558" font-size="9.5" fill="#475569">Calibration record</text>
   </g>
 
   <!-- Row 2 y=575 -->
   <g>
     <rect x="160" y="575" width="280" height="55" rx="6" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.2"/>
     <rect x="160" y="575" width="5" height="55" fill="#3730A3"/>
-    <text x="178" y="595" font-size="10" font-weight="700" fill="#3730A3" letter-spacing="1">§5 · AGENCY</text>
-    <text x="295" y="595" font-size="10" font-weight="700" fill="#3730A3">FUNCTIONAL INTENT</text>
-    <text x="178" y="616" font-size="10" fill="#475569">What the system must do, not how</text>
+    <text x="178" y="590" font-size="9.5" font-weight="700" fill="#3730A3" letter-spacing="1">§5 · AGENCY</text>
+    <text x="178" y="607" font-size="11" font-weight="700" fill="#0F1729">FUNCTIONAL INTENT</text>
+    <text x="178" y="623" font-size="9.5" fill="#475569">What the system must do, not how</text>
   </g>
   <g>
     <rect x="460" y="575" width="280" height="55" rx="6" fill="#FCE7F3" stroke="#9F1239" stroke-width="1.2"/>
     <rect x="460" y="575" width="5" height="55" fill="#9F1239"/>
-    <text x="478" y="595" font-size="10" font-weight="700" fill="#9F1239" letter-spacing="1">§6 · REVERSIBILITY</text>
-    <text x="612" y="595" font-size="10" font-weight="700" fill="#9F1239">INVARIANTS</text>
-    <text x="478" y="616" font-size="10" fill="#475569">Conditions that must always hold</text>
+    <text x="478" y="590" font-size="9.5" font-weight="700" fill="#9F1239" letter-spacing="1">§6 · REVERSIBILITY</text>
+    <text x="478" y="607" font-size="11" font-weight="700" fill="#0F1729">INVARIANTS</text>
+    <text x="478" y="623" font-size="9.5" fill="#475569">Conditions that must always hold</text>
   </g>
   <g>
     <rect x="760" y="575" width="280" height="55" rx="6" fill="#FCE7F3" stroke="#9F1239" stroke-width="1.2"/>
     <rect x="760" y="575" width="5" height="55" fill="#9F1239"/>
-    <text x="778" y="595" font-size="10" font-weight="700" fill="#9F1239" letter-spacing="1">§7 · REVERSIBILITY</text>
-    <text x="912" y="595" font-size="10" font-weight="700" fill="#9F1239">NON-FUNCTIONAL CONSTRAINTS</text>
-    <text x="778" y="616" font-size="10" fill="#475569">Latency, cost, security, availability</text>
+    <text x="778" y="590" font-size="9.5" font-weight="700" fill="#9F1239" letter-spacing="1">§7 · REVERSIBILITY</text>
+    <text x="778" y="607" font-size="11" font-weight="700" fill="#0F1729">NON-FUNCTIONAL CONSTRAINTS</text>
+    <text x="778" y="623" font-size="9.5" fill="#475569">Latency, cost, security, availability</text>
   </g>
   <g>
     <rect x="1060" y="575" width="280" height="55" rx="6" fill="#FCE7F3" stroke="#9F1239" stroke-width="1.2"/>
     <rect x="1060" y="575" width="5" height="55" fill="#9F1239"/>
-    <text x="1078" y="595" font-size="10" font-weight="700" fill="#9F1239" letter-spacing="1">§8 · REVERSIBILITY</text>
-    <text x="1212" y="595" font-size="10" font-weight="700" fill="#9F1239">AUTHORIZATION BOUNDARY</text>
-    <text x="1078" y="616" font-size="10" fill="#475569">What the agent may reach, with what scope</text>
+    <text x="1078" y="590" font-size="9.5" font-weight="700" fill="#9F1239" letter-spacing="1">§8 · REVERSIBILITY</text>
+    <text x="1078" y="607" font-size="11" font-weight="700" fill="#0F1729">AUTHORIZATION BOUNDARY</text>
+    <text x="1078" y="623" font-size="9.5" fill="#475569">What the agent may reach, with what scope</text>
   </g>
 
   <!-- Row 3 y=640 -->
   <g>
     <rect x="160" y="640" width="280" height="55" rx="6" fill="#F0FDF4" stroke="#15803D" stroke-width="1.2"/>
     <rect x="160" y="640" width="5" height="55" fill="#15803D"/>
-    <text x="178" y="660" font-size="10" font-weight="700" fill="#15803D" letter-spacing="1">§9 · RESPONSIBILITY</text>
-    <text x="318" y="660" font-size="10" font-weight="700" fill="#15803D">ACCEPTANCE CRITERIA</text>
-    <text x="178" y="681" font-size="10" fill="#475569">Testable conditions for &quot;done&quot;</text>
+    <text x="178" y="655" font-size="9.5" font-weight="700" fill="#15803D" letter-spacing="1">§9 · RESPONSIBILITY</text>
+    <text x="178" y="672" font-size="11" font-weight="700" fill="#0F1729">ACCEPTANCE CRITERIA</text>
+    <text x="178" y="688" font-size="9.5" fill="#475569">Testable conditions for &quot;done&quot;</text>
   </g>
   <g>
     <rect x="460" y="640" width="280" height="55" rx="6" fill="#F0FDF4" stroke="#15803D" stroke-width="1.2"/>
     <rect x="460" y="640" width="5" height="55" fill="#15803D"/>
-    <text x="478" y="660" font-size="10" font-weight="700" fill="#15803D" letter-spacing="1">§10 · RESPONSIBILITY</text>
-    <text x="618" y="660" font-size="10" font-weight="700" fill="#15803D">ASSUMPTIONS · OPEN QUESTIONS</text>
-    <text x="478" y="681" font-size="10" fill="#475569">What the spec leaves unresolved</text>
+    <text x="478" y="655" font-size="9.5" font-weight="700" fill="#15803D" letter-spacing="1">§10 · RESPONSIBILITY</text>
+    <text x="478" y="672" font-size="11" font-weight="700" fill="#0F1729">ASSUMPTIONS · OPEN QUESTIONS</text>
+    <text x="478" y="688" font-size="9.5" fill="#475569">What the spec leaves unresolved</text>
   </g>
   <g>
     <rect x="760" y="640" width="280" height="55" rx="6" fill="#FEF3C7" stroke="#B45309" stroke-width="1.2"/>
     <rect x="760" y="640" width="5" height="55" fill="#B45309"/>
-    <text x="778" y="660" font-size="10" font-weight="700" fill="#92400E" letter-spacing="1">§11 · AUTONOMY</text>
-    <text x="900" y="660" font-size="10" font-weight="700" fill="#92400E">AGENT EXECUTION INSTRUCTIONS</text>
-    <text x="778" y="681" font-size="10" fill="#475569">Per-step gates and exception escalation</text>
+    <text x="778" y="655" font-size="9.5" font-weight="700" fill="#92400E" letter-spacing="1">§11 · AUTONOMY</text>
+    <text x="778" y="672" font-size="11" font-weight="700" fill="#0F1729">AGENT EXECUTION INSTRUCTIONS</text>
+    <text x="778" y="688" font-size="9.5" fill="#475569">Per-step gates and exception escalation</text>
   </g>
   <g>
     <rect x="1060" y="640" width="280" height="55" rx="6" fill="#F0FDF4" stroke="#15803D" stroke-width="1.2"/>
     <rect x="1060" y="640" width="5" height="55" fill="#15803D"/>
-    <text x="1078" y="660" font-size="10" font-weight="700" fill="#15803D" letter-spacing="1">§12 · RESPONSIBILITY</text>
-    <text x="1218" y="660" font-size="10" font-weight="700" fill="#15803D">VALIDATION CHECKLIST</text>
-    <text x="1078" y="681" font-size="10" fill="#475569">Who validates what, before release</text>
+    <text x="1078" y="655" font-size="9.5" font-weight="700" fill="#15803D" letter-spacing="1">§12 · RESPONSIBILITY</text>
+    <text x="1078" y="672" font-size="11" font-weight="700" fill="#0F1729">VALIDATION CHECKLIST</text>
+    <text x="1078" y="688" font-size="9.5" fill="#475569">Who validates what, before release</text>
   </g>
 
   <!-- ============ ACTIVITY 3: DELEGATE ============ -->

@@ -17,8 +17,9 @@ The teaching deck is a current, modern companion intended for workshops, recruit
 | `architecture-of-intent.pptx` | Teaching deck (PowerPoint, 16:9) — committed |
 | `architecture-of-intent.html` | Teaching deck (self-contained HTML) — committed |
 | `references.bib` | BibTeX bibliography (~30 entries across 9 domains) |
-| `figures/archetype-decision-tree.svg` + `.png` | Figure 1 — referenced in §3.2 |
-| `figures/four-dimensions-orthogonality.svg` + `.png` | Figure 2 — referenced in §3.3 |
+| `figures/architecture-of-intent-canvas.svg` + `.png` | Figure 1 — the framework on one page; referenced in §3 (and mirrored to `src/images/` for the book) |
+| `figures/archetype-decision-tree.svg` + `.png` | Figure 2 — referenced in §3.2 |
+| `figures/four-dimensions-orthogonality.svg` + `.png` | Figure 3 — referenced in §3.3 |
 | `presentation_content.py` | Single source of truth for both decks (slide data + palette) |
 | `build_presentation.py` | Builds the PPTX from `presentation_content.py` |
 | `build_html_presentation.py` | Builds the HTML deck from `presentation_content.py` |
@@ -104,14 +105,18 @@ This honest accounting is in the abstract, §1.3, and §5. Reviewers reward it; 
 
 ## Figures
 
-Both figures are SVG sources that pre-render to PNG. The paper Markdown references the PNG files (arXiv-portable; `librsvg2-bin` is not required at compile time). To regenerate the PNGs after editing an SVG:
+All three figures are SVG sources that pre-render to PNG. The paper Markdown references the PNG files (arXiv-portable; `librsvg2-bin` is not required at compile time). To regenerate the PNGs after editing an SVG:
 
 ```bash
+rsvg-convert --format=png --width=1800 paper/figures/architecture-of-intent-canvas.svg \
+  --output paper/figures/architecture-of-intent-canvas.png
 rsvg-convert --format=png --width=1800 paper/figures/archetype-decision-tree.svg \
   --output paper/figures/archetype-decision-tree.png
+rsvg-convert --format=png --width=1800 paper/figures/four-dimensions-orthogonality.svg \
+  --output paper/figures/four-dimensions-orthogonality.png
 ```
 
-Or just push to `main` and let the workflow do it.
+Or just push to `main` and let the workflow do it. The "Compile paper & decks" workflow also mirrors the canvas PNG into `src/images/` so the book's *Introduction → The framework on one page* section stays in sync with the paper's Figure 1.
 
 If the paper goes to a workshop or journal that prefers TikZ, both figures can be re-rendered natively in LaTeX from the same logical content; SVG is the working format until then.
 
