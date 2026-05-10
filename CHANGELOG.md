@@ -18,6 +18,83 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0 — 2026-05-10
+
+**MAJOR (stable)** — graduates the v2.0.0 release-candidate series (rc1–rc8) to stable. Adds the *Reading Paths* appendix as the navigation aid for readers picking their entry point, and bumps version markers from `v2.0.0-rc8` to `v2.0.0`. No load-bearing framework changes from rc8; this is the publication of the v2.0 line.
+
+### Added
+
+- **`src/appendices/reading-paths.md` — new navigation appendix.** Eight reader entry points, each with the chapter sequence and the time estimate: (1) the linear field-guide read, (2/3/4) the three scenario reads end-to-end, (5) the conceptual-only read for evaluators, (6) the minimum-90-minute read, (7) per-role reads (tech lead / ML engineer / SRE / engineering manager / product manager), (8) problem-driven entry points indexed against the most-common questions. The appendix closes with a *note on re-entry* that frames the book as a field guide structured to be re-entered rather than finished.
+- The new appendix is added to `src/SUMMARY.md` under *Appendices* between *The Pattern Index* and *The Companion Paper*.
+
+### Updated
+
+- Version markers advanced from **v2.0.0-rc8** to **v2.0.0** (stable) in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+- `paper/architecture-of-intent.pdf` recompiled with the v2.0.0 status header.
+
+### What v2.0.0 contains, in summary
+
+The complete v2.0.0 release as it stabilized through rc1–rc8:
+
+**Load-bearing commitments (unchanged from v1.x's five archetypes, four dimensions, seven Cats, four oversight models, four signal metrics, composition first-class):**
+- Five archetypes: Advisor, Executor, Guardian, Synthesizer, Orchestrator
+- Four orthogonal calibration dimensions: Agency, Autonomy, Responsibility, Reversibility
+- Seven fix-locus failure categories (Cat 1 Spec through Cat 7 Perceptual, with four sub-categories)
+- Four oversight models: Monitoring, Periodic, Output Gate, Pre-authorized
+- Four signal metrics: spec-gap rate, first-pass validation, cost per correct outcome, oversight load
+- 12 canonical spec sections (with the v1.x Composition Declaration and Cost Posture sub-blocks)
+- Eight pattern categories (~50 patterns)
+- Composition as a first-class design surface (Patterns A–E)
+
+**v2.0.0's structural changes:**
+- *Evolve* promoted from a closing-Validate sub-discipline to a **peer fifth activity** (the cardinality change that made v2.0.0 a MAJOR bump)
+- Book reorganized from nine mixed-grain Parts into six phase-aligned Parts: **FRAME / SPECIFY / DELEGATE / VALIDATE / EVOLVE / REFERENCE**
+- Framework canvas redrawn from a four-row layout (1180px) to a five-row layout (1330px) with the EVOLVE row's four practice chips (Closed Loop · Spec Evolution Log · Discipline-Health Audit · Framework Versioning)
+
+**v2.0.0's new prose (~50K words across 21 chapters and one paper section):**
+- 2 new conceptual Phase-5 chapters: [The Closed Loop](src/evolve/01-closed-loop.md) and [Framework Versioning](src/evolve/07-framework-versioning.md)
+- 15 new scenario chapters across the three running scenarios (5 phases × 3 scenarios), each scenario walking a 4–5 person team through its 90-day operating window
+- Paper §5: the customer-support pilot condensed into ~4K words of paper-grade prose
+- The Reading Paths appendix (this rc)
+
+**v2.0.0's voice commitment:** vignette-before-exposition openings on all new chapters and on the highest-impact v1.x conceptual chapters (rc8's voice pass). Specifics carry through the prose: named team roles, concrete numbers, operational details, decisions documented with reasoning.
+
+**v2.0.0's narrative spine:** three scenarios at the same e-commerce SaaS, with the cross-team adoption arc Maya (S1, customer-support) → Daniel (S2, platform-engineering) → Logan (S3, docs-platform) showing the framework's vocabulary spreading across teams as a working discipline.
+
+**v2.0.0's deck and sync:** the teaching deck got an activities slide and the deck/paper sync check enforces the five-activity cardinality across both artifacts.
+
+### What v2.0.0 explicitly did not change
+
+- The framework's vocabulary (5 archetypes, 4 dimensions, 7 Cats, etc. — listed above) survived intact. v2.0.0 was a *spine* change, not a vocabulary change.
+- Existing v1.x specs that referenced the four activities by name need a one-section re-grounding to reflect *Evolve* as a peer fifth activity; all other spec content remains valid.
+- The paper's §1.3 honest accounting (3 novel contributions / 4 explicitly-not-claimed) is unchanged.
+
+### Deferred to v2.0.x or v2.1.x (not blocking v2.0.0 stable)
+
+- File-path renames (`architecture/` → `frame/`, etc.) — purely filesystem cleanup; no reader-facing change. The SUMMARY drives navigation regardless of file paths.
+- Vignettes on the remaining v1.x chapters (rc8 covered the highest-impact 4 Frame chapters; ~10 more conceptual chapters across `sdd/`, `agents/`, `operating/` could benefit from the same pass).
+- Light Evolve-framing intros for the 4 remaining `operating/*` chapters in Part 5 (operating/10, 12, 13, 14) that didn't get them in rc8.
+- Elevating S3's team-proposed *citation theater* anti-pattern to the framework's catalog as a 12th anti-pattern — pending repository discussion. If accepted, this would be a v2.1 MINOR addition, not a MAJOR change.
+
+### The eight release candidates (chronological summary)
+
+- **rc1** — structural reshape: SUMMARY reorganized to six Parts, 17 scenario stub files created, deck/paper sync acquires `CANONICAL_PHASES`, version markers seeded.
+- **rc2** — five-row canvas redraw and PNG mirror, deck activities slide added, deck-side phases check activated.
+- **rc3** — full prose for the two new Phase-5 conceptual chapters (the Closed Loop and Framework Versioning).
+- **rc4** — Scenario 1 (customer-support agent) end-to-end across all five activities (~10K words across 5 chapters).
+- **rc5** — paper §5 (the customer-support pilot condensed for the paper).
+- **rc6** — Scenario 2 (coding-agent pipeline) end-to-end with Pattern E mode-switching composition concrete.
+- **rc7** — Scenario 3 (internal docs Q&A, DevSquad-built) end-to-end, completing the three-scenario commitment.
+- **rc8** — voice pass on v1.x conceptual chapters; chapter-subtitle alignment to the v2.0.0 Part placement across ~25 chapters.
+
+### PRs
+
+- **PR-J** (this release) — Reading Paths appendix; version graduation rc8 → 2.0.0; CHANGELOG summary of the rc cycle; paper PDF rebuild.
+
+After this release lands on `main`, a **`v2.0.0` git tag** can be created against the merge commit. The tag creation is intentionally not part of the PR; it is a step the maintainer takes after merge so the tag points at the canonical merged state on `main`.
+
+---
+
 ## v2.0.0-rc8 — 2026-05-10
 
 **MAJOR (release candidate, continues v2.0.0 line)** — voice pass and chapter-subtitle alignment for v1.x book chapters that hadn't been touched in v2.0.0. No load-bearing framework changes; this is the editorial cleanup pass that brings the older conceptual chapters into the field-guide voice the new (rc3–rc7) chapters established. Framework load-bearing commitments unchanged from rc7.
