@@ -59,6 +59,8 @@ Five roles, all required. Two people may share a role; one person should not hol
 
 If you cannot fill the five roles, do not run the session — write the spec alone and accept that you have not done the discipline. Calling a single-person spec-write an "Intent Design Session" defeats the purpose.
 
+These five roles are a subset of the seven canonical roles in the framework's [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md), which extends the picture to two more (the *builder* who implements the agent and the *reviewer* who validates outputs at the oversight gate) and maps all seven against the six operational activities. The IDS is when the RACI is *enacted* for one specific system; the card is the matrix the team enacts against.
+
 ### What to bring
 
 - **The canvas** ([Introduction](../introduction.md#the-framework-on-one-page)) — printed or projected, used as the running agenda.
@@ -212,6 +214,7 @@ This is what the framework looks like as a working practice. Without the session
 - [Intent Review Before Output Review](../operating/05-reviewing-intent.md) — the post-session asynchronous review discipline
 - [Four Signal Metrics](../operating/06-metrics.md) — the metrics committed during phase 6
 - [Adoption Playbook](../operating/11-adoption-playbook.md) — running the IDS is the first concrete practice a new team adopts
+- [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md) — the canonical role-to-activity matrix the IDS enacts
 
 **This pattern is calibrated by:**
 - The canvas in the [Introduction](../introduction.md#the-framework-on-one-page) — used as the running agenda

@@ -246,5 +246,6 @@
 - [Reading List & References](appendices/references.md)
 - [SpecKit Quick Reference](appendices/speckit-reference.md)
 - [Archetype Quick-Select Card](appendices/archetype-card.md)
+- [Roles & Responsibilities (RACI) Card](appendices/raci-card.md)
 - [MCP & Agent Skills Quick Reference](appendices/mcp-and-skills-reference.md)
 - [Model-Tier Quick-Select Card](appendices/model-tier-card.md)

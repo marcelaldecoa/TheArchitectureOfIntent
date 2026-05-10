@@ -72,7 +72,7 @@ One of the five canonical intent archetypes. Characterizes systems that act auto
 A predictable way in which a system, agent, or spec produces wrong outcomes. Cataloging known failure modes is a core activity of intent engineering — because failure modes are design signals, not surprises. See [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).
 
 **Framework Version**
-A semantic-ish version number for the Architecture of Intent as a whole. The version applies to the framework's load-bearing commitments — the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface — as instantiated by the book and the companion paper *together*. **MAJOR** bumps mark structural changes that break existing specs (a sixth archetype, a removed Cat); **MINOR** bumps mark additions that don't (a new chapter, a new pattern, a new spec sub-block); **PATCH** bumps mark prose, link, and figure refinements. Current version: **v1.0.0** (2026-05-10). See [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) at the repository root.
+A semantic-ish version number for the Architecture of Intent as a whole. The version applies to the framework's load-bearing commitments — the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface — as instantiated by the book and the companion paper *together*. **MAJOR** bumps mark structural changes that break existing specs (a sixth archetype, a removed Cat); **MINOR** bumps mark additions that don't (a new chapter, a new pattern, a new spec sub-block); **PATCH** bumps mark prose, link, and figure refinements. Current version: **v1.1.0** (2026-05-10). See [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) at the repository root.
 
 **Framing**
 The act of defining the problem space precisely enough that delegation can be both safe and productive. Framing determines what the agent is trying to do, what counts as success, and what must not happen. The foundation of every good spec.
@@ -143,6 +143,9 @@ One of four structured approaches to human oversight of agent systems: (A) Monit
 ---
 
 ## R
+
+**RACI**
+A standard responsibility-assignment shorthand: **R**esponsible (does the work — one or more per activity), **A**ccountable (owns the outcome — exactly one per activity), **C**onsulted (provides input *before* the work happens), **I**nformed (receives the result *after* the work happens). The framework's [RACI Card](raci-card.md) maps the seven canonical roles (domain owner, spec author, architect, builder, operator, reviewer, skeptic) against the six operational activities (Frame, Specify, Build, Oversee, Ship, Evolve). The discipline breaks when **A** is unclear ("we're all accountable" = no one is) — a specific instance of the *diffuse responsibility* failure mode named in [Calibrate Agency, Autonomy, Responsibility, Reversibility](../theory/03-agency-autonomy-responsibility.md).
 
 **Repertoire**
 A pre-authorized collection of archetypes, templates, constraints, and code standards that teams can use to accelerate spec-driven development without starting from scratch. Distinguished from "best practices" by their explicit authorization status. See [The Organizational Repertoire](../repertoires/01-why-repertoires-matter.md).

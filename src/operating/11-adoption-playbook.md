@@ -263,6 +263,7 @@ After applying this pattern:
 - [Proportional Governance](04-governance.md) — at quarter 1+, governance becomes relevant
 - [Four Signal Metrics](06-metrics.md) — at month 3, the metrics tell you whether adoption is working
 - [Evals and Benchmarks](07-evals-and-benchmarks.md) — the eval suite the team builds in month 2-3
+- [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md) — the canonical role-to-activity matrix the team grows into; introduce roles incrementally, not all at once
 - The worked examples ([Customer Support](../examples/01-ai-customer-support/README.md), [Code Generation Pipeline](../examples/02-code-generation-pipeline/README.md), [Coding Agent](../examples/03-coding-agent/README.md)) — what mature adoptions look like
 
 ---

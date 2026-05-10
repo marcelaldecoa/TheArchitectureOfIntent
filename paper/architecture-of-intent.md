@@ -5,7 +5,7 @@
 
 **Paper status:** Skeleton draft (paper v0.1). Position/framework paper, ~12–15 pages target. Companion artifact to the book of the same title.
 
-**Framework version:** v1.0.0 (2026-05-10). Both this paper and the [companion book](https://github.com/marcelaldecoa/TheArchitectureOfIntent) reflect the same framework version; load-bearing commitments (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface) move together. See `CHANGELOG.md` at the repository root for the versioning convention and release history.
+**Framework version:** v1.1.0 (2026-05-10). Both this paper and the [companion book](https://github.com/marcelaldecoa/TheArchitectureOfIntent) reflect the same framework version; load-bearing commitments (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface) move together. See `CHANGELOG.md` at the repository root for the versioning convention and release history.
 
 **Target venue:** arXiv (cs.SE / cs.AI cross-listing). Workshop or journal submission to be decided after first arXiv version is released.
 

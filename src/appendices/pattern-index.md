@@ -294,6 +294,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Proportional Governance](../operating/04-governance.md)
 - [Intent Review Before Output Review](../operating/05-reviewing-intent.md)
 - [Four Signal Metrics](../operating/06-metrics.md)
+- [Roles & Responsibilities (RACI) Card](raci-card.md) — the canonical role-to-activity ownership matrix
 
 ### "I need to measure and report on the practice"
 - [Four Signal Metrics](../operating/06-metrics.md)
