@@ -1,6 +1,6 @@
 # The Intent Design Session
 
-**Part 2 — Specify**
+**Part 0 — Foundations**
 
 ---
 

@@ -18,6 +18,70 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.2.0 — 2026-05-10
+
+**MINOR** — restores **Part 0 — Foundations** as a six-chapter conceptual preface. Closes the one structural delta between the original v2.0.0 proposal and what shipped: Part 0 was dissolved during rc1 planning to avoid front-loading definitions before the first scenario; v2.2.0 brings it back as an explicit Part for readers who want the foundations co-located. No load-bearing commitments change; no impact on the paper's structure.
+
+### Why MINOR, not MAJOR
+
+Adding a Part is a *navigation addition*. Existing v2.1.x specs continue to validate; no spec hardcodes the Part structure. The chapters that move into Part 0 keep their file paths (only their SUMMARY placement and chapter subtitles change), so existing deep links continue to resolve. Per the versioning convention, MINOR is the right shape.
+
+### Added
+
+- **`src/theory/01-what-is-aoi.md`** — new chapter *What is the Architecture of Intent?*, extracted from the *What is AoI?* section that previously lived inside the Introduction. Re-cast as a standalone chapter with a Part 0 subtitle, an epigraph, and a *Where to go next* closing section that lists the rest of Part 0 in order plus pointers to the canvas, the IDS, the miniature pilot, and the Reading Paths appendix.
+
+### Updated — SUMMARY structure
+
+`src/SUMMARY.md` reshaped to add **Part 0 — FOUNDATIONS** between the Foreword and Part 1. The new Part lists six chapters:
+
+1. [What is the Architecture of Intent?](src/theory/01-what-is-aoi.md) *(new)*
+2. [Intent vs. Implementation](src/theory/02-intent-vs-implementation.md) *(was Part 1)*
+3. [Calibrate Agency, Autonomy, Responsibility, Reversibility](src/theory/03-agency-autonomy-responsibility.md) *(was Part 1)*
+4. [Failure Modes and How to Diagnose Them](src/theory/05-failure-as-design-signal.md) *(was Part 4 opener)*
+5. [What Changes for the Senior Engineer](src/theory/08-what-changes-for-senior-engineers.md) *(was Foreword)*
+6. [The Intent Design Session](src/theory/07-intent-design-session.md) *(was Part 2)*
+
+Removed from their previous Parts:
+- Foreword: now contains only the Prologue (Senior Engineer relocated to Part 0).
+- Part 1 — FRAME: Intent vs. Implementation and Calibrate A/A/R/R relocated to Part 0. Part 1 now opens with [Pick an Archetype](src/architecture/02-canonical-intent-archetypes.md), which is appropriate for the Frame Part (the chapter is about *picking the shape*).
+- Part 2 — SPECIFY: The Intent Design Session relocated to Part 0. The IDS is the bridge between framework vocabulary and per-system spec; it sits more naturally in Foundations than in Specify.
+- Part 4 — VALIDATE: Failure Modes relocated to Part 0. Part 4 now opens with [Intent Review Before Output Review](src/operating/05-reviewing-intent.md). Part 4's Part-italic intro now notes that the Cat 1–7 taxonomy itself lives in Part 0 since it's referenced from every Part; Part 4 is about applying it in operation.
+
+### Updated — chapter subtitles and Part-framing prose
+
+- Subtitles in the five moved chapters updated to **`**Part 0 — Foundations**`**: theory/02, 03, 05, 07, 08.
+- `theory/05`'s Part-framing intro paragraph (added in rc8 / v2.0.1) updated to reflect the Part 0 placement: *"This chapter sits in Part 0 — Foundations because the seven-category fix-locus taxonomy is referenced from every Part."*
+
+### Updated — Introduction
+
+The Introduction's *What is the Architecture of Intent?* section (~25 lines of definition-style content) is removed; the intro now points readers at [Part 0's *What is AoI?* chapter](src/theory/01-what-is-aoi.md) for the canonical definition. The Introduction keeps its *Why this book exists*, *The framework on one page* (canvas), *What you will have at the end*, *Who this is for*, *How to use it*, *What the book does not promise*, *Honest scope*, and *A note on style* sections.
+
+### Updated — Reading Paths appendix
+
+- The *linear field-guide read* path now lists Part 0 as step 3 (after Foreword and Introduction) before Parts 1–5.
+- The *conceptual-only read* path simplifies to *"read all of Part 0 in order, plus a few additional binding chapters"* — Part 0's existence makes the path much shorter to describe.
+
+### Updated — version markers
+
+Version markers advanced from **v2.1.0** to **v2.2.0** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header). `paper/architecture-of-intent.pdf` recompiled.
+
+### What did *not* change
+
+- **No file paths changed.** The five moved chapters keep their `src/theory/0N-*.md` paths; only their SUMMARY placement and chapter subtitle changed. All deep links to those chapters from elsewhere in the book continue to resolve.
+- **No load-bearing commitments changed.** Five archetypes, four dimensions, seven Cats, four oversight models, four signal metrics, five activities, twelve spec sections, eight pattern categories, twelve anti-patterns, composition first-class — all unchanged.
+- **No impact on the paper.** The paper's structure (sections 1–8, plus appendices) is unchanged; only the status-header version updated.
+
+### Reader-experience trade-off, named
+
+The original argument for dissolving Part 0 (rc1, 2026-05-10) was *first-encounter experience over reference utility* — opening with ~30 pages of definitions before the first scenario was the "lecture before story" pattern the field-guide voice was trying to escape. v2.2.0 restores Part 0 with the trade-off acknowledged: linear readers now encounter Foundations chapters before the first *Frame in practice* scenario, but the [Reading Paths appendix](src/appendices/reading-paths.md) provides scenario-first paths for readers who want the operational color first. The trade-off is now *named in both directions* rather than chosen one way silently.
+
+### Deferred (unchanged from v2.1.0's plan)
+
+- File-path renames (`architecture/` → `frame/`, etc.)
+- Vignettes on the remaining v1.x chapters
+
+---
+
 ## v2.1.0 — 2026-05-10
 
 **MINOR** — elevates *citation theater* from a team-proposed addition to the framework's Discipline-Health Audit catalog as anti-pattern #6 in cluster 1 (*form without function*). The proposal originated in [Scenario 3's Evolve chapter](src/evolve/scenarios/docs-qa.md) at the docs-platform team's day-90 audit. Adopting it as a framework-level anti-pattern is the **closed loop running at framework grain** — the same discipline that takes per-system Cat 1s back to spec, taking team-proposed catalog additions back to the framework. No other load-bearing commitments change.

@@ -21,29 +21,9 @@ This book is the discipline that addresses that gap. It is a field guide for the
 
 ## What is the Architecture of Intent?
 
-**The Architecture of Intent** is the discipline of designing intent — what a delegated system is supposed to do, what it must never do, and how we will know it is working — so that a non-human executor can act on it reliably and a human can validate the action accurately.
+The framework's one-page definition lives in [Part 0 — Foundations, *What is the Architecture of Intent?*](theory/01-what-is-aoi.md): three questions every delegated system has to answer; five activities that answer them (Frame · Specify · Delegate · Validate · Evolve); three properties that make this an *architecture* rather than an *art* (intent as a designed artifact; fixes live in structure, not prompts; calibration is deliberate). Read that chapter once; come back when you get lost.
 
-Three questions every delegated system has to answer:
-
-1. *What is this system trying to achieve?*
-2. *Within what constraints?*
-3. *How will we know it is working?*
-
-Five activities answer them:
-
-- **Frame.** Commit to an archetype (Advisor, Executor, Guardian, Synthesizer, or Orchestrator) and to a calibration of the four dimensions — agency, autonomy, responsibility, reversibility — *before any spec is written*. The category is the strongest single predictor of how the system will behave under stress; choosing it deliberately costs an hour and saves a quarter.
-- **Specify.** Write the artifact the agent executes against and humans review against. Twelve canonical sections; each section operationalizes one of the four dimensions. The spec is not a requirements document for humans, not a design document for developers — it is an operating instruction for machines that humans can audit.
-- **Delegate.** Bind cross-cutting patterns (capability, integration, coordination, safety, observability, testing, state, deployment) by what the spec implies, not by what the team likes building. Pick one of four oversight models — Monitoring, Periodic, Output Gate, or Pre-authorized — proportional to autonomy and reversibility.
-- **Validate.** Track four signal metrics. When something fails, diagnose by *fix locus* — which artifact upstream needs to change — across seven failure categories. The diagnosis closes the loop back to the next intent.
-- **Evolve.** Turn each diagnosed failure into a structural change — a spec amendment, a manifest tightening, a CI guard, or a framework version bump — never only a prompt patch. The closed-loop discipline is what makes the practice survive the team that built it; it is also where the framework itself versions and where adoption either compounds or quietly degrades.
-
-Three properties make this an *architecture* rather than an *art*:
-
-- **Intent is a designed artifact.** Distinct from *implementation* (what the executor produces), distinct from *requirements* (what stakeholders ask for), distinct from *policy* (what the organization or law requires across all systems). The author of the spec is the author of the system that executes it.
-- **Fixes live in structure, not in prompts.** When a spec gap surfaces as a wrong agent action, the durable response amends the spec, the manifest, the oversight model, or the CI guard. A patch in the prompt layer does not compound across teams or runs; a change in the structural layer does. This is the load-bearing discipline of the framework: *structural fixes live in spec, manifest, CI, or platform — never only in the prompt.*
-- **Calibration is deliberate.** Each system commits to specific levels of agency and autonomy within its archetype's envelope, rather than getting as much of either as the model technically allows. The framework's worked claim is that the four calibration dimensions are *orthogonal* — independently controllable — and that collapsing them into a single "automation level" loses design space practitioners need.
-
-The framework's primary worked instance is AI agent systems, which are the most-acute current case of delegation. The book defaults to that frame. The same vocabulary — archetypes, dimensions, fix-locus failure categories, signal metrics — applies to other delegated systems too: automated pipelines, organizational delegation, regulated workflows. The book notes generalizations where they hold and stops short of claiming them where they don't.
+For the visual version of the same content, see *The framework on one page* below.
 
 ---
 

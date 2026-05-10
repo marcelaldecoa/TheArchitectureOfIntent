@@ -1,6 +1,6 @@
 # What Changes for the Senior Engineer
 
-**Foreword**
+**Part 0 — Foundations**
 
 ---
 

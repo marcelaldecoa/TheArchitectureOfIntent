@@ -1,6 +1,6 @@
 # The Intent–Implementation Boundary
 
-**Part 1 — Frame**
+**Part 0 — Foundations**
 
 ---
 
