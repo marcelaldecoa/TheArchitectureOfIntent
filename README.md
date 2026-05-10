@@ -31,18 +31,20 @@ If you're trying to answer "how do we ship this agent without it doing something
 
 ## How it's organized
 
+The book is organized as five activities — Frame, Specify, Delegate, Validate, Evolve & Operate — preceded by a *Foundations* part that establishes the vocabulary.
+
 | Part | Purpose |
 |------|---------|
-| **Prologue** | What changed, what's at stake, and what this playbook gives you |
-| **1. Decisions** | Pick an archetype, calibrate the four dimensions, anticipate failure, separate intent from implementation |
-| **2. The Spec** | Spec-driven development, the canonical template, writing for machine execution, living specs |
-| **3. The Agent** | What agents are, capability boundaries, knowledge & context, tools and MCP |
-| **4. Oversight, Safety & Operations** | Proportional oversight, safety patterns, retry, observability, conformance testing |
-| **5. Ship** | Canary, rollback, versioning, governance cadence, signal metrics, intent review |
-| **6. Worked Pilots** | Two end-to-end examples: AI customer support, and a code-generation pipeline |
-| **Cross-Cutting Patterns** | Coordination and state patterns that span the framework (12 of ~50 patterns; the other 38 live alongside their parent chapters in Parts 3–5) |
-| **Repertoires & Reference** | Spec templates, archetype catalog, validation templates, code standards |
-| **Appendices** | Glossary, archetype card, MCP & SpecKit references, pattern index |
+| **Prologue / Introduction / How to read** | What changed, what's at stake, and how to navigate the book |
+| **0. Foundations** | What the Architecture of Intent is, intent vs implementation, the four calibration dimensions, failure as a design signal, what changes for senior engineers, the intent design session |
+| **1. Frame** | Pick an archetype (Advisor, Executor, Guardian, Synthesizer, Orchestrator), the four orthogonal dimensions, the decision tree, composing archetypes, multi-agent compositions, *Frame in practice* scenarios |
+| **2. Specify** | Spec-driven development, specs as control surfaces, the canonical 12-section template, ADRs, SpecKit, *Specify in practice* scenarios |
+| **3. Delegate** | What agents are, autonomy vs agency, the executor model, least capability, tools and MCP, agent skills, agent classes (coding, computer-use, deep-research), *Delegate in practice* scenarios |
+| **4. Validate** | Intent review, four signal metrics, evals, red-team, *Validate in practice* scenarios |
+| **5. Evolve & Operate** | The closed loop, anti-patterns, framework versioning, deployment patterns (canary, rollback, spec versioning, model-upgrade, deprecation), governance, cost, telemetry, adoption playbook, MVP-AoI, DevSquad mapping, co-adoption, *Evolve & Operate in practice* scenarios |
+| **6. Reference — Cross-Cutting Patterns** | Coordination and state patterns that span the framework (12 of ~50 patterns; the other 38 live alongside their parent chapters in Parts 3–5) |
+| **Repertoires** | Spec templates, code standards |
+| **Appendices** | Glossary, pattern index, reading paths, companion paper, legacy v1.x worked-pilots archive, references, archetype card, RACI card, MCP & skills card, model-tier card |
 
 ## Companion paper and teaching deck
 
@@ -89,31 +91,34 @@ https://marcelaldecoa.github.io/TheArchitectureOfIntent/
 ```
 TheArchitectureOfIntent/
 ├── book.toml
-├── .github/workflows/deploy.yml
-├── src/
-│   ├── SUMMARY.md            # Table of contents
-│   ├── introduction.md
-│   ├── how-to-read.md
-│   ├── prologue.md           # Short prologue: what changed and what's at stake
-│   ├── architecture/         # Archetypes, decision tree, dimensions, composition
-│   ├── foundations/               # Intent vs implementation, calibration, failure diagnosis
-│   ├── specify/                  # Spec-driven development
-│   ├── agents/               # Agents, MCP, oversight
-│   ├── patterns/             # ~50 pattern one-pagers (capability, integration, coordination, ...)
-│   ├── repertoires/          # Templates, archetype catalog, code standards
-│   ├── operating/            # Governance, metrics, intent review
-│   ├── examples/             # End-to-end worked pilots
-│   └── appendices/           # Glossary, archetype card, references, pattern index
-├── paper/                    # Companion arXiv paper + teaching deck
-│   ├── architecture-of-intent.{md,pdf}    # Paper source + compiled PDF
-│   ├── architecture-of-intent.{pptx,html} # Teaching deck (PowerPoint + self-contained HTML)
-│   ├── presentation_content.py             # Single source of truth for both decks
-│   ├── build_{presentation,html_presentation}.py  # Deck builders
-│   ├── check-deck-sync.py                  # Drift detector between paper and deck
-│   ├── figures/                            # Figure SVGs + pre-rendered PNGs
-│   └── references.bib                      # Bibliography
-├── scripts/                  # Helper scripts (link checker, orphan checker)
-└── theme/                    # Custom CSS and zoom widget
+├── CHANGELOG.md                                # Framework version history
+├── .github/workflows/
+│   ├── deploy.yml                              # Auto-publish book to GitHub Pages on push to main
+│   └── build-paper.yml                         # Auto-rebuild paper PDF + decks on source change
+├── src/                                        # The book (mdBook source)
+│   ├── SUMMARY.md                              # Table of contents
+│   ├── introduction.md, how-to-read.md, prologue.md, miniature-pilot.md, cover.md
+│   ├── images/                                 # Book-side image copies (canvas mirror, kept in sync by GH workflow)
+│   ├── foundations/                            # Part 0: vocabulary — intent vs implementation, calibration, failure as design signal
+│   ├── frame/                                  # Part 1: archetypes, dimensions, decision tree, composition + frame/scenarios/
+│   ├── specify/                                # Part 2: SDD, the canonical spec template, ADRs, SpecKit + specify/scenarios/
+│   ├── delegate/                               # Part 3: agents, autonomy vs agency, least capability, MCP, agent classes + delegate/scenarios/
+│   ├── validate/                               # Part 4: intent review, signal metrics, evals, red-team + validate/scenarios/
+│   ├── evolve/                                 # Part 5 (EVOLVE & OPERATE): closed loop, deployment patterns, governance, cost, telemetry, DevSquad mapping + evolve/scenarios/
+│   ├── patterns/                               # ~50 pattern one-pagers (capability, integration, coordination, safety, observability, testing, state, deployment)
+│   ├── repertoires/                            # Spec templates, code standards
+│   ├── examples/                               # v1.x worked pilots archive (preserved on disk; reached via appendices/legacy-pilots.md)
+│   └── appendices/                             # Glossary, pattern index, reading paths, companion paper, legacy-pilots archive, references, quick-select cards
+├── paper/                                      # Companion arXiv paper + teaching deck
+│   ├── architecture-of-intent.{md,pdf}         # Paper source + compiled PDF
+│   ├── architecture-of-intent.{pptx,html}      # Teaching deck (PowerPoint + self-contained HTML)
+│   ├── presentation_content.py                 # Single source of truth for both decks
+│   ├── build_{presentation,html_presentation}.py   # Deck builders
+│   ├── check-deck-sync.py                      # Drift detector between paper and deck
+│   ├── figures/                                # Figure SVGs + pre-rendered PNGs (canvas, decision tree, orthogonality)
+│   └── references.bib                          # Bibliography
+├── scripts/                                    # Helper scripts (link checker, orphan checker)
+└── theme/                                      # Custom CSS and zoom widget
 ```
 
 ## Framework version
