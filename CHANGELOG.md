@@ -18,6 +18,51 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0-rc7 — 2026-05-10
+
+**MAJOR (release candidate, continues v2.0.0 line)** — ships **Scenario 3 (internal docs Q&A, DevSquad-built) end-to-end** across all five activities, completing the three-scenario commitment v2.0.0 introduced at rc1. Five chapters (~10K words total). Framework load-bearing commitments unchanged from rc6.
+
+### Added
+
+- **`src/frame/scenarios/docs-qa.md` — full chapter prose.** Logan's docs-platform team — the third adopter at the same e-commerce SaaS as Scenarios 1 and 2 — frames an internal docs Q&A agent for ~200 internal engineers using DevSquad Copilot's eight-phase iterative cycle. Walks the three questions, the archetype call (**Synthesizer governing with Advisor mode embedded for the low-confidence path**), and the team's most-important framing decision: committing to *docs-gap-finding rate as a positive signal* — the agent's most-valuable accidental product is revealing real coverage gaps in the docs. Frame happens during DevSquad's *envisioning phase* + *kickoff* ceremony.
+- **`src/specify/scenarios/docs-qa.md` — full chapter prose.** Walks the canonical 12-section spec written as a DevSquad **slice spec (P1 priority)** during DevSquad's *Spec the next slice* phase. The framework's 12-section template lives alongside DevSquad's slice spec format; the slice spec is the *current state* of the canonical spec, growing as slices land. Shows the AoI ↔ DevSquad mapping inline.
+- **`src/delegate/scenarios/docs-qa.md` — full chapter prose.** The build is decomposed by DevSquad's `decompose` agent into per-task scopes with curated tool subsets — the framework's **Least Capability** discipline expressed at the *build* layer. The 5-tool manifest is the smallest of the three running scenarios (`retrieve_docs`, `rerank_docs`, `compose_answer`, `verify_citation`, `emit_docs_gap_candidate`); the **citation-grounding check** is the most load-bearing tool implementation, structurally enforcing the citation discipline that paper §5 names as the worst Synthesizer failure mode.
+- **`src/validate/scenarios/docs-qa.md` — full chapter prose.** Pre-launch eval suite (200 known-good + 50 out-of-scope; first run **78% / 84%**, post-amendment **88% / 92%**), DevSquad's `review` agent running in independent context surfacing two findings the team's manual review missed, launch gate decision (5% canary → 25% → 75% → 100%), 30 days of metrics with all four standard metrics on target plus the **docs-gap-finding rate** stabilizing as the docs team keeps up, and the first month's 12 categorized failures tagged by both Cat *and* DevSquad phase.
+- **`src/evolve/scenarios/docs-qa.md` — full chapter prose.** The 90-day operating window: 44 spec amendments distributed 28 Cat 1 / 8 Cat 2 / 6 Cat 4 / 0 Cat 6 / 0 Cat 7, **plus 142 *docs amendments triggered by the agent*** in the docs team's authoring history (the agent's most operationally significant output, captured outside the agent's spec evolution log). The refusal-rate trajectory falls from 24% to 8% over 90 days as the docs team keeps up with the docs-gap-candidate feed. The §11 structural rewrite at days 45–52. A new corpus-growth-aware Cost Posture amendment at day 74. The **Discipline-Health Audit at day 90** is the cleanest among the three scenarios — zero *active* anti-patterns, one *early signs* on a team-proposed new anti-pattern (**citation theater**, specific to Synthesizer-flavored systems), and a framework-repository discussion about whether to elevate it to the framework's catalog.
+
+### Continuity
+
+- Scenario 3 closes the cross-team adoption arc named in Scenarios 1 and 2: customer-support team (Maya, S1) → platform-engineering team (Daniel, S2) → docs-platform team (Logan, S3). By the end of Scenario 3, the framework's vocabulary is operating across three teams as a working discipline, with two more teams in flight. Cross-team adoption is itself the closed loop at organizational scale.
+- The five chapters cross-link both ways via the *Reading path* table at the end of each.
+- Scenario 3's Evolve chapter proposes a new **citation theater** anti-pattern back to the framework via repository discussion — the framework's living-document discipline at work, modeled within the scenario itself.
+
+### Voice
+
+All five chapters open vignette-before-exposition. Specifics carry through: the team's commitment to *docs-gap-finding rate as a positive signal*; Maya's note that *"the docs-gap-finding metric is what makes this scenario interesting"*; the team's reflection at day 30 that *"the spec evolution log under-represents the agent's value because most of the agent's value lands in the docs team's history, not ours"*; the day-74 corpus-growth lesson that *"Cost Posture sub-blocks should consider corpus growth as a default — for any retrieval-augmented system, the corpus is part of the cost surface"*. The DevSquad mapping inline at every phase keeps both vocabularies alive in the prose.
+
+### Updated
+
+- Version markers advanced from **v2.0.0-rc6** to **v2.0.0-rc7** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+- `paper/architecture-of-intent.pdf` recompiled with the updated status header.
+
+### Why MAJOR-rc
+
+Continues the v2.0.0 MAJOR line because Scenario 3 is the third of the three running scenarios v2.0.0 introduced as load-bearing. The Synthesizer-flavored deployment shape and the DevSquad-native team practice are both v2.0.0 commitments that had been stubs from rc1 to rc6. rc7 makes both concrete in book-grade prose. The version stays in the rc-line until the file-path renames and the voice rewrites for older book chapters are complete; v2.0.0 stable lands when the rc series stabilizes.
+
+### Deferred
+
+- File-path renames (`architecture/` → `frame/`, etc.)
+- Voice rewrites for older book chapters — PR-G, PR-H, PR-I
+- Light Evolve-framing intros for the 9 existing `operating/*` chapters in Part 5 — folded into PR-G
+- Reading paths appendix + final v2.0.0 release tag — PR-J
+- (Possibly) elevating the team-proposed *citation theater* anti-pattern to the framework's catalog as a 12th anti-pattern — pending repository discussion
+
+### PRs
+
+- **PR-F** (this rc) — five docs-qa scenario chapters with DevSquad mapping inline at every phase, version markers, paper PDF rebuild.
+
+---
+
 ## v2.0.0-rc6 — 2026-05-10
 
 **MAJOR (release candidate, continues v2.0.0 line)** — ships **Scenario 2 (the coding-agent pipeline) end-to-end** across all five activities. Five chapters (~10K words total) replace the rc1 stubs with full prose. Framework load-bearing commitments unchanged from rc5.
