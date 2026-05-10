@@ -86,7 +86,7 @@ Two reading modes, both supported.
 | Diagnosing a failure | [Failure modes and how to diagnose them](foundations/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Safety patterns](patterns/safety/prompt-injection-defense.md) |
 | Walking one running scenario across all five activities | [Frame in practice — Customer-support](frame/scenarios/customer-support.md), [Coding-agent pipeline](frame/scenarios/coding-pipeline.md), or [Internal docs Q&A (DevSquad)](frame/scenarios/docs-qa.md) |
-| Looking at a v1.x worked pilot (legacy) | [Designing an AI Coding Agent](examples/03-coding-agent/README.md) — superseded by the running scenario chapters above |
+| Looking at a v1.x worked pilot (legacy) | [Legacy v1.x Worked Pilots Archive](appendices/legacy-pilots.md) — superseded by the running scenario chapters above |
 
 ---
 

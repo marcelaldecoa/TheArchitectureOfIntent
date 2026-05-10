@@ -18,6 +18,63 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.3.1 — 2026-05-10
+
+**PATCH** — collapses the legacy v1.x worked-pilots multi-chapter listing in Part 6 — Reference into a single *Legacy v1.x Worked Pilots Archive* appendix entry. Removes the "(legacy — superseded by phase scenarios in Parts 1–5)" parenthetical from the published TOC, which read as visible technical debt. The example files themselves are preserved; only the SUMMARY footprint shrinks.
+
+### Added
+
+- **`src/appendices/legacy-pilots.md`** — new archive appendix that introduces the three v1.x pilots (Customer Support, Code Generation Pipeline, Coding Agent), names what each pilot covers, links to every chapter of every pilot, names which v2.0.0 *in practice* scenario supersedes each one, and gives reading guidance ("don't start here unless you are evaluating how the framework matured between v1.x and v2.0").
+
+### Removed from SUMMARY.md
+
+- The flat-listed `## Worked Pilots (legacy — superseded by phase scenarios in Parts 1–5)` section with 17 chapter bullets is removed from Part 6 — Reference.
+- Replaced by a single bullet *Legacy v1.x Worked Pilots Archive* under `## Appendices`, between *The Companion Paper* and *Reading List & References*.
+
+### Preserved on disk
+
+- `src/examples/00-how-to-use.md`
+- `src/examples/01-ai-customer-support/` (6 files)
+- `src/examples/02-code-generation-pipeline/` (5 files)
+- `src/examples/03-coding-agent/` (6 files)
+
+All 17 files are reachable from:
+
+- The new `src/appendices/legacy-pilots.md` archive appendix (every chapter linked)
+- `src/appendices/pattern-index.md` worked-examples table and by-problem section
+- `src/appendices/references.md` citation table
+- `src/frame/scenarios/customer-support.md` and `src/frame/scenarios/coding-pipeline.md` — both explicitly cite their v1.x predecessor for v1.x → v2.0 comparison
+- `src/miniature-pilot.md`, `src/evolve/11-adoption-playbook.md`, `src/appendices/speckit-reference.md`, `src/appendices/companion-paper.md` — supplementary references
+
+### Updated — orphan-check script
+
+`scripts/check-orphans.py` now whitelists `examples/` as intentionally-not-in-SUMMARY. The script's purpose is to catch *forgotten* orphans; intentionally-archived files reachable through the appendix should not trigger an error. The whitelist is documented in a comment naming the archive intent.
+
+### Updated — wayfinding
+
+- `src/introduction.md` — the "Looking at a v1.x worked pilot (legacy)" row of the *Where to start* table now points at the archive appendix rather than directly at one specific pilot.
+- `src/how-to-read.md` — the "Looking at a real example" row reordered to recommend the v2.0.0 running scenarios first, with the v1.x archive as the secondary option.
+
+### Verification
+
+- `python3 scripts/check-internal-links.py` — 0 broken
+- `python3 scripts/check-orphans.py` — 0 orphans, 0 missing (with `examples/` whitelisted)
+- `python3 paper/check-deck-sync.py` — all 6 checks pass
+
+### Updated — version markers
+
+Version markers advanced from **v2.3.0** to **v2.3.1** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header).
+
+### Why PATCH, not MINOR
+
+The change is a navigation refinement. No new chapters; no removed content; no load-bearing commitment moves. The 17 example files keep their paths so all inbound links (~40 of them across pattern-index, references, scenarios, and supplementary chapters) continue to resolve. The reader's experience changes only at the SUMMARY level — Part 6 is shorter and the "(legacy — superseded by…)" mid-renovation parenthetical is gone — and the change is reversible by restoring the SUMMARY entries.
+
+### Trade-off honesty
+
+External readers who bookmarked the SUMMARY anchor *#worked-pilots-legacy-superseded-by-phase-scenarios-in-parts-15* will get a 404 on that anchor; the chapter URLs themselves are unchanged. The new appendix anchor *#legacy-v1x-worked-pilots-archive* is the replacement.
+
+---
+
 ## v2.3.0 — 2026-05-10
 
 **MINOR** — renames book Part 5 from "EVOLVE" to "EVOLVE & OPERATE" and reorganizes its 11 chapters plus Deployment Patterns into three reader-facing sub-sections. Closes the "Part 5 is doing two jobs" critique by acknowledging the dual scope in the Part name and grouping the chapters by which job they serve. The framework retains its five activities; the rename is a *book navigation* change, not a *framework commitment* change.
