@@ -5,7 +5,7 @@
 
 **Paper status:** Skeleton draft (paper v0.1). Position/framework paper, ~12–15 pages target. Companion artifact to the book of the same title.
 
-**Framework version:** v1.4.0 (2026-05-10). Both this paper and the [companion book](https://github.com/marcelaldecoa/TheArchitectureOfIntent) reflect the same framework version; load-bearing commitments (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface) move together. See `CHANGELOG.md` at the repository root for the versioning convention and release history.
+**Framework version:** v2.0.0-rc1 (2026-05-10). Both this paper and the [companion book](https://github.com/marcelaldecoa/TheArchitectureOfIntent) reflect the same framework version; load-bearing commitments (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the **five** activities, composition as a first-class design surface) move together. The v2.0.0 major bump promoted *Evolve* from a closing-Validate sub-discipline to a peer fifth activity, introduced three running scenarios across the activities in the book, and reorganized the book around the activity spine; the paper acquires §5 (a single canonical scenario walked end-to-end) in a subsequent rc. See `CHANGELOG.md` at the repository root for the versioning convention and release history.
 
 **Target venue:** arXiv (cs.SE / cs.AI cross-listing). Workshop or journal submission to be decided after first arXiv version is released.
 
@@ -95,7 +95,7 @@ Pope et al. [@popeInferenceScaling2022] ground the inference-cost economics unde
 
 ## 3. The framework
 
-> *The framework on one page. Figure 1 below shows the four load-bearing elements of this section — archetypes, dimensions, failure categories, Spec-Driven Development — together with the four activities that bind them and the four signal metrics that close the loop. The subsections of §3 develop each element; the figure is meant to be returned to between subsections, not read once.*
+> *The framework on one page. Figure 1 below shows the four load-bearing elements of this section — archetypes, dimensions, failure categories, Spec-Driven Development — together with the activities that bind them and the four signal metrics that close the loop. The figure currently shows the v1.x four-activity spine (Frame, Specify, Delegate, Validate); v2.0.0 promotes **Evolve** to a peer fifth activity, with the canvas redraw following in a subsequent rc. The subsections of §3 develop each element; the figure is meant to be returned to between subsections, not read once.*
 
 ![**Figure 1.** The Architecture of Intent on one page. Three questions every delegated system answers (top); four activities that work them out (Frame · Specify · Delegate · Validate, on the spine); the load-bearing constructs each activity binds — five archetypes, four orthogonal calibration dimensions, twelve canonical spec sections (each colored by the dimension it operationalizes), eight pattern categories, four oversight models, seven fix-locus failure categories; and four signal metrics on the right rail that feed back into the next intent. §3.2–§3.5 develop the constructs; §4 instantiates them against AI agent systems.](figures/architecture-of-intent-canvas.png){#fig:canvas width=95%}
 

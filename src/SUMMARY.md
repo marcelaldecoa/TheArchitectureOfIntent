@@ -4,14 +4,16 @@
 [Introduction](introduction.md)
 [A Miniature Pilot, End-to-End](miniature-pilot.md)
 [How to Read This Book](how-to-read.md)
-[Prologue: What Changed and What's at Stake](prologue.md)
+[Foreword: What Changed and What's at Stake](prologue.md)
+[Foreword: What Changes for the Senior Engineer](theory/08-what-changes-for-senior-engineers.md)
 
 ---
 
-# Part 1 — Decisions
+# Part 1 — FRAME
 
-*The decisions you commit to before you start. Get these right and most of the spec writes itself.*
+*Pick the shape. Commit to a category before any spec is written.*
 
+- [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
 - [Pick an Archetype](architecture/02-canonical-intent-archetypes.md)
   - [The Advisor](architecture/archetypes/advisor.md)
   - [The Executor](architecture/archetypes/executor.md)
@@ -24,16 +26,18 @@
 - [Composing Archetypes](architecture/05-composing-archetypes.md)
 - [Governed Archetype Evolution](architecture/06-evolving-archetypes.md)
 - [Multi-Agent Governance](architecture/07-multi-agent-governance.md)
-- [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
-- [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
-- [The Intent Design Session](theory/07-intent-design-session.md)
-- [What Changes for the Senior Engineer](theory/08-what-changes-for-senior-engineers.md)
+
+## Frame in practice
+
+- [Customer-support agent](frame/scenarios/customer-support.md)
+- [Coding-agent pipeline](frame/scenarios/coding-pipeline.md)
+- [Internal docs Q&A (DevSquad)](frame/scenarios/docs-qa.md)
 
 ---
 
-# Part 2 — The Spec
+# Part 2 — SPECIFY
 
-*How to write the artifact the agent executes against and humans review against.*
+*Write the artifact the agent executes against and humans review against.*
 
 - [Spec-Driven Development](sdd/01-what-sdd-means.md)
 - [The Spec as Control Surface](sdd/02-specs-as-control-surfaces.md)
@@ -42,13 +46,31 @@
 - [The Living Spec](sdd/06-living-specs.md)
 - [The Canonical Spec Template](sdd/07-canonical-spec-template.md)
 - [Architectural Decision Records](sdd/08-architectural-decision-records.md)
+- [The Intent Design Session](theory/07-intent-design-session.md)
 - [SpecKit](sdd/04-speckit.md)
+
+## Repertoires
+
+- [The Organizational Repertoire](repertoires/01-why-repertoires-matter.md)
+- [The Intent Archetype Catalog](repertoires/02-archetype-catalog.md)
+- [Spec Template Library](repertoires/03-spec-template-library.md)
+  - [Feature Spec Template](repertoires/templates/feature-spec.md)
+  - [Agent Instruction Template](repertoires/templates/agent-instruction.md)
+  - [Integration Spec Template](repertoires/templates/integration-spec.md)
+  - [Constraint Library Template](repertoires/templates/constraint-library.md)
+- [Validation & Acceptance Templates](repertoires/05-validation-templates.md)
+
+## Specify in practice
+
+- [Customer-support agent](specify/scenarios/customer-support.md)
+- [Coding-agent pipeline](specify/scenarios/coding-pipeline.md)
+- [Internal docs Q&A (DevSquad)](specify/scenarios/docs-qa.md)
 
 ---
 
-# Part 3 — The Agent
+# Part 3 — DELEGATE
 
-*What agents are structurally, what capabilities they need, and how to bound them.*
+*Build the agent. Bind patterns to what the spec implies. Pick oversight.*
 
 ## Foundations
 
@@ -87,12 +109,6 @@
 - [Code Execution Sandbox](patterns/integration/code-sandbox.md)
 - [File System Access](patterns/integration/file-system-access.md)
 
----
-
-# Part 4 — Oversight, Safety & Operations
-
-*Putting structures around the agent that match what it's allowed to do.*
-
 ## Oversight
 
 - [Proportional Oversight](agents/06-human-oversight-models.md)
@@ -100,7 +116,25 @@
 - [Retry with Structured Feedback](patterns/coordination/retry-feedback.md)
 - [Escalation Chain](patterns/coordination/escalation-chain.md)
 
-## Safety
+## Delegate in practice
+
+- [Customer-support agent](delegate/scenarios/customer-support.md)
+- [Coding-agent pipeline](delegate/scenarios/coding-pipeline.md)
+- [Internal docs Q&A (DevSquad)](delegate/scenarios/docs-qa.md)
+
+---
+
+# Part 4 — VALIDATE
+
+*Learn in production. Each failure category names the artifact to fix.*
+
+- [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
+- [Intent Review Before Output Review](operating/05-reviewing-intent.md)
+- [Four Signal Metrics](operating/06-metrics.md)
+- [Evals and Benchmarks](operating/07-evals-and-benchmarks.md)
+- [Red-Team Protocol](operating/08-red-team-protocol.md)
+
+## Safety Patterns
 
 - [Prompt Injection Defense](patterns/safety/prompt-injection-defense.md)
 - [Output Validation Gate](patterns/safety/output-validation-gate.md)
@@ -109,7 +143,7 @@
 - [Rate Limiting and Throttle](patterns/safety/rate-limiting.md)
 - [Blast Radius Containment](patterns/safety/blast-radius-containment.md)
 
-## Observability
+## Observability Patterns
 
 - [Structured Execution Log](patterns/observability/execution-log.md)
 - [Cost Tracking per Spec](patterns/observability/cost-tracking.md)
@@ -117,20 +151,38 @@
 - [Health Check and Heartbeat](patterns/observability/health-check.md)
 - [Anomaly Detection Baseline](patterns/observability/anomaly-baseline.md)
 
-## Testing & Validation
+## Testing Patterns
 
 - [Spec Conformance Testing](patterns/testing/spec-conformance.md)
 - [Adversarial Input Test](patterns/testing/adversarial-input.md)
 - [Multi-Agent Integration Test](patterns/testing/multi-agent-integration.md)
 - [Evaluation by Judge Agent](patterns/testing/judge-agent.md)
 
+## Validate in practice
+
+- [Customer-support agent](validate/scenarios/customer-support.md)
+- [Coding-agent pipeline](validate/scenarios/coding-pipeline.md)
+- [Internal docs Q&A (DevSquad)](validate/scenarios/docs-qa.md)
+
 ---
 
-# Part 5 — Ship
+# Part 5 — EVOLVE
 
-*Deploy without making the change irreversible. Govern without making the team slow.*
+*The closed loop. Cat 1s back to spec; the discipline survives the team.*
 
-## Deployment
+- [The Closed Loop: From Failures to Spec Amendments](evolve/01-closed-loop.md)
+- [Adoption Playbook](operating/11-adoption-playbook.md)
+- [Minimum Viable Architecture of Intent](operating/16-minimum-viable-aoi.md)
+- [Proportional Governance](operating/04-governance.md)
+- [Cost and Latency Engineering](operating/09-cost-and-latency.md)
+- [Cacheable Prompt Architecture](operating/14-cacheable-prompt-architecture.md)
+- [Production Telemetry](operating/10-production-telemetry.md)
+- [Signs Your Architecture of Intent Is Degrading](operating/15-anti-patterns.md)
+- [Framework Versioning](evolve/07-framework-versioning.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](operating/12-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](operating/13-co-adoption-with-devsquad.md)
+
+## Deployment Patterns
 
 - [Canary Deployment](patterns/deployment/canary.md)
 - [Rollback on Failure](patterns/deployment/rollback.md)
@@ -138,36 +190,48 @@
 - [Model Upgrade Validation](patterns/deployment/model-upgrade.md)
 - [Agent Deprecation Path](patterns/deployment/deprecation.md)
 
-## Governance and Reviews
+## Evolve in practice
 
-- [Proportional Governance](operating/04-governance.md)
-- [Intent Review Before Output Review](operating/05-reviewing-intent.md)
-
-## Metrics, Evals, and Red-Team
-
-- [Four Signal Metrics](operating/06-metrics.md)
-- [Evals and Benchmarks](operating/07-evals-and-benchmarks.md)
-- [Red-Team Protocol](operating/08-red-team-protocol.md)
-
-## Production Engineering
-
-- [Cost and Latency Engineering](operating/09-cost-and-latency.md)
-- [Cacheable Prompt Architecture](operating/14-cacheable-prompt-architecture.md)
-- [Production Telemetry](operating/10-production-telemetry.md)
-
-## Adoption
-
-- [Adoption Playbook](operating/11-adoption-playbook.md)
-- [Minimum Viable Architecture of Intent](operating/16-minimum-viable-aoi.md)
-- [Signs Your Architecture of Intent Is Degrading](operating/15-anti-patterns.md)
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](operating/12-devsquad-mapping.md)
-- [Co-adoption with DevSquad Copilot](operating/13-co-adoption-with-devsquad.md)
+- [Customer-support agent (90 days post-launch)](evolve/scenarios/customer-support.md)
+- [Coding-agent pipeline](evolve/scenarios/coding-pipeline.md)
+- [Internal docs Q&A (DevSquad)](evolve/scenarios/docs-qa.md)
 
 ---
 
-# Part 6 — Worked Pilots
+# Part 6 — REFERENCE
 
-*Two end-to-end systems calibrated against the framework.*
+*The catalog and cards. Browse by problem, not in sequence.*
+
+## Cross-Cutting Patterns
+
+### Coordination
+
+- [Sequential Pipeline](patterns/coordination/sequential-pipeline.md)
+- [Parallel Fan-Out](patterns/coordination/parallel-fan-out.md)
+- [Conditional Routing](patterns/coordination/conditional-routing.md)
+- [Event-Driven Agent Activation](patterns/coordination/event-driven.md)
+- [Supervisor Agent](patterns/coordination/supervisor.md)
+- [Agent-to-Agent Contract](patterns/coordination/agent-contract.md)
+
+### State & Memory
+
+- [Session Isolation](patterns/state/session-isolation.md)
+- [Shared Context Store](patterns/state/shared-context.md)
+- [Checkpoint and Resume](patterns/state/checkpoint-resume.md)
+- [Conversation History Management](patterns/state/conversation-history.md)
+- [Agent Registry](patterns/state/agent-registry.md)
+- [Artifact Store](patterns/state/artifact-store.md)
+
+## Code Standards
+
+- [Standards as Agent Skill Source](repertoires/04-code-standards.md)
+- [Standards for .NET / C#](repertoires/code-standards/dotnet.md)
+- [Standards for TypeScript / Node](repertoires/code-standards/typescript.md)
+- [Standards for Python](repertoires/code-standards/python.md)
+- [Standards for REST APIs](repertoires/code-standards/rest-apis.md)
+- [Standards for Infrastructure as Code](repertoires/code-standards/iac.md)
+
+## Worked Pilots (legacy — superseded by phase scenarios in Parts 1–5)
 
 - [How to Use These Examples](examples/00-how-to-use.md)
 - [Designing an AI Customer Support System](examples/01-ai-customer-support/README.md)
@@ -188,59 +252,7 @@
   - [Evals and Acceptance](examples/03-coding-agent/evals.md)
   - [Post-mortem Through Intent](examples/03-coding-agent/postmortem.md)
 
----
-
-# Cross-Cutting Patterns
-
-*Patterns to consult once your pilot is running. Browse by problem, not in sequence. For human-shaped coordination patterns (gates, retry, escalation), see Part 4 — Oversight.*
-
-## Coordination
-
-- [Sequential Pipeline](patterns/coordination/sequential-pipeline.md)
-- [Parallel Fan-Out](patterns/coordination/parallel-fan-out.md)
-- [Conditional Routing](patterns/coordination/conditional-routing.md)
-- [Event-Driven Agent Activation](patterns/coordination/event-driven.md)
-- [Supervisor Agent](patterns/coordination/supervisor.md)
-- [Agent-to-Agent Contract](patterns/coordination/agent-contract.md)
-
-## State & Memory
-
-- [Session Isolation](patterns/state/session-isolation.md)
-- [Shared Context Store](patterns/state/shared-context.md)
-- [Checkpoint and Resume](patterns/state/checkpoint-resume.md)
-- [Conversation History Management](patterns/state/conversation-history.md)
-- [Agent Registry](patterns/state/agent-registry.md)
-- [Artifact Store](patterns/state/artifact-store.md)
-
----
-
-# Repertoires & Reference
-
-*Templates and language guides. Reusable artifacts the team can fork into specs and code reviews.*
-
-## Repertoire
-
-- [The Organizational Repertoire](repertoires/01-why-repertoires-matter.md)
-- [The Intent Archetype Catalog](repertoires/02-archetype-catalog.md)
-- [Spec Template Library](repertoires/03-spec-template-library.md)
-  - [Feature Spec Template](repertoires/templates/feature-spec.md)
-  - [Agent Instruction Template](repertoires/templates/agent-instruction.md)
-  - [Integration Spec Template](repertoires/templates/integration-spec.md)
-  - [Constraint Library Template](repertoires/templates/constraint-library.md)
-- [Validation & Acceptance Templates](repertoires/05-validation-templates.md)
-
-## Code Standards
-
-- [Standards as Agent Skill Source](repertoires/04-code-standards.md)
-- [Standards for .NET / C#](repertoires/code-standards/dotnet.md)
-- [Standards for TypeScript / Node](repertoires/code-standards/typescript.md)
-- [Standards for Python](repertoires/code-standards/python.md)
-- [Standards for REST APIs](repertoires/code-standards/rest-apis.md)
-- [Standards for Infrastructure as Code](repertoires/code-standards/iac.md)
-
----
-
-# Appendices
+## Appendices
 
 - [Glossary](appendices/glossary.md)
 - [The Pattern Index](appendices/pattern-index.md)

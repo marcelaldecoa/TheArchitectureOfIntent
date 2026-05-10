@@ -29,12 +29,13 @@ Three questions every delegated system has to answer:
 2. *Within what constraints?*
 3. *How will we know it is working?*
 
-Four activities answer them:
+Five activities answer them:
 
 - **Frame.** Commit to an archetype (Advisor, Executor, Guardian, Synthesizer, or Orchestrator) and to a calibration of the four dimensions — agency, autonomy, responsibility, reversibility — *before any spec is written*. The category is the strongest single predictor of how the system will behave under stress; choosing it deliberately costs an hour and saves a quarter.
 - **Specify.** Write the artifact the agent executes against and humans review against. Twelve canonical sections; each section operationalizes one of the four dimensions. The spec is not a requirements document for humans, not a design document for developers — it is an operating instruction for machines that humans can audit.
 - **Delegate.** Bind cross-cutting patterns (capability, integration, coordination, safety, observability, testing, state, deployment) by what the spec implies, not by what the team likes building. Pick one of four oversight models — Monitoring, Periodic, Output Gate, or Pre-authorized — proportional to autonomy and reversibility.
 - **Validate.** Track four signal metrics. When something fails, diagnose by *fix locus* — which artifact upstream needs to change — across seven failure categories. The diagnosis closes the loop back to the next intent.
+- **Evolve.** Turn each diagnosed failure into a structural change — a spec amendment, a manifest tightening, a CI guard, or a framework version bump — never only a prompt patch. The closed-loop discipline is what makes the practice survive the team that built it; it is also where the framework itself versions and where adoption either compounds or quietly degrades.
 
 Three properties make this an *architecture* rather than an *art*:
 
@@ -48,11 +49,15 @@ The framework's primary worked instance is AI agent systems, which are the most-
 
 ## The framework on one page
 
-The four activities and every load-bearing list in the framework — five archetypes, four calibration dimensions, twelve spec sections, eight pattern categories, four oversight models, seven failure categories, four signal metrics — fit on a single page. The canvas below is that page, with each construct in the activity row where it does work. The rest of the book elaborates this picture; when you get lost, return here.
+The five activities and every load-bearing list in the framework — five archetypes, four calibration dimensions, twelve spec sections, eight pattern categories, four oversight models, seven failure categories, four signal metrics — fit on a single page. The canvas below is that page, with each construct in the activity row where it does work. The rest of the book elaborates this picture; when you get lost, return here.
 
-![The Architecture of Intent on One Page. Three questions every delegated system answers (top); four activities that work them out — Frame, Specify, Delegate, Validate; the load-bearing constructs each activity binds; and the four signal metrics on the right rail that close the loop back to the next intent.](images/architecture-of-intent-canvas.png)
+![The Architecture of Intent on One Page. Three questions every delegated system answers (top); the five activities that work them out — Frame, Specify, Delegate, Validate, Evolve; the load-bearing constructs each activity binds; and the four signal metrics on the right rail that close the loop back to the next intent.](images/architecture-of-intent-canvas.png)
 
-The book follows the canvas. Part 1 stands up **Frame** and **Calibrate** — the five archetypes, the four dimensions, the seven failure categories. Part 2 stands up **Specify** — the canonical spec template. Parts 3 and 4 stand up **Delegate** — the patterns that bind to what the spec implies, and the four oversight models. Part 5 stands up **Validate** — the four signal metrics, the governance cadence, the spec evolution log.
+> *The canvas figure above currently shows the v1.x four-activity layout (Frame, Specify, Delegate, Validate). v2.0.0 introduces **Evolve** as a peer fifth activity — the closed-loop discipline by which production findings flow back into spec amendments, framework versioning, and structural change. The canvas redraw to a five-row layout follows in v2.0.0-rc2; the prose, the SUMMARY structure, and the [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) already reflect the new shape.*
+
+The book is organized around the five activities. **Part 1 — FRAME** stands up the archetypes, the four dimensions, and composition first-class. **Part 2 — SPECIFY** stands up the canonical spec template, the Composition Declaration and Cost Posture sub-blocks, the Intent Design Session, and the repertoires. **Part 3 — DELEGATE** stands up agent classes, capability and tool-manifest patterns, MCP, oversight, and the patterns that bind to what the spec implies. **Part 4 — VALIDATE** stands up failure diagnosis (the seven Cats), the four signal metrics, evals, red-team protocol, and the safety / observability / testing patterns that emit the validation signal. **Part 5 — EVOLVE** stands up the closed loop, governance, the Adoption Playbook, MVP-AoI, anti-patterns, framework versioning, and DevSquad co-adoption. **Part 6 — REFERENCE** is the catalog: cross-cutting coordination and state patterns, code standards, the legacy worked pilots that v2.0.0 supersedes with the in-practice scenarios, and the appendices.
+
+Each of Parts 1–5 ends with three short *in practice* chapters that walk one of three running scenarios — a customer-support agent, a coding-agent pipeline, and an internal docs Q&A agent built by a DevSquad team — through that activity. You can read the book linearly by phase, or follow one scenario end-to-end across all five activities; the *in practice* chapters cross-link both ways.
 
 ---
 
@@ -66,8 +71,9 @@ A pilot you can defend. Concretely, the artifact each row of the canvas above sh
 4. **An oversight model** *(Delegate)*. A specific answer to *"who reviews what, when, and what triggers escalation?"* — one of Monitoring, Periodic, Output Gate, or Pre-authorized — proportional to the blast radius of the agent's actions.
 5. **Metrics that mean something** *(Validate)*. Four signal metrics — spec-gap rate, first-pass validation, cost per correct outcome, and oversight load — that tell you whether the pilot is healthy without manufacturing a dashboard for its own sake.
 6. **A deployment plan** *(Validate)*. Canary, rollback, and spec versioning so you can ship without making the change irreversible.
+7. **A closed-loop discipline** *(Evolve)*. A spec evolution log, a Discipline-Health Audit cadence, and an explicit commitment that diagnosed failures produce *structural* amendments — not prompt patches — so the practice compounds across teams and survives turnover.
 
-If you finish the book and don't have those six things, the book has failed you. Tell us what was missing.
+If you finish the book and don't have those seven things, the book has failed you. Tell us what was missing.
 
 ---
 
@@ -101,7 +107,8 @@ Two reading modes, both supported.
 | Designing oversight for an agent that's about to ship | [Proportional Oversight](agents/06-human-oversight-models.md) |
 | Diagnosing a failure | [Failure modes and how to diagnose them](theory/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Safety patterns](patterns/safety/prompt-injection-defense.md) |
-| Looking at a worked pilot | [Designing an AI Coding Agent](examples/03-coding-agent/README.md) (recommended starting example) — or [How to use these examples](examples/00-how-to-use.md) for the full set |
+| Walking one running scenario across all five activities | [Frame in practice — Customer-support](frame/scenarios/customer-support.md), [Coding-agent pipeline](frame/scenarios/coding-pipeline.md), or [Internal docs Q&A (DevSquad)](frame/scenarios/docs-qa.md) |
+| Looking at a v1.x worked pilot (legacy) | [Designing an AI Coding Agent](examples/03-coding-agent/README.md) — superseded by the running scenario chapters above |
 
 ---
 

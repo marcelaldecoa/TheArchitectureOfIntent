@@ -18,6 +18,61 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.0.0-rc1 — 2026-05-10
+
+**MAJOR (release candidate)** — promotes *Evolve* from a closing-Validate sub-discipline to a peer fifth activity, introduces three running scenarios across the five activities, and reorganizes the book around the activity spine. This is the structural commit of the v2.0.0 line; the prose work for the Phase-5 chapters and the 15 scenario chapters lands in subsequent rcs (PR-B through PR-F per the rollout plan in PR-A's description). The canvas redraw to a five-row layout, the teaching-deck refresh, and any file-path renames are deferred to PR-A2 / PR-A3 within the v2.0.0-rc line.
+
+### Why MAJOR
+
+The cardinality of the framework's *activities* changes from four to five. Specs and deck/paper sync slides that hardcoded "four activities" become incorrect. The book's organizational spine changes from "Decisions / Spec / Agent / Oversight / Ship / Pilots / Patterns / Repertoires / Appendices" (nine Parts of mixed grain) to "Frame / Specify / Delegate / Validate / Evolve / Reference" (six Parts, one per activity plus the catalog). Per the versioning convention in the *How to use this file* section below, both changes are MAJOR-bump triggers.
+
+### What did **not** change (the load-bearing commitments survived)
+
+- Five archetypes: Advisor, Executor, Guardian, Synthesizer, Orchestrator.
+- Four orthogonal calibration dimensions: Agency, Autonomy, Responsibility, Reversibility.
+- Twelve canonical spec sections (with the Composition Declaration and Cost Posture sub-blocks in §4 introduced in v1.x).
+- Seven fix-locus failure categories (Cat 1 Spec through Cat 7 Perceptual, with four sub-categories).
+- Four oversight models.
+- Four signal metrics.
+- Eight pattern categories (~50 patterns).
+- Composition as a first-class design surface (Patterns A–E).
+- The Intent Design Session, the Discipline-Health Audit, and the honest accounting (3 novel / 4 not-claimed).
+
+The framework's vocabulary and load-bearing commitments are unchanged; only the *spine* changed. v2.0.0 is a structural reshape, not a vocabulary breaking change. Existing v1.x specs remain valid; their references to "the four activities" become references to "the five activities" with *Evolve* added as the activity that closes the loop.
+
+### Added
+
+- **`SUMMARY.md` reshaped** around the five-activity spine. New Parts: Part 1 — FRAME, Part 2 — SPECIFY, Part 3 — DELEGATE, Part 4 — VALIDATE, Part 5 — EVOLVE, Part 6 — REFERENCE. Each of Parts 1–5 ends with three *in practice* chapters per phase (15 total), one for each running scenario. The legacy worked pilots in `examples/*` are kept under Part 6 — REFERENCE as superseded reference material; the running scenarios are the primary path.
+- **15 scenario chapter stubs** under `src/{frame,specify,delegate,validate,evolve}/scenarios/{customer-support,coding-pipeline,docs-qa}.md`. Each stub names what the chapter will cover, links to its conceptual source chapters, links to the same scenario across all five phases, and points at the v1.x source material. Prose lands in PR-C (S1 customer-support), PR-E (S2 coding-pipeline), PR-F (S3 docs-qa).
+- **2 new Phase-5 conceptual chapter stubs**: `src/evolve/01-closed-loop.md` (the discipline that opens Part 5) and `src/evolve/07-framework-versioning.md` (elevating the CHANGELOG discipline to a first-class chapter). Prose lands in PR-B.
+- **`paper/check-deck-sync.py` `CANONICAL_PHASES`** added with the five activity names and a paper-side `check_phases` function. Deck-side check activates when an activities slide lands in the deck.
+- **`introduction.md`** updated: five-activity bullet list (Evolve added), revised "what you will have at the end" list (now seven artifacts, with the closed-loop discipline as item 7), revised "How to use it" table with running-scenario entry points.
+- **`appendices/glossary.md`** updated: the *Architecture of Intent* entry and the *Framework Version* entry both reference five activities; the version number on the *Framework Version* entry advances to **v2.0.0-rc1**.
+- **`paper/architecture-of-intent.md`** status header advances to **v2.0.0-rc1** with the structural-change note; §3 figure caption acknowledges the canvas figure currently shows the v1.x four-activity layout pending the rc2 redraw.
+
+### Deferred to a later v2.0.0-rc
+
+- **Canvas redraw** (4 rows → 5 rows) — the SVG and PNG redraws to add an *Evolve* row. Deferred because the redraw is design-sensitive (rsvg-convert mismeasures Georgia bold; the existing canvas layout fits 1180px tightly) and warrants its own PR. Until then, the canvas figure shows the v1.x four-activity layout with prose annotations naming the gap.
+- **Teaching-deck refresh** — the deck has no activities slide currently; when one is added, mirror it on the paper.
+- **File-path renames** (e.g., `architecture/` → `frame/`) — the SUMMARY structure is filesystem-agnostic, so the path renames are pure filesystem-cleanup. Deferred because cross-reference updates across ~120 files are high-risk for the reader-facing improvement they produce (none — URLs change, but the reader experience is identical).
+- **Phase-5 chapter prose** (rewriting `operating/*` chapters into the Evolve frame) — PR-B.
+- **Three scenarios written in full** — PR-C, PR-E, PR-F.
+- **Voice rewrites** for Parts 0–5 (vignette-before-exposition openings) — PR-G, PR-H, PR-I.
+- **Paper §5** (single canonical scenario walked end-to-end) — PR-D, after PR-C lands.
+- **Reading paths appendix** — PR-J.
+
+### Trade-offs
+
+The phased rollout means rc1 ships with the new *shape* visible (TOC, activity vocabulary, scenario-chapter scaffolding, version markers) but the new *prose* still pending. Readers who land on a scenario chapter at rc1 see a stub with a clear pointer to the v1.x worked pilot. This is intentional: the structural commit is large enough to merit its own diff, and gating it behind the prose work would couple two failure modes.
+
+### PRs
+
+- **PR-A** (this rc) — structural reshape, scenario stubs, sync-check phases, version markers.
+- **PR-A2** (planned) — canvas redraw + deck refresh.
+- **PR-B**–**PR-J** (planned) — Phase-5 prose, three scenarios, paper §5, voice passes, reading paths.
+
+---
+
 ## v1.4.0 — 2026-05-10
 
 **MINOR** — adds the *Cost Posture* sub-block to §4 of the canonical spec template, plus the structural framing that explains *why* cost is a §4 sub-block and not a fifth calibration dimension. No load-bearing commitment changed.
