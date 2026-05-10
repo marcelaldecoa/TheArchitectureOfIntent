@@ -91,7 +91,19 @@ Written as an observable state, not an activity.]
 **Oversight Model:** [A | B | C | D] — [One-line description of the oversight mechanism]  
 **Reversibility:** [R1 | R2 | R3 | R4] — [One-line description of recovery options]
 
-*For archetype definitions, see the [Intent Archetype Catalog](../architecture/02-canonical-intent-archetypes.md).*
+**Composition Declaration** *(required for systems with embedded components or mode-switching; omit for single-archetype systems)*
+
+For composed systems, declare the governing archetype above and list the embedded components or modes here. See [Composing Archetypes](../architecture/05-composing-archetypes.md) for the patterns and the structural rationale.
+
+- **Composition pattern:** [A: Confirm-then-Act | B: Executor + Guardian | C: Orchestrator with typed sub-agents | D: Compose-then-Publish | E: Mode-switching | Other — describe]
+- **Embedded components or modes:**
+  - [Component / Mode 1] — [archetype role, one-line purpose]
+  - [Component / Mode 2] — [archetype role, one-line purpose]
+- **Mode transitions** *(Pattern E only)*: [Transition 1 — trigger, what state carries across]; [Transition 2]
+- **Cross-mode / cross-component invariants** (hold regardless of active mode or layer): [list — these are what §6 Invariants enforces at the system level]
+- **Per-component / per-mode oversight notes** (referenced from §11): [Component 1: oversight model]; [Component 2: oversight model]
+
+*For archetype definitions, see the [Intent Archetype Catalog](../architecture/02-canonical-intent-archetypes.md). For composition patterns and the Pattern E mode-switching structure, see [Composing Archetypes](../architecture/05-composing-archetypes.md).*
 
 ---
 
