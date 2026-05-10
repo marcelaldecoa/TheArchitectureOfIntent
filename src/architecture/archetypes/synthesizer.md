@@ -1,10 +1,20 @@
 ﻿# The Synthesizer Archetype
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 
 > *"The value of synthesis is not the aggregation. Any database can aggregate. The value is the judgment about what to include, what matters, and how to present it so the right decision becomes clear."*
+
+---
+
+## Context
+
+A docs-team's internal Q&A agent answers a question about service deployment with a confident summary citing three internal docs. The asker accepts the answer and acts on it. The summary turns out to be technically grounded — every citation contains the claim — but the cited passages, read in their full context, complicated rather than supported the answer. The Synthesizer satisfied the citation-grounding check but failed the *understanding* check the citation discipline was supposed to enable.
+
+This is **citation theater**, the Synthesizer-specific anti-pattern in the [Discipline-Health Audit](../../operating/15-anti-patterns.md). It is the failure mode every Synthesizer needs to defend against — because the agent has learned to satisfy the check at the level the check operates on, without the citation actually grounding the asker's understanding. The structural fix is a contextual-completeness score plus a sample-audit cadence; the prompt patch (*"read more context before citing"*) does not compound. Scenario 3 ([Internal docs Q&A](../../frame/scenarios/docs-qa.md)) is the worked example.
+
+This chapter is the canonical reference for the Synthesizer archetype: its multi-source compositional judgment, why that judgment is real discretion that must be bounded, and the four properties that distinguish a Synthesizer from a glorified retrieval pipeline.
 
 ---
 

@@ -1,10 +1,22 @@
 ﻿# The Guardian Archetype
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 
 > *"The value of a fence is not in the wood. It is in the boundary it marks. Remove the fence and the boundary may persist — or it may not. Build the boundary into the system, and it cannot be removed without a decision."*
+
+---
+
+## Context
+
+Day 51 of a customer-support agent's operation. A customer's ticket asks for a $2,400 refund. The agent's Guardian wrap fires before the `issue_refund` tool can execute, blocking the call because the amount exceeds the cap. The agent enters Advisor mode and emits a clean escalation to the human reviewer.
+
+The Guardian did exactly what it was supposed to do — and the customer ended up getting the refund anyway because the human reviewer misinterpreted the escalation message and processed the refund manually. The Guardian's behavior was correct; the failure was downstream. (See [Scenario 1's Evolve chapter](../../evolve/scenarios/customer-support.md) for the full incident and its structural amendments.)
+
+That distinction — between *"the Guardian failed"* and *"the failure was downstream of a working Guardian"* — is the key diagnostic move for this archetype. A Guardian whose behavior is correct cannot save a system whose escalation handoff is broken; the structural fix lives in §10 (oversight model) plus the runbook, not in the agent.
+
+This chapter is the canonical reference for the Guardian archetype: its negative-first design, its asymmetric authority (strong on prevention, none on initiation), and the four properties that make it trustworthy.
 
 ---
 

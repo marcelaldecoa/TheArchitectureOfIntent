@@ -1,10 +1,20 @@
 ﻿# The Orchestrator Archetype
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 
 > *"The conductor does not play the instruments. The conductor is responsible for everything that is played."*
+
+---
+
+## Context
+
+A team is debating whether their multi-step agent — a Frame mode that reads the codebase, a Plan mode that proposes changes, an Implement mode that writes the code, a Review mode that opens the PR — is an Orchestrator coordinating four sub-agents, or an Executor with mode-switching composition. The distinction matters: Orchestrator implies the agent dispatches *other agents*, with all the inter-agent state and accountability that follows. Executor with [Pattern E mode-switching](../05-composing-archetypes.md) implies the agent operates in different modes against the same tool manifest within one session.
+
+The right answer for a coding agent is usually the latter; framing it as an Orchestrator inflates the governance surface without adding structure. (See [Scenario 2's Frame chapter](../../frame/scenarios/coding-pipeline.md) for the worked example, where the team explicitly considers and rejects the Orchestrator framing.)
+
+The Orchestrator is the highest-agency archetype, and the most-misused. Most systems that *feel* like Orchestrators are actually mode-switching Executors with accidental complexity. This chapter is the canonical reference for when you genuinely need an Orchestrator (when you really are coordinating *other agents*, not your own modes), what compositional accountability means, and why the inflation of governance is the design cost of misclassification in this direction.
 
 ---
 

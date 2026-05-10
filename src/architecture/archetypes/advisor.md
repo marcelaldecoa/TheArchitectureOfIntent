@@ -1,10 +1,18 @@
 ﻿# The Advisor Archetype
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 
 > *"The task of the advisor is not to decide. It is to make deciding possible."*
+
+---
+
+## Context
+
+A team is reviewing a Frame artifact. The proposed system *"summarizes the meeting and emails the summary to the attendees."* The reviewer pauses: *"Does the agent send the email, or does the human send it after reviewing the draft?"* The room splits — half thinking it's an Advisor (it just produces a summary), half thinking it's an Executor (it sends the email). The answer is whichever the spec commits to in §3 — but the team has to pick. Choosing wrong here doesn't break the system; it breaks the *governance*, because Advisor and Executor have different oversight models and different reversibility profiles.
+
+This chapter is the canonical reference for the Advisor archetype: what it is, what its defining characteristic is, when to choose it, and the failure modes that recur when teams misclassify a system as Advisor that has crossed into Executor territory.
 
 ---
 

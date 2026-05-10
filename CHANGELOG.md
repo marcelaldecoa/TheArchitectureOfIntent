@@ -18,6 +18,52 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.2.1 — 2026-05-10
+
+**PATCH** — three small refinements on top of v2.2.0 stable: paper ↔ book cross-references, voice pass on the five archetype subchapters, and a sharpening of paper §1.1–1.2's empirical-claim prose. No load-bearing commitments change.
+
+### Added — paper ↔ book cross-references
+
+Paper §4.3 (*Coding agents*) and book Scenario 2 (the worked coding-pipeline walkthrough) didn't previously reference each other directly. Both are about the same agent class, at different grain — §4.3 is paper-grade analysis at vocabulary level, S2 is book-grade walkthrough at scenario level — and a reader landing on either should be able to find the other. Fixed:
+
+- **`paper/architecture-of-intent.md` §4.3** — new closing subsection *"Worked instantiation"* that points readers at S2 in the companion book for the end-to-end walkthrough, and notes that §5 of the paper itself condenses S1 (customer-support) at paper grain.
+- The book's S2 chapters already reference *"paper §4.3"* in their Frame chapter; this rc completes the bidirectional link.
+
+### Added — vignettes on the five archetype subchapters
+
+The five archetype subchapters (`src/architecture/archetypes/{advisor,executor,guardian,synthesizer,orchestrator}.md`) are the most-cited reference chapters in the book — readers land on them from the [Pick an Archetype](src/architecture/02-canonical-intent-archetypes.md) decision tree, from scenario chapters, from the glossary, and from cross-references throughout. Until v2.2.1 they had definition-style openings (Identity / Defining Characteristic) without scene-setting. This rc adds vignette-before-exposition openings to all five, in the same shape as the rc8 / v2.0.1 voice passes:
+
+- **Advisor** — opens on a Frame review where the team can't agree whether *"summarizes the meeting and emails the summary"* is an Advisor or an Executor; the answer is whichever the spec commits to in §3.
+- **Executor** — opens on **archetype drift in action**: an agent's authorized scope expands silently as the team's *interpretation* of the rules grows, until a new engineer notices the cross-repo edit two months later. Cross-references S1 and S2 as worked Executor instantiations.
+- **Guardian** — opens on the day-51 customer-support incident where the Guardian fired correctly but the failure was downstream in the review-and-action handoff. Cross-references S1's Evolve chapter for the resolution.
+- **Synthesizer** — opens on **citation theater**: a docs Q&A agent's confident summary with technically-grounded citations that, read in full context, complicate rather than support the answer. Cross-references the [Discipline-Health Audit](src/operating/15-anti-patterns.md) and S3.
+- **Orchestrator** — opens on the *"is this an Orchestrator coordinating four sub-agents, or an Executor with mode-switching?"* debate that recurs for coding agents. Cross-references S2's Frame chapter, where the team explicitly considers and rejects the Orchestrator framing.
+
+Subtitles updated from the v1.x *"Governance & Architecture"* to **`Part 1 — Frame`** to match the v2.0+ Part placement.
+
+### Updated — paper §1.1–1.2 honest-citation pass
+
+The paper's §1.1–1.2 previously claimed *"Emerging 2026 evaluations of help-seeking behavior in agents... find that frontier models perform well on fully specified tasks but collapse on tasks that should trigger clarification"* — a placeholder gesture toward an empirical literature without specific benchmark citations. Sharpened in this rc:
+
+- **The structural argument leads.** Reordered prose so the RLHF-reward-shape argument (completion is rewarded; pausing is ambiguously rewarded; one-shotting becomes the high-probability default) is the paper's primary claim. The paper's structural commitment doesn't require empirical backfill to stand.
+- **The empirical claim is softened to *"consistent with practitioner observations across deployments"*** — accurate, and doesn't overclaim.
+- **The citation gap is named explicitly.** New sentence: *"We have chosen not to ground this empirical claim in specific benchmark citations because the help-seeking-behavior evaluation literature is still emerging in 2026 and we are not aware of an established benchmark we can defensibly cite without overclaiming. The structural argument from the reward shape is what the paper rests on; benchmark-citation backfill remains a deferred refinement when the literature stabilizes."*
+- **No fabricated citations added.** Specific benchmark names (*HiL-Bench*-class, etc.) are deliberately *not* invented. Honest accounting holds.
+
+### Updated — version markers
+
+Version markers advanced from **v2.2.0** to **v2.2.1** in `src/appendices/glossary.md` (Framework Version entry), `src/appendices/companion-paper.md`, `README.md`, and `paper/architecture-of-intent.md` (status header). `paper/architecture-of-intent.pdf` recompiled.
+
+### Why PATCH
+
+All three changes are prose-and-cross-reference refinements. No structural changes; no load-bearing list changes; no spec-template changes. Existing v2.2.x deployments continue to validate against the same vocabulary.
+
+### Open follow-up
+
+The benchmark-citation backfill in paper §1.1–1.2 remains an open task. If a future contributor (or the maintainer) nominates verified sources for the help-seeking-behavior empirical claim — peer-reviewed papers, established benchmarks with published evaluation results, or named practitioner reports — the paper can cite them directly and remove the *"deferred refinement"* acknowledgment. Until then, the structural argument carries the section.
+
+---
+
 ## v2.2.0 — 2026-05-10
 
 **MINOR** — restores **Part 0 — Foundations** as a six-chapter conceptual preface. Closes the one structural delta between the original v2.0.0 proposal and what shipped: Part 0 was dissolved during rc1 planning to avoid front-loading definitions before the first scenario; v2.2.0 brings it back as an explicit Part for readers who want the foundations co-located. No load-bearing commitments change; no impact on the paper's structure.
