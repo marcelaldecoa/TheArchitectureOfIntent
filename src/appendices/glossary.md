@@ -72,7 +72,7 @@ One of the five canonical intent archetypes. Characterizes systems that act auto
 A predictable way in which a system, agent, or spec produces wrong outcomes. Cataloging known failure modes is a core activity of intent engineering — because failure modes are design signals, not surprises. See [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).
 
 **Framework Version**
-A semantic-ish version number for the Architecture of Intent as a whole. The version applies to the framework's load-bearing commitments — the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface — as instantiated by the book and the companion paper *together*. **MAJOR** bumps mark structural changes that break existing specs (a sixth archetype, a removed Cat); **MINOR** bumps mark additions that don't (a new chapter, a new pattern, a new spec sub-block); **PATCH** bumps mark prose, link, and figure refinements. Current version: **v1.2.0** (2026-05-10). See [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) at the repository root.
+A semantic-ish version number for the Architecture of Intent as a whole. The version applies to the framework's load-bearing commitments — the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface — as instantiated by the book and the companion paper *together*. **MAJOR** bumps mark structural changes that break existing specs (a sixth archetype, a removed Cat); **MINOR** bumps mark additions that don't (a new chapter, a new pattern, a new spec sub-block); **PATCH** bumps mark prose, link, and figure refinements. Current version: **v1.3.0** (2026-05-10). See [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) at the repository root.
 
 **Framing**
 The act of defining the problem space precisely enough that delegation can be both safe and productive. Framing determines what the agent is trying to do, what counts as success, and what must not happen. The foundation of every good spec.
@@ -120,6 +120,9 @@ A specification that is versioned, evolves with the system, and is updated when 
 
 **MCP (Model Context Protocol)**
 An open protocol that standardizes how AI models interact with tools, data sources, and external systems. In intent engineering, MCP tools are the mechanism by which capability boundaries are enforced. See [The Model Context Protocol](../agents/mcp/01-what-is-mcp.md).
+
+**Minimum Viable Architecture of Intent (MVP-AoI)**
+The one-page floor of the discipline for systems too small to warrant the full Intent Design Session: archetype, scope (in and out), oversight commitment, one signal, escalation trigger. ~15 minutes to write. Applicable when the system is small across all five of audience (just you or a small known group), stakes (R1–R2 reversibility), cohesion (one person), scale (bounded; not continuous production), and diagnosability (failures visible in real time). Five graduation triggers — audience expansion, stakes increase, cohesion break, ~100 runs/day scale, recurring undiagnosable failure — signal when the MVP has earned its keep and should upgrade to the full framework. See [Minimum Viable Architecture of Intent](../operating/16-minimum-viable-aoi.md). Distinguished from the [Miniature Pilot](../miniature-pilot.md), which is the *full canvas* applied to a small but production-bound system.
 
 ---
 
