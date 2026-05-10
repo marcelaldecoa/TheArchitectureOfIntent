@@ -242,6 +242,7 @@
 
 - [Glossary](appendices/glossary.md)
 - [The Pattern Index](appendices/pattern-index.md)
+- [The Companion Paper](appendices/companion-paper.md)
 - [Reading List & References](appendices/references.md)
 - [SpecKit Quick Reference](appendices/speckit-reference.md)
 - [Archetype Quick-Select Card](appendices/archetype-card.md)

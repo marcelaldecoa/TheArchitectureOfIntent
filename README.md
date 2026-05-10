@@ -116,6 +116,10 @@ TheArchitectureOfIntent/
 └── theme/                    # Custom CSS and zoom widget
 ```
 
+## Framework version
+
+The framework is at **v1.0.0** as of 2026-05-10. The book and the companion paper move together: a change to a load-bearing commitment (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface) bumps the framework version. See [`CHANGELOG.md`](CHANGELOG.md) for the versioning convention and the release history.
+
 ## Status
 
 The book is structured as a working pilot playbook. It is opinionated and incomplete by design: the archetype framework, the spec template, the oversight models, and the failure taxonomy are stable; the pattern reference will keep growing as more pilots ship and surface new patterns worth naming.

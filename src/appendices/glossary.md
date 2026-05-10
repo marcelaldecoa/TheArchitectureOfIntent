@@ -38,6 +38,9 @@ A limit on what a system or agent is permitted to do. Boundaries are encoded in 
 **Capability Boundary**
 The limit of what a tool or agent is permitted to access or affect. Defined in agent specifications and enforced through MCP tool design and authorization structures. See [Least Capability](../agents/04-tools-mcp-capability-boundaries.md).
 
+**Companion Paper**
+The arXiv-format distillation of this book — *The Architecture of Intent: A Framework for Designing Delegated Systems* — at `paper/architecture-of-intent.pdf` in the repository, with the editable Markdown source at `paper/architecture-of-intent.md`. ~15,000 words, structured for a reader evaluating the framework rather than adopting it. Both the paper and the book reflect the same Framework Version. See [The Companion Paper](companion-paper.md) for the section-by-section mapping.
+
 **Constraint**
 A non-negotiable rule embedded in a specification. Constraints define what an agent *cannot* do or *must* do. They are distinct from guidelines (advisory) and preferences (soft). See [The Spec as Control Surface](../sdd/02-specs-as-control-surfaces.md).
 
@@ -67,6 +70,9 @@ One of the five canonical intent archetypes. Characterizes systems that act auto
 
 **Failure Mode**
 A predictable way in which a system, agent, or spec produces wrong outcomes. Cataloging known failure modes is a core activity of intent engineering — because failure modes are design signals, not surprises. See [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md).
+
+**Framework Version**
+A semantic-ish version number for the Architecture of Intent as a whole. The version applies to the framework's load-bearing commitments — the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the four activities, composition as a first-class design surface — as instantiated by the book and the companion paper *together*. **MAJOR** bumps mark structural changes that break existing specs (a sixth archetype, a removed Cat); **MINOR** bumps mark additions that don't (a new chapter, a new pattern, a new spec sub-block); **PATCH** bumps mark prose, link, and figure refinements. Current version: **v1.0.0** (2026-05-10). See [`CHANGELOG.md`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/CHANGELOG.md) at the repository root.
 
 **Framing**
 The act of defining the problem space precisely enough that delegation can be both safe and productive. Framing determines what the agent is trying to do, what counts as success, and what must not happen. The foundation of every good spec.
