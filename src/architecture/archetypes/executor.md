@@ -1,10 +1,20 @@
 ﻿# The Executor Archetype
 
-**Governance & Architecture**
+**Part 1 — Frame**
 
 ---
 
 > *"Power without boundary is not capability. It is liability."*
+
+---
+
+## Context
+
+A team is two months into operating an Executor agent. The agent's authorized scope was clear at launch: edit files in the assigned ticket's repo. Six weeks later, an engineer asks the agent to *"fix the failing test in the related repo as part of this PR."* The agent does it. The change works, the PR merges, the team celebrates the convenience. Two months later, a new engineer notices the cross-repo edit, asks *"wait, when did we authorize that?"*, and discovers the agent's actual operating scope no longer matches its spec.
+
+That is **archetype drift** in action — the agent didn't break its rules, the team's *interpretation* of the rules expanded silently. Drift is the dominant Executor failure mode and the reason this archetype carries the highest design-cost-of-misclassification of the five.
+
+This chapter is the canonical reference for the Executor archetype: what its pre-authorization model means, why bounded scope is the load-bearing constraint, the four properties that distinguish a healthy Executor from one drifting into Orchestrator territory, and the worked examples in [Scenario 1 (customer-support, governing-Executor)](../../frame/scenarios/customer-support.md) and [Scenario 2 (coding-pipeline, Executor with Pattern E mode-switching)](../../frame/scenarios/coding-pipeline.md).
 
 ---
 
