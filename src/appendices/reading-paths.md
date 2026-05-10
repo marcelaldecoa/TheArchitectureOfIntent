@@ -28,7 +28,7 @@ Top-to-bottom by Part:
 5. **Part 2 — SPECIFY** — top-to-bottom; ends with the three *Specify in practice* scenario chapters
 6. **Part 3 — DELEGATE** — top-to-bottom; ends with the three *Delegate in practice* scenario chapters
 7. **Part 4 — VALIDATE** — top-to-bottom; ends with the three *Validate in practice* scenario chapters
-8. **Part 5 — EVOLVE** — top-to-bottom; ends with the three *Evolve in practice* scenario chapters
+8. **Part 5 — EVOLVE & OPERATE** — top-to-bottom; ends with the three *Evolve & Operate in practice* scenario chapters
 9. **Part 6 — REFERENCE** — browse rather than read linearly
 
 ---
@@ -46,7 +46,7 @@ The customer-support scenario walks a 5-person team across 90 days from Frame th
 | 2. Specify | [Specify in practice — Customer-support agent](../specify/scenarios/customer-support.md) |
 | 3. Delegate | [Delegate in practice — Customer-support agent](../delegate/scenarios/customer-support.md) |
 | 4. Validate | [Validate in practice — Customer-support agent](../validate/scenarios/customer-support.md) |
-| 5. Evolve | [Evolve in practice — Customer-support agent (90 days post-launch)](../evolve/scenarios/customer-support.md) |
+| 5. Evolve | [Evolve & Operate in practice — Customer-support agent (90 days post-launch)](../evolve/scenarios/customer-support.md) |
 
 After the five chapters, optionally pick up the conceptual chapters each scenario binds to — listed at the end of every scenario chapter under *Conceptual chapters this scenario binds to*. Read those after the scenario, not before; they make more sense once the operational shape is clear.
 
@@ -67,7 +67,7 @@ The coding-agent scenario walks a 4-person platform team across 17 services and 
 | 2. Specify | [Specify in practice — Coding-agent pipeline](../specify/scenarios/coding-pipeline.md) |
 | 3. Delegate | [Delegate in practice — Coding-agent pipeline](../delegate/scenarios/coding-pipeline.md) |
 | 4. Validate | [Validate in practice — Coding-agent pipeline](../validate/scenarios/coding-pipeline.md) |
-| 5. Evolve | [Evolve in practice — Coding-agent pipeline](../evolve/scenarios/coding-pipeline.md) |
+| 5. Evolve | [Evolve & Operate in practice — Coding-agent pipeline](../evolve/scenarios/coding-pipeline.md) |
 
 Pair with paper §4.3 (*Coding agents*) for the agent-class deep-dive that this scenario instantiates — see [`paper/architecture-of-intent.pdf`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/paper/architecture-of-intent.pdf).
 
@@ -86,7 +86,7 @@ The docs-qa scenario walks a 4-person docs-platform team building an internal do
 | 2. Specify | [Specify in practice — Internal docs Q&A](../specify/scenarios/docs-qa.md) |
 | 3. Delegate | [Delegate in practice — Internal docs Q&A](../delegate/scenarios/docs-qa.md) |
 | 4. Validate | [Validate in practice — Internal docs Q&A](../validate/scenarios/docs-qa.md) |
-| 5. Evolve | [Evolve in practice — Internal docs Q&A](../evolve/scenarios/docs-qa.md) |
+| 5. Evolve | [Evolve & Operate in practice — Internal docs Q&A](../evolve/scenarios/docs-qa.md) |
 
 Pair with [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md) and [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md) for the framework-level vocabulary mapping that this scenario instantiates at scenario grain.
 
@@ -106,7 +106,7 @@ Skip the scenarios entirely. The simplest version is **read all of Part 0 and a 
 5. [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the 12-section structure with the Composition Declaration and Cost Posture sub-blocks
 6. [Proportional Oversight](../delegate/06-human-oversight-models.md) — the four oversight models
 7. [Four Signal Metrics](../validate/06-metrics.md) — the four signals
-8. [The Closed Loop: From Failures to Spec Amendments](../evolve/01-closed-loop.md) — the discipline that opens Part 5 — Evolve
+8. [The Closed Loop: From Failures to Spec Amendments](../evolve/01-closed-loop.md) — the discipline that opens Part 5 — Evolve & Operate
 
 After this read you have the framework's full vocabulary without the operational color the scenarios provide. The companion paper at [`paper/architecture-of-intent.pdf`](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/paper/architecture-of-intent.pdf) is the same vocabulary at paper grain (~20 pages with §5's worked customer-support pilot included).
 
@@ -142,7 +142,7 @@ The full linear read (path 1) is the right shape; if compressed:
 2. **Part 1 — FRAME** in full (you own the archetype and dimensions decisions)
 3. **Part 2 — SPECIFY** in full (you own the spec)
 4. The scenario whose system shape best matches yours, end-to-end
-5. **Part 5 — EVOLVE** in full (you own the closed-loop discipline)
+5. **Part 5 — EVOLVE & OPERATE** in full (you own the closed-loop discipline)
 
 Skip details of Part 3 — Delegate's pattern catalog if your team's pattern selection is delegated to others; binding decisions still need your sign-off via the spec.
 
@@ -172,7 +172,7 @@ Skip details of Part 3 — Delegate's pattern catalog if your team's pattern sel
 1. **Foreword** — [Prologue](../prologue.md), [What Changes for the Senior Engineer](../foundations/08-what-changes-for-senior-engineers.md)
 2. [The Intent Design Session](../foundations/07-intent-design-session.md) — the working ritual you'll be a required participant in
 3. [Roles & Responsibilities (RACI) Card](raci-card.md) — your seat at the table
-4. **Part 5 — EVOLVE** in full — especially [Adoption Playbook](../evolve/11-adoption-playbook.md), [Proportional Governance](../evolve/04-governance.md), [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md)
+4. **Part 5 — EVOLVE & OPERATE** in full — especially [Adoption Playbook](../evolve/11-adoption-playbook.md), [Proportional Governance](../evolve/04-governance.md), [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md)
 
 You don't need Part 3 — Delegate in detail; the team builds the agent. You do need to know what you're committing to in Frame and what to ask for in Validate and Evolve.
 

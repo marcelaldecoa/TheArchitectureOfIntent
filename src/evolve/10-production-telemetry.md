@@ -1,6 +1,6 @@
 # Production Telemetry
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. Production telemetry is the trace surface that the [closed loop](../evolve/01-closed-loop.md) requires — without traces, you have an after-the-fact narrative; with them, you have evidence. The Distributed Trace, Cost Tracking, and Anomaly Baseline patterns this chapter integrates feed the Cat-by-Cat categorization and the per-mode failure observability that the running scenarios demonstrate.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. Production telemetry is the trace surface that the [closed loop](../evolve/01-closed-loop.md) requires — without traces, you have an after-the-fact narrative; with them, you have evidence. The Distributed Trace, Cost Tracking, and Anomaly Baseline patterns this chapter integrates feed the Cat-by-Cat categorization and the per-mode failure observability that the running scenarios demonstrate.*
 
 ---
 

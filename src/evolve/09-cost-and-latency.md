@@ -1,6 +1,6 @@
 # Cost and Latency Engineering
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. Cost incidents are a particular Cat 4 (Oversight) class that requires its own escalation pattern — the [Cost Posture sub-block](../specify/07-canonical-spec-template.md) of §4 of the spec template names the structural commitment, and this chapter names what to do when the structural commitment is breached in production. The customer-support scenario's day-47 Sonnet-4.7 incident and the coding-pipeline scenario's day-60 model-tier rotation are worked examples of the discipline in operation.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. Cost incidents are a particular Cat 4 (Oversight) class that requires its own escalation pattern — the [Cost Posture sub-block](../specify/07-canonical-spec-template.md) of §4 of the spec template names the structural commitment, and this chapter names what to do when the structural commitment is breached in production. The customer-support scenario's day-47 Sonnet-4.7 incident and the coding-pipeline scenario's day-60 model-tier rotation are worked examples of the discipline in operation.*
 
 ---
 

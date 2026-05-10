@@ -1,6 +1,6 @@
 # Signs Your Architecture of Intent Is Degrading
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The Discipline-Health Audit is the per-quarter cadence that catches loop decay before it becomes terminal; the audit's instrument is the twelve-anti-pattern catalog this chapter develops. The audit fires on each system the team operates, on a calendar (not on incident-driven) cadence, and produces a one-paragraph verdict per anti-pattern. The three running scenarios in v2.0.0 each include an audit at day 90 — see the customer-support, coding-pipeline, and docs-qa Evolve chapters for worked examples. The twelfth anti-pattern (citation theater) was elevated to the catalog in v2.1.0 after first surfacing in Scenario 3's Evolve chapter as a team-proposed addition.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The Discipline-Health Audit is the per-quarter cadence that catches loop decay before it becomes terminal; the audit's instrument is the twelve-anti-pattern catalog this chapter develops. The audit fires on each system the team operates, on a calendar (not on incident-driven) cadence, and produces a one-paragraph verdict per anti-pattern. The three running scenarios in v2.0.0 each include an audit at day 90 — see the customer-support, coding-pipeline, and docs-qa Evolve chapters for worked examples. The twelfth anti-pattern (citation theater) was elevated to the catalog in v2.1.0 after first surfacing in Scenario 3's Evolve chapter as a team-proposed addition.*
 
 ---
 

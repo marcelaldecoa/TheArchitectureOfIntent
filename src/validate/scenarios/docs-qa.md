@@ -154,7 +154,7 @@ The Validate phase blends into Evolve from here. The same metrics, the same DevS
 | 2. Specify | [Specify in practice — Internal docs Q&A](../../specify/scenarios/docs-qa.md) |
 | 3. Delegate | [Delegate in practice — Internal docs Q&A](../../delegate/scenarios/docs-qa.md) |
 | 4. **Validate** | *(this chapter)* |
-| 5. Evolve | [Evolve in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
+| 5. Evolve | [Evolve & Operate in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
 
 ## Conceptual chapters this scenario binds to
 

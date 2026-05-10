@@ -1,6 +1,6 @@
 # Adoption Playbook
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The Adoption Playbook is what keeps the [closed loop](../evolve/01-closed-loop.md) going as the team grows and as the framework spreads to other teams. Cross-team adoption is itself the closed loop at organizational scale — the coding-pipeline and docs-qa Evolve scenarios both demonstrate the pattern, with the team that explains the framework to others deepening its own discipline through the explanation.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The Adoption Playbook is what keeps the [closed loop](../evolve/01-closed-loop.md) going as the team grows and as the framework spreads to other teams. Cross-team adoption is itself the closed loop at organizational scale — the coding-pipeline and docs-qa Evolve scenarios both demonstrate the pattern, with the team that explains the framework to others deepening its own discipline through the explanation.*
 
 ---
 

@@ -1,6 +1,6 @@
 # Mapping the Framework to the DevSquad 8-Phase Cadence
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The framework's vocabulary maps cleanly onto DevSquad Copilot's eight-phase iterative cycle because both projects independently arrived at the same load-bearing concerns. [Scenario 3 (the internal docs Q&A agent)](../frame/scenarios/docs-qa.md) is the worked instantiation of the mapping at scenario grain — every phase chapter shows the AoI ↔ DevSquad mapping inline. This chapter is the vocabulary-grain version, useful for any team running both frameworks.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The framework's vocabulary maps cleanly onto DevSquad Copilot's eight-phase iterative cycle because both projects independently arrived at the same load-bearing concerns. [Scenario 3 (the internal docs Q&A agent)](../frame/scenarios/docs-qa.md) is the worked instantiation of the mapping at scenario grain — every phase chapter shows the AoI ↔ DevSquad mapping inline. This chapter is the vocabulary-grain version, useful for any team running both frameworks.*
 
 ---
 

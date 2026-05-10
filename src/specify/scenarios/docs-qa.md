@@ -238,7 +238,7 @@ The framework spec at this point is partial: §1, §2, §3, §4, §5, §6, §7, 
 | 2. **Specify** | *(this chapter)* |
 | 3. Delegate | [Delegate in practice — Internal docs Q&A](../../delegate/scenarios/docs-qa.md) |
 | 4. Validate | [Validate in practice — Internal docs Q&A](../../validate/scenarios/docs-qa.md) |
-| 5. Evolve | [Evolve in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
+| 5. Evolve | [Evolve & Operate in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
 
 ## Conceptual chapters this scenario binds to
 

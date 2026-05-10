@@ -174,21 +174,15 @@
 
 ---
 
-# Part 5 — EVOLVE
+# Part 5 — EVOLVE & OPERATE
 
-*The closed loop. Cat 1s back to spec; the discipline survives the team.*
+*The closed loop and the day-to-day. Cat 1s back to spec; the discipline survives the team. Operations sustain the system between evolutions.*
+
+## Evolution
 
 - [The Closed Loop: From Failures to Spec Amendments](evolve/01-closed-loop.md)
-- [Adoption Playbook](evolve/11-adoption-playbook.md)
-- [Minimum Viable Architecture of Intent](evolve/16-minimum-viable-aoi.md)
-- [Proportional Governance](evolve/04-governance.md)
-- [Cost and Latency Engineering](evolve/09-cost-and-latency.md)
-- [Cacheable Prompt Architecture](evolve/14-cacheable-prompt-architecture.md)
-- [Production Telemetry](evolve/10-production-telemetry.md)
 - [Signs Your Architecture of Intent Is Degrading](evolve/15-anti-patterns.md)
 - [Framework Versioning](evolve/07-framework-versioning.md)
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](evolve/12-devsquad-mapping.md)
-- [Co-adoption with DevSquad Copilot](evolve/13-co-adoption-with-devsquad.md)
 
 ## Deployment Patterns
 
@@ -198,7 +192,18 @@
 - [Model Upgrade Validation](patterns/deployment/model-upgrade.md)
 - [Agent Deprecation Path](patterns/deployment/deprecation.md)
 
-## Evolve in practice
+## Operations
+
+- [Proportional Governance](evolve/04-governance.md)
+- [Cost and Latency Engineering](evolve/09-cost-and-latency.md)
+- [Cacheable Prompt Architecture](evolve/14-cacheable-prompt-architecture.md)
+- [Production Telemetry](evolve/10-production-telemetry.md)
+- [Adoption Playbook](evolve/11-adoption-playbook.md)
+- [Minimum Viable Architecture of Intent](evolve/16-minimum-viable-aoi.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](evolve/12-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](evolve/13-co-adoption-with-devsquad.md)
+
+## Evolve & Operate in practice
 
 - [Customer-support agent (90 days post-launch)](evolve/scenarios/customer-support.md)
 - [Coding-agent pipeline](evolve/scenarios/coding-pipeline.md)

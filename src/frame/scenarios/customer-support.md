@@ -133,7 +133,7 @@ The Frame session takes 90 minutes. Maya circulates the artifact for sign-off th
 | 2. Specify | [Specify in practice — Customer-support agent](../../specify/scenarios/customer-support.md) |
 | 3. Delegate | [Delegate in practice — Customer-support agent](../../delegate/scenarios/customer-support.md) |
 | 4. Validate | [Validate in practice — Customer-support agent](../../validate/scenarios/customer-support.md) |
-| 5. Evolve | [Evolve in practice — Customer-support agent (90 days post-launch)](../../evolve/scenarios/customer-support.md) |
+| 5. Evolve | [Evolve & Operate in practice — Customer-support agent (90 days post-launch)](../../evolve/scenarios/customer-support.md) |
 
 ## Conceptual chapters this scenario binds to
 

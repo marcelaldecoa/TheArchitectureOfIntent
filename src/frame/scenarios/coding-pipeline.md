@@ -146,7 +146,7 @@ This artifact is the input to [Specify in practice — Coding-agent pipeline](..
 | 2. Specify | [Specify in practice — Coding-agent pipeline](../../specify/scenarios/coding-pipeline.md) |
 | 3. Delegate | [Delegate in practice — Coding-agent pipeline](../../delegate/scenarios/coding-pipeline.md) |
 | 4. Validate | [Validate in practice — Coding-agent pipeline](../../validate/scenarios/coding-pipeline.md) |
-| 5. Evolve | [Evolve in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
+| 5. Evolve | [Evolve & Operate in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
 
 ## Conceptual chapters this scenario binds to
 

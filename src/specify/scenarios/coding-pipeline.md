@@ -255,7 +255,7 @@ The spec lands in a PR for review the second evening. Daniel, Theo, Jess, and Ma
 | 2. **Specify** | *(this chapter)* |
 | 3. Delegate | [Delegate in practice — Coding-agent pipeline](../../delegate/scenarios/coding-pipeline.md) |
 | 4. Validate | [Validate in practice — Coding-agent pipeline](../../validate/scenarios/coding-pipeline.md) |
-| 5. Evolve | [Evolve in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
+| 5. Evolve | [Evolve & Operate in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
 
 ## Conceptual chapters this scenario binds to
 

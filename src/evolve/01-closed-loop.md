@@ -1,6 +1,6 @@
 # The Closed Loop: From Failures to Spec Amendments
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 

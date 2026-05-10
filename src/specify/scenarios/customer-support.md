@@ -243,7 +243,7 @@ By end of day, the spec is in a PR for review. Maya, Sam, Jordan, and Priya all 
 | 2. **Specify** | *(this chapter)* |
 | 3. Delegate | [Delegate in practice — Customer-support agent](../../delegate/scenarios/customer-support.md) |
 | 4. Validate | [Validate in practice — Customer-support agent](../../validate/scenarios/customer-support.md) |
-| 5. Evolve | [Evolve in practice — Customer-support agent](../../evolve/scenarios/customer-support.md) |
+| 5. Evolve | [Evolve & Operate in practice — Customer-support agent](../../evolve/scenarios/customer-support.md) |
 
 ## Conceptual chapters this scenario binds to
 

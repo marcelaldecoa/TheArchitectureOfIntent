@@ -1,6 +1,6 @@
-# Evolve in practice — Customer-support agent (90 days post-launch)
+# Evolve & Operate in practice — Customer-support agent (90 days post-launch)
 
-**Part 5 · EVOLVE · Scenario 1 of 3**
+**Part 5 · EVOLVE & OPERATE · Scenario 1 of 3**
 
 ---
 

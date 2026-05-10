@@ -1,6 +1,6 @@
 # Framework Versioning
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -108,7 +108,7 @@ The book does not carry a separate book version. The framework version *is* the 
 
 ## Where this chapter sits in Part 5
 
-This is **5.7**, near the end of Part 5 — Evolve, after the cost and anti-pattern chapters and before the DevSquad mapping. Framework versioning is the longest-time-scale Evolve activity (per-quarter and per-year), and the chapters that precede it cover progressively shorter time-scales: the [closed loop](01-closed-loop.md) is per-incident; the spec evolution log is per-sprint; the [Discipline-Health Audit](../evolve/15-anti-patterns.md) is per-quarter; framework versioning is per-quarter to per-year. Reading Part 5 in order reveals the time-scale gradient.
+This chapter closes the **Evolution** sub-section of Part 5 — Evolve & Operate, after the closed-loop and anti-pattern chapters and before the Deployment Patterns and the Operations sub-section. Framework versioning is the longest-time-scale Evolve activity (per-quarter and per-year), and the chapters that precede it in the Evolution sub-section cover progressively shorter time-scales: the [closed loop](01-closed-loop.md) is per-incident; the spec evolution log is per-sprint; the [Discipline-Health Audit](../evolve/15-anti-patterns.md) is per-quarter; framework versioning is per-quarter to per-year. Reading the Evolution sub-section in order reveals the time-scale gradient.
 
 ---
 

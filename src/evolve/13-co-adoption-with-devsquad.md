@@ -1,6 +1,6 @@
 # Co-adoption with DevSquad Copilot
 
-**Part 5 — Evolve**
+**Part 5 — Evolve & Operate**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The co-adoption recommendation is for teams already running DevSquad: the framework's archetype taxonomy, four-dimension calibration, and seven-Cat fix-locus failure analysis are the additions that give the most leverage on top of DevSquad's process scaffolding. [Scenario 3](../frame/scenarios/docs-qa.md) demonstrates the composition end-to-end across all five activities of the AoI cycle paired with the eight phases of the DevSquad cycle.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The co-adoption recommendation is for teams already running DevSquad: the framework's archetype taxonomy, four-dimension calibration, and seven-Cat fix-locus failure analysis are the additions that give the most leverage on top of DevSquad's process scaffolding. [Scenario 3](../frame/scenarios/docs-qa.md) demonstrates the composition end-to-end across all five activities of the AoI cycle paired with the eight phases of the DevSquad cycle.*
 
 ---
 

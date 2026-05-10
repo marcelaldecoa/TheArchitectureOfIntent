@@ -18,6 +18,72 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.3.0 — 2026-05-10
+
+**MINOR** — renames book Part 5 from "EVOLVE" to "EVOLVE & OPERATE" and reorganizes its 11 chapters plus Deployment Patterns into three reader-facing sub-sections. Closes the "Part 5 is doing two jobs" critique by acknowledging the dual scope in the Part name and grouping the chapters by which job they serve. The framework retains its five activities; the rename is a *book navigation* change, not a *framework commitment* change.
+
+### Renamed
+
+- **Part 5 — EVOLVE** → **Part 5 — EVOLVE & OPERATE**
+
+### Restructured — SUMMARY.md
+
+The 11 Part 5 chapters and 5 deployment patterns were reorganized from a flat list into three sub-sections by the time-scale and concern they serve:
+
+**Evolution** — what changes about the system over time (per-incident through per-year):
+- The Closed Loop: From Failures to Spec Amendments
+- Signs Your Architecture of Intent Is Degrading
+- Framework Versioning
+
+**Deployment Patterns** — the patterns that make changes safe (between Evolution and Operations because each pattern enables a structural change):
+- Canary Deployment
+- Rollback on Failure
+- Spec Versioning
+- Model Upgrade Validation
+- Agent Deprecation Path
+
+**Operations** — what runs the system day to day:
+- Proportional Governance
+- Cost and Latency Engineering
+- Cacheable Prompt Architecture
+- Production Telemetry
+- Adoption Playbook
+- Minimum Viable Architecture of Intent
+- Mapping the Framework to the DevSquad 8-Phase Cadence
+- Co-adoption with DevSquad Copilot
+
+The scenario sub-section is renamed **Evolve & Operate in practice** for symmetry with other Parts' *<Part> in practice* convention.
+
+### Updated — chapter subtitles and prose
+
+- All 11 Part 5 chapter subtitles updated from `**Part 5 — Evolve**` to `**Part 5 — Evolve & Operate**`. The 11 *Where this sits in v2.0.0* callout block-quotes updated similarly.
+- Three Evolve scenario chapter subtitles updated from `**Part 5 · EVOLVE · Scenario N of 3**` to `**Part 5 · EVOLVE & OPERATE · Scenario N of 3**`. Three Evolve scenario H1 titles updated from `# Evolve in practice — ...` to `# Evolve & Operate in practice — ...`.
+- Twelve scenario reading-path tables across Parts 1–5 updated their bottom-row link text from "Evolve in practice — …" to "Evolve & Operate in practice — …" while keeping the column label "5. Evolve" (the activity name is unchanged in the framework).
+- `src/evolve/07-framework-versioning.md` "Where this chapter sits in Part 5" prose rewritten to reflect the new sub-section ordering: framework versioning now closes the Evolution sub-section rather than sitting "near the end of Part 5", and its time-scale-gradient claim is relocalized to the Evolution sub-section ordering.
+- `src/introduction.md` Part 5 description rewritten to introduce the Evolution / Operations sub-section split and to name explicitly that the framework retains five activities while the book Part covers two adjacent jobs.
+- `src/appendices/reading-paths.md` four references to "Part 5 — EVOLVE" updated; "Evolve in practice" italics updated to "Evolve & Operate in practice".
+
+### Verification
+
+- `python3 scripts/check-internal-links.py` — 0 broken
+- `python3 scripts/check-orphans.py` — 0 orphans, 0 missing
+- `python3 paper/check-deck-sync.py` — all 6 checks pass; the framework activity count remains 5 (Frame, Specify, Delegate, Validate, Evolve)
+
+### Why MINOR, not PATCH or MAJOR
+
+- Not PATCH because the change is structural, not prose-only — it adds new SUMMARY sub-section structure inside Part 5 and renames the Part itself.
+- Not MAJOR because no load-bearing commitment changes: the five activities remain five (Operate is treated as a slice of Evolve, not promoted to a peer activity); the deck/paper sync contract is unaffected; existing specs and existing adoption are unbroken; the canvas figure's five-row spine is unchanged. The change is a book-navigation refinement, not a framework-commitment change.
+
+### Why "Evolve & Operate" rather than promoting Operate to a sixth activity
+
+Promoting Operate to a peer activity would be a MAJOR change: it would re-cardinalize the activity count from five to six, force a redesign of the canvas figure, change the deck/paper sync contract, and break every existing spec that names "the five activities". The honest read is that ongoing operations *are* part of evolving a deployed system — there is no clean line between "the team is operating today" and "the team is evolving today" because the same closed loop runs continuously. The Part rename acknowledges the dual scope without forcing the framework to grow a sixth peer.
+
+### Trade-off honesty
+
+External readers who bookmarked the URL of the **Part 5 — EVOLVE** SUMMARY anchor may experience confusion when the rendered HTML now reads **Part 5 — EVOLVE & OPERATE**. Chapter URLs are unchanged (no file moves; no path renames). Internal links resolve identically.
+
+---
+
 ## v2.2.3 — 2026-05-10
 
 **PATCH** — closes the filesystem cleanup begun in v2.2.2 by renaming `src/theory/` → `src/foundations/` so the Part 0 directory matches its Part label. After v2.2.2, the five Part-aligned directories (`frame/`, `specify/`, `delegate/`, `validate/`, `evolve/`) already matched their Part labels; Part 0's `theory/` was the one outlier explicitly deferred at v2.2.2. v2.2.3 closes that gap. No load-bearing commitments change; no impact on the paper's structure.
