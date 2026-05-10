@@ -19,16 +19,28 @@ This book is the discipline that addresses that gap. It is a field guide for the
 
 ---
 
+## The framework on one page
+
+Every delegated system, AI agent or otherwise, has to answer three questions: *what is it trying to achieve, within what constraints, and how will we know it's working?* The discipline of answering them well is what this book calls **the Architecture of Intent**. It has four activities — **Frame · Specify · Delegate · Validate** — and each activity binds a specific set of load-bearing constructs.
+
+The canvas below is the whole framework on one page. Every numbered list this book introduces — five archetypes, four calibration dimensions, twelve spec sections, eight pattern categories, four oversight models, seven failure categories, four signal metrics — appears here, in the activity row where it does work. The rest of the book elaborates this picture; when you get lost, return here.
+
+![The Architecture of Intent on One Page. Three questions every delegated system answers (top); four activities that work them out — Frame, Specify, Delegate, Validate; the load-bearing constructs each activity binds; and the four signal metrics on the right rail that close the loop back to the next intent.](images/architecture-of-intent-canvas.png)
+
+The book follows the canvas. Part 1 stands up **Frame** and **Calibrate** — the five archetypes, the four dimensions, the seven failure categories. Part 2 stands up **Specify** — the canonical spec template. Parts 3 and 4 stand up **Delegate** — the patterns that bind to what the spec implies, and the four oversight models. Part 5 stands up **Validate** — the four signal metrics, the governance cadence, the spec evolution log.
+
+---
+
 ## What you will have at the end
 
-A pilot you can defend. Specifically:
+A pilot you can defend. Concretely, the artifact each row of the canvas above should produce by the time you ship:
 
-1. **An archetype.** A pre-committed answer to *"what kind of system is this — Advisor, Executor, Guardian, Synthesizer, or Orchestrator?"* — with the agency, oversight, and reversibility profile that follows from that choice.
-2. **A spec.** A written, reviewable artifact that says what the agent must do, what it must never do, what success looks like, and what context it operates in. The agent executes against this. Humans review against this.
-3. **An agent.** A system prompt, a set of skills, a tool manifest, and a capability boundary that match the archetype.
-4. **An oversight model.** A specific answer to *"who reviews what, when, and what triggers escalation?"* — proportional to the blast radius of the agent's actions.
-5. **Metrics that mean something.** Four signal metrics — spec gap rate, first-pass validation, cost per correct outcome, and oversight load — that tell you whether the pilot is healthy without manufacturing a dashboard for its own sake.
-6. **A deployment plan.** Canary, rollback, and spec versioning so you can ship without making the change irreversible.
+1. **An archetype** *(Frame)*. A pre-committed answer to *"what kind of system is this — Advisor, Executor, Guardian, Synthesizer, or Orchestrator?"* — with the agency, autonomy, responsibility, and reversibility profile that follows from that choice.
+2. **A spec** *(Specify)*. A written, reviewable artifact in twelve sections that says what the agent must do, what it must never do, what success looks like, and what context it operates in. The agent executes against this. Humans review against this.
+3. **An agent** *(Delegate)*. A system prompt, a set of skills, a tool manifest, and a capability boundary that match the archetype, with the cross-cutting patterns (safety, observability, coordination, state) bound to what the spec implies.
+4. **An oversight model** *(Delegate)*. A specific answer to *"who reviews what, when, and what triggers escalation?"* — one of Monitoring, Periodic, Output Gate, or Pre-authorized — proportional to the blast radius of the agent's actions.
+5. **Metrics that mean something** *(Validate)*. Four signal metrics — spec-gap rate, first-pass validation, cost per correct outcome, and oversight load — that tell you whether the pilot is healthy without manufacturing a dashboard for its own sake.
+6. **A deployment plan** *(Validate)*. Canary, rollback, and spec versioning so you can ship without making the change irreversible.
 
 If you finish the book and don't have those six things, the book has failed you. Tell us what was missing.
 
