@@ -36,6 +36,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Multi-Agent Governance](../architecture/07-multi-agent-governance.md) | How do you govern an N-agent system as a system, not as N individually-specified components? |
 | [Intent vs. Implementation](../theory/02-intent-vs-implementation.md) | When something goes wrong, was the spec wrong, or did the agent fail to execute it? |
 | [Failure Modes and How to Diagnose Them](../theory/05-failure-as-design-signal.md) | What are the seven failure categories, and how do you diagnose them? |
+| [The Intent Design Session](../theory/07-intent-design-session.md) | What is the time-boxed working ritual that turns the framework into a session a team can run? |
 
 ---
 
@@ -330,6 +331,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md)
 
 ### "I'm trying to introduce this framework to my team"
+- [The Intent Design Session](../theory/07-intent-design-session.md) — the working ritual; run this for the first system that matters
 - [Adoption Playbook](../operating/11-adoption-playbook.md)
 - [The Canonical Spec Template](../sdd/07-canonical-spec-template.md)
 - [The Living Spec](../sdd/06-living-specs.md)

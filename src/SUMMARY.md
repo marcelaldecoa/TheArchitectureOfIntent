@@ -25,6 +25,7 @@
 - [Multi-Agent Governance](architecture/07-multi-agent-governance.md)
 - [Intent vs. Implementation](theory/02-intent-vs-implementation.md)
 - [Failure Modes and How to Diagnose Them](theory/05-failure-as-design-signal.md)
+- [The Intent Design Session](theory/07-intent-design-session.md)
 
 ---
 
