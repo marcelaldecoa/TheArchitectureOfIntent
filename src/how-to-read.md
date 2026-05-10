@@ -30,6 +30,7 @@ After Part 6 the book becomes reference material: a flat **Cross-Cutting Pattern
 
 | If you are... | Start at |
 |---------------|----------|
+| Wanting the framework on one screen | [A Miniature Pilot, End-to-End](miniature-pilot.md) |
 | Structuring a new agent system | [Pick an archetype](architecture/02-canonical-intent-archetypes.md) |
 | Writing a spec | [The canonical spec template](sdd/07-canonical-spec-template.md) |
 | Designing oversight | [Proportional Oversight](agents/06-human-oversight-models.md) |
