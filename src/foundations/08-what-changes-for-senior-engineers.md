@@ -8,6 +8,12 @@
 
 ---
 
+## Who this chapter is for
+
+This is the one Foundations chapter with a *specific* audience rather than a universal one. The book's primary reader is the tech lead, staff engineer, or platform-team member on the hook for an agent system; this chapter speaks to that reader's *career* question, not their *system-design* question. The other Foundations chapters (What is AoI, Intent vs. Implementation, the four dimensions, the failure taxonomy, the Intent Design Session) are load-bearing for every reader — without them, the rest of the book does not parse. **This chapter is not load-bearing in the same way.** A reader who is not personally navigating the transition can skip it on first read; the chapters in Parts 1–5 do not assume it.
+
+It is in Part 0 anyway because the reframe it offers — late judgment moves upstream into the spec — is the personal counterpart of the framework's structural claim, and many senior engineers will not adopt the framework's discipline without working through that reframe first.
+
 ## Context
 
 The senior engineer reading this book is the person who, until recently, *was* the framework. They compensated for vague specs by exercising late judgment. They escalated ambiguities rather than executing them. They rewrote tickets into what was clearly meant. The compensation was invisible — nobody measured it — but it was the real reason senior engineers were valuable.

@@ -11,7 +11,7 @@ This book is structured as a **field guide**, organized in the order in which th
 | Part | What you do here |
 |------|------------------|
 | **Prologue / Introduction / How to read** | What changed, what's at stake, and how to navigate the book. |
-| **0. Foundations** | The vocabulary: what AoI is, intent vs. implementation, the four calibration dimensions, the seven failure categories, the Intent Design Session. Read once; come back when you get lost. |
+| **0. Foundations** | The vocabulary: what AoI is, intent vs. implementation, the four calibration dimensions, the seven failure categories, the Intent Design Session. Read once; come back when you get lost. *Chapter 08 — What Changes for the Senior Engineer is the one Foundations chapter with an audience-specific scope; skip on first read if you are not personally navigating the transition.* |
 | **1. Frame** | Pick an archetype, calibrate the four dimensions, compose archetypes, govern multi-agent systems. The decision you commit to *before* writing a spec. |
 | **2. Specify** | Spec-driven development, the canonical 12-section template, the Composition Declaration and Cost Posture sub-blocks, the Living Spec, ADRs, SpecKit, the repertoires. |
 | **3. Delegate** | What agents are, autonomy vs. agency, the executor model, least capability, agent skills, agent classes (coding, computer-use), MCP, oversight models, capability / integration / coordination patterns. |
