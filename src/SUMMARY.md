@@ -210,6 +210,7 @@
 - [Adoption Playbook](operate/05-adoption-playbook.md)
 - [Mapping the Framework to the DevSquad 8-Phase Cadence](operate/06-devsquad-mapping.md)
 - [Co-adoption with DevSquad Copilot](operate/07-co-adoption-with-devsquad.md)
+- [Multi-Tenant Fleet Governance](operate/08-multi-tenant-fleet-governance.md)
 
 ---
 
