@@ -12,8 +12,10 @@ The teaching deck is a current, modern companion intended for workshops, recruit
 
 | File | Purpose |
 |---|---|
-| `architecture-of-intent.md` | Paper Markdown source (Pandoc + citation syntax) |
-| `architecture-of-intent.pdf` | Compiled paper PDF — committed for convenience |
+| `architecture-of-intent.md` | Long-form paper Markdown source (Pandoc + citation syntax). ~15,000 words / 34 pages. arXiv reference. |
+| `architecture-of-intent.pdf` | Compiled long-form paper PDF — committed for convenience |
+| `architecture-of-intent-workshop.md` | Workshop-length variant (paper v0.1-workshop). ~4,600 words / ~10 pages. Same load-bearing commitments as the long form; condensed §2 (prior work as one paragraph), trimmed §3.3 and §3.4 detail, dropped §5 end-to-end pilot walkthrough, kept §3 framework intact. Intended for workshop or short-form journal submission. |
+| `architecture-of-intent-workshop.pdf` | Compiled workshop-length PDF — committed for convenience |
 | `architecture-of-intent.pptx` | Teaching deck (PowerPoint, 16:9) — committed |
 | `architecture-of-intent.html` | Teaching deck (self-contained HTML) — committed |
 | `references.bib` | BibTeX bibliography (~30 entries across 9 domains) |
@@ -28,7 +30,7 @@ The teaching deck is a current, modern companion intended for workshops, recruit
 
 ## Building the paper
 
-The Pandoc command (also used by the GH Action):
+### Long-form (arXiv reference)
 
 ```bash
 cd paper
@@ -41,7 +43,26 @@ pandoc architecture-of-intent.md \
   --output architecture-of-intent.pdf
 ```
 
-Required tooling: `pandoc`, `texlive-xetex`, `texlive-fonts-recommended`, `texlive-latex-recommended`, `texlive-latex-extra`, `lmodern`. The `lmodern` package is a separate package on Ubuntu and is required for `lmodern.sty` (xelatex's default font setup).
+### Workshop-length variant
+
+```bash
+cd paper
+pandoc architecture-of-intent-workshop.md \
+  --citeproc \
+  --bibliography references.bib \
+  --pdf-engine=xelatex \
+  -V geometry:margin=1in \
+  -V fontsize=11pt \
+  --output architecture-of-intent-workshop.pdf
+```
+
+Required tooling for both: `pandoc`, `texlive-xetex`, `texlive-fonts-recommended`, `texlive-latex-recommended`, `texlive-latex-extra`, `lmodern`. The `lmodern` package is a separate package on Ubuntu and is required for `lmodern.sty` (xelatex's default font setup).
+
+### Two variants, one set of commitments
+
+The long-form paper and the workshop variant carry the *same* framework version and the *same* load-bearing commitments (5 archetypes, 4 dimensions, 7 Cats, 4 oversight models, 5 activities, composition-first-class, 3-novel/4-not-claimed honest accounting). The deck/paper sync check runs against the long form; the workshop variant inherits the same commitments by construction. When updating either, update both in the same commit.
+
+Topic mapping between the two is documented in the workshop paper's Appendix (Reading paths).
 
 ## Building the teaching deck
 
