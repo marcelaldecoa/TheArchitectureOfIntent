@@ -50,7 +50,7 @@ In practice, this means archetype selection is the *first* decision in any spec 
 
 ### A note on enforcement
 
-The archetype is enforced through organizational discipline — spec review, governance cadence, authority matrices — not through technical mechanisms that prevent violations at runtime. An agent system can technically take actions outside its declared archetype; nothing in the runtime stops it. The enforcement is procedural and social. This is the same model by which most organizational governance operates, and it works only as well as the review and oversight practices around it. [Proportional Governance](../evolve/04-governance.md) and [Intent Review Before Output Review](../validate/05-reviewing-intent.md) are how that enforcement becomes operational.
+The archetype is enforced through organizational discipline — spec review, governance cadence, authority matrices — not through technical mechanisms that prevent violations at runtime. An agent system can technically take actions outside its declared archetype; nothing in the runtime stops it. The enforcement is procedural and social. This is the same model by which most organizational governance operates, and it works only as well as the review and oversight practices around it. [Proportional Governance](../operate/01-governance.md) and [Intent Review Before Output Review](../validate/05-reviewing-intent.md) are how that enforcement becomes operational.
 
 ---
 

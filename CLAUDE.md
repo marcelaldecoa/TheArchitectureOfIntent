@@ -56,7 +56,8 @@ When making future changes, preserve this accounting. Reviewers reward honest fr
 │   ├── specify/                       ← Part 2: SDD, spec lifecycle, canonical spec template, ADRs, SpecKit + specify/scenarios/
 │   ├── delegate/                      ← Part 3: what agents are, autonomy vs agency, executor model, least capability, skills, agent classes, MCP/ + delegate/scenarios/
 │   ├── validate/                      ← Part 4: intent review, signal metrics, evals, red-team + validate/scenarios/
-│   ├── evolve/                        ← Part 5 (EVOLVE & OPERATE): Evolution sub-section (closed loop, anti-patterns, framework versioning) + Operations sub-section (governance, cost, cacheable prompts, telemetry, adoption playbook, MVP-AoI, DevSquad mapping, co-adoption) + evolve/scenarios/
+│   ├── evolve/                        ← Part 5 (EVOLVE): closed loop, anti-patterns, framework versioning, MVP-AoI; deployment patterns listed under this Part live in patterns/deployment/; evolve/scenarios/
+│   ├── operate/                       ← Part 6 (OPERATIONS): proportional governance, cost & latency engineering, cacheable prompt architecture, production telemetry, the Adoption Playbook, DevSquad mapping & co-adoption. Not a sixth activity — the sustaining-ops layer that runs alongside the five.
 │   ├── patterns/                      ← ~50 pattern one-pagers (capability/integration/coordination/safety/observability/testing/state/deployment); referenced from the Part that consumes them
 │   ├── repertoires/                   ← spec templates, code standards (referenced from Part 2 and Part 6)
 │   ├── examples/                      ← v1.x worked pilots archive (preserved on disk; not listed in SUMMARY; reached via appendices/legacy-pilots.md); superseded by phase scenarios in Parts 1–5

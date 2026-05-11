@@ -164,19 +164,19 @@ Maya's note at the kickoff: *"the docs-gap-finding metric is what makes this sce
 | 2. Specify | [Specify in practice — Internal docs Q&A](../../specify/scenarios/docs-qa.md) |
 | 3. Delegate | [Delegate in practice — Internal docs Q&A](../../delegate/scenarios/docs-qa.md) |
 | 4. Validate | [Validate in practice — Internal docs Q&A](../../validate/scenarios/docs-qa.md) |
-| 5. Evolve | [Evolve & Operate in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
+| 5. Evolve | [Evolve in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
 
 ## Conceptual chapters this scenario binds to
 
 - [Pick an Archetype](../../frame/02-canonical-intent-archetypes.md) — the Synthesizer entry
 - [Composing Archetypes](../../frame/05-composing-archetypes.md) — Synthesizer + Advisor (low-confidence path)
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../evolve/12-devsquad-mapping.md)
-- [Co-adoption with DevSquad Copilot](../../evolve/13-co-adoption-with-devsquad.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../operate/06-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](../../operate/07-co-adoption-with-devsquad.md)
 
 ## Why a third scenario at all
 
 The book commits to three running scenarios for two structural reasons. First, **archetype coverage**: Scenarios 1 and 2 are both Executor-flavored (customer-support is governing-Executor; coding-pipeline is Executor-with-Pattern-E-mode-switching). Without a Synthesizer-flavored scenario, the framework's archetype taxonomy is demonstrated unevenly — Synthesizer would be a vocabulary commitment without a worked example. Scenario 3 fills that gap.
 
-Second, **DevSquad-native team coverage**: Scenarios 1 and 2 are framework-only teams (the customer-support team and the platform team adopt the framework but do not use DevSquad). Without a DevSquad-native scenario, the [Co-adoption with DevSquad Copilot](../../evolve/13-co-adoption-with-devsquad.md) chapter's vocabulary mapping would be demonstrated only at vocabulary grain. Scenario 3 demonstrates the composition at scenario grain — the DevSquad mapping shows up at every phase chapter, in the actual artifacts the DevSquad team produces alongside the AoI artifacts.
+Second, **DevSquad-native team coverage**: Scenarios 1 and 2 are framework-only teams (the customer-support team and the platform team adopt the framework but do not use DevSquad). Without a DevSquad-native scenario, the [Co-adoption with DevSquad Copilot](../../operate/07-co-adoption-with-devsquad.md) chapter's vocabulary mapping would be demonstrated only at vocabulary grain. Scenario 3 demonstrates the composition at scenario grain — the DevSquad mapping shows up at every phase chapter, in the actual artifacts the DevSquad team produces alongside the AoI artifacts.
 
 The third scenario is therefore not redundant; it covers a class of system (Synthesizer) and a class of working practice (DevSquad-native) that the other two scenarios do not.

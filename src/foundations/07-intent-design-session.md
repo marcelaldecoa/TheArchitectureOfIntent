@@ -133,7 +133,7 @@ The binding is driven by what the spec *implies*, not by what the team likes. Us
 | **The agent uses retrieval or domain knowledge** (RAG, skill files, long memory) | [Retrieval-Augmented Generation](../patterns/capability/rag.md) · [Grounding with Verified Sources](../patterns/capability/grounding.md) · [The Skill File](../patterns/capability/skill-file.md) · [Context Window Budget](../patterns/capability/context-budget.md) |
 | **The agent writes code** (coding agent, code-gen pipeline) | [Spec Conformance Testing](../patterns/testing/spec-conformance.md) · [Code Execution Sandbox](../patterns/integration/code-sandbox.md) · [The Tool Manifest](../patterns/capability/tool-manifest.md) · scope-locked file-system access · See [Coding Agents](../delegate/08-coding-agents.md) |
 | **The agent's output is consumed by another agent** (pipeline composition) | [Agent-to-Agent Contract](../patterns/coordination/agent-contract.md) · [Spec Conformance Testing](../patterns/testing/spec-conformance.md) · [Sequential Pipeline](../patterns/coordination/sequential-pipeline.md) |
-| **The system runs at >100 calls/day** (production scale, cost-sensitive) | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) · [Cost Tracking per Spec](../patterns/observability/cost-tracking.md) · [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) |
+| **The system runs at >100 calls/day** (production scale, cost-sensitive) | [Cacheable Prompt Architecture](../operate/03-cacheable-prompt-architecture.md) · [Cost Tracking per Spec](../patterns/observability/cost-tracking.md) · [Cost and Latency Engineering](../operate/02-cost-and-latency.md) |
 | **The system is being introduced for the first time** (new agent class, new domain) | [Adversarial Input Test](../patterns/testing/adversarial-input.md) · [Red-Team Protocol](../validate/08-red-team-protocol.md) · [Canary Deployment](../patterns/deployment/canary.md) |
 
 The table is not exhaustive — it is a starting set. The skeptic's job is to surface implications the table misses. Every bound pattern goes into the spec's *Implementation Notes* section with a one-line justification ("we bind output-validation-gate because §3 authorizes external state change").
@@ -217,7 +217,7 @@ This is what the framework looks like as a working practice. Without the session
 - [Spec-Driven Development](../specify/01-what-sdd-means.md) — the SDD operating model has the IDS as its origin ritual
 - [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — the post-session asynchronous review discipline
 - [Four Signal Metrics](../validate/06-metrics.md) — the metrics committed during phase 6
-- [Adoption Playbook](../evolve/11-adoption-playbook.md) — running the IDS is the first concrete practice a new team adopts
+- [Adoption Playbook](../operate/05-adoption-playbook.md) — running the IDS is the first concrete practice a new team adopts
 - [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md) — the canonical role-to-activity matrix the IDS enacts
 
 **This pattern is calibrated by:**

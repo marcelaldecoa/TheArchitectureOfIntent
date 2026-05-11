@@ -152,7 +152,7 @@ After applying this pattern:
 
 **This pattern assumes:**
 - [Spec-Driven Development](../specify/01-what-sdd-means.md)
-- [Proportional Governance](../evolve/04-governance.md)
+- [Proportional Governance](../operate/01-governance.md)
 - [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md)
 - [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
 

@@ -152,19 +152,19 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Spec Versioning](../patterns/deployment/spec-versioning.md) | Managing spec versions |
 | [Model Upgrade Validation](../patterns/deployment/model-upgrade.md) | Re-validating when the underlying model changes |
 | [Agent Deprecation Path](../patterns/deployment/deprecation.md) | Sunsetting old agents and specs |
-| [Proportional Governance](../evolve/04-governance.md) | The lightest governance structure that prevents both chaos and bureaucracy |
+| [Proportional Governance](../operate/01-governance.md) | The lightest governance structure that prevents both chaos and bureaucracy |
 | [Intent Review Before Output Review](../validate/05-reviewing-intent.md) | Spec review as a practice |
 | [Four Signal Metrics](../validate/06-metrics.md) | What to measure, what not to |
 | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) | The four-level eval stack: unit asserts, spec acceptance, regression, production sampling |
 | [Red-Team Protocol](../validate/08-red-team-protocol.md) | Four red-team batteries (pre-launch, per-release, monthly regression, quarterly fresh-attacks) feeding the spec gap log |
-| [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | Model-tier selection, prompt caching strategy, latency budget decomposition, anti-patterns |
-| [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) | Prompt caching as architecture, not optimization: layered prompt structure, cache breakpoints, prompt-stability spec constraint, eval-time pre-warm, `cache_hit_rate` as first-class telemetry |
-| [Production Telemetry](../evolve/10-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
-| [Adoption Playbook](../evolve/11-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment; CI/CD wiring with hard-gate / soft-gate / observe tiers |
+| [Cost and Latency Engineering](../operate/02-cost-and-latency.md) | Model-tier selection, prompt caching strategy, latency budget decomposition, anti-patterns |
+| [Cacheable Prompt Architecture](../operate/03-cacheable-prompt-architecture.md) | Prompt caching as architecture, not optimization: layered prompt structure, cache breakpoints, prompt-stability spec constraint, eval-time pre-warm, `cache_hit_rate` as first-class telemetry |
+| [Production Telemetry](../operate/04-production-telemetry.md) | The integrated telemetry stack: what to instrument, what to retain, alerts vs monitors, OpenTelemetry GenAI semantic conventions |
+| [Adoption Playbook](../operate/05-adoption-playbook.md) | How to introduce SDD discipline to a team without big-bang rollout, spec theater, or governance over-investment; CI/CD wiring with hard-gate / soft-gate / observe tiers |
 | [Minimum Viable Architecture of Intent](../evolve/16-minimum-viable-aoi.md) | The floor of the discipline for small systems: when is the IDS too heavy, what's the smallest set of artifacts that still does work, when should an MVP graduate to the full framework |
 | [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) | The 12-anti-pattern catalog of how the discipline itself decays — spec theater, oversight kabuki, metrics theater, citation theater, prompt-patch drift, archetype drift, the retrofit IDS — and the quarterly discipline-health audit that surfaces them |
-| [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md) | Phase-by-phase mapping of the book's artifacts and disciplines into Microsoft DevSquad Copilot's 8-phase iterative cycle |
-| [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md) | The minimum additions from this book that give a DevSquad team the most leverage; vocabulary translation; 30-day co-adoption plan |
+| [Mapping the Framework to the DevSquad 8-Phase Cadence](../operate/06-devsquad-mapping.md) | Phase-by-phase mapping of the book's artifacts and disciplines into Microsoft DevSquad Copilot's 8-phase iterative cycle |
+| [Co-adoption with DevSquad Copilot](../operate/07-co-adoption-with-devsquad.md) | The minimum additions from this book that give a DevSquad team the most leverage; vocabulary translation; 30-day co-adoption plan |
 
 ---
 
@@ -293,7 +293,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Sensitive Data Boundary](../patterns/safety/sensitive-data-boundary.md)
 
 ### "I need to set up governance"
-- [Proportional Governance](../evolve/04-governance.md)
+- [Proportional Governance](../operate/01-governance.md)
 - [Intent Review Before Output Review](../validate/05-reviewing-intent.md)
 - [Four Signal Metrics](../validate/06-metrics.md)
 - [Roles & Responsibilities (RACI) Card](raci-card.md) — the canonical role-to-activity ownership matrix
@@ -325,13 +325,13 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [The Canonical Spec Template — §4 Cost Posture sub-block](../specify/07-canonical-spec-template.md) — the upstream surface where model-tier, latency budget, prompt-stability invariant, per-call ceiling, and cost-incident escalation get committed *before* deployment
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility — Cost is not a fifth dimension](../foundations/03-agency-autonomy-responsibility.md#cost-is-not-a-fifth-dimension) — the structural rationale for why cost is a §4 sub-block instead of a fifth dimension
 - [Model-Tier Quick-Select Card](model-tier-card.md) — per-step decision matrix and step-to-tier defaults
-- [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) — full treatment with vendor pricing and a worked case study
-- [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) — caching as architecture, not optimization; the largest single lever for systems running 100+ tasks/day
+- [Cost and Latency Engineering](../operate/02-cost-and-latency.md) — full treatment with vendor pricing and a worked case study
+- [Cacheable Prompt Architecture](../operate/03-cacheable-prompt-architecture.md) — caching as architecture, not optimization; the largest single lever for systems running 100+ tasks/day
 - [Four Signal Metrics](../validate/06-metrics.md) — cost-per-correct-output is the metric this work moves
 - [Context Window Budget](../patterns/capability/context-budget.md)
 
 ### "I need real production observability for my agents"
-- [Production Telemetry](../evolve/10-production-telemetry.md)
+- [Production Telemetry](../operate/04-production-telemetry.md)
 - [Structured Execution Log](../patterns/observability/execution-log.md)
 - [Distributed Trace](../patterns/observability/distributed-trace.md)
 - [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md)
@@ -339,7 +339,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 ### "I'm trying to introduce this framework to my team"
 - [A Miniature Pilot, End-to-End](../miniature-pilot.md) — start here; show the framework on one screen before asking anyone to read three parts of a book
 - [The Intent Design Session](../foundations/07-intent-design-session.md) — the working ritual; run this for the first system that matters
-- [Adoption Playbook](../evolve/11-adoption-playbook.md)
+- [Adoption Playbook](../operate/05-adoption-playbook.md)
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md)
 - [The Living Spec](../specify/06-living-specs.md)
 - The worked examples ([Customer Support](../examples/01-ai-customer-support/README.md), [Code Gen Pipeline](../examples/02-code-generation-pipeline/README.md), [Coding Agent](../examples/03-coding-agent/README.md))
@@ -370,8 +370,8 @@ This index lists every chapter and pattern in the book by part, by category, and
 - [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — has output review absorbed all the cost while spec review fell away?
 
 ### "My team already uses Microsoft DevSquad Copilot"
-- [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md)
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](../operate/07-co-adoption-with-devsquad.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](../operate/06-devsquad-mapping.md)
 - [Architectural Decision Records](../specify/08-architectural-decision-records.md)
 
 ### "I'm building a computer-use / browser-use agent (Claude Computer Use / Operator / Gemini)"
@@ -406,11 +406,11 @@ This index lists every chapter and pattern in the book by part, by category, and
 
 | Archetype | Definition | Used in example | Governance | Constraints |
 |-----------|-----------|-----------------|-----------|-------------|
-| Advisor | [advisor.md](../frame/archetypes/advisor.md) | Example 1 (Policy Advisor) | [Proportional Governance](../evolve/04-governance.md) | [Spec template library](../repertoires/03-spec-template-library.md) |
-| Executor | [executor.md](../frame/archetypes/executor.md) | Example 1 (Account Executor), Example 3 (Coding Agent) | [Proportional Governance](../evolve/04-governance.md) | [Validation templates](../repertoires/05-validation-templates.md) |
-| Guardian | [guardian.md](../frame/archetypes/guardian.md) | Example 1 (Compliance Guardian), Example 2 (Standards Guardian) | [Proportional Governance](../evolve/04-governance.md) | [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md) |
-| Synthesizer | [synthesizer.md](../frame/archetypes/synthesizer.md) | Example 2 (Scaffold Synthesizer) | [Proportional Governance](../evolve/04-governance.md) | [Spec template library](../repertoires/03-spec-template-library.md) |
-| Orchestrator | [orchestrator.md](../frame/archetypes/orchestrator.md) | Example 1 (Inquiry Orchestrator) | [Proportional Governance](../evolve/04-governance.md) | [Proportional Oversight](../delegate/06-human-oversight-models.md) |
+| Advisor | [advisor.md](../frame/archetypes/advisor.md) | Example 1 (Policy Advisor) | [Proportional Governance](../operate/01-governance.md) | [Spec template library](../repertoires/03-spec-template-library.md) |
+| Executor | [executor.md](../frame/archetypes/executor.md) | Example 1 (Account Executor), Example 3 (Coding Agent) | [Proportional Governance](../operate/01-governance.md) | [Validation templates](../repertoires/05-validation-templates.md) |
+| Guardian | [guardian.md](../frame/archetypes/guardian.md) | Example 1 (Compliance Guardian), Example 2 (Standards Guardian) | [Proportional Governance](../operate/01-governance.md) | [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md) |
+| Synthesizer | [synthesizer.md](../frame/archetypes/synthesizer.md) | Example 2 (Scaffold Synthesizer) | [Proportional Governance](../operate/01-governance.md) | [Spec template library](../repertoires/03-spec-template-library.md) |
+| Orchestrator | [orchestrator.md](../frame/archetypes/orchestrator.md) | Example 1 (Inquiry Orchestrator) | [Proportional Governance](../operate/01-governance.md) | [Proportional Oversight](../delegate/06-human-oversight-models.md) |
 
 ---
 
@@ -436,21 +436,21 @@ This index lists every chapter and pattern in the book by part, by category, and
 |---|---|---|---|
 | **Anthropic MCP** + cross-vendor adoption (OpenAI, Google, Microsoft) | 2024–25 | [The Model Context Protocol](../delegate/mcp/01-what-is-mcp.md), [Designing MCP Tools](../delegate/mcp/02-designing-mcp-tools.md), [MCP Safety](../delegate/mcp/03-mcp-safety.md), [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md) | The protocol layer through which [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md) becomes operationally enforceable; capability-gating discipline at the tool layer |
 | **GitHub spec-kit** | 2024–25 | [Spec-Driven Development](../specify/01-what-sdd-means.md), [SpecKit](../specify/04-speckit.md) | Direct ancestor of the canonical spec template; the book extends spec-kit's discipline with the archetype framework and the failure taxonomy |
-| **Microsoft DevSquad Copilot** | 2026 | [DevSquad Mapping](../evolve/12-devsquad-mapping.md), [Co-adoption with DevSquad](../evolve/13-co-adoption-with-devsquad.md), [Architectural Decision Records](../specify/08-architectural-decision-records.md) | A complete bridge: phase-by-phase mapping, vocabulary translation, ranked addition list, 30-day co-adoption plan, ADRs as a first-class artifact |
+| **Microsoft DevSquad Copilot** | 2026 | [DevSquad Mapping](../operate/06-devsquad-mapping.md), [Co-adoption with DevSquad](../operate/07-co-adoption-with-devsquad.md), [Architectural Decision Records](../specify/08-architectural-decision-records.md) | A complete bridge: phase-by-phase mapping, vocabulary translation, ranked addition list, 30-day co-adoption plan, ADRs as a first-class artifact |
 | **Anthropic Computer Use** | Oct 2024 | [Computer-Use Agents](../delegate/09-computer-use-agents.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) | New agent class chapter with archetype mapping by deployment posture; new Cat 7 (Perceptual Failure) added to the diagnostic protocol; four structural controls (sandboxed environment, auth scope minimization, domain allowlist, high-consequence confirmation gate); computer-use-specific red-team patterns |
 | **OpenAI Operator / Gemini computer use** | 2025 | [Computer-Use Agents](../delegate/09-computer-use-agents.md) | Same chapter — three implementations of the new class, all subject to the same structural controls and Cat 7 framework |
-| **Reasoning-tier models (o1, o3, Claude extended thinking, Gemini reasoning)** | 2024–25 | [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | Distinct model tier in the per-role selection table; explicit cost/latency profile (2–10× cost, 5–60s latency); when-to-use vs when-not-to budgeting discipline |
+| **Reasoning-tier models (o1, o3, Claude extended thinking, Gemini reasoning)** | 2024–25 | [Cost and Latency Engineering](../operate/02-cost-and-latency.md) | Distinct model tier in the per-role selection table; explicit cost/latency profile (2–10× cost, 5–60s latency); when-to-use vs when-not-to budgeting discipline |
 | **Anthropic Constitutional Classifiers** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | Treated honestly as a probabilistic perimeter, not a fix; documented escape rate and over-refusal cost made explicit |
-| **Anthropic prompt caching / OpenAI cached input / Gemini context caching** | 2024–25 | [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | Caching as architecture (layered prompt with cache breakpoints; prompt-stability as a spec constraint; cache-hit-rate as first-class telemetry); 40–70% input-cost reduction is normal when treated architecturally |
+| **Anthropic prompt caching / OpenAI cached input / Gemini context caching** | 2024–25 | [Cacheable Prompt Architecture](../operate/03-cacheable-prompt-architecture.md), [Cost and Latency Engineering](../operate/02-cost-and-latency.md) | Caching as architecture (layered prompt with cache breakpoints; prompt-stability as a spec constraint; cache-hit-rate as first-class telemetry); 40–70% input-cost reduction is normal when treated architecturally |
 | **Google Agent2Agent (A2A) Protocol** | 2025 | [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Protocol-layer counterpart to MCP at the tool layer; the governance question for protocol-mediated multi-agent systems |
-| **OpenTelemetry GenAI semantic conventions** | 2024–25 | [Production Telemetry](../evolve/10-production-telemetry.md) | Vendor-neutral observability standard; the book recommends emitting OTel-compliant spans alongside vendor SDK telemetry for portability |
+| **OpenTelemetry GenAI semantic conventions** | 2024–25 | [Production Telemetry](../operate/04-production-telemetry.md) | Vendor-neutral observability standard; the book recommends emitting OTel-compliant spans alongside vendor SDK telemetry for portability |
 | **OWASP LLM Top 10 (2025 update)** | 2025 | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md), [Red-Team Protocol](../validate/08-red-team-protocol.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md) | Baseline coverage for the four red-team batteries; instantiation per deployment specifics |
 | **MAST taxonomy** (Cemri et al.) | 2025 | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md), [Multi-Agent Governance](../frame/07-multi-agent-governance.md) | Empirical 14-category multi-agent failure partition; complementary to (not replacing) the book's seven-category fix-locus taxonomy |
 | **Indirect prompt injection** (Greshake et al. 2023) + the **lethal trifecta** (Willison) | 2023, ongoing | [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | The structural defense (trifecta reduction; capability gating) is centered on the indirect injection class that cannot be filtered at the prompt layer |
 | **SWE-bench Verified, AgentBench, τ-bench, GAIA, BFCL, WebArena, OSWorld, ScreenSpot-Pro** | 2023–25 | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md), [Coding Agents](../delegate/08-coding-agents.md), [Computer-Use Agents](../delegate/09-computer-use-agents.md) | External calibration benchmarks; the book recommends using public benchmarks for harness calibration and team-built golden sets for actual task fit |
 | **Open-source eval / red-team frameworks** (Inspect, OpenAI Evals, Promptfoo, PyRIT, Garak) | 2024–25 | [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md), [Red-Team Protocol](../validate/08-red-team-protocol.md) | The toolchain layer the book recommends adopting rather than building custom |
-| **Production observability stacks** (LangSmith, Langfuse, Phoenix, Helicone, Datadog LLM) | 2024–25 | [Production Telemetry](../evolve/10-production-telemetry.md) | Vendor-stack landscape with a clear "which to choose if you have X" decision rule |
+| **Production observability stacks** (LangSmith, Langfuse, Phoenix, Helicone, Datadog LLM) | 2024–25 | [Production Telemetry](../operate/04-production-telemetry.md) | Vendor-stack landscape with a clear "which to choose if you have X" decision rule |
 | **Coding agent platforms** (Cursor, Cline, Aider, Devin, Claude Code, Codex CLI) | 2023–25 | [Coding Agents](../delegate/08-coding-agents.md), [Designing an AI Coding Agent](../examples/03-coding-agent/README.md) | Treated as deployment-posture-dependent compositions; explicit decision-against-Devin-style-autonomy criteria documented in Example 3 |
 | **Anthropic Skills as deployable artifact** | 2025 | [Portable Domain Knowledge](../delegate/05-agent-skills.md) | The maturation of "domain knowledge as packaged context" — skills as versioned, distributed deployment units |
-| **Lost in the Middle long-context attention degradation** (Liu et al. 2023) | 2023, ongoing | [Coding Agents](../delegate/08-coding-agents.md), [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) | Empirical grounding for the long-context anti-pattern; informs context-budget discipline and the warning against long-context dumping |
+| **Lost in the Middle long-context attention degradation** (Liu et al. 2023) | 2023, ongoing | [Coding Agents](../delegate/08-coding-agents.md), [Cost and Latency Engineering](../operate/02-cost-and-latency.md) | Empirical grounding for the long-context anti-pattern; informs context-budget discipline and the warning against long-context dumping |
 | **NIST AI RMF / ISO 42001 / Anthropic RSP / OpenAI Preparedness Framework** | 2023–25 | [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) | Compliance-layer reference points; the book's four-dimensions framing is compatible with each |

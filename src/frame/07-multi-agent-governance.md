@@ -92,7 +92,7 @@ The governance addition for protocol-mediated multi-agent systems:
 
 - **Section 7 (Tool Manifest)** of the system spec lists the A2A protocols and the agents reachable through them, with their respective authorization scopes.
 - **Each cross-agent message type** has a Section 6 (Invariants) entry: what content the message may carry, what authority it grants the receiver, what happens on contract violation.
-- **The multi-agent observability stack** (per [Production Telemetry](../evolve/10-production-telemetry.md)) consumes the protocol's standard trace format. OpenTelemetry's GenAI semantic conventions cover the cross-agent message attributes alongside the per-agent ones.
+- **The multi-agent observability stack** (per [Production Telemetry](../operate/04-production-telemetry.md)) consumes the protocol's standard trace format. OpenTelemetry's GenAI semantic conventions cover the cross-agent message attributes alongside the per-agent ones.
 
 Specific protocol references for further reading:
 

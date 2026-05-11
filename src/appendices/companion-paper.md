@@ -44,12 +44,12 @@ The paper is structured in seven sections plus two appendices. The mapping below
 | **§3.4 The fix-locus failure taxonomy** | Cat 1–7, with Cat 7 (Perceptual) detailed | [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md); [Computer-Use Agents](../delegate/09-computer-use-agents.md) |
 | **§3.5 Spec-Driven Development** | SDD as the executable protocol; the canonical spec template | All of [Part 2 — The Spec](../specify/01-what-sdd-means.md); especially [The Canonical Spec Template](../specify/07-canonical-spec-template.md) |
 | **§4 Application to AI agent systems** | Agentic development lifecycle; capability boundaries via MCP; coding agents; computer-use agents | [The Agent](../delegate/01-what-agents-are.md); [Least Capability](../delegate/04-tools-mcp-capability-boundaries.md); [The Model Context Protocol](../delegate/mcp/01-what-is-mcp.md); [Coding Agents](../delegate/08-coding-agents.md); [Computer-Use Agents](../delegate/09-computer-use-agents.md); [Designing an AI Coding Agent](../examples/03-coding-agent/README.md) |
-| **§4 Composition with DevSquad** | Phase-by-phase mapping into the DevSquad 8-phase agentic delivery cycle | [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md); [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md) |
+| **§4 Composition with DevSquad** | Phase-by-phase mapping into the DevSquad 8-phase agentic delivery cycle | [Mapping the Framework to the DevSquad 8-Phase Cadence](../operate/06-devsquad-mapping.md); [Co-adoption with DevSquad Copilot](../operate/07-co-adoption-with-devsquad.md) |
 | **§5 Discussion** | Applicability boundary; complementarity with MAST; generalization beyond AI agents | [Multi-Agent Governance](../frame/07-multi-agent-governance.md); [Failure Modes](../foundations/05-failure-as-design-signal.md) §"How this taxonomy relates to the empirical literature" |
 | **§6 Limitations** | Position-paper scope; what the framework does not do | [Introduction §"Honest scope"](../introduction.md#honest-scope-what-this-book-is-and-what-it-isnt); [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) |
 | **§7 Conclusion** | The framework's reach; future work | [Introduction](../introduction.md) |
 | **Appendix A** | Paper → book mapping (the inverse of this page) | This appendix |
-| **Appendix B** | Mapping the framework to Microsoft DevSquad Copilot | [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md); [Co-adoption with DevSquad Copilot](../evolve/13-co-adoption-with-devsquad.md) |
+| **Appendix B** | Mapping the framework to Microsoft DevSquad Copilot | [Mapping the Framework to the DevSquad 8-Phase Cadence](../operate/06-devsquad-mapping.md); [Co-adoption with DevSquad Copilot](../operate/07-co-adoption-with-devsquad.md) |
 
 ---
 

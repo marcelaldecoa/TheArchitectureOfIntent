@@ -1,6 +1,6 @@
 # Adoption Playbook
 
-**Part 5 — Evolve & Operate**
+**Part 6 — Operations**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The Adoption Playbook is what keeps the [closed loop](../evolve/01-closed-loop.md) going as the team grows and as the framework spreads to other teams. Cross-team adoption is itself the closed loop at organizational scale — the coding-pipeline and docs-qa Evolve scenarios both demonstrate the pattern, with the team that explains the framework to others deepening its own discipline through the explanation.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 6 — Operations**. The Adoption Playbook is what keeps the [closed loop](../evolve/01-closed-loop.md) going as the team grows and as the framework spreads to other teams. Cross-team adoption is itself the closed loop at organizational scale — the coding-pipeline and docs-qa Evolve scenarios both demonstrate the pattern, with the team that explains the framework to others deepening its own discipline through the explanation.*
 
 ---
 
@@ -180,7 +180,7 @@ Each artifact maps to a tier:
 - **Eval suite (Level 4)** — observe in production. Drift triggers an alert, not a deploy block.
 - **Spec PR review** — hard gate. A spec change requires explicit sign-off by the spec owner. Use the [Intent Review Before Output Review](../validate/05-reviewing-intent.md) discipline as the review checklist.
 - **Red-team finding (critical/high)** — hard gate. New deploys cannot proceed until the finding has a Spec Gap Log entry and an eval test case. Lower-severity findings are soft-gated against the next release window.
-- **Cache hit rate** — soft gate on prompt PRs. Below 50% in the first 1,000 production calls after deploy → reviewer must justify or roll back. See [Cacheable Prompt Architecture](14-cacheable-prompt-architecture.md).
+- **Cache hit rate** — soft gate on prompt PRs. Below 50% in the first 1,000 production calls after deploy → reviewer must justify or roll back. See [Cacheable Prompt Architecture](03-cacheable-prompt-architecture.md).
 - **Cost per correct outcome** — observe. Drift is a [Four Signal Metrics](../validate/06-metrics.md) signal, not a deploy block.
 
 **A minimal GitHub Actions / Azure DevOps sketch** (the same shape works in either):
@@ -209,7 +209,7 @@ jobs:
 
 The principle: **make the gate match the consequence**. A spec acceptance failure is non-negotiable; a 1pp regression on a niche golden-set scenario is a judgment call. Hard-gating everything produces deployment paralysis; soft-gating everything produces deployment theatre.
 
-For teams on DevSquad cadence, the wiring slots into Phase 5 (TDD-first, hard gate on Level 1+2), Phase 7 (independent review, hard gate on red-team and spec PR), and Phase 8 (continuous refinement, observe layer feeding the next sprint's priorities). The [DevSquad Mapping](12-devsquad-mapping.md) chapter has the full phase-by-phase artifact table.
+For teams on DevSquad cadence, the wiring slots into Phase 5 (TDD-first, hard gate on Level 1+2), Phase 7 (independent review, hard gate on red-team and spec PR), and Phase 8 (continuous refinement, observe layer feeding the next sprint's priorities). The [DevSquad Mapping](06-devsquad-mapping.md) chapter has the full phase-by-phase artifact table.
 
 ---
 
@@ -217,12 +217,12 @@ For teams on DevSquad cadence, the wiring slots into Phase 5 (TDD-first, hard ga
 
 The adoption playbook is the practical entry-point to the rest of the operational chapters:
 
-- [Proportional Governance](04-governance.md) — what governance you actually need at the team's adoption stage
+- [Proportional Governance](01-governance.md) — what governance you actually need at the team's adoption stage
 - [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — the review practice that the adoption playbook calls for in week 1
 - [Four Signal Metrics](../validate/06-metrics.md) — the metrics that tell you whether adoption is working at month 3
 - [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — the eval discipline that the adoption playbook treats as the lifeline
-- [Cost and Latency Engineering](09-cost-and-latency.md) — once adoption is working, this is where the team grows next
-- [Production Telemetry](10-production-telemetry.md) — the observability layer that the gap log culture depends on for input
+- [Cost and Latency Engineering](02-cost-and-latency.md) — once adoption is working, this is where the team grows next
+- [Production Telemetry](04-production-telemetry.md) — the observability layer that the gap log culture depends on for input
 
 A team that has adopted the framework well will read these chapters not as an introduction but as a reference for the disciplines they are already running.
 
@@ -264,7 +264,7 @@ After applying this pattern:
 - [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) — the diagnostic protocol that month 1 depends on
 
 **This pattern enables:**
-- [Proportional Governance](04-governance.md) — at quarter 1+, governance becomes relevant
+- [Proportional Governance](01-governance.md) — at quarter 1+, governance becomes relevant
 - [Four Signal Metrics](../validate/06-metrics.md) — at month 3, the metrics tell you whether adoption is working
 - [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — the eval suite the team builds in month 2-3
 - [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md) — the canonical role-to-activity matrix the team grows into; introduce roles incrementally, not all at once

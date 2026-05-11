@@ -4,7 +4,7 @@
 
 ---
 
-A one-page reference for who owns what across the framework's six operational activities. Use it during the [Intent Design Session](../foundations/07-intent-design-session.md) (phases 3 and 6 in particular), in [Proportional Governance](../evolve/04-governance.md) reviews, and in onboarding new team members to a system that is already running.
+A one-page reference for who owns what across the framework's six operational activities. Use it during the [Intent Design Session](../foundations/07-intent-design-session.md) (phases 3 and 6 in particular), in [Proportional Governance](../operate/01-governance.md) reviews, and in onboarding new team members to a system that is already running.
 
 ---
 
@@ -121,8 +121,8 @@ Read across each row to find who does what for that activity. Read down each col
 
 - [The Intent Design Session](../foundations/07-intent-design-session.md) — the IDS is where the RACI is *enacted*. Phase 1 establishes domain-owner accountability; phases 2–3 establish architect responsibility; phase 6 establishes operator accountability for oversight.
 - [Calibrate Agency, Autonomy, Responsibility, Reversibility](../foundations/03-agency-autonomy-responsibility.md) — *Responsibility* as a calibration dimension is what this card operationalizes; the dimension names *authorial / operational / validation* sub-loci, and this RACI maps them to actual roles.
-- [Proportional Governance](../evolve/04-governance.md) — the governance practice that runs against this RACI.
-- [Adoption Playbook](../evolve/11-adoption-playbook.md) — the adoption practice that introduces these roles to a team progressively, rather than all at once.
+- [Proportional Governance](../operate/01-governance.md) — the governance practice that runs against this RACI.
+- [Adoption Playbook](../operate/05-adoption-playbook.md) — the adoption practice that introduces these roles to a team progressively, rather than all at once.
 - [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) — the audit that catches RACI drift, particularly the *oversight kabuki* and *diffuse-responsibility* anti-patterns.
 
 ---

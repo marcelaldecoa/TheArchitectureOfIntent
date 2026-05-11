@@ -1,6 +1,6 @@
-# Evolve & Operate in practice — Coding-agent pipeline
+# Evolve in practice — Coding-agent pipeline
 
-**Part 5 · EVOLVE & OPERATE · Scenario 2 of 3**
+**Part 5 · EVOLVE · Scenario 2 of 3**
 
 ---
 
@@ -79,7 +79,7 @@ By day 60, two other teams in the company have asked for help applying the frame
 
 Both teams meet with the platform team for a one-hour Frame consultation, NOT for the full IDS. The platform team's role is *vocabulary transfer* and *artifact transfer* — sharing the spec template, the per-mode tool manifest pattern, the CI guards as starting points. The receiving teams adapt to their own context.
 
-This is what [Adoption Playbook](../../evolve/11-adoption-playbook.md) describes as healthy adoption: vocabulary spreads, the load-bearing structures get re-instantiated rather than copied wholesale, and each receiving team owns its own spec evolution log.
+This is what [Adoption Playbook](../../operate/05-adoption-playbook.md) describes as healthy adoption: vocabulary spreads, the load-bearing structures get re-instantiated rather than copied wholesale, and each receiving team owns its own spec evolution log.
 
 The platform team observes a side effect: their own framework adoption *deepens* by being asked to teach. Naomi: *"explaining the §11 rewrite to the product-engineering team forced me to articulate why we wrote it that way. We caught two more places where our §11 could be sharper."* The teaching produced amendments 21 and 22 in the platform team's own log.
 
@@ -163,5 +163,5 @@ The team is ready for the next system. The framework's vocabulary travels.
 - [Signs Your Architecture of Intent Is Degrading](../../evolve/15-anti-patterns.md)
 - [Coding Agents](../../delegate/08-coding-agents.md)
 - [Model Upgrade Validation](../../patterns/deployment/model-upgrade.md)
-- [Adoption Playbook](../../evolve/11-adoption-playbook.md)
+- [Adoption Playbook](../../operate/05-adoption-playbook.md)
 - [Framework Versioning](../07-framework-versioning.md)

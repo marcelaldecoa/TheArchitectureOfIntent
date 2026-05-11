@@ -1,6 +1,6 @@
 # Production Telemetry
 
-**Part 5 — Evolve & Operate**
+**Part 6 — Operations**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. Production telemetry is the trace surface that the [closed loop](../evolve/01-closed-loop.md) requires — without traces, you have an after-the-fact narrative; with them, you have evidence. The Distributed Trace, Cost Tracking, and Anomaly Baseline patterns this chapter integrates feed the Cat-by-Cat categorization and the per-mode failure observability that the running scenarios demonstrate.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 6 — Operations**. Production telemetry is the trace surface that the [closed loop](../evolve/01-closed-loop.md) requires — without traces, you have an after-the-fact narrative; with them, you have evidence. The Distributed Trace, Cost Tracking, and Anomaly Baseline patterns this chapter integrates feed the Cat-by-Cat categorization and the per-mode failure observability that the running scenarios demonstrate.*
 
 ---
 
@@ -114,7 +114,7 @@ A program with telemetry that doesn't feed those three consumers is collecting d
 - [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md)
 
 **This pattern enables:**
-- [Cost and Latency Engineering](09-cost-and-latency.md) — telemetry is the input that makes cost engineering possible
+- [Cost and Latency Engineering](02-cost-and-latency.md) — telemetry is the input that makes cost engineering possible
 - [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — Level 4 production sampling consumes the trace stream
 - [Red-Team Protocol](../validate/08-red-team-protocol.md) — anomaly investigation depends on the alert layer
 - [The Living Spec](../specify/06-living-specs.md) — the spec gap log consumes telemetry-driven anomalies as candidate entries

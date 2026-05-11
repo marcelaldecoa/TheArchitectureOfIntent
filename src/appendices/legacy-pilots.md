@@ -34,7 +34,7 @@ A mid-size retailer deploys a four-agent system to automate Tier 1 customer inqu
 - [Validating Outcomes](../examples/01-ai-customer-support/validation.md)
 - [Post-mortem Through Intent](../examples/01-ai-customer-support/postmortem.md)
 
-Superseded by: [Customer-support agent (running scenario)](../frame/scenarios/customer-support.md) — Frame through Evolve & Operate across 90 days.
+Superseded by: [Customer-support agent (running scenario)](../frame/scenarios/customer-support.md) — Frame through Evolve and Operations across 90 days.
 
 ### A Code Generation Pipeline
 
@@ -46,7 +46,7 @@ A platform engineering team builds a three-agent pipeline that takes a feature i
 - [Agent Instructions](../examples/02-code-generation-pipeline/agent-instructions.md)
 - [Validating Outcomes](../examples/02-code-generation-pipeline/validation.md)
 
-Superseded by: [Coding-agent pipeline (running scenario)](../frame/scenarios/coding-pipeline.md) — Frame through Evolve & Operate across 90 days.
+Superseded by: [Coding-agent pipeline (running scenario)](../frame/scenarios/coding-pipeline.md) — Frame through Evolve and Operations across 90 days.
 
 ### Designing an AI Coding Agent
 
@@ -67,7 +67,7 @@ No direct v2.0.0 successor; the [Coding-agent pipeline scenario](../frame/scenar
 
 If you are new to the book, **do not start here.** Start with the [Introduction](../introduction.md), the [Miniature Pilot](../miniature-pilot.md), or one of the v2.0.0 *in practice* scenarios. The legacy pilots are a reference resource, not a learning path.
 
-If you are evaluating how the framework matured between v1.x and v2.0, read one v1.x pilot (recommended: [Designing an AI Coding Agent](../examples/03-coding-agent/README.md)) and the matching v2.0.0 scenario back-to-back. The differences you will notice — the explicit five-activity arc, the running-team continuity across phases, the closed-loop emphasis in the *Evolve & Operate in practice* chapters — are what v2.0 added structurally.
+If you are evaluating how the framework matured between v1.x and v2.0, read one v1.x pilot (recommended: [Designing an AI Coding Agent](../examples/03-coding-agent/README.md)) and the matching v2.0.0 scenario back-to-back. The differences you will notice — the explicit five-activity arc, the running-team continuity across phases, the closed-loop emphasis in the *Evolve in practice* chapters — are what v2.0 added structurally.
 
 ---
 

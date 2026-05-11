@@ -192,7 +192,7 @@ The agent ships to a single pilot service (chosen for its breadth of tier-1 tick
 | 2. Specify | [Specify in practice — Coding-agent pipeline](../../specify/scenarios/coding-pipeline.md) |
 | 3. **Delegate** | *(this chapter)* |
 | 4. Validate | [Validate in practice — Coding-agent pipeline](../../validate/scenarios/coding-pipeline.md) |
-| 5. Evolve | [Evolve & Operate in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
+| 5. Evolve | [Evolve in practice — Coding-agent pipeline](../../evolve/scenarios/coding-pipeline.md) |
 
 ## Conceptual chapters this scenario binds to
 

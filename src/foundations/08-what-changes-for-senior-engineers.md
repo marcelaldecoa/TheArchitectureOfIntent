@@ -129,7 +129,7 @@ After this chapter has done its work:
 
 **This pattern enables:**
 - [Roles & Responsibilities (RACI) Card](../appendices/raci-card.md) — the role-to-activity matrix that locates the senior engineer's judgment by activity
-- [Adoption Playbook](../evolve/11-adoption-playbook.md) — the path by which an organization moves to the practice this chapter describes
+- [Adoption Playbook](../operate/05-adoption-playbook.md) — the path by which an organization moves to the practice this chapter describes
 - [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) — the audit that catches when the discipline has decayed back to late-judgment compensation in a different form
 
 ---

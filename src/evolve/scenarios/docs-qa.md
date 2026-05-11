@@ -1,6 +1,6 @@
-# Evolve & Operate in practice — Internal docs Q&A (DevSquad)
+# Evolve in practice — Internal docs Q&A (DevSquad)
 
-**Part 5 · EVOLVE & OPERATE · Scenario 3 of 3**
+**Part 5 · EVOLVE · Scenario 3 of 3**
 
 ---
 
@@ -180,7 +180,7 @@ The system is in steady-state operation. The framework's vocabulary is now prese
 
 - [The Closed Loop: From Failures to Spec Amendments](../01-closed-loop.md)
 - [Framework Versioning](../07-framework-versioning.md) — the team contributing back is the closed loop at the longest time-scale
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../evolve/12-devsquad-mapping.md) — the *Refine continuously* phase
-- [Co-adoption with DevSquad Copilot](../../evolve/13-co-adoption-with-devsquad.md)
-- [Adoption Playbook](../../evolve/11-adoption-playbook.md) — the cross-team adoption pattern in action
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../operate/06-devsquad-mapping.md) — the *Refine continuously* phase
+- [Co-adoption with DevSquad Copilot](../../operate/07-co-adoption-with-devsquad.md)
+- [Adoption Playbook](../../operate/05-adoption-playbook.md) — the cross-team adoption pattern in action
 - [Signs Your Architecture of Intent Is Degrading](../../evolve/15-anti-patterns.md) — including the team-proposed citation-theater addition

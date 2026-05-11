@@ -1,6 +1,6 @@
 # Cost and Latency Engineering
 
-**Part 5 — Evolve & Operate**
+**Part 6 — Operations**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. Cost incidents are a particular Cat 4 (Oversight) class that requires its own escalation pattern — the [Cost Posture sub-block](../specify/07-canonical-spec-template.md) of §4 of the spec template names the structural commitment, and this chapter names what to do when the structural commitment is breached in production. The customer-support scenario's day-47 Sonnet-4.7 incident and the coding-pipeline scenario's day-60 model-tier rotation are worked examples of the discipline in operation.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 6 — Operations**. Cost incidents are a particular Cat 4 (Oversight) class that requires its own escalation pattern — the [Cost Posture sub-block](../specify/07-canonical-spec-template.md) of §4 of the spec template names the structural commitment, and this chapter names what to do when the structural commitment is breached in production. The customer-support scenario's day-47 Sonnet-4.7 incident and the coding-pipeline scenario's day-60 model-tier rotation are worked examples of the discipline in operation.*
 
 ---
 
@@ -102,7 +102,7 @@ The implementation discipline is recording the model tier used at each step and 
 
 ### Prompt caching as a structural cost control
 
-*This section gives the operational view; for the architectural treatment — caching as a spec property, not an optimization — see [Cacheable Prompt Architecture](14-cacheable-prompt-architecture.md).*
+*This section gives the operational view; for the architectural treatment — caching as a spec property, not an optimization — see [Cacheable Prompt Architecture](03-cacheable-prompt-architecture.md).*
 
 Modern providers offer prompt caching with material economic effects:
 
@@ -252,7 +252,7 @@ After applying this pattern:
 - [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — eval suite must include cost and latency regressions, not just behavioral regressions
 
 **This pattern enables:**
-- [Production Telemetry](10-production-telemetry.md) — the observability layer that makes cost and latency visible in production
+- [Production Telemetry](04-production-telemetry.md) — the observability layer that makes cost and latency visible in production
 - [Coding Agents](../delegate/08-coding-agents.md) — coding agents have characteristic cost profiles (long context, multi-tool loops) that this chapter's principles apply to directly
 - [Multi-Agent Governance](../frame/07-multi-agent-governance.md) — multi-agent systems are where cost and latency penalties compound most quickly
 

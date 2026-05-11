@@ -1,6 +1,6 @@
 # Mapping the Framework to the DevSquad 8-Phase Cadence
 
-**Part 5 — Evolve & Operate**
+**Part 6 — Operations**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The framework's vocabulary maps cleanly onto DevSquad Copilot's eight-phase iterative cycle because both projects independently arrived at the same load-bearing concerns. [Scenario 3 (the internal docs Q&A agent)](../frame/scenarios/docs-qa.md) is the worked instantiation of the mapping at scenario grain — every phase chapter shows the AoI ↔ DevSquad mapping inline. This chapter is the vocabulary-grain version, useful for any team running both frameworks.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 6 — Operations**. The framework's vocabulary maps cleanly onto DevSquad Copilot's eight-phase iterative cycle because both projects independently arrived at the same load-bearing concerns. [Scenario 3 (the internal docs Q&A agent)](../frame/scenarios/docs-qa.md) is the worked instantiation of the mapping at scenario grain — every phase chapter shows the AoI ↔ DevSquad mapping inline. This chapter is the vocabulary-grain version, useful for any team running both frameworks.*
 
 ---
 
@@ -16,7 +16,7 @@
 
 Microsoft's [DevSquad Copilot](https://github.com/microsoft/devsquad-copilot) is a delivery framework that integrates Copilot with specialized agents into an explicit 8-phase iterative cycle. It converges with this book on the load-bearing concepts (living specs, risk-tiered human-in-the-loop, principle of least privilege, context isolation, spec-first response to failure) but is more *operationally prescriptive*: it gives a team a delivery cadence rather than a design vocabulary.
 
-This chapter is the bridge for teams running both. If your team does not run DevSquad's cadence, skip the table and read [Co-adoption with DevSquad Copilot](13-co-adoption-with-devsquad.md) instead.
+This chapter is the bridge for teams running both. If your team does not run DevSquad's cadence, skip the table and read [Co-adoption with DevSquad Copilot](07-co-adoption-with-devsquad.md) instead.
 
 ---
 
@@ -81,10 +81,10 @@ Three places where the two frameworks pull in different directions:
 **This pattern assumes:**
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md)
 - [Architectural Decision Records](../specify/08-architectural-decision-records.md)
-- [Co-adoption with DevSquad](13-co-adoption-with-devsquad.md) — the strategy chapter for combining the two
+- [Co-adoption with DevSquad](07-co-adoption-with-devsquad.md) — the strategy chapter for combining the two
 
 **This pattern enables:**
-- [Adoption Playbook](11-adoption-playbook.md) — adoption guidance for teams not on DevSquad
+- [Adoption Playbook](05-adoption-playbook.md) — adoption guidance for teams not on DevSquad
 - All of Part 5 (Ship) — every chapter applies within DevSquad's cadence at the phase identified above
 
 ---

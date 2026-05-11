@@ -174,15 +174,14 @@
 
 ---
 
-# Part 5 — EVOLVE & OPERATE
+# Part 5 — EVOLVE
 
-*The closed loop and the day-to-day. Cat 1s back to spec; the discipline survives the team. Operations sustain the system between evolutions.*
-
-## Evolution
+*Close the loop. Each diagnosed failure becomes a structural change. The discipline survives the team.*
 
 - [The Closed Loop: From Failures to Spec Amendments](evolve/01-closed-loop.md)
 - [Signs Your Architecture of Intent Is Degrading](evolve/15-anti-patterns.md)
 - [Framework Versioning](evolve/07-framework-versioning.md)
+- [Minimum Viable Architecture of Intent](evolve/16-minimum-viable-aoi.md)
 
 ## Deployment Patterns
 
@@ -192,18 +191,7 @@
 - [Model Upgrade Validation](patterns/deployment/model-upgrade.md)
 - [Agent Deprecation Path](patterns/deployment/deprecation.md)
 
-## Operations
-
-- [Proportional Governance](evolve/04-governance.md)
-- [Cost and Latency Engineering](evolve/09-cost-and-latency.md)
-- [Cacheable Prompt Architecture](evolve/14-cacheable-prompt-architecture.md)
-- [Production Telemetry](evolve/10-production-telemetry.md)
-- [Adoption Playbook](evolve/11-adoption-playbook.md)
-- [Minimum Viable Architecture of Intent](evolve/16-minimum-viable-aoi.md)
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](evolve/12-devsquad-mapping.md)
-- [Co-adoption with DevSquad Copilot](evolve/13-co-adoption-with-devsquad.md)
-
-## Evolve & Operate in practice
+## Evolve in practice
 
 - [Customer-support agent (90 days post-launch)](evolve/scenarios/customer-support.md)
 - [Coding-agent pipeline](evolve/scenarios/coding-pipeline.md)
@@ -211,7 +199,21 @@
 
 ---
 
-# Part 6 — REFERENCE
+# Part 6 — OPERATIONS
+
+*The sustaining layer that runs alongside the five activities. Not a sixth activity — the day-to-day machinery (governance cadence, cost engineering, telemetry, adoption rhythm, co-adoption with other frameworks) that keeps the discipline durable in operation.*
+
+- [Proportional Governance](operate/01-governance.md)
+- [Cost and Latency Engineering](operate/02-cost-and-latency.md)
+- [Cacheable Prompt Architecture](operate/03-cacheable-prompt-architecture.md)
+- [Production Telemetry](operate/04-production-telemetry.md)
+- [Adoption Playbook](operate/05-adoption-playbook.md)
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](operate/06-devsquad-mapping.md)
+- [Co-adoption with DevSquad Copilot](operate/07-co-adoption-with-devsquad.md)
+
+---
+
+# Part 7 — REFERENCE
 
 *The catalog and cards. Browse by problem, not in sequence.*
 

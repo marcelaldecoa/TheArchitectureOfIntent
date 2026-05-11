@@ -1,6 +1,6 @@
 # Signs Your Architecture of Intent Is Degrading
 
-**Part 5 — Evolve & Operate**
+**Part 5 — Evolve**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The Discipline-Health Audit is the per-quarter cadence that catches loop decay before it becomes terminal; the audit's instrument is the twelve-anti-pattern catalog this chapter develops. The audit fires on each system the team operates, on a calendar (not on incident-driven) cadence, and produces a one-paragraph verdict per anti-pattern. The three running scenarios in v2.0.0 each include an audit at day 90 — see the customer-support, coding-pipeline, and docs-qa Evolve chapters for worked examples. The twelfth anti-pattern (citation theater) was elevated to the catalog in v2.1.0 after first surfacing in Scenario 3's Evolve chapter as a team-proposed addition.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. The Discipline-Health Audit is the per-quarter cadence that catches loop decay before it becomes terminal; the audit's instrument is the twelve-anti-pattern catalog this chapter develops. The audit fires on each system the team operates, on a calendar (not on incident-driven) cadence, and produces a one-paragraph verdict per anti-pattern. The three running scenarios in v2.0.0 each include an audit at day 90 — see the customer-support, coding-pipeline, and docs-qa Evolve chapters for worked examples. The twelfth anti-pattern (citation theater) was elevated to the catalog in v2.1.0 after first surfacing in Scenario 3's Evolve chapter as a team-proposed addition.*
 
 ---
 
@@ -20,7 +20,7 @@ Because the artifacts can be preserved long after the function has gone. A disci
 
 This chapter catalogs the predictable ways the Architecture of Intent decays in practice. It is the anti-pattern catalog of the discipline itself, not of the systems built with it. (For the latter — the seven fix-locus failure categories Cat 1–7 — see [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md).)
 
-This pattern assumes [The Intent Design Session](../foundations/07-intent-design-session.md), [Proportional Governance](04-governance.md), [Intent Review Before Output Review](../validate/05-reviewing-intent.md), and [Adoption Playbook](11-adoption-playbook.md).
+This pattern assumes [The Intent Design Session](../foundations/07-intent-design-session.md), [Proportional Governance](../operate/01-governance.md), [Intent Review Before Output Review](../validate/05-reviewing-intent.md), and [Adoption Playbook](../operate/05-adoption-playbook.md).
 
 ---
 
@@ -50,7 +50,7 @@ The cure is not vigilance. Vigilance is exhausting and unreliable. The cure is n
 
 Eleven anti-patterns, organized into three clusters: **form without function**, **drift**, and **process degradation**. Each entry names the shape, the signs, and the fix.
 
-When you run a discipline-health audit (we recommend quarterly, paired with the [Adoption Playbook](11-adoption-playbook.md)'s ongoing-practice review), walk this list. For each anti-pattern, ask whether the signs apply to one or more of your live systems. Anti-patterns surfaced by the audit are not failures — they are the audit doing its job. Resolution goes into the spec evolution log of the affected system.
+When you run a discipline-health audit (we recommend quarterly, paired with the [Adoption Playbook](../operate/05-adoption-playbook.md)'s ongoing-practice review), walk this list. For each anti-pattern, ask whether the signs apply to one or more of your live systems. Anti-patterns surfaced by the audit are not failures — they are the audit doing its job. Resolution goes into the spec evolution log of the affected system.
 
 ---
 
@@ -166,13 +166,13 @@ The artifacts are healthy; the rituals that produced them have stopped.
 
 *The signs.* The most recent spec evolution log entry is the launch entry. The post-launch retrospective scheduled in §14 (Planned Evolution) was canceled, postponed, or skipped. The team's most recent reference to the framework's vocabulary in any artifact is the launch IDS notes.
 
-*The fix.* Re-anchor the cadence. The [Adoption Playbook](11-adoption-playbook.md) names the rhythm; the discipline-health audit (this chapter) is part of that rhythm. The first signal of decay is the missed retrospective. Run it now — late is fine; never is the failure mode. Restart §13 as a living log: every incident, every model upgrade, every feature addition gets an entry, even small ones. The log is what the next team member will read to understand the system; if it's empty, the system has no institutional memory.
+*The fix.* Re-anchor the cadence. The [Adoption Playbook](../operate/05-adoption-playbook.md) names the rhythm; the discipline-health audit (this chapter) is part of that rhythm. The first signal of decay is the missed retrospective. Run it now — late is fine; never is the failure mode. Restart §13 as a living log: every incident, every model upgrade, every feature addition gets an entry, even small ones. The log is what the next team member will read to understand the system; if it's empty, the system has no institutional memory.
 
 ---
 
 ### Running a discipline-health audit
 
-The twelve anti-patterns above are the audit checklist. We recommend running the audit quarterly, paired with the [Adoption Playbook](11-adoption-playbook.md)'s ongoing-practice review, and tied to a specific live system rather than to "the team's practice in general."
+The twelve anti-patterns above are the audit checklist. We recommend running the audit quarterly, paired with the [Adoption Playbook](../operate/05-adoption-playbook.md)'s ongoing-practice review, and tied to a specific live system rather than to "the team's practice in general."
 
 The audit takes ~60 minutes per system (allow ~5 additional minutes for the citation-theater entry on Synthesizer-flavored systems; the entry is brief on systems where it doesn't apply). One auditor (rotating; not the system's primary owner) walks the twelve entries against the system's artifacts and writes a one-paragraph verdict per anti-pattern: *not present*, *early signs*, or *active*. Anti-patterns flagged *active* go into the spec evolution log as findings, with named follow-up actions and dates.
 
@@ -212,9 +212,9 @@ After this pattern is in place:
 **This pattern assumes:**
 - [The Intent Design Session](../foundations/07-intent-design-session.md) — the ritual whose decay several of these anti-patterns describe
 - [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) — the system-level failure taxonomy this chapter complements
-- [Proportional Governance](04-governance.md) and [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — the governance practices that surface drift
+- [Proportional Governance](../operate/01-governance.md) and [Intent Review Before Output Review](../validate/05-reviewing-intent.md) — the governance practices that surface drift
 - [Four Signal Metrics](../validate/06-metrics.md) — the metrics whose theater this chapter names
-- [Adoption Playbook](11-adoption-playbook.md) — the ongoing practice this audit is paired with
+- [Adoption Playbook](../operate/05-adoption-playbook.md) — the ongoing practice this audit is paired with
 
 **This pattern enables:**
 - A discipline-health audit cadence on top of system-level pilot governance

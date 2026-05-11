@@ -51,7 +51,7 @@ Reading the spec aloud, the [Bind Patterns phase](foundations/07-intent-design-s
 | Talks to the outside world (Slack) | [Sensitive Data Boundary](patterns/safety/sensitive-data-boundary.md) — scrub `private`-tagged content. [Output Validation Gate](patterns/safety/output-validation-gate.md) — programmatic check for forbidden keywords before the human ever sees the draft. |
 | Takes consequential action (posts to channel) | [Human-in-the-Loop Gate](patterns/coordination/human-gate.md) — *this is* the Output Gate oversight model, made concrete. |
 | Uses retrieval (reads transcript) | [Grounding with Verified Sources](patterns/capability/grounding.md) — every action item must cite a transcript line number; un-cited items are dropped before review. |
-| Runs at production scale (100+ meetings/week across the org) | [Cost Tracking per Spec](patterns/observability/cost-tracking.md). [Cacheable Prompt Architecture](evolve/14-cacheable-prompt-architecture.md) — the system prompt and skill file are cache-stable; per-meeting context is the only variable. |
+| Runs at production scale (100+ meetings/week across the org) | [Cost Tracking per Spec](patterns/observability/cost-tracking.md). [Cacheable Prompt Architecture](operate/03-cacheable-prompt-architecture.md) — the system prompt and skill file are cache-stable; per-meeting context is the only variable. |
 
 Each pattern is bound to a specific clause. Patterns the spec does not justify do not enter.
 
