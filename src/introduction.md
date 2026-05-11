@@ -108,7 +108,7 @@ It is **not** a complete technical playbook. Specifically, the book is light on:
 
 - **Prompt caching as architecture** (covered briefly in [Cost and Latency Engineering](operate/02-cost-and-latency.md); deserves more depth for any system at 100+ runs/day).
 - **Model-tier selection** under specific budget and latency constraints — the [Model-Tier Quick-Select Card](appendices/model-tier-card.md) gives a decision matrix; the underlying chapter goes deeper.
-- **Multi-tenant fleet governance** — when 50 teams deploy agents against shared infrastructure, spec evolution and constraint-library merging become harder problems than this book solves.
+- **Multi-tenant fleet governance at very large scale** — [Multi-Tenant Fleet Governance](operate/08-multi-tenant-fleet-governance.md) covers the *first* layer of fleet discipline (constraint inheritance, cross-tenant isolation, partitioned telemetry, platform-tier failure-locus). The framework's working position is that those four moves carry a fleet from one to fifty tenant teams; at hundreds or thousands of tenants, additional infrastructure-organizational machinery is needed that this book does not develop.
 - **CI/CD wiring details** — when does the eval suite gate a merge versus alert versus observe? The disciplines are described; the specific platform integration is not.
 
 Read the book for the vocabulary, the structural patterns, and the failure diagnosis. Bring your own platform expertise for the wiring.

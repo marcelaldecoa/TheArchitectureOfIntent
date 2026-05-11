@@ -165,6 +165,7 @@ This index lists every chapter and pattern in the book by part, by category, and
 | [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md) | The 12-anti-pattern catalog of how the discipline itself decays — spec theater, oversight kabuki, metrics theater, citation theater, prompt-patch drift, archetype drift, the retrofit IDS — and the quarterly discipline-health audit that surfaces them |
 | [Mapping the Framework to the DevSquad 8-Phase Cadence](../operate/06-devsquad-mapping.md) | Phase-by-phase mapping of the book's artifacts and disciplines into Microsoft DevSquad Copilot's 8-phase iterative cycle |
 | [Co-adoption with DevSquad Copilot](../operate/07-co-adoption-with-devsquad.md) | The minimum additions from this book that give a DevSquad team the most leverage; vocabulary translation; 30-day co-adoption plan |
+| [Multi-Tenant Fleet Governance](../operate/08-multi-tenant-fleet-governance.md) | The four structural moves a platform team needs to scale single-system governance to a fleet of tenant teams sharing infrastructure: constraint inheritance hierarchy, cross-tenant isolation contract, fleet-partitioned telemetry, platform-tier failure-locus rule |
 
 ---
 
