@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "paper/architecture-of-intent.md"
+      - "paper/architecture-of-intent-workshop.md"
       - "paper/references.bib"
       - "paper/figures/**.svg"
       - "paper/build_presentation.py"
@@ -77,7 +78,7 @@ jobs:
         working-directory: paper
         run: python3 build_html_presentation.py
 
-      - name: Compile paper PDF
+      - name: Compile long-form paper PDF
         working-directory: paper
         run: |
           pandoc architecture-of-intent.md \
@@ -88,12 +89,24 @@ jobs:
             -V fontsize=11pt \
             --output architecture-of-intent.pdf
 
+      - name: Compile workshop-length paper PDF
+        working-directory: paper
+        run: |
+          pandoc architecture-of-intent-workshop.md \
+            --citeproc \
+            --bibliography references.bib \
+            --pdf-engine=xelatex \
+            -V geometry:margin=1in \
+            -V fontsize=11pt \
+            --output architecture-of-intent-workshop.pdf
+
       - name: Upload artifacts to workflow run
         uses: actions/upload-artifact@v4
         with:
           name: paper-artifacts
           path: |
             paper/architecture-of-intent.pdf
+            paper/architecture-of-intent-workshop.pdf
             paper/architecture-of-intent.pptx
             paper/architecture-of-intent.html
             paper/figures/*.png
@@ -108,6 +121,7 @@ jobs:
           base: main
           add-paths: |
             paper/architecture-of-intent.pdf
+            paper/architecture-of-intent-workshop.pdf
             paper/architecture-of-intent.pptx
             paper/architecture-of-intent.html
             paper/figures/*.png
