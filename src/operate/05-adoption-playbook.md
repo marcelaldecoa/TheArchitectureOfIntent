@@ -45,7 +45,22 @@ A successful adoption avoids all three. The pattern that consistently works is *
 
 ---
 
-## The Solution
+## Principles before the playbook
+
+The rest of this chapter walks one concrete rhythm — Week 1, Month 1, Quarter 1, Year 1 — for adopting the framework. That rhythm is a *worked example*, not a prescription. It is given concretely because abstract adoption advice ("scope small, iterate fast") rarely changes behavior; a procedural worked example anchors the abstract in something a team can actually run on Monday.
+
+The principles the rhythm operationalizes are short, and they are what you should keep if you find a different rhythm that fits your context better:
+
+1. **Adoption compounds when focus is tight.** One agent, one spec, one gap log is the smallest unit that demonstrates the framework's value. Anything smaller (a "process document," an "intent review checklist with no system attached") fails to demonstrate; anything larger (a portfolio-wide rollout) fails to compound. Pick one system and run it through the [Intent Design Session](../foundations/07-intent-design-session.md), the canonical spec template, and the closed loop. The compounding starts when the *first* spec amendment lands; everything before that is preparation.
+2. **Demonstration beats mandate.** Frameworks introduced by mandate face every team's resistance simultaneously and have no working examples to point at. Frameworks introduced by demonstration — one team's pilot succeeds, others adopt voluntarily — build credibility before requesting bandwidth. If you are the champion, your first job is to make the first pilot work, not to write the rollout plan.
+3. **Hold load-bearing parts rigid; let everything else adapt.** The five archetypes, the four dimensions, the seven failure categories, the four oversight models, the twelve spec sections, the [Minimum Viable Architecture of Intent](../evolve/16-minimum-viable-aoi.md) — these are non-negotiable. Spec format (Markdown vs. Notion vs. ADR), tooling (spreadsheet vs. database vs. wiki), governance cadence (weekly vs. fortnightly), naming conventions — these are local choices. Confusing the two produces either brittle adoption (rigid where it shouldn't be) or theater (flexible where it can't afford to be).
+4. **The discipline is what survives the champion leaving.** A pilot that works because one engineer is shepherding it is not a successful adoption — it is a successful *experiment*. The adoption is successful when the team's next agent is specified by someone who didn't run the first pilot, and the spec is recognizably from the same discipline. Design the playbook with the champion's eventual departure in mind from week one.
+
+The rhythm below operationalizes those principles. Adapt the rhythm; preserve the principles.
+
+---
+
+## A concrete rhythm
 
 ### Week 1 — Pick one agent, one spec, one gap log
 
