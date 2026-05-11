@@ -245,6 +245,110 @@ This index lists every chapter and pattern in the book by part, by category, and
 
 ---
 
+## Pattern Justification Map
+
+*For each of the ~50 patterns in the book, the spec section of [the Canonical Spec Template](../specify/07-canonical-spec-template.md) that **pulls** it. A pattern that cannot be mapped to a spec section is inventory, not infrastructure — either remove it or amend the spec template to add the missing section. A spec section that needs patterns it doesn't currently name is a candidate for elaboration.*
+
+*This is the audit that prevents the "pattern inventory" anti-pattern in [Signs Your Architecture of Intent Is Degrading](../evolve/15-anti-patterns.md): patterns adopted from a generic best-practice catalog rather than from what one specific spec requires.*
+
+### Capability patterns (Knowledge & Context, Tools)
+
+| Pattern | Justified by | Why this spec section pulls it |
+|---|---|---|
+| [The System Prompt](../patterns/capability/system-prompt.md) | §11 Agent Execution Instructions | The runtime constitution the agent reads each turn — §11 is where it gets specified |
+| [The Skill File](../patterns/capability/skill-file.md) | §5 Functional Intent + §11 | Encodes the domain knowledge the agent's functional intent depends on |
+| [The Tool Manifest](../patterns/capability/tool-manifest.md) | §8 Authorization Boundary | The manifest is *the* expression of what tools the agent may reach |
+| [Per-Task Context](../patterns/capability/per-task-context.md) | §11 Agent Execution Instructions | Per-step context provision is §11's territory |
+| [Retrieval-Augmented Generation](../patterns/capability/rag.md) | §5 Functional Intent + §11 | Grounds output in a retrieved source the spec names as authoritative |
+| [Long-Term Memory](../patterns/capability/long-term-memory.md) | §6 Invariants + §11 | What persists across sessions is an invariant; how it's accessed is in §11 |
+| [Context Window Budget](../patterns/capability/context-budget.md) | §7 Non-Functional Constraints (Cost Posture) | The latency/cost budget that the context budget operationalizes |
+| [Grounding with Verified Sources](../patterns/capability/grounding.md) | §6 Invariants | "Outputs grounded in verified sources" is an invariant clause |
+
+### Integration patterns (Tools and MCP)
+
+| Pattern | Justified by | Why this spec section pulls it |
+|---|---|---|
+| [The Read-Only Tool](../patterns/integration/read-only-tool.md) | §8 Authorization Boundary | The boundary that distinguishes read from write |
+| [The State-Changing Tool](../patterns/integration/state-changing-tool.md) | §8 Authorization Boundary | The boundary on what state the agent may mutate |
+| [The Idempotent Tool](../patterns/integration/idempotent-tool.md) | §6 Invariants + §8 | Idempotency is an invariant the tool enforces |
+| [The MCP Server](../patterns/integration/mcp-server.md) | §8 Authorization Boundary | The protocol-layer instantiation of §8 |
+| [Direct Function Calling](../patterns/integration/function-calling.md) | §8 Authorization Boundary | Tool-calling protocol; alternative to MCP |
+| [Code Execution Sandbox](../patterns/integration/code-sandbox.md) | §8 Authorization Boundary + §6 Invariants | Sandbox boundary is §8; "no escape" is an invariant |
+| [File System Access](../patterns/integration/file-system-access.md) | §8 Authorization Boundary | File-system scope is part of §8 |
+
+### Coordination patterns (Sequencing, Routing, Oversight)
+
+| Pattern | Justified by | Why this spec section pulls it |
+|---|---|---|
+| [Sequential Pipeline](../patterns/coordination/sequential-pipeline.md) | §4 Composition Declaration + §11 | Linear composition shape; declared in §4, executed per §11 |
+| [Parallel Fan-Out](../patterns/coordination/parallel-fan-out.md) | §4 Composition Declaration + §11 | Parallel composition shape |
+| [Conditional Routing](../patterns/coordination/conditional-routing.md) | §11 Agent Execution Instructions | Per-step routing decisions |
+| [Event-Driven Agent Activation](../patterns/coordination/event-driven.md) | §11 Agent Execution Instructions | Trigger-to-step mapping |
+| [Supervisor Agent](../patterns/coordination/supervisor.md) | §4 Composition Declaration | Orchestrator-over-Executors composition |
+| [Agent-to-Agent Contract](../patterns/coordination/agent-contract.md) | §4 Composition Declaration + §6 Invariants | Cross-mode invariants between composed agents |
+| [Human-in-the-Loop Gate](../patterns/coordination/human-gate.md) | §11 + §6 Invariants | When the gate fires is in §11; the invariant that it *must* fire is §6 |
+| [Retry with Structured Feedback](../patterns/coordination/retry-feedback.md) | §11 Agent Execution Instructions | The retry rhythm is per-step instruction |
+| [Escalation Chain](../patterns/coordination/escalation-chain.md) | §11 + §6 Invariants | Escalation triggers in §11; the invariant that escalation must occur in §6 |
+
+### Safety patterns
+
+| Pattern | Justified by | Why this spec section pulls it |
+|---|---|---|
+| [Prompt Injection Defense](../patterns/safety/prompt-injection-defense.md) | §6 Invariants | Invariants must hold under adversarial input |
+| [Output Validation Gate](../patterns/safety/output-validation-gate.md) | §9 Acceptance Criteria + §12 Validation Checklist | Defines what passes the gate |
+| [Sensitive Data Boundary](../patterns/safety/sensitive-data-boundary.md) | §6 Invariants + §8 Authorization Boundary | PII/secret invariants; auth-boundary restrictions |
+| [Graceful Degradation](../patterns/safety/graceful-degradation.md) | §6 Invariants + §11 | Partial-failure invariants; degradation rhythm |
+| [Rate Limiting and Throttle](../patterns/safety/rate-limiting.md) | §7 Non-Functional Constraints | Cost/availability budget |
+| [Blast Radius Containment](../patterns/safety/blast-radius-containment.md) | §6 Invariants + §8 Authorization Boundary | Containment as invariant; scope as boundary |
+
+### Observability patterns
+
+| Pattern | Justified by | Why this spec section pulls it |
+|---|---|---|
+| [Structured Execution Log](../patterns/observability/execution-log.md) | §12 Validation Checklist | Audit trail the validation step reads |
+| [Cost Tracking per Spec](../patterns/observability/cost-tracking.md) | §7 Non-Functional (Cost Posture) + §12 | Cost ceiling enforcement and reporting |
+| [Distributed Trace](../patterns/observability/distributed-trace.md) | §12 Validation Checklist | Multi-agent flows need cross-agent traces to validate |
+| [Health Check and Heartbeat](../patterns/observability/health-check.md) | §7 Non-Functional + §12 | Availability budget; validation that the agent is up |
+| [Anomaly Detection Baseline](../patterns/observability/anomaly-baseline.md) | §12 Validation Checklist | Drift detection in production |
+
+### Testing patterns
+
+| Pattern | Justified by | Why this spec section pulls it |
+|---|---|---|
+| [Spec Conformance Testing](../patterns/testing/spec-conformance.md) | §9 Acceptance Criteria + §12 | Makes acceptance criteria executable |
+| [Adversarial Input Test](../patterns/testing/adversarial-input.md) | §6 Invariants | Tests invariants under adversarial conditions |
+| [Multi-Agent Integration Test](../patterns/testing/multi-agent-integration.md) | §4 Composition Declaration + §9 | Tests cross-mode invariants between composed agents |
+| [Evaluation by Judge Agent](../patterns/testing/judge-agent.md) | §9 Acceptance Criteria + §12 | Judge agent operationalizes subjective acceptance criteria |
+
+### State & Memory patterns
+
+| Pattern | Justified by | Why this spec section pulls it |
+|---|---|---|
+| [Session Isolation](../patterns/state/session-isolation.md) | §6 Invariants + §8 Authorization Boundary | Cross-session isolation is both an invariant and a boundary |
+| [Shared Context Store](../patterns/state/shared-context.md) | §11 + §6 Invariants | Cross-agent state-sharing rhythm; consistency invariants |
+| [Checkpoint and Resume](../patterns/state/checkpoint-resume.md) | §11 + §6 Invariants | Long-running rhythm; transactional invariants on restart |
+| [Conversation History Management](../patterns/state/conversation-history.md) | §11 Agent Execution Instructions | What history the agent reads each turn |
+| [Agent Registry](../patterns/state/agent-registry.md) | §4 Composition Declaration + §8 | Registry expresses composition graph and authorization scope |
+| [Artifact Store](../patterns/state/artifact-store.md) | §11 + §6 Invariants | Where outputs land; integrity invariants |
+
+### Deployment patterns
+
+| Pattern | Justified by | Why this spec section pulls it |
+|---|---|---|
+| [Canary Deployment](../patterns/deployment/canary.md) | §7 Non-Functional (Availability) + §6 Reversibility invariants | Phased rollout preserves reversibility |
+| [Rollback on Failure](../patterns/deployment/rollback.md) | §6 Reversibility invariants | Rollback is the reversibility mechanism |
+| [Spec Versioning](../patterns/deployment/spec-versioning.md) | §10 Assumptions & Open Questions | Spec evolution requires versioning |
+| [Model Upgrade Validation](../patterns/deployment/model-upgrade.md) | §9 Acceptance Criteria + §12 | Re-validation when the model underneath shifts |
+| [Agent Deprecation Path](../patterns/deployment/deprecation.md) | §6 Reversibility + §10 | Sunsetting must preserve reversibility; documented in §10 |
+
+### Audit results
+
+All 50 patterns in the book map to at least one section of the canonical 12-section spec template plus the Composition Declaration sub-block (§4). No pattern is *unjustified inventory*. The pattern density per spec section is uneven — §11 (Agent Execution Instructions), §8 (Authorization Boundary), and §6 (Invariants) pull the most patterns; §1 (Problem Statement) and §2 (Desired Outcome) pull none, which is correct because those sections are framing rather than enforcement.
+
+**When you add a new pattern to the book, add a row to this map first.** If you cannot name the spec section that pulls the pattern, the pattern does not belong in the book — or the spec template needs a new section to justify it. Either is a real design decision; neither is "ship the pattern anyway."
+
+---
+
 ## Cross-Reference: By Problem
 
 *Find patterns by the problem you're trying to solve.*
