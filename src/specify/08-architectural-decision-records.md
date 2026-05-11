@@ -209,7 +209,7 @@ ADRs interact with several other book artifacts:
 - **Spec Gap Log** ([The Living Spec](06-living-specs.md)). When a gap log entry surfaces a learning that requires an architectural decision, the gap log entry should reference (or trigger the creation of) an ADR. Not every gap is ADR-worthy; the test is "does this require team-level decision-making, or just a spec-section update?"
 - **Constraint Library** ([Constraint Library Template](../repertoires/templates/constraint-library.md)). Constraints inherited across multiple specs may have an originating ADR. The constraint library entry should reference the ADR that established it.
 - **Composing Archetypes** ([Composing Archetypes](../frame/05-composing-archetypes.md)). Spec-conflict resolution rules are ADR-worthy at the team or organization level — they say how the team handles a class of conflicts, not just one instance.
-- **DevSquad Mapping** ([Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md)). DevSquad's Phase 3 is "Plan with ADRs"; that phase is where most ADRs are produced.
+- **DevSquad Mapping** ([Mapping the Framework to the DevSquad 8-Phase Cadence](../operate/06-devsquad-mapping.md)). DevSquad's Phase 3 is "Plan with ADRs"; that phase is where most ADRs are produced.
 
 ---
 
@@ -246,8 +246,8 @@ After applying this pattern:
 - [The Living Spec](06-living-specs.md) — gap log entries can trigger ADRs for team-level decisions
 
 **This pattern enables:**
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](../evolve/12-devsquad-mapping.md) — DevSquad Phase 3 is where ADRs live in that cadence
-- [Co-adoption with DevSquad](../evolve/13-co-adoption-with-devsquad.md) — the bridge chapter for teams running both frameworks
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](../operate/06-devsquad-mapping.md) — DevSquad Phase 3 is where ADRs live in that cadence
+- [Co-adoption with DevSquad](../operate/07-co-adoption-with-devsquad.md) — the bridge chapter for teams running both frameworks
 - [Composing Archetypes](../frame/05-composing-archetypes.md) — system-level spec-conflict resolution rules are typically ADR-worthy
 
 ---

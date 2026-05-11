@@ -216,7 +216,7 @@ After applying this pattern:
 - [The Spec Gap Log](../specify/06-living-specs.md)
 - [Intent Review Before Output Review](05-reviewing-intent.md)
 - [Validation & Acceptance Templates](../repertoires/05-validation-templates.md)
-- [Proportional Governance](../evolve/04-governance.md)
+- [Proportional Governance](../operate/01-governance.md)
 
 **This pattern enables:**
 - Informed investment in the repertoire (constraint libraries, archetype catalog)

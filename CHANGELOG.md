@@ -18,6 +18,85 @@ The version moves with PR merges to `main`. PR descriptions should name the bump
 
 ---
 
+## v2.4.0 — 2026-05-10
+
+**MINOR** — a focus-and-structure pass addressing five reviewer findings (focus drift in Part 5, the procedural shape of the Adoption Playbook, the ambiguous status of `foundations/08`, the Intent Design Session not anchored as the Foundations exit, and the absence of a §-by-§ pattern justification audit).
+
+No load-bearing commitment moves. The deck/paper sync check remains green on all six named-fact families: 5 archetypes, 7 Cats, 4 Cat 7 sub-categories, 8 DevSquad phases, **5** activities, 3-novel/4-not-claimed honest accounting.
+
+### Structural — Part 5 → Parts 5 + 6
+
+The v2.3.0 rename to "EVOLVE & OPERATE" acknowledged that Operations sat inside Evolve but did not separate them. The agent-review pass found that Operations chapters (8 chapters, ~1,500 lines) outweighed core Evolve (3 chapters, ~800 lines) and diluted the activity-spine focus.
+
+v2.4.0 splits them:
+
+- **Part 5 — EVOLVE** keeps the closed-loop core:
+  - `evolve/01-closed-loop.md`
+  - `evolve/15-anti-patterns.md`
+  - `evolve/07-framework-versioning.md`
+  - `evolve/16-minimum-viable-aoi.md`
+  - the 5 deployment patterns in `patterns/deployment/`
+  - the 3 Evolve-phase running-scenario chapters in `evolve/scenarios/`
+- **Part 6 — OPERATIONS** (new) collects the sustaining-ops chapters:
+  - `operate/01-governance.md` (moved from `evolve/04-governance.md`)
+  - `operate/02-cost-and-latency.md` (from `evolve/09-cost-and-latency.md`)
+  - `operate/03-cacheable-prompt-architecture.md` (from `evolve/14-cacheable-prompt-architecture.md`)
+  - `operate/04-production-telemetry.md` (from `evolve/10-production-telemetry.md`)
+  - `operate/05-adoption-playbook.md` (from `evolve/11-adoption-playbook.md`)
+  - `operate/06-devsquad-mapping.md` (from `evolve/12-devsquad-mapping.md`)
+  - `operate/07-co-adoption-with-devsquad.md` (from `evolve/13-co-adoption-with-devsquad.md`)
+- **Part 6 — REFERENCE** is renumbered **Part 7 — REFERENCE**.
+
+Part 6 is explicitly *not* a sixth activity. The framework still commits to five activities; the new Part is the sustaining-ops layer that runs alongside them. The framing in the Introduction, the how-to-read table, and the Part 6 opener (`operate/01-governance.md`) all carry this commitment.
+
+### Anchored — Intent Design Session as the Foundations exit
+
+`foundations/07-intent-design-session.md` gains a "Why this is the Foundations exit" section above the existing Context block. The IDS is now framed explicitly as the ritual that turns Foundations vocabulary into work, with each subsequent Part elaborating one phase of the IDS.
+
+Back-references added from each Part's opening chapter (Part 1 frame/02; Part 2 specify/01; Part 3 delegate/01; Part 4 validate/05; Part 5 evolve/01; Part 6 operate/01), using a consistent *Where this sits in the work:* prose pattern so readers recognize the navigational signal.
+
+### Rewrote — Adoption Playbook leads with principles
+
+`operate/05-adoption-playbook.md` gains a "Principles before the playbook" section between Forces and the procedural walkthrough. The four principles: (1) adoption compounds when focus is tight (one agent, one spec, one gap log); (2) demonstration beats mandate; (3) load-bearing parts (5 archetypes, 4 dimensions, 7 Cats, 4 oversight models, 12 spec sections, MVP-AoI) stay rigid; (4) the discipline is what survives the champion leaving. The "The Solution" header becomes "A concrete rhythm" so readers see the calendar walkthrough as one worked example, not the only valid form.
+
+No content removed; the procedural sections still anchor a reader who needs something concrete to run on Monday.
+
+### Clarified — `foundations/08` audience
+
+`foundations/08-what-changes-for-senior-engineers.md` gains a "Who this chapter is for" section that names the asymmetry honestly: this is the one Foundations chapter with an audience-specific scope (a *career* question rather than a *system-design* question). Readers not personally navigating the transition can skip it on first read. The `how-to-read.md` Parts table gets a one-clause note on the same point.
+
+### Added — Pattern Justification Map
+
+`appendices/pattern-index.md` gains a new section titled "Pattern Justification Map" that audits all ~50 patterns against the canonical 12-section spec template plus §4's Composition Declaration sub-block. For each pattern, the map names the spec section(s) that *pull* it, and a one-line justification.
+
+Audit result: all 50 patterns map cleanly. None are unjustified inventory. The density concentrates in §11 (Agent Execution Instructions), §8 (Authorization Boundary), and §6 (Invariants). §1 and §2 (framing sections) pull no patterns, which is correct.
+
+Closing note in the map establishes the workflow for future contributors: write the justification row first; if you cannot name the spec section that pulls a new pattern, the pattern does not belong in the book.
+
+### Wayfinding updates
+
+- `src/SUMMARY.md` — Part 5/6/7 reorganization with new Part 6 — OPERATIONS section.
+- `src/how-to-read.md` — the stale "Six Parts" v1.x table is replaced with an eight-Parts table reflecting the v2.4 structure.
+- `src/introduction.md` — Part-by-Part paragraph rewritten for the new spine.
+- `README.md` — "How it's organized" table updated; repository-layout tree adds `src/operate/`.
+- `CLAUDE.md` — repo-structure tree updated; "Recent meaningful decisions" gains the v2.4.0 entry.
+- `paper/architecture-of-intent.md` — Appendix B's DevSquad citations now point at `operate/` paths; the paper's status header is updated to v2.4.0 with a MINOR-bump explanation.
+
+### Verification
+
+- `python3 scripts/check-internal-links.py` — 0 broken
+- `python3 scripts/check-orphans.py` — 0 orphans, 0 missing
+- `python3 scripts/check-readme-paths.py` — clean
+- `python3 paper/check-deck-sync.py` — all 6 checks pass (activities count = 5)
+
+### Why MINOR, not MAJOR
+
+No load-bearing commitment moves. The five activities, five archetypes, four dimensions, seven Cats, four oversight models, four signal metrics, composition first-class — all unchanged. Part 6 is an *addition* (a sustaining-ops layer that previously sat inside Part 5); the activity count it sits alongside is unchanged. The deck/paper sync check confirms this.
+
+The chapter files moved on disk but every existing inbound link was rewritten; readers with bookmarks to chapter URLs (e.g., `evolve/04-governance.md`) will get 404s on those specific URLs. SUMMARY-anchor bookmarks to `#evolve--operate-*` will also break. These are presentational moves, not commitment moves.
+
+---
+
 ## v2.3.1 — 2026-05-10
 
 **PATCH** — collapses the legacy v1.x worked-pilots multi-chapter listing in Part 6 — Reference into a single *Legacy v1.x Worked Pilots Archive* appendix entry. Removes the "(legacy — superseded by phase scenarios in Parts 1–5)" parenthetical from the published TOC, which read as visible technical debt. The example files themselves are preserved; only the SUMMARY footprint shrinks.

@@ -1,6 +1,6 @@
 # Minimum Viable Architecture of Intent
 
-**Part 5 — Evolve & Operate**
+**Part 5 — Evolve**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. MVP-AoI is the [closed loop](../evolve/01-closed-loop.md) in compressed form for systems too small for the full discipline; the discipline travels down-scale, not just across-scale. The MVP applies when the system is small across all five of audience, stakes, cohesion, scale, and diagnosability, and graduates to the full discipline when any of the five graduation triggers fire.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve**. MVP-AoI is the [closed loop](../evolve/01-closed-loop.md) in compressed form for systems too small for the full discipline; the discipline travels down-scale, not just across-scale. The MVP applies when the system is small across all five of audience, stakes, cohesion, scale, and diagnosability, and graduates to the full discipline when any of the five graduation triggers fire.*
 
 ---
 
@@ -20,7 +20,7 @@ Some systems do not deserve that treatment. A solo prototype. A weekend agent. A
 
 This chapter names the **floor** of the discipline. Below the floor is not Architecture of Intent; it is just deploying an agent and hoping. At the floor, you have the smallest set of artifacts that still does structural work. Above the floor, the rest of the book takes over.
 
-This pattern assumes [What is the Architecture of Intent?](../introduction.md#what-is-the-architecture-of-intent), [The Intent Design Session](../foundations/07-intent-design-session.md), and [Adoption Playbook](11-adoption-playbook.md).
+This pattern assumes [What is the Architecture of Intent?](../introduction.md#what-is-the-architecture-of-intent), [The Intent Design Session](../foundations/07-intent-design-session.md), and [Adoption Playbook](../operate/05-adoption-playbook.md).
 
 ---
 
@@ -211,7 +211,7 @@ After this pattern is in place:
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the 12-section spec the MVP omits most of
 
 **This pattern enables:**
-- [Adoption Playbook](11-adoption-playbook.md) — for teams introducing the framework, the MVP is the smallest unit of practice they can demonstrate before committing to the full IDS
+- [Adoption Playbook](../operate/05-adoption-playbook.md) — for teams introducing the framework, the MVP is the smallest unit of practice they can demonstrate before committing to the full IDS
 - [A Miniature Pilot, End-to-End](../miniature-pilot.md) — the contrast case: a small but production-bound system that still warrants the full canvas
 - [Signs Your Architecture of Intent Is Degrading](15-anti-patterns.md) — the audit to run when an MVP system grows past graduation thresholds without graduating
 

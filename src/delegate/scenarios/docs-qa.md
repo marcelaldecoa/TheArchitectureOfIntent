@@ -195,7 +195,7 @@ The agent ships to a 5% canary on Friday. The eval-and-validate phase begins Mon
 | 2. Specify | [Specify in practice — Internal docs Q&A](../../specify/scenarios/docs-qa.md) |
 | 3. **Delegate** | *(this chapter)* |
 | 4. Validate | [Validate in practice — Internal docs Q&A](../../validate/scenarios/docs-qa.md) |
-| 5. Evolve | [Evolve & Operate in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
+| 5. Evolve | [Evolve in practice — Internal docs Q&A](../../evolve/scenarios/docs-qa.md) |
 
 ## Conceptual chapters this scenario binds to
 
@@ -203,5 +203,5 @@ The agent ships to a 5% canary on Friday. The eval-and-validate phase begins Mon
 - [Grounding with Verified Sources](../../patterns/capability/grounding.md)
 - [Output Validation Gate](../../patterns/safety/output-validation-gate.md) — citation-grounding enforcement
 - [Sensitive Data Boundary](../../patterns/safety/sensitive-data-boundary.md) — at the index layer
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../evolve/12-devsquad-mapping.md) — the *Decompose* + *Implement* phases
-- [Co-adoption with DevSquad Copilot](../../evolve/13-co-adoption-with-devsquad.md) — least-capability per task
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](../../operate/06-devsquad-mapping.md) — the *Decompose* + *Implement* phases
+- [Co-adoption with DevSquad Copilot](../../operate/07-co-adoption-with-devsquad.md) — least-capability per task

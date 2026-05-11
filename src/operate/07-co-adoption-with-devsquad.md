@@ -1,6 +1,6 @@
 # Co-adoption with DevSquad Copilot
 
-**Part 5 — Evolve & Operate**
+**Part 6 — Operations**
 
 ---
 
@@ -8,7 +8,7 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. The co-adoption recommendation is for teams already running DevSquad: the framework's archetype taxonomy, four-dimension calibration, and seven-Cat fix-locus failure analysis are the additions that give the most leverage on top of DevSquad's process scaffolding. [Scenario 3](../frame/scenarios/docs-qa.md) demonstrates the composition end-to-end across all five activities of the AoI cycle paired with the eight phases of the DevSquad cycle.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 6 — Operations**. The co-adoption recommendation is for teams already running DevSquad: the framework's archetype taxonomy, four-dimension calibration, and seven-Cat fix-locus failure analysis are the additions that give the most leverage on top of DevSquad's process scaffolding. [Scenario 3](../frame/scenarios/docs-qa.md) demonstrates the composition end-to-end across all five activities of the AoI cycle paired with the eight phases of the DevSquad cycle.*
 
 ---
 
@@ -18,7 +18,7 @@ Microsoft's [DevSquad Copilot](https://github.com/microsoft/devsquad-copilot) an
 
 This chapter is for the team that already runs DevSquad and wants to know: **what is the minimum addition from this book that gives me the most leverage?**
 
-If you do not run DevSquad, skip this chapter; the [Adoption Playbook](11-adoption-playbook.md) is the right entry point for you.
+If you do not run DevSquad, skip this chapter; the [Adoption Playbook](05-adoption-playbook.md) is the right entry point for you.
 
 ---
 
@@ -124,7 +124,7 @@ DevSquad's Phase 5 is TDD-first, which gives you the Level 2 eval discipline (sp
 
 ### 5. Cost & latency engineering and production telemetry (medium leverage; high leverage at scale)
 
-DevSquad doesn't address per-task economics or production telemetry stack guidance directly. This book's [Cost and Latency Engineering](09-cost-and-latency.md) and [Production Telemetry](10-production-telemetry.md) provide:
+DevSquad doesn't address per-task economics or production telemetry stack guidance directly. This book's [Cost and Latency Engineering](02-cost-and-latency.md) and [Production Telemetry](04-production-telemetry.md) provide:
 
 - Model-tier selection per role (small/medium/large/reasoning) with the typical 70/20/10 cost shape
 - Prompt caching as structural cost control (40–70% input cost reduction is typical)
@@ -164,7 +164,7 @@ For DevSquad-fluent readers reading this book, the term mappings:
 | Reasoning log | Spec evolution log entry + ADR, with the "principle, alternatives, justification, confidence" fields aligning to the canonical ADR template |
 | Loop-over-ladder framing | Living-spec discipline ([The Living Spec](../specify/06-living-specs.md)) — specs evolve when implementation reveals their incompleteness |
 | Skills catalog (semantic activation) | [Portable Domain Knowledge](../delegate/05-agent-skills.md) — Anthropic Skills as deployable artifacts |
-| Phase (1–8) | Mapped explicitly in [DevSquad Mapping](12-devsquad-mapping.md) |
+| Phase (1–8) | Mapped explicitly in [DevSquad Mapping](06-devsquad-mapping.md) |
 
 ---
 
@@ -182,11 +182,11 @@ For a team already running DevSquad, here is a concrete sequence:
 
 **Week 3:**
 - Read [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md). Build a starter golden set (10–20 cases) for your most-deployed agent.
-- Read [Cost and Latency Engineering](09-cost-and-latency.md). Audit current model-tier selection; identify caching opportunities.
+- Read [Cost and Latency Engineering](02-cost-and-latency.md). Audit current model-tier selection; identify caching opportunities.
 
 **Week 4:**
 - Read [Red-Team Protocol](../validate/08-red-team-protocol.md). Schedule a pre-launch full battery for your next agent.
-- Read [DevSquad Mapping](12-devsquad-mapping.md). Confirm the artifact-phase alignment; adjust your team's documentation if helpful.
+- Read [DevSquad Mapping](06-devsquad-mapping.md). Confirm the artifact-phase alignment; adjust your team's documentation if helpful.
 
 By the end of 30 days: you have archetype declarations, the failure taxonomy, security depth, evals-beyond-Phase-5, cost engineering posture, a red-team plan, and explicit phase-artifact mapping — without disrupting the DevSquad cadence you were already running.
 
@@ -197,9 +197,9 @@ By the end of 30 days: you have archetype declarations, the failure taxonomy, se
 If your team is small or your scope is narrow, parts of this book are over-investment for your context:
 
 - The full [Multi-Agent Governance](../frame/07-multi-agent-governance.md) chapter — relevant when you go multi-agent; skippable until then
-- The full [Production Telemetry](10-production-telemetry.md) vendor landscape — relevant when you scale; skippable at pilot
+- The full [Production Telemetry](04-production-telemetry.md) vendor landscape — relevant when you scale; skippable at pilot
 - The [Coding Agents](../delegate/08-coding-agents.md) and [Computer-Use Agents](../delegate/09-computer-use-agents.md) chapters — relevant if you build those classes; skippable otherwise
-- The [Adoption Playbook](11-adoption-playbook.md) — written for teams not on DevSquad; you don't need it
+- The [Adoption Playbook](05-adoption-playbook.md) — written for teams not on DevSquad; you don't need it
 
 This is a feature, not a bug. The book is a reference; you read the chapters relevant to your work.
 
@@ -233,10 +233,10 @@ After applying this co-adoption pattern:
 
 **This pattern assumes:**
 - Familiarity with the DevSquad 8-phase cadence
-- [Mapping the Framework to the DevSquad 8-Phase Cadence](12-devsquad-mapping.md) — the phase-by-phase artifact mapping
+- [Mapping the Framework to the DevSquad 8-Phase Cadence](06-devsquad-mapping.md) — the phase-by-phase artifact mapping
 
 **This pattern enables:**
 - All of Part 5 (Ship) — every chapter applies within DevSquad's cadence at the phase identified in the mapping
-- [Adoption Playbook](11-adoption-playbook.md) — comparable sequenced guidance for teams not on DevSquad
+- [Adoption Playbook](05-adoption-playbook.md) — comparable sequenced guidance for teams not on DevSquad
 
 ---

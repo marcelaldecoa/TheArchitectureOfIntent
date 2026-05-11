@@ -93,7 +93,7 @@ Query: "Which agents have database write access?" → Returns market-watch. "Whi
 
 ## Connections
 
-- [Proportional Governance](../../evolve/04-governance.md) — the registry records who authorized each agent's archetype
+- [Proportional Governance](../../operate/01-governance.md) — the registry records who authorized each agent's archetype
 - [Four Signal Metrics](../../validate/06-metrics.md) — registry-level aggregation enables fleet-wide metrics
 - [Agent Deprecation Path](../deployment/deprecation.md) — deprecated agents are marked in the registry with migration guidance
 - [Structured Execution Log](../observability/execution-log.md) — registry changes are auditable events

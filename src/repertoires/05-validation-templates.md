@@ -172,6 +172,6 @@ After applying this pattern:
 
 *This concludes the Cross-Cutting Patterns section.*
 
-*Continue to [Proportional Governance](../evolve/04-governance.md)*
+*Continue to [Proportional Governance](../operate/01-governance.md)*
 
 

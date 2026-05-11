@@ -1,6 +1,6 @@
-# Evolve & Operate in practice — Customer-support agent (90 days post-launch)
+# Evolve in practice — Customer-support agent (90 days post-launch)
 
-**Part 5 · EVOLVE & OPERATE · Scenario 1 of 3**
+**Part 5 · EVOLVE · Scenario 1 of 3**
 
 ---
 
@@ -180,6 +180,6 @@ The agent is in steady-state operation. The team starts framing their next syste
 
 - [The Closed Loop: From Failures to Spec Amendments](../01-closed-loop.md)
 - [Signs Your Architecture of Intent Is Degrading](../../evolve/15-anti-patterns.md)
-- [Cost and Latency Engineering](../../evolve/09-cost-and-latency.md)
-- [Adoption Playbook](../../evolve/11-adoption-playbook.md)
+- [Cost and Latency Engineering](../../operate/02-cost-and-latency.md)
+- [Adoption Playbook](../../operate/05-adoption-playbook.md)
 - [Framework Versioning](../07-framework-versioning.md)

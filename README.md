@@ -41,8 +41,9 @@ The book is organized as five activities — Frame, Specify, Delegate, Validate,
 | **2. Specify** | Spec-driven development, specs as control surfaces, the canonical 12-section template, ADRs, SpecKit, *Specify in practice* scenarios |
 | **3. Delegate** | What agents are, autonomy vs agency, the executor model, least capability, tools and MCP, agent skills, agent classes (coding, computer-use, deep-research), *Delegate in practice* scenarios |
 | **4. Validate** | Intent review, four signal metrics, evals, red-team, *Validate in practice* scenarios |
-| **5. Evolve & Operate** | The closed loop, anti-patterns, framework versioning, deployment patterns (canary, rollback, spec versioning, model-upgrade, deprecation), governance, cost, telemetry, adoption playbook, MVP-AoI, DevSquad mapping, co-adoption, *Evolve & Operate in practice* scenarios |
-| **6. Reference — Cross-Cutting Patterns** | Coordination and state patterns that span the framework (12 of ~50 patterns; the other 38 live alongside their parent chapters in Parts 3–5) |
+| **5. Evolve** | The closed loop, anti-patterns, framework versioning, the Minimum Viable Architecture of Intent, deployment patterns (canary, rollback, spec versioning, model-upgrade, deprecation), *Evolve in practice* scenarios |
+| **6. Operations** | The sustaining-ops layer that runs alongside the five activities — proportional governance, cost & latency engineering, cacheable prompt architecture, production telemetry, the Adoption Playbook, DevSquad mapping and co-adoption. Not a sixth activity. |
+| **7. Reference — Cross-Cutting Patterns** | Coordination and state patterns that span the framework (12 of ~50 patterns; the other 38 live alongside their parent chapters in Parts 3–6) |
 | **Repertoires** | Spec templates, code standards |
 | **Appendices** | Glossary, pattern index, reading paths, companion paper, legacy v1.x worked-pilots archive, references, archetype card, RACI card, MCP & skills card, model-tier card |
 
@@ -104,7 +105,8 @@ TheArchitectureOfIntent/
 │   ├── specify/                                # Part 2: SDD, the canonical spec template, ADRs, SpecKit + specify/scenarios/
 │   ├── delegate/                               # Part 3: agents, autonomy vs agency, least capability, MCP, agent classes + delegate/scenarios/
 │   ├── validate/                               # Part 4: intent review, signal metrics, evals, red-team + validate/scenarios/
-│   ├── evolve/                                 # Part 5 (EVOLVE & OPERATE): closed loop, deployment patterns, governance, cost, telemetry, DevSquad mapping + evolve/scenarios/
+│   ├── evolve/                                 # Part 5 (EVOLVE): closed loop, anti-patterns, framework versioning, MVP-AoI, deployment patterns + evolve/scenarios/
+│   ├── operate/                                # Part 6 (OPERATIONS): governance, cost & latency, cacheable prompts, telemetry, adoption playbook, DevSquad mapping & co-adoption
 │   ├── patterns/                               # ~50 pattern one-pagers (capability, integration, coordination, safety, observability, testing, state, deployment)
 │   ├── repertoires/                            # Spec templates, code standards
 │   ├── examples/                               # v1.x worked pilots archive (preserved on disk; reached via appendices/legacy-pilots.md)
@@ -123,7 +125,7 @@ TheArchitectureOfIntent/
 
 ## Framework version
 
-The framework is at **v2.3.1** as of 2026-05-10. The book and the companion paper move together: a change to a load-bearing commitment (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the **five** activities, composition as a first-class design surface) bumps the framework version. See [`CHANGELOG.md`](CHANGELOG.md) for the versioning convention and the release history.
+The framework is at **v2.4.0** as of 2026-05-10. The book and the companion paper move together: a change to a load-bearing commitment (the five archetypes, the four dimensions, the seven failure categories, the four oversight models, the four signal metrics, the **five** activities, composition as a first-class design surface) bumps the framework version. See [`CHANGELOG.md`](CHANGELOG.md) for the versioning convention and the release history.
 
 ## Status
 

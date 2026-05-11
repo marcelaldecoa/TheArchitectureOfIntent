@@ -1,6 +1,6 @@
 # Cacheable Prompt Architecture
 
-**Part 5 — Evolve & Operate**
+**Part 6 — Operations**
 
 ---
 
@@ -8,13 +8,13 @@
 
 ---
 
-> *Where this sits in v2.0.0: this chapter is part of **Part 5 — Evolve & Operate**. Cacheable prompt architecture is what makes the [Cost Posture](../specify/07-canonical-spec-template.md) sub-block's prompt-stability invariant operationally achievable at scale. The §4 Cost Posture commitment names the cache-hit-rate target; this chapter is how teams build prompts to actually hit it. The customer-support scenario's [Cost Posture incident at day 47](../evolve/scenarios/customer-support.md) demonstrates what happens when caching architecture and model-tier rotation interact under production pressure.*
+> *Where this sits in v2.0.0: this chapter is part of **Part 6 — Operations**. Cacheable prompt architecture is what makes the [Cost Posture](../specify/07-canonical-spec-template.md) sub-block's prompt-stability invariant operationally achievable at scale. The §4 Cost Posture commitment names the cache-hit-rate target; this chapter is how teams build prompts to actually hit it. The customer-support scenario's [Cost Posture incident at day 47](../evolve/scenarios/customer-support.md) demonstrates what happens when caching architecture and model-tier rotation interact under production pressure.*
 
 ---
 
 ## Context
 
-[Cost and Latency Engineering](09-cost-and-latency.md) describes prompt caching as one of several cost levers. This chapter goes deeper on the *architectural* consequences of taking caching seriously, because for any agent system running 100+ tasks per day in 2026, caching is not optional and not separable from prompt design.
+[Cost and Latency Engineering](02-cost-and-latency.md) describes prompt caching as one of several cost levers. This chapter goes deeper on the *architectural* consequences of taking caching seriously, because for any agent system running 100+ tasks per day in 2026, caching is not optional and not separable from prompt design.
 
 Three things change once a team commits to caching as architecture:
 
@@ -106,7 +106,7 @@ The "pre-warm the cache before each eval run" line makes the eval economically f
 
 ### Telemetry implications: cache hit rate as a first-class metric
 
-The [Production Telemetry](10-production-telemetry.md) per-step capture set should include cache state. Add to the per-step row:
+The [Production Telemetry](04-production-telemetry.md) per-step capture set should include cache state. Add to the per-step row:
 
 - `cache_hit` (bool) — did this call read from cache?
 - `cache_tokens_read` (int) — how many tokens came from cache
@@ -171,7 +171,7 @@ After:
 - Output cost: unchanged at $45/day
 - **Total: $60.75/day, $1,823/month — 25% reduction.**
 
-The full 70% reduction comes only when the team also realizes (per [Cost and Latency Engineering](09-cost-and-latency.md)) that 70–85% of those 1,500 calls are routing/classification steps that should hit Haiku, not Sonnet. With both: ~$25/day, ~70% reduction. Caching alone gets a third of the way there; combined with model-tier routing, it gets the full reduction.
+The full 70% reduction comes only when the team also realizes (per [Cost and Latency Engineering](02-cost-and-latency.md)) that 70–85% of those 1,500 calls are routing/classification steps that should hit Haiku, not Sonnet. With both: ~$25/day, ~70% reduction. Caching alone gets a third of the way there; combined with model-tier routing, it gets the full reduction.
 
 ---
 
@@ -209,11 +209,11 @@ After applying this pattern:
 - [The System Prompt](../patterns/capability/system-prompt.md) — the stable Layer 1 the cache anchors on
 - [The Skill File](../patterns/capability/skill-file.md) — the stable Layer 2
 - [The Tool Manifest](../patterns/capability/tool-manifest.md) — the stable Layer 3
-- [Cost and Latency Engineering](09-cost-and-latency.md) — the broader cost-engineering chapter this one specializes
+- [Cost and Latency Engineering](02-cost-and-latency.md) — the broader cost-engineering chapter this one specializes
 - [The Canonical Spec Template](../specify/07-canonical-spec-template.md) — the **Cost Posture** sub-block in §4 is where the *prompt-stability invariant* gets declared; this chapter is how the invariant gets implemented
 
 **This pattern enables:**
-- [Production Telemetry](10-production-telemetry.md) — `cache_hit_rate` joins the per-step capture set
+- [Production Telemetry](04-production-telemetry.md) — `cache_hit_rate` joins the per-step capture set
 - [Evals and Benchmarks](../validate/07-evals-and-benchmarks.md) — eval-time cache pre-warm; cache miss as regression signal
 - [The Living Spec](../specify/06-living-specs.md) — prompt-prefix changes become spec-version events
 - [Spec Versioning](../patterns/deployment/spec-versioning.md) — prompt artifact versioning is what makes byte-stability assertable

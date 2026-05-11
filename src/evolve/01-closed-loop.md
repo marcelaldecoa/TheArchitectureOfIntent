@@ -1,6 +1,6 @@
 # The Closed Loop: From Failures to Spec Amendments
 
-**Part 5 — Evolve & Operate**
+**Part 5 — Evolve**
 
 ---
 
@@ -18,7 +18,9 @@ The failure isn't the refund. The failure was already in the spec. §4 *NOT-auth
 
 **Closed loop is the discipline that prevents this.** Every diagnosed failure produces a structural change — to the spec, the manifest, a CI guard, or a [framework version bump](07-framework-versioning.md) — and the prompt is the *last* place a fix is allowed to live alone.
 
-This chapter sits at 5.1, the opener of Part 5, because every other practice in the Part — adoption, MVP-AoI, governance, cost posture, anti-patterns, framework versioning, DevSquad co-adoption — is a *practice that supports the loop*. Get the loop wrong and the rest is decoration.
+This chapter sits at the opener of Part 5 because every other practice in the Part — the anti-pattern catalog, framework versioning, MVP-AoI, the deployment patterns — is a *practice that supports the loop*. Get the loop wrong and the rest is decoration. The sustaining-ops chapters in Part 6 (governance, cost engineering, telemetry, adoption playbook, DevSquad co-adoption) keep the loop running across an organization, but they are not the loop itself.
+
+> *Where this sits in the work:* if the [Intent Design Session](../foundations/07-intent-design-session.md) is the per-system *opening* ritual, the closed loop is the per-system *return* ritual. The IDS produces a commitment; the loop tests that commitment against reality and amends the spec. The two rituals together are how the framework compounds across systems and across teams.
 
 ---
 
@@ -54,7 +56,7 @@ The closed-loop discipline is not a fourth option. It is the *integration* of al
 
 Four steps, executed per consequential failure:
 
-**1. Trace.** Every consequential action emits a structured trace — input, retrieved context, tool calls, outputs, oversight decisions, the spec version the agent was running against. Production telemetry is what makes diagnosis possible. Without traces, you have an after-the-fact narrative; with them, you have evidence. The [Production Telemetry](../evolve/10-production-telemetry.md) chapter names what to instrument.
+**1. Trace.** Every consequential action emits a structured trace — input, retrieved context, tool calls, outputs, oversight decisions, the spec version the agent was running against. Production telemetry is what makes diagnosis possible. Without traces, you have an after-the-fact narrative; with them, you have evidence. The [Production Telemetry](../operate/04-production-telemetry.md) chapter names what to instrument.
 
 **2. Categorize.** Apply the diagnostic test from [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md): *"If a perfectly competent agent had executed this spec exactly as written, would the outcome have been correct?"* The answer determines the category:
 
@@ -118,14 +120,14 @@ Validate is *learning in production*. Evolve is *what you do with what you learn
 
 This chapter sits at 5.1 because everything else in Part 5 is a *practice that supports the loop*:
 
-- The [Adoption Playbook](../evolve/11-adoption-playbook.md) keeps the loop going as the team grows.
+- The [Adoption Playbook](../operate/05-adoption-playbook.md) keeps the loop going as the team grows.
 - [MVP-AoI](../evolve/16-minimum-viable-aoi.md) is the closed loop in compressed form for systems too small for the full discipline.
-- [Proportional Governance](../evolve/04-governance.md) gives the loop a role-and-responsibility frame.
-- [Cost and Latency Engineering](../evolve/09-cost-and-latency.md) and [Cacheable Prompt Architecture](../evolve/14-cacheable-prompt-architecture.md) name the particular Cat that needs its own escalation pattern (Cost Posture incidents).
-- [Production Telemetry](../evolve/10-production-telemetry.md) is the trace surface that step 1 of the loop requires.
+- [Proportional Governance](../operate/01-governance.md) gives the loop a role-and-responsibility frame.
+- [Cost and Latency Engineering](../operate/02-cost-and-latency.md) and [Cacheable Prompt Architecture](../operate/03-cacheable-prompt-architecture.md) name the particular Cat that needs its own escalation pattern (Cost Posture incidents).
+- [Production Telemetry](../operate/04-production-telemetry.md) is the trace surface that step 1 of the loop requires.
 - The [Anti-patterns chapter](../evolve/15-anti-patterns.md) catalogs the discipline failures the loop is meant to prevent.
 - [Framework Versioning](07-framework-versioning.md) is the loop at the longest time-scale — when the framework itself acquires new capability, every system inherits it through controlled upgrade rather than ad-hoc adoption.
-- The [DevSquad mapping](../evolve/12-devsquad-mapping.md) and [Co-adoption](../evolve/13-co-adoption-with-devsquad.md) chapters show how the loop composes with DevSquad Copilot's *Refine continuously* phase.
+- The [DevSquad mapping](../operate/06-devsquad-mapping.md) and [Co-adoption](../operate/07-co-adoption-with-devsquad.md) chapters show how the loop composes with DevSquad Copilot's *Refine continuously* phase.
 
 ---
 

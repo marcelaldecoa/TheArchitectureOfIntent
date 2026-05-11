@@ -6,19 +6,21 @@ This book is structured as a **field guide**, organized in the order in which th
 
 ---
 
-## The Six Parts
+## The eight Parts
 
 | Part | What you do here |
 |------|------------------|
-| **Prologue** | The short version of what changed and what's at stake. Three pages. |
-| **1. Decisions** | The decisions you commit to *before* you start: archetype, calibration, failure anticipation, intent vs. implementation. |
-| **2. The Spec** | What spec-driven development means and how to write the spec the agent will execute against. |
-| **3. The Agent** | What agents are structurally, what capabilities they need, and how to bound them via tools and MCP. |
-| **4. Oversight, Safety & Operations** | Proportional oversight, safety patterns, retry, observability, and spec conformance testing. |
-| **5. Ship** | Canary, rollback, spec versioning, governance cadence, the four signal metrics, intent review. |
-| **6. Worked Pilots** | Two end-to-end examples calibrated against the framework. |
+| **Prologue / Introduction / How to read** | What changed, what's at stake, and how to navigate the book. |
+| **0. Foundations** | The vocabulary: what AoI is, intent vs. implementation, the four calibration dimensions, the seven failure categories, the Intent Design Session. Read once; come back when you get lost. *Chapter 08 — What Changes for the Senior Engineer is the one Foundations chapter with an audience-specific scope; skip on first read if you are not personally navigating the transition.* |
+| **1. Frame** | Pick an archetype, calibrate the four dimensions, compose archetypes, govern multi-agent systems. The decision you commit to *before* writing a spec. |
+| **2. Specify** | Spec-driven development, the canonical 12-section template, the Composition Declaration and Cost Posture sub-blocks, the Living Spec, ADRs, SpecKit, the repertoires. |
+| **3. Delegate** | What agents are, autonomy vs. agency, the executor model, least capability, agent skills, agent classes (coding, computer-use), MCP, oversight models, capability / integration / coordination patterns. |
+| **4. Validate** | Intent review, the four signal metrics, evals, red-team protocol, safety / observability / testing patterns. |
+| **5. Evolve** | The closed loop, the anti-pattern catalog, framework versioning, the Minimum Viable Architecture of Intent, deployment patterns (canary, rollback, spec versioning, model-upgrade validation, deprecation). |
+| **6. Operations** | The sustaining-ops layer that runs alongside the five activities: proportional governance, cost and latency engineering, cacheable prompt architecture, production telemetry, the Adoption Playbook, DevSquad mapping and co-adoption. Not a sixth activity — the day-to-day machinery that keeps the discipline durable. |
+| **7. Reference** | Cross-cutting coordination and state patterns, code standards by language, and the appendices (glossary, pattern index, reading paths, companion paper, legacy pilots archive, references, quick-select cards). |
 
-After Part 6 the book becomes reference material: a flat **Cross-Cutting Patterns** section for the coordination and state patterns you'll consult once your pilot is running, code standards by language, and **Appendices** (glossary, archetype card, quick references, pattern index). Most of the framework's patterns live inside Parts 3–5 alongside the chapters they relate to; this section gathers the cross-cutting ones that don't tie to a specific archetype or agent class.
+Each of Parts 1–5 ends with three *in practice* chapters that walk one of three running scenarios (a customer-support agent, a coding-agent pipeline, an internal docs Q&A agent built by a DevSquad team) through that activity, so you can read by Part or by scenario.
 
 ---
 
@@ -36,7 +38,7 @@ After Part 6 the book becomes reference material: a flat **Cross-Cutting Pattern
 | Designing oversight | [Proportional Oversight](delegate/06-human-oversight-models.md) |
 | Diagnosing a failure | [Failure modes and how to diagnose them](foundations/05-failure-as-design-signal.md) |
 | Setting up safety controls | [Prompt injection defense](patterns/safety/prompt-injection-defense.md), [output validation](patterns/safety/output-validation-gate.md) |
-| Choosing an oversight cadence | [Proportional Governance](evolve/04-governance.md) |
+| Choosing an oversight cadence | [Proportional Governance](operate/01-governance.md) |
 | Defining what to measure | [Four Signal Metrics](validate/06-metrics.md) |
 | Looking at a real example | One of the v2.0.0 [running scenarios](appendices/reading-paths.md) (recommended) — or the [Legacy v1.x Worked Pilots Archive](appendices/legacy-pilots.md) for the v1.x set |
 | Confused about a term | [Glossary](appendices/glossary.md) |
