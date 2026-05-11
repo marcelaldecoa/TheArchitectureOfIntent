@@ -10,6 +10,8 @@
 
 > *Where this sits in v2.0.0: this chapter is part of **Part 6 — Operations**. Governance is the role-and-responsibility frame that makes the [closed loop](../evolve/01-closed-loop.md) survive contact with a real organization; without it, the loop runs as a per-incident discipline only and stops at the team boundary. The chapter develops what *proportional* means structurally — control concentrated where consequence is concentrated — and how that shape composes with the per-system Discipline-Health Audit and the cross-team Adoption Playbook.*
 
+> *Where this sits in the work:* the chapters in Part 6 sustain what [the Intent Design Session](../foundations/07-intent-design-session.md) sets up — they run alongside the five activities, not in sequence with them. Governance is the standing structure that decides who reviews what, on what cadence; the IDS produces the per-system commitment, governance keeps the organization's portfolio of those commitments coherent.
+
 ---
 
 ## Context

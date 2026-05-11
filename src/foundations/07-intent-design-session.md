@@ -1,10 +1,20 @@
 # The Intent Design Session
 
-**Part 0 — Foundations**
+**Part 0 — Foundations** · *The exit chapter*
 
 ---
 
 > *"A discipline you cannot run on a calendar invite is a discipline you do not have. The session is where the framework becomes work."*
+
+---
+
+## Why this is the Foundations exit
+
+This is the last chapter of Part 0 by design, not by file number. The five chapters that precede it — What is AoI, Intent vs. Implementation, the four dimensions, the failure taxonomy, and (for readers personally navigating the transition) What Changes for the Senior Engineer — establish the *vocabulary*. The Intent Design Session is the *ritual* that turns vocabulary into a commitment for one specific system. Without the ritual, the framework stays decorative; with it, the framework becomes work.
+
+Every subsequent Part (Frame, Specify, Delegate, Validate, Evolve) elaborates one phase of the work the IDS schedules in compressed form. The session is therefore the bridge: a reader who finishes Part 0 and runs an IDS the following week has used the framework once; a reader who finishes Part 0 and starts writing a spec without running an IDS will reproduce the failure modes the rest of the book catalogs.
+
+When you are lost later in the book, the question to ask is usually: *what phase of the Intent Design Session does this chapter sharpen?* — and the answer maps it back to this ritual.
 
 ---
 

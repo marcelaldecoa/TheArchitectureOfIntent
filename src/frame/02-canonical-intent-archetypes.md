@@ -18,6 +18,8 @@ The category is the archetype. There are five canonical archetypes — Advisor, 
 
 Detailed per-archetype specifications live in the [Archetype Catalog](../repertoires/02-archetype-catalog.md) and the individual archetype pages linked at the end of each section.
 
+> *Where this sits in the work:* the chapters in Part 1 elaborate the **Frame** phase of [the Intent Design Session](../foundations/07-intent-design-session.md). The IDS is the ritual that schedules archetype selection, calibration, and the rest of the framework's decisions into one working session; when you are lost, return to it to see where this chapter fits.
+
 ---
 
 ## What an archetype is

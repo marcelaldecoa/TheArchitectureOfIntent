@@ -10,6 +10,8 @@
 
 > *Where this sits in v2.0.0: this chapter is part of **Part 4 — Validate**. Intent review is what you do **before** the agent runs the spec — review the intent surface, not the output. The discipline complements the per-incident closed loop in Part 5 by catching spec gaps **upstream** rather than as production failures. Pair with [Failure Modes and How to Diagnose Them](../foundations/05-failure-as-design-signal.md) for what to look for during intent review.*
 
+> *Where this sits in the work:* the chapters in Part 4 elaborate the **Validate** phase of [the Intent Design Session](../foundations/07-intent-design-session.md) — the phase that wires up the metrics, evals, and red-team protocol the team will run once the agent ships. When you are lost, return to the IDS to see where this chapter fits.
+
 ---
 
 ## Context

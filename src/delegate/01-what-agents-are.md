@@ -16,6 +16,8 @@ Each of these uses the same word — agent — to describe something materially 
 
 This chapter opens Part 3 (The Agent) with first principles. It assumes familiarity with the intent vocabulary from the prologue and Part 1 and the spec discipline from Part 2.
 
+> *Where this sits in the work:* the chapters in Part 3 elaborate the **Delegate** phase of [the Intent Design Session](../foundations/07-intent-design-session.md) — binding patterns, tools, and oversight to what the spec implies. When you are lost, return to the IDS to see where this chapter fits in the per-system rhythm.
+
 ---
 
 ## The Problem

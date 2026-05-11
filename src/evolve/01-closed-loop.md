@@ -18,7 +18,9 @@ The failure isn't the refund. The failure was already in the spec. §4 *NOT-auth
 
 **Closed loop is the discipline that prevents this.** Every diagnosed failure produces a structural change — to the spec, the manifest, a CI guard, or a [framework version bump](07-framework-versioning.md) — and the prompt is the *last* place a fix is allowed to live alone.
 
-This chapter sits at 5.1, the opener of Part 5, because every other practice in the Part — adoption, MVP-AoI, governance, cost posture, anti-patterns, framework versioning, DevSquad co-adoption — is a *practice that supports the loop*. Get the loop wrong and the rest is decoration.
+This chapter sits at the opener of Part 5 because every other practice in the Part — the anti-pattern catalog, framework versioning, MVP-AoI, the deployment patterns — is a *practice that supports the loop*. Get the loop wrong and the rest is decoration. The sustaining-ops chapters in Part 6 (governance, cost engineering, telemetry, adoption playbook, DevSquad co-adoption) keep the loop running across an organization, but they are not the loop itself.
+
+> *Where this sits in the work:* if the [Intent Design Session](../foundations/07-intent-design-session.md) is the per-system *opening* ritual, the closed loop is the per-system *return* ritual. The IDS produces a commitment; the loop tests that commitment against reality and amends the spec. The two rituals together are how the framework compounds across systems and across teams.
 
 ---
 

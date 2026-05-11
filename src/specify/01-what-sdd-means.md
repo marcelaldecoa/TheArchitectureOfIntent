@@ -16,6 +16,8 @@ You are about to discover that most of the corrections are the spec's fault — 
 
 This pattern opens Part 2 (The Spec) and assumes the conceptual vocabulary of the prologue and Part 1: intent vs. implementation, agency levels, failure categories, and the archetype framework.
 
+> *Where this sits in the work:* the chapters in Part 2 elaborate the **Specify** phase of [the Intent Design Session](../foundations/07-intent-design-session.md) — the working session that turns the framework's vocabulary into a calibrated commitment for one specific system. When you are lost, return to the IDS to see where this chapter fits in the per-system rhythm.
+
 ---
 
 ## The Problem
