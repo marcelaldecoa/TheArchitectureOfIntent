@@ -12,6 +12,22 @@
 
 ---
 
+## Summary — the framework in 60 seconds
+
+**The Architecture of Intent** is a working discipline for designing what AI agent systems are supposed to do, what they must never do, and how you will know they are working. It is opinionated, structural, and operationally complete: five activities to run (Frame · Specify · Delegate · Validate · Evolve), five archetypes to pick from, four orthogonal dials to calibrate, a 12-section spec template the agent executes against, a seven-category failure taxonomy that names which artifact to fix when something goes wrong, and four signal metrics that tell you whether the discipline is alive.
+
+**The cost of not having it** shows up about a quarter into a serious agent deployment. The customer-support agent issues a $0.00 refund because the spec said "process refund requests" without saying "amount must be > $0." The coding agent "fixes the failing test" by deleting it because the spec authorized "make the test pass" without forbidding "delete the test." A platform team has fifty agents in production and twelve different teams have re-discovered the same prompt-injection vector against the same MCP server because no shared constraint library exists. Each incident is followed by a Slack-thread post-mortem that produces a one-line prompt patch and no structural change. By month six the prompts are war journals, the specs are decorative, and the discipline is gone.
+
+**For a DevSquad Copilot practitioner specifically**, the framework adds five things DevSquad does not give you: an *archetype declaration in §4* of every spec; *NOT-authorized clauses in §3* (the single highest-leverage move); an *explicit oversight model* picked from four named options; the *seven-category fix-locus taxonomy* applied in retrospectives; and a *running Intent Design Session* for the next system. These five additions slot into the existing eight-phase cycle without inventing a parallel process. The Conductor agent reads the spec's §4 archetype declaration to calibrate ceremony per phase. The specialist agents inherit constraints from the spec sections that pull them. The retrospective produces structural amendments instead of prompt patches.
+
+**Why a DevSquad team should care.** DevSquad gives you a phase cadence, twelve specialist agents, a Conductor, MCP servers, and three impact tiers. What it does *not* give you is the *content* of the artifacts that move through the phases — the spec's structure, the archetype's calibration, the manifest's boundary, the taxonomy that diagnoses failures. The framework fills that content gap. The framework and DevSquad are not alternatives; they are different layers of the same stack: **DevSquad is the *how*; the Architecture of Intent is the *what*.**
+
+**This applies to three deployment families DevSquad serves.** DevSquad's eight-phase cycle is not AI-specific. Teams use it to build (1) **new AI-agent systems** where the executor is an LLM; (2) **new cloud-native applications** — APIs, microservices, data pipelines, infrastructure-as-code modules — where the executor is deterministic code; and (3) **modernization and migration of existing applications**, where SDD becomes the discipline for moving a legacy app to a target architecture without regressing behavior. The framework's central claim — *intent is a primary design surface for any delegated system* — is sharpest for AI agent systems because the executor is probabilistic, but the same discipline applies to the other two. An Executor archetype with a tool manifest and a NOT-authorized scope is just as load-bearing for a microservice that processes refunds as for an AI agent that does, and just as load-bearing for a legacy-modernization spec that says *what the modernized service must do, what it must never regress, and what counts as parity*. The four dials calibrate any of the three; the seven-category fix-locus taxonomy diagnoses any of them. Read this document with whichever deployment family you have in front of you; the framework slots in.
+
+This document is the 30-minute primer. The companion book is the working manual.
+
+---
+
 ## What this is
 
 You are about to start using the Architecture of Intent — probably because a teammate is running a pilot, because your team is co-adopting DevSquad Copilot and someone said the two compose well, or because you read the prologue of the book and want the rest of the team caught up before you sit down for the first Intent Design Session.
@@ -46,6 +62,40 @@ The Architecture of Intent is the discipline that makes intent thick enough to b
 3. **Calibration is deliberate.** Agency, autonomy, responsibility, and reversibility are four independent dials, not one "automation level."
 
 The rest of this document is what those three claims look like in practice.
+
+---
+
+## What DevSquad gives you. What it doesn't.
+
+If you are reading this because you already use DevSquad Copilot and someone said "you should also adopt the Architecture of Intent," the question worth being honest about is: *what does DevSquad already cover, and where does AoI extend it?* This section answers it for the three deployment families DevSquad serves — **new AI-agent systems**, **new cloud-native applications** (APIs, microservices, data pipelines, IaC modules), and **modernization or migration of existing applications using SDD**. The framework's discipline applies to all three; this document is the gateway for whichever you are shipping.
+
+**DevSquad Copilot gives you, out of the box:**
+
+- An **eight-phase iterative cycle** for agentic software delivery (envisioning → spec → plan → decompose → implement → learn-in-the-open → review → refine). Phase boundaries are explicit; the Conductor enforces them.
+- **Twelve specialist agents** (init, envision, kickoff, specify, plan, decompose, implement, review, security, sprint, refine, extend) plus a **Conductor** that orchestrates them. Each specialist has a defined surface; the Conductor decides which to invoke when.
+- **Five first-party MCP servers** (GitHub, Azure DevOps, Azure, Microsoft Learn, Draw.io) covering the platform integration surface.
+- **Three impact tiers** (low / medium / high) calibrating ceremony per change. Low skips most ceremony; high adds mandatory ADR, explicit approval, and full review.
+- **Comprehension checkpoints** between phases. The Conductor verifies the team and the specialist agents understand the artifact before proceeding.
+- The **"loop over ladder"** posture and a **20-skill catalog** with semantic activation.
+
+This is a substantial substrate. A team running DevSquad has a working cadence, working agents, and a working tooling surface.
+
+**What DevSquad does *not* give you** is the *content* of the artifacts that move through the phases:
+
+- DevSquad gives you a *spec phase*; it does not give you the *spec template* with twelve named sections, an archetype declaration, a Composition Declaration, or a Cost Posture sub-block.
+- DevSquad's specialist agents will write a spec; the spec they write will not have an *archetype committed in §4* or *NOT-authorized clauses in §3* unless the team has committed to them as load-bearing.
+- DevSquad's three impact tiers calibrate *ceremony*; they do not calibrate *agency, autonomy, responsibility, or reversibility*. Two agents with the same impact tier may have very different blast radii.
+- DevSquad's *review phase* validates output. It does not, by itself, validate *intent* — the question of "is this the right thing to implement" runs upstream of code review.
+- DevSquad's *refine phase* re-prompts and re-runs. The framework adds the discipline that says *which artifact* the refinement amends — not the prompt alone.
+
+The Architecture of Intent fills that content gap. It is the substantive vocabulary, calibration, and diagnostic structure that DevSquad's process substrate runs on. The framework and DevSquad are not competitors; they are different layers of the same stack.
+
+**A note on the three deployment families.** Most of this document uses AI-agent examples (a customer-support agent, a coding agent) because that is where the framework's claims are most acute — the executor is probabilistic, the judgment gap is widest, the cost of imprecise intent is highest. But the framework does not require an AI executor to earn its keep:
+
+- For **new cloud-native applications**, an Executor archetype with a tool manifest and a NOT-authorized scope is as load-bearing for a microservice that processes refunds as for an agent that does. The four dials calibrate a Kubernetes deployment pipeline as cleanly as they calibrate a coding agent. The seven-category fix-locus taxonomy diagnoses a wrong-output incident in a REST service the same way it diagnoses one in an LLM-driven agent.
+- For **modernization and migration**, the spec is a parity contract: §1 (the legacy system being modernized) → §2 (the target outcome at parity) → §3 (in-scope vs. out-of-scope refactors; explicit migration boundary) → §4 (archetype of the modernized service; usually Executor or Synthesizer) → §6 (invariants that must not regress — security posture, public API contracts, data invariants) → §9 (acceptance criteria as parity tests) → §11 (per-step execution: the migration plan) → §12 (validation checklist: regression suites, performance budgets, on-call handoff). The framework's discipline turns "rewrite this app" into a structured, reviewable, evolvable artifact rather than a multi-quarter open-ended migration project. Cat 1 failures (spec gaps) catch parity drift; Cat 6 failures (model-level — applied broadly: "the migrated implementation produced wrong output despite a correct spec") catch genuine regressions worth fixing in code.
+
+When you see "agent" in this document, read "executor" — the framework's claims hold whether you are shipping AI agents, cloud-native services, or modernized apps.
 
 ---
 
@@ -114,6 +164,47 @@ Plus a *Spec Evolution Log* that records every amendment with the failure catego
 **The Living Spec discipline.** Specs that never update describe systems no one is governing. Specs that update on every preference change are conversation transcripts. The middle path: *spec gaps* (Cat 1 below) and *spec ambiguities* trigger amendments; *implementation failures* (Cat 6) and *preference changes* do not. The Spec Evolution Log records the discipline.
 
 **The Intent Design Session.** The framework's working ritual is a 3–4 hour session — once per system, or once per major spec revision — that walks the team through seven phases: Frame the intent · Calibrate the dials · Draft the spec · Bind patterns · Pick oversight · Define acceptance · Plan the rollout. It produces the spec, the pattern set, the oversight model, the validation contract, and a deployment plan with a retrospective date on the calendar. Skipping it reliably produces five failure modes: patterns picked by team taste, oversight bolted on at the end, calibration left implicit, spec written by one person alone, no commitment to learning. The [Intent Design Session chapter](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/src/foundations/07-intent-design-session.md) is the manual.
+
+---
+
+## Design patterns for specs — what they actually buy you
+
+If you are a hands-on engineer skeptical of "design patterns for specs," you have probably read pattern-language books and seen the abstraction get more attention than the work. The framework's pattern discipline is specifically *not* that. A "pattern" here is a named, structural slot in the spec template — not a piece of code, not a layer of architecture, not a theoretical abstraction. The patterns earn their keep by *changing what the agent does*, which is the only test that matters.
+
+Here is what a spec looks like *without* the framework's pattern discipline, written the way most teams write specs in 2026:
+
+> Process customer refund requests. Use the refund tool to issue the refund. Notify the customer when the refund is processed.
+
+A DevSquad specialist agent will happily execute against this spec. The Conductor will route the work through the eight phases. The implement agent will write code. The review agent will check that the code compiles and the tests pass. The agent ships. Three days later it issues a $0.00 refund to a customer who didn't have an invoice for a cancelled order, because the spec said "process the refund" and did not say *what a refund is*, *when one is authorized*, *how much one can be*, or *what happens when the request is malformed*. The post-mortem reaches for the prompt: someone adds "make sure the refund amount is greater than zero" to the system prompt. Two weeks later a different shape of malformed refund happens. The prompt grows another sentence. By month three the prompt is a fragmentary war journal.
+
+Here is the *same* spec with the framework's design patterns applied — twelve named sections, each operationalizing a structural commitment:
+
+> **§1 Problem.** Customer-support team spends ~11 minutes per Tier-1 refund request. Automate the refund decision and issuance; surface a human only at the exceptions.
+>
+> **§2 Desired outcome.** Refund requests with valid invoice, refund amount <= $500, customer match, and order not cancelled produce a refund within 30s with audit trail and customer notification. All other shapes escalate to a human.
+>
+> **§3 Authorized scope.** `invoice exists` AND `amount <= $500` AND `customer.id == order.customer_id` AND `order.status != "cancelled"`. **§3 NOT-authorized:** May not refund without invoice. May not refund amount > $500. May not refund cancelled orders. May not refund without customer-id match. May not issue $0 or negative refunds.
+>
+> **§4 Archetype declaration.** Executor (acts within bounded scope). Composition: none. **Cost Posture:** small-tier model · per-call ceiling $0.02 · latency budget 5s. **Calibration:** agency narrow (single classification); autonomy wide within scope, narrow at boundary (escalates on any §3 NOT-authorized clause); responsibility distributed (support manager authorial; agent operational; same manager validation); reversibility moderate (refund reversible by re-charge within 7 days).
+>
+> **§6 Invariants.** Refund amount > $0. Audit log within 5s. Customer notification within 30s. Spec evolution log updated on every Cat 1 amendment.
+>
+> **§8 Authorization boundary.** Tool manifest: `read_invoice`, `read_order`, `read_customer`, `issue_refund` (state-changing), `notify_customer`. Specifically *not* exposed: `cancel_order`, `update_customer`, `delete_invoice`.
+>
+> **§11 Agent execution.** If amount > $500 OR invoice missing OR cancelled OR customer mismatch → invoke `escalate_to_human` with the violated clause as reason. Do not retry. Log the escalation.
+>
+> **§12 Validation checklist.** Pre-launch: 14 acceptance tests covering happy path + each NOT-authorized clause + escalation triggers. Production: spec-gap rate per 1k runs; first-pass validation rate; cost per correct outcome; oversight load.
+
+This is what "design patterns for specs" means in the framework: each section is a *named slot* with a *structural purpose*, and every clause maps to either a behavioral commitment (the four dials) or an authorization boundary (the manifest). The framework's [Pattern Justification Map](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/src/appendices/pattern-index.md) names which spec section pulls each pattern. A pattern that cannot be mapped to a section is inventory — either remove it or amend the template.
+
+**What changes about the agent's behavior** between the two specs above is concrete and immediate:
+
+- The DevSquad implement agent now has explicit `NOT-authorized` constraints to encode in its execution path. It halts and escalates at the boundary instead of executing through it.
+- The review specialist has a §12 checklist to audit against, not just "the code compiles."
+- The Conductor reads §4's archetype and Cost Posture and picks the impact tier accordingly — small-tier model, $0.02 per call ceiling, 5s latency.
+- The refine specialist, when a failure surfaces, has a fix-locus partition (Cat 1–7) to consult; the amendment that lands is to *the named artifact* — not a prompt patch.
+
+The patterns are not theoretical. They are the slots that tell the agents what to do.
 
 ---
 
@@ -200,6 +291,35 @@ The Architecture of Intent composes with this cycle cleanly:
 5. **Run an Intent Design Session for the next system.** Once. See what comes out. The chapter is the manual.
 
 These five additions are the minimum viable Architecture of Intent for a team already running the DevSquad cycle. The [Co-adoption with DevSquad Copilot chapter](https://github.com/marcelaldecoa/TheArchitectureOfIntent/blob/main/src/operate/07-co-adoption-with-devsquad.md) develops the full 30-day co-adoption plan and the vocabulary translation table.
+
+### How the Conductor agent uses the Architecture of Intent
+
+The Conductor is the agent that orchestrates the eight phases — deciding which specialist to invoke, when to insert a comprehension checkpoint, when to escalate, when to retry. Without AoI, the Conductor has only DevSquad's three impact tiers (low/medium/high) and the team's informal sense of how careful to be. With AoI, the Conductor reads the spec's §4 (archetype declaration + Composition Declaration + Cost Posture) on entry to each phase and uses it to calibrate every subsequent decision.
+
+Concretely, phase by phase:
+
+| DevSquad phase | Without AoI | With AoI (what the Conductor reads, and what changes) |
+|---|---|---|
+| **Envisioning** | Team discusses the system informally; impact tier picked by gut. | Conductor walks the four-question archetype selection tree; selected archetype goes in §4 of the spec the *specify* phase will produce. First comprehension checkpoint asks the team to confirm the archetype. |
+| **Spec** | *specify* agent writes a free-form spec. | Conductor invokes *specify* with the canonical 12-section template as directive. Verifies §3 (Scope) and §4 (Archetype) before allowing progression. Specs without explicit NOT-authorized clauses returned with *"§3 incomplete."* |
+| **Plan** | Plan written against the spec's surface; cost considered if it surfaces. | Conductor reads §4's Cost Posture sub-block. If the proposed plan exceeds the per-call cost ceiling or the latency budget, the phase halts and escalates *before* implement begins. |
+| **Decompose** | Work split into specialist-agent units by the *decompose* agent. | Conductor reads §11 (Agent Execution Instructions) and decomposes accordingly. Each unit inherits the §6 (Invariants), §7 (Non-Functional Constraints), and §8 (Authorization Boundary) clauses relevant to its scope; the *decompose* specialist sees only the constraints relevant to its piece. |
+| **Implement** | *implement* agent acts; impact tier shapes ceremony. | Conductor selects the implement agent variant by §4's archetype: Executor → constraint-discipline variant; Synthesizer → composition variant; Orchestrator → supervisor-aware variant. §11 execution instructions become per-step rules. §8 tool manifest becomes the authorized capability set — no broader. |
+| **Learn-in-the-open** | Telemetry per the team's existing stack. | Conductor monitors the four signal metrics: spec-gap rate, first-pass validation, cost per correct outcome, oversight load. Drift flagged *before* it becomes a Cat 1 failure. |
+| **Review** | Review specialist checks the code. | Conductor invokes review with a *two-axis* prompt: intent review (does this match §1–§4?) and output review (does this match §9 acceptance criteria?). Without AoI, both axes collapse into "does the code work." |
+| **Refine** | refine specialist re-prompts and re-runs. | Conductor walks the Cat 1–7 fix-locus taxonomy with the team. The amendment lands in *the artifact the Cat names* — spec for Cat 1, manifest for Cat 2, oversight model for Cat 4, etc. Prompt-level changes are the *last* resort, not the first. |
+
+The net effect: the Conductor stops being a routing layer and starts being a *governance layer*. The specialist agents inherit calibration from the spec rather than re-discovering it per task. The refine specialist's amendments compound into the constraint library rather than fragmenting into prompt war journals.
+
+### Where DevSquad practice improves the most, in order
+
+These are the *areas of greatest improvement* a DevSquad team sees after adopting AoI, ranked by leverage on a representative deployment:
+
+1. **Cat 3 (scope creep) failures drop sharply.** The single highest-leverage move is making the §3 NOT-authorized clauses explicit. Most "the agent did something it shouldn't" failures are catchable here.
+2. **Refine amendments stop being prompt patches.** The Cat 1–7 fix-locus taxonomy gives the refine specialist a structured next-action. Specs and manifests evolve; prompts stop accumulating sentence fragments.
+3. **The review phase becomes two-axis.** Intent review (review against §1–§4) becomes a distinct activity from output review. Most spec gaps are catchable here, *before* the agent has run against the spec.
+4. **Cost surprises stop reaching production.** The Cost Posture sub-block of §4 commits the resource posture upstream; the Conductor enforces it at the plan phase. Cost-incident escalations move from production to design.
+5. **Cross-system learning compounds.** The Spec Evolution Log and the Pattern Justification Map turn one system's lesson into a fleet-wide constraint. The next agent on the platform inherits the lesson without re-discovering it.
 
 ---
 
