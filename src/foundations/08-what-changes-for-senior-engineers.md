@@ -36,6 +36,8 @@ Two structural changes do most of the work.
 
 Both changes are real, neither is total, and both have personal costs the framework should not minimize. The rest of this chapter is about where the judgment goes, what is honestly lost in the move, what is gained, and where the career ladder fails to keep up.
 
+![Senior judgment doesn't disappear; it migrates upstream. In the pre-agent era it landed late, during implementation — filling gaps from experience, escalating ambiguity, rewriting tickets, spotting the bug that matters. In the agent era it lands earlier, in the spec itself — naming constraints, forbidding actions explicitly, declaring the archetype, calibrating the four dials. The chapter is honest about what is gained (compounding leverage; diagnosable failures) and what is lost (the flow state of complex debugging; tacit knowledge as scarce leverage; a career ladder that has not yet caught up).](../images/foundations-judgment-migration.png)
+
 ---
 
 ## Forces

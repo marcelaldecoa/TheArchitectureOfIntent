@@ -32,6 +32,8 @@ The **Intent Design Session** is a time-boxed working session — typically 3 to
 
 This pattern is the connective tissue between Part 1 (the decisions) and Part 2 (the spec). It assumes you have read [Pick an Archetype](../frame/02-canonical-intent-archetypes.md), [Calibrate Agency, Autonomy, Responsibility, Reversibility](03-agency-autonomy-responsibility.md), and [Failure Modes and How to Diagnose Them](05-failure-as-design-signal.md). It produces an artifact you will write up using [The Canonical Spec Template](../specify/07-canonical-spec-template.md).
 
+![The Intent Design Session's seven phases, each with its concrete output. Phases 1–2 do Frame work (archetype + four-dial calibration), Phase 3 does Specify work (the twelve-section spec), Phases 4–5 do Delegate work (patterns and oversight bound to what the spec implies), Phase 6 does Validate work (acceptance, metrics, evals, red-team), and Phase 7 does Evolve work (rollout plan plus a retrospective date on the calendar). Skipping the session reliably produces the five failure modes the chapter catalogs — patterns picked by taste, oversight bolted on at the end, calibration left implicit, spec written by one person alone, no commitment to learning.](../images/foundations-ids-phases.png)
+
 ---
 
 ## The Problem

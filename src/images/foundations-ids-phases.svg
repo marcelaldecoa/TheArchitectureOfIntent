@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 740"
+     font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrIDS" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="740" fill="#FAFAF7"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-size="26" font-weight="700" fill="#0F1729">The Intent Design Session — seven phases</text>
+  <text x="700" y="80" text-anchor="middle" font-size="14" font-style="italic" fill="#64748B">A 3–4 hour working session that turns the framework's vocabulary into a calibrated commitment for one specific system.</text>
+
+  <!-- ======================== Phases as horizontal timeline ======================== -->
+  <!-- 7 phases. width = ~180, gap = 20. starts at x=60. y top at 130, height 130. -->
+  <g>
+    <rect x="60" y="140" width="170" height="220" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="60" y="140" width="170" height="6" fill="#6366F1"/>
+    <text x="145" y="172" text-anchor="middle" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.4">PHASE 1</text>
+    <text x="145" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">Frame the</text>
+    <text x="145" y="219" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">intent</text>
+    <text x="145" y="252" text-anchor="middle" font-size="10" fill="#475569">Pick the archetype</text>
+    <text x="145" y="268" text-anchor="middle" font-size="10" fill="#475569">and the three</text>
+    <text x="145" y="284" text-anchor="middle" font-size="10" fill="#475569">questions of intent.</text>
+    <text x="145" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">Output: archetype</text>
+    <text x="145" y="336" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">commitment</text>
+  </g>
+
+  <g>
+    <rect x="250" y="140" width="170" height="220" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="250" y="140" width="170" height="6" fill="#6366F1"/>
+    <text x="335" y="172" text-anchor="middle" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.4">PHASE 2</text>
+    <text x="335" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">Calibrate</text>
+    <text x="335" y="219" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">the dials</text>
+    <text x="335" y="252" text-anchor="middle" font-size="10" fill="#475569">Set agency, autonomy,</text>
+    <text x="335" y="268" text-anchor="middle" font-size="10" fill="#475569">responsibility,</text>
+    <text x="335" y="284" text-anchor="middle" font-size="10" fill="#475569">reversibility.</text>
+    <text x="335" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">Output: four-dial</text>
+    <text x="335" y="336" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">profile</text>
+  </g>
+
+  <g>
+    <rect x="440" y="140" width="170" height="220" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="440" y="140" width="170" height="6" fill="#6366F1"/>
+    <text x="525" y="172" text-anchor="middle" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.4">PHASE 3</text>
+    <text x="525" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">Draft the</text>
+    <text x="525" y="219" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">spec</text>
+    <text x="525" y="252" text-anchor="middle" font-size="10" fill="#475569">Twelve sections, with</text>
+    <text x="525" y="268" text-anchor="middle" font-size="10" fill="#475569">NOT-authorized</text>
+    <text x="525" y="284" text-anchor="middle" font-size="10" fill="#475569">explicit.</text>
+    <text x="525" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">Output: spec v0.1</text>
+    <text x="525" y="336" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">draft</text>
+  </g>
+
+  <g>
+    <rect x="630" y="140" width="170" height="220" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="630" y="140" width="170" height="6" fill="#6366F1"/>
+    <text x="715" y="172" text-anchor="middle" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.4">PHASE 4</text>
+    <text x="715" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">Bind</text>
+    <text x="715" y="219" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">patterns</text>
+    <text x="715" y="252" text-anchor="middle" font-size="10" fill="#475569">Pick the patterns</text>
+    <text x="715" y="268" text-anchor="middle" font-size="10" fill="#475569">the spec implies,</text>
+    <text x="715" y="284" text-anchor="middle" font-size="10" fill="#475569">not the ones liked.</text>
+    <text x="715" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">Output: pattern set</text>
+    <text x="715" y="336" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">justified by §</text>
+  </g>
+
+  <g>
+    <rect x="820" y="140" width="170" height="220" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="820" y="140" width="170" height="6" fill="#6366F1"/>
+    <text x="905" y="172" text-anchor="middle" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.4">PHASE 5</text>
+    <text x="905" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">Pick</text>
+    <text x="905" y="219" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">oversight</text>
+    <text x="905" y="252" text-anchor="middle" font-size="10" fill="#475569">Monitor · Periodic ·</text>
+    <text x="905" y="268" text-anchor="middle" font-size="10" fill="#475569">Output Gate ·</text>
+    <text x="905" y="284" text-anchor="middle" font-size="10" fill="#475569">Pre-authorized.</text>
+    <text x="905" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">Output: oversight</text>
+    <text x="905" y="336" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">model + gates</text>
+  </g>
+
+  <g>
+    <rect x="1010" y="140" width="170" height="220" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="1010" y="140" width="170" height="6" fill="#6366F1"/>
+    <text x="1095" y="172" text-anchor="middle" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.4">PHASE 6</text>
+    <text x="1095" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">Define</text>
+    <text x="1095" y="219" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">acceptance</text>
+    <text x="1095" y="252" text-anchor="middle" font-size="10" fill="#475569">Acceptance criteria,</text>
+    <text x="1095" y="268" text-anchor="middle" font-size="10" fill="#475569">signal metrics, eval</text>
+    <text x="1095" y="284" text-anchor="middle" font-size="10" fill="#475569">stack, red-team plan.</text>
+    <text x="1095" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">Output: validation</text>
+    <text x="1095" y="336" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">contract</text>
+  </g>
+
+  <g>
+    <rect x="1200" y="140" width="170" height="220" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="1200" y="140" width="170" height="6" fill="#6366F1"/>
+    <text x="1285" y="172" text-anchor="middle" font-size="10" font-weight="700" fill="#6366F1" letter-spacing="1.4">PHASE 7</text>
+    <text x="1285" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">Plan the</text>
+    <text x="1285" y="219" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">rollout</text>
+    <text x="1285" y="252" text-anchor="middle" font-size="10" fill="#475569">Canary, rollback,</text>
+    <text x="1285" y="268" text-anchor="middle" font-size="10" fill="#475569">retrospective on</text>
+    <text x="1285" y="284" text-anchor="middle" font-size="10" fill="#475569">the calendar.</text>
+    <text x="1285" y="320" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">Output: deployment</text>
+    <text x="1285" y="336" text-anchor="middle" font-size="10" font-style="italic" fill="#6366F1">plan + loop date</text>
+  </g>
+
+  <!-- arrows between -->
+  <line x1="230" y1="250" x2="248" y2="250" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arrIDS)"/>
+  <line x1="420" y1="250" x2="438" y2="250" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arrIDS)"/>
+  <line x1="610" y1="250" x2="628" y2="250" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arrIDS)"/>
+  <line x1="800" y1="250" x2="818" y2="250" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arrIDS)"/>
+  <line x1="990" y1="250" x2="1008" y2="250" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arrIDS)"/>
+  <line x1="1180" y1="250" x2="1198" y2="250" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arrIDS)"/>
+
+  <!-- Activity mapping ribbon underneath -->
+  <text x="80" y="420" font-size="12" font-weight="700" fill="#6366F1" letter-spacing="2">PHASES MAP TO ACTIVITIES</text>
+  <g>
+    <rect x="60" y="440" width="360" height="46" rx="8" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.2"/>
+    <text x="240" y="463" text-anchor="middle" font-size="13" font-weight="700" fill="#0F1729">Phases 1–2 →  FRAME</text>
+    <text x="240" y="478" text-anchor="middle" font-size="11" fill="#475569">Archetype + four-dial calibration</text>
+  </g>
+  <g>
+    <rect x="440" y="440" width="360" height="46" rx="8" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.2"/>
+    <text x="620" y="463" text-anchor="middle" font-size="13" font-weight="700" fill="#0F1729">Phase 3 →  SPECIFY</text>
+    <text x="620" y="478" text-anchor="middle" font-size="11" fill="#475569">The canonical spec, twelve sections</text>
+  </g>
+  <g>
+    <rect x="820" y="440" width="360" height="46" rx="8" fill="#FEF3C7" stroke="#B45309" stroke-width="1.2"/>
+    <text x="1000" y="463" text-anchor="middle" font-size="13" font-weight="700" fill="#0F1729">Phases 4–5 →  DELEGATE</text>
+    <text x="1000" y="478" text-anchor="middle" font-size="11" fill="#475569">Patterns and oversight bound to spec</text>
+  </g>
+  <g>
+    <rect x="60" y="500" width="360" height="46" rx="8" fill="#F0FDF4" stroke="#15803D" stroke-width="1.2"/>
+    <text x="240" y="523" text-anchor="middle" font-size="13" font-weight="700" fill="#0F1729">Phase 6 →  VALIDATE</text>
+    <text x="240" y="538" text-anchor="middle" font-size="11" fill="#475569">Acceptance, metrics, evals, red-team</text>
+  </g>
+  <g>
+    <rect x="440" y="500" width="360" height="46" rx="8" fill="#F0FDF4" stroke="#15803D" stroke-width="1.2"/>
+    <text x="620" y="523" text-anchor="middle" font-size="13" font-weight="700" fill="#0F1729">Phase 7 →  EVOLVE</text>
+    <text x="620" y="538" text-anchor="middle" font-size="11" fill="#475569">Rollout plan + retrospective on the calendar</text>
+  </g>
+
+  <!-- Bottom takeaway -->
+  <g>
+    <rect x="820" y="500" width="540" height="160" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <text x="844" y="528" font-size="11" font-weight="700" fill="#6366F1" letter-spacing="1.6">IF YOU SKIP THE SESSION</text>
+    <text x="844" y="556" font-size="13" fill="#0F1729">Patterns get picked by team taste.</text>
+    <text x="844" y="576" font-size="13" fill="#0F1729">Oversight is bolted on at the end.</text>
+    <text x="844" y="596" font-size="13" fill="#0F1729">Calibration stays implicit.</text>
+    <text x="844" y="616" font-size="13" fill="#0F1729">Spec is written by one person, alone.</text>
+    <text x="844" y="640" font-size="11" font-style="italic" fill="#64748B">— a quarter later, the system grew into something the team didn't intend.</text>
+  </g>
+
+  <!-- Bottom caption -->
+  <line x1="60" y1="690" x2="1340" y2="690" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="700" y="715" text-anchor="middle" font-size="12" font-style="italic" fill="#475569">A discipline you cannot run on a calendar invite is a discipline you do not have. The session is where the framework becomes work.</text>
+</svg>

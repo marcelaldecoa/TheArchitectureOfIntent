@@ -32,6 +32,8 @@ If the failure is in the architecture around the agent, the fix is available now
 
 This is not a claim that model-level failures never occur — they do, and the sixth category below names them. (A seventh category, *Perceptual Failure*, addresses a class of failure specific to perceiving-then-acting systems such as computer-use and browser-use agents.) But teams that systematically categorize their agent failures find that the majority of consequential ones trace back to architectural gaps rather than model limitations. The discipline of failure analysis prioritizes the fixable categories first, because they are the most actionable.
 
+![The seven failure categories side-by-side: each row shows the failure shape, the symptom (what the team observed), and the fix locus (which artifact must change). The symptom and the fix locus are not the same — a wrong refund amount may be observed at the model output, but the artifact that must change is the spec clause that authorized the wrong amount. Cat 7 (Perceptual) is the novel category for perceiving-then-acting systems and is bordered in red.](../images/foundations-fix-locus.png)
+
 ---
 
 ## Forces
