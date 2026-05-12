@@ -21,6 +21,8 @@ You have selected an archetype. Now you have to decide, for the system you are a
 
 These four are the dials. Every archetype comes with default settings, but the specifics of *your* system live in how you tune them. Tune them deliberately, in the spec, before the agent runs — or they will be tuned for you by accident.
 
+![The four orthogonal dials. Each dimension maps to specific spec clauses (§3/§5 for agency, §4 for autonomy, §1/§12 for responsibility, §7/§8 for reversibility) and is set independently. The three example calibrations — a compliance Guardian, a coding-agent Executor, a deterministic CI/CD pipeline — show that all four quadrants of the four-dial space contain real deployments. Treating the four as a single "automation level" collapses this design space onto a diagonal and costs the spec author independent levers.](../images/foundations-four-dials.png)
+
 ---
 
 ## The Problem

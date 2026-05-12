@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760"
+     font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arr" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="760" fill="#FAFAF7"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-size="26" font-weight="700" fill="#0F1729">The intent–implementation boundary</text>
+  <text x="700" y="80" text-anchor="middle" font-size="14" font-style="italic" fill="#64748B">The gap has not grown. It has become visible. Who bridges it changed.</text>
+
+  <!-- ======================== Pre-agent era ======================== -->
+  <text x="80" y="140" font-size="12" font-weight="700" fill="#64748B" letter-spacing="2">PRE-AGENT ERA — BRIDGE WAS A SENIOR ENGINEER</text>
+
+  <!-- Intent (left) -->
+  <g>
+    <rect x="60" y="170" width="260" height="120" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="60" y="170" width="6" height="120" fill="#6366F1"/>
+    <text x="80" y="200" font-size="11" font-weight="700" fill="#6366F1" letter-spacing="1.4">INTENT</text>
+    <text x="80" y="230" font-size="16" font-weight="700" fill="#0F1729">The ticket</text>
+    <text x="80" y="254" font-size="12" fill="#475569">"Process the customer refund"</text>
+    <text x="80" y="272" font-size="12" fill="#475569">(underspecified by default)</text>
+  </g>
+
+  <!-- Bridge (middle) — human judgment -->
+  <g>
+    <rect x="380" y="170" width="340" height="120" rx="12" fill="#FEF3C7" stroke="#B45309" stroke-width="1.4" filter="url(#cardShadow)"/>
+    <text x="550" y="198" text-anchor="middle" font-size="11" font-weight="700" fill="#92400E" letter-spacing="1.4">SILENT HUMAN JUDGMENT</text>
+    <text x="550" y="225" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">Senior engineer reads the ticket,</text>
+    <text x="550" y="245" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">fills the gaps, escalates ambiguity,</text>
+    <text x="550" y="265" text-anchor="middle" font-size="15" font-weight="700" fill="#0F1729">rewrites underspec into done.</text>
+    <text x="550" y="284" text-anchor="middle" font-size="11" fill="#92400E" font-style="italic">Never appears in the spec.</text>
+  </g>
+
+  <!-- Implementation (right) -->
+  <g>
+    <rect x="780" y="170" width="260" height="120" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="780" y="170" width="6" height="120" fill="#15803D"/>
+    <text x="800" y="200" font-size="11" font-weight="700" fill="#15803D" letter-spacing="1.4">IMPLEMENTATION</text>
+    <text x="800" y="230" font-size="16" font-weight="700" fill="#0F1729">The code that ships</text>
+    <text x="800" y="254" font-size="12" fill="#475569">Often correct — because the</text>
+    <text x="800" y="272" font-size="12" fill="#475569">engineer absorbed the gap.</text>
+  </g>
+
+  <!-- Bridge result label (right of impl) -->
+  <g>
+    <rect x="1080" y="190" width="260" height="80" rx="10" fill="#F0FDF4" stroke="#15803D" stroke-width="1.2"/>
+    <text x="1210" y="220" text-anchor="middle" font-size="12" font-weight="700" fill="#15803D" letter-spacing="1.2">RESULT</text>
+    <text x="1210" y="246" text-anchor="middle" font-size="14" font-weight="700" fill="#0F1729">System works.</text>
+    <text x="1210" y="263" text-anchor="middle" font-size="11" fill="#475569">Spec stays underspecified.</text>
+  </g>
+
+  <line x1="320" y1="230" x2="375" y2="230" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="720" y1="230" x2="775" y2="230" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="1040" y1="230" x2="1075" y2="230" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ======================== Divider ======================== -->
+  <line x1="60" y1="350" x2="1340" y2="350" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- ======================== Agent era ======================== -->
+  <text x="80" y="400" font-size="12" font-weight="700" fill="#6366F1" letter-spacing="2">AGENT ERA — BRIDGE IS THE SPEC ITSELF</text>
+
+  <!-- Intent (left) -->
+  <g>
+    <rect x="60" y="430" width="260" height="180" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="60" y="430" width="6" height="180" fill="#6366F1"/>
+    <text x="80" y="460" font-size="11" font-weight="700" fill="#6366F1" letter-spacing="1.4">INTENT</text>
+    <text x="80" y="490" font-size="16" font-weight="700" fill="#0F1729">The ticket</text>
+    <text x="80" y="514" font-size="12" fill="#475569">Still underspecified by default —</text>
+    <text x="80" y="532" font-size="12" fill="#475569">but now no human absorbs</text>
+    <text x="80" y="550" font-size="12" fill="#475569">the gap before execution.</text>
+  </g>
+
+  <!-- Spec (middle, prominent) -->
+  <g>
+    <rect x="380" y="430" width="340" height="180" rx="12" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.6" filter="url(#cardShadow)"/>
+    <text x="550" y="458" text-anchor="middle" font-size="11" font-weight="700" fill="#3730A3" letter-spacing="1.4">THE SPEC IS THE BRIDGE</text>
+    <text x="550" y="488" text-anchor="middle" font-size="16" font-weight="700" fill="#0F1729">Archetype declared.</text>
+    <text x="550" y="510" text-anchor="middle" font-size="16" font-weight="700" fill="#0F1729">Constraints written.</text>
+    <text x="550" y="532" text-anchor="middle" font-size="16" font-weight="700" fill="#0F1729">Authorization bounded.</text>
+    <text x="550" y="554" text-anchor="middle" font-size="16" font-weight="700" fill="#0F1729">Acceptance defined.</text>
+    <text x="550" y="585" text-anchor="middle" font-size="11" fill="#3730A3" font-style="italic">Designed, reviewed, evolved.</text>
+  </g>
+
+  <!-- Implementation (right) -->
+  <g>
+    <rect x="780" y="430" width="260" height="180" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="780" y="430" width="6" height="180" fill="#15803D"/>
+    <text x="800" y="460" font-size="11" font-weight="700" fill="#15803D" letter-spacing="1.4">IMPLEMENTATION</text>
+    <text x="800" y="490" font-size="16" font-weight="700" fill="#0F1729">Agent acts on the spec</text>
+    <text x="800" y="514" font-size="12" fill="#475569">Literal interpretation. No silent</text>
+    <text x="800" y="532" font-size="12" fill="#475569">gap-filling. Asks-rate is low even</text>
+    <text x="800" y="550" font-size="12" fill="#475569">with AskUserQuestion wired in.</text>
+  </g>
+
+  <!-- Result (right) -->
+  <g>
+    <rect x="1080" y="450" width="260" height="140" rx="10" fill="#FCE7F3" stroke="#9F1239" stroke-width="1.2"/>
+    <text x="1210" y="480" text-anchor="middle" font-size="12" font-weight="700" fill="#9F1239" letter-spacing="1.2">RESULT</text>
+    <text x="1210" y="508" text-anchor="middle" font-size="14" font-weight="700" fill="#0F1729">Spec gap surfaces</text>
+    <text x="1210" y="528" text-anchor="middle" font-size="14" font-weight="700" fill="#0F1729">as wrong output.</text>
+    <text x="1210" y="554" text-anchor="middle" font-size="11" fill="#475569">Visible. Diagnosable.</text>
+    <text x="1210" y="571" text-anchor="middle" font-size="11" fill="#475569">Cat 1–7 names the fix locus.</text>
+  </g>
+
+  <line x1="320" y1="500" x2="375" y2="500" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="720" y1="500" x2="775" y2="500" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="1040" y1="510" x2="1075" y2="510" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Bottom caption -->
+  <line x1="60" y1="660" x2="1340" y2="660" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="700" y="685" text-anchor="middle" font-size="12" fill="#475569">Pre-agent: gap absorbed silently by human implementer; spec stays underspecified.</text>
+  <text x="700" y="705" text-anchor="middle" font-size="12" fill="#475569">Agent era: gap surfaces as wrong output; spec is the artifact that bridges it; intent becomes a primary design surface.</text>
+  <text x="700" y="730" text-anchor="middle" font-size="11" font-style="italic" fill="#6366F1">The cost of imprecise intent was always there. It just stopped being free.</text>
+</svg>

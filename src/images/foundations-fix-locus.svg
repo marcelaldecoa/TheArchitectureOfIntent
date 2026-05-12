@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 880"
+     font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrFix" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="880" fill="#FAFAF7"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-size="26" font-weight="700" fill="#0F1729">Seven categories partitioned by fix locus</text>
+  <text x="700" y="80" text-anchor="middle" font-size="14" font-style="italic" fill="#64748B">Symptom is what was observed. Fix locus is which artifact must change. The two are not the same.</text>
+
+  <!-- Column headers -->
+  <text x="110" y="125" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1.6">CATEGORY</text>
+  <text x="430" y="125" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1.6">SYMPTOM (WHAT WAS OBSERVED)</text>
+  <text x="940" y="125" font-size="11" font-weight="700" fill="#64748B" letter-spacing="1.6">FIX LOCUS (WHICH ARTIFACT TO CHANGE)</text>
+
+  <!-- Row template: y_top, color, cat, symptom, fix -->
+  <!-- Cat 1 — Spec -->
+  <g>
+    <rect x="60" y="140" width="320" height="86" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="60" y="140" width="320" height="22" rx="10" fill="#3730A3"/>
+    <rect x="60" y="154" width="320" height="8" fill="#3730A3"/>
+    <text x="220" y="158" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.4">CAT 1 — SPEC</text>
+    <text x="80" y="190" font-size="14" font-weight="700" fill="#0F1729">Wrong / missing / ambiguous spec</text>
+    <text x="80" y="212" font-size="11" fill="#475569">Spec said the wrong thing or omitted a clause.</text>
+  </g>
+  <text x="430" y="178" font-size="13" fill="#0F1729">Output diverged from what the team meant</text>
+  <text x="430" y="198" font-size="11" fill="#64748B">(but was consistent with what the spec said).</text>
+  <rect x="940" y="155" width="380" height="50" rx="8" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.2"/>
+  <text x="960" y="178" font-size="13" font-weight="700" fill="#3730A3">→ The spec (§1–§12)</text>
+  <text x="960" y="195" font-size="11" fill="#475569">Amend the clause whose absence allowed the gap.</text>
+
+  <!-- Cat 2 — Capability -->
+  <g>
+    <rect x="60" y="240" width="320" height="86" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="60" y="240" width="320" height="22" rx="10" fill="#9F1239"/>
+    <rect x="60" y="254" width="320" height="8" fill="#9F1239"/>
+    <text x="220" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.4">CAT 2 — CAPABILITY</text>
+    <text x="80" y="290" font-size="14" font-weight="700" fill="#0F1729">Tool manifest wrong / missing</text>
+    <text x="80" y="312" font-size="11" fill="#475569">Agent reached a tool it shouldn't, or couldn't reach one it should.</text>
+  </g>
+  <text x="430" y="278" font-size="13" fill="#0F1729">Agent invoked a tool outside scope, or</text>
+  <text x="430" y="298" font-size="11" fill="#64748B">failed because the needed tool was absent.</text>
+  <rect x="940" y="255" width="380" height="50" rx="8" fill="#FCE7F3" stroke="#9F1239" stroke-width="1.2"/>
+  <text x="960" y="278" font-size="13" font-weight="700" fill="#9F1239">→ Tool manifest · capability authorization</text>
+  <text x="960" y="295" font-size="11" fill="#475569">Constrain or extend the manifest. Not a prompt fix.</text>
+
+  <!-- Cat 3 — Scope creep -->
+  <g>
+    <rect x="60" y="340" width="320" height="86" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="60" y="340" width="320" height="22" rx="10" fill="#3730A3"/>
+    <rect x="60" y="354" width="320" height="8" fill="#3730A3"/>
+    <text x="220" y="358" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.4">CAT 3 — SCOPE CREEP</text>
+    <text x="80" y="390" font-size="14" font-weight="700" fill="#0F1729">Acted outside authorized scope</text>
+    <text x="80" y="412" font-size="11" fill="#475569">NOT-authorized clauses absent or insufficient.</text>
+  </g>
+  <text x="430" y="378" font-size="13" fill="#0F1729">Agent did the spec's positive ask plus more</text>
+  <text x="430" y="398" font-size="11" fill="#64748B">— the additional action was never forbidden.</text>
+  <rect x="940" y="355" width="380" height="50" rx="8" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.2"/>
+  <text x="960" y="378" font-size="13" font-weight="700" fill="#3730A3">→ Spec §3 NOT-authorized clauses</text>
+  <text x="960" y="395" font-size="11" fill="#475569">Name the forbidden action explicitly.</text>
+
+  <!-- Cat 4 — Oversight -->
+  <g>
+    <rect x="60" y="440" width="320" height="86" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="60" y="440" width="320" height="22" rx="10" fill="#B45309"/>
+    <rect x="60" y="454" width="320" height="8" fill="#B45309"/>
+    <text x="220" y="458" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.4">CAT 4 — OVERSIGHT</text>
+    <text x="80" y="490" font-size="14" font-weight="700" fill="#0F1729">Gate did not fire, or judged wrong</text>
+    <text x="80" y="512" font-size="11" fill="#475569">Required approval missing, or human approved in error.</text>
+  </g>
+  <text x="430" y="478" font-size="13" fill="#0F1729">Action progressed despite needing review,</text>
+  <text x="430" y="498" font-size="11" fill="#64748B">or review rubber-stamped a misaligned output.</text>
+  <rect x="940" y="455" width="380" height="50" rx="8" fill="#FEF3C7" stroke="#B45309" stroke-width="1.2"/>
+  <text x="960" y="478" font-size="13" font-weight="700" fill="#92400E">→ Oversight model · gate config · reviewer aid</text>
+  <text x="960" y="495" font-size="11" fill="#475569">Re-align where the gate fires and what it checks.</text>
+
+  <!-- Cat 5 — Compounding -->
+  <g>
+    <rect x="60" y="540" width="320" height="86" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="60" y="540" width="320" height="22" rx="10" fill="#3730A3"/>
+    <rect x="60" y="554" width="320" height="8" fill="#3730A3"/>
+    <text x="220" y="558" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.4">CAT 5 — COMPOUNDING</text>
+    <text x="80" y="590" font-size="14" font-weight="700" fill="#0F1729">Defensible steps, wrong cumulation</text>
+    <text x="80" y="612" font-size="11" fill="#475569">No single step was wrong; the composition was.</text>
+  </g>
+  <text x="430" y="578" font-size="13" fill="#0F1729">Each agent acted correctly in isolation;</text>
+  <text x="430" y="598" font-size="11" fill="#64748B">the pipeline's net behavior was incorrect.</text>
+  <rect x="940" y="555" width="380" height="50" rx="8" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.2"/>
+  <text x="960" y="578" font-size="13" font-weight="700" fill="#3730A3">→ Spec + checkpoint or evaluator pattern</text>
+  <text x="960" y="595" font-size="11" fill="#475569">Add a system-level invariant; insert a checkpoint.</text>
+
+  <!-- Cat 6 — Model-level -->
+  <g>
+    <rect x="60" y="640" width="320" height="86" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <rect x="60" y="640" width="320" height="22" rx="10" fill="#475569"/>
+    <rect x="60" y="654" width="320" height="8" fill="#475569"/>
+    <text x="220" y="658" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.4">CAT 6 — MODEL-LEVEL</text>
+    <text x="80" y="690" font-size="14" font-weight="700" fill="#0F1729">Model emitted wrong content</text>
+    <text x="80" y="712" font-size="11" fill="#475569">Spec correct, manifest correct, oversight intact.</text>
+  </g>
+  <text x="430" y="678" font-size="13" fill="#0F1729">Confident wrong answer at the model layer,</text>
+  <text x="430" y="698" font-size="11" fill="#64748B">unrelated to upstream specification gaps.</text>
+  <rect x="940" y="655" width="380" height="50" rx="8" fill="#F1F5F9" stroke="#475569" stroke-width="1.2"/>
+  <text x="960" y="678" font-size="13" font-weight="700" fill="#475569">→ Structural validation · allowlist · accept risk</text>
+  <text x="960" y="695" font-size="11" fill="#475569">Defend at the output gate. Not a prompt-engineering fix.</text>
+
+  <!-- Cat 7 — Perceptual (NOVEL) -->
+  <g>
+    <rect x="60" y="740" width="320" height="100" rx="10" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.8"/>
+    <rect x="60" y="740" width="320" height="22" rx="10" fill="#DC2626"/>
+    <rect x="60" y="754" width="320" height="8" fill="#DC2626"/>
+    <text x="220" y="758" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="1.4">CAT 7 — PERCEPTUAL ★ NOVEL</text>
+    <text x="80" y="790" font-size="14" font-weight="700" fill="#0F1729">Perception ≠ actual env state</text>
+    <text x="80" y="812" font-size="11" fill="#475569">Computer-use, browser-use, robotic. Four sub-categories:</text>
+    <text x="80" y="828" font-size="10" fill="#64748B">misidentification · missed element · hallucinated element · state miscount</text>
+  </g>
+  <text x="430" y="778" font-size="13" fill="#0F1729">System acted on a wrong model of reality</text>
+  <text x="430" y="798" font-size="11" fill="#64748B">— clicked the wrong button, missed a modal,</text>
+  <text x="430" y="816" font-size="11" fill="#64748B">scrolled and the index changed underneath.</text>
+  <rect x="940" y="755" width="380" height="68" rx="8" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.4"/>
+  <text x="960" y="778" font-size="13" font-weight="700" fill="#DC2626">→ Confirmation gate · screenshot-then-verify ·</text>
+  <text x="960" y="796" font-size="13" font-weight="700" fill="#DC2626">→ multimodal grounding · element-allowlist</text>
+  <text x="960" y="815" font-size="11" fill="#475569">Re-verify position-based facts at the moment of use.</text>
+</svg>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720"
+     font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowHead" viewBox="0 0 12 12" refX="11" refY="6"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#94A3B8"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="720" fill="#FAFAF7"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-size="26" font-weight="700" fill="#0F1729">Three questions every delegated system has to answer</text>
+  <text x="700" y="80" text-anchor="middle" font-size="14" font-style="italic" fill="#64748B">Each question is answered by one or more of the five activities. Together they constitute the framework.</text>
+
+  <!-- ======================== Three question cards ======================== -->
+  <!-- Q1 -->
+  <g>
+    <rect x="60" y="120" width="400" height="200" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="60" y="120" width="400" height="8" rx="4" fill="#6366F1"/>
+    <text x="84" y="160" font-size="11" font-weight="700" fill="#6366F1" letter-spacing="1.6">QUESTION 1 — INTENT</text>
+    <text x="84" y="195" font-size="22" font-weight="700" fill="#0F1729">What is this system</text>
+    <text x="84" y="223" font-size="22" font-weight="700" fill="#0F1729">trying to achieve?</text>
+    <text x="84" y="262" font-size="13" fill="#475569">The goal that licenses the</text>
+    <text x="84" y="280" font-size="13" fill="#475569">delegation. Without this, every</text>
+    <text x="84" y="298" font-size="13" fill="#475569">downstream decision is unmoored.</text>
+  </g>
+
+  <!-- Q2 -->
+  <g>
+    <rect x="500" y="120" width="400" height="200" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="500" y="120" width="400" height="8" rx="4" fill="#B45309"/>
+    <text x="524" y="160" font-size="11" font-weight="700" fill="#92400E" letter-spacing="1.6">QUESTION 2 — CONSTRAINTS</text>
+    <text x="524" y="195" font-size="22" font-weight="700" fill="#0F1729">Within what</text>
+    <text x="524" y="223" font-size="22" font-weight="700" fill="#0F1729">constraints?</text>
+    <text x="524" y="262" font-size="13" fill="#475569">What it must never do, who it</text>
+    <text x="524" y="280" font-size="13" fill="#475569">cannot act for, what state it</text>
+    <text x="524" y="298" font-size="13" fill="#475569">cannot touch.</text>
+  </g>
+
+  <!-- Q3 -->
+  <g>
+    <rect x="940" y="120" width="400" height="200" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <rect x="940" y="120" width="400" height="8" rx="4" fill="#15803D"/>
+    <text x="964" y="160" font-size="11" font-weight="700" fill="#15803D" letter-spacing="1.6">QUESTION 3 — VALIDATION</text>
+    <text x="964" y="195" font-size="22" font-weight="700" fill="#0F1729">How will we know</text>
+    <text x="964" y="223" font-size="22" font-weight="700" fill="#0F1729">it's working?</text>
+    <text x="964" y="262" font-size="13" fill="#475569">The signals that confirm or</text>
+    <text x="964" y="280" font-size="13" fill="#475569">contradict each call before</text>
+    <text x="964" y="298" font-size="13" fill="#475569">consequence accumulates.</text>
+  </g>
+
+  <!-- ======================== Activities row ======================== -->
+  <text x="700" y="380" text-anchor="middle" font-size="13" font-weight="700" fill="#6366F1" letter-spacing="2">ANSWERED BY THE FIVE ACTIVITIES</text>
+
+  <!-- Activity cards aligned under the three questions -->
+  <!-- Frame under Q1+Q2 (intent + constraints) -->
+  <g>
+    <rect x="60" y="410" width="180" height="90" rx="10" fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="150" y="438" text-anchor="middle" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="1.6">ACTIVITY 1</text>
+    <text x="150" y="467" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">FRAME</text>
+    <text x="150" y="488" text-anchor="middle" font-size="11" fill="#CBD5E1">Pick the shape</text>
+  </g>
+  <g>
+    <rect x="260" y="410" width="180" height="90" rx="10" fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="350" y="438" text-anchor="middle" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="1.6">ACTIVITY 2</text>
+    <text x="350" y="467" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">SPECIFY</text>
+    <text x="350" y="488" text-anchor="middle" font-size="11" fill="#CBD5E1">Write the intent</text>
+  </g>
+  <g>
+    <rect x="460" y="410" width="180" height="90" rx="10" fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="550" y="438" text-anchor="middle" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="1.6">ACTIVITY 3</text>
+    <text x="550" y="467" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">DELEGATE</text>
+    <text x="550" y="488" text-anchor="middle" font-size="11" fill="#CBD5E1">Build the agent</text>
+  </g>
+  <g>
+    <rect x="760" y="410" width="180" height="90" rx="10" fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="850" y="438" text-anchor="middle" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="1.6">ACTIVITY 4</text>
+    <text x="850" y="467" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">VALIDATE</text>
+    <text x="850" y="488" text-anchor="middle" font-size="11" fill="#CBD5E1">Learn in production</text>
+  </g>
+  <g>
+    <rect x="1160" y="410" width="180" height="90" rx="10" fill="#0F1729" filter="url(#cardShadow)"/>
+    <text x="1250" y="438" text-anchor="middle" font-size="10" font-weight="700" fill="#94A3B8" letter-spacing="1.6">ACTIVITY 5</text>
+    <text x="1250" y="467" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">EVOLVE</text>
+    <text x="1250" y="488" text-anchor="middle" font-size="11" fill="#CBD5E1">Close the loop</text>
+  </g>
+
+  <!-- Question → activity connector lines -->
+  <line x1="260" y1="320" x2="260" y2="410" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="350" y1="320" x2="350" y2="410" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="700" y1="320" x2="550" y2="410" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="700" y1="320" x2="850" y2="410" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <line x1="1140" y1="320" x2="1250" y2="410" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="3,3"/>
+
+  <!-- ======================== Closed loop ======================== -->
+  <text x="700" y="560" text-anchor="middle" font-size="13" font-weight="700" fill="#6366F1" letter-spacing="2">A CLOSED LOOP — EACH DIAGNOSED FAILURE FEEDS THE NEXT INTENT</text>
+
+  <!-- Loop arrow from Evolve back to Frame -->
+  <path d="M 1250 510 C 1250 600, 700 660, 150 600 L 150 510"
+        fill="none" stroke="#6366F1" stroke-width="1.8" stroke-dasharray="6,4" opacity="0.7"
+        marker-end="url(#arrowHead)"/>
+  <text x="700" y="640" text-anchor="middle" font-size="12" font-style="italic" fill="#6366F1">amendments &amp; metrics → next intent</text>
+
+  <!-- Bottom caption -->
+  <line x1="60" y1="680" x2="1340" y2="680" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="700" y="703" text-anchor="middle" font-size="11" fill="#475569">Read this chapter, then return to this picture when you get lost. Every chapter elaborates one row.</text>
+</svg>

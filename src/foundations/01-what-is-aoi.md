@@ -30,6 +30,8 @@ If you're skimming, the canvas figure in the [Introduction's *framework on one p
 
 These three questions are the conceptual minimum. A team that cannot answer them does not yet have an Architecture of Intent for the system they are about to build, regardless of whether they have a spec, a model, a deployment plan, or a Slack channel named after the project. The discipline begins by answering them.
 
+![The three questions every delegated system has to answer, and the five activities (Frame, Specify, Delegate, Validate, Evolve) that answer them. Read the rest of the chapter, then return to this picture when you get lost. Every subsequent chapter elaborates one row.](../images/foundations-three-questions.png)
+
 ---
 
 ## Five activities that answer them

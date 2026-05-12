@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820"
+     font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="820" fill="#FAFAF7"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" font-size="26" font-weight="700" fill="#0F1729">Four orthogonal dials, set independently</text>
+  <text x="700" y="80" text-anchor="middle" font-size="14" font-style="italic" fill="#64748B">Agency, autonomy, responsibility, reversibility are independent levers — not a single "automation level."</text>
+
+  <!-- ======================== Four dimension cards ======================== -->
+  <g>
+    <rect x="60" y="120" width="310" height="190" rx="14" fill="#EEF2FF" stroke="#3730A3" stroke-width="1.4" filter="url(#cardShadow)"/>
+    <rect x="60" y="120" width="310" height="8" rx="4" fill="#3730A3"/>
+    <text x="84" y="160" font-size="11" font-weight="700" fill="#3730A3" letter-spacing="1.6">DIMENSION 1</text>
+    <text x="84" y="192" font-size="22" font-weight="700" fill="#0F1729">Agency</text>
+    <text x="84" y="222" font-size="12" fill="#475569">Decision space:</text>
+    <text x="84" y="240" font-size="12" fill="#475569">what the system is permitted</text>
+    <text x="84" y="258" font-size="12" fill="#475569">to choose without consultation.</text>
+    <text x="84" y="290" font-size="11" font-style="italic" fill="#3730A3">Spec clause: §3 / §5</text>
+  </g>
+
+  <g>
+    <rect x="400" y="120" width="310" height="190" rx="14" fill="#FEF3C7" stroke="#B45309" stroke-width="1.4" filter="url(#cardShadow)"/>
+    <rect x="400" y="120" width="310" height="8" rx="4" fill="#B45309"/>
+    <text x="424" y="160" font-size="11" font-weight="700" fill="#92400E" letter-spacing="1.6">DIMENSION 2</text>
+    <text x="424" y="192" font-size="22" font-weight="700" fill="#0F1729">Autonomy</text>
+    <text x="424" y="222" font-size="12" fill="#475569">Execution path:</text>
+    <text x="424" y="240" font-size="12" fill="#475569">how many steps run without</text>
+    <text x="424" y="258" font-size="12" fill="#475569">per-step human approval.</text>
+    <text x="424" y="290" font-size="11" font-style="italic" fill="#92400E">Spec clause: §4 oversight</text>
+  </g>
+
+  <g>
+    <rect x="740" y="120" width="310" height="190" rx="14" fill="#F0FDF4" stroke="#15803D" stroke-width="1.4" filter="url(#cardShadow)"/>
+    <rect x="740" y="120" width="310" height="8" rx="4" fill="#15803D"/>
+    <text x="764" y="160" font-size="11" font-weight="700" fill="#15803D" letter-spacing="1.6">DIMENSION 3</text>
+    <text x="764" y="192" font-size="22" font-weight="700" fill="#0F1729">Responsibility</text>
+    <text x="764" y="222" font-size="12" fill="#475569">Authorial · operational ·</text>
+    <text x="764" y="240" font-size="12" fill="#475569">validation locus.</text>
+    <text x="764" y="258" font-size="12" fill="#475569">Who is on the hook, and for what.</text>
+    <text x="764" y="290" font-size="11" font-style="italic" fill="#15803D">Spec clause: §1 / §12</text>
+  </g>
+
+  <g>
+    <rect x="1080" y="120" width="280" height="190" rx="14" fill="#FCE7F3" stroke="#9F1239" stroke-width="1.4" filter="url(#cardShadow)"/>
+    <rect x="1080" y="120" width="280" height="8" rx="4" fill="#9F1239"/>
+    <text x="1104" y="160" font-size="11" font-weight="700" fill="#9F1239" letter-spacing="1.6">DIMENSION 4</text>
+    <text x="1104" y="192" font-size="22" font-weight="700" fill="#0F1729">Reversibility</text>
+    <text x="1104" y="222" font-size="12" fill="#475569">What can be undone,</text>
+    <text x="1104" y="240" font-size="12" fill="#475569">at what cost. A property of</text>
+    <text x="1104" y="258" font-size="12" fill="#475569">environment and tooling.</text>
+    <text x="1104" y="290" font-size="11" font-style="italic" fill="#9F1239">Spec clause: §7 / §8</text>
+  </g>
+
+  <!-- ======================== Calibration sliders ======================== -->
+  <text x="80" y="360" font-size="12" font-weight="700" fill="#6366F1" letter-spacing="2">EXAMPLE CALIBRATIONS — EACH DIAL IS SET INDEPENDENTLY</text>
+
+  <!-- System 1: Compliance Guardian -->
+  <text x="80" y="400" font-size="14" font-weight="700" fill="#0F1729">Compliance Guardian (financial transactions)</text>
+  <text x="80" y="420" font-size="11" fill="#64748B" font-style="italic">narrow agency · narrow autonomy · concentrated responsibility · high reversibility</text>
+  <g>
+    <!-- agency -->
+    <rect x="80" y="435" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="80" y="435" width="56" height="20" rx="10" fill="#3730A3"/>
+    <text x="370" y="450" font-size="11" fill="#475569">Agency</text>
+    <!-- autonomy -->
+    <rect x="500" y="435" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="500" y="435" width="56" height="20" rx="10" fill="#B45309"/>
+    <text x="790" y="450" font-size="11" fill="#475569">Autonomy</text>
+    <!-- responsibility -->
+    <rect x="80" y="465" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="80" y="465" width="252" height="20" rx="10" fill="#15803D"/>
+    <text x="370" y="480" font-size="11" fill="#475569">Responsibility</text>
+    <!-- reversibility -->
+    <rect x="500" y="465" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="500" y="465" width="240" height="20" rx="10" fill="#9F1239"/>
+    <text x="790" y="480" font-size="11" fill="#475569">Reversibility</text>
+  </g>
+
+  <!-- System 2: Executor (coding agent) -->
+  <text x="80" y="540" font-size="14" font-weight="700" fill="#0F1729">Coding agent (in-loop, real repository)</text>
+  <text x="80" y="560" font-size="11" fill="#64748B" font-style="italic">wide agency · wide autonomy (gated at PR) · distributed responsibility · moderate reversibility</text>
+  <g>
+    <rect x="80" y="575" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="80" y="575" width="240" height="20" rx="10" fill="#3730A3"/>
+    <text x="370" y="590" font-size="11" fill="#475569">Agency</text>
+    <rect x="500" y="575" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="500" y="575" width="232" height="20" rx="10" fill="#B45309"/>
+    <text x="790" y="590" font-size="11" fill="#475569">Autonomy</text>
+    <rect x="80" y="605" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="80" y="605" width="168" height="20" rx="10" fill="#15803D"/>
+    <text x="370" y="620" font-size="11" fill="#475569">Responsibility</text>
+    <rect x="500" y="605" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="500" y="605" width="168" height="20" rx="10" fill="#9F1239"/>
+    <text x="790" y="620" font-size="11" fill="#475569">Reversibility</text>
+  </g>
+
+  <!-- System 3: CI/CD pipeline -->
+  <text x="80" y="680" font-size="14" font-weight="700" fill="#0F1729">Deterministic CI/CD pipeline</text>
+  <text x="80" y="700" font-size="11" fill="#64748B" font-style="italic">narrow agency (no judgment per step) · wide autonomy · clear responsibility · low reversibility once deployed</text>
+  <g>
+    <rect x="80" y="715" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="80" y="715" width="42" height="20" rx="10" fill="#3730A3"/>
+    <text x="370" y="730" font-size="11" fill="#475569">Agency</text>
+    <rect x="500" y="715" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="500" y="715" width="266" height="20" rx="10" fill="#B45309"/>
+    <text x="790" y="730" font-size="11" fill="#475569">Autonomy</text>
+    <rect x="80" y="745" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="80" y="745" width="224" height="20" rx="10" fill="#15803D"/>
+    <text x="370" y="760" font-size="11" fill="#475569">Responsibility</text>
+    <rect x="500" y="745" width="280" height="20" rx="10" fill="#E2E8F0"/>
+    <rect x="500" y="745" width="84" height="20" rx="10" fill="#9F1239"/>
+    <text x="790" y="760" font-size="11" fill="#475569">Reversibility</text>
+  </g>
+
+  <!-- Right-side legend / takeaway -->
+  <g>
+    <rect x="1000" y="385" width="360" height="380" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2" filter="url(#cardShadow)"/>
+    <text x="1020" y="418" font-size="11" font-weight="700" fill="#6366F1" letter-spacing="1.6">WHY ORTHOGONALITY MATTERS</text>
+    <text x="1020" y="450" font-size="14" font-weight="700" fill="#0F1729">Each quadrant has real</text>
+    <text x="1020" y="470" font-size="14" font-weight="700" fill="#0F1729">deployments. No quadrant</text>
+    <text x="1020" y="490" font-size="14" font-weight="700" fill="#0F1729">is empty.</text>
+    <text x="1020" y="525" font-size="12" fill="#475569">SAE J3016 collapses these</text>
+    <text x="1020" y="543" font-size="12" fill="#475569">onto one "automation level"</text>
+    <text x="1020" y="561" font-size="12" fill="#475569">because vehicle physics</text>
+    <text x="1020" y="579" font-size="12" fill="#475569">constrains them to move</text>
+    <text x="1020" y="597" font-size="12" fill="#475569">together.</text>
+    <text x="1020" y="630" font-size="12" fill="#475569">Software systems have no</text>
+    <text x="1020" y="648" font-size="12" fill="#475569">such constraint. Collapsing</text>
+    <text x="1020" y="666" font-size="12" fill="#475569">them costs design space.</text>
+    <text x="1020" y="710" font-size="12" font-style="italic" fill="#6366F1">Set each dial deliberately.</text>
+    <text x="1020" y="728" font-size="12" font-style="italic" fill="#6366F1">Write the value in the spec.</text>
+    <text x="1020" y="746" font-size="12" font-style="italic" fill="#6366F1">Justify it next to the dial.</text>
+  </g>
+</svg>

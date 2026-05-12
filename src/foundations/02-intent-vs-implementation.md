@@ -20,6 +20,8 @@ This pattern introduces the most fundamental distinction in intent engineering: 
 
 This pattern assumes the framing established in the [Prologue](../prologue.md).
 
+![The intent–implementation boundary across two eras. In the pre-agent era, a senior engineer silently bridged the gap between an underspecified intent and a working implementation; the spec stayed thin because the engineer absorbed the gap. In the agent era, the bridge has to be the spec itself — archetype declared, constraints written, authorization bounded, acceptance defined — because the agent does not absorb the gap, and so the gap surfaces as wrong output rather than being silently filled.](../images/foundations-intent-implementation.png)
+
 ---
 
 ## The Problem
