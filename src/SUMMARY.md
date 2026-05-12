@@ -39,9 +39,9 @@
 
 ## Frame in practice
 
-- [Customer-support agent](frame/scenarios/customer-support.md)
-- [Coding-agent pipeline](frame/scenarios/coding-pipeline.md)
-- [Internal docs Q&A (DevSquad)](frame/scenarios/docs-qa.md)
+- [Frame in practice — Customer-support agent](frame/scenarios/customer-support.md)
+- [Frame in practice — Coding-agent pipeline](frame/scenarios/coding-pipeline.md)
+- [Frame in practice — Internal docs Q&A (DevSquad)](frame/scenarios/docs-qa.md)
 
 ---
 
@@ -71,9 +71,9 @@
 
 ## Specify in practice
 
-- [Customer-support agent](specify/scenarios/customer-support.md)
-- [Coding-agent pipeline](specify/scenarios/coding-pipeline.md)
-- [Internal docs Q&A (DevSquad)](specify/scenarios/docs-qa.md)
+- [Specify in practice — Customer-support agent](specify/scenarios/customer-support.md)
+- [Specify in practice — Coding-agent pipeline](specify/scenarios/coding-pipeline.md)
+- [Specify in practice — Internal docs Q&A (DevSquad)](specify/scenarios/docs-qa.md)
 
 ---
 
@@ -127,9 +127,9 @@
 
 ## Delegate in practice
 
-- [Customer-support agent](delegate/scenarios/customer-support.md)
-- [Coding-agent pipeline](delegate/scenarios/coding-pipeline.md)
-- [Internal docs Q&A (DevSquad)](delegate/scenarios/docs-qa.md)
+- [Delegate in practice — Customer-support agent](delegate/scenarios/customer-support.md)
+- [Delegate in practice — Coding-agent pipeline](delegate/scenarios/coding-pipeline.md)
+- [Delegate in practice — Internal docs Q&A (DevSquad)](delegate/scenarios/docs-qa.md)
 
 ---
 
@@ -168,9 +168,9 @@
 
 ## Validate in practice
 
-- [Customer-support agent](validate/scenarios/customer-support.md)
-- [Coding-agent pipeline](validate/scenarios/coding-pipeline.md)
-- [Internal docs Q&A (DevSquad)](validate/scenarios/docs-qa.md)
+- [Validate in practice — Customer-support agent](validate/scenarios/customer-support.md)
+- [Validate in practice — Coding-agent pipeline](validate/scenarios/coding-pipeline.md)
+- [Validate in practice — Internal docs Q&A (DevSquad)](validate/scenarios/docs-qa.md)
 
 ---
 
@@ -193,9 +193,9 @@
 
 ## Evolve in practice
 
-- [Customer-support agent (90 days post-launch)](evolve/scenarios/customer-support.md)
-- [Coding-agent pipeline](evolve/scenarios/coding-pipeline.md)
-- [Internal docs Q&A (DevSquad)](evolve/scenarios/docs-qa.md)
+- [Evolve in practice — Customer-support agent (90 days post-launch)](evolve/scenarios/customer-support.md)
+- [Evolve in practice — Coding-agent pipeline](evolve/scenarios/coding-pipeline.md)
+- [Evolve in practice — Internal docs Q&A (DevSquad)](evolve/scenarios/docs-qa.md)
 
 ---
 
