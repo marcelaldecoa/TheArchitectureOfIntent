@@ -16,6 +16,8 @@ The teaching deck is a current, modern companion intended for workshops, recruit
 | `architecture-of-intent.pdf` | Compiled long-form paper PDF — committed for convenience |
 | `architecture-of-intent-workshop.md` | Workshop-length variant (paper v0.1-workshop). ~4,600 words / ~10 pages. Same load-bearing commitments as the long form; condensed §2 (prior work as one paragraph), trimmed §3.3 and §3.4 detail, dropped §5 end-to-end pilot walkthrough, kept §3 framework intact. Intended for workshop or short-form journal submission. |
 | `architecture-of-intent-workshop.pdf` | Compiled workshop-length PDF — committed for convenience |
+| `architecture-of-intent-team-intro.md` | Team-intro variant (paper v0.1-team). ~3,800 words / ~8–10 pages. Practitioner field-guide voice (matches the book), not the academic voice (matches the long-form paper). Includes explicit DevSquad Copilot composition table, the five minimum additions for a DevSquad team, a 30-day adoption rhythm, and a *what to read next* table mapping practitioner concerns to book chapters. Intended as the document you hand a teammate the day before their first Intent Design Session. |
+| `architecture-of-intent-team-intro.pdf` | Compiled team-intro PDF — committed for convenience |
 | `architecture-of-intent.pptx` | Teaching deck (PowerPoint, 16:9) — committed |
 | `architecture-of-intent.html` | Teaching deck (self-contained HTML) — committed |
 | `references.bib` | BibTeX bibliography (~30 entries across 9 domains) |
@@ -56,13 +58,32 @@ pandoc architecture-of-intent-workshop.md \
   --output architecture-of-intent-workshop.pdf
 ```
 
-Required tooling for both: `pandoc`, `texlive-xetex`, `texlive-fonts-recommended`, `texlive-latex-recommended`, `texlive-latex-extra`, `lmodern`. The `lmodern` package is a separate package on Ubuntu and is required for `lmodern.sty` (xelatex's default font setup).
+### Team-intro variant
 
-### Two variants, one set of commitments
+```bash
+cd paper
+pandoc architecture-of-intent-team-intro.md \
+  --citeproc \
+  --bibliography references.bib \
+  --pdf-engine=xelatex \
+  -V geometry:margin=1in \
+  -V fontsize=11pt \
+  --output architecture-of-intent-team-intro.pdf
+```
 
-The long-form paper and the workshop variant carry the *same* framework version and the *same* load-bearing commitments (5 archetypes, 4 dimensions, 7 Cats, 4 oversight models, 5 activities, composition-first-class, 3-novel/4-not-claimed honest accounting). The deck/paper sync check runs against the long form; the workshop variant inherits the same commitments by construction. When updating either, update both in the same commit.
+Required tooling for all three: `pandoc`, `texlive-xetex`, `texlive-fonts-recommended`, `texlive-latex-recommended`, `texlive-latex-extra`, `lmodern`. The `lmodern` package is a separate package on Ubuntu and is required for `lmodern.sty` (xelatex's default font setup).
 
-Topic mapping between the two is documented in the workshop paper's Appendix (Reading paths).
+### Three variants, one set of commitments
+
+| Variant | Audience | Length | Tone |
+|---|---|---|---|
+| **Long-form** (`architecture-of-intent.md`) | Academic reviewer evaluating the framework's contribution | ~15,000 words / 34 pages | Academic; develops the full lineage and the novelty claims |
+| **Workshop** (`architecture-of-intent-workshop.md`) | Workshop / short-journal reviewer | ~4,600 words / ~10 pages | Academic but condensed; same commitments as the long form |
+| **Team intro** (`architecture-of-intent-team-intro.md`) | A teammate about to run their first Intent Design Session | ~3,800 words / ~8–10 pages | Practitioner / field-guide; explicit DevSquad Copilot composition; 30-day adoption rhythm; "what to read next" table |
+
+All three carry the *same* framework version and the *same* load-bearing commitments (5 archetypes, 4 dimensions, 7 Cats, 4 oversight models, 5 activities, composition-first-class, 3-novel/4-not-claimed honest accounting). The deck/paper sync check runs against the long form; the other two inherit the same commitments by construction. When updating any, propagate the change to the others in the same commit.
+
+The team-intro variant is the document you hand to a teammate **before** their first session; the workshop variant is what you submit to a venue; the long-form variant is the citation reference.
 
 ## Building the teaching deck
 
